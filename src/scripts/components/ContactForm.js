@@ -13,7 +13,7 @@ const ContactForm = () => {
 
       const result = await res.json();
       alert(result.message || "Submitted successfully!");
-      reset(); // clear form
+      reset();
     } catch (err) {
       console.error(err);
       alert("Something went wrong.");
