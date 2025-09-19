@@ -21,7 +21,7 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-y-[1.5vw] text-[0.8vw] font-normal z-10">
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-y-[1.5vw] text-[0.8vw] font-normal z-10 select-none">
       <div className="flex flex-row gap-x-[1vw]">
         <div className="flex flex-col">
           <label className="text-nowrap">Your Name</label>

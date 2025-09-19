@@ -17,7 +17,7 @@ export default function CarouselServices() {
       autoplayDelay={5000}
       loop={true}
       transition={{ duration: 1 }}
-      className="w-[25vw] rounded-none"
+      className="w-[25vw] rounded-none select-none"
       prevArrow={false}
       nextArrow={false}
       navigation={({ setActiveIndex, activeIndex, length }) => (
