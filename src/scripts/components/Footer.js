@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import { shipx_white, sglink_white } from '../../assets/assets'
+import * as motion from 'motion/react-client'
 
 const Footer = () => {
   return (
@@ -16,26 +17,34 @@ const Footer = () => {
             <p className="mt-[0.8vw]">Empowering businesses to ship globally with confidence. <br/>Our platform simplifies international shipping, customs, and logistics</p>
           </div>
           <div className="flex flex-row gap-x-[1vw]">
-            <button className="border-1 border-white text-white font-normal py-[0.2vw] px-[1.5vw] rounded-[2vw]">
+            <motion.button
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.8 }}
+              className="border-1 border-white text-white font-normal py-[0.2vw] px-[1.5vw] rounded-[2vw] cursor-pointer"
+            >
               Book a Demo
-            </button>
-            <button className="bg-white text-[#FF00E5] font-bold py-[0.2vw] px-[1.5vw] rounded-[2vw]">
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.8 }}
+              className="bg-white text-[#FF00E5] font-bold py-[0.2vw] px-[1.5vw] rounded-[2vw] cursor-pointer"
+            >
               Contact Us
-            </button>
+            </motion.button>
           </div>
         </div>
         {/* Links */}
         <div className="flex flex-row justify-end gap-x-[4vw] w-[60%]">
           <div className="flex flex-col gap-y-[1vw]">
-            <Link to="/">Home</Link>
-            <Link to="/statistics">Statistics</Link>
-            <Link to="/services">Services</Link>
-            <Link to="/platform">Platform</Link>
+            <NavLink to="/" end onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Home</NavLink>
+            <NavLink to="/#statistics" end>Statistics</NavLink>
+            <NavLink to="/#services" end>Services</NavLink>
+            <NavLink to="/#platform" end>Platform</NavLink>
           </div>
           <div className="flex flex-col gap-y-[1vw]">
-            <Link to="/contact">Contact</Link>
-            <Link to="/privacy-policy">Privacy Policy</Link>
-            <Link to="/terms-and-services">Terms & Services</Link>
+            <NavLink to="/#contact-us" end>Contact</NavLink>
+            <NavLink to="/privacy-policy" end>Privacy Policy</NavLink>
+            <NavLink to="/terms-and-services" end>Terms & Services</NavLink>
           </div>
           <div className="flex flex-col gap-y-[1vw]">
             <span className="font-medium">Reach us</span>
