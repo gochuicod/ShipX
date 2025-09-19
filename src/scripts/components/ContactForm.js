@@ -1,7 +1,9 @@
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 const ContactForm = () => {
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm();
+  const [isSent, setIsSent] = useState(false);
 
   const onSubmit = async (data) => {
     try {
@@ -12,7 +14,8 @@ const ContactForm = () => {
       });
 
       const result = await res.json();
-      alert(result.message || "Submitted successfully!");
+      setIsSent(true)
+      setTimeout(() => setIsSent(false), 5000)
       reset();
     } catch (err) {
       console.error(err);
@@ -26,7 +29,7 @@ const ContactForm = () => {
         <div className="flex flex-col">
           <label className="text-nowrap">Your Name</label>
           <input
-            className="border-b border-[#CACACA] w-full p-2"
+            className="border-b border-[#CACACA] w-full p-2 focus:outline-none"
             {...register("name", { required: "Name is required" })}
           />
           {errors.name && <p className="text-red-500">{errors.name.message}</p>}
@@ -35,7 +38,7 @@ const ContactForm = () => {
           <label className="text-nowrap">Email Address</label>
           <input
             type="email"
-            className="border-b border-[#CACACA] w-full p-2"
+            className="border-b border-[#CACACA] w-full p-2 focus:outline-none"
             {...register("email", { 
               required: "Email is required", 
               pattern: { value: /^\S+@\S+$/i, message: "Invalid email" } 
@@ -47,7 +50,7 @@ const ContactForm = () => {
           <label className="text-nowrap">Phone Number (optional)</label>
           <input
             type="tel"
-            className="border-b border-[#CACACA] w-full p-2"
+            className="border-b border-[#CACACA] w-full p-2 focus:outline-none"
             {...register("phone", {
               pattern: {
                 value: /^\+?[\d\s\-()]{7,}$/,
@@ -64,7 +67,7 @@ const ContactForm = () => {
       <div className="flex flex-col mt-[1vw]">
         <label className="text-nowrap">Message</label>
         <textarea
-          className="border-b border-[#CACACA] w-full resize-none h-[5vw]"
+          className="border-b border-[#CACACA] w-full resize-none h-[5vw] focus:outline-none"
           {...register("message", { required: "Message is required" })}
         />
         {errors.message && <p className="text-red-500">{errors.message.message}</p>}
@@ -83,7 +86,11 @@ const ContactForm = () => {
             text-white font-medium shadow-[0_0.5vw_1vw_rgba(255,0,229,0.25)]
           "
         >
-          {isSubmitting ? "Sending..." : "Send a Message"}
+          {
+            isSubmitting ? "Sending..." 
+            : isSent ? "Sent!" 
+            : "Send a Message"
+          }
         </button>
 
         <div
