@@ -4,11 +4,10 @@ import { shipx, sglink, main_img_14 } from '../../assets/assets'
 const linkClass = "transition-colors duration-500 hover:text-[#FF00E5] hover:underline hover:decoration-2 hover:underline-offset-4"
 
 const Header = () => {
-
   return (
     <header
       className="
-        sticky top-0 z-50
+        sticky top-0 z-50 select-none
         flex flex-row bg-white text-[#1A1A1A] justify-between items-center 
         py-[1vw] px-[8vw] shadow-[0_0.5vw_0.5vw_rgba(255,0,229,0.15)]
       "
@@ -42,7 +41,7 @@ const Header = () => {
           className={linkClass}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          &nbsp;&nbsp;test&nbsp;&nbsp;
+          &nbsp;&nbsp;Home&nbsp;&nbsp;
         </NavLink>
         <NavLink
           to="/#services"
