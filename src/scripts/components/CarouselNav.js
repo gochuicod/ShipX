@@ -70,7 +70,7 @@ export default function CarouselNav() {
       <div className="relative flex flex-row items-center px-[5vw] h-[90vh] bg-white">
         <div className="flex flex-col w-[55%]">
           {/* Tagline */}
-          <div className="flex flex-row bg-[#F9F5FF] w-fit rounded-full pl-[0.3vw] pr-[0.45vw] py-[0.2vw] text-[0.6vw] items-center font-semibold text-[#6941C6]">
+          <div className="flex flex-row bg-[#F9F5FF] w-fit select-none rounded-full pl-[0.3vw] pr-[0.45vw] py-[0.2vw] text-[0.6vw] items-center font-semibold text-[#6941C6]">
             <span className="bg-white px-[0.5vw] py-[0.05vw] rounded-full border border-[#E9D7FE]">
               ShipX
             </span>
@@ -92,7 +92,7 @@ export default function CarouselNav() {
           </div>
 
           {/* Headline */}
-          <div className="flex flex-col gap-y-[1.5vw] mt-0">
+          <div className="flex flex-col gap-y-[1.5vw] select-none mt-0">
             <h1 className="font-bold text-[4vw] leading-[3.5vw]">
               Everything You Need <br />
               To Grow <p className="inline text-[#FF00E5]">Internationally</p>
@@ -161,7 +161,7 @@ export default function CarouselNav() {
           </div>
 
           {/* Trusted By */}
-          <div className="flex flex-col">
+          <div className="flex flex-col select-none">
             <span className="text-[#63666D] text-[0.6vw] text-medium">
               Trusted By Industry <b>Leaders & 2500+ More</b>
             </span>
@@ -194,7 +194,7 @@ export default function CarouselNav() {
         </div>
 
         {/* Hero Image */}
-        <div className="w-[45%] flex justify-end items-center">
+        <div className="w-[45%] flex justify-end items-center select-none">
           <img
             className="w-[40vw] h-[40vw]"
             src={main_svg_1}
@@ -207,7 +207,7 @@ export default function CarouselNav() {
       <div className="relative flex flex-row items-center px-[5vw] h-[90vh] bg-white">
         <div className="flex flex-col w-[55%]">
           {/* Tagline */}
-          <div className="flex flex-row bg-[#F9F5FF] w-fit rounded-full pl-[0.3vw] pr-[0.45vw] py-[0.2vw] text-[0.6vw] items-center font-semibold text-[#6941C6]">
+          <div className="flex flex-row bg-[#F9F5FF] w-fit select-none rounded-full pl-[0.3vw] pr-[0.45vw] py-[0.2vw] text-[0.6vw] items-center font-semibold text-[#6941C6]">
             <span className="bg-white px-[0.5vw] py-[0.05vw] rounded-full border border-[#E9D7FE]">
               ShipX
             </span>
@@ -229,7 +229,7 @@ export default function CarouselNav() {
           </div>
 
           {/* Headline */}
-          <div className="flex flex-col gap-y-[1.5vw] mt-0">
+          <div className="flex flex-col gap-y-[1.5vw] select-none mt-0">
             <h1 className="font-bold text-[4vw] leading-[3.5vw]">
               Seamless Entry To The
               <p className="inline text-[#FF00E5]"> US <br />E-Commerce </p>
@@ -298,7 +298,7 @@ export default function CarouselNav() {
           </div>
 
           {/* Trusted By */}
-          <div className="flex flex-col">
+          <div className="flex flex-col select-none">
             <span className="text-[#63666D] text-[0.6vw] text-medium">
               Trusted By Industry <b>Leaders & 2500+ More</b>
             </span>
@@ -344,7 +344,7 @@ export default function CarouselNav() {
       <div className="relative flex flex-row items-center px-[5vw] h-[90vh] bg-white">
         <div className="flex flex-col w-[55%]">
           {/* Tagline */}
-          <div className="flex flex-row bg-[#F9F5FF] w-fit rounded-full pl-[0.3vw] pr-[0.45vw] py-[0.2vw] text-[0.6vw] items-center font-semibold text-[#6941C6]">
+          <div className="flex flex-row bg-[#F9F5FF] w-fit select-none rounded-full pl-[0.3vw] pr-[0.45vw] py-[0.2vw] text-[0.6vw] items-center font-semibold text-[#6941C6]">
             <span className="bg-white px-[0.5vw] py-[0.05vw] rounded-full border border-[#E9D7FE]">
               ShipX
             </span>
@@ -366,7 +366,7 @@ export default function CarouselNav() {
           </div>
 
           {/* Headline */}
-          <div className="flex flex-col gap-y-[1.5vw] mt-0">
+          <div className="flex flex-col gap-y-[1.5vw] select-none mt-0">
             <h1 className="font-bold text-[4vw] leading-[3.5vw]">
               Delivering To <p className="inline text-[#FF00E5]">190+ <br /> Countries&nbsp;</p>
               With Ease
@@ -434,7 +434,7 @@ export default function CarouselNav() {
           </div>
 
           {/* Trusted By */}
-          <div className="flex flex-col">
+          <div className="flex flex-col select-none">
             <span className="text-[#63666D] text-[0.6vw] text-medium">
               Trusted By Industry <b>Leaders & 2500+ More</b>
             </span>
