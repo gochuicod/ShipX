@@ -1,0 +1,1 @@
+export const margin = "px-[8vw]"
