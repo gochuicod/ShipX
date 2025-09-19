@@ -41,6 +41,8 @@ import ContactForm from './ContactForm'
 import Carousel from './CarouselNav'
 import CarouselServices from './CarouselServices'
 import Counter from './Counter'
+import * as motion from 'motion/react-client'
+import { NavLink } from 'react-router-dom'
 
 const Main = ({ margin }) => {
   return (
@@ -53,7 +55,7 @@ const Main = ({ margin }) => {
         <Carousel margin={margin} />
         {/* Hero Section End */}
         {/* Statistics Section Start */}
-        <div className={`relative flex flex-row justify-center items-center gap-x-[3vw] pt-[10vw] overflow-hidden ${margin}`}>
+        <div id="statistics" className={`relative flex flex-row justify-center items-center gap-x-[3vw] pt-[10vw] overflow-hidden ${margin} select-none`}>
           <img
             src={main_svg_2}
             alt=""
@@ -195,86 +197,114 @@ const Main = ({ margin }) => {
             className="absolute translate-x-[23vw] translate-y-[24vw] w-[200vw] h-[80vw] pointer-events-none select-none -z-10 rotate-190"
             aria-hidden="true"
           />
-          <span className='flex flex-row gap-x-[0.5vw] items-center text-[0.8vw] text-[#FF00E5] font-semibold bg-[#F3F1FF] rounded-[0.5vw] px-[0.5vw] py-[0.2vw]'>
+          <span className='flex flex-row gap-x-[0.5vw] items-center text-[0.8vw] text-[#FF00E5] font-semibold bg-[#F3F1FF] rounded-[0.5vw] px-[0.5vw] py-[0.2vw] select-none'>
             <svg xmlns="http://www.w3.org/2000/svg" fill="#FF00E5" viewBox="0 0 24 24" strokeWidth={0} stroke="currentColor" className="size-[0.5vw]">
               <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
             </svg>
             Our Services
           </span>
-          <p className='text-[2vw] text-[#1A1A1A] text-center font-semibold leading-[2.5vw]'>
+          <p className='text-[2vw] text-[#1A1A1A] text-center font-semibold leading-[2.5vw] select-none'>
             <p className='inline text-[#FF00E5]'>All in one platform</p> &ndash; ShipX aggregates cross-<br />border solutions from Amilo & SG Link
           </p>
           <div className='flex flex-row gap-x-[2vw] justify-center items-center'>
             <div className='flex flex-col gap-y-[1vw] w-[25vw]'>
               <div className='flex flex-row'>
-                <div
-                  className='flex flex-row w-full rounded-[1vw] px-[2vw] py-[0.5vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(255,0,229,0.05)] hover:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.35)] transition-shadow duration-1000 ease-in-out'
+                <motion.div
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.8 }}
+                  className='flex flex-row w-full rounded-[1vw] bg-white z-10 px-[2vw] py-[0.5vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(255,0,229,0.05)] hover:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.35)] transition-shadow duration-500 ease-in-out cursor-pointer select-none'
                 >
                   <img className='w-[2vw] h-[2vw]' src={main_icon_1} />
                   <span className='text-[#4F378A] font-semibold text-[1vw] pl-[2vw]'>
                     Express Worldwide
                   </span>
-                </div>
+                </motion.div>
               </div>
               <div className='flex flex-row'>
-                <div
-                  className='flex flex-row w-full rounded-[1vw] px-[2vw] py-[0.5vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(255,0,229,0.05)] hover:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.35)] transition-shadow duration-1000 ease-in-out'
+                <motion.div
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.8 }}
+                  className='flex flex-row w-full rounded-[1vw] bg-white z-10 px-[2vw] py-[0.5vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(255,0,229,0.05)] hover:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.35)] transition-shadow duration-500 ease-in-out cursor-pointer select-none'
                 >
                   <img className='w-[2vw] h-[2vw]' src={main_icon_2} />
                   <span className='text-[#4F378A] font-semibold text-[1vw] pl-[2vw]'>
                     Economy Worldwide
                   </span>
-                </div>
+                </motion.div>
               </div>
               <div className='flex flex-row'>
-                <div className='flex flex-row w-full rounded-[1vw] px-[2vw] py-[0.5vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(255,0,229,0.05)] hover:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.35)] transition-shadow duration-1000 ease-in-out'>
+                <motion.div
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.8 }}
+                  className='flex flex-row w-full rounded-[1vw] bg-white z-10 px-[2vw] py-[0.5vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(255,0,229,0.05)] hover:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.35)] transition-shadow duration-500 ease-in-out cursor-pointer select-none'
+                >
                   <img className='w-[2vw] h-[2vw]' src={main_icon_3} />
                   <span className='text-[#4F378A] font-semibold text-[1vw] pl-[2vw]'>
                     USA Destination Corridor
                   </span>
-                </div>
+                </motion.div>
               </div>
               <div className='flex flex-row'>
-                <div className='flex flex-row w-full rounded-[1vw] px-[2vw] py-[0.5vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(255,0,229,0.05)] hover:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.35)] transition-shadow duration-1000 ease-in-out'>
+                <motion.div
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.8 }}
+                  className='flex flex-row w-full rounded-[1vw] bg-white z-10 px-[2vw] py-[0.5vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(255,0,229,0.05)] hover:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.35)] transition-shadow duration-500 ease-in-out cursor-pointer select-none'
+                >
                   <img className='w-[2vw] h-[2vw]' src={main_icon_4} />
                   <span className='text-[#4F378A] font-semibold text-[1vw] pl-[2vw]'>
                     USA Destination Fulfilment
                   </span>
-                </div>
+                </motion.div>
               </div>
               <div className='flex flex-row'>
-                <div className='flex flex-row w-full rounded-[1vw] px-[2vw] py-[0.5vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(255,0,229,0.05)] hover:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.35)] transition-shadow duration-1000 ease-in-out'>
+                <motion.div
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.8 }}
+                  className='flex flex-row w-full rounded-[1vw] bg-white z-10 px-[2vw] py-[0.5vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(255,0,229,0.05)] hover:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.35)] transition-shadow duration-500 ease-in-out cursor-pointer select-none'
+                >
                   <img className='w-[2vw] h-[2vw]' src={main_icon_5} />
                   <span className='text-[#4F378A] font-semibold text-[1vw] pl-[2vw]'>
                     Fulfilment by Amazon
                   </span>
-                </div>
+                </motion.div>
               </div>
               <div className='flex flex-row'>
-                <div className='flex flex-row w-full rounded-[1vw] px-[2vw] py-[0.5vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(255,0,229,0.05)] hover:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.35)] transition-shadow duration-1000 ease-in-out'>
+                <motion.div
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.8 }}
+                  className='flex flex-row w-full rounded-[1vw] bg-white z-10 px-[2vw] py-[0.5vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(255,0,229,0.05)] hover:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.35)] transition-shadow duration-500 ease-in-out cursor-pointer select-none'
+                >
                   <img className='w-[2vw] h-[2vw]' src={main_icon_6} />
                   <span className='text-[#4F378A] font-semibold text-[1vw] pl-[2vw]'>
                     Bulk Freight to USA
                   </span>
-                </div>
+                </motion.div>
               </div>
               <div className='flex flex-row'>
-                <div className='flex flex-row w-full rounded-[1vw] px-[2vw] py-[0.5vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(255,0,229,0.05)] hover:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.35)] transition-shadow duration-1000 ease-in-out'>
+                <motion.div
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.8 }}
+                  className='flex flex-row w-full rounded-[1vw] bg-white z-10 px-[2vw] py-[0.5vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(255,0,229,0.05)] hover:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.35)] transition-shadow duration-500 ease-in-out cursor-pointer select-none'
+                >
                   <img className='w-[2vw] h-[2vw]' src={main_icon_7} />
                   <span className='text-[#4F378A] font-semibold text-[1vw] pl-[2vw]'>
                     Global Compliance & Documentation
                   </span>
-                </div>
+                </motion.div>
               </div>
               <div className='flex flex-row'>
-                <div className='flex flex-row w-full rounded-[1vw] px-[2vw] py-[0.5vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(255,0,229,0.05)] hover:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.35)] transition-shadow duration-1000 ease-in-out'>
+                <motion.div
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.8 }}
+                  className='flex flex-row w-full rounded-[1vw] bg-white z-10 px-[2vw] py-[0.5vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(255,0,229,0.05)] hover:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.35)] transition-shadow duration-500 ease-in-out cursor-pointer select-none'
+                >
                   <img className='w-[2vw] h-[2vw]' src={main_icon_8} />
                   <span className='text-[#4F378A] font-semibold text-[1vw] pl-[2vw]'>
                     Financing and Customer Service
                   </span>
-                </div>
+                </motion.div>
               </div>
-              <div className="flex flex-row gap-x-[1vw] text-[0.8vw] font-normal justify-center items-center">
+              <div className="flex flex-row gap-x-[1vw] text-[0.8vw] font-normal justify-center items-center select-none">
                 <div
                   className="
                     bg-gradient-to-t from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
@@ -297,7 +327,9 @@ const Main = ({ margin }) => {
                     Book a Demo
                   </button>
                 </div>
-                <button
+                <NavLink
+                  to='/#contact-us'
+                  end
                   className="
                     bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
                     bg-[length:200%_100%] bg-[position:0%_0%]
@@ -308,16 +340,16 @@ const Main = ({ margin }) => {
                   "
                 >
                   Contact Us
-                </button>
+                </NavLink>
               </div>
             </div>
             <CarouselServices />
           </div>
-          <span className='text-[#63666D] text-[0.6vw]'>*Prices shown are starting prices only and may vary by country, specifications, and applicable conditions</span>
+          <span className='text-[#63666D] text-[0.6vw] select-none'>*Prices shown are starting prices only and may vary by country, specifications, and applicable conditions</span>
         </div>
         {/* Services Section End */}
         {/* Platform Section Start */}
-        <div id="platform" className={`min-h-screen relative flex flex-col justify-center items-center py-[10vw] ${margin} overflow-hidden`}>
+        <div id="platform" className={`min-h-screen relative flex flex-col justify-center items-center py-[10vw] ${margin} overflow-hidden select-none`}>
           <img className='absolute w-[50vw] h-[45vw] translate-x-[17vw] -translate-y-[1vw] -z-10' src={main_img_4} />
           <div className='flex flex-row gap-x-[0.1vw] justify-center items-center'>
             <div className='flex flex-col gap-y-[1vw]'>
@@ -359,7 +391,9 @@ const Main = ({ margin }) => {
                     Book a Demo
                   </button>
                 </div>
-                <button
+                <NavLink
+                  to='/#contact-us'
+                  end
                   className="
                     bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
                     bg-[length:200%_100%] bg-[position:0%_0%]
@@ -370,7 +404,7 @@ const Main = ({ margin }) => {
                   "
                 >
                   Contact Us
-                </button>
+                </NavLink>
               </div>
             </div>
             <img
@@ -454,7 +488,7 @@ const Main = ({ margin }) => {
         </div>
         {/* Platform Section End */}
         {/* Freight & Customs Section Start */}
-        <div className={`flex flex-col gap-y-[2vw] ${margin}`}>
+        <div className={`flex flex-col gap-y-[2vw] ${margin} select-none`}>
           <div className='flex flex-row justify-between items-center gap-x-[5vw]'>
             <div className='flex flex-col gap-y-[1vw]'>
               <span className='flex flex-row gap-x-[0.5vw] items-center text-[0.8vw] text-[#FF00E5] font-semibold bg-[#F3F1FF] rounded-[0.5vw] px-[0.5vw] py-[0.2vw]'>
@@ -489,7 +523,9 @@ const Main = ({ margin }) => {
                     Book a Demo
                   </button>
                 </div>
-                <button
+                <NavLink
+                  to='/#contact-us'
+                  end
                   className="
                     bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
                     bg-[length:200%_100%] bg-[position:0%_0%]
@@ -500,7 +536,7 @@ const Main = ({ margin }) => {
                   "
                 >
                   Contact Us
-                </button>
+                </NavLink>
               </div>
             </div>
             <div className='flex flex-col gap-y-[1vw]'>
@@ -613,7 +649,7 @@ const Main = ({ margin }) => {
         </div>
         {/* Freight & Customs Section End */}
         {/* Offices Section Start */}
-        <div id="network" className={`min-h-screen relative flex flex-col justify-center items-center pt-[16vw] pb-[5vw] ${margin} overflow-hidden`}>
+        <div id="network" className={`min-h-screen relative flex flex-col justify-center items-center pt-[16vw] pb-[5vw] ${margin} overflow-hidden select-none`}>
           <img
             src={main_svg_10}
             alt=""
@@ -655,7 +691,9 @@ const Main = ({ margin }) => {
                       Book a Demo
                     </button>
                   </div>
-                  <button
+                  <NavLink
+                    to='/#contact-us'
+                    end
                     className="
                       bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
                       bg-[length:200%_100%] bg-[position:0%_0%]
@@ -666,7 +704,7 @@ const Main = ({ margin }) => {
                     "
                   >
                     Contact Us
-                  </button>
+                  </NavLink>
                 </div>
               </div>
               <p className='text-[#63666D] text-[0.85vw] font-medium opacity-80 tracking-wider'>
@@ -893,13 +931,13 @@ const Main = ({ margin }) => {
             className="absolute translate-x-[30vw] -translate-y-[5vw] w-[200vw] h-[53vw] pointer-events-none select-none opacity-20 -z-10"
             aria-hidden="true"
           />
-          <span className='flex flex-row gap-x-[0.5vw] items-center text-[0.8vw] text-[#FF00E5] font-semibold bg-[#F3F1FF] rounded-[0.5vw] px-[0.5vw] py-[0.2vw] cursor-pointer'>
+          <span className='flex flex-row gap-x-[0.5vw] items-center text-[0.8vw] text-[#FF00E5] font-semibold bg-[#F3F1FF] rounded-[0.5vw] px-[0.5vw] py-[0.2vw] cursor-pointer select-none'>
             <svg xmlns="http://www.w3.org/2000/svg" fill="#FF00E5" viewBox="0 0 24 24" strokeWidth={0} stroke="currentColor" className="size-[0.5vw]">
               <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
             </svg>
             Contact Us
           </span>
-          <p className='text-[2.3vw] text-[#1A1A1A] text-center font-semibold leading-[2.5vw] mt-[1vw] mb-[8vw]'>
+          <p className='text-[2.3vw] text-[#1A1A1A] text-center font-semibold leading-[2.5vw] mt-[1vw] mb-[8vw] select-none'>
             Ready to take your products <p className='inline text-[#FF00E5]'>global?</p> <br />
             Let's talk.
           </p>
@@ -911,8 +949,8 @@ const Main = ({ margin }) => {
               aria-hidden="true"
             />
             <div className='flex flex-col w-[20vw] text-[0.8vw]'>
-              <span className='text-[#0E0E0E] text-[1.5vw] font-semibold'>Contact Information</span>
-              <span className='text-black text-[0.9vw] font-normal mt-[1vw]'>Let's partner and grow</span>
+              <span className='text-[#0E0E0E] text-[1.5vw] font-semibold select-none'>Contact Information</span>
+              <span className='text-black text-[0.9vw] font-normal mt-[1vw] select-none'>Let's partner and grow</span>
               <div className="flex flex-col gap-y-[1vw] mt-[3vw]">
                 {/* Contact Number */}
                 <div className="flex flex-row items-center">
