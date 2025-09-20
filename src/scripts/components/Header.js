@@ -1,17 +1,24 @@
-import { NavLink } from "react-router-dom"
-import { shipx, sglink, main_img_14 } from '../../assets/assets'
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { shipx, sglink, main_img_14 } from "../../assets/assets";
+import * as motion from 'motion/react-client'
 
-const linkClass = "transition-colors duration-500 hover:text-[#FF00E5] hover:underline hover:decoration-2 hover:underline-offset-4"
+const linkClass =
+  "transition-colors duration-500 hover:text-[#FF00E5] hover:underline hover:decoration-2 hover:underline-offset-4";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <header
       className="
         sticky top-0 z-50 select-none
         flex flex-row bg-white text-[#1A1A1A] justify-between items-center 
-        py-[1vw] px-[8vw] shadow-[0_0.5vw_0.5vw_rgba(255,0,229,0.15)]
+        md:py-[1vw] md:px-[8vw] py-[5vw] px-[10vw] md:shadow-[0_0.5vw_0.5vw_rgba(255,0,229,0.15)]
+        shadow-[0_3vw_5vw_rgba(255,0,229,0.15)]
       "
     >
+      {/* Left: Logo */}
       <div className="flex flex-row gap-x-[1vw] justify-center items-center">
         <div className="flex flex-row gap-x-[0.5vw] justify-center items-center">
           <NavLink
@@ -20,7 +27,7 @@ const Header = () => {
             className={linkClass}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            <img src={shipx} alt="ShipX Logo" className="w-[3vw] h-[1.5vw]" />
+            <img src={shipx} alt="ShipX Logo" className="md:w-[3vw] md:h-[1.5vw] w-[14vw] h-[7vw]" />
           </NavLink>
           <NavLink
             to="/"
@@ -28,44 +35,37 @@ const Header = () => {
             className={linkClass}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            <img src={sglink} alt="SGLink Logo" className="w-[3vw] h-[1vw]" />
+            <img src={sglink} alt="SGLink Logo" className="md:w-[3vw] md:h-[1.5vw] w-[16vw] h-[5vw]" />
           </NavLink>
         </div>
         <img className="h-[1vw] w-[1vw]" src={main_img_14} />
-        <span className="text-[0.8vw] font-normal">ASEAN's Next Generation Platform</span>
+        <span className="hidden md:inline text-[0.8vw] font-normal">
+          ASEAN's Next Generation Platform
+        </span>
       </div>
-      <nav className="flex flex-row gap-x-[2.5vw] font-medium text-[0.8vw]">
+
+      {/* Right: Nav + Buttons (hidden on mobile) */}
+      <nav className="hidden md:flex flex-row gap-x-[2.5vw] font-medium text-[0.8vw]">
         <NavLink
           to="/"
           end
           className={linkClass}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          &nbsp;&nbsp;Home&nbsp;&nbsp;
+          Home
         </NavLink>
-        <NavLink
-          to="/#services"
-          end
-          className={linkClass}
-        >
-          &nbsp;&nbsp;Services&nbsp;&nbsp;
+        <NavLink to="/#services" end className={linkClass}>
+          Services
         </NavLink>
-        <NavLink
-          to="/#platform"
-          end
-          className={linkClass}
-        >
-          &nbsp;&nbsp;Platform&nbsp;&nbsp;
+        <NavLink to="/#platform" end className={linkClass}>
+          Platform
         </NavLink>
-        <NavLink
-          to="/#network"
-          end
-          className={linkClass}
-        >
-          &nbsp;&nbsp;Network&nbsp;&nbsp;
+        <NavLink to="/#network" end className={linkClass}>
+          Network
         </NavLink>
       </nav>
-      <div className="flex flex-row gap-x-[1vw] text-[0.8vw] font-normal">
+
+      <div className="hidden md:flex flex-row gap-x-[1vw] text-[0.8vw] font-normal">
         <div
           className="
             bg-gradient-to-t from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
@@ -103,8 +103,87 @@ const Header = () => {
           Contact Us
         </NavLink>
       </div>
-    </header>
-  )
-}
 
-export default Header
+      {/* Mobile Hamburger */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="relative md:hidden flex flex-col justify-between w-[8vw] h-[4.5vw] p-[0.1vw] focus:outline-none"
+      >
+        {/* Top bar */}
+        <motion.span
+          animate={isOpen ? { rotate: 45, y: 10 } : { rotate: 0, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="block h-[0.5vw] w-full bg-black rounded-full"
+        />
+
+        {/* Middle bar */}
+        <motion.span
+          animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
+          transition={{ duration: 0.2 }}
+          className="block h-[0.5vw] w-full bg-black rounded-full"
+        />
+
+        {/* Bottom bar */}
+        <motion.span
+          animate={isOpen ? { rotate: -45, y: -10 } : { rotate: 0, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="block h-[0.5vw] w-full bg-black rounded-full"
+        />
+      </button>
+
+      {/* Mobile Dropdown Menu */}
+      {isOpen && (
+        <div className="absolute top-full right-0 w-full bg-white shadow-[0_7vw_10vw_rgba(255,0,229,0.10)] flex flex-col items-center p-[5vw] gap-y-[2vw] md:hidden text-[#1A1A1A] text-[3.5vw] font-medium">
+          <NavLink
+            to="/"
+            end 
+            className={`${linkClass} w-full text-left px-[5vw]`} 
+            onClick={() => {
+              setIsOpen(false);
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/#services"
+            end
+            className={`${linkClass} w-full text-left px-[5vw]`} 
+            onClick={() => setIsOpen(false)}>
+            Services
+          </NavLink>
+          <NavLink
+            to="/#platform"
+            end
+            className={`${linkClass} w-full text-left px-[5vw]`} 
+            onClick={() => setIsOpen(false)}>
+            Platform
+          </NavLink>
+          <NavLink
+            to="/#network"
+            end
+            className={`${linkClass} w-full text-left px-[5vw]`}
+            onClick={() => setIsOpen(false)}>
+            Network
+          </NavLink>
+          <NavLink
+            to="/"
+            end
+            className={`${linkClass} w-full text-left px-[5vw]`}
+            onClick={() => setIsOpen(false)}>
+            Book a Demo
+          </NavLink>
+          <NavLink
+            to="/"
+            end
+            className={`${linkClass} w-full text-left px-[5vw]`}
+            onClick={() => setIsOpen(false)}>
+            Contact Us
+          </NavLink>
+        </div>
+      )}
+    </header>
+  );
+};
+
+export default Header;

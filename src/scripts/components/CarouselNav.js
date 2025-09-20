@@ -15,7 +15,7 @@ export default function CarouselNav() {
       autoplayDelay={15000}
       loop={true}
       transition={{ duration: 1 }}
-      className="h-[90vh] w-screen rounded-none"
+      className="md:h-[90vh] h-[85vh] w-screen rounded-none"
       prevArrow={({ handlePrev }) => (
         <button
           onClick={handlePrev}
@@ -24,7 +24,7 @@ export default function CarouselNav() {
             bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
             bg-[length:200%_100%] bg-[position:0%_0%] hover:bg-[position:100%_0%]
             transition-[background-position] duration-1000 ease-in-out
-            rounded-full p-[0.5vw] shadow-lg cursor-pointer
+            rounded-full p-[0.5vw] shadow-lg cursor-pointer md:flex hidden
           "
         >
           {/* Left arrow SVG */}
@@ -42,7 +42,7 @@ export default function CarouselNav() {
             bg-gradient-to-r from-[#FF00E5] from-0% via-[#FF00E5] via-60% to-[#4F378A] to-100%
             bg-[length:200%_100%] bg-[position:100%_0%] hover:bg-[position:0%_0%]
             transition-[background-position] duration-1000 ease-in-out
-            rounded-full p-[0.5vw] shadow-lg cursor-pointer
+            rounded-full p-[0.5vw] shadow-lg cursor-pointer md:flex hidden
           "
         >
           {/* Right arrow SVG */}
@@ -67,10 +67,10 @@ export default function CarouselNav() {
       )}
     >
       {/* First slide: custom hero section */}
-      <div className="relative flex flex-row items-center px-[5vw] h-[90vh] bg-white">
-        <div className="flex flex-col w-[55%]">
+      <div className="relative flex md:flex-row flex-col md:gap-y-0 gap-y-[10vw] items-center px-[5vw] md:pt-0 pt-[10vw] h-[90vh] bg-white">
+        <div className="flex flex-col md:w-[55%] w-full">
           {/* Tagline */}
-          <div className="flex flex-row bg-[#F9F5FF] w-fit select-none rounded-full pl-[0.3vw] pr-[0.45vw] py-[0.2vw] text-[0.6vw] items-center font-semibold text-[#6941C6]">
+          <div className="flex flex-row bg-[#F9F5FF] w-fit select-none rounded-full pl-[0.3vw] pr-[0.45vw] py-[0.2vw] md:text-[0.6vw] text-[2vw] items-center font-semibold text-[#6941C6]">
             <span className="bg-white px-[0.5vw] py-[0.05vw] rounded-full border border-[#E9D7FE]">
               ShipX
             </span>
@@ -92,30 +92,30 @@ export default function CarouselNav() {
           </div>
 
           {/* Headline */}
-          <div className="flex flex-col gap-y-[1.5vw] select-none mt-0">
-            <h1 className="font-bold text-[4vw] leading-[3.5vw]">
+          <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[3.5vw] select-none mt-0">
+            <h1 className="font-bold md:text-[4vw] text-[8vw] md:leading-[3.5vw] leading-[8.5vw]">
               Everything You Need <br />
               To Grow <p className="inline text-[#FF00E5]">Internationally</p>
             </h1>
-            <p className="text-[#63666D] text-[0.8vw] font-medium opacity-80">
+            <p className="text-[#63666D] md:text-[0.8vw] text-[2.5vw] font-medium opacity-80">
               From Economy Shipping To Express Delivery, FBA Fulfillment To
               Marketplace <br /> integrations, ShipX Equips You With The Tools
               To Scale Worldwide
             </p>
-            <p className="text-[#402B73] text-[0.8vw] font-bold">
+            <p className="text-[#402B73] md:text-[0.8vw] text-[2.5vw] font-bold">
               Community Of 1000+ International Shippers From ASEAN
             </p>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-row gap-x-[1vw] text-[0.7vw] font-normal my-[2.5vw]">
+          <div className="flex flex-row gap-x-[1vw] md:text-[0.7vw] text-[2.5vw] font-normal md:my-[2.5vw] my-[3.5vw]">
             <button
               className="
                 bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
                 bg-[length:200%_100%] bg-[position:0%_0%]
                 hover:bg-[position:100%_0%]
                 transition-[background-position] duration-1000 ease-in-out
-                py-[0.5vw] px-[1.5vw] rounded-[2vw]
+                md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] rounded-[2vw]
                 text-white font-medium cursor-pointer
               "
             >
@@ -127,7 +127,7 @@ export default function CarouselNav() {
                 bg-[length:100%_200%] bg-[position:0%_100%]
                 hover:bg-[position:0%_0%]
                 transition-[background-position] duration-1000 ease-in-out
-                p-[0.1vw] rounded-[2vw]
+                md:p-[0.1vw] p-[0.5vw] rounded-[2vw]
                 text-white font-medium
               "
             >
@@ -135,7 +135,7 @@ export default function CarouselNav() {
                 className="
                   flex flex-row gap-x-[0.5vw] items-center
                   bg-white
-                  py-[0.5vw] px-[1.5vw] rounded-[2vw] font-medium
+                  md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-[1.5vw] font-medium
                   text-[#4F378A] relative z-10
                   border-none cursor-pointer
                 "
@@ -162,16 +162,16 @@ export default function CarouselNav() {
 
           {/* Trusted By */}
           <div className="flex flex-col select-none">
-            <span className="text-[#63666D] text-[0.6vw] text-medium">
+            <span className="text-[#63666D] md:text-[0.6vw] text-[2vw] text-medium">
               Trusted By Industry <b>Leaders & 2500+ More</b>
             </span>
             <div className="relative w-full h-fit overflow-hidden">
                 <div className="flex animate-scroll items-center gap-[3vw]">
                   {/* Original logos */}
-                  <img src={main_logo_1} alt="scrolling" className="h-[6vw] object-contain" />
+                  <img src={main_logo_1} alt="scrolling" className="md:h-[6vw] h-[15vw] object-contain" />
 
                   {/* Duplicate logos for seamless loop */}
-                  <img src={main_logo_1} alt="scrolling" className="h-[6vw] object-contain" />
+                  <img src={main_logo_1} alt="scrolling" className="md:h-[6vw] h-[15vw] object-contain" />
                 </div>
 
                 <style jsx>{`
@@ -194,9 +194,9 @@ export default function CarouselNav() {
         </div>
 
         {/* Hero Image */}
-        <div className="w-[45%] flex justify-end items-center select-none">
+        <div className="md:w-[45%] w-full flex justify-end items-center select-none">
           <img
-            className="w-[40vw] h-[40vw]"
+            className="md:w-[40vw] w-full md:h-[40vw] h-[80vw]"
             src={main_svg_1}
             alt="Main SVG 1"
           />
@@ -204,10 +204,10 @@ export default function CarouselNav() {
       </div>
 
       {/* Second slide: custom hero section */}
-      <div className="relative flex flex-row items-center px-[5vw] h-[90vh] bg-white">
-        <div className="flex flex-col w-[55%]">
+      <div className="relative flex md:flex-row flex-col md:gap-y-0 gap-y-[10vw] items-center px-[5vw] md:pt-0 pt-[10vw] h-[90vh] bg-white">
+        <div className="flex flex-col md:w-[55%] w-full">
           {/* Tagline */}
-          <div className="flex flex-row bg-[#F9F5FF] w-fit select-none rounded-full pl-[0.3vw] pr-[0.45vw] py-[0.2vw] text-[0.6vw] items-center font-semibold text-[#6941C6]">
+          <div className="flex flex-row bg-[#F9F5FF] w-fit select-none rounded-full pl-[0.3vw] pr-[0.45vw] py-[0.2vw] md:text-[0.6vw] text-[2vw] items-center font-semibold text-[#6941C6]">
             <span className="bg-white px-[0.5vw] py-[0.05vw] rounded-full border border-[#E9D7FE]">
               ShipX
             </span>
@@ -228,31 +228,30 @@ export default function CarouselNav() {
             </svg>
           </div>
 
-          {/* Headline */}
-          <div className="flex flex-col gap-y-[1.5vw] select-none mt-0">
-            <h1 className="font-bold text-[4vw] leading-[3.5vw]">
+          <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[3.5vw] select-none mt-0">
+            <h1 className="font-bold md:text-[4vw] text-[7.5vw] md:leading-[3.5vw] leading-[8.5vw]">
               Seamless Entry To The
               <p className="inline text-[#FF00E5]"> US <br />E-Commerce </p>
               Ecosystem
             </h1>
-            <p className="text-[#63666D] text-[0.8vw] font-medium opacity-80">
+            <p className="text-[#63666D] md:text-[0.8vw] text-[2.5vw] font-medium opacity-80">
               Enter And Scale In The U.S. Market With Custom Logistics Solutions Built To <br />
               Support Sellers From Launch To Nationwide Expansion
             </p>
-            <p className="text-[#402B73] text-[0.8vw] font-bold">
+            <p className="text-[#402B73] md:text-[0.8vw] text-[2.5vw] font-bold">
               Your Gateway To U.S. E-Commerce
             </p>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-row gap-x-[1vw] text-[0.7vw] font-normal my-[2.5vw]">
+          <div className="flex flex-row gap-x-[1vw] md:text-[0.7vw] text-[2.5vw] font-normal md:my-[2.5vw] my-[3.5vw]">
             <button
               className="
                 bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
                 bg-[length:200%_100%] bg-[position:0%_0%]
                 hover:bg-[position:100%_0%]
                 transition-[background-position] duration-1000 ease-in-out
-                py-[0.5vw] px-[1.5vw] rounded-[2vw]
+                md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] rounded-[2vw]
                 text-white font-medium cursor-pointer
               "
             >
@@ -264,7 +263,7 @@ export default function CarouselNav() {
                 bg-[length:100%_200%] bg-[position:0%_100%]
                 hover:bg-[position:0%_0%]
                 transition-[background-position] duration-1000 ease-in-out
-                p-[0.1vw] rounded-[2vw]
+                md:p-[0.1vw] p-[0.5vw] rounded-[2vw]
                 text-white font-medium
               "
             >
@@ -272,7 +271,7 @@ export default function CarouselNav() {
                 className="
                   flex flex-row gap-x-[0.5vw] items-center
                   bg-white
-                  py-[0.5vw] px-[1.5vw] rounded-[2vw] font-medium
+                  md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-[1.5vw] font-medium
                   text-[#4F378A] relative z-10
                   border-none cursor-pointer
                 "
@@ -299,16 +298,16 @@ export default function CarouselNav() {
 
           {/* Trusted By */}
           <div className="flex flex-col select-none">
-            <span className="text-[#63666D] text-[0.6vw] text-medium">
-              Trusted By Industry <b>Leaders & 2500+ More</b>
+            <span className="text-[#63666D] md:text-[0.6vw] text-[2vw] text-medium">
+              Synergized by Industry <b>Partners & 50+ More</b>
             </span>
             <div className="relative w-full h-fit overflow-hidden">
                 <div className="flex animate-scroll items-center gap-[3vw]">
                   {/* Original logos */}
-                  <img src={main_logo_2} alt="scrolling" className="h-[6vw] object-contain" />
+                  <img src={main_logo_2} alt="scrolling" className="md:h-[6vw] h-[15vw] object-contain" />
 
                   {/* Duplicate logos for seamless loop */}
-                  <img src={main_logo_2} alt="scrolling" className="h-[6vw] object-contain" />
+                  <img src={main_logo_2} alt="scrolling" className="md:h-[6vw] h-[15vw] object-contain" />
                 </div>
 
                 <style jsx>{`
@@ -331,9 +330,9 @@ export default function CarouselNav() {
         </div>
 
         {/* Hero Image */}
-        <div className="w-[45%] flex justify-end items-center">
+        <div className="md:w-[45%] w-full flex justify-end items-center select-none">
           <img
-            className="w-[40vw] h-[40vw]"
+            className="md:w-[40vw] w-full md:h-[40vw] h-[80vw]"
             src={main_svg_11}
             alt="Main SVG 1"
           />
@@ -341,10 +340,10 @@ export default function CarouselNav() {
       </div>
 
       {/* Third slide: custom hero section */}
-      <div className="relative flex flex-row items-center px-[5vw] h-[90vh] bg-white">
-        <div className="flex flex-col w-[55%]">
+      <div className="relative flex md:flex-row flex-col md:gap-y-0 gap-y-[10vw] items-center px-[5vw] md:pt-0 pt-[10vw] h-[90vh] bg-white">
+        <div className="flex flex-col md:w-[55%] w-full">
           {/* Tagline */}
-          <div className="flex flex-row bg-[#F9F5FF] w-fit select-none rounded-full pl-[0.3vw] pr-[0.45vw] py-[0.2vw] text-[0.6vw] items-center font-semibold text-[#6941C6]">
+          <div className="flex flex-row bg-[#F9F5FF] w-fit select-none rounded-full pl-[0.3vw] pr-[0.45vw] py-[0.2vw] md:text-[0.6vw] text-[2vw] items-center font-semibold text-[#6941C6]">
             <span className="bg-white px-[0.5vw] py-[0.05vw] rounded-full border border-[#E9D7FE]">
               ShipX
             </span>
@@ -366,29 +365,29 @@ export default function CarouselNav() {
           </div>
 
           {/* Headline */}
-          <div className="flex flex-col gap-y-[1.5vw] select-none mt-0">
-            <h1 className="font-bold text-[4vw] leading-[3.5vw]">
+          <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[3.5vw] select-none mt-0">
+            <h1 className="font-bold md:text-[4vw] text-[8vw] md:leading-[3.5vw] leading-[8.5vw]">
               Delivering To <p className="inline text-[#FF00E5]">190+ <br /> Countries&nbsp;</p>
               With Ease
             </h1>
-            <p className="text-[#63666D] text-[0.8vw] font-medium opacity-80">
+            <p className="text-[#63666D] md:text-[0.8vw] text-[2.5vw] font-medium opacity-80">
               Reach Customers Worldwide With Seamless Logistics That Simplify Cross-<br />
               Border Sales, Ensuring Smooth Growth Without Operational Headaches
             </p>
-            <p className="text-[#402B73] text-[0.8vw] font-bold">
+            <p className="text-[#402B73] md:text-[0.8vw] text-[2.5vw] font-bold">
               Take Your Brand Global, Stress-Free
             </p>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-row gap-x-[1vw] text-[0.7vw] font-normal my-[2.5vw]">
+          <div className="flex flex-row gap-x-[1vw] md:text-[0.7vw] text-[2.5vw] font-normal md:my-[2.5vw] my-[3.5vw]">
             <button
               className="
                 bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
                 bg-[length:200%_100%] bg-[position:0%_0%]
                 hover:bg-[position:100%_0%]
                 transition-[background-position] duration-1000 ease-in-out
-                py-[0.5vw] px-[1.5vw] rounded-[2vw]
+                md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] rounded-[2vw]
                 text-white font-medium cursor-pointer
               "
             >
@@ -400,7 +399,7 @@ export default function CarouselNav() {
                 bg-[length:100%_200%] bg-[position:0%_100%]
                 hover:bg-[position:0%_0%]
                 transition-[background-position] duration-1000 ease-in-out
-                p-[0.1vw] rounded-[2vw]
+                md:p-[0.1vw] p-[0.5vw] rounded-[2vw]
                 text-white font-medium
               "
             >
@@ -408,7 +407,7 @@ export default function CarouselNav() {
                 className="
                   flex flex-row gap-x-[0.5vw] items-center
                   bg-white
-                  py-[0.5vw] px-[1.5vw] rounded-[2vw] font-medium
+                  md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-[1.5vw] font-medium
                   text-[#4F378A] relative z-10
                   border-none cursor-pointer
                 "
@@ -435,16 +434,16 @@ export default function CarouselNav() {
 
           {/* Trusted By */}
           <div className="flex flex-col select-none">
-            <span className="text-[#63666D] text-[0.6vw] text-medium">
-              Trusted By Industry <b>Leaders & 2500+ More</b>
+            <span className="text-[#63666D] md:text-[0.6vw] text-[2vw] text-medium">
+              Connected By Leading <b>Integrations & 20+ More</b>
             </span>
             <div className="relative w-full h-fit overflow-hidden">
                 <div className="flex animate-scroll items-center gap-[3vw]">
                   {/* Original logos */}
-                  <img src={main_logo_3} alt="scrolling" className="h-[6vw] object-contain" />
+                  <img src={main_logo_3} alt="scrolling" className="md:h-[6vw] h-[15vw] object-contain" />
 
                   {/* Duplicate logos for seamless loop */}
-                  <img src={main_logo_3} alt="scrolling" className="h-[6vw] object-contain" />
+                  <img src={main_logo_3} alt="scrolling" className="md:h-[6vw] h-[15vw] object-contain" />
                 </div>
 
                 <style jsx>{`
@@ -467,9 +466,9 @@ export default function CarouselNav() {
         </div>
 
         {/* Hero Image */}
-        <div className="w-[45%] flex justify-end items-center">
+        <div className="md:w-[45%] w-full flex justify-end items-center select-none">
           <img
-            className="w-[40vw] h-[40vw]"
+            className="md:w-[40vw] w-full md:h-[40vw] h-[80vw]"
             src={main_svg_12}
             alt="Main SVG 1"
           />
