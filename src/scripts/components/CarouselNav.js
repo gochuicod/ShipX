@@ -15,7 +15,11 @@ export default function CarouselNav() {
       autoplayDelay={15000}
       loop={true}
       transition={{ duration: 1 }}
-      className="md:h-[90vh] h-[85vh] w-screen rounded-none"
+      className="md:h-[90vh] h-[100vh] w-screen rounded-none"
+      swipe={true}          // enable swipe
+      draggable={true}      // allow dragging
+      touchMove={true}      // respond to touch
+      verticalSwiping={false} // make sure it only reacts to horizontal
       prevArrow={({ handlePrev }) => (
         <button
           onClick={handlePrev}
@@ -53,12 +57,12 @@ export default function CarouselNav() {
         </button>
       )}
       navigation={({ setActiveIndex, activeIndex, length }) => (
-        <div className="absolute bottom-4 left-2/4 flex -translate-x-2/4 gap-[0.4vw]">
+        <div className="absolute bottom-4 left-2/4 flex -translate-x-2/4 md:gap-[0.4vw] gap-[1vw]">
           {new Array(length).fill("").map((_, i) => (
             <span
               key={i}
-              className={`block h-[0.3vw] cursor-pointer rounded-2xl transition-all content-[''] ${
-                activeIndex === i ? "w-[1.5vw] bg-[#FF00E5]" : "w-[1vw] bg-[#FF00E5]/50"
+              className={`block md:h-[0.3vw] h-[2vw] cursor-pointer rounded-2xl transition-all content-[''] ${
+                activeIndex === i ? "md:w-[1.5vw] w-[5.5vw] bg-[#FF00E5]" : "md:w-[0.3vw] w-[2vw] bg-[#FF00E5]/50"
               }`}
               onClick={() => setActiveIndex(i)}
             />
@@ -67,8 +71,8 @@ export default function CarouselNav() {
       )}
     >
       {/* First slide: custom hero section */}
-      <div className="relative flex md:flex-row flex-col md:gap-y-0 gap-y-[10vw] items-center px-[5vw] md:pt-0 pt-[10vw] h-[90vh] bg-white">
-        <div className="flex flex-col md:w-[55%] w-full">
+      <div className="relative flex md:flex-row flex-col md:gap-y-0 items-center px-[5vw] md:pt-0 pt-[10vw] h-[90vh] bg-white">
+        <div className="flex-1 flex-col md:w-[55%] w-full">
           {/* Tagline */}
           <div className="flex flex-row bg-[#F9F5FF] w-fit select-none rounded-full pl-[0.3vw] pr-[0.45vw] py-[0.2vw] md:text-[0.6vw] text-[2vw] items-center font-semibold text-[#6941C6]">
             <span className="bg-white px-[0.5vw] py-[0.05vw] rounded-full border border-[#E9D7FE]">
@@ -92,8 +96,8 @@ export default function CarouselNav() {
           </div>
 
           {/* Headline */}
-          <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[3.5vw] select-none mt-0">
-            <h1 className="font-bold md:text-[4vw] text-[8vw] md:leading-[3.5vw] leading-[8.5vw]">
+          <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[5vw] select-none mt-0">
+            <h1 className="font-bold md:text-[4vw] text-[7.5vw] md:leading-[3.5vw] leading-[8.5vw]">
               Everything You Need <br />
               To Grow <p className="inline text-[#FF00E5]">Internationally</p>
             </h1>
@@ -108,7 +112,7 @@ export default function CarouselNav() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-row gap-x-[1vw] md:text-[0.7vw] text-[2.5vw] font-normal md:my-[2.5vw] my-[3.5vw]">
+          <div className="flex flex-row gap-x-[1vw] md:text-[0.7vw] text-[2.5vw] font-normal md:my-[2.5vw] my-[5vw]">
             <button
               className="
                 bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
@@ -194,9 +198,9 @@ export default function CarouselNav() {
         </div>
 
         {/* Hero Image */}
-        <div className="md:w-[45%] w-full flex justify-end items-center select-none">
+        <div className="md:w-[45%] w-full flex-1 justify-end items-center select-none">
           <img
-            className="md:w-[40vw] w-full md:h-[40vw] h-[80vw]"
+            className="md:w-[40vw] w-full md:h-[40vw] h-full md:p-0 p-[5vw]"
             src={main_svg_1}
             alt="Main SVG 1"
           />
@@ -204,8 +208,8 @@ export default function CarouselNav() {
       </div>
 
       {/* Second slide: custom hero section */}
-      <div className="relative flex md:flex-row flex-col md:gap-y-0 gap-y-[10vw] items-center px-[5vw] md:pt-0 pt-[10vw] h-[90vh] bg-white">
-        <div className="flex flex-col md:w-[55%] w-full">
+      <div className="relative flex md:flex-row flex-col md:gap-y-0 items-center px-[5vw] md:pt-0 pt-[10vw] h-[90vh] bg-white">
+        <div className="flex-1 flex-col md:w-[55%] w-full">
           {/* Tagline */}
           <div className="flex flex-row bg-[#F9F5FF] w-fit select-none rounded-full pl-[0.3vw] pr-[0.45vw] py-[0.2vw] md:text-[0.6vw] text-[2vw] items-center font-semibold text-[#6941C6]">
             <span className="bg-white px-[0.5vw] py-[0.05vw] rounded-full border border-[#E9D7FE]">
@@ -228,7 +232,7 @@ export default function CarouselNav() {
             </svg>
           </div>
 
-          <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[3.5vw] select-none mt-0">
+          <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[5vw] select-none mt-0">
             <h1 className="font-bold md:text-[4vw] text-[7.5vw] md:leading-[3.5vw] leading-[8.5vw]">
               Seamless Entry To The
               <p className="inline text-[#FF00E5]"> US <br />E-Commerce </p>
@@ -244,7 +248,7 @@ export default function CarouselNav() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-row gap-x-[1vw] md:text-[0.7vw] text-[2.5vw] font-normal md:my-[2.5vw] my-[3.5vw]">
+          <div className="flex flex-row gap-x-[1vw] md:text-[0.7vw] text-[2.5vw] font-normal md:my-[2.5vw] my-[5vw]">
             <button
               className="
                 bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
@@ -330,9 +334,9 @@ export default function CarouselNav() {
         </div>
 
         {/* Hero Image */}
-        <div className="md:w-[45%] w-full flex justify-end items-center select-none">
+        <div className="md:w-[45%] w-full flex-1 justify-end items-center select-none">
           <img
-            className="md:w-[40vw] w-full md:h-[40vw] h-[80vw]"
+            className="md:w-[40vw] w-full md:h-[40vw] h-full md:p-0 p-[5vw]"
             src={main_svg_11}
             alt="Main SVG 1"
           />
@@ -340,8 +344,8 @@ export default function CarouselNav() {
       </div>
 
       {/* Third slide: custom hero section */}
-      <div className="relative flex md:flex-row flex-col md:gap-y-0 gap-y-[10vw] items-center px-[5vw] md:pt-0 pt-[10vw] h-[90vh] bg-white">
-        <div className="flex flex-col md:w-[55%] w-full">
+      <div className="relative flex md:flex-row flex-col md:gap-y-0 items-center px-[5vw] md:pt-0 pt-[10vw] h-[90vh] bg-white">
+        <div className="flex-1 flex-col md:w-[55%] w-full">
           {/* Tagline */}
           <div className="flex flex-row bg-[#F9F5FF] w-fit select-none rounded-full pl-[0.3vw] pr-[0.45vw] py-[0.2vw] md:text-[0.6vw] text-[2vw] items-center font-semibold text-[#6941C6]">
             <span className="bg-white px-[0.5vw] py-[0.05vw] rounded-full border border-[#E9D7FE]">
@@ -365,7 +369,7 @@ export default function CarouselNav() {
           </div>
 
           {/* Headline */}
-          <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[3.5vw] select-none mt-0">
+          <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[5vw] select-none mt-0">
             <h1 className="font-bold md:text-[4vw] text-[8vw] md:leading-[3.5vw] leading-[8.5vw]">
               Delivering To <p className="inline text-[#FF00E5]">190+ <br /> Countries&nbsp;</p>
               With Ease
@@ -380,7 +384,7 @@ export default function CarouselNav() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-row gap-x-[1vw] md:text-[0.7vw] text-[2.5vw] font-normal md:my-[2.5vw] my-[3.5vw]">
+          <div className="flex flex-row gap-x-[1vw] md:text-[0.7vw] text-[2.5vw] font-normal md:my-[2.5vw] my-[5vw]">
             <button
               className="
                 bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
@@ -466,9 +470,9 @@ export default function CarouselNav() {
         </div>
 
         {/* Hero Image */}
-        <div className="md:w-[45%] w-full flex justify-end items-center select-none">
+        <div className="md:w-[45%] w-full flex-1 justify-end items-center select-none">
           <img
-            className="md:w-[40vw] w-full md:h-[40vw] h-[80vw]"
+            className="md:w-[40vw] w-full md:h-[40vw] h-full md:p-0 p-[5vw]"
             src={main_svg_12}
             alt="Main SVG 1"
           />

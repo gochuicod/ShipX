@@ -24,8 +24,8 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-y-[1.5vw] text-[0.8vw] font-normal z-10 select-none">
-      <div className="flex flex-row gap-x-[1vw]">
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-y-[1.5vw] md:text-[0.8vw] text-[2.3vw] font-normal z-10 select-none md:w-auto w-full md:pt-0 pt-[10vw]">
+      <div className="flex md:flex-row flex-col gap-x-[1vw] md:gap-y-0 gap-y-[5vw]">
         <div className="flex flex-col">
           <label className="text-nowrap">Your Name</label>
           <input
@@ -64,16 +64,16 @@ const ContactForm = () => {
         </div>
       </div>
 
-      <div className="flex flex-col mt-[1vw]">
+      <div className="flex flex-col md:mt-[1vw] mt-0 md:pt-0 pt-[5vw]">
         <label className="text-nowrap">Message</label>
         <textarea
-          className="border-b border-[#CACACA] w-full resize-none h-[5vw] focus:outline-none"
+          className="border-b border-[#CACACA] w-full resize-none md:h-[5vw] h-[15vw] focus:outline-none"
           {...register("message", { required: "Message is required" })}
         />
         {errors.message && <p className="text-red-500">{errors.message.message}</p>}
       </div>
 
-      <div className="flex flex-row gap-x-[1vw] text-[0.8vw] font-normal justify-start items-center mt-[1vw]">
+      <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.6vw] font-normal justify-start items-center md:mt-[1vw] mt-0 md:pt-0 pt-[5vw]">
         <button
           type="submit"
           disabled={isSubmitting}
@@ -82,7 +82,7 @@ const ContactForm = () => {
             bg-[length:200%_100%] bg-[position:0%_0%]
             hover:bg-[position:100%_0%]
             transition-[background-position] duration-1000 ease-in-out
-            py-[0.5vw] px-[1.5vw] rounded-[2vw] cursor-pointer
+            md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] rounded-[2vw] cursor-pointer
             text-white font-medium shadow-[0_0.5vw_1vw_rgba(255,0,229,0.25)]
           "
         >
@@ -99,14 +99,14 @@ const ContactForm = () => {
             bg-[length:100%_200%] bg-[position:0%_100%]
             hover:bg-[position:0%_0%]
             transition-[background-position] duration-1000 ease-in-out
-            p-[0.1vw] rounded-[2vw]
+            md:p-[0.1vw] p-[0.5vw] rounded-[2vw]
             text-white font-medium
           "
         >
           <button
             className="
             bg-white
-              py-[0.4vw] px-[1.5vw] rounded-[2vw] font-medium
+              md:py-[0.4vw] py-[0.6vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-[1.5vw] font-medium
               text-[#4F378A] relative z-10
               border-none cursor-pointer
             "

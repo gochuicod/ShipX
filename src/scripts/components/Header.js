@@ -2,6 +2,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { shipx, sglink, main_img_14 } from "../../assets/assets";
 import * as motion from 'motion/react-client'
+import { AnimatePresence } from 'motion/react'
 
 const linkClass =
   "transition-colors duration-500 hover:text-[#FF00E5] hover:underline hover:decoration-2 hover:underline-offset-4";
@@ -132,7 +133,72 @@ const Header = () => {
       </button>
 
       {/* Mobile Dropdown Menu */}
-      {isOpen && (
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -20, opacity: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="absolute top-full right-0 w-full bg-white shadow-[0_7vw_10vw_rgba(255,0,229,0.10)] 
+                      flex flex-col items-start p-[5vw] gap-y-[3vw] md:hidden 
+                      text-[#1A1A1A] text-[3.5vw] font-medium"
+          >
+            <NavLink
+              to="/"
+              end
+              className={`${linkClass} w-full text-left px-[5vw]`} 
+              onClick={() => {
+                setIsOpen(false);
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/#services"
+              end
+              className={`${linkClass} w-full text-left px-[5vw]`} 
+              onClick={() => setIsOpen(false)}
+            >
+              Services
+            </NavLink>
+            <NavLink
+              to="/#platform"
+              end
+              className={`${linkClass} w-full text-left px-[5vw]`} 
+              onClick={() => setIsOpen(false)}
+            >
+              Platform
+            </NavLink>
+            <NavLink
+              to="/#network"
+              end
+              className={`${linkClass} w-full text-left px-[5vw]`}
+              onClick={() => setIsOpen(false)}
+            >
+              Network
+            </NavLink>
+            <NavLink
+              to="/"
+              end
+              className={`${linkClass} w-full text-left px-[5vw]`}
+              onClick={() => setIsOpen(false)}
+            >
+              Book a Demo
+            </NavLink>
+            <NavLink
+              to="/#contact-us"
+              end
+              className={`${linkClass} w-full text-left px-[5vw]`}
+              onClick={() => setIsOpen(false)}
+            >
+              Contact Us
+            </NavLink>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      {/* {isOpen && (
         <div className="absolute top-full right-0 w-full bg-white shadow-[0_7vw_10vw_rgba(255,0,229,0.10)] flex flex-col items-center p-[5vw] gap-y-[2vw] md:hidden text-[#1A1A1A] text-[3.5vw] font-medium">
           <NavLink
             to="/"
@@ -181,7 +247,7 @@ const Header = () => {
             Contact Us
           </NavLink>
         </div>
-      )}
+      )} */}
     </header>
   );
 };
