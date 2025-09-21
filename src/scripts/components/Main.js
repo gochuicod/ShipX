@@ -357,7 +357,7 @@ const Main = ({ margin }) => {
           <img className='absolute md:w-[50vw] w-[100vw] md:h-[45vw] h-[100vw] md:translate-x-[17vw] translate-x-[10vw] md:-translate-y-[1vw] translate-y-[25vw] -z-10' src={main_img_4} />
           <div className='flex md:flex-row flex-col gap-x-[0.1vw] justify-center items-center'>
             <div className='flex flex-col gap-y-[1vw] md:justify-start justify-center md:items-start items-center'>
-              <div className='flex flex-row gap-x-[0.5vw]'>
+              <div className='flex md:flex-row flex-col gap-x-[0.5vw] md:gap-y-0 gap-y-[2vw] md:items-start items-center'>
                 <span className='flex flex-row gap-x-[0.5vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#FF00E5] font-semibold bg-[#F3F1FF] md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-[1.5vw] py-[0.2vw]'>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="#FF00E5" viewBox="0 0 24 24" strokeWidth={0} stroke="currentColor" className="md:size-[0.5vw] size-[1vw]">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
@@ -501,7 +501,7 @@ const Main = ({ margin }) => {
                 </svg>
                 Global Freight, Customs & Fulfillment Solutions
               </span>
-              <p className='md:text-[2.3vw] text-[6vw] text-[#1A1A1A] text-start font-semibold md:leading-[2.5vw] leading-[7.5vw]'>
+              <p className='md:text-[2.3vw] text-[6vw] text-[#1A1A1A] md:text-start text-center font-semibold md:leading-[2.5vw] leading-[7.5vw]'>
                 <p className='inline text-[#FF00E5]'>Seamless</p> Trade <br className='md:block hidden' />Across Borders
               </p>
               <div className="flex flex-row gap-x-[1vw] md:text-[0.8vw] text-[2.6vw] font-normal justify-start items-center md:pt-0 pt-[2vw]">
@@ -594,7 +594,7 @@ const Main = ({ margin }) => {
           </div>
           <div className='flex md:flex-row flex-col justify-between md:items-center items-start gap-x-[5vw]'>
             <div className='flex flex-col gap-y-[1vw] md:pt-0 pt-[3vw]'>
-              <div className='flex md:flex-row flex-col-reverse justify-start items-center gap-x-[4vw] md:gap-y-0 gap-y-[5vw] rounded-[2vw] shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] md:p-0 p-[5vw]'>
+              <div className='flex md:flex-row flex-col-reverse justify-start md:items-center items-start gap-x-[4vw] md:gap-y-0 gap-y-[5vw] rounded-[2vw] shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] md:p-0 p-[5vw]'>
                 <img className='md:w-[20vw] w-[80vw] md:h-[14vw] h-[60vw] rounded-[2vw] shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)]' src={main_img_6} />
                 <div className='flex flex-col'>
                   <span className='flex flex-row gap-x-[0.5vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-transparent md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-0 py-[0.2vw]'>
@@ -719,7 +719,7 @@ const Main = ({ margin }) => {
           <div className='flex md:flex-row flex-col justify-center items-center md:pt-0 pt-[5vw]'>
             <div className='flex md:flex-col flex-wrap md:justify-normal justify-center md:gap-y-[1.5vw] gap-y-[3vw] md:gap-x-0 gap-x-[3vw] md:pl-[8vw] pl-0'>
               <div className='relative flex flex-row'>
-                <div className='group cursor-pointer flex flex-row md:w-full w-fit rounded-[2vw] pl-[0.8vw] pr-[2vw] py-[0.7vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(79,55,138,0.2)] hover:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.35)] transition-shadow duration-1000 ease-in-out'>
+                <div className='group cursor-pointer flex flex-row md:w-full w-fit md:rounded-[2vw] rounded-[3vw] md:pl-[0.8vw] pl-[3vw] md:pr-[2vw] pr-[3vw] md:py-[0.7vw] py-[1.5vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(79,55,138,0.2)] hover:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.35)] transition-shadow duration-1000 ease-in-out'>
                   <img className='md:w-[1.5vw] w-[3vw] md:h-[1.5vw] h-[3vw]' src={main_icon_20} />
                   <span className='text-[#1A1A1A] font-semibold md:text-[0.8vw] text-[2.3vw] md:pl-[1vw] pl-[3vw]'>
                     Singapore
@@ -744,7 +744,7 @@ const Main = ({ margin }) => {
                 </div>
               </div>
               <div className='relative flex flex-row'>
-                <div className='group cursor-pointer flex flex-row md:w-full w-fit rounded-[2vw] pl-[0.8vw] pr-[2vw] py-[0.7vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(79,55,138,0.2)] hover:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.35)] transition-shadow duration-1000 ease-in-out'>
+                <div className='group cursor-pointer flex flex-row md:w-full w-fit md:rounded-[2vw] rounded-[3vw] md:pl-[0.8vw] pl-[3vw] md:pr-[2vw] pr-[3vw] md:py-[0.7vw] py-[1.5vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(79,55,138,0.2)] hover:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.35)] transition-shadow duration-1000 ease-in-out'>
                   <img className='md:w-[1.5vw] w-[3vw] md:h-[1.5vw] h-[3vw]' src={main_icon_21} />
                   <span className='text-[#1A1A1A] font-semibold md:text-[0.8vw] text-[2.3vw] md:pl-[1vw] pl-[3vw]'>
                     Thailand
@@ -769,7 +769,7 @@ const Main = ({ margin }) => {
                 </div>
               </div>
               <div className='relative flex flex-row'>
-                <div className='group cursor-pointer flex flex-row md:w-full w-fit rounded-[2vw] pl-[0.8vw] pr-[2vw] py-[0.7vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(79,55,138,0.2)] hover:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.35)] transition-shadow duration-1000 ease-in-out'>
+                <div className='group cursor-pointer flex flex-row md:w-full w-fit md:rounded-[2vw] rounded-[3vw] md:pl-[0.8vw] pl-[3vw] md:pr-[2vw] pr-[3vw] md:py-[0.7vw] py-[1.5vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(79,55,138,0.2)] hover:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.35)] transition-shadow duration-1000 ease-in-out'>
                   <img className='md:w-[1.5vw] w-[3vw] md:h-[1.5vw] h-[3vw]' src={main_icon_20} />
                   <span className='text-[#1A1A1A] font-semibold md:text-[0.8vw] text-[2.3vw] md:pl-[1vw] pl-[3vw]'>
                     Singapore
@@ -794,7 +794,7 @@ const Main = ({ margin }) => {
                 </div>
               </div>
               <div className='relative flex flex-row'>
-                <div className='group cursor-pointer flex flex-row md:w-full w-fit rounded-[2vw] pl-[0.8vw] pr-[2vw] py-[0.7vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(79,55,138,0.2)] hover:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.35)] transition-shadow duration-1000 ease-in-out'>
+                <div className='group cursor-pointer flex flex-row md:w-full w-fit md:rounded-[2vw] rounded-[3vw] md:pl-[0.8vw] pl-[3vw] md:pr-[2vw] pr-[3vw] md:py-[0.7vw] py-[1.5vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(79,55,138,0.2)] hover:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.35)] transition-shadow duration-1000 ease-in-out'>
                   <img className='md:w-[1.5vw] w-[3vw] md:h-[1.5vw] h-[3vw]' src={main_icon_22} />
                   <span className='text-[#1A1A1A] font-semibold md:text-[0.8vw] text-[2.3vw] md:pl-[1vw] pl-[3vw]'>
                     Vietnam
@@ -819,7 +819,7 @@ const Main = ({ margin }) => {
                 </div>
               </div>
               <div className='relative flex flex-row'>
-                <div className='group cursor-pointer flex flex-row md:w-full w-fit rounded-[2vw] pl-[0.8vw] pr-[2vw] py-[0.7vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(79,55,138,0.2)] hover:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.35)] transition-shadow duration-1000 ease-in-out'>
+                <div className='group cursor-pointer flex flex-row md:w-full w-fit md:rounded-[2vw] rounded-[3vw] md:pl-[0.8vw] pl-[3vw] md:pr-[2vw] pr-[3vw] md:py-[0.7vw] py-[1.5vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(79,55,138,0.2)] hover:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.35)] transition-shadow duration-1000 ease-in-out'>
                   <img className='md:w-[1.5vw] w-[3vw] md:h-[1.5vw] h-[3vw]' src={main_icon_18} />
                   <span className='text-[#1A1A1A] font-semibold md:text-[0.8vw] text-[2.3vw] md:pl-[1vw] pl-[3vw]'>
                     Malaysia
@@ -844,7 +844,7 @@ const Main = ({ margin }) => {
                 </div>
               </div>
               <div className='relative flex flex-row'>
-                <div className='group cursor-pointer flex flex-row md:w-full w-fit rounded-[2vw] pl-[0.8vw] pr-[2vw] py-[0.7vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(79,55,138,0.2)] hover:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.35)] transition-shadow duration-1000 ease-in-out'>
+                <div className='group cursor-pointer flex flex-row md:w-full w-fit md:rounded-[2vw] rounded-[3vw] md:pl-[0.8vw] pl-[3vw] md:pr-[2vw] pr-[3vw] md:py-[0.7vw] py-[1.5vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(79,55,138,0.2)] hover:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.35)] transition-shadow duration-1000 ease-in-out'>
                   <img className='md:w-[1.5vw] w-[3vw] md:h-[1.5vw] h-[3vw]' src={main_icon_17} />
                   <span className='text-[#1A1A1A] font-semibold md:text-[0.8vw] text-[2.3vw] md:pl-[1vw] pl-[3vw]'>
                     Indonesia
@@ -867,7 +867,7 @@ const Main = ({ margin }) => {
                 </div>
               </div>
               <div className='relative flex flex-row'>
-                <div className='group cursor-pointer flex flex-row md:w-full w-fit rounded-[2vw] pl-[0.8vw] pr-[2vw] py-[0.7vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(79,55,138,0.2)] hover:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.35)] transition-shadow duration-1000 ease-in-out'>
+                <div className='group cursor-pointer flex flex-row md:w-full w-fit md:rounded-[2vw] rounded-[3vw] md:pl-[0.8vw] pl-[3vw] md:pr-[2vw] pr-[3vw] md:py-[0.7vw] py-[1.5vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(79,55,138,0.2)] hover:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.35)] transition-shadow duration-1000 ease-in-out'>
                   <img className='md:w-[1.5vw] w-[3vw] md:h-[1.5vw] h-[3vw]' src={main_icon_19} />
                   <span className='text-[#1A1A1A] font-semibold md:text-[0.8vw] text-[2.3vw] md:pl-[1vw] pl-[3vw]'>
                     Philippines
@@ -892,7 +892,7 @@ const Main = ({ margin }) => {
                 </div>
               </div>
               <div className='relative flex flex-row'>
-                <div className='group cursor-pointer flex flex-row md:w-full w-fit rounded-[2vw] pl-[0.8vw] pr-[2vw] py-[0.7vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(79,55,138,0.2)] hover:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.35)] transition-shadow duration-1000 ease-in-out'>
+                <div className='group cursor-pointer flex flex-row md:w-full w-fit md:rounded-[2vw] rounded-[3vw] md:pl-[0.8vw] pl-[3vw] md:pr-[2vw] pr-[3vw] md:py-[0.7vw] py-[1.5vw] items-center justify-start shadow-[0_0.5vw_1vw_rgba(79,55,138,0.2)] hover:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.35)] transition-shadow duration-1000 ease-in-out'>
                   <img className='md:w-[1.5vw] w-[3vw] md:h-[1.5vw] h-[3vw]' src={main_icon_16} />
                   <span className='text-[#1A1A1A] font-semibold md:text-[0.8vw] text-[2.3vw] md:pl-[1vw] pl-[3vw]'>
                     United States

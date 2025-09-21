@@ -15,7 +15,7 @@ export default function CarouselNav() {
       autoplayDelay={15000}
       loop={true}
       transition={{ duration: 1 }}
-      className="md:h-[90vh] h-[100vh] w-screen rounded-none"
+      className="min-h-[100vh] w-screen rounded-none"
       swipe={true}          // enable swipe
       draggable={true}      // allow dragging
       touchMove={true}      // respond to touch
@@ -233,7 +233,7 @@ export default function CarouselNav() {
           </div>
 
           <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[5vw] select-none mt-0">
-            <h1 className="font-bold md:text-[4vw] text-[7.5vw] md:leading-[3.5vw] leading-[8.5vw]">
+            <h1 className="font-bold md:text-[4vw] text-[6.5vw] md:leading-[3.5vw] leading-[8.5vw]">
               Seamless Entry To The
               <p className="inline text-[#FF00E5]"> US <br />E-Commerce </p>
               Ecosystem
