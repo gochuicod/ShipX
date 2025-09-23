@@ -61,7 +61,7 @@ export default function HoverBorderGradient({
       <motion.div
         className={cn("flex-none inset-0 overflow-hidden absolute z-0 rounded-[inherit]")}
         style={{
-          filter: "blur(6px)",
+          filter: "blur(0.5vw)",
           position: "absolute",
           width: "100%",
           height: "100%",

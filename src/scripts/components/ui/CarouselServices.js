@@ -10,8 +10,9 @@ import {
   main_img_13,
 } from "../../../assets/assets";
 import { useSwipeable } from "react-swipeable";
+import { useEffect, useRef } from "react";
 
-export default function CarouselServices() {
+export default function CarouselServices({ slide }) {
   const handlers = useSwipeable({
     onSwipedLeft: () => document.querySelector(".st-prev")?.click(),
     onSwipedRight: () => document.querySelector(".st-next")?.click(),
@@ -20,11 +21,18 @@ export default function CarouselServices() {
     trackMouse: true,
   });
 
+  const setActiveIndexRef = useRef(null);
+
+  useEffect(() => {
+    if (typeof slide === "number" && setActiveIndexRef.current)
+      setActiveIndexRef.current(slide);
+  }, [slide]);
+
   return (
     <div {...handlers}>
       <Carousel
         autoplay={true}
-        autoplayDelay={500000}
+        autoplayDelay={5000}
         loop={true}
         transition={{ duration: 1 }}
         className="md:w-[25vw] w-[75vw] rounded-none select-none md:pt-0 pt-[5vw]"
@@ -84,21 +92,25 @@ export default function CarouselServices() {
             </svg>
           </button>
         )}
-        navigation={({ setActiveIndex, activeIndex, length }) => (
-          <div className="absolute md:bottom-4 bottom-2 left-2/4 flex -translate-x-2/4 md:gap-[0.4vw] gap-[1vw]">
-            {new Array(length).fill("").map((_, i) => (
-              <span
-                key={i}
-                className={`block md:h-[0.3vw] h-[1vw] cursor-pointer rounded-full transition-all content-[''] ${
-                  activeIndex === i
-                    ? "md:w-[0.5vw] w-[3.5vw] bg-[#FF00E5]"
-                    : "md:w-[0.3vw] w-[1vw] bg-[#FF00E5]/50"
-                }`}
-                onClick={() => setActiveIndex(i)}
-              />
-            ))}
-          </div>
-        )}
+        navigation={({ setActiveIndex, activeIndex, length }) => {
+          setActiveIndexRef.current = setActiveIndex;
+
+          return (
+            <div className="absolute md:bottom-4 bottom-2 left-2/4 flex -translate-x-2/4 md:gap-[0.4vw] gap-[1vw]">
+              {new Array(length).fill("").map((_, i) => (
+                <span
+                  key={i}
+                  className={`block md:h-[0.3vw] h-[1vw] cursor-pointer rounded-full transition-all content-[''] ${
+                    activeIndex === i
+                      ? "md:w-[0.5vw] w-[3.5vw] bg-[#FF00E5]"
+                      : "md:w-[0.3vw] w-[1vw] bg-[#FF00E5]/50"
+                  }`}
+                  onClick={() => setActiveIndex(i)}
+                />
+              ))}
+            </div>
+          )
+        }}
       >
         {/* First slide: custom hero section */}
         <div className="flex flex-col md:justify-between justify-evenly md:gap-y-[1vw] gap-y-[1.5vw] md:w-[25vw] w-full bg-[#F8F7FF] md:p-[2vw] p-[5vw] md:rounded-[2vw] rounded-[5vw] md:h-[36vw] h-[100vw]">

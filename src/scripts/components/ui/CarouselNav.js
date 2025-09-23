@@ -133,7 +133,7 @@ export default function CarouselNav() {
 
               {/* Headline */}
               <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[5vw] select-none mt-0">
-                <h1 className="text-[#1A1A1A] font-black md:text-[3.5vw] text-[10vw] md:leading-[3.5vw] leading-[10.5vw]">
+                <h1 className="text-[#1A1A1A] font-black md:text-[4vw] text-[10vw] md:leading-[4.5vw] leading-[10.5vw]">
                   Everything You Need <br className="md:block hidden" />
                   To Grow{" "}
                   <p className="inline text-[#FF00E5]">Internationally</p>
@@ -224,9 +224,9 @@ export default function CarouselNav() {
             </div>
 
             {/* Hero Image */}
-            <div className="md:w-[45%] w-full md:flex-1 flex justify-end items-center select-none">
+            <div className="md:w-fit w-full flex justify-end items-center select-none">
               <img
-                className="md:w-[40vw] w-full md:h-[35vw] h-[35vh] md:p-0 pb-[5vw]"
+                className="md:w-fit w-full md:h-[35vw] h-[35vh] md:p-0 pb-[5vw]"
                 src={main_svg_1}
                 alt="Main SVG 1"
               />
@@ -304,7 +304,7 @@ export default function CarouselNav() {
 
               {/* Headline */}
               <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[5vw] select-none mt-0">
-                <h1 className="text-[#1A1A1A] font-black md:text-[4vw] text-[10vw] md:leading-[3.5vw] leading-[10.5vw]">
+                <h1 className="text-[#1A1A1A] font-black md:text-[4.3vw] text-[10vw] md:leading-[4.8vw] leading-[10.5vw]">
                   Seamless Entry To The
                   <p className="inline text-[#FF00E5]"> US</p> Ecosystem
                 </h1>
@@ -394,9 +394,9 @@ export default function CarouselNav() {
             </div>
 
             {/* Hero Image */}
-            <div className="md:w-[45%] w-full flex-1 justify-end items-center select-none">
+            <div className="md:w-fit w-full flex justify-end items-center select-none">
               <img
-                className="md:w-[40vw] w-full md:h-[35vw] h-[35vh] md:p-0 pb-[5vw]"
+                className="md:w-fit w-full md:h-[35vw] h-[35vh] md:p-0 pb-[5vw]"
                 src={main_svg_11}
                 alt="Main SVG 11"
               />
@@ -476,7 +476,7 @@ export default function CarouselNav() {
 
               {/* Headline */}
               <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[5vw] select-none mt-0">
-                <h1 className="text-[#1A1A1A] font-black md:text-[4vw] text-[10vw] md:leading-[3.5vw] leading-[10.5vw]">
+                <h1 className="text-[#1A1A1A] font-black md:text-[5vw] text-[10vw] md:leading-[5.5vw] leading-[10.5vw]">
                   Delivering To {" "}
                   <p className="inline text-[#FF00E5]">
                     190+ <br className="md:block hidden" />
@@ -570,9 +570,9 @@ export default function CarouselNav() {
             </div>
 
             {/* Hero Image */}
-            <div className="md:w-[45%] w-full flex-1 justify-end items-center select-none">
+            <div className="md:w-fit w-full flex justify-end items-center select-none">
               <img
-                className="md:w-[40vw] w-full md:h-[35vw] h-[35vh] md:p-0 pb-[5vw]"
+                className="md:w-fit w-full md:h-[35vw] h-[35vh] md:p-0 pb-[5vw]"
                 src={main_svg_12}
                 alt="Main SVG 12"
               />

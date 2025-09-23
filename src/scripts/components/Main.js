@@ -46,8 +46,11 @@ import { NavLink } from "react-router-dom";
 import HoverBorderGradient from "./ui/hover-border-gradient";
 
 import TooltipCard from "./ui/ToolTipCard";
+import { useState } from "react";
 
 const Main = ({ margin }) => {
+  const [slide, setSlide] = useState(0);
+
   return (
     <div className="relative overflow-hidden">
       <div className="absolute top-[-5vw] left-[-10vw] size-[10vw] rounded-full shadow-[5vw_0.5vw_15vw_rgba(79,55,138,1)] z-40"></div>
@@ -177,7 +180,7 @@ const Main = ({ margin }) => {
                 </svg>
                 Our Statistics
               </span>
-              <p className="md:text-[2vw] text-[6vw] text-[#1A1A1A] md:text-start text-center font-bold md:leading-[2.5vw] leading-[7.5vw]">
+              <p className="md:text-[2vw] text-[7vw] text-[#1A1A1A] md:text-start text-center font-bold md:leading-[2.5vw] leading-[7.5vw]">
                 Powered by our unified <br />
                 network — delivering <br className="md:block hidden" />
                 excellence through ShipX
@@ -226,7 +229,7 @@ const Main = ({ margin }) => {
             </svg>
             Our Services
           </span>
-          <p className="md:text-[2vw] text-[5.5vw] text-[#1A1A1A] text-center font-bold md:leading-[2.5vw] leading-[7.5vw] select-none">
+          <p className="md:text-[2vw] text-[6.5vw] text-[#1A1A1A] text-center font-bold md:leading-[2.5vw] leading-[7vw] select-none">
             <p className="inline text-[#FF00E5]">All in one platform</p> &ndash;
             ShipX aggregates cross-
             <br className="md:block hidden" />
@@ -238,13 +241,16 @@ const Main = ({ margin }) => {
                 <motion.div
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.8 }}
+                  onClick={() => setSlide(0)}
                   className="flex flex-row w-full md:rounded-[1vw] rounded-[3vw] bg-white z-10 md:px-[2vw] px-[2vw] md:py-[0.5vw] py-[2vw] items-center justify-start md:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.05)] shadow-[0_0.5vw_1.5vw_rgba(255,0,229,0.15)] hover:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.35)] transition-shadow duration-500 ease-in-out cursor-pointer select-none"
                 >
                   <img
                     className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                     src={main_icon_1}
                   />
-                  <span className="text-[#4F378A] font-semibold md:text-[1vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
+                  <span
+                    className="text-[#4F378A] font-semibold md:text-[1vw] text-[2vw] md:pl-[2vw] pl-[1vw]"
+                  >
                     Express Worldwide
                   </span>
                 </motion.div>
@@ -253,13 +259,16 @@ const Main = ({ margin }) => {
                 <motion.div
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.8 }}
+                  onClick={() => setSlide(1)}
                   className="flex flex-row w-full md:rounded-[1vw] rounded-[3vw] bg-white z-10 md:px-[2vw] px-[2vw] md:py-[0.5vw] py-[2vw] items-center justify-start md:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.05)] shadow-[0_0.5vw_1.5vw_rgba(255,0,229,0.15)] hover:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.35)] transition-shadow duration-500 ease-in-out cursor-pointer select-none"
                 >
                   <img
                     className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                     src={main_icon_2}
                   />
-                  <span className="text-[#4F378A] font-semibold md:text-[1vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
+                  <span
+                    className="text-[#4F378A] font-semibold md:text-[1vw] text-[2vw] md:pl-[2vw] pl-[1vw]"
+                  >
                     Economy Worldwide
                   </span>
                 </motion.div>
@@ -268,6 +277,7 @@ const Main = ({ margin }) => {
                 <motion.div
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.8 }}
+                  onClick={() => setSlide(2)}
                   className="flex flex-row w-full md:rounded-[1vw] rounded-[3vw] bg-white z-10 md:px-[2vw] px-[2vw] md:py-[0.5vw] py-[2vw] items-center justify-start md:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.05)] shadow-[0_0.5vw_1.5vw_rgba(255,0,229,0.15)] hover:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.35)] transition-shadow duration-500 ease-in-out cursor-pointer select-none"
                 >
                   <img
@@ -283,6 +293,7 @@ const Main = ({ margin }) => {
                 <motion.div
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.8 }}
+                  onClick={() => setSlide(3)}
                   className="flex flex-row w-full md:rounded-[1vw] rounded-[3vw] bg-white z-10 md:px-[2vw] px-[2vw] md:py-[0.5vw] py-[2vw] items-center justify-start md:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.05)] shadow-[0_0.5vw_1.5vw_rgba(255,0,229,0.15)] hover:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.35)] transition-shadow duration-500 ease-in-out cursor-pointer select-none"
                 >
                   <img
@@ -298,6 +309,7 @@ const Main = ({ margin }) => {
                 <motion.div
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.8 }}
+                  onClick={() => setSlide(4)}
                   className="flex flex-row w-full md:rounded-[1vw] rounded-[3vw] bg-white z-10 md:px-[2vw] px-[2vw] md:py-[0.5vw] py-[2vw] items-center justify-start md:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.05)] shadow-[0_0.5vw_1.5vw_rgba(255,0,229,0.15)] hover:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.35)] transition-shadow duration-500 ease-in-out cursor-pointer select-none"
                 >
                   <img
@@ -313,6 +325,7 @@ const Main = ({ margin }) => {
                 <motion.div
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.8 }}
+                  onClick={() => setSlide(5)}
                   className="flex flex-row w-full md:rounded-[1vw] rounded-[3vw] bg-white z-10 md:px-[2vw] px-[2vw] md:py-[0.5vw] py-[2vw] items-center justify-start md:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.05)] shadow-[0_0.5vw_1.5vw_rgba(255,0,229,0.15)] hover:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.35)] transition-shadow duration-500 ease-in-out cursor-pointer select-none"
                 >
                   <img
@@ -328,6 +341,7 @@ const Main = ({ margin }) => {
                 <motion.div
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.8 }}
+                  onClick={() => setSlide(6)}
                   className="flex flex-row w-full md:rounded-[1vw] rounded-[3vw] bg-white z-10 md:px-[2vw] px-[2vw] md:py-[0.5vw] py-[2vw] items-center justify-start md:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.05)] shadow-[0_0.5vw_1.5vw_rgba(255,0,229,0.15)] hover:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.35)] transition-shadow duration-500 ease-in-out cursor-pointer select-none"
                 >
                   <img
@@ -343,6 +357,7 @@ const Main = ({ margin }) => {
                 <motion.div
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.8 }}
+                  onClick={() => setSlide(7)}
                   className="flex flex-row w-full md:rounded-[1vw] rounded-[3vw] bg-white z-10 md:px-[2vw] px-[2vw] md:py-[0.5vw] py-[2vw] items-center justify-start md:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.05)] shadow-[0_0.5vw_1.5vw_rgba(255,0,229,0.15)] hover:shadow-[0_0.5vw_1vw_rgba(255,0,229,0.35)] transition-shadow duration-500 ease-in-out cursor-pointer select-none"
                 >
                   <img
@@ -368,28 +383,6 @@ const Main = ({ margin }) => {
                     Book a Demo
                   </NavLink>
                 </HoverBorderGradient>
-                {/* <div
-                  className="
-                    bg-gradient-to-t from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
-                    bg-[length:100%_200%] bg-[position:0%_100%]
-                    hover:bg-[position:0%_0%]
-                    transition-[background-position] duration-1000 ease-in-out
-                    md:p-[0.1vw] p-[0.5vw] rounded-[2vw]
-                    text-white font-medium
-                  "
-                >
-                  <button
-                    className="
-                      bg-white cursor-pointer
-                      md:py-[0.4vw] py-[0.6vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-[1.5vw] font-medium
-                      text-[#4F378A] relative z-10
-                      border-none
-                    "
-                    style={{ outline: "none" }}
-                  >
-                    Book a Demo
-                  </button>
-                </div> */}
                 <NavLink
                   to="/#contact-us"
                   end
@@ -406,7 +399,7 @@ const Main = ({ margin }) => {
                 </NavLink>
               </div>
             </div>
-            <CarouselServices />
+            <CarouselServices slide={slide} />
           </div>
           <span className="text-[#63666D] md:text-[0.6vw] text-[2vw] text-center select-none md:pt-0 pt-[3vw]">
             *Prices shown are starting prices only and may vary by country,
@@ -656,7 +649,7 @@ const Main = ({ margin }) => {
                 </svg>
                 Global Freight, Customs & Fulfillment Solutions
               </span>
-              <p className="md:text-[2.3vw] text-[6vw] text-[#1A1A1A] md:text-start text-center font-bold md:leading-[2.5vw] leading-[7.5vw]">
+              <p className="md:text-[2.3vw] text-[6vw] text-[#1A1A1A] md:text-start text-center font-bold md:leading-[2.5vw] leading-[6.5vw]">
                 <p className="inline text-[#FF00E5]">Seamless</p> Trade{" "}
                 <br className="md:block hidden" />
                 Across Borders
@@ -714,7 +707,7 @@ const Main = ({ margin }) => {
               </div>
             </div>
             <div className="flex flex-col gap-y-[1vw] md:pt-0 pt-[5vw]">
-              <div className="flex md:flex-row flex-col justify-between md:items-center items-start gap-x-[4vw] md:gap-y-0 gap-y-[5vw] rounded-[2vw] shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] md:pl-[2.5vw] pl-[5vw] md:pr-0 pr-[5vw] md:py-0 py-[5vw]">
+              <div className="flex md:flex-row flex-col justify-between md:items-center items-start gap-x-[4vw] md:gap-y-0 gap-y-[5vw] rounded-[2vw] md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:pl-[2.5vw] pl-[5vw] md:pr-0 pr-[5vw] md:py-0 py-[5vw]">
                 <div className="flex flex-col">
                   <span className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-transparent md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-0 py-[0.2vw]">
                     <svg
@@ -746,7 +739,7 @@ const Main = ({ margin }) => {
                 />
               </div>
               <div className="flex md:flex-row flex-col justify-between gap-x-[1.5vw] md:gap-y-0 gap-y-[3vw] md:text-[0.8vw] text-[2.4vw] md:pt-0 pt-[3vw]">
-                <div className="flex flex-row justify-start items-center shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] md:pl-[2vw] pl-[5vw] pr-[3.5vw] md:py-[1.5vw] py-[3vw] rounded-[1.5vw]">
+                <div className="flex flex-row justify-start items-center md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:pl-[2vw] pl-[5vw] pr-[3.5vw] md:py-[1.5vw] py-[3vw] rounded-[1.5vw]">
                   <img
                     className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
                     src={main_icon_10}
@@ -759,7 +752,7 @@ const Main = ({ margin }) => {
                     </p>
                   </p>
                 </div>
-                <div className="flex flex-row justify-start items-center shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] md:pl-[2vw] pl-[5vw] pr-[3.5vw] md:py-[1.5vw] py-[3vw] rounded-[1.5vw]">
+                <div className="flex flex-row justify-start items-center md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:pl-[2vw] pl-[5vw] pr-[3.5vw] md:py-[1.5vw] py-[3vw] rounded-[1.5vw]">
                   <img
                     className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
                     src={main_icon_11}
@@ -771,7 +764,7 @@ const Main = ({ margin }) => {
                     </p>
                   </p>
                 </div>
-                <div className="flex flex-row justify-start items-center shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] md:pl-[2vw] pl-[5vw] pr-[3.5vw] md:py-[1.5vw] py-[3vw] rounded-[1.5vw]">
+                <div className="flex flex-row justify-start items-center md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:pl-[2vw] pl-[5vw] pr-[3.5vw] md:py-[1.5vw] py-[3vw] rounded-[1.5vw]">
                   <img
                     className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
                     src={main_icon_12}
@@ -790,7 +783,7 @@ const Main = ({ margin }) => {
           </div>
           <div className="flex md:flex-row flex-col justify-between md:items-center items-start gap-x-[5vw]">
             <div className="flex flex-col gap-y-[1vw] md:pt-0 pt-[3vw]">
-              <div className="flex md:flex-row flex-col-reverse justify-start md:items-center items-start gap-x-[4vw] md:gap-y-0 gap-y-[5vw] rounded-[2vw] shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] md:p-0 p-[5vw]">
+              <div className="flex md:flex-row flex-col-reverse justify-start md:items-center items-start gap-x-[4vw] md:gap-y-0 gap-y-[5vw] rounded-[2vw] md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:p-0 p-[5vw]">
                 <img
                   className="md:w-[20vw] w-[80vw] md:h-[14vw] h-[50vw] rounded-[2vw] shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)]"
                   src={main_img_6}
@@ -821,7 +814,7 @@ const Main = ({ margin }) => {
                 </div>
               </div>
               <div className="flex md:flex-row flex-col justify-between gap-x-[1.5vw] md:gap-y-0 gap-y-[3vw] md:text-[0.8vw] text-[2.4vw] md:pt-0 pt-[3vw]">
-                <div className="flex flex-row justify-start items-center shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] md:pl-[2vw] pl-[5vw] pr-[3.5vw] md:py-[1.5vw] py-[3vw] rounded-[1.5vw]">
+                <div className="flex flex-row justify-start items-center md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:pl-[2vw] pl-[5vw] pr-[3.5vw] md:py-[1.5vw] py-[3vw] rounded-[1.5vw]">
                   <img
                     className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
                     src={main_icon_13}
@@ -835,7 +828,7 @@ const Main = ({ margin }) => {
                     </p>
                   </p>
                 </div>
-                <div className="flex flex-row justify-start items-center shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] md:pl-[2vw] pl-[5vw] pr-[3.5vw] md:py-[1.5vw] py-[3vw] rounded-[1.5vw]">
+                <div className="flex flex-row justify-start items-center md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:pl-[2vw] pl-[5vw] pr-[3.5vw] md:py-[1.5vw] py-[3vw] rounded-[1.5vw]">
                   <img
                     className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
                     src={main_icon_14}
@@ -849,7 +842,7 @@ const Main = ({ margin }) => {
                     </p>
                   </p>
                 </div>
-                <div className="flex flex-row justify-start items-center shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] md:pl-[2vw] pl-[5vw] pr-[3.5vw] md:py-[1.5vw] py-[3vw] rounded-[1.5vw]">
+                <div className="flex flex-row justify-start items-center md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:pl-[2vw] pl-[5vw] pr-[3.5vw] md:py-[1.5vw] py-[3vw] rounded-[1.5vw]">
                   <img
                     className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
                     src={main_icon_15}
@@ -888,7 +881,7 @@ const Main = ({ margin }) => {
             aria-hidden="true"
           />
           <div className={`flex md:flex-row flex-col gap-x-[2vw] justify-center items-center w-full md:px-0 ${margin}`}>
-            <p className="md:text-[2.3vw] text-[5vw] md:text-start text-center font-bold md:leading-[3.5vw] leading-[6vw]">
+            <p className="md:text-[2.3vw] text-[5vw] md:text-start text-center font-bold md:leading-[3.5vw] leading-[5.5vw]">
               Local presence, global corridors{" "}
               <br className="md:block hidden" />—{" "}
               <p className="inline text-[#FF00E5]">the ShipX advantage</p>
@@ -1019,9 +1012,7 @@ const Main = ({ margin }) => {
                 country_name={`Malaysia`}
                 description={
                   <span className="text-[#757577] md:text-[0.7vw] text-[2vw]">
-                    2F Jalan 215, Seksyen 51
-                    <br className="md:block hidden" />
-                    46050 Petaling Jaya, Selangor
+                    Suite 5.03 Level 5 Block, Bangunan Pan Global, 1A, Jln Tandang, Seksyen 51, 46050 Petaling Jaya, Selangor
                   </span>
                 }
                 contact_number={`(+60) 12 525 5019`}
@@ -1066,7 +1057,13 @@ const Main = ({ margin }) => {
                 email={`contact.sg@shipx.asia`}
               />
             </div>
-            <img className="md:w-[60vw] w-full h-full" src={main_svg_6} />
+            {/* Map Image */}
+            <div
+              className="flex md:w-[60vw] w-[100vw] md:h-[40vw] h-[75vw] md:bg-size-[auto_47vw] bg-size-[130vw_120vw] bg-center bg-no-repeat"
+              style={{ backgroundImage: `url(${main_svg_6})`}}
+            >
+            </div>
+            {/* <img className="md:w-[60vw] w-full h-full" src={main_svg_6} /> */}
           </div>
         </div>
         {/* Offices Section End */}
@@ -1109,7 +1106,7 @@ const Main = ({ margin }) => {
             <p className="inline text-[#FF00E5]">global?</p> <br />
             Let's talk.
           </p>
-          <div className="relative flex md:flex-row flex-col-reverse justify-start items-center gap-x-[5vw] shadow-[0_0.5vw_2vw_rgba(255,0,229,0.15)] md:pl-[10vw] pl-[15vw] pr-[8vw] py-[8vw] rounded-t-[2vw] md:w-[70vw] w-[90vw] bg-white z-10">
+          <div className="relative flex md:flex-row flex-col-reverse justify-start items-center gap-x-[5vw] md:shadow-[0_0.5vw_2vw_rgba(255,0,229,0.15)] shadow-[0_0.5vw_3vw_rgba(255,0,229,0.25)] md:pl-[10vw] pl-[15vw] pr-[8vw] py-[8vw] rounded-t-[2vw] md:w-[70vw] w-[90vw] bg-white z-10">
             <img
               src={main_svg_8}
               alt=""
