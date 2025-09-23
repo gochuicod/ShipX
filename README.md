@@ -11,18 +11,18 @@ To ensure reliability, it’s recommended to use an **SMTP plugin** with your Gm
 
 Install one of these SMTP plugins in WordPress:
 
-- [WP Mail SMTP](https://wordpress.org/plugins/wp-mail-smtp/) *(most popular)*
+- [WP Mail SMTP](https://wordpress.org/plugins/wp-mail-smtp/) _(most popular)_
 - [Post SMTP Mailer/Email Log](https://wordpress.org/plugins/post-smtp/)
 
 ### Gmail SMTP Settings
 
-| Setting        | Value                  |
-|----------------|------------------------|
-| **SMTP Host**  | `smtp.gmail.com`       |
-| **SMTP Port**  | `587`                  |
-| **Encryption** | `TLS`                  |
-| **Auth**       | Yes                    |
-| **Username**   | Your full Gmail address |
+| Setting        | Value                                                  |
+| -------------- | ------------------------------------------------------ |
+| **SMTP Host**  | `smtp.gmail.com`                                       |
+| **SMTP Port**  | `587`                                                  |
+| **Encryption** | `TLS`                                                  |
+| **Auth**       | Yes                                                    |
+| **Username**   | Your full Gmail address                                |
 | **Password**   | App Password (generated from Google if 2FA is enabled) |
 
 > ⚠️ **Important:** Do not use your regular Gmail password.  
@@ -62,3 +62,4 @@ function mytheme_handle_contact(WP_REST_Request $request) {
     return new WP_Error('mail_failed', 'Email failed to send.', ['status' => 500]);
   }
 }
+```

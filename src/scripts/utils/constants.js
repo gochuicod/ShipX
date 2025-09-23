@@ -1,1 +1,1 @@
-export const margin = "px-[8vw]"
+export const margin = "px-[8vw]";

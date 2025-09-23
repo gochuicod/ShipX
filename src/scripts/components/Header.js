@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { shipx, sglink, main_img_14 } from "../../assets/assets";
-import * as motion from 'motion/react-client'
-import { AnimatePresence } from 'motion/react'
+import * as motion from "motion/react-client";
+import { AnimatePresence } from "motion/react";
+import HoverBorderGradient from "./ui/hover-border-gradient";
 
 const linkClass =
   "transition-colors duration-500 hover:text-[#FF00E5] hover:underline hover:decoration-2 hover:underline-offset-4";
@@ -28,7 +29,11 @@ const Header = () => {
             className={linkClass}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            <img src={shipx} alt="ShipX Logo" className="md:w-[3vw] md:h-[1.5vw] w-[14vw] h-[7vw]" />
+            <img
+              src={shipx}
+              alt="ShipX Logo"
+              className="md:w-[3vw] md:h-[1.5vw] w-[14vw] h-[7vw]"
+            />
           </NavLink>
           <NavLink
             to="/"
@@ -36,7 +41,11 @@ const Header = () => {
             className={linkClass}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            <img src={sglink} alt="SGLink Logo" className="md:w-[3vw] md:h-[1.5vw] w-[16vw] h-[5vw]" />
+            <img
+              src={sglink}
+              alt="SGLink Logo"
+              className="md:w-[3vw] md:h-[1.5vw] w-[16vw] h-[5vw]"
+            />
           </NavLink>
         </div>
         <img className="h-[1vw] w-[1vw]" src={main_img_14} />
@@ -67,7 +76,20 @@ const Header = () => {
       </nav>
 
       <div className="hidden md:flex flex-row gap-x-[1vw] text-[0.8vw] font-normal">
-        <div
+        <HoverBorderGradient
+          containerClassName="rounded-full"
+          as="button"
+          className="bg-white font-medium"
+        >
+          <NavLink
+            to=""
+            end
+            className="text-[#4F378A]"
+          >
+            Book a Demo
+          </NavLink>
+        </HoverBorderGradient>
+        {/* <div
           className="
             bg-gradient-to-t from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
             bg-[length:100%_200%] bg-[position:0%_100%]
@@ -88,7 +110,7 @@ const Header = () => {
           >
             Book a Demo
           </button>
-        </div>
+        </div> */}
         <NavLink
           to="/#contact-us"
           end
@@ -97,7 +119,7 @@ const Header = () => {
             bg-[length:200%_100%] bg-[position:0%_0%]
             hover:bg-[position:100%_0%]
             transition-[background-position] duration-1000 ease-in-out
-            py-[0.4vw] px-[1.5vw] rounded-[2vw]
+            py-[0.5vw] px-[1.5vw] rounded-[2vw]
             text-white font-medium
           "
         >
@@ -147,7 +169,7 @@ const Header = () => {
             <NavLink
               to="/"
               end
-              className={`${linkClass} w-full text-left px-[5vw]`} 
+              className={`${linkClass} w-full text-left px-[5vw]`}
               onClick={() => {
                 setIsOpen(false);
                 window.scrollTo({ top: 0, behavior: "smooth" });
@@ -158,7 +180,7 @@ const Header = () => {
             <NavLink
               to="/#services"
               end
-              className={`${linkClass} w-full text-left px-[5vw]`} 
+              className={`${linkClass} w-full text-left px-[5vw]`}
               onClick={() => setIsOpen(false)}
             >
               Services
@@ -166,7 +188,7 @@ const Header = () => {
             <NavLink
               to="/#platform"
               end
-              className={`${linkClass} w-full text-left px-[5vw]`} 
+              className={`${linkClass} w-full text-left px-[5vw]`}
               onClick={() => setIsOpen(false)}
             >
               Platform
@@ -198,56 +220,6 @@ const Header = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      {/* {isOpen && (
-        <div className="absolute top-full right-0 w-full bg-white shadow-[0_7vw_10vw_rgba(255,0,229,0.10)] flex flex-col items-center p-[5vw] gap-y-[2vw] md:hidden text-[#1A1A1A] text-[3.5vw] font-medium">
-          <NavLink
-            to="/"
-            end 
-            className={`${linkClass} w-full text-left px-[5vw]`} 
-            onClick={() => {
-              setIsOpen(false);
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/#services"
-            end
-            className={`${linkClass} w-full text-left px-[5vw]`} 
-            onClick={() => setIsOpen(false)}>
-            Services
-          </NavLink>
-          <NavLink
-            to="/#platform"
-            end
-            className={`${linkClass} w-full text-left px-[5vw]`} 
-            onClick={() => setIsOpen(false)}>
-            Platform
-          </NavLink>
-          <NavLink
-            to="/#network"
-            end
-            className={`${linkClass} w-full text-left px-[5vw]`}
-            onClick={() => setIsOpen(false)}>
-            Network
-          </NavLink>
-          <NavLink
-            to="/"
-            end
-            className={`${linkClass} w-full text-left px-[5vw]`}
-            onClick={() => setIsOpen(false)}>
-            Book a Demo
-          </NavLink>
-          <NavLink
-            to="/"
-            end
-            className={`${linkClass} w-full text-left px-[5vw]`}
-            onClick={() => setIsOpen(false)}>
-            Contact Us
-          </NavLink>
-        </div>
-      )} */}
     </header>
   );
 };
