@@ -413,7 +413,7 @@ const Main = ({ margin }) => {
           className={`min-h-screen relative flex flex-col justify-center items-center py-[10vw] ${margin} overflow-hidden select-none`}
         >
           <img
-            className="absolute md:w-[50vw] w-[100vw] md:h-[45vw] h-[100vw] md:translate-x-[17vw] translate-x-[10vw] md:-translate-y-[1vw] translate-y-[25vw] -z-10"
+            className="absolute md:w-[50vw] w-[80vw] md:h-[45vw] h-[80vw] md:translate-x-[17vw] translate-x-[10vw] md:-translate-y-[1vw] translate-y-[1vw] -z-10"
             src={main_img_4}
           />
           <div className="flex md:flex-row flex-col gap-x-[0.1vw] justify-center items-center">
