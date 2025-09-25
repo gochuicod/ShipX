@@ -446,7 +446,7 @@ const Main = ({ margin }) => {
                   </span>
                 </motion.div>
               </div>
-              <div className="flex flex-row w-full md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.6vw] font-normal justify-center items-center select-none">
+              <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.6vw] font-normal justify-center items-center select-none">
                 <motion.button
                   className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
                   whileHover={{
@@ -741,7 +741,7 @@ const Main = ({ margin }) => {
                 Global Freight, Customs & Fulfillment Solutions
               </span>
               <p
-                className="md:text-[2.3vw] text-[6vw] text-[#1A1A1A] md:text-start text-center font-semibold md:leading-[2.5vw] leading-[6.5vw] md:w-auto w-[100vw]"
+                className="md:text-[2.3vw] text-[6vw] text-[#1A1A1A] md:text-start text-center font-semibold md:leading-[2.5vw] leading-[6.5vw]"
                 style={{ fontFamily: "Inter" }}
               >
                 <p className="inline text-[#FF00E5]">Seamless</p> Trade{" "}
