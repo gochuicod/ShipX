@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import HoverBorderGradient from "./hover-border-gradient"
-import { NavLink } from "react-router-dom";
+import * as motion from 'motion/react-client'
 
 const ContactForm = () => {
   const {
@@ -33,7 +32,7 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col gap-y-[1.5vw] md:text-[0.8vw] text-[2.3vw] font-normal z-10 select-none md:w-auto w-full"
+      className="flex flex-col gap-y-[1.5vw] md:text-[0.8vw] text-[2.5vw] font-normal z-10 select-none md:w-auto w-full font-['Inter']"
     >
       <div className="flex md:flex-row flex-col gap-x-[1vw] md:gap-y-0 gap-y-[5vw]">
         <div className="flex flex-col">
@@ -89,7 +88,7 @@ const ContactForm = () => {
         )}
       </div>
 
-      <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.6vw] font-normal justify-start items-center md:mt-[1vw] mt-0 md:pt-0 pt-[5vw]">
+      <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.5vw] font-normal font-['Karla'] justify-start items-center md:mt-[1vw] mt-0 md:pt-0 pt-[5vw]">
         <button
           type="submit"
           disabled={isSubmitting}
@@ -105,42 +104,25 @@ const ContactForm = () => {
           {isSubmitting ? "Sending..." : isSent ? "Sent!" : "Send a Message"}
         </button>
 
-        <HoverBorderGradient
-          containerClassName="rounded-full"
-          as="button"
-          className="bg-white font-medium flex flex-row md:gap-x-[0.5vw] gap-x-[2vw] items-center"
+        <motion.button
+          className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden"
+          whileHover={{
+            y: -5,
+            transition: { type: "spring", stiffness: 300, damping: 15 },
+          }}
+          whileTap={{
+            scale: 0.9,
+            transition: { type: "spring", stiffness: 500, damping: 10 },
+          }}
         >
-          <NavLink
-            to=""
-            end
-            className="text-[#4F378A]"
-          >
-            Book a Demo
-          </NavLink>
-        </HoverBorderGradient>
+          {/* Gradient border */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
-        {/* <div
-          className="
-            bg-gradient-to-t from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
-            bg-[length:100%_200%] bg-[position:0%_100%]
-            hover:bg-[position:0%_0%]
-            transition-[background-position] duration-1000 ease-in-out
-            md:p-[0.1vw] p-[0.5vw] rounded-[2vw]
-            text-white font-medium
-          "
-        >
-          <button
-            className="
-            bg-white
-              md:py-[0.4vw] py-[0.6vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-[1.5vw] font-medium
-              text-[#4F378A] relative z-10
-              border-none cursor-pointer
-            "
-            style={{ outline: "none" }}
-          >
-            Book a Demo
-          </button>
-        </div> */}
+          {/* Inner white area */}
+          <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
+            <span className="text-[#4F378A] font-semibold">Book a Demo</span>
+          </div>
+        </motion.button>
       </div>
     </form>
   );

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { main_icon_20 } from "../../../assets/assets";
 
-export default function TooltipCard({ image, country_name, description, contact_number, email }) {
+export default function TooltipCard({ image, country_name, description, contact_number, email, hidden }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -32,6 +32,7 @@ export default function TooltipCard({ image, country_name, description, contact_
           transition-opacity duration-1000
           ${open ? "opacity-100 visible" : "opacity-0 invisible"}
           md:group-hover:opacity-100 md:group-hover:visible
+          ${hidden ? "hidden" : "block"}
         `}
       >
         <img className="md:w-[1.5vw] w-[3vw] md:h-[1.5vw] h-[3vw] rounded-full" src={image} />

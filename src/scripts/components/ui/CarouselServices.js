@@ -114,7 +114,7 @@ export default function CarouselServices({ slide }) {
       >
         {/* First slide: custom hero section */}
         <div className="flex flex-col md:justify-between justify-evenly md:gap-y-[1vw] gap-y-[1.5vw] md:w-[25vw] w-full bg-[#F8F7FF] md:p-[2vw] p-[5vw] md:rounded-[2vw] rounded-[5vw] md:h-[36vw] h-[100vw]">
-          <span className="flex flex-row md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]">
+          <span className="flex flex-row font-['Karla'] md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="#4F378A"
@@ -131,7 +131,7 @@ export default function CarouselServices({ slide }) {
             </svg>
             Express Worldwide
           </span>
-          <p className="md:text-[1.6vw] text-[4.5vw] text-[#1A1A1A] text-start font-bold md:leading-[2vw] leading-[7vw]">
+          <p className="md:text-[1.6vw] text-[4.5vw] text-[#1A1A1A] text-start font-semibold font-['Karla'] md:leading-[2vw] leading-[7vw]">
             From{" "}
             <p className="inline text-[#FF00E5]">
               SG, VN, MY, TH, ID <br />
@@ -139,13 +139,13 @@ export default function CarouselServices({ slide }) {
             </p>{" "}
             in the world
           </p>
-          <div className="flex flex-row gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]">
+          <div className="flex flex-row font-normal font-['Inter'] gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]">
             <p className="text-[#63666D] md:text-[0.6vw] text-[2.3vw]">
               Prices starting from as low as <br />
               Transit time ~3-5 days
             </p>
             <p className="flex flex-row tracking-0 text-[#FF99F5] md:text-[2vw] text-[5vw] font-black items-start leading-0">
-              $<p className="text-[#FF00E5] md:text-[4vw] text-[12vw]">22</p>
+              $<p className="text-[#FF00E5] md:text-[4vw] text-[8vw]">22</p>
             </p>
           </div>
           <img
@@ -155,7 +155,7 @@ export default function CarouselServices({ slide }) {
         </div>
         {/* Second slide: custom hero section */}
         <div className="flex flex-col md:justify-between justify-evenly md:gap-y-[1vw] gap-y-[1.5vw] md:w-[25vw] w-full bg-[#F8F7FF] md:p-[2vw] p-[5vw] md:rounded-[2vw] rounded-[5vw] md:h-[36vw] h-[100vw]">
-          <span className="flex flex-row md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]">
+          <span className="flex flex-row font-['Karla'] md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="#4F378A"
@@ -172,7 +172,7 @@ export default function CarouselServices({ slide }) {
             </svg>
             Economy Worldwide
           </span>
-          <p className="md:text-[1.6vw] text-[4.5vw] text-[#1A1A1A] text-start font-bold md:leading-[2vw] leading-[7vw]">
+          <p className="md:text-[1.6vw] text-[4.5vw] text-[#1A1A1A] text-start font-semibold font-['Karla'] md:leading-[2vw] leading-[7vw]">
             From anywhere in{" "}
             <p className="inline text-[#FF00E5]">
               ASEAN <br />
@@ -180,13 +180,13 @@ export default function CarouselServices({ slide }) {
             </p>{" "}
             in the world
           </p>
-          <div className="flex flex-row gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[1vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]">
+          <div className="flex flex-row font-normal font-['Inter'] gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[1vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]">
             <p className="text-[#63666D] md:text-[0.6vw] text-[2.3vw]">
               Prices starting from as low as <br />
               Transit time ~10-15 days
             </p>
             <p className="flex flex-row tracking-0 text-[#FF99F5] md:text-[2vw] text-[5vw] font-black items-start leading-0">
-              $<p className="text-[#FF00E5] md:text-[4vw] text-[12vw]">9</p>
+              $<p className="text-[#FF00E5] md:text-[4vw] text-[8vw]">9</p>
             </p>
           </div>
           <img
@@ -196,7 +196,7 @@ export default function CarouselServices({ slide }) {
         </div>
         {/* Third slide: custom hero section */}
         <div className="flex flex-col md:justify-between justify-evenly md:gap-y-[1vw] gap-y-[1.5vw] md:w-[25vw] w-full bg-[#F8F7FF] md:p-[2vw] p-[5vw] md:rounded-[2vw] rounded-[5vw] md:h-[36vw] h-[100vw]">
-          <span className="flex flex-row md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]">
+          <span className="flex flex-row font-['Karla'] md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="#4F378A"
@@ -213,7 +213,7 @@ export default function CarouselServices({ slide }) {
             </svg>
             USA Destination Corridor
           </span>
-          <p className="md:text-[1.3vw] text-[4vw] text-[#1A1A1A] text-start font-bold md:leading-[2vw] leading-[6vw]">
+          <p className="md:text-[1.3vw] text-[4vw] text-[#1A1A1A] text-start font-semibold font-['Karla'] md:leading-[2vw] leading-[6vw]">
             Dedicated Corridor from{" "}
             <p className="inline text-[#FF00E5]">
               ASEAN <br />
@@ -221,13 +221,13 @@ export default function CarouselServices({ slide }) {
             </p>{" "}
             with various transit and <br /> cost options
           </p>
-          <div className="flex flex-row gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]">
+          <div className="flex flex-row font-normal font-['Inter'] gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]">
             <p className="text-[#63666D] md:text-[0.6vw] text-[2.3vw]">
               Prices starting as low as <br />
               Transit time $$-$$ days
             </p>
             <p className="flex flex-row tracking-0 text-[#FF99F5] md:text-[2vw] text-[4vw] font-black items-start leading-0">
-              $<p className="text-[#FF00E5] md:text-[4vw] text-[10vw]">4.53</p>
+              $<p className="text-[#FF00E5] md:text-[4vw] text-[8vw]">4.53</p>
             </p>
           </div>
           <img
@@ -237,7 +237,7 @@ export default function CarouselServices({ slide }) {
         </div>
         {/* Fourth slide: custom hero section */}
         <div className="flex flex-col md:justify-between justify-evenly md:gap-y-[1vw] gap-y-[1.5vw] md:w-[25vw] w-full bg-[#F8F7FF] md:p-[2vw] p-[5vw] md:rounded-[2vw] rounded-[5vw] md:h-[36vw] h-[100vw]">
-          <span className="flex flex-row md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]">
+          <span className="flex flex-row font-['Karla'] md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="#4F378A"
@@ -254,12 +254,12 @@ export default function CarouselServices({ slide }) {
             </svg>
             USA Destination Fulfilment
           </span>
-          <p className="md:text-[1.4vw] text-[4vw] text-[#1A1A1A] text-start font-bold md:leading-[2.2vw] leading-[6vw]">
+          <p className="md:text-[1.4vw] text-[4vw] text-[#1A1A1A] text-start font-semibold font-['Karla'] md:leading-[2.2vw] leading-[6vw]">
             Network of <p className="inline text-[#FF00E5]">2+ warehouses</p>{" "}
             <br />
             across USA for local fulfilment
           </p>
-          <div className="flex flex-row gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]">
+          <div className="flex flex-row font-normal font-['Inter'] gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]">
             <p className="text-[#63666D] md:text-[0.6vw] text-[2.3vw]">
               Pick & Pack starting from as low as{" "}
               <br className="md:block hidden" />
@@ -268,7 +268,7 @@ export default function CarouselServices({ slide }) {
               nationwide delivery
             </p>
             <p className="flex flex-row tracking-0 text-[#FF99F5] md:text-[2vw] text-[5vw] font-black items-start leading-0">
-              $<p className="text-[#FF00E5] md:text-[4vw] text-[12vw]">2</p>
+              $<p className="text-[#FF00E5] md:text-[4vw] text-[8vw]">2</p>
             </p>
           </div>
           <img
@@ -278,7 +278,7 @@ export default function CarouselServices({ slide }) {
         </div>
         {/* Fifth slide: custom hero section */}
         <div className="flex flex-col md:justify-between justify-evenly md:gap-y-[1vw] gap-y-[1.5vw] md:w-[25vw] w-full bg-[#F8F7FF] md:p-[2vw] p-[5vw] md:rounded-[2vw] rounded-[5vw] md:h-[36vw] h-[100vw]">
-          <span className="flex flex-row md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]">
+          <span className="flex flex-row font-['Karla'] md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="#4F378A"
@@ -295,12 +295,12 @@ export default function CarouselServices({ slide }) {
             </svg>
             Fulfilment by Amazon
           </span>
-          <p className="md:text-[1.8vw] text-[5vw] text-[#1A1A1A] text-start font-bold md:leading-[2.5vw] leading-[7vw]">
+          <p className="md:text-[1.8vw] text-[5vw] text-[#1A1A1A] text-start font-semibold font-['Karla'] md:leading-[2.5vw] leading-[7vw]">
             <p className="inline text-[#FF00E5]">End-to-end operations</p>
             <br />
             from origin to FBA
           </p>
-          <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[0.1vw] py-[1.5vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]">
+          <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[0.7vw] py-[1.5vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]">
             {/* Left: Description */}
             <p className="text-[#63666D] md:text-[0.6vw] text-[2vw] leading-snug text-left">
               Pick & Pack starting from as low as <br />
@@ -308,10 +308,10 @@ export default function CarouselServices({ slide }) {
             </p>
 
             {/* Right: Pricing */}
-            <div className="flex flex-col justify-center items-center md:gap-y-[0.1vw] gap-y-[1.5vw]">
+            <div className="flex flex-col justify-center items-center md:gap-y-[0.1vw] gap-y-0">
               <div className="flex flex-row items-baseline">
-                <span className="text-[#FF99F5] md:text-[2vw] text-[3vw] font-black leading-none">$</span>
-                <span className="text-[#FF00E5] md:text-[4vw] text-[9vw] font-black leading-none ml-[0.3vw]">
+                <span className="text-[#FF99F5] md:text-[1.5vw] text-[3vw] font-black leading-none">$</span>
+                <span className="text-[#FF00E5] md:text-[3vw] text-[8vw] font-black leading-none ml-[0.3vw]">
                   383
                 </span>
               </div>
@@ -320,22 +320,6 @@ export default function CarouselServices({ slide }) {
               </p>
             </div>
           </div>
-          {/* <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]">
-            <p className="text-[#63666D] md:text-[0.6vw] text-[2vw]">
-              Pick & Pack starting from as low as <br />
-              Transit time 30-40 days
-            </p>
-            <div className="flex flex-col justify-between md:gap-y-[1vw] gap-y-[3vw] items-center">
-              <p className="flex md:flex-row flex-col tracking-0 text-[#FF99F5] md:text-[1.8vw] text-[4vw] font-black items-start leading-0">
-                $<p className="text-[#FF00E5] md:text-[3vw] text-[6vw]">383</p>
-              </p>
-              <p
-                className="md:text-[1vw] text-[2vw] text-[#0E0E0E] font-medium"
-              >
-                per CBM
-              </p>
-            </div>
-          </div> */}
           <img
             className="w-full md:h-[15vw] h-[45vw] rounded-[2vw]"
             src={main_img_10}
@@ -343,7 +327,7 @@ export default function CarouselServices({ slide }) {
         </div>
         {/* Sixth slide: custom hero section */}
         <div className="flex flex-col md:justify-between justify-evenly md:gap-y-[1vw] gap-y-[1.5vw] md:w-[25vw] w-full bg-[#F8F7FF] md:p-[2vw] p-[5vw] md:rounded-[2vw] rounded-[5vw] md:h-[36vw] h-[100vw]">
-          <span className="flex flex-row md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]">
+          <span className="flex flex-row font-['Karla'] md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="#4F378A"
@@ -360,7 +344,7 @@ export default function CarouselServices({ slide }) {
             </svg>
             Bulk Freight to USA
           </span>
-          <p className="md:text-[1.3vw] text-[4vw] text-[#1A1A1A] text-start font-bold md:leading-[1.5vw] leading-[5vw]">
+          <p className="md:text-[1.3vw] text-[4vw] text-[#1A1A1A] text-start font-semibold font-['Karla'] md:leading-[1.5vw] leading-[5vw]">
             Join our scheduled sea-freight
             <br />
             containers for{" "}
@@ -369,14 +353,14 @@ export default function CarouselServices({ slide }) {
               <br /> consolidated rates into USA
             </p>
           </p>
-          <div className="flex flex-row gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]">
+          <div className="flex flex-row font-normal font-['Inter'] gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]">
             <p className="text-[#63666D] md:text-[0.6vw] text-[2.3vw]">
               Prices starting from as low as
               <br />
               Transit time 40-60 days
             </p>
             <p className="flex flex-row tracking-0 text-[#FF99F5] md:text-[2vw] text-[5vw] font-black items-start leading-0">
-              $<p className="text-[#FF00E5] md:text-[4vw] text-[12vw]">3.6</p>
+              $<p className="text-[#FF00E5] md:text-[4vw] text-[8vw]">3.6</p>
             </p>
           </div>
           <img
@@ -386,7 +370,7 @@ export default function CarouselServices({ slide }) {
         </div>
         {/* Seventh slide: custom hero section */}
         <div className="flex flex-col md:justify-between justify-evenly md:gap-y-[1vw] gap-y-[1.5vw] md:w-[25vw] w-full bg-[#F8F7FF] md:p-[2vw] p-[5vw] md:rounded-[2vw] rounded-[5vw] md:h-[36vw] h-[100vw]">
-          <span className="flex flex-row md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]">
+          <span className="flex flex-row font-['Karla'] md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="#4F378A"
@@ -403,16 +387,18 @@ export default function CarouselServices({ slide }) {
             </svg>
             Global Compliance & Documentation
           </span>
-          <p className="md:text-[1.6vw] text-[5vw] text-[#1A1A1A] text-start font-bold md:leading-[2vw] leading-[7vw]">
+          <p className="md:text-[1.6vw] text-[5vw] text-[#1A1A1A] text-start font-semibold font-['Karla'] md:leading-[2vw] leading-[7vw]">
             Team of <p className="inline text-[#FF00E5]">Experts and APIs</p>
             <br />
             for Efficient Trade
           </p>
-          <div className="flex flex-row gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]">
+          <div className="flex flex-row font-normal font-['Inter'] gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]">
             <p className="text-[#63666D] md:text-[0.6vw] text-[2.3vw]">
-              Prices starting from as low as
-              <br />
-              Transit time $$-$$ days
+              Prices starting from as low as <br />
+              Transit time 10-15 days
+            </p>
+            <p className="flex flex-row tracking-0 text-[#FF99F5] md:text-[2vw] text-[5vw] font-black items-start leading-0">
+              $<p className="text-[#FF00E5] md:text-[4vw] text-[8vw]">99</p>
             </p>
           </div>
           <img
@@ -421,8 +407,8 @@ export default function CarouselServices({ slide }) {
           />
         </div>
         {/* Eighth slide: custom hero section */}
-        <div className="flex flex-col md:justify-between justify-evenly md:gap-y-[1vw] gap-y-[1.5vw] md:w-[25vw] w-full bg-[#F8F7FF] md:p-[2vw] p-[5vw] md:rounded-[2vw] rounded-[5vw] md:h-[36vw] h-[100vw]">
-          <span className="flex flex-row md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]">
+        <div className="flex flex-col md:justify-between justify-between md:gap-y-[1vw] gap-y-[1.5vw] md:w-[25vw] w-full bg-[#F8F7FF] md:p-[2vw] p-[5vw] md:rounded-[2vw] rounded-[5vw] md:h-[36vw] h-[100vw]">
+          <span className="flex flex-row font-['Karla'] md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="#4F378A"

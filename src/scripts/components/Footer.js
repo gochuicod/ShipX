@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="flex flex-col justify-center bg-gradient-to-t from-[#4F378A] from-10% to-[rgb(255,0,229)] text-white px-[6vw] py-[3vw] md:text-[0.8vw] text-[2.6vw]">
       <div className="flex md:flex-row flex-col justify-between">
         {/* Description */}
-        <div className="flex flex-col md:gap-y-[1vw] gap-y-[3vw] justify-start md:w-[40%] w-full">
+        <div className="flex flex-col md:gap-y-[1vw] gap-y-[3vw] justify-start md:w-[40%] w-full font-['Karla']">
           <div className="flex flex-col">
             <div className="flex flex-row md:gap-x-[0.5vw] gap-x-[1vw] justify-start items-center">
               <img
@@ -48,7 +48,7 @@ const Footer = () => {
           </div>
         </div>
         {/* Links */}
-        <div className="flex flex-row justify-end gap-x-[4vw] md:w-[60%] w-full md:pt-0 py-[5vw]">
+        <div className="flex flex-row justify-end gap-x-[4vw] md:w-[60%] w-full md:pt-0 py-[5vw] font-['Poppins']">
           <div className="flex flex-col gap-y-[1vw]">
             <NavLink
               to="/"
@@ -133,7 +133,7 @@ const Footer = () => {
         </div>
       </div>
       {/* Copyright */}
-      <span className="text-center pt-[3vw]">
+      <span className="text-center pt-[3vw] font-['Inter']">
         &copy; {new Date().getFullYear()} ShipX Copyright and rights reserved
       </span>
     </footer>

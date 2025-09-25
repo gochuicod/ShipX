@@ -60,6 +60,12 @@ import main_img_14 from "./main_img_14.png";
 import main_logo_1 from "./main_logo_1.png";
 import main_logo_2 from "./main_logo_2.png";
 import main_logo_3 from "./main_logo_3.png";
+import main_logo_4 from "./main_logo_4.png";
+import main_logo_5 from "./main_logo_5.png";
+import main_logo_6 from "./main_logo_6.png";
+import main_logo_7 from "./main_logo_7.png";
+import main_logo_8 from "./main_logo_8.png";
+import main_logo_9 from "./main_logo_9.png";
 
 export {
   main_svg_1,
@@ -119,4 +125,10 @@ export {
   main_logo_1,
   main_logo_2,
   main_logo_3,
+  main_logo_4,
+  main_logo_5,
+  main_logo_6,
+  main_logo_7,
+  main_logo_8,
+  main_logo_9
 };

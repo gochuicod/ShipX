@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import { shipx, sglink, main_img_14 } from "../../assets/assets";
 import * as motion from "motion/react-client";
 import { AnimatePresence } from "motion/react";
-import HoverBorderGradient from "./ui/hover-border-gradient";
 
 const linkClass =
   "transition-colors duration-500 hover:text-[#FF00E5] hover:underline hover:decoration-2 hover:underline-offset-4";
@@ -76,41 +75,25 @@ const Header = () => {
       </nav>
 
       <div className="hidden md:flex flex-row gap-x-[1vw] text-[0.8vw] font-normal">
-        <HoverBorderGradient
-          containerClassName="rounded-full"
-          as="button"
-          className="bg-white font-medium"
+        <motion.button
+          className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
+          whileHover={{
+            y: -5,
+            transition: { type: "spring", stiffness: 300, damping: 15 },
+          }}
+          whileTap={{
+            scale: 0.9,
+            transition: { type: "spring", stiffness: 500, damping: 10 },
+          }}
         >
-          <NavLink
-            to=""
-            end
-            className="text-[#4F378A]"
-          >
-            Book a Demo
-          </NavLink>
-        </HoverBorderGradient>
-        {/* <div
-          className="
-            bg-gradient-to-t from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
-            bg-[length:100%_200%] bg-[position:0%_100%]
-            hover:bg-[position:0%_0%]
-            transition-[background-position] duration-1000 ease-in-out
-            p-[0.1vw] rounded-[2vw]
-            text-white font-medium
-          "
-        >
-          <button
-            className="
-              bg-white cursor-pointer
-              py-[0.4vw] px-[1.5vw] rounded-[2vw] font-medium
-              text-[#4F378A] relative z-10
-              border-none
-            "
-            style={{ outline: "none" }}
-          >
-            Book a Demo
-          </button>
-        </div> */}
+          {/* Gradient border */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+
+          {/* Inner white area */}
+          <div className="relative flex flex-row items-center gap-x-[1vw] px-[2vw] py-[0.5vw] bg-white rounded-full">
+            <span className="text-[#4F378A] font-semibold">Book a Demo</span>
+          </div>
+        </motion.button>
         <NavLink
           to="/#contact-us"
           end
