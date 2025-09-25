@@ -1,7 +1,14 @@
 import { useState } from "react";
 import { main_icon_20 } from "../../../assets/assets";
 
-export default function TooltipCard({ image, country_name, description, contact_number, email, hidden }) {
+export default function TooltipCard({
+  image,
+  country_name,
+  description,
+  contact_number,
+  email,
+  hidden,
+}) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -19,7 +26,7 @@ export default function TooltipCard({ image, country_name, description, contact_
         src={image}
       />
       <span className="text-[#1A1A1A] font-semibold md:text-[0.8vw] text-[2.3vw] md:pl-[1vw] pl-[3vw]">
-        { country_name }
+        {country_name}
       </span>
 
       {/* Tooltip */}
@@ -35,21 +42,24 @@ export default function TooltipCard({ image, country_name, description, contact_
           ${hidden ? "hidden" : "block"}
         `}
       >
-        <img className="md:w-[1.5vw] w-[3vw] md:h-[1.5vw] h-[3vw] rounded-full" src={image} />
+        <img
+          className="md:w-[1.5vw] w-[3vw] md:h-[1.5vw] h-[3vw] rounded-full"
+          src={image}
+        />
         <span className="text-[#19191D] md:text-[0.8vw] text-[2.3vw] font-bold">
-          { country_name }
+          {country_name}
         </span>
         {/* <span className="text-[#19191D] md:text-[0.8vw] text-[2.3vw] font-bold">Singapore</span> */}
-        { description }
+        {description}
         {/* <span className="text-[#757577] text-[0.7vw]">
           60 Kaki Bukit Place, Eunos <br />
           Techpark #03-19, S415979
         </span> */}
         <span className="text-[#757577] md:text-[0.7vw] text-[2vw] pt-[1.5vw]">
-          { contact_number }
+          {contact_number}
         </span>
         <span className="text-[#757577] md:text-[0.7vw] text-[2vw]">
-          { email }
+          {email}
         </span>
         {/* <span className="text-[#757577] text-[0.7vw] pt-[1.5vw]">(+65) 9001 9941</span> */}
         {/* <span className="text-[#757577] text-[0.7vw]">contact.sg@shipx.asia</span> */}

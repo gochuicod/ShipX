@@ -109,7 +109,7 @@ export default function CarouselServices({ slide }) {
                 />
               ))}
             </div>
-          )
+          );
         }}
       >
         {/* First slide: custom hero section */}
@@ -310,7 +310,9 @@ export default function CarouselServices({ slide }) {
             {/* Right: Pricing */}
             <div className="flex flex-col justify-center items-center md:gap-y-[0.1vw] gap-y-0">
               <div className="flex flex-row items-baseline">
-                <span className="text-[#FF99F5] md:text-[1.5vw] text-[3vw] font-black leading-none">$</span>
+                <span className="text-[#FF99F5] md:text-[1.5vw] text-[3vw] font-black leading-none">
+                  $
+                </span>
                 <span className="text-[#FF00E5] md:text-[3vw] text-[8vw] font-black leading-none ml-[0.3vw]">
                   383
                 </span>

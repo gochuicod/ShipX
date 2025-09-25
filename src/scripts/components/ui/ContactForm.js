@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import * as motion from 'motion/react-client'
+import * as motion from "motion/react-client";
 
 const ContactForm = () => {
   const {
@@ -105,7 +105,7 @@ const ContactForm = () => {
         </button>
 
         <motion.button
-          className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden"
+          className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
           whileHover={{
             y: -5,
             transition: { type: "spring", stiffness: 300, damping: 15 },

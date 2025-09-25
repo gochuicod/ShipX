@@ -1,7 +1,4 @@
 import {
-  main_logo_2,
-  main_logo_3,
-  main_logo_4,
   main_logo_5,
   main_logo_6,
   main_logo_7,
@@ -13,7 +10,7 @@ import {
 } from "../../../assets/assets";
 import { Carousel } from "@material-tailwind/react";
 import { useSwipeable } from "react-swipeable";
-import * as motion from 'motion/react-client'
+import * as motion from "motion/react-client";
 
 export default function CarouselNav() {
   const handlers = useSwipeable({
@@ -31,7 +28,7 @@ export default function CarouselNav() {
         autoplayDelay={10000}
         loop={true}
         transition={{ duration: 1 }}
-        className="w-screen rounded-none md:pb-[1vw] pb-[5vw]"
+        className="w-screen rounded-none md:pb-[1vw] pb-[10vw]"
         swipe={true} // enable swipe
         draggable={true} // allow dragging
         touchMove={true} // respond to touch
@@ -138,10 +135,12 @@ export default function CarouselNav() {
 
               {/* Headline */}
               <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[5vw] select-none mt-0">
-              <h1 className="text-[#1A1A1A] font-bold font-['Karla'] md:text-[4.2vw] text-[10vw] md:leading-[4.5vw] leading-[10.5vw]">
+                <h1 className="text-[#1A1A1A] font-bold font-['Karla'] md:text-[4.2vw] text-[10vw] md:leading-[4.5vw] leading-[10.5vw]">
                   Everything You Need <br className="md:block hidden" />
                   To Grow{" "}
-                  <p className="inline text-[#FF00E5] font-black">Internationally</p>
+                  <p className="inline text-[#FF00E5] font-black">
+                    Internationally
+                  </p>
                 </h1>
                 <p className="text-[#63666D] md:text-[0.8vw] text-[2.5vw] font-['Inter'] font-medium opacity-80">
                   From Economy Shipping To Express Delivery, FBA Fulfillment To
@@ -183,7 +182,9 @@ export default function CarouselNav() {
 
                   {/* Inner white area */}
                   <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
-                    <span className="text-[#4F378A] font-semibold">Learn More</span>
+                    <span className="text-[#4F378A] font-semibold">
+                      Learn More
+                    </span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -321,7 +322,8 @@ export default function CarouselNav() {
               <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[5vw] select-none mt-0">
                 <h1 className="text-[#1A1A1A] font-bold font-['Karla'] md:text-[4.5vw] text-[10vw] md:leading-[4.8vw] leading-[10.5vw]">
                   Seamless Entry To The
-                  <p className="inline text-[#FF00E5] font-black"> US</p> Ecosystem
+                  <p className="inline text-[#FF00E5] font-black"> US</p>{" "}
+                  Ecosystem
                 </h1>
                 <p className="text-[#63666D] md:text-[0.8vw] text-[2.5vw] font-medium font-['Inter'] opacity-80">
                   Enter And Scale In The U.S. Market With Custom Logistics
@@ -363,7 +365,9 @@ export default function CarouselNav() {
 
                   {/* Inner white area */}
                   <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
-                    <span className="text-[#4F378A] font-semibold">Learn More</span>
+                    <span className="text-[#4F378A] font-semibold">
+                      Learn More
+                    </span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -502,7 +506,7 @@ export default function CarouselNav() {
               {/* Headline */}
               <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[5vw] select-none mt-0">
                 <h1 className="text-[#1A1A1A] font-bold font-['Karla'] md:text-[5vw] text-[10vw] md:leading-[5.5vw] leading-[10.5vw]">
-                  Delivering To {" "}
+                  Delivering To{" "}
                   <p className="inline text-[#FF00E5]">
                     190+ <br className="md:block hidden" />
                     Countries
@@ -511,8 +515,8 @@ export default function CarouselNav() {
                 </h1>
                 <p className="text-[#63666D] md:text-[0.8vw] text-[2.5vw] font-medium opacity-80">
                   From Economy Shipping To Express Delivery, FBA Fulfillment To
-                  Marketplace <br className="md:block hidden" /> integrations, ShipX Equips You With The
-                  Tools To Scale Worldwide
+                  Marketplace <br className="md:block hidden" /> integrations,
+                  ShipX Equips You With The Tools To Scale Worldwide
                 </p>
                 <p className="text-[#402B73] md:text-[0.8vw] text-[2.5vw] font-bold">
                   Community Of 1000+ International Shippers From ASEAN
@@ -549,7 +553,9 @@ export default function CarouselNav() {
 
                   {/* Inner white area */}
                   <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
-                    <span className="text-[#4F378A] font-semibold">Learn More</span>
+                    <span className="text-[#4F378A] font-semibold">
+                      Learn More
+                    </span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"

@@ -49,6 +49,8 @@ import { useState } from "react";
 
 const Main = ({ margin }) => {
   const [slide, setSlide] = useState(0);
+  const [isOpen1, setIsOpen1] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
 
   return (
     <div className="relative overflow-hidden">
@@ -80,7 +82,12 @@ const Main = ({ margin }) => {
             <div className="flex flex-col gap-x-[5vw] justify-center items-center">
               <div className="flex flex-col items-center">
                 <span className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text">
-                  <Counter className="font-['Kantumruy_Pro']" end={2500} duration={5} />+
+                  <Counter
+                    className="font-['Kantumruy_Pro']"
+                    end={2500}
+                    duration={5}
+                  />
+                  +
                 </span>
                 <span className="md:text-[0.8vw] text-[1.8vw] text-center text-[#1A1A1A] font-medium">
                   Customers
@@ -88,7 +95,12 @@ const Main = ({ margin }) => {
               </div>
               <div className="flex flex-col items-center">
                 <span className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text">
-                  <Counter className="font-['Kantumruy_Pro']" end={10} duration={5} />+
+                  <Counter
+                    className="font-['Kantumruy_Pro']"
+                    end={10}
+                    duration={5}
+                  />
+                  +
                 </span>
                 <span className="md:text-[0.8vw] text-[1.8vw] text-center text-[#1A1A1A] font-medium">
                   Global Partners
@@ -96,7 +108,11 @@ const Main = ({ margin }) => {
               </div>
               <div className="flex flex-col items-center">
                 <span className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text">
-                  <Counter className="font-['Kantumruy_Pro']" end={192} duration={5} />
+                  <Counter
+                    className="font-['Kantumruy_Pro']"
+                    end={192}
+                    duration={5}
+                  />
                 </span>
                 <span className="md:text-[0.8vw] text-[1.8vw] text-center text-[#1A1A1A] font-medium">
                   Countries Covered
@@ -106,7 +122,11 @@ const Main = ({ margin }) => {
             <div className="flex flex-col gap-x-[5vw] justify-center items-center">
               <div className="flex flex-col items-center">
                 <span className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text">
-                  <Counter className="font-['Kantumruy_Pro']" end={2.5} duration={5} />
+                  <Counter
+                    className="font-['Kantumruy_Pro']"
+                    end={2.5}
+                    duration={5}
+                  />
                   M+
                 </span>
                 <span className="md:text-[0.8vw] text-[1.8vw] text-center text-[#1A1A1A] font-medium">
@@ -115,7 +135,12 @@ const Main = ({ margin }) => {
               </div>
               <div className="flex flex-col items-center">
                 <span className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text">
-                  <Counter className="font-['Kantumruy_Pro']" end={40} duration={5} />+
+                  <Counter
+                    className="font-['Kantumruy_Pro']"
+                    end={40}
+                    duration={5}
+                  />
+                  +
                 </span>
                 <span className="md:text-[0.8vw] text-[1.8vw] text-center text-[#1A1A1A] font-medium">
                   Tech Enabled Warehouses
@@ -123,7 +148,11 @@ const Main = ({ margin }) => {
               </div>
               <div className="flex flex-col items-center">
                 <span className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text">
-                  <Counter className="font-['Kantumruy_Pro']" end={13} duration={5} />
+                  <Counter
+                    className="font-['Kantumruy_Pro']"
+                    end={13}
+                    duration={5}
+                  />
                   M+
                 </span>
                 <span className="md:text-[0.8vw] text-[1.8vw] text-center text-[#1A1A1A] font-medium">
@@ -134,7 +163,12 @@ const Main = ({ margin }) => {
             <div className="flex flex-col gap-x-[5vw] justify-center items-center">
               <div className="flex flex-col items-center">
                 <span className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text">
-                  <Counter className="font-['Kantumruy_Pro']" end={45} duration={5} />+
+                  <Counter
+                    className="font-['Kantumruy_Pro']"
+                    end={45}
+                    duration={5}
+                  />
+                  +
                 </span>
                 <span className="md:text-[0.8vw] text-[1.8vw] text-center text-[#1A1A1A] font-medium">
                   Logistics & Ecommerce Partners
@@ -142,7 +176,12 @@ const Main = ({ margin }) => {
               </div>
               <div className="flex flex-col items-center">
                 <span className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text">
-                  <Counter className="font-['Kantumruy_Pro']" end={300} duration={5} />+
+                  <Counter
+                    className="font-['Kantumruy_Pro']"
+                    end={300}
+                    duration={5}
+                  />
+                  +
                 </span>
                 <span className="md:text-[0.8vw] text-[1.8vw] text-center text-[#1A1A1A] font-medium">
                   Trucks Operated
@@ -151,7 +190,11 @@ const Main = ({ margin }) => {
               <div className="flex flex-col items-center">
                 <span className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text">
                   $
-                  <Counter className="font-['Kantumruy_Pro']" end={60} duration={5} />
+                  <Counter
+                    className="font-['Kantumruy_Pro']"
+                    end={60}
+                    duration={5}
+                  />
                   M+
                 </span>
                 <span className="md:text-[0.8vw] text-[1.8vw] text-center text-[#1A1A1A] font-medium">
@@ -162,7 +205,7 @@ const Main = ({ margin }) => {
           </div>
           <div className="flex flex-col font-['Inter']">
             <div className="flex flex-col md:items-start items-center md:gap-y-[0.5vw] gap-y-[1.5vw]">
-              <span className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#FF00E5] font-semibold bg-[#FFD6FA] md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-[1.5vw] py-[0.2vw]">
+              <span className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.7vw] text-[2.2vw] text-[#FF00E5] font-semibold bg-[#FFD6FA] md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-[1.5vw] py-[0.2vw]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="#FF00E5"
@@ -211,7 +254,7 @@ const Main = ({ margin }) => {
             className="absolute translate-x-[23vw] translate-y-[24vw] w-[200vw] h-[80vw] pointer-events-none select-none -z-10 rotate-190"
             aria-hidden="true"
           />
-          <span className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#FF00E5] font-semibold font-['Inter'] bg-[#F3F1FF] md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-[1.5vw] py-[0.2vw] select-none">
+          <span className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.7vw] text-[2.2vw] text-[#FF00E5] font-semibold font-['Inter'] bg-[#F3F1FF] md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-[1.5vw] py-[0.2vw] select-none">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="#FF00E5"
@@ -247,9 +290,7 @@ const Main = ({ margin }) => {
                     className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                     src={main_icon_1}
                   />
-                  <span
-                    className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]"
-                  >
+                  <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                     Express Worldwide
                   </span>
                 </motion.div>
@@ -265,9 +306,7 @@ const Main = ({ margin }) => {
                     className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                     src={main_icon_2}
                   />
-                  <span
-                    className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]"
-                  >
+                  <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                     Economy Worldwide
                   </span>
                 </motion.div>
@@ -385,7 +424,9 @@ const Main = ({ margin }) => {
 
                   {/* Inner white area */}
                   <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
-                    <span className="text-[#4F378A] font-semibold">Book a Demo</span>
+                    <span className="text-[#4F378A] font-semibold">
+                      Book a Demo
+                    </span>
                   </div>
                 </motion.button>
                 <NavLink
@@ -424,7 +465,7 @@ const Main = ({ margin }) => {
           <div className="flex md:flex-row flex-col gap-x-[0.1vw] justify-center items-center">
             <div className="flex flex-col gap-y-[1vw] md:justify-start justify-center md:items-start items-center">
               <div className="flex md:flex-row flex-col font-['Inter'] gap-x-[0.5vw] md:gap-y-0 gap-y-[2vw] md:items-start items-center">
-                <span className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#FF00E5] font-semibold bg-[#F3F1FF] md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-[1.5vw] py-[0.2vw]">
+                <span className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.7vw] text-[2.2vw] text-[#FF00E5] font-semibold bg-[#F3F1FF] md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-[1.5vw] py-[0.2vw]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="#FF00E5"
@@ -441,7 +482,7 @@ const Main = ({ margin }) => {
                   </svg>
                   Our Platform
                 </span>
-                <span className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#414141] font-normal bg-[#FFD6FA] md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-[1.5vw] py-[0.2vw]">
+                <span className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.7vw] text-[2.2vw] text-[#414141] font-normal bg-[#FFD6FA] md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-[1.5vw] py-[0.2vw]">
                   Two proven platforms. One unified solution. That's ShipX.
                 </span>
               </div>
@@ -472,7 +513,9 @@ const Main = ({ margin }) => {
 
                   {/* Inner white area */}
                   <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
-                    <span className="text-[#4F378A] font-semibold">Book a Demo</span>
+                    <span className="text-[#4F378A] font-semibold">
+                      Book a Demo
+                    </span>
                   </div>
                 </motion.button>
                 <NavLink
@@ -618,10 +661,10 @@ const Main = ({ margin }) => {
         </div>
         {/* Platform Section End */}
         {/* Freight & Customs Section Start */}
-        <div className={`flex flex-col gap-y-[2vw] ${margin} select-none`}>
+        <div className={`flex flex-col md:gap-y-[2vw] gap-y-0 ${margin} select-none`}>
           <div className="flex md:flex-row flex-col justify-between items-center gap-x-[5vw]">
             <div className="flex flex-col gap-y-[1vw] md:justify-start justify-center md:items-start items-center">
-              <span className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#FF00E5] font-semibold font-['Inter'] bg-[#F3F1FF] md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-[1vw] py-[0.2vw]">
+              <span className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.7vw] text-[2.2vw] text-[#FF00E5] font-semibold font-['Inter'] bg-[#F3F1FF] md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-[1vw] py-[0.2vw]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="#FF00E5"
@@ -645,7 +688,7 @@ const Main = ({ margin }) => {
               </p>
               <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.6vw] font-normal font-['Karla'] justify-start items-center md:pt-0 pt-[2vw]">
                 <motion.button
-                  className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden"
+                  className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
                   whileHover={{
                     y: -5,
                     transition: { type: "spring", stiffness: 300, damping: 15 },
@@ -660,7 +703,9 @@ const Main = ({ margin }) => {
 
                   {/* Inner white area */}
                   <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
-                    <span className="text-[#4F378A] font-semibold">Book a Demo</span>
+                    <span className="text-[#4F378A] font-semibold">
+                      Book a Demo
+                    </span>
                   </div>
                 </motion.button>
                 <NavLink
@@ -679,8 +724,8 @@ const Main = ({ margin }) => {
                 </NavLink>
               </div>
             </div>
-            <div className="flex flex-col gap-y-[1vw] md:pt-0 pt-[5vw]">
-              <div className="flex md:flex-row flex-col font-['Karla'] justify-between md:items-center items-start gap-x-[4vw] md:gap-y-0 gap-y-[2vw] rounded-[2vw] md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:pl-[2.5vw] pl-[3vw] md:pr-0 pr-[3vw] md:py-0 py-[3vw]">
+            <div className="flex flex-col gap-y-[1vw] md:pt-0 pt-[3vw]">
+              <div className="flex md:flex-row flex-col font-['Karla'] justify-between md:items-center items-start gap-x-[4vw] md:gap-y-0 gap-y-[2vw] rounded-[2vw] md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:pl-[2.5vw] pl-[5vw] md:pr-0 pr-[5vw] md:py-0 py-[5vw]">
                 <div className="flex flex-col">
                   <span className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-transparent md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-0 py-[0.2vw]">
                     <svg
@@ -699,7 +744,7 @@ const Main = ({ margin }) => {
                     </svg>
                     Freight & Customs
                   </span>
-                  <p className="md:text-[1.8vw] text-[5vw] text-[#1A1A1A] text-start font-semibold md:leading-[2.5vw] leading-[5.5vw]">
+                  <p className="md:text-[1.8vw] text-[4vw] text-[#1A1A1A] text-start font-semibold md:leading-[2.5vw] leading-[5.5vw]">
                     <p className="inline text-[#FF00E5]">Flexible</p> freight
                     and clearance <br className="md:block hidden" />
                     <p className="inline text-[#FF00E5]">services</p> for
@@ -710,21 +755,83 @@ const Main = ({ margin }) => {
                   className="md:w-[20vw] w-[80vw] md:h-[14vw] h-[50vw] rounded-[2vw] shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)]"
                   src={main_img_5}
                 />
-              </div>
-              <button type="button" class="hs-collapse-toggle py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" id="hs-basic-collapse" aria-expanded="false" aria-controls="hs-basic-collapse-heading" data-hs-collapse="#hs-basic-collapse-heading">
-                Collapse
-                <svg class="hs-collapse-open:rotate-180 shrink-0 size-4 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="m6 9 6 6 6-6"></path>
-                </svg>
-              </button>
-              <div id="hs-basic-collapse-heading" class="hs-collapse hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-basic-collapse">
-                <div class="mt-5">
-                  <p class="text-gray-500">
-                    This is a collapse body. It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
-                  </p>
+                {/* Collapsible Area */}
+                <div className="flex flex-col justify-start items-start w-full mt-[1vw]">
+                  {/* Button */}
+                  <button
+                    onClick={() => setIsOpen1(!isOpen1)}
+                    className="w-full text-[#1A1A1A] text-[2.4vw] text-center transition"
+                  >
+                    {isOpen1 ? (
+                      <span className="font-medium">Show Less</span>
+                    ) : (
+                      <span className="font-medium">Show More</span>
+                    )}
+                  </button>
+
+                  {/* Collapsible Content */}
+                  <motion.div initial={false}>
+                    {isOpen1 && (
+                      <motion.div
+                        key="content"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 500,
+                          damping: 10,
+                        }}
+                        className="overflow-hidden"
+                      >
+                        <div className="flex md:flex-row flex-col font-['Inter'] justify-between gap-x-[1.5vw] md:gap-y-0 gap-y-[5vw] md:text-[0.8vw] text-[2.4vw] md:pt-0 pt-[3vw]">
+                          <div className="flex flex-row justify-start items-center">
+                            <img
+                              className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
+                              src={main_icon_10}
+                            />
+                            <p className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
+                              Multimodal Transport <br />
+                              <p className="text-[#63666D] text-normal">
+                                sea, air, road &{" "}
+                                <br className="md:block hidden" />
+                                combined logistics
+                              </p>
+                            </p>
+                          </div>
+                          <div className="flex flex-row justify-start items-center">
+                            <img
+                              className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
+                              src={main_icon_11}
+                            />
+                            <p className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
+                              Cross-Border Trucking <br />
+                              <p className="text-[#63666D] text-normal">
+                                bonded-lanes (VN-SG, TH-VN)
+                              </p>
+                            </p>
+                          </div>
+                          <div className="flex flex-row justify-start items-center">
+                            <img
+                              className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
+                              src={main_icon_12}
+                            />
+                            <p className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
+                              Customs Solutions <br />
+                              <p className="text-[#63666D] text-normal">
+                                clearance, IOSS/VAT, duty{" "}
+                                <br className="md:block hidden" />
+                                management
+                              </p>
+                            </p>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </motion.div>
                 </div>
               </div>
-              <div className="flex md:flex-row flex-col font-['Inter'] justify-between gap-x-[1.5vw] md:gap-y-0 gap-y-[3vw] md:text-[0.8vw] text-[2.4vw] md:pt-0 pt-[3vw]">
+              <div className="md:flex hidden md:flex-row flex-col font-['Inter'] justify-between gap-x-[1.5vw] md:gap-y-0 gap-y-[3vw] md:text-[0.8vw] text-[2.4vw] md:pt-0 pt-[3vw]">
                 <div className="flex flex-row justify-start items-center md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:pl-[2vw] pl-[5vw] pr-[3.5vw] md:py-[1.5vw] py-[3vw] rounded-[1.5vw]">
                   <img
                     className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
@@ -770,6 +877,81 @@ const Main = ({ margin }) => {
           <div className="flex md:flex-row flex-col justify-between md:items-center items-start gap-x-[5vw]">
             <div className="flex flex-col gap-y-[1vw] md:pt-0 pt-[3vw]">
               <div className="flex md:flex-row font-['Karla'] flex-col-reverse justify-start md:items-center items-start gap-x-[4vw] md:gap-y-0 gap-y-[2vw] rounded-[2vw] md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:p-0 p-[5vw]">
+                {/* Collapsible Area */}
+                <div className="flex flex-col justify-start items-start w-full mt-[1vw]">
+                  {/* Button */}
+                  <button
+                    onClick={() => setIsOpen2(!isOpen2)}
+                    className="w-full text-[#1A1A1A] text-[2.4vw] text-center transition"
+                  >
+                    {isOpen2 ? (
+                      <span className="font-medium">Show Less</span>
+                    ) : (
+                      <span className="font-medium">Show More</span>
+                    )}
+                  </button>
+
+                  {/* Collapsible Content */}
+                  <motion.div initial={false}>
+                    {isOpen2 && (
+                      <motion.div
+                        key="content"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 500,
+                          damping: 10,
+                        }}
+                        className="overflow-hidden"
+                      >
+                        <div className="flex md:flex-row flex-col font-['Inter'] justify-between gap-x-[1.5vw] md:gap-y-0 gap-y-[5vw] md:text-[0.8vw] text-[2.4vw] md:pt-0 pt-[3vw]">
+                          <div className="flex flex-row justify-start items-center">
+                            <img
+                              className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
+                              src={main_icon_10}
+                            />
+                            <p className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
+                              Multimodal Transport <br />
+                              <p className="text-[#63666D] text-normal">
+                                sea, air, road &{" "}
+                                <br className="md:block hidden" />
+                                combined logistics
+                              </p>
+                            </p>
+                          </div>
+                          <div className="flex flex-row justify-start items-center">
+                            <img
+                              className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
+                              src={main_icon_11}
+                            />
+                            <p className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
+                              Cross-Border Trucking <br />
+                              <p className="text-[#63666D] text-normal">
+                                bonded-lanes (VN-SG, TH-VN)
+                              </p>
+                            </p>
+                          </div>
+                          <div className="flex flex-row justify-start items-center">
+                            <img
+                              className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
+                              src={main_icon_12}
+                            />
+                            <p className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
+                              Customs Solutions <br />
+                              <p className="text-[#63666D] text-normal">
+                                clearance, IOSS/VAT, duty{" "}
+                                <br className="md:block hidden" />
+                                management
+                              </p>
+                            </p>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </motion.div>
+                </div>
                 <img
                   className="md:w-[20vw] w-[80vw] md:h-[14vw] h-[50vw] rounded-[2vw] shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)]"
                   src={main_img_6}
@@ -792,14 +974,14 @@ const Main = ({ margin }) => {
                     </svg>
                     Warehousing & Fulfillment
                   </span>
-                  <p className="md:text-[1.8vw] text-[5vw] text-[#1A1A1A] text-start font-semibold md:leading-[2.5vw] leading-[5.5vw]">
+                  <p className="md:text-[1.8vw] text-[4vw] text-[#1A1A1A] text-start font-semibold md:leading-[2.5vw] leading-[5.5vw]">
                     <p className="inline text-[#FF00E5]">Strategic hubs</p>{" "}
                     across Vietnam, <br className="md:block hidden" />
                     Thailand, Singapore, and Malaysia
                   </p>
                 </div>
               </div>
-              <div className="flex md:flex-row flex-col font-['Inter'] justify-between gap-x-[1.5vw] md:gap-y-0 gap-y-[3vw] md:text-[0.8vw] text-[2.4vw] md:pt-0 pt-[3vw]">
+              <div className="md:flex hidden md:flex-row flex-col font-['Inter'] justify-between gap-x-[1.5vw] md:gap-y-0 gap-y-[3vw] md:text-[0.8vw] text-[2.4vw] md:pt-0 pt-[3vw]">
                 <div className="flex flex-row justify-start items-center md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:pl-[2vw] pl-[5vw] pr-[3.5vw] md:py-[1.5vw] py-[3vw] rounded-[1.5vw]">
                   <img
                     className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
@@ -866,7 +1048,9 @@ const Main = ({ margin }) => {
             className="absolute translate-x-[36vw] -translate-y-[18vw] w-[200vw] md:h-[43vw] h-[83vw] pointer-events-none select-none -z-10"
             aria-hidden="true"
           />
-          <div className={`flex md:flex-row flex-col gap-x-[2vw] justify-center items-center w-full md:px-0 ${margin}`}>
+          <div
+            className={`flex md:flex-row flex-col gap-x-[2vw] justify-center items-center w-full md:px-0 ${margin}`}
+          >
             <p className="text-[#1A1A1A] md:text-[2.3vw] text-[6vw] md:text-start text-center font-semibold md:leading-[3.5vw] leading-[6.5vw]">
               Local presence, global corridors{" "}
               <br className="md:block hidden" />—{" "}
@@ -874,7 +1058,7 @@ const Main = ({ margin }) => {
             </p>
             <div className="flex flex-col gap-y-[1vw] md:pt-0 pt-[3vw]">
               <div className="flex flex-row md:justify-start justify-center md:gap-x-[3vw] gap-x-[10vw]">
-                <span className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.8vw] text-[2.6vw] text-white font-semibold bg-[#4F378A] md:rounded-[0.5vw] rounded-[2vw] md:px-[0.8vw] px-[1.8vw] py-[0.2vw]">
+                <span className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.7vw] text-[2.6vw] text-white font-semibold bg-[#4F378A] md:rounded-[0.5vw] rounded-[2vw] md:px-[0.8vw] px-[1.8vw] py-[0.2vw]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="#FFFFFF"
@@ -893,22 +1077,32 @@ const Main = ({ margin }) => {
                 </span>
                 <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.6vw] font-normal font-['Karla'] justify-center items-center">
                   <motion.button
-                    className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden"
+                    className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
                     whileHover={{
                       y: -5,
-                      transition: { type: "spring", stiffness: 300, damping: 15 },
+                      transition: {
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 15,
+                      },
                     }}
                     whileTap={{
                       scale: 0.9,
-                      transition: { type: "spring", stiffness: 500, damping: 10 },
+                      transition: {
+                        type: "spring",
+                        stiffness: 500,
+                        damping: 10,
+                      },
                     }}
                   >
                     {/* Gradient border */}
                     <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
-  
+
                     {/* Inner white area */}
                     <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
-                      <span className="text-[#4F378A] font-semibold">Book a Demo</span>
+                      <span className="text-[#4F378A] font-semibold">
+                        Book a Demo
+                      </span>
                     </div>
                   </motion.button>
                   <NavLink
@@ -940,7 +1134,8 @@ const Main = ({ margin }) => {
                 country_name={`Singapore`}
                 description={
                   <span className="text-[#757577] md:text-[0.7vw] text-[2vw]">
-                    60 Kaki Bukit Place, Eunos <br className="md:block hidden" />
+                    60 Kaki Bukit Place, Eunos{" "}
+                    <br className="md:block hidden" />
                     Techpark #03-19, S415979
                   </span>
                 }
@@ -982,7 +1177,8 @@ const Main = ({ margin }) => {
                 country_name={`Malaysia`}
                 description={
                   <span className="text-[#757577] md:text-[0.7vw] text-[2vw]">
-                    Suite 5.03 Level 5 Block, Bangunan Pan Global, 1A, Jln Tandang, Seksyen 51, 46050 Petaling Jaya, Selangor
+                    Suite 5.03 Level 5 Block, Bangunan Pan Global, 1A, Jln
+                    Tandang, Seksyen 51, 46050 Petaling Jaya, Selangor
                   </span>
                 }
                 contact_number={`(+60) 12 525 5019`}
@@ -993,7 +1189,8 @@ const Main = ({ margin }) => {
                 country_name={`Indonesia`}
                 description={
                   <span className="text-[#757577] md:text-[0.7vw] text-[2vw]">
-                    Jl. KH Mas Mansyur No. 119 <br className="md:block hidden" />- 121. Nyamplungan
+                    Jl. KH Mas Mansyur No. 119{" "}
+                    <br className="md:block hidden" />- 121. Nyamplungan
                     Kecamatan
                     <br className="md:block hidden" />
                     Pabean Cantikan, Surabaya
@@ -1029,9 +1226,8 @@ const Main = ({ margin }) => {
             {/* Map Image */}
             <div
               className="flex md:w-[60vw] w-[100vw] md:h-[40vw] h-[75vw] md:bg-size-[auto_47vw] bg-size-[130vw_120vw] bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${main_svg_6})`}}
-            >
-            </div>
+              style={{ backgroundImage: `url(${main_svg_6})` }}
+            ></div>
             {/* <img className="md:w-[60vw] w-full h-full" src={main_svg_6} /> */}
           </div>
         </div>
@@ -1044,13 +1240,13 @@ const Main = ({ margin }) => {
           <img
             src={main_svg_7}
             alt=""
-            className="absolute md:-translate-y-[17vw] -translate-y-[65vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none z-10"
+            className="absolute md:-translate-y-[17vw] -translate-y-[60vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none z-10"
             aria-hidden="true"
           />
           <img
             src={main_svg_7}
             alt=""
-            className="absolute translate-x-[30vw] md:-translate-y-[5vw] -translate-y-[50vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none opacity-20 -z-10"
+            className="absolute translate-x-[30vw] md:-translate-y-[5vw] -translate-y-[45vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none opacity-20 -z-10"
             aria-hidden="true"
           />
           <span className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#FF00E5] font-semibold font-['Inter'] bg-[#F3F1FF] md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-[1.5vw] py-[0.2vw] cursor-pointer select-none z-20">
@@ -1070,16 +1266,18 @@ const Main = ({ margin }) => {
             </svg>
             Contact Us
           </span>
-          <p className={`md:text-[2.3vw] text-[6vw] text-[#1A1A1A] text-center font-semibold font-['Inter'] md:leading-[2.5vw] leading-[6.5vw] mt-[1vw] md:mb-[8vw] mb-[15vw] select-none z-20 ${margin}`}>
+          <p
+            className={`md:text-[2.3vw] text-[6vw] text-[#1A1A1A] text-center font-semibold font-['Inter'] md:leading-[2.5vw] leading-[6.5vw] mt-[1vw] md:mb-[8vw] mb-[15vw] select-none z-20 ${margin}`}
+          >
             Ready to take your products{" "}
-            <p className="inline text-[#FF00E5]">global?</p> <br />
+            <p className="inline text-[#FF00E5]">global?</p> <br className="md:block hidden" />
             Let's talk.
           </p>
           <div className="relative flex md:flex-row flex-col-reverse justify-start items-center gap-x-[5vw] md:shadow-[0_0.5vw_2vw_rgba(255,0,229,0.15)] shadow-[0_0.5vw_3vw_rgba(255,0,229,0.25)] md:pl-[10vw] pl-[15vw] pr-[8vw] py-[8vw] rounded-t-[2vw] md:w-[70vw] w-[90vw] bg-white z-10">
             <img
               src={main_svg_8}
               alt=""
-              className="absolute md:-translate-x-[44vw] -translate-x-[65vw] translate-y-[5vw] w-[200vw] md:h-[29vw] h-[145vw] pointer-events-none select-none z-0"
+              className="absolute md:-translate-x-[44vw] -translate-x-[65vw] md:-translate-y-0 translate-y-[5vw] w-[200vw] md:h-[29vw] h-[145vw] pointer-events-none select-none z-0"
               aria-hidden="true"
             />
             <div className="flex flex-col font-['Poppins'] md:w-[20vw] w-full md:text-[0.8vw] text-[2.5vw] md:pt-0 pt-[10vw]">

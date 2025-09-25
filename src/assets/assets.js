@@ -12,7 +12,7 @@ import main_svg_11 from "./main_svg_11.svg";
 import main_svg_12 from "./main_svg_12.svg";
 
 import trusted_by_leaders from "./trusted-by-leaders.png";
-import site_icon from "./site_icon_shipx.png"
+import site_icon from "./site_icon_shipx.png";
 
 import shipx from "./logo-shipx.png";
 import sglink from "./logo-sglink.png";
@@ -130,5 +130,5 @@ export {
   main_logo_6,
   main_logo_7,
   main_logo_8,
-  main_logo_9
+  main_logo_9,
 };
