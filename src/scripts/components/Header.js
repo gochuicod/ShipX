@@ -5,7 +5,7 @@ import * as motion from "motion/react-client";
 import { AnimatePresence } from "motion/react";
 
 const linkClass =
-  "transition-colors duration-500 hover:text-[#FF00E5] hover:underline hover:decoration-2 hover:underline-offset-4";
+  "transition-colors duration-500 hover:text-[#FF00E5] hover:underline hover:decoration-2 hover:underline-offset-5";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -21,17 +21,17 @@ const App = () => {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ["Inter", "KantumruyPro", "Poppins", "Karla"],
+        families: ["Inter", "Kantumruy Pro", "Poppins", "Karla", "Lato"],
       },
     });
   }, []);
 
   useEffect(() => {
     const lenis = new Lenis({
-      lerp: 0.1, // smoothing factor (0–1, lower = smoother, slower)
-      duration: 1.2, // scroll duration
-      smoothWheel: true, // enable wheel smoothing
-      smoothTouch: false, // optional: disable on touch devices
+      lerp: 0.1,
+      duration: 1.2,
+      smoothWheel: true,
+      smoothTouch: false,
     });
 
     function raf(time) {

@@ -4,7 +4,7 @@ import * as motion from "motion/react-client";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col justify-center bg-gradient-to-t from-[#4F378A] from-10% to-[rgb(255,0,229)] text-white px-[6vw] py-[3vw] md:text-[0.8vw] text-[2.6vw]">
+    <footer className="flex flex-col justify-center bg-gradient-to-t from-[#4F378A] from-10% to-[rgb(255,0,229)] text-white px-[6vw] md:py-[1.5vw] py-[3vw] md:text-[0.8vw] text-[2.6vw]">
       <div className="flex md:flex-row flex-col justify-between">
         {/* Description */}
         <div
@@ -139,7 +139,7 @@ const Footer = () => {
         </div>
       </div>
       {/* Copyright */}
-      <span className="text-center pt-[3vw]" style={{ fontFamily: "Inter" }}>
+      <span className="text-center md:pt-0 pt-[2vw]" style={{ fontFamily: "Inter" }}>
         &copy; {new Date().getFullYear()} ShipX Copyright and rights reserved
       </span>
     </footer>

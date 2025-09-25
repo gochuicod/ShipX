@@ -1,4 +1,5 @@
 import {
+  main_logo_4,
   main_logo_5,
   main_logo_6,
   main_logo_7,
@@ -107,17 +108,17 @@ export default function CarouselNav() {
       >
         {/* First slide: custom hero section */}
         <div className="flex flex-col">
-          <div className="relative flex md:flex-row flex-col-reverse md:gap-y-0 items-center md:pt-0 pt-[10vw] md:min-h-[75vh] min-h-fit bg-white md:px-[8vw] px-[10vw]">
+          <div className="relative flex md:flex-row flex-col-reverse md:gap-y-0 items-center md:pt-0 pt-[10vw] md:min-h-[75vh] min-h-fit bg-white md:px-[10vw] px-[10vw]">
             <div className="md:flex-1 flex flex-col md:w-[55%] w-full">
               {/* Tagline */}
               <div
-                className="flex flex-row bg-[#F9F5FF] w-fit select-none rounded-full pl-[0.3vw] pr-[0.45vw] py-[0.2vw] md:text-[0.6vw] text-[2vw] items-center font-semibold text-[#6941C6]"
+                className="flex flex-row bg-[#F9F5FF] w-fit select-none rounded-full md:pl-[0.3vw] pl-[0.7vw] md:pr-[0.45vw] pr-[2vw] md:py-[0.2vw] py-[0.5vw] md:text-[0.6vw] text-[2.5vw] items-center font-semibold text-[#6941C6]"
                 style={{ fontFamily: "Inter" }}
               >
-                <span className="bg-white px-[0.5vw] py-[0.05vw] rounded-full border border-[#E9D7FE]">
+                <span className="bg-white md:px-[0.5vw] px-[1.5vw] md:py-[0.05vw] py-[0.5vw] rounded-full border border-[#E9D7FE]">
                   ShipX
                 </span>
-                <span className="pl-[0.5vw] pr-[0.5vw]">
+                <span className="md:pl-[0.5vw] pl-[1vw] md:pr-[0.5vw] pr-[1vw]">
                   Your Gateway Abroad
                 </span>
                 <svg
@@ -126,7 +127,7 @@ export default function CarouselNav() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="#9E77ED"
-                  className="size-[0.6vw]"
+                  className="md:size-[0.6vw] size-[2.5vw]"
                 >
                   <path
                     strokeLinecap="round"
@@ -139,7 +140,7 @@ export default function CarouselNav() {
               {/* Headline */}
               <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[5vw] select-none mt-0">
                 <h1
-                  className="text-[#1A1A1A] font-bold md:text-[4.2vw] text-[10vw] md:leading-[4.5vw] leading-[10.5vw]"
+                  className="text-[#1A1A1A] font-extrabold md:text-[4.2vw] text-[10vw] md:leading-[4.5vw] leading-[10.5vw]"
                   style={{ fontFamily: "Karla" }}
                 >
                   Everything You Need <br className="md:block hidden" />
@@ -222,7 +223,7 @@ export default function CarouselNav() {
             {/* Hero Image */}
             <div className="md:w-fit w-full flex justify-end items-center select-none">
               <img
-                className="md:w-fit w-full md:h-[35vw] h-[35vh] md:p-0 pb-[5vw]"
+                className="md:w-fit w-full md:h-[35vw] h-[35vh] md:p-0 pb-0"
                 src={main_svg_1}
                 alt="Main SVG 1"
               />
@@ -243,14 +244,14 @@ export default function CarouselNav() {
               <div className="flex animate-scroll-left items-center gap-y-[3vw]">
                 {/* Original logos */}
                 <img
-                  src={main_logo_5}
+                  src={main_logo_4}
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
 
                 {/* Duplicate logos for seamless loop */}
                 <img
-                  src={main_logo_5}
+                  src={main_logo_4}
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
@@ -312,24 +313,26 @@ export default function CarouselNav() {
 
         {/* Second slide: custom hero section */}
         <div className="flex flex-col">
-          <div className="relative flex md:flex-row flex-col-reverse md:gap-y-0 items-center md:pt-0 pt-[10vw] md:min-h-[75vh] min-h-fit bg-white md:px-[8vw] px-[10vw]">
+          <div className="relative flex md:flex-row flex-col-reverse md:gap-y-0 items-center md:pt-0 pt-[10vw] md:min-h-[75vh] min-h-fit bg-white md:px-[10vw] px-[10vw]">
             <div className="flex-1 flex-col md:w-[55%] w-full">
               {/* Tagline */}
               <div
-                className="flex flex-row bg-[#F9F5FF] w-fit select-none rounded-full pl-[0.3vw] pr-[0.45vw] py-[0.2vw] md:text-[0.6vw] text-[2vw] items-center font-semibold text-[#6941C6]"
+                className="flex flex-row bg-[#F9F5FF] w-fit select-none rounded-full md:pl-[0.3vw] pl-[0.7vw] md:pr-[0.45vw] pr-[2vw] md:py-[0.2vw] py-[0.5vw] md:text-[0.6vw] text-[2.5vw] items-center font-semibold text-[#6941C6]"
                 style={{ fontFamily: "Inter" }}
               >
-                <span className="bg-white px-[0.5vw] py-[0.05vw] rounded-full border border-[#E9D7FE]">
+                <span className="bg-white md:px-[0.5vw] px-[1.5vw] md:py-[0.05vw] py-[0.5vw] rounded-full border border-[#E9D7FE]">
                   ShipX
                 </span>
-                <span className="pl-[0.5vw] pr-[0.5vw]">Destination US</span>
+                <span className="md:pl-[0.5vw] pl-[1vw] md:pr-[0.5vw] pr-[1vw]">
+                  Destination US
+                </span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="#9E77ED"
-                  className="size-[0.6vw]"
+                  className="md:size-[0.6vw] size-[2.5vw]"
                 >
                   <path
                     strokeLinecap="round"
@@ -342,7 +345,7 @@ export default function CarouselNav() {
               {/* Headline */}
               <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[5vw] select-none mt-0">
                 <h1
-                  className="text-[#1A1A1A] font-bold md:text-[4.5vw] text-[10vw] md:leading-[4.8vw] leading-[10.5vw]"
+                  className="text-[#1A1A1A] font-extrabold md:text-[5.1vw] text-[10vw] md:leading-[4.8vw] leading-[10.5vw]"
                   style={{ fontFamily: "Karla" }}
                 >
                   Seamless Entry To The
@@ -423,7 +426,7 @@ export default function CarouselNav() {
             {/* Hero Image */}
             <div className="md:w-fit w-full flex justify-end items-center select-none">
               <img
-                className="md:w-fit w-full md:h-[35vw] h-[35vh] md:p-0 pb-[5vw]"
+                className="md:w-fit w-full md:h-[35vw] h-[35vh] md:p-0 pb-0"
                 src={main_svg_11}
                 alt="Main SVG 11"
               />
@@ -468,7 +471,7 @@ export default function CarouselNav() {
                 }
 
                 .animate-scroll-left {
-                  animation: scroll 45s linear infinite;
+                  animation: scroll 55s linear infinite;
                   width: max-content; /* ensures no weird shrinking */
                 }
               `}</style>
@@ -503,7 +506,7 @@ export default function CarouselNav() {
                 }
 
                 .animate-scroll-right {
-                  animation: scroll 50s linear infinite;
+                  animation: scroll 55s linear infinite;
                   width: max-content; /* ensures no weird shrinking */
                 }
               `}</style>
@@ -513,17 +516,17 @@ export default function CarouselNav() {
 
         {/* Third slide: custom hero section */}
         <div className="flex flex-col">
-          <div className="relative flex md:flex-row flex-col-reverse md:gap-y-0 items-center md:pt-0 pt-[10vw] md:min-h-[75vh] min-h-fit bg-white md:px-[8vw] px-[10vw]">
+          <div className="relative flex md:flex-row flex-col-reverse md:gap-y-0 items-center md:pt-0 pt-[10vw] md:min-h-[75vh] min-h-fit bg-white md:px-[10vw] px-[10vw]">
             <div className="flex-1 flex-col md:w-[55%] w-full">
               {/* Tagline */}
               <div
-                className="flex flex-row bg-[#F9F5FF] w-fit select-none rounded-full pl-[0.3vw] pr-[0.45vw] py-[0.2vw] md:text-[0.6vw] text-[2vw] items-center font-semibold text-[#6941C6]"
+                className="flex flex-row bg-[#F9F5FF] w-fit select-none rounded-full md:pl-[0.3vw] pl-[0.7vw] md:pr-[0.45vw] pr-[2vw] md:py-[0.2vw] py-[0.5vw] md:text-[0.6vw] text-[2.5vw] items-center font-semibold text-[#6941C6]"
                 style={{ fontFamily: "Inter" }}
               >
-                <span className="bg-white px-[0.5vw] py-[0.05vw] rounded-full border border-[#E9D7FE]">
+                <span className="bg-white md:px-[0.5vw] px-[1.5vw] md:py-[0.05vw] py-[0.5vw] rounded-full border border-[#E9D7FE]">
                   ShipX
                 </span>
-                <span className="pl-[0.5vw] pr-[0.5vw]">
+                <span className="md:pl-[0.5vw] pl-[1vw] md:pr-[0.5vw] pr-[1vw]">
                   Worldwide Delivery
                 </span>
                 <svg
@@ -532,7 +535,7 @@ export default function CarouselNav() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="#9E77ED"
-                  className="size-[0.6vw]"
+                  className="md:size-[0.6vw] size-[2.5vw]"
                 >
                   <path
                     strokeLinecap="round"
@@ -545,7 +548,7 @@ export default function CarouselNav() {
               {/* Headline */}
               <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[5vw] select-none mt-0">
                 <h1
-                  className="text-[#1A1A1A] font-bold md:text-[5vw] text-[10vw] md:leading-[5.5vw] leading-[10.5vw]"
+                  className="text-[#1A1A1A] font-extrabold md:text-[5vw] text-[10vw] md:leading-[5.5vw] leading-[10.5vw]"
                   style={{ fontFamily: "Karla" }}
                 >
                   Delivering To{" "}
@@ -555,12 +558,17 @@ export default function CarouselNav() {
                   </p>{" "}
                   With Ease
                 </h1>
-                <p className="text-[#63666D] md:text-[0.8vw] text-[2.5vw] font-medium opacity-80">
-                  From Economy Shipping To Express Delivery, FBA Fulfillment To
-                  Marketplace <br className="md:block hidden" /> integrations,
-                  ShipX Equips You With The Tools To Scale Worldwide
+                <p 
+                  className="text-[#63666D] md:text-[0.8vw] text-[2.5vw] font-medium opacity-80"
+                  style={{ fontFamily: "Inter" }}
+                >
+                  Reach Customers Worldwide With Seamless Logistics That Simplify Cross-<br className="md:block hidden" />
+                  Border Sales, Ensuring Smooth Growth Without Operational Headaches
                 </p>
-                <p className="text-[#402B73] md:text-[0.8vw] text-[2.5vw] font-bold">
+                <p
+                  className="text-[#402B73] md:text-[0.8vw] text-[3vw] font-bold"
+                  style={{ fontFamily: "Inter" }}
+                >
                   Community Of 1000+ International Shippers From ASEAN
                 </p>
               </div>
@@ -623,7 +631,7 @@ export default function CarouselNav() {
             {/* Hero Image */}
             <div className="md:w-fit w-full flex justify-end items-center select-none">
               <img
-                className="md:w-fit w-full md:h-[35vw] h-[35vh] md:p-0 pb-[5vw]"
+                className="md:w-fit w-full md:h-[35vw] h-[35vh] md:p-0 pb-0"
                 src={main_svg_12}
                 alt="Main SVG 12"
               />
