@@ -741,7 +741,7 @@ const Main = ({ margin }) => {
                 Global Freight, Customs & Fulfillment Solutions
               </span>
               <p
-                className="md:text-[2.3vw] text-[6vw] text-[#1A1A1A] md:text-start text-center font-semibold md:leading-[2.5vw] leading-[6.5vw]"
+                className="md:text-[2.3vw] text-[6vw] text-[#1A1A1A] md:text-start text-center font-semibold md:leading-[2.5vw] leading-[6.5vw] md:w-auto w-[100vw]"
                 style={{ fontFamily: "Inter" }}
               >
                 <p className="inline text-[#FF00E5]">Seamless</p> Trade{" "}
@@ -1127,7 +1127,7 @@ const Main = ({ margin }) => {
         {/* Offices Section Start */}
         <div
           id="network"
-          className={`md:min-h-screen h-auto relative flex flex-col justify-center items-center pt-[16vw] overflow-hidden select-none md:${margin} px-0`}
+          className={`md:min-h-screen h-auto relative flex flex-col justify-center items-center pt-[16vw] overflow-hidden select-none md:px-[8vw] px-[5vw]`}
         >
           <img
             src={main_svg_10}
@@ -1363,7 +1363,7 @@ const Main = ({ margin }) => {
             Contact Us
           </span>
           <p
-            className={`md:text-[2.3vw] text-[6vw] text-[#1A1A1A] text-center font-semibold md:leading-[2.5vw] leading-[6.5vw] mt-[1vw] md:mb-[8vw] mb-[15vw] select-none z-20 ${margin}`}
+            className={`md:text-[2.3vw] text-[6vw] text-[#1A1A1A] text-center font-semibold md:leading-[2.5vw] leading-[6.5vw] mt-[1vw] md:mb-[8vw] mb-[15vw] select-none z-20 md:px-0 px-[5vw]`}
             style={{ fontFamily: "Inter" }}
           >
             Ready to take your products{" "}
