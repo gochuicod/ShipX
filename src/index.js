@@ -7,6 +7,7 @@ import Main from "./scripts/components/Main";
 import ScrollToHash from "./scripts/components/ui/ScrollToHash";
 import { margin } from "./scripts/utils/constants";
 import Lenis from "@studio-freight/lenis";
+import WebFont from "webfontloader";
 
 function PrivacyPolicy() {
   return <div>Privacy Policy Page</div>;
@@ -17,6 +18,14 @@ function TermsAndServices() {
 }
 
 const App = () => {
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ["Inter", "KantumruyPro", "Poppins", "Karla"],
+      },
+    });
+  }, []);
+
   useEffect(() => {
     const lenis = new Lenis({
       lerp: 0.1, // smoothing factor (0–1, lower = smoother, slower)

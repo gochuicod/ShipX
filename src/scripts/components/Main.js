@@ -83,7 +83,8 @@ const Main = ({ margin }) => {
               <div className="flex flex-col items-center">
                 <span className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text">
                   <Counter
-                    className="font-['Kantumruy_Pro']"
+                    className=""
+                    style={{ fontFamily: "KantumruyPro" }}
                     end={2500}
                     duration={5}
                   />
@@ -96,7 +97,8 @@ const Main = ({ margin }) => {
               <div className="flex flex-col items-center">
                 <span className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text">
                   <Counter
-                    className="font-['Kantumruy_Pro']"
+                    className=""
+                    style={{ fontFamily: "KantumruyPro" }}
                     end={10}
                     duration={5}
                   />
@@ -109,7 +111,8 @@ const Main = ({ margin }) => {
               <div className="flex flex-col items-center">
                 <span className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text">
                   <Counter
-                    className="font-['Kantumruy_Pro']"
+                    className=""
+                    style={{ fontFamily: "KantumruyPro" }}
                     end={192}
                     duration={5}
                   />
@@ -123,7 +126,8 @@ const Main = ({ margin }) => {
               <div className="flex flex-col items-center">
                 <span className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text">
                   <Counter
-                    className="font-['Kantumruy_Pro']"
+                    className=""
+                    style={{ fontFamily: "KantumruyPro" }}
                     end={2.5}
                     duration={5}
                   />
@@ -136,7 +140,8 @@ const Main = ({ margin }) => {
               <div className="flex flex-col items-center">
                 <span className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text">
                   <Counter
-                    className="font-['Kantumruy_Pro']"
+                    className=""
+                    style={{ fontFamily: "KantumruyPro" }}
                     end={40}
                     duration={5}
                   />
@@ -149,7 +154,8 @@ const Main = ({ margin }) => {
               <div className="flex flex-col items-center">
                 <span className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text">
                   <Counter
-                    className="font-['Kantumruy_Pro']"
+                    className=""
+                    style={{ fontFamily: "KantumruyPro" }}
                     end={13}
                     duration={5}
                   />
@@ -164,7 +170,8 @@ const Main = ({ margin }) => {
               <div className="flex flex-col items-center">
                 <span className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text">
                   <Counter
-                    className="font-['Kantumruy_Pro']"
+                    className=""
+                    style={{ fontFamily: "KantumruyPro" }}
                     end={45}
                     duration={5}
                   />
@@ -177,7 +184,8 @@ const Main = ({ margin }) => {
               <div className="flex flex-col items-center">
                 <span className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text">
                   <Counter
-                    className="font-['Kantumruy_Pro']"
+                    className=""
+                    style={{ fontFamily: "KantumruyPro" }}
                     end={300}
                     duration={5}
                   />
@@ -191,7 +199,8 @@ const Main = ({ margin }) => {
                 <span className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text">
                   $
                   <Counter
-                    className="font-['Kantumruy_Pro']"
+                    className=""
+                    style={{ fontFamily: "KantumruyPro" }}
                     end={60}
                     duration={5}
                   />
@@ -203,7 +212,7 @@ const Main = ({ margin }) => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col font-['Inter']">
+          <div className="flex flex-col" style={{ fontFamily: "Inter" }}>
             <div className="flex flex-col md:items-start items-center md:gap-y-[0.5vw] gap-y-[1.5vw]">
               <span className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.7vw] text-[2.2vw] text-[#FF00E5] font-semibold bg-[#FFD6FA] md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-[1.5vw] py-[0.2vw]">
                 <svg
@@ -254,7 +263,10 @@ const Main = ({ margin }) => {
             className="absolute translate-x-[23vw] translate-y-[24vw] w-[200vw] h-[80vw] pointer-events-none select-none -z-10 rotate-190"
             aria-hidden="true"
           />
-          <span className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.7vw] text-[2.2vw] text-[#FF00E5] font-semibold font-['Inter'] bg-[#F3F1FF] md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-[1.5vw] py-[0.2vw] select-none">
+          <span
+            className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.7vw] text-[2.2vw] text-[#FF00E5] font-semibold bg-[#F3F1FF] md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-[1.5vw] py-[0.2vw] select-none"
+            style={{ fontFamily: "Inter" }}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="#FF00E5"
@@ -271,13 +283,19 @@ const Main = ({ margin }) => {
             </svg>
             Our Services
           </span>
-          <p className="md:text-[2vw] text-[6vw] text-[#1A1A1A] text-center font-semibold font-['Inter'] md:leading-[2.5vw] leading-[6.5vw] select-none">
+          <p
+            className="md:text-[2vw] text-[6vw] text-[#1A1A1A] text-center font-semibold md:leading-[2.5vw] leading-[6.5vw] select-none"
+            style={{ fontFamily: "Inter" }}
+          >
             <p className="inline text-[#FF00E5]">All in one platform</p> &ndash;
             ShipX aggregates cross-
             <br className="md:block hidden" />
             border solutions from Amilo & SG Link
           </p>
-          <div className="flex md:flex-row flex-col gap-x-[5vw] justify-center items-center md:pt-0 pt-[5vw] font-['Karla']">
+          <div
+            className="flex md:flex-row flex-col gap-x-[5vw] justify-center items-center md:pt-0 pt-[5vw]"
+            style={{ fontFamily: "Karla" }}
+          >
             <div className="flex md:flex-col flex-wrap md:gap-y-[1vw] gap-y-[3vw] md:w-[25vw] w-[95vw] md:justify-start justify-center md:gap-x-0 gap-x-[3vw]">
               <div className="flex flex-row">
                 <motion.div
@@ -464,7 +482,10 @@ const Main = ({ margin }) => {
           />
           <div className="flex md:flex-row flex-col gap-x-[0.1vw] justify-center items-center">
             <div className="flex flex-col gap-y-[1vw] md:justify-start justify-center md:items-start items-center">
-              <div className="flex md:flex-row flex-col font-['Inter'] gap-x-[0.5vw] md:gap-y-0 gap-y-[2vw] md:items-start items-center">
+              <div
+                className="flex md:flex-row flex-col gap-x-[0.5vw] md:gap-y-0 gap-y-[2vw] md:items-start items-center"
+                style={{ fontFamily: "Inter" }}
+              >
                 <span className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.7vw] text-[2.2vw] text-[#FF00E5] font-semibold bg-[#F3F1FF] md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-[1.5vw] py-[0.2vw]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -486,17 +507,26 @@ const Main = ({ margin }) => {
                   Two proven platforms. One unified solution. That's ShipX.
                 </span>
               </div>
-              <p className="text-[#1A1A1A] md:text-[2.3vw] text-[6vw] font-semibold font-['Inter'] md:leading-[2.5vw] leading-[6.5vw] md:text-start text-center">
+              <p
+                className="text-[#1A1A1A] md:text-[2.3vw] text-[6vw] font-semibold md:leading-[2.5vw] leading-[6.5vw] md:text-start text-center"
+                style={{ fontFamily: "Inter" }}
+              >
                 One window for all your <br />
                 cross-border logistics needs
               </p>
-              <p className="text-[#63666D] md:text-[0.8vw] text-[2.5vw] font-medium font-['Inter'] opacity-80 md:text-start text-center md:pt-0 pt-[3vw] md:pb-0 pb-[2vw]">
+              <p
+                className="text-[#63666D] md:text-[0.8vw] text-[2.5vw] font-medium opacity-80 md:text-start text-center md:pt-0 pt-[3vw] md:pb-0 pb-[2vw]"
+                style={{ fontFamily: "Inter" }}
+              >
                 ShipX Brings Together Modern Cross-Border Platform Technology
                 And Tech-
                 <br className="md:block hidden" />
                 Enabled Logistics Networks Into A Single, Easy-To-Use Solution.
               </p>
-              <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.6vw] font-normal font-['Karla'] justify-start items-center">
+              <div
+                className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.6vw] font-normal justify-start items-center"
+                style={{ fontFamily: "Karla" }}
+              >
                 <motion.button
                   className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
                   whileHover={{
@@ -611,7 +641,10 @@ const Main = ({ margin }) => {
                 `}</style>
               </div>
             </div>
-            <div className="flex flex-col justify-start items-center text-[#1A1A1A] md:text-[0.8vw] text-[2.2vw] font-medium font-['Inter'] md:w-[35vw] w-[80vw] md:gap-y-[1.5vw] gap-y-[4vw] md:pl-[5vw] pl-0 md:pr-[10vw] pr-0 md:pb-0 pb-[5vw]">
+            <div
+              className="flex flex-col justify-start items-center text-[#1A1A1A] md:text-[0.8vw] text-[2.2vw] font-medium md:w-[35vw] w-[80vw] md:gap-y-[1.5vw] gap-y-[4vw] md:pl-[5vw] pl-0 md:pr-[10vw] pr-0 md:pb-0 pb-[5vw]"
+              style={{ fontFamily: "Inter" }}
+            >
               <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] items-center w-full">
                 <img
                   className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
@@ -666,7 +699,10 @@ const Main = ({ margin }) => {
         >
           <div className="flex md:flex-row flex-col justify-between items-center gap-x-[5vw]">
             <div className="flex flex-col gap-y-[1vw] md:justify-start justify-center md:items-start items-center">
-              <span className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.7vw] text-[2.2vw] text-[#FF00E5] font-semibold font-['Inter'] bg-[#F3F1FF] md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-[1vw] py-[0.2vw]">
+              <span
+                className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.7vw] text-[2.2vw] text-[#FF00E5] font-semibold bg-[#F3F1FF] md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-[1vw] py-[0.2vw]"
+                style={{ fontFamily: "Inter" }}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="#FF00E5"
@@ -683,12 +719,18 @@ const Main = ({ margin }) => {
                 </svg>
                 Global Freight, Customs & Fulfillment Solutions
               </span>
-              <p className="md:text-[2.3vw] text-[6vw] text-[#1A1A1A] md:text-start text-center font-semibold font-['Inter'] md:leading-[2.5vw] leading-[6.5vw]">
+              <p
+                className="md:text-[2.3vw] text-[6vw] text-[#1A1A1A] md:text-start text-center font-semibold md:leading-[2.5vw] leading-[6.5vw]"
+                style={{ fontFamily: "Inter" }}
+              >
                 <p className="inline text-[#FF00E5]">Seamless</p> Trade{" "}
                 <br className="md:block hidden" />
                 Across Borders
               </p>
-              <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.6vw] font-normal font-['Karla'] justify-start items-center md:pt-0 pt-[2vw]">
+              <div
+                className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.6vw] font-normal justify-start items-center md:pt-0 pt-[2vw]"
+                style={{ fontFamily: "Karla" }}
+              >
                 <motion.button
                   className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
                   whileHover={{
@@ -727,7 +769,10 @@ const Main = ({ margin }) => {
               </div>
             </div>
             <div className="flex flex-col gap-y-[1vw] md:pt-0 pt-[3vw]">
-              <div className="flex md:flex-row flex-col font-['Karla'] justify-between md:items-center items-start gap-x-[4vw] md:gap-y-0 gap-y-[2vw] rounded-[2vw] md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:pl-[2.5vw] pl-[5vw] md:pr-0 pr-[5vw] md:py-0 py-[5vw]">
+              <div
+                className="flex md:flex-row flex-col justify-between md:items-center items-start gap-x-[4vw] md:gap-y-0 gap-y-[2vw] rounded-[2vw] md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:pl-[2.5vw] pl-[5vw] md:pr-0 pr-[5vw] md:py-0 py-[5vw]"
+                style={{ fontFamily: "Karla" }}
+              >
                 <div className="flex flex-col">
                   <span className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-transparent md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-0 py-[0.2vw]">
                     <svg
@@ -758,7 +803,7 @@ const Main = ({ margin }) => {
                   src={main_img_5}
                 />
                 {/* Collapsible Area */}
-                <div className="flex flex-col justify-start items-start w-full mt-[1vw]">
+                <div className="md:hidden flex flex-col justify-start items-start w-full mt-[1vw]">
                   {/* Button */}
                   <button
                     onClick={() => setIsOpen1(!isOpen1)}
@@ -786,7 +831,10 @@ const Main = ({ margin }) => {
                         }}
                         className="overflow-hidden"
                       >
-                        <div className="flex md:flex-row flex-col font-['Inter'] justify-between gap-x-[1.5vw] md:gap-y-0 gap-y-[5vw] md:text-[0.8vw] text-[2.4vw] md:pt-0 pt-[3vw]">
+                        <div
+                          className="flex md:flex-row flex-col justify-between gap-x-[1.5vw] md:gap-y-0 gap-y-[5vw] md:text-[0.8vw] text-[2.4vw] md:pt-0 pt-[3vw]"
+                          style={{ fontFamily: "Inter" }}
+                        >
                           <div className="flex flex-row justify-start items-center">
                             <img
                               className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
@@ -833,7 +881,10 @@ const Main = ({ margin }) => {
                   </motion.div>
                 </div>
               </div>
-              <div className="md:flex hidden md:flex-row flex-col font-['Inter'] justify-between gap-x-[1.5vw] md:gap-y-0 gap-y-[3vw] md:text-[0.8vw] text-[2.4vw] md:pt-0 pt-[3vw]">
+              <div
+                className="md:flex hidden md:flex-row flex-col justify-between gap-x-[1.5vw] md:gap-y-0 gap-y-[3vw] md:text-[0.8vw] text-[2.4vw] md:pt-0 pt-[3vw]"
+                style={{ fontFamily: "Inter" }}
+              >
                 <div className="flex flex-row justify-start items-center md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:pl-[2vw] pl-[5vw] pr-[3.5vw] md:py-[1.5vw] py-[3vw] rounded-[1.5vw]">
                   <img
                     className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
@@ -878,9 +929,12 @@ const Main = ({ margin }) => {
           </div>
           <div className="flex md:flex-row flex-col justify-between md:items-center items-start gap-x-[5vw]">
             <div className="flex flex-col gap-y-[1vw] md:pt-0 pt-[3vw]">
-              <div className="flex md:flex-row font-['Karla'] flex-col-reverse justify-start md:items-center items-start gap-x-[4vw] md:gap-y-0 gap-y-[2vw] rounded-[2vw] md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:p-0 p-[5vw]">
+              <div
+                className="flex md:flex-row flex-col-reverse justify-start md:items-center items-start gap-x-[4vw] md:gap-y-0 gap-y-[2vw] rounded-[2vw] md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:p-0 p-[5vw]"
+                style={{ fontFamily: "Karla" }}
+              >
                 {/* Collapsible Area */}
-                <div className="flex flex-col justify-start items-start w-full mt-[1vw]">
+                <div className="md:hidden flex flex-col justify-start items-start w-full mt-[1vw]">
                   {/* Button */}
                   <button
                     onClick={() => setIsOpen2(!isOpen2)}
@@ -908,7 +962,10 @@ const Main = ({ margin }) => {
                         }}
                         className="overflow-hidden"
                       >
-                        <div className="flex md:flex-row flex-col font-['Inter'] justify-between gap-x-[1.5vw] md:gap-y-0 gap-y-[5vw] md:text-[0.8vw] text-[2.4vw] md:pt-0 pt-[3vw]">
+                        <div
+                          className="flex md:flex-row flex-col justify-between gap-x-[1.5vw] md:gap-y-0 gap-y-[5vw] md:text-[0.8vw] text-[2.4vw] md:pt-0 pt-[3vw]"
+                          style={{ fontFamily: "Inter" }}
+                        >
                           <div className="flex flex-row justify-start items-center">
                             <img
                               className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
@@ -983,7 +1040,10 @@ const Main = ({ margin }) => {
                   </p>
                 </div>
               </div>
-              <div className="md:flex hidden md:flex-row flex-col font-['Inter'] justify-between gap-x-[1.5vw] md:gap-y-0 gap-y-[3vw] md:text-[0.8vw] text-[2.4vw] md:pt-0 pt-[3vw]">
+              <div
+                className="md:flex hidden md:flex-row flex-col justify-between gap-x-[1.5vw] md:gap-y-0 gap-y-[3vw] md:text-[0.8vw] text-[2.4vw] md:pt-0 pt-[3vw]"
+                style={{ fontFamily: "Inter" }}
+              >
                 <div className="flex flex-row justify-start items-center md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:pl-[2vw] pl-[5vw] pr-[3.5vw] md:py-[1.5vw] py-[3vw] rounded-[1.5vw]">
                   <img
                     className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
@@ -1028,7 +1088,10 @@ const Main = ({ margin }) => {
               </div>
             </div>
             <div className="flex flex-col md:pt-0 pt-[10vw]">
-              <p className="text-[#63666D] md:text-[1vw] text-[4vw] text-center font-medium font-['Inter'] italic opacity-90">
+              <p
+                className="text-[#63666D] md:text-[1vw] text-[4vw] text-center font-medium italic opacity-90"
+                style={{ fontFamily: "Inter" }}
+              >
                 Trusted Infrastructure And Smart{" "}
                 <br className="md:block hidden" />
                 Integrations That Make International{" "}
@@ -1077,7 +1140,10 @@ const Main = ({ margin }) => {
                   </svg>
                   Our Offices
                 </span>
-                <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.6vw] font-normal font-['Karla'] justify-center items-center">
+                <div
+                  className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.6vw] font-normal justify-center items-center"
+                  style={{ fontFamily: "Karla" }}
+                >
                   <motion.button
                     className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
                     whileHover={{
@@ -1129,7 +1195,10 @@ const Main = ({ margin }) => {
               </p>
             </div>
           </div>
-          <div className="flex md:flex-row flex-col justify-center items-center md:pt-0 pt-[5vw] font-['Inter']">
+          <div
+            className="flex md:flex-row flex-col justify-center items-center md:pt-0 pt-[5vw]"
+            style={{ fontFamily: "Inter" }}
+          >
             <div className="flex md:flex-col flex-wrap md:justify-normal justify-center md:gap-y-[1.5vw] gap-y-[3vw] md:gap-x-0 gap-x-[3vw] md:pl-[8vw] pl-0">
               <TooltipCard
                 image={main_icon_20}
@@ -1251,7 +1320,10 @@ const Main = ({ margin }) => {
             className="absolute translate-x-[30vw] md:-translate-y-[5vw] -translate-y-[45vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none opacity-20 -z-10"
             aria-hidden="true"
           />
-          <span className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#FF00E5] font-semibold font-['Inter'] bg-[#F3F1FF] md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-[1.5vw] py-[0.2vw] cursor-pointer select-none z-20">
+          <span
+            className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#FF00E5] font-semibold bg-[#F3F1FF] md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-[1.5vw] py-[0.2vw] cursor-pointer select-none z-20"
+            style={{ fontFamily: "Inter" }}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="#FF00E5"
@@ -1269,7 +1341,8 @@ const Main = ({ margin }) => {
             Contact Us
           </span>
           <p
-            className={`md:text-[2.3vw] text-[6vw] text-[#1A1A1A] text-center font-semibold font-['Inter'] md:leading-[2.5vw] leading-[6.5vw] mt-[1vw] md:mb-[8vw] mb-[15vw] select-none z-20 ${margin}`}
+            className={`md:text-[2.3vw] text-[6vw] text-[#1A1A1A] text-center font-semibold md:leading-[2.5vw] leading-[6.5vw] mt-[1vw] md:mb-[8vw] mb-[15vw] select-none z-20 ${margin}`}
+            style={{ fontFamily: "Inter" }}
           >
             Ready to take your products{" "}
             <p className="inline text-[#FF00E5]">global?</p>{" "}
@@ -1283,7 +1356,10 @@ const Main = ({ margin }) => {
               className="absolute md:-translate-x-[44vw] -translate-x-[65vw] md:-translate-y-0 translate-y-[5vw] w-[200vw] md:h-[29vw] h-[145vw] pointer-events-none select-none z-0"
               aria-hidden="true"
             />
-            <div className="flex flex-col font-['Poppins'] md:w-[20vw] w-full md:text-[0.8vw] text-[2.5vw] md:pt-0 pt-[10vw]">
+            <div
+              className="flex flex-col md:w-[20vw] w-full md:text-[0.8vw] text-[2.5vw] md:pt-0 pt-[10vw]"
+              style={{ fontFamily: "Poppins" }}
+            >
               <span className="text-[#0E0E0E] md:text-[1.5vw] text-[5vw] font-semibold select-none">
                 Contact Information
               </span>

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-@font-face {
+/* @font-face {
   font-family: "Inter";
   src: url("../src/assets/fonts/Inter-VariableFont_opsz,wght.ttf")
     format("truetype");
@@ -35,7 +35,6 @@
   font-display: swap;
 }
 
-/* Poppins Thin (100) */
 @font-face {
   font-family: "Poppins";
   src: url("../src/assets/fonts/Poppins-Thin.ttf") format("truetype");
@@ -44,7 +43,6 @@
   font-display: swap;
 }
 
-/* Poppins ExtraLight (200) */
 @font-face {
   font-family: "Poppins";
   src: url("../src/assets/fonts/Poppins-ExtraLight.ttf") format("truetype");
@@ -53,7 +51,6 @@
   font-display: swap;
 }
 
-/* Poppins Light (300) */
 @font-face {
   font-family: "Poppins";
   src: url("../src/assets/fonts/Poppins-Light.ttf") format("truetype");
@@ -62,7 +59,6 @@
   font-display: swap;
 }
 
-/* Poppins Regular (400) */
 @font-face {
   font-family: "Poppins";
   src: url("../src/assets/fonts/Poppins-Regular.ttf") format("truetype");
@@ -71,7 +67,6 @@
   font-display: swap;
 }
 
-/* Poppins Medium (500) */
 @font-face {
   font-family: "Poppins";
   src: url("../src/assets/fonts/Poppins-Medium.ttf") format("truetype");
@@ -80,7 +75,6 @@
   font-display: swap;
 }
 
-/* Poppins SemiBold (600) */
 @font-face {
   font-family: "Poppins";
   src: url("../src/assets/fonts/Poppins-SemiBold.ttf") format("truetype");
@@ -89,7 +83,6 @@
   font-display: swap;
 }
 
-/* Poppins Bold (700) */
 @font-face {
   font-family: "Poppins";
   src: url("../src/assets/fonts/Poppins-Bold.ttf") format("truetype");
@@ -98,7 +91,6 @@
   font-display: swap;
 }
 
-/* Poppins ExtraBold (800) */
 @font-face {
   font-family: "Poppins";
   src: url("../src/assets/fonts/Poppins-ExtraBold.ttf") format("truetype");
@@ -107,7 +99,6 @@
   font-display: swap;
 }
 
-/* Poppins Black (900) */
 @font-face {
   font-family: "Poppins";
   src: url("../src/assets/fonts/Poppins-Black.ttf") format("truetype");
@@ -121,6 +112,6 @@ html {
 }
 
 body {
-  -webkit-font-smoothing: antialiased; /* Safari/Chrome */
-  -moz-osx-font-smoothing: grayscale; /* Firefox */
-}
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale;
+} */

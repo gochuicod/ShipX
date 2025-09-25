@@ -18,6 +18,7 @@ const Header = () => {
         md:py-[1vw] md:px-[8vw] py-[5vw] px-[10vw] md:shadow-[0_0.5vw_0.5vw_rgba(255,0,229,0.15)]
         shadow-[0_3vw_5vw_rgba(255,0,229,0.15)]
       "
+      style={{ fontFamily: "Karla" }}
     >
       {/* Left: Logo */}
       <div className="flex flex-row gap-x-[1vw] justify-center items-center">

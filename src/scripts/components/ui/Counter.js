@@ -8,6 +8,7 @@ export default function Counter({
   prefix = "",
   suffix = "",
   className = "",
+  style,
 }) {
   const { ref, inView } = useInView({
     triggerOnce: true, // only animate the first time
@@ -22,6 +23,7 @@ export default function Counter({
           duration={duration}
           prefix={prefix}
           suffix={suffix}
+          style={style}
         />
       ) : (
         `${prefix}0${suffix}`
