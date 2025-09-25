@@ -661,7 +661,9 @@ const Main = ({ margin }) => {
         </div>
         {/* Platform Section End */}
         {/* Freight & Customs Section Start */}
-        <div className={`flex flex-col md:gap-y-[2vw] gap-y-0 ${margin} select-none`}>
+        <div
+          className={`flex flex-col md:gap-y-[2vw] gap-y-0 ${margin} select-none`}
+        >
           <div className="flex md:flex-row flex-col justify-between items-center gap-x-[5vw]">
             <div className="flex flex-col gap-y-[1vw] md:justify-start justify-center md:items-start items-center">
               <span className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.7vw] text-[2.2vw] text-[#FF00E5] font-semibold font-['Inter'] bg-[#F3F1FF] md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-[1vw] py-[0.2vw]">
@@ -1270,7 +1272,8 @@ const Main = ({ margin }) => {
             className={`md:text-[2.3vw] text-[6vw] text-[#1A1A1A] text-center font-semibold font-['Inter'] md:leading-[2.5vw] leading-[6.5vw] mt-[1vw] md:mb-[8vw] mb-[15vw] select-none z-20 ${margin}`}
           >
             Ready to take your products{" "}
-            <p className="inline text-[#FF00E5]">global?</p> <br className="md:block hidden" />
+            <p className="inline text-[#FF00E5]">global?</p>{" "}
+            <br className="md:block hidden" />
             Let's talk.
           </p>
           <div className="relative flex md:flex-row flex-col-reverse justify-start items-center gap-x-[5vw] md:shadow-[0_0.5vw_2vw_rgba(255,0,229,0.15)] shadow-[0_0.5vw_3vw_rgba(255,0,229,0.25)] md:pl-[10vw] pl-[15vw] pr-[8vw] py-[8vw] rounded-t-[2vw] md:w-[70vw] w-[90vw] bg-white z-10">
