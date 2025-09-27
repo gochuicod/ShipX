@@ -11,13 +11,13 @@ import main_svg_10 from "./main_svg_10.svg";
 import main_svg_11 from "./main_svg_11.svg";
 import main_svg_12 from "./main_svg_12.svg";
 
-import trusted_by_leaders from "./trusted-by-leaders.png";
-import site_icon from "./site_icon_shipx.png";
+import trusted_by_leaders from "./trusted-by-leaders.webp";
+import site_icon from "./site_icon_shipx.webp";
 
-import shipx from "./logo-shipx.png";
-import sglink from "./logo-sglink.png";
-import shipx_white from "./logo-shipx-white.png";
-import sglink_white from "./logo-sglink-white.png";
+import shipx from "./logo-shipx.webp";
+import sglink from "./logo-sglink.webp";
+import shipx_white from "./logo-shipx-white.webp";
+import sglink_white from "./logo-sglink-white.webp";
 
 import main_icon_1 from "./main_icon_1.svg";
 import main_icon_2 from "./main_icon_2.svg";
@@ -42,30 +42,30 @@ import main_icon_20 from "./main_icon_20.svg";
 import main_icon_21 from "./main_icon_21.svg";
 import main_icon_22 from "./main_icon_22.svg";
 
-import main_img_1 from "./main_img_1.png";
-import main_img_2 from "./main_img_2.png";
-import main_img_3 from "./main_img_3.png";
-import main_img_4 from "./main_img_4.png";
-import main_img_5 from "./main_img_5.png";
-import main_img_6 from "./main_img_6.png";
-import main_img_7 from "./main_img_7.png";
-import main_img_8 from "./main_img_8.png";
-import main_img_9 from "./main_img_9.png";
-import main_img_10 from "./main_img_10.png";
-import main_img_11 from "./main_img_11.png";
-import main_img_12 from "./main_img_12.png";
-import main_img_13 from "./main_img_13.png";
-import main_img_14 from "./main_img_14.png";
+import main_img_1 from "./main_img_1.webp";
+import main_img_2 from "./main_img_2.webp";
+import main_img_3 from "./main_img_3.webp";
+import main_img_4 from "./main_img_4.webp";
+import main_img_5 from "./main_img_5.webp";
+import main_img_6 from "./main_img_6.webp";
+import main_img_7 from "./main_img_7.webp";
+import main_img_8 from "./main_img_8.webp";
+import main_img_9 from "./main_img_9.webp";
+import main_img_10 from "./main_img_10.webp";
+import main_img_11 from "./main_img_11.webp";
+import main_img_12 from "./main_img_12.webp";
+import main_img_13 from "./main_img_13.webp";
+import main_img_14 from "./main_img_14.webp";
 
-import main_logo_1 from "./main_logo_1.png";
-import main_logo_2 from "./main_logo_2.png";
-import main_logo_3 from "./main_logo_3.png";
-import main_logo_4 from "./main_logo_4.png";
-import main_logo_5 from "./main_logo_5.png";
-import main_logo_6 from "./main_logo_6.png";
-import main_logo_7 from "./main_logo_7.png";
-import main_logo_8 from "./main_logo_8.png";
-import main_logo_9 from "./main_logo_9.png";
+import main_logo_1 from "./main_logo_1.webp";
+import main_logo_2 from "./main_logo_2.webp";
+import main_logo_3 from "./main_logo_3.webp";
+import main_logo_4 from "./main_logo_4.webp";
+import main_logo_5 from "./main_logo_5.webp";
+import main_logo_6 from "./main_logo_6.webp";
+import main_logo_7 from "./main_logo_7.webp";
+import main_logo_8 from "./main_logo_8.webp";
+import main_logo_9 from "./main_logo_9.webp";
 
 export {
   main_svg_1,

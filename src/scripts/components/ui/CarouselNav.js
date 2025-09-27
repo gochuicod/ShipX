@@ -113,7 +113,9 @@ export default function CarouselNav() {
               {/* Tagline */}
               <div
                 className="flex flex-row bg-[#F9F5FF] w-fit select-none rounded-full md:pl-[0.3vw] pl-[0.7vw] md:pr-[0.45vw] pr-[2vw] md:py-[0.2vw] py-[0.5vw] md:text-[0.6vw] text-[2.5vw] items-center font-semibold text-[#6941C6]"
-                style={{ fontFamily: "Inter" }}
+                style={{
+                  fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+                }}
               >
                 <span className="bg-white md:px-[0.5vw] px-[1.5vw] md:py-[0.05vw] py-[0.5vw] rounded-full border border-[#E9D7FE]">
                   ShipX
@@ -140,8 +142,10 @@ export default function CarouselNav() {
               {/* Headline */}
               <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[5vw] select-none mt-0">
                 <h1
-                  className="text-[#1A1A1A] font-extrabold md:text-[4.2vw] text-[10vw] md:leading-[4.5vw] leading-[10.5vw]"
-                  style={{ fontFamily: "Karla" }}
+                  className="text-[#1A1A1A] font-extrabold md:text-[3.7vw] text-[10vw] md:leading-[4.2vw] leading-[10.5vw]"
+                  style={{
+                    fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+                  }}
                 >
                   Everything You Need <br className="md:block hidden" />
                   To Grow{" "}
@@ -151,7 +155,9 @@ export default function CarouselNav() {
                 </h1>
                 <p
                   className="text-[#63666D] md:text-[0.8vw] text-[2.5vw] font-medium opacity-80"
-                  style={{ fontFamily: "Inter" }}
+                  style={{
+                    fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+                  }}
                 >
                   From Economy Shipping To Express Delivery, FBA Fulfillment To
                   Marketplace <br className="md:block hidden" /> integrations,
@@ -159,7 +165,9 @@ export default function CarouselNav() {
                 </p>
                 <p
                   className="text-[#402B73] md:text-[0.8vw] text-[2.5vw] font-bold"
-                  style={{ fontFamily: "Inter" }}
+                  style={{
+                    fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+                  }}
                 >
                   Community Of 1000+ International Shippers From ASEAN
                 </p>
@@ -168,7 +176,9 @@ export default function CarouselNav() {
               {/* CTA Buttons */}
               <div
                 className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.7vw] text-[2.5vw] font-normal md:my-[2.5vw] my-[5vw]"
-                style={{ fontFamily: "Karla" }}
+                style={{
+                  fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+                }}
               >
                 <button
                   className="
@@ -234,7 +244,9 @@ export default function CarouselNav() {
           <div className="flex flex-col select-none">
             <span
               className="text-[#63666D] md:text-[0.6vw] text-[2vw] font-medium text-center"
-              style={{ fontFamily: "Inter" }}
+              style={{
+                fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+              }}
             >
               Trusted By Industry <b>Leaders & 2500+ More</b>
             </span>
@@ -318,7 +330,9 @@ export default function CarouselNav() {
               {/* Tagline */}
               <div
                 className="flex flex-row bg-[#F9F5FF] w-fit select-none rounded-full md:pl-[0.3vw] pl-[0.7vw] md:pr-[0.45vw] pr-[2vw] md:py-[0.2vw] py-[0.5vw] md:text-[0.6vw] text-[2.5vw] items-center font-semibold text-[#6941C6]"
-                style={{ fontFamily: "Inter" }}
+                style={{
+                  fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+                }}
               >
                 <span className="bg-white md:px-[0.5vw] px-[1.5vw] md:py-[0.05vw] py-[0.5vw] rounded-full border border-[#E9D7FE]">
                   ShipX
@@ -345,8 +359,10 @@ export default function CarouselNav() {
               {/* Headline */}
               <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[5vw] select-none mt-0">
                 <h1
-                  className="text-[#1A1A1A] font-extrabold md:text-[5.1vw] text-[10vw] md:leading-[4.8vw] leading-[10.5vw]"
-                  style={{ fontFamily: "Karla" }}
+                  className="text-[#1A1A1A] font-extrabold md:text-[3.8vw] text-[10vw] md:leading-[4.3vw] leading-[10.5vw]"
+                  style={{
+                    fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+                  }}
                 >
                   Seamless Entry To The
                   <p className="inline text-[#FF00E5] font-black"> US</p>{" "}
@@ -354,7 +370,9 @@ export default function CarouselNav() {
                 </h1>
                 <p
                   className="text-[#63666D] md:text-[0.8vw] text-[2.5vw] font-medium opacity-80"
-                  style={{ fontFamily: "Inter" }}
+                  style={{
+                    fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+                  }}
                 >
                   Enter And Scale In The U.S. Market With Custom Logistics
                   Solutions Built To <br className="md:block hidden" />
@@ -362,7 +380,9 @@ export default function CarouselNav() {
                 </p>
                 <p
                   className="text-[#402B73] md:text-[0.8vw] text-[2.5vw] font-bold"
-                  style={{ fontFamily: "Inter" }}
+                  style={{
+                    fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+                  }}
                 >
                   Your Gateway To U.S. E-Commerce
                 </p>
@@ -371,7 +391,9 @@ export default function CarouselNav() {
               {/* CTA Buttons */}
               <div
                 className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.7vw] text-[2.5vw] font-normal md:my-[2.5vw] my-[5vw]"
-                style={{ fontFamily: "Karla" }}
+                style={{
+                  fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+                }}
               >
                 <button
                   className="
@@ -437,7 +459,9 @@ export default function CarouselNav() {
           <div className="flex flex-col select-none">
             <span
               className="text-[#63666D] md:text-[0.6vw] text-[2vw] font-medium text-center"
-              style={{ fontFamily: "Inter" }}
+              style={{
+                fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+              }}
             >
               Synergized By Industry <b>Partners & 50+ More</b>
             </span>
@@ -521,7 +545,9 @@ export default function CarouselNav() {
               {/* Tagline */}
               <div
                 className="flex flex-row bg-[#F9F5FF] w-fit select-none rounded-full md:pl-[0.3vw] pl-[0.7vw] md:pr-[0.45vw] pr-[2vw] md:py-[0.2vw] py-[0.5vw] md:text-[0.6vw] text-[2.5vw] items-center font-semibold text-[#6941C6]"
-                style={{ fontFamily: "Inter" }}
+                style={{
+                  fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+                }}
               >
                 <span className="bg-white md:px-[0.5vw] px-[1.5vw] md:py-[0.05vw] py-[0.5vw] rounded-full border border-[#E9D7FE]">
                   ShipX
@@ -548,8 +574,10 @@ export default function CarouselNav() {
               {/* Headline */}
               <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[5vw] select-none mt-0">
                 <h1
-                  className="text-[#1A1A1A] font-extrabold md:text-[5vw] text-[10vw] md:leading-[5.5vw] leading-[10.5vw]"
-                  style={{ fontFamily: "Karla" }}
+                  className="text-[#1A1A1A] font-extrabold md:text-[3.8vw] text-[10vw] md:leading-[4.3vw] leading-[10.5vw]"
+                  style={{
+                    fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+                  }}
                 >
                   Delivering To{" "}
                   <p className="inline text-[#FF00E5]">
@@ -558,16 +586,23 @@ export default function CarouselNav() {
                   </p>{" "}
                   With Ease
                 </h1>
-                <p 
+                <p
                   className="text-[#63666D] md:text-[0.8vw] text-[2.5vw] font-medium opacity-80"
-                  style={{ fontFamily: "Inter" }}
+                  style={{
+                    fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+                  }}
                 >
-                  Reach Customers Worldwide With Seamless Logistics That Simplify Cross-<br className="md:block hidden" />
-                  Border Sales, Ensuring Smooth Growth Without Operational Headaches
+                  Reach Customers Worldwide With Seamless Logistics That
+                  Simplify Cross-
+                  <br className="md:block hidden" />
+                  Border Sales, Ensuring Smooth Growth Without Operational
+                  Headaches
                 </p>
                 <p
                   className="text-[#402B73] md:text-[0.8vw] text-[3vw] font-bold"
-                  style={{ fontFamily: "Inter" }}
+                  style={{
+                    fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+                  }}
                 >
                   Community Of 1000+ International Shippers From ASEAN
                 </p>
@@ -576,7 +611,9 @@ export default function CarouselNav() {
               {/* CTA Buttons */}
               <div
                 className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.7vw] text-[2.5vw] font-normal md:my-[2.5vw] my-[5vw]"
-                style={{ fontFamily: "Karla" }}
+                style={{
+                  fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+                }}
               >
                 <button
                   className="
@@ -642,7 +679,9 @@ export default function CarouselNav() {
           <div className="flex flex-col select-none">
             <span
               className="text-[#63666D] md:text-[0.6vw] text-[2vw] font-medium text-center"
-              style={{ fontFamily: "Inter" }}
+              style={{
+                fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+              }}
             >
               Trusted By Industry <b>Leaders & 2500+ More</b>
             </span>

@@ -9,7 +9,7 @@ const Footer = () => {
         {/* Description */}
         <div
           className="flex flex-col md:gap-y-[1vw] gap-y-[3vw] justify-start md:w-[40%] w-full"
-          style={{ fontFamily: "Karla" }}
+          style={{ fontFamily: "Karla, system-ui, -apple-system, sans-serif" }}
         >
           <div className="flex flex-col">
             <div className="flex flex-row md:gap-x-[0.5vw] gap-x-[1vw] justify-start items-center">
@@ -53,7 +53,7 @@ const Footer = () => {
         {/* Links */}
         <div
           className="flex flex-row justify-end gap-x-[4vw] md:w-[60%] w-full md:pt-0 py-[5vw]"
-          style={{ fontFamily: "Karla" }}
+          style={{ fontFamily: "Karla, system-ui, -apple-system, sans-serif" }}
         >
           <div className="flex flex-col gap-y-[1vw]">
             <NavLink
@@ -139,7 +139,10 @@ const Footer = () => {
         </div>
       </div>
       {/* Copyright */}
-      <span className="text-center md:pt-0 pt-[2vw]" style={{ fontFamily: "Inter" }}>
+      <span
+        className="text-center md:pt-0 pt-[2vw]"
+        style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
+      >
         &copy; {new Date().getFullYear()} ShipX Copyright and rights reserved
       </span>
     </footer>

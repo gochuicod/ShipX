@@ -33,7 +33,7 @@ const ContactForm = () => {
     <form
       onSubmit={handleSubmit(onSubmit)}
       className="flex flex-col gap-y-[1.5vw] md:text-[0.8vw] text-[2.5vw] font-normal z-10 select-none md:w-auto w-full"
-      style={{ fontFamily: "Inter" }}
+      style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
     >
       <div className="flex md:flex-row flex-col gap-x-[1vw] md:gap-y-0 gap-y-[5vw]">
         <div className="flex flex-col">
@@ -89,7 +89,7 @@ const ContactForm = () => {
         )}
       </div>
 
-      <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.5vw] font-normal font-['Karla'] justify-start items-center md:mt-[1vw] mt-0 md:pt-0 pt-[5vw]">
+      <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.5vw] font-normal justify-start items-center md:mt-[1vw] mt-0 md:pt-0 pt-[5vw]">
         <button
           type="submit"
           disabled={isSubmitting}

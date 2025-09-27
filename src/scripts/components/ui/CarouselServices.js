@@ -116,7 +116,9 @@ export default function CarouselServices({ slide }) {
         <div className="flex flex-col md:justify-between justify-evenly md:gap-y-[1vw] gap-y-[1.5vw] md:w-[25vw] w-full bg-[#F8F7FF] md:p-[2vw] p-[5vw] md:rounded-[2vw] rounded-[5vw] md:h-[36vw] h-[100vw]">
           <span
             className="flex flex-row  md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]"
-            style={{ fontFamily: "Karla" }}
+            style={{
+              fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+            }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +138,9 @@ export default function CarouselServices({ slide }) {
           </span>
           <p
             className="md:text-[1.6vw] text-[4.5vw] text-[#1A1A1A] text-start font-semibold  md:leading-[2vw] leading-[7vw]"
-            style={{ fontFamily: "Karla" }}
+            style={{
+              fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+            }}
           >
             From{" "}
             <p className="inline text-[#FF00E5]">
@@ -147,7 +151,9 @@ export default function CarouselServices({ slide }) {
           </p>
           <div
             className="flex flex-row font-normal gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]"
-            style={{ fontFamily: "Inter" }}
+            style={{
+              fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+            }}
           >
             <p className="text-[#63666D] md:text-[0.6vw] text-[2.3vw]">
               Prices starting from as low as <br />
@@ -166,7 +172,9 @@ export default function CarouselServices({ slide }) {
         <div className="flex flex-col md:justify-between justify-evenly md:gap-y-[1vw] gap-y-[1.5vw] md:w-[25vw] w-full bg-[#F8F7FF] md:p-[2vw] p-[5vw] md:rounded-[2vw] rounded-[5vw] md:h-[36vw] h-[100vw]">
           <span
             className="flex flex-row  md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]"
-            style={{ fontFamily: "Karla" }}
+            style={{
+              fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+            }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -186,7 +194,9 @@ export default function CarouselServices({ slide }) {
           </span>
           <p
             className="md:text-[1.6vw] text-[4.5vw] text-[#1A1A1A] text-start font-semibold  md:leading-[2vw] leading-[7vw]"
-            style={{ fontFamily: "Karla" }}
+            style={{
+              fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+            }}
           >
             From anywhere in{" "}
             <p className="inline text-[#FF00E5]">
@@ -197,7 +207,9 @@ export default function CarouselServices({ slide }) {
           </p>
           <div
             className="flex flex-row font-normal gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[1vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]"
-            style={{ fontFamily: "Inter" }}
+            style={{
+              fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+            }}
           >
             <p className="text-[#63666D] md:text-[0.6vw] text-[2.3vw]">
               Prices starting from as low as <br />
@@ -216,7 +228,9 @@ export default function CarouselServices({ slide }) {
         <div className="flex flex-col md:justify-between justify-evenly md:gap-y-[1vw] gap-y-[1.5vw] md:w-[25vw] w-full bg-[#F8F7FF] md:p-[2vw] p-[5vw] md:rounded-[2vw] rounded-[5vw] md:h-[36vw] h-[100vw]">
           <span
             className="flex flex-row  md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]"
-            style={{ fontFamily: "Karla" }}
+            style={{
+              fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+            }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -236,7 +250,9 @@ export default function CarouselServices({ slide }) {
           </span>
           <p
             className="md:text-[1.3vw] text-[4vw] text-[#1A1A1A] text-start font-semibold  md:leading-[2vw] leading-[6vw]"
-            style={{ fontFamily: "Karla" }}
+            style={{
+              fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+            }}
           >
             Dedicated Corridor from{" "}
             <p className="inline text-[#FF00E5]">
@@ -247,7 +263,9 @@ export default function CarouselServices({ slide }) {
           </p>
           <div
             className="flex flex-row font-normal gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]"
-            style={{ fontFamily: "Inter" }}
+            style={{
+              fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+            }}
           >
             <p className="text-[#63666D] md:text-[0.6vw] text-[2.3vw]">
               Prices starting as low as <br />
@@ -266,7 +284,9 @@ export default function CarouselServices({ slide }) {
         <div className="flex flex-col md:justify-between justify-evenly md:gap-y-[1vw] gap-y-[1.5vw] md:w-[25vw] w-full bg-[#F8F7FF] md:p-[2vw] p-[5vw] md:rounded-[2vw] rounded-[5vw] md:h-[36vw] h-[100vw]">
           <span
             className="flex flex-row  md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]"
-            style={{ fontFamily: "Karla" }}
+            style={{
+              fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+            }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -286,7 +306,9 @@ export default function CarouselServices({ slide }) {
           </span>
           <p
             className="md:text-[1.4vw] text-[4vw] text-[#1A1A1A] text-start font-semibold  md:leading-[2.2vw] leading-[6vw]"
-            style={{ fontFamily: "Karla" }}
+            style={{
+              fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+            }}
           >
             Network of <p className="inline text-[#FF00E5]">2+ warehouses</p>{" "}
             <br />
@@ -294,7 +316,9 @@ export default function CarouselServices({ slide }) {
           </p>
           <div
             className="flex flex-row font-normal gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]"
-            style={{ fontFamily: "Inter" }}
+            style={{
+              fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+            }}
           >
             <p className="text-[#63666D] md:text-[0.6vw] text-[2.3vw]">
               Pick & Pack starting from as low as{" "}
@@ -316,7 +340,9 @@ export default function CarouselServices({ slide }) {
         <div className="flex flex-col md:justify-between justify-evenly md:gap-y-[1vw] gap-y-[1.5vw] md:w-[25vw] w-full bg-[#F8F7FF] md:p-[2vw] p-[5vw] md:rounded-[2vw] rounded-[5vw] md:h-[36vw] h-[100vw]">
           <span
             className="flex flex-row  md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]"
-            style={{ fontFamily: "Karla" }}
+            style={{
+              fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+            }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -336,7 +362,9 @@ export default function CarouselServices({ slide }) {
           </span>
           <p
             className="md:text-[1.8vw] text-[5vw] text-[#1A1A1A] text-start font-semibold  md:leading-[2.5vw] leading-[7vw]"
-            style={{ fontFamily: "Karla" }}
+            style={{
+              fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+            }}
           >
             <p className="inline text-[#FF00E5]">End-to-end operations</p>
             <br />
@@ -373,7 +401,9 @@ export default function CarouselServices({ slide }) {
         <div className="flex flex-col md:justify-between justify-evenly md:gap-y-[1vw] gap-y-[1.5vw] md:w-[25vw] w-full bg-[#F8F7FF] md:p-[2vw] p-[5vw] md:rounded-[2vw] rounded-[5vw] md:h-[36vw] h-[100vw]">
           <span
             className="flex flex-row  md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]"
-            style={{ fontFamily: "Karla" }}
+            style={{
+              fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+            }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -393,7 +423,9 @@ export default function CarouselServices({ slide }) {
           </span>
           <p
             className="md:text-[1.3vw] text-[4vw] text-[#1A1A1A] text-start font-semibold  md:leading-[1.5vw] leading-[5vw]"
-            style={{ fontFamily: "Karla" }}
+            style={{
+              fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+            }}
           >
             Join our scheduled sea-freight
             <br />
@@ -405,7 +437,9 @@ export default function CarouselServices({ slide }) {
           </p>
           <div
             className="flex flex-row font-normal gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]"
-            style={{ fontFamily: "Inter" }}
+            style={{
+              fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+            }}
           >
             <p className="text-[#63666D] md:text-[0.6vw] text-[2.3vw]">
               Prices starting from as low as
@@ -425,7 +459,9 @@ export default function CarouselServices({ slide }) {
         <div className="flex flex-col md:justify-between justify-evenly md:gap-y-[1vw] gap-y-[1.5vw] md:w-[25vw] w-full bg-[#F8F7FF] md:p-[2vw] p-[5vw] md:rounded-[2vw] rounded-[5vw] md:h-[36vw] h-[100vw]">
           <span
             className="flex flex-row  md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]"
-            style={{ fontFamily: "Karla" }}
+            style={{
+              fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+            }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -445,7 +481,9 @@ export default function CarouselServices({ slide }) {
           </span>
           <p
             className="md:text-[1.6vw] text-[5vw] text-[#1A1A1A] text-start font-semibold  md:leading-[2vw] leading-[7vw]"
-            style={{ fontFamily: "Karla" }}
+            style={{
+              fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+            }}
           >
             Team of <p className="inline text-[#FF00E5]">Experts and APIs</p>
             <br />
@@ -453,7 +491,9 @@ export default function CarouselServices({ slide }) {
           </p>
           <div
             className="flex flex-row font-normal gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]"
-            style={{ fontFamily: "Inter" }}
+            style={{
+              fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+            }}
           >
             <p className="text-[#63666D] md:text-[0.6vw] text-[2.3vw]">
               Prices starting from as low as <br />
@@ -472,7 +512,9 @@ export default function CarouselServices({ slide }) {
         <div className="flex flex-col md:justify-between justify-between md:gap-y-[1vw] gap-y-[1.5vw] md:w-[25vw] w-full bg-[#F8F7FF] md:p-[2vw] p-[5vw] md:rounded-[2vw] rounded-[5vw] md:h-[36vw] h-[100vw]">
           <span
             className="flex flex-row  md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]"
-            style={{ fontFamily: "Karla" }}
+            style={{
+              fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+            }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { main_icon_20 } from "../../../assets/assets";
 
 export default function TooltipCard({
   image,
@@ -19,7 +18,7 @@ export default function TooltipCard({
                  hover:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.35)] 
                  transition-shadow duration-1000 ease-in-out
                  relative"
-      onClick={() => setOpen((prev) => !prev)} // toggle on mobile
+      onClick={() => setOpen((prev) => !prev)}
     >
       <img
         className="md:w-[1.5vw] w-[3vw] md:h-[1.5vw] h-[3vw] rounded-full"
@@ -49,20 +48,13 @@ export default function TooltipCard({
         <span className="text-[#19191D] md:text-[0.8vw] text-[2.3vw] font-bold">
           {country_name}
         </span>
-        {/* <span className="text-[#19191D] md:text-[0.8vw] text-[2.3vw] font-bold">Singapore</span> */}
         {description}
-        {/* <span className="text-[#757577] text-[0.7vw]">
-          60 Kaki Bukit Place, Eunos <br />
-          Techpark #03-19, S415979
-        </span> */}
         <span className="text-[#757577] md:text-[0.7vw] text-[2vw] pt-[1.5vw]">
           {contact_number}
         </span>
         <span className="text-[#757577] md:text-[0.7vw] text-[2vw]">
           {email}
         </span>
-        {/* <span className="text-[#757577] text-[0.7vw] pt-[1.5vw]">(+65) 9001 9941</span> */}
-        {/* <span className="text-[#757577] text-[0.7vw]">contact.sg@shipx.asia</span> */}
       </div>
     </div>
   );
