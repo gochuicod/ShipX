@@ -16,19 +16,6 @@ import {
   main_icon_7,
   main_icon_8,
   main_icon_9,
-  main_icon_10,
-  main_icon_11,
-  main_icon_12,
-  main_icon_13,
-  main_icon_14,
-  main_icon_15,
-  main_icon_16,
-  main_icon_17,
-  main_icon_18,
-  main_icon_19,
-  main_icon_20,
-  main_icon_21,
-  main_icon_22,
   main_img_2,
   main_img_4,
   main_img_5,
@@ -37,15 +24,16 @@ import {
   main_logo_3,
 } from "../../assets/assets";
 
+import { useState } from "react";
+import { offices, services, services_2 } from "../utils/constants";
+import { NavLink } from "react-router-dom";
+import * as motion from "motion/react-client";
+
 import ContactForm from "./ui/ContactForm";
 import Carousel from "./ui/CarouselNav";
 import CarouselServices from "./ui/CarouselServices";
 import Counter from "./ui/Counter";
 import TooltipCard from "./ui/ToolTipCard";
-
-import * as motion from "motion/react-client";
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
 
 const Main = ({ margin }) => {
   const [slide, setSlide] = useState(0);
@@ -871,46 +859,24 @@ const Main = ({ margin }) => {
                               "Inter, system-ui, -apple-system, sans-serif",
                           }}
                         >
-                          <div className="flex flex-row justify-start items-center">
-                            <img
-                              className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
-                              src={main_icon_10}
-                            />
-                            <p className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
-                              Multimodal Transport <br />
-                              <p className="text-[#63666D] text-normal">
-                                sea, air, road &{" "}
-                                <br className="md:block hidden" />
-                                combined logistics
-                              </p>
-                            </p>
-                          </div>
-                          <div className="flex flex-row justify-start items-center">
-                            <img
-                              className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
-                              src={main_icon_11}
-                            />
-                            <p className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
-                              Cross-Border Trucking <br />
-                              <p className="text-[#63666D] text-normal">
-                                bonded-lanes (VN-SG, TH-VN)
-                              </p>
-                            </p>
-                          </div>
-                          <div className="flex flex-row justify-start items-center">
-                            <img
-                              className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
-                              src={main_icon_12}
-                            />
-                            <p className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
-                              Customs Solutions <br />
-                              <p className="text-[#63666D] text-normal">
-                                clearance, IOSS/VAT, duty{" "}
-                                <br className="md:block hidden" />
-                                management
-                              </p>
-                            </p>
-                          </div>
+                          {services.map((service, index) => (
+                            <div
+                              key={index}
+                              className="flex flex-row justify-start items-center"
+                            >
+                              <img
+                                className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
+                                src={service.icon}
+                                alt={service.title}
+                              />
+                              <div className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
+                                {service.title} <br />
+                                <p className="text-[#63666D] text-normal">
+                                  {service.description}
+                                </p>
+                              </div>
+                            </div>
+                          ))}
                         </div>
                       </motion.div>
                     )}
@@ -923,45 +889,24 @@ const Main = ({ margin }) => {
                   fontFamily: "Inter, system-ui, -apple-system, sans-serif",
                 }}
               >
-                <div className="flex flex-row justify-start items-center md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:pl-[2vw] pl-[5vw] pr-[3.5vw] md:py-[1.5vw] py-[3vw] rounded-[1.5vw]">
-                  <img
-                    className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
-                    src={main_icon_10}
-                  />
-                  <p className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
-                    Multimodal Transport <br />
-                    <p className="text-[#63666D] text-normal">
-                      sea, air, road & <br className="md:block hidden" />
-                      combined logistics
-                    </p>
-                  </p>
-                </div>
-                <div className="flex flex-row justify-start items-center md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:pl-[2vw] pl-[5vw] pr-[3.5vw] md:py-[1.5vw] py-[3vw] rounded-[1.5vw]">
-                  <img
-                    className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
-                    src={main_icon_11}
-                  />
-                  <p className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
-                    Cross-Border Trucking <br />
-                    <p className="text-[#63666D] text-normal">
-                      bonded-lanes (VN-SG, TH-VN)
-                    </p>
-                  </p>
-                </div>
-                <div className="flex flex-row justify-start items-center md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:pl-[2vw] pl-[5vw] pr-[3.5vw] md:py-[1.5vw] py-[3vw] rounded-[1.5vw]">
-                  <img
-                    className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
-                    src={main_icon_12}
-                  />
-                  <p className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
-                    Customs Solutions <br />
-                    <p className="text-[#63666D] text-normal">
-                      clearance, IOSS/VAT, duty{" "}
-                      <br className="md:block hidden" />
-                      management
-                    </p>
-                  </p>
-                </div>
+                {services.map((service, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-row justify-start items-center md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:pl-[2vw] pl-[5vw] pr-[3.5vw] md:py-[1.5vw] py-[3vw] rounded-[1.5vw]"
+                  >
+                    <img
+                      className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
+                      src={service.icon}
+                      alt={service.title}
+                    />
+                    <div className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
+                      {service.title} <br />
+                      <p className="text-[#63666D] text-normal">
+                        {service.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -1009,48 +954,24 @@ const Main = ({ margin }) => {
                               "Inter, system-ui, -apple-system, sans-serif",
                           }}
                         >
-                          <div className="flex flex-row justify-start items-center">
-                            <img
-                              className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
-                              src={main_icon_14}
-                            />
-                            <p className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
-                              Inventory Services <br />
-                              <p className="text-[#63666D] text-normal">
-                                storage, pick & pack, returns{" "}
-                                <br className="md:block hidden" />
-                                management
-                              </p>
-                            </p>
-                          </div>
-                          <div className="flex flex-row justify-start items-center">
-                            <img
-                              className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
-                              src={main_icon_13}
-                            />
-                            <p className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
-                              Seamless Integrations <br />
-                              <p className="text-[#63666D] text-normal">
-                                Shopify, Shopee, Lazada, eBay,{" "}
-                                <br className="md:block hidden" />
-                                Amazon
-                              </p>
-                            </p>
-                          </div>
-                          <div className="flex flex-row justify-start items-center">
-                            <img
-                              className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
-                              src={main_icon_15}
-                            />
-                            <p className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
-                              Regional Advantage <br />
-                              <p className="text-[#63666D] text-normal">
-                                optimized location for{" "}
-                                <br className="md:block hidden" />
-                                fast fulfillment
-                              </p>
-                            </p>
-                          </div>
+                          {services_2.map((service, index) => (
+                            <div
+                              key={index}
+                              className="flex flex-row justify-start items-center"
+                            >
+                              <img
+                                className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
+                                src={service.icon}
+                                alt={service.title}
+                              />
+                              <div className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
+                                {service.title} <br />
+                                <p className="text-[#63666D] text-normal">
+                                  {service.description}
+                                </p>
+                              </div>
+                            </div>
+                          ))}
                         </div>
                       </motion.div>
                     )}
@@ -1091,47 +1012,29 @@ const Main = ({ margin }) => {
                   fontFamily: "Inter, system-ui, -apple-system, sans-serif",
                 }}
               >
-                <div className="flex flex-row justify-start items-center md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:pl-[2vw] pl-[5vw] pr-[3.5vw] md:py-[1.5vw] py-[3vw] rounded-[1.5vw]">
-                  <img
-                    className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
-                    src={main_icon_13}
-                  />
-                  <p className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
-                    Inventory Services <br />
-                    <p className="text-[#63666D] text-normal">
-                      storage, pick & pack, returns{" "}
-                      <br className="md:block hidden" />
-                      management
-                    </p>
-                  </p>
-                </div>
-                <div className="flex flex-row justify-start items-center md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:pl-[2vw] pl-[5vw] pr-[3.5vw] md:py-[1.5vw] py-[3vw] rounded-[1.5vw]">
-                  <img
-                    className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
-                    src={main_icon_14}
-                  />
-                  <p className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
-                    Seamless Integrations <br />
-                    <p className="text-[#63666D] text-normal">
-                      Shopify, Shopee, Lazada, eBay,{" "}
-                      <br className="md:block hidden" />
-                      Amazon
-                    </p>
-                  </p>
-                </div>
-                <div className="flex flex-row justify-start items-center md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:pl-[2vw] pl-[5vw] pr-[3.5vw] md:py-[1.5vw] py-[3vw] rounded-[1.5vw]">
-                  <img
-                    className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
-                    src={main_icon_15}
-                  />
-                  <p className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
-                    Regional Advantage <br />
-                    <p className="text-[#63666D] text-normal">
-                      optimized location for <br className="md:block hidden" />
-                      fast fulfillment
-                    </p>
-                  </p>
-                </div>
+                {services_2.map((service, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-row justify-start items-center 
+                              md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] 
+                              shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] 
+                              md:pl-[2vw] pl-[5vw] pr-[3.5vw] 
+                              md:py-[1.5vw] py-[3vw] 
+                              rounded-[1.5vw]"
+                  >
+                    <img
+                      className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
+                      src={service.icon}
+                      alt={service.title}
+                    />
+                    <div className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
+                      {service.title} <br />
+                      <p className="text-[#63666D] text-normal">
+                        {service.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
             <div className="flex flex-col md:pt-0 pt-[10vw]">
@@ -1253,99 +1156,17 @@ const Main = ({ margin }) => {
             }}
           >
             <div className="flex md:flex-col flex-wrap md:justify-normal justify-center md:gap-y-[1.5vw] gap-y-[3vw] md:gap-x-0 gap-x-[3vw] md:pl-[8vw] pl-[1.5vw] md:pr-0 pr-[1.5vw]">
-              <TooltipCard
-                image={main_icon_20}
-                country_name={`Singapore`}
-                description={
-                  <span className="text-[#757577] md:text-[0.7vw] text-[2vw]">
-                    60 Kaki Bukit Place, Eunos{" "}
-                    <br className="md:block hidden" />
-                    Techpark #03-19, S415979
-                  </span>
-                }
-                contact_number={`(+65) 9001 9941`}
-                email={`contact.sg@shipx.asia`}
-              />
-              <TooltipCard
-                image={main_icon_21}
-                country_name={`Thailand`}
-                description={
-                  <span className="text-[#757577] md:text-[0.7vw] text-[2vw]">
-                    450/2 Boonyasathit Building,
-                    <br className="md:block hidden" />
-                    2th Floor, Rama III Rd.,
-                    <br className="md:block hidden" />
-                    Bangkok 10120
-                  </span>
-                }
-                contact_number={`(+65) 96 798 8971`}
-                email={`contact.th@shipx.asia`}
-              />
-              <TooltipCard
-                image={main_icon_22}
-                country_name={`Vietnam`}
-                description={
-                  <span className="text-[#757577] md:text-[0.7vw] text-[2vw]">
-                    350 National Highway 1A, Binh
-                    <br className="md:block hidden" />
-                    Hung Hoa B, Binh Tan, Ho Chi
-                    <br className="md:block hidden" />
-                    Minh
-                  </span>
-                }
-                contact_number={`(+84) 90 270 23 45`}
-                email={`contact.vn@shipx.asia`}
-              />
-              <TooltipCard
-                image={main_icon_18}
-                country_name={`Malaysia`}
-                description={
-                  <span className="text-[#757577] md:text-[0.7vw] text-[2vw]">
-                    Suite 5.03 Level 5 Block, Bangunan Pan Global, 1A, Jln
-                    Tandang, Seksyen 51, 46050 Petaling Jaya, Selangor
-                  </span>
-                }
-                contact_number={`(+60) 12 525 5019`}
-                email={`contact.my@shipx.asia`}
-              />
-              <TooltipCard
-                image={main_icon_17}
-                country_name={`Indonesia`}
-                description={
-                  <span className="text-[#757577] md:text-[0.7vw] text-[2vw]">
-                    Jl. KH Mas Mansyur No. 119{" "}
-                    <br className="md:block hidden" />- 121. Nyamplungan
-                    Kecamatan
-                    <br className="md:block hidden" />
-                    Pabean Cantikan, Surabaya
-                  </span>
-                }
-                // contact_number={`number`}
-                email={`contact.in@shipx.asia`}
-              />
-              <TooltipCard
-                image={main_icon_19}
-                country_name={`Philippines`}
-                description={
-                  <span className="text-[#757577] md:text-[0.7vw] text-[2vw]">
-                    address
-                  </span>
-                }
-                contact_number={`number`}
-                email={`contact.ph@shipx.asia`}
-                hidden={true}
-              />
-              <TooltipCard
-                image={main_icon_16}
-                country_name={`United States`}
-                description={
-                  <span className="text-[#757577] md:text-[0.7vw] text-[2vw]">
-                    NL 108 Almond CT, Milford, Pennsylvania. Zip code 18337
-                  </span>
-                }
-                // contact_number={`number`}
-                email={`contact.us@shipx.asia`}
-              />
+              {offices.map((office, index) => (
+                <TooltipCard
+                  key={index}
+                  image={office.image}
+                  country_name={office.country_name}
+                  description={office.description}
+                  contact_number={office.contact_number}
+                  email={office.email}
+                  hidden={office.hidden}
+                />
+              ))}
             </div>
             {/* Map Image */}
             <div

@@ -30,9 +30,9 @@ export default function CarouselNav() {
         loop={true}
         transition={{ duration: 1 }}
         className="w-screen rounded-none md:pb-[1vw] pb-[10vw]"
-        swipe={true} // enable swipe
-        draggable={true} // allow dragging
-        touchMove={true} // respond to touch
+        swipe={true}
+        draggable={true}
+        touchMove={true}
         verticalSwiping={false} // make sure it only reacts to horizontal
         prevArrow={({ handlePrev }) => (
           <button
@@ -234,6 +234,7 @@ export default function CarouselNav() {
             <div className="md:w-fit w-full flex justify-end items-center select-none">
               <img
                 className="md:w-fit w-full md:h-[35vw] h-[35vh] md:p-0 pb-0"
+                loading="lazy"
                 src={main_svg_1}
                 alt="Main SVG 1"
               />
@@ -257,6 +258,7 @@ export default function CarouselNav() {
                 {/* Original logos */}
                 <img
                   src={main_logo_4}
+                  loading="lazy"
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
@@ -264,6 +266,7 @@ export default function CarouselNav() {
                 {/* Duplicate logos for seamless loop */}
                 <img
                   src={main_logo_4}
+                  loading="lazy"
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
@@ -292,6 +295,7 @@ export default function CarouselNav() {
                 {/* Original logos */}
                 <img
                   src={main_logo_5}
+                  loading="lazy"
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
@@ -299,6 +303,7 @@ export default function CarouselNav() {
                 {/* Duplicate logos for seamless loop */}
                 <img
                   src={main_logo_5}
+                  loading="lazy"
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
@@ -449,6 +454,7 @@ export default function CarouselNav() {
             <div className="md:w-fit w-full flex justify-end items-center select-none">
               <img
                 className="md:w-fit w-full md:h-[35vw] h-[35vh] md:p-0 pb-0"
+                loading="lazy"
                 src={main_svg_11}
                 alt="Main SVG 11"
               />
@@ -472,6 +478,7 @@ export default function CarouselNav() {
                 {/* Original logos */}
                 <img
                   src={main_logo_6}
+                  loading="lazy"
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
@@ -479,6 +486,7 @@ export default function CarouselNav() {
                 {/* Duplicate logos for seamless loop */}
                 <img
                   src={main_logo_6}
+                  loading="lazy"
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
@@ -507,6 +515,7 @@ export default function CarouselNav() {
                 {/* Original logos */}
                 <img
                   src={main_logo_7}
+                  loading="lazy"
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
@@ -514,6 +523,7 @@ export default function CarouselNav() {
                 {/* Duplicate logos for seamless loop */}
                 <img
                   src={main_logo_7}
+                  loading="lazy"
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
@@ -669,6 +679,7 @@ export default function CarouselNav() {
             <div className="md:w-fit w-full flex justify-end items-center select-none">
               <img
                 className="md:w-fit w-full md:h-[35vw] h-[35vh] md:p-0 pb-0"
+                loading="lazy"
                 src={main_svg_12}
                 alt="Main SVG 12"
               />
@@ -692,6 +703,7 @@ export default function CarouselNav() {
                 {/* Original logos */}
                 <img
                   src={main_logo_8}
+                  loading="lazy"
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
@@ -699,6 +711,7 @@ export default function CarouselNav() {
                 {/* Duplicate logos for seamless loop */}
                 <img
                   src={main_logo_8}
+                  loading="lazy"
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
@@ -727,6 +740,7 @@ export default function CarouselNav() {
                 {/* Original logos */}
                 <img
                   src={main_logo_9}
+                  loading="lazy"
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
@@ -734,6 +748,7 @@ export default function CarouselNav() {
                 {/* Duplicate logos for seamless loop */}
                 <img
                   src={main_logo_9}
+                  loading="lazy"
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
