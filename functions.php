@@ -32,7 +32,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
   $phone   = sanitize_text_field($params['phone'] ?? '');
   $message = sanitize_textarea_field($params['message'] ?? '');
 
-  $to = "gochuicodarelleq@gmail.com"; // <- replace with your target email
+  $to = "darelle@infigroup.co"; // <- replace with your target email
   $subject = "New Contact Form Submission";
   $body = "Name: $name\nEmail: $email\nPhone: $phone\nMessage:\n$message";
   $headers = array('Content-Type: text/plain; charset=UTF-8');

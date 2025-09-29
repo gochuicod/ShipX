@@ -37,7 +37,10 @@ import CarouselServices from "./ui/CarouselServices";
 import Counter from "./ui/Counter";
 import TooltipCard from "./ui/ToolTipCard";
 
+import { useTranslation } from "react-i18next";
+
 const Main = ({ margin }) => {
+  const { t } = useTranslation();
   const [slide, setSlide] = useState(0);
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
@@ -70,7 +73,7 @@ const Main = ({ margin }) => {
           />
           <div className={`flex flex-row md:gap-x-[0.5vw] gap-x-[0.5vw]`}>
             <div className="flex flex-col gap-x-[5vw] justify-center items-center">
-              <div className="flex flex-col items-center md:w-[12vw] w-[30vw]">
+              <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
                 <span
                   className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
                   style={{
@@ -78,13 +81,18 @@ const Main = ({ margin }) => {
                       "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
                   }}
                 >
-                  <Counter className="" end={2500} duration={5} />+
+                  <Counter
+                    className=""
+                    end={Number(t("statistics_section.customers_number"))}
+                    duration={5}
+                  />
+                  +
                 </span>
                 <span className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
-                  Customers
+                  {t("statistics_section.customers_label")}
                 </span>
               </div>
-              <div className="flex flex-col items-center md:w-[12vw] w-[30vw]">
+              <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
                 <span
                   className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
                   style={{
@@ -92,13 +100,18 @@ const Main = ({ margin }) => {
                       "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
                   }}
                 >
-                  <Counter className="" end={10} duration={5} />+
+                  <Counter
+                    className=""
+                    end={Number(t("statistics_section.global_partners_number"))}
+                    duration={5}
+                  />
+                  +
                 </span>
                 <span className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
-                  Global Partners
+                  {t("statistics_section.global_partners_label")}
                 </span>
               </div>
-              <div className="flex flex-col items-center md:w-[12vw] w-[30vw]">
+              <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
                 <span
                   className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
                   style={{
@@ -106,61 +119,21 @@ const Main = ({ margin }) => {
                       "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
                   }}
                 >
-                  <Counter className="" end={192} duration={5} />
+                  <Counter
+                    className=""
+                    end={Number(
+                      t("statistics_section.countries_covered_number"),
+                    )}
+                    duration={5}
+                  />
                 </span>
                 <span className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
-                  Countries Covered
-                </span>
-              </div>
-            </div>
-            <div className="flex flex-col gap-x-[5vw] justify-center items-center">
-              <div className="flex flex-col items-center md:w-[12vw] w-[30vw]">
-                <span
-                  className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
-                  style={{
-                    fontFamily:
-                      "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
-                  }}
-                >
-                  <Counter className="" end={2.5} duration={5} />
-                  M+
-                </span>
-                <span className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
-                  Orders Processed
-                </span>
-              </div>
-              <div className="flex flex-col items-center md:w-[12vw] w-[30vw]">
-                <span
-                  className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
-                  style={{
-                    fontFamily:
-                      "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
-                  }}
-                >
-                  <Counter className="" end={40} duration={5} />+
-                </span>
-                <span className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
-                  Tech Enabled Warehouses
-                </span>
-              </div>
-              <div className="flex flex-col items-center md:w-[12vw] w-[30vw]">
-                <span
-                  className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
-                  style={{
-                    fontFamily:
-                      "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
-                  }}
-                >
-                  <Counter className="" end={13} duration={5} />
-                  M+
-                </span>
-                <span className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
-                  Orders Fulfilled
+                  {t("statistics_section.countries_covered_label")}
                 </span>
               </div>
             </div>
             <div className="flex flex-col gap-x-[5vw] justify-center items-center">
-              <div className="flex flex-col items-center md:w-[12vw] w-[30vw]">
+              <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
                 <span
                   className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
                   style={{
@@ -168,13 +141,21 @@ const Main = ({ margin }) => {
                       "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
                   }}
                 >
-                  <Counter className="" end={45} duration={5} />+
+                  <Counter
+                    className=""
+                    end={Number(
+                      t("statistics_section.orders_processed_number"),
+                    )}
+                    decimals={1}
+                    duration={5}
+                  />
+                  M+
                 </span>
                 <span className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
-                  Logistics & Ecommerce Partners
+                  {t("statistics_section.orders_processed_label")}
                 </span>
               </div>
-              <div className="flex flex-col items-center md:w-[12vw] w-[30vw]">
+              <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
                 <span
                   className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
                   style={{
@@ -182,13 +163,79 @@ const Main = ({ margin }) => {
                       "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
                   }}
                 >
-                  <Counter className="" end={300} duration={5} />+
+                  <Counter
+                    className=""
+                    end={Number(t("statistics_section.tech_warehouses_number"))}
+                    duration={5}
+                  />
+                  +
                 </span>
                 <span className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
-                  Trucks Operated
+                  {t("statistics_section.tech_warehouses_label")}
                 </span>
               </div>
-              <div className="flex flex-col items-center md:w-[12vw] w-[30vw]">
+              <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
+                <span
+                  className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
+                  style={{
+                    fontFamily:
+                      "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
+                  }}
+                >
+                  <Counter
+                    className=""
+                    end={Number(
+                      t("statistics_section.orders_fulfilled_number"),
+                    )}
+                    duration={5}
+                  />
+                  M+
+                </span>
+                <span className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
+                  {t("statistics_section.orders_fulfilled_label")}
+                </span>
+              </div>
+            </div>
+            <div className="flex flex-col gap-x-[5vw] justify-center items-center">
+              <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
+                <span
+                  className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
+                  style={{
+                    fontFamily:
+                      "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
+                  }}
+                >
+                  <Counter
+                    className=""
+                    end={Number(t("statistics_section.logistics_number"))}
+                    duration={5}
+                  />
+                  +
+                </span>
+                <span className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
+                  {t("statistics_section.logistics_label")}
+                </span>
+              </div>
+              <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
+                <span
+                  className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
+                  style={{
+                    fontFamily:
+                      "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
+                  }}
+                >
+                  <Counter
+                    className=""
+                    end={Number(t("statistics_section.trucks_number"))}
+                    duration={5}
+                  />
+                  +
+                </span>
+                <span className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
+                  {t("statistics_section.trucks_label")}
+                </span>
+              </div>
+              <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
                 <span
                   className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
                   style={{
@@ -197,11 +244,15 @@ const Main = ({ margin }) => {
                   }}
                 >
                   $
-                  <Counter className="" end={60} duration={5} />
+                  <Counter
+                    className=""
+                    end={Number(t("statistics_section.gmv_number"))}
+                    duration={5}
+                  />
                   M+
                 </span>
                 <span className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
-                  GMV Per Year
+                  {t("statistics_section.gmv_label")}
                 </span>
               </div>
             </div>
@@ -228,12 +279,14 @@ const Main = ({ margin }) => {
                     d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
                   />
                 </svg>
-                Our Statistics
+                {t("statistics_section.badge_1")}
               </span>
               <p className="md:text-[2vw] text-[6vw] text-[#1A1A1A] md:text-start text-center font-semibold md:leading-[2.5vw] leading-[6.5vw]">
-                Powered by our unified <br />
-                network — delivering <br className="md:block hidden" />
-                excellence through ShipX
+                {t("statistics_section.tagline_1")}&nbsp;
+                <br />
+                {t("statistics_section.tagline_2")}&nbsp;
+                <br className="md:block hidden" />
+                {t("statistics_section.tagline_3")}
               </p>
             </div>
           </div>
@@ -282,7 +335,7 @@ const Main = ({ margin }) => {
                 d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
               />
             </svg>
-            Our Services
+            {t("services_section.badge_1")}
           </span>
           <p
             className="md:text-[2vw] text-[6vw] text-[#1A1A1A] text-center font-semibold md:leading-[2.5vw] leading-[6.5vw] select-none md:mt-0 mt-[1vw] px-[2vw]"
@@ -290,10 +343,13 @@ const Main = ({ margin }) => {
               fontFamily: "Inter, system-ui, -apple-system, sans-serif",
             }}
           >
-            <p className="inline text-[#FF00E5]">All in one platform</p> &ndash;
-            ShipX aggregates cross-
+            <p className="inline text-[#FF00E5]">
+              {t("services_section.header_1")}
+            </p>{" "}
+            &ndash;
+            {t("services_section.header_2")}
             <br className="md:block hidden" />
-            border solutions from Amilo & SG Link
+            {t("services_section.header_3")}
           </p>
           <div
             className="flex md:flex-row flex-col gap-x-[5vw] justify-center items-center md:pt-0 pt-[5vw]"
@@ -314,7 +370,7 @@ const Main = ({ margin }) => {
                     src={main_icon_1}
                   />
                   <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
-                    Express Worldwide
+                    {t("services_section.link_1")}
                   </span>
                 </motion.div>
               </div>
@@ -330,7 +386,7 @@ const Main = ({ margin }) => {
                     src={main_icon_2}
                   />
                   <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
-                    Economy Worldwide
+                    {t("services_section.link_2")}
                   </span>
                 </motion.div>
               </div>
@@ -346,7 +402,7 @@ const Main = ({ margin }) => {
                     src={main_icon_3}
                   />
                   <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
-                    USA Destination Corridor
+                    {t("services_section.link_3")}
                   </span>
                 </motion.div>
               </div>
@@ -362,7 +418,7 @@ const Main = ({ margin }) => {
                     src={main_icon_4}
                   />
                   <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
-                    USA Destination Fulfilment
+                    {t("services_section.link_4")}
                   </span>
                 </motion.div>
               </div>
@@ -378,7 +434,7 @@ const Main = ({ margin }) => {
                     src={main_icon_5}
                   />
                   <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
-                    Fulfilment by Amazon
+                    {t("services_section.link_5")}
                   </span>
                 </motion.div>
               </div>
@@ -394,7 +450,7 @@ const Main = ({ margin }) => {
                     src={main_icon_6}
                   />
                   <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
-                    Bulk Freight to USA
+                    {t("services_section.link_6")}
                   </span>
                 </motion.div>
               </div>
@@ -410,7 +466,7 @@ const Main = ({ margin }) => {
                     src={main_icon_7}
                   />
                   <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
-                    Global Compliance & Documentation
+                    {t("services_section.link_7")}
                   </span>
                 </motion.div>
               </div>
@@ -426,7 +482,7 @@ const Main = ({ margin }) => {
                     src={main_icon_8}
                   />
                   <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
-                    Financing and Customer Service
+                    {t("services_section.link_8")}
                   </span>
                 </motion.div>
               </div>
@@ -448,7 +504,7 @@ const Main = ({ margin }) => {
                   {/* Inner white area */}
                   <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
                     <span className="text-[#4F378A] font-semibold">
-                      Book a Demo
+                      {t("services_section.book_a_demo")}
                     </span>
                   </div>
                 </motion.button>
@@ -464,7 +520,7 @@ const Main = ({ margin }) => {
                     text-white font-medium shadow-[0_0.5vw_1vw_rgba(255,0,229,0.25)]
                   "
                 >
-                  Contact Us
+                  {t("services_section.contact_us")}
                 </NavLink>
               </div>
             </div>
@@ -508,10 +564,10 @@ const Main = ({ margin }) => {
                       d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
                     />
                   </svg>
-                  Our Platform
+                  {t("platform_section.badge_1")}
                 </span>
                 <span className="flex flex-row gap-x-[0.5vw] items-center md:text-[0.7vw] text-[2.5vw] text-[#414141] font-normal bg-[#FFD6FA] md:rounded-[0.5vw] rounded-[1.5vw] md:px-[0.5vw] px-[1.5vw] md:py-[0.2vw] py-[0.5vw]">
-                  Two proven platforms. One unified solution. That's ShipX.
+                  {t("platform_section.badge_2")}
                 </span>
               </div>
               <p
@@ -520,8 +576,9 @@ const Main = ({ margin }) => {
                   fontFamily: "Inter, system-ui, -apple-system, sans-serif",
                 }}
               >
-                One window for all your <br />
-                cross-border logistics needs
+                {t("platform_section.header_1")}&nbsp;
+                <br />
+                {t("platform_section.header_2")}
               </p>
               <p
                 className="text-[#63666D] md:text-[0.8vw] text-[2.5vw] font-medium opacity-80 md:text-start text-center md:pt-0 pt-[3vw] md:pb-0 pb-[2vw]"
@@ -529,10 +586,9 @@ const Main = ({ margin }) => {
                   fontFamily: "Inter, system-ui, -apple-system, sans-serif",
                 }}
               >
-                ShipX Brings Together Modern Cross-Border Platform Technology
-                And Tech-
+                {t("platform_section.description_1")}
                 <br className="md:block hidden" />
-                Enabled Logistics Networks Into A Single, Easy-To-Use Solution.
+                {t("platform_section.description_2")}
               </p>
               <div
                 className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.6vw] font-normal justify-start items-center"
@@ -557,7 +613,7 @@ const Main = ({ margin }) => {
                   {/* Inner white area */}
                   <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
                     <span className="text-[#4F378A] font-semibold">
-                      Book a Demo
+                      {t("platform_section.book_a_demo")}
                     </span>
                   </div>
                 </motion.button>
@@ -573,7 +629,7 @@ const Main = ({ margin }) => {
                     text-white font-medium shadow-[0_0.5vw_1vw_rgba(255,0,229,0.25)]
                   "
                 >
-                  Contact Us
+                  {t("platform_section.contact_us")}
                 </NavLink>
               </div>
             </div>
@@ -585,7 +641,7 @@ const Main = ({ margin }) => {
           <div className="flex md:flex-row flex-col-reverse justify-center items-center">
             <div className="flex flex-col justify-center items-center md:rounded-[2vw] rounded-[4vw] md:p-[2vw] p-[5vw] bg-white md:inset-shadow-[0_0_0.5vw_rgba(79,55,138,0.1)] inset-shadow-[0_0_3.5vw_rgba(79,55,138,0.1)]">
               <span className="text-[#4D4D4D] md:text-[0.7vw] text-[2.4vw] font-medium">
-                Our Trusted Partners
+                {t("platform_section.trusted_by")}
               </span>
               <div className="relative md:w-[30vw] w-[80vw] h-fit overflow-hidden">
                 <div className="flex animate-scroll-right items-center gap-y-[3vw]">
@@ -666,9 +722,9 @@ const Main = ({ margin }) => {
                   src={main_icon_2}
                 />
                 <p className="pl-[1vw]">
-                  Manage Orders And Shipments Across{" "}
+                  {t("platform_section.info_1")}{" "}
                   <br className="md:block hidden" />
-                  ASEAN and Global Destinations
+                  {t("platform_section.info_1_1")}
                 </p>
               </div>
               <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] items-center w-full">
@@ -677,9 +733,9 @@ const Main = ({ margin }) => {
                   src={main_icon_9}
                 />
                 <p className="pl-[1vw]">
-                  Integrate Marketplaces Like Amazon,{" "}
+                  {t("platform_section.info_2")}{" "}
                   <br className="md:block hidden" />
-                  Shopee, Lazada, eBay, and Shopify
+                  {t("platform_section.info_2_1")}
                 </p>
               </div>
               <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] items-center w-full">
@@ -688,9 +744,9 @@ const Main = ({ margin }) => {
                   src={main_icon_7}
                 />
                 <p className="pl-[1vw]">
-                  Track Performance In Real Time, With{" "}
+                  {t("platform_section.info_3")}{" "}
                   <br className="md:block hidden" />
-                  Visibility Across Every Step
+                  {t("platform_section.info_3_1")}
                 </p>
               </div>
               <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] items-center w-full">
@@ -699,9 +755,9 @@ const Main = ({ margin }) => {
                   src={main_icon_6}
                 />
                 <p className="pl-[1vw]">
-                  Access Warehousing, Fulfillment, Freight,{" "}
+                  {t("platform_section.info_4")}{" "}
                   <br className="md:block hidden" />
-                  And Delivery From One Dashboard
+                  {t("platform_section.info_4_1")}
                 </p>
               </div>
             </div>
@@ -734,7 +790,7 @@ const Main = ({ margin }) => {
                     d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
                   />
                 </svg>
-                Global Freight, Customs & Fulfillment Solutions
+                {t("freight_section.badge_1")}
               </span>
               <p
                 className="md:text-[2.3vw] text-[6vw] text-[#1A1A1A] md:text-start text-center font-semibold md:leading-[2.5vw] leading-[6.5vw]"
@@ -742,9 +798,12 @@ const Main = ({ margin }) => {
                   fontFamily: "Inter, system-ui, -apple-system, sans-serif",
                 }}
               >
-                <p className="inline text-[#FF00E5]">Seamless</p> Trade{" "}
+                <p className="inline text-[#FF00E5]">
+                  {t("freight_section.header_1")}
+                </p>
+                &nbsp;{t("freight_section.header_2")}{" "}
                 <br className="md:block hidden" />
-                Across Borders
+                {t("freight_section.header_3")}
               </p>
               <div
                 className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.6vw] font-normal justify-start items-center md:pt-0 pt-[2vw]"
@@ -769,7 +828,7 @@ const Main = ({ margin }) => {
                   {/* Inner white area */}
                   <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
                     <span className="text-[#4F378A] font-semibold">
-                      Book a Demo
+                      {t("freight_section.book_a_demo")}
                     </span>
                   </div>
                 </motion.button>
@@ -785,7 +844,7 @@ const Main = ({ margin }) => {
                     text-white font-medium shadow-[0_0.5vw_1vw_rgba(255,0,229,0.25)]
                   "
                 >
-                  Contact Us
+                  {t("freight_section.contact_us")}
                 </NavLink>
               </div>
             </div>
@@ -812,13 +871,20 @@ const Main = ({ margin }) => {
                         d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
                       />
                     </svg>
-                    Freight & Customs
+                    {t("freight_section.badge_2")}
                   </span>
                   <p className="md:text-[1.8vw] text-[4vw] text-[#1A1A1A] text-start font-semibold md:leading-[2.5vw] leading-[5.5vw]">
-                    <p className="inline text-[#FF00E5]">Flexible</p> freight
-                    and clearance <br className="md:block hidden" />
-                    <p className="inline text-[#FF00E5]">services</p> for
-                    regional & global trade
+                    <p className="inline text-[#FF00E5]">
+                      {t("freight_section.header_4")}
+                    </p>
+                    &nbsp;
+                    {t("freight_section.header_5")}&nbsp;
+                    <br className="md:block hidden" />
+                    <p className="inline text-[#FF00E5]">
+                      {t("freight_section.header_6")}
+                    </p>
+                    &nbsp;
+                    {t("freight_section.header_7")}
                   </p>
                 </div>
                 <img
@@ -833,9 +899,13 @@ const Main = ({ margin }) => {
                     className="w-full text-[#1A1A1A] text-[2.4vw] text-center transition"
                   >
                     {isOpen1 ? (
-                      <span className="font-medium">Show Less</span>
+                      <span className="font-medium">
+                        {t("freight_section.collapsible_text_opened_1")}
+                      </span>
                     ) : (
-                      <span className="font-medium">Show More</span>
+                      <span className="font-medium">
+                        {t("freight_section.collapsible_text_closed_1")}
+                      </span>
                     )}
                   </button>
 
@@ -928,9 +998,13 @@ const Main = ({ margin }) => {
                     className="w-full text-[#1A1A1A] text-[2.4vw] text-center transition"
                   >
                     {isOpen2 ? (
-                      <span className="font-medium">Show Less</span>
+                      <span className="font-medium">
+                        {t("freight_section.collapsible_text_opened_2")}
+                      </span>
                     ) : (
-                      <span className="font-medium">Show More</span>
+                      <span className="font-medium">
+                        {t("freight_section.collapsible_text_closed_2")}
+                      </span>
                     )}
                   </button>
 
@@ -1187,7 +1261,7 @@ const Main = ({ margin }) => {
           <img
             src={main_svg_7}
             alt=""
-            className="absolute md:-translate-y-[4vw] -translate-y-[35vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none -z-10"
+            className="absolute md:-translate-y-[2vw] -translate-y-[35vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none -z-10"
             aria-hidden="true"
           />
           <img

@@ -11,8 +11,10 @@ import {
 } from "../../../assets/assets";
 import { useSwipeable } from "react-swipeable";
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function CarouselServices({ slide }) {
+  const { t } = useTranslation();
   const handlers = useSwipeable({
     onSwipedLeft: () => document.querySelector(".st-prev")?.click(),
     onSwipedRight: () => document.querySelector(".st-next")?.click(),
@@ -134,7 +136,7 @@ export default function CarouselServices({ slide }) {
                 d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
               />
             </svg>
-            Express Worldwide
+            {t("services_section.link_1")}
           </span>
           <p
             className="md:text-[1.6vw] text-[4.5vw] text-[#1A1A1A] text-start font-semibold  md:leading-[2vw] leading-[7vw]"
@@ -142,12 +144,13 @@ export default function CarouselServices({ slide }) {
               fontFamily: "Karla, system-ui, -apple-system, sans-serif",
             }}
           >
-            From{" "}
+            {t("services_section.carousel.slide_1.header_1")}{" "}
             <p className="inline text-[#FF00E5]">
-              SG, VN, MY, TH, ID <br />
-              to anywhere
+              {t("services_section.carousel.slide_1.header_2")}&nbsp;
+              <br />
+              {t("services_section.carousel.slide_1.header_3")}
             </p>{" "}
-            in the world
+            {t("services_section.carousel.slide_1.header_4")}
           </p>
           <div
             className="flex flex-row font-normal gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]"
@@ -156,11 +159,15 @@ export default function CarouselServices({ slide }) {
             }}
           >
             <p className="text-[#63666D] md:text-[0.6vw] text-[2.3vw]">
-              Prices starting from as low as <br />
-              Transit time ~3-5 days
+              {t("services_section.carousel.slide_1.price_desc_1")}&nbsp;
+              <br />
+              {t("services_section.carousel.slide_1.price_desc_2")}
             </p>
             <p className="flex flex-row tracking-0 text-[#FF99F5] md:text-[2vw] text-[5vw] font-black items-start leading-0">
-              $<p className="text-[#FF00E5] md:text-[4vw] text-[8vw]">22</p>
+              {t("services_section.carousel.slide_1.currency")}
+              <p className="text-[#FF00E5] md:text-[4vw] text-[8vw]">
+                {t("services_section.carousel.slide_1.price")}
+              </p>
             </p>
           </div>
           <img
@@ -190,7 +197,7 @@ export default function CarouselServices({ slide }) {
                 d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
               />
             </svg>
-            Economy Worldwide
+            {t("services_section.link_2")}
           </span>
           <p
             className="md:text-[1.6vw] text-[4.5vw] text-[#1A1A1A] text-start font-semibold  md:leading-[2vw] leading-[7vw]"
@@ -198,12 +205,13 @@ export default function CarouselServices({ slide }) {
               fontFamily: "Karla, system-ui, -apple-system, sans-serif",
             }}
           >
-            From anywhere in{" "}
+            {t("services_section.carousel.slide_2.header_1")}{" "}
             <p className="inline text-[#FF00E5]">
-              ASEAN <br />
-              to anywhere
+              {t("services_section.carousel.slide_2.header_2")}&nbsp;
+              <br />
+              {t("services_section.carousel.slide_2.header_3")}
             </p>{" "}
-            in the world
+            {t("services_section.carousel.slide_2.header_4")}
           </p>
           <div
             className="flex flex-row font-normal gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[1vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]"
@@ -212,11 +220,15 @@ export default function CarouselServices({ slide }) {
             }}
           >
             <p className="text-[#63666D] md:text-[0.6vw] text-[2.3vw]">
-              Prices starting from as low as <br />
-              Transit time ~10-15 days
+              {t("services_section.carousel.slide_2.price_desc_1")}
+              <br />
+              {t("services_section.carousel.slide_2.price_desc_2")}
             </p>
             <p className="flex flex-row tracking-0 text-[#FF99F5] md:text-[2vw] text-[5vw] font-black items-start leading-0">
-              $<p className="text-[#FF00E5] md:text-[4vw] text-[8vw]">9</p>
+              {t("services_section.carousel.slide_2.currency")}
+              <p className="text-[#FF00E5] md:text-[4vw] text-[8vw]">
+                {t("services_section.carousel.slide_2.price")}
+              </p>
             </p>
           </div>
           <img
@@ -246,7 +258,7 @@ export default function CarouselServices({ slide }) {
                 d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
               />
             </svg>
-            USA Destination Corridor
+            {t("services_section.link_3")}
           </span>
           <p
             className="md:text-[1.3vw] text-[4vw] text-[#1A1A1A] text-start font-semibold  md:leading-[2vw] leading-[6vw]"
@@ -254,12 +266,15 @@ export default function CarouselServices({ slide }) {
               fontFamily: "Karla, system-ui, -apple-system, sans-serif",
             }}
           >
-            Dedicated Corridor from{" "}
+            {t("services_section.carousel.slide_3.header_1")}{" "}
             <p className="inline text-[#FF00E5]">
-              ASEAN <br />
-              to US
+              {t("services_section.carousel.slide_3.header_2")}&nbsp;
+              <br />
+              {t("services_section.carousel.slide_3.header_3")}
             </p>{" "}
-            with various transit and <br /> cost options
+            {t("services_section.carousel.slide_3.header_4")}&nbsp;
+            <br />
+            {t("services_section.carousel.slide_3.header_5")}
           </p>
           <div
             className="flex flex-row font-normal gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]"
@@ -268,11 +283,15 @@ export default function CarouselServices({ slide }) {
             }}
           >
             <p className="text-[#63666D] md:text-[0.6vw] text-[2.3vw]">
-              Prices starting as low as <br />
-              Transit time $$-$$ days
+              {t("services_section.carousel.slide_3.price_desc_1")}&nbsp;
+              <br />
+              {t("services_section.carousel.slide_3.price_desc_2")}
             </p>
             <p className="flex flex-row tracking-0 text-[#FF99F5] md:text-[2vw] text-[4vw] font-black items-start leading-0">
-              $<p className="text-[#FF00E5] md:text-[4vw] text-[8vw]">4.53</p>
+              {t("services_section.carousel.slide_3.currency")}
+              <p className="text-[#FF00E5] md:text-[4vw] text-[8vw]">
+                {t("services_section.carousel.slide_3.price")}
+              </p>
             </p>
           </div>
           <img
@@ -302,7 +321,7 @@ export default function CarouselServices({ slide }) {
                 d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
               />
             </svg>
-            USA Destination Fulfilment
+            {t("services_section.link_4")}
           </span>
           <p
             className="md:text-[1.4vw] text-[4vw] text-[#1A1A1A] text-start font-semibold  md:leading-[2.2vw] leading-[6vw]"
@@ -310,9 +329,12 @@ export default function CarouselServices({ slide }) {
               fontFamily: "Karla, system-ui, -apple-system, sans-serif",
             }}
           >
-            Network of <p className="inline text-[#FF00E5]">2+ warehouses</p>{" "}
+            {t("services_section.carousel.slide_4.header_1")}&nbsp;
+            <p className="inline text-[#FF00E5]">
+              {t("services_section.carousel.slide_4.header_2")}
+            </p>{" "}
             <br />
-            across USA for local fulfilment
+            {t("services_section.carousel.slide_4.header_3")}
           </p>
           <div
             className="flex flex-row font-normal gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]"
@@ -321,14 +343,17 @@ export default function CarouselServices({ slide }) {
             }}
           >
             <p className="text-[#63666D] md:text-[0.6vw] text-[2.3vw]">
-              Pick & Pack starting from as low as{" "}
+              {t("services_section.carousel.slide_4.price_desc_1")}{" "}
               <br className="md:block hidden" />
               <br />
-              Preferred carrier last mile rates for <br />
-              nationwide delivery
+              {t("services_section.carousel.slide_4.price_desc_2")}&nbsp;
+              {t("services_section.carousel.slide_4.price_desc_3")}
             </p>
             <p className="flex flex-row tracking-0 text-[#FF99F5] md:text-[2vw] text-[5vw] font-black items-start leading-0">
-              $<p className="text-[#FF00E5] md:text-[4vw] text-[8vw]">2</p>
+              {t("services_section.carousel.slide_4.currency")}
+              <p className="text-[#FF00E5] md:text-[3vw] text-[8vw]">
+                {t("services_section.carousel.slide_4.price")}
+              </p>
             </p>
           </div>
           <img
@@ -358,7 +383,7 @@ export default function CarouselServices({ slide }) {
                 d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
               />
             </svg>
-            Fulfilment by Amazon
+            {t("services_section.link_5")}
           </span>
           <p
             className="md:text-[1.8vw] text-[5vw] text-[#1A1A1A] text-start font-semibold  md:leading-[2.5vw] leading-[7vw]"
@@ -366,29 +391,32 @@ export default function CarouselServices({ slide }) {
               fontFamily: "Karla, system-ui, -apple-system, sans-serif",
             }}
           >
-            <p className="inline text-[#FF00E5]">End-to-end operations</p>
+            <p className="inline text-[#FF00E5]">
+              {t("services_section.carousel.slide_5.header_1")}
+            </p>
             <br />
-            from origin to FBA
+            {t("services_section.carousel.slide_5.header_2")}
           </p>
           <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[0.7vw] py-[1.5vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]">
             {/* Left: Description */}
             <p className="text-[#63666D] md:text-[0.6vw] text-[2vw] leading-snug text-left">
-              Pick & Pack starting from as low as <br />
-              Transit time 30-40 days
+              {t("services_section.carousel.slide_5.price_desc_1")}&nbsp;
+              <br />
+              {t("services_section.carousel.slide_5.price_desc_2")}
             </p>
 
             {/* Right: Pricing */}
             <div className="flex flex-col justify-center items-center md:gap-y-[0.1vw] gap-y-0">
               <div className="flex flex-row items-baseline">
                 <span className="text-[#FF99F5] md:text-[1.5vw] text-[3vw] font-black leading-none">
-                  $
+                  {t("services_section.carousel.slide_5.currency")}
                 </span>
                 <span className="text-[#FF00E5] md:text-[3vw] text-[8vw] font-black leading-none ml-[0.3vw]">
-                  383
+                  {t("services_section.carousel.slide_5.price_1")}
                 </span>
               </div>
               <p className="md:text-[1vw] text-[2vw] text-[#0E0E0E] font-medium leading-none">
-                per CBM
+                {t("services_section.carousel.slide_5.price_2")}
               </p>
             </div>
           </div>
@@ -419,7 +447,7 @@ export default function CarouselServices({ slide }) {
                 d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
               />
             </svg>
-            Bulk Freight to USA
+            {t("services_section.link_6")}
           </span>
           <p
             className="md:text-[1.3vw] text-[4vw] text-[#1A1A1A] text-start font-semibold  md:leading-[1.5vw] leading-[5vw]"
@@ -427,12 +455,13 @@ export default function CarouselServices({ slide }) {
               fontFamily: "Karla, system-ui, -apple-system, sans-serif",
             }}
           >
-            Join our scheduled sea-freight
+            {t("services_section.carousel.slide_6.header_1")}
             <br />
-            containers for{" "}
+            {t("services_section.carousel.slide_6.header_2")}{" "}
             <p className="inline text-[#FF00E5]">
-              cheaper
-              <br /> consolidated rates into USA
+              {t("services_section.carousel.slide_6.header_3")}
+              <br />
+              &nbsp;{t("services_section.carousel.slide_6.header_4")}
             </p>
           </p>
           <div
@@ -442,12 +471,15 @@ export default function CarouselServices({ slide }) {
             }}
           >
             <p className="text-[#63666D] md:text-[0.6vw] text-[2.3vw]">
-              Prices starting from as low as
+              {t("services_section.carousel.slide_6.price_desc_1")}
               <br />
-              Transit time 40-60 days
+              {t("services_section.carousel.slide_6.price_desc_2")}
             </p>
             <p className="flex flex-row tracking-0 text-[#FF99F5] md:text-[2vw] text-[5vw] font-black items-start leading-0">
-              $<p className="text-[#FF00E5] md:text-[4vw] text-[8vw]">3.6</p>
+              {t("services_section.carousel.slide_6.currency")}
+              <p className="text-[#FF00E5] md:text-[4vw] text-[8vw]">
+                {t("services_section.carousel.slide_6.price")}
+              </p>
             </p>
           </div>
           <img
@@ -477,7 +509,7 @@ export default function CarouselServices({ slide }) {
                 d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
               />
             </svg>
-            Global Compliance & Documentation
+            {t("services_section.link_7")}
           </span>
           <p
             className="md:text-[1.6vw] text-[5vw] text-[#1A1A1A] text-start font-semibold  md:leading-[2vw] leading-[7vw]"
@@ -485,9 +517,12 @@ export default function CarouselServices({ slide }) {
               fontFamily: "Karla, system-ui, -apple-system, sans-serif",
             }}
           >
-            Team of <p className="inline text-[#FF00E5]">Experts and APIs</p>
+            {t("services_section.carousel.slide_7.header_1")}&nbsp;
+            <p className="inline text-[#FF00E5]">
+              {t("services_section.carousel.slide_7.header_2")}
+            </p>
             <br />
-            for Efficient Trade
+            {t("services_section.carousel.slide_7.header_3")}
           </p>
           <div
             className="flex flex-row font-normal gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]"
@@ -496,11 +531,15 @@ export default function CarouselServices({ slide }) {
             }}
           >
             <p className="text-[#63666D] md:text-[0.6vw] text-[2.3vw]">
-              Prices starting from as low as <br />
-              Transit time 10-15 days
+              {t("services_section.carousel.slide_7.price_desc_1")}&nbsp;
+              <br />
+              {t("services_section.carousel.slide_7.price_desc_2")}
             </p>
             <p className="flex flex-row tracking-0 text-[#FF99F5] md:text-[2vw] text-[5vw] font-black items-start leading-0">
-              $<p className="text-[#FF00E5] md:text-[4vw] text-[8vw]">99</p>
+              {t("services_section.carousel.slide_7.currency")}
+              <p className="text-[#FF00E5] md:text-[4vw] text-[8vw]">
+                {t("services_section.carousel.slide_7.price")}
+              </p>
             </p>
           </div>
           <img
@@ -530,10 +569,10 @@ export default function CarouselServices({ slide }) {
                 d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
               />
             </svg>
-            Financing and Customer Service
+            {t("services_section.link_8")}
           </span>
           <p className="md:text-[1.8vw] text-[5.5vw] text-[#FF00E5] text-center font-bold md:leading-[1.5vw] leading-[7vw]">
-            Coming Soon!
+            {t("services_section.carousel.slide_8.header_1")}
           </p>
           <img
             className="w-full md:h-[15vw] h-[45vw] rounded-[2vw]"

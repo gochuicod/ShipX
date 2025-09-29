@@ -1,8 +1,11 @@
 import { NavLink } from "react-router-dom";
 import { shipx_white, sglink_white } from "../../assets/assets";
 import * as motion from "motion/react-client";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="flex flex-col justify-center bg-gradient-to-t from-[#4F378A] from-10% to-[rgb(255,0,229)] text-white px-[6vw] md:py-[1.5vw] py-[3vw] md:text-[0.8vw] text-[2.6vw]">
       <div className="flex md:flex-row flex-col justify-between">
@@ -25,12 +28,12 @@ const Footer = () => {
               />
             </div>
             <span className="md:text-[1vw] text-[3.5vw]">
-              ASEAN's Next Generation Platform
+              {t("footer.tagline")}
             </span>
             <p className="mt-[0.8vw]">
-              Empowering businesses to ship globally with confidence. <br />
-              Our platform simplifies international shipping, customs, and
-              logistics
+              {t("footer.description_1")}&nbsp;
+              <br />
+              {t("footer.description_2")}
             </p>
           </div>
           <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.6vw]">
@@ -39,14 +42,14 @@ const Footer = () => {
               whileTap={{ scale: 0.8 }}
               className="border-1 border-white text-white font-normal md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] rounded-[2vw] cursor-pointer"
             >
-              Book a Demo
+              {t("footer.book_a_demo")}
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.8 }}
               className="bg-white text-[#FF00E5] font-bold md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] rounded-[2vw] cursor-pointer"
             >
-              Contact Us
+              {t("footer.contact_us")}
             </motion.button>
           </div>
         </div>
@@ -61,27 +64,27 @@ const Footer = () => {
               end
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
-              Home
+              {t("footer.home")}
             </NavLink>
             <NavLink to="/#statistics" end>
-              Statistics
+              {t("footer.statistics")}
             </NavLink>
             <NavLink to="/#services" end>
-              Services
+              {t("footer.services")}
             </NavLink>
             <NavLink to="/#platform" end>
-              Platform
+              {t("footer.platform")}
             </NavLink>
           </div>
           <div className="flex flex-col gap-y-[1vw]">
             <NavLink to="/#contact-us" end>
-              Contact
+              {t("footer.contact")}
             </NavLink>
             <NavLink to="/privacy-policy" end>
-              Privacy Policy
+              {t("footer.privacy_policy")}
             </NavLink>
             <NavLink to="/terms-and-conditions" end>
-              Terms & Conditions
+              {t("footer.terms_and_conditions")}
             </NavLink>
           </div>
           <div className="flex flex-col gap-y-[1vw]">

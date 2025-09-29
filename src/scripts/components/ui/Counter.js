@@ -1,4 +1,3 @@
-// components/Counter.jsx
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 
@@ -9,10 +8,12 @@ export default function Counter({
   suffix = "",
   className = "",
   style,
+  decimals = 0,
+  decimal = ".",
 }) {
   const { ref, inView } = useInView({
-    triggerOnce: true, // only animate the first time
-    threshold: 0.5, // start when 50% is visible
+    triggerOnce: true,
+    threshold: 0.5,
   });
 
   return (
@@ -23,6 +24,8 @@ export default function Counter({
           duration={duration}
           prefix={prefix}
           suffix={suffix}
+          decimals={decimals}
+          decimal={decimal}
           style={style}
         />
       ) : (

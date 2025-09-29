@@ -3,11 +3,13 @@ import { NavLink } from "react-router-dom";
 import { shipx, sglink, main_img_14 } from "../../assets/assets";
 import * as motion from "motion/react-client";
 import { AnimatePresence } from "motion/react";
+import { useTranslation } from "react-i18next";
 
 const linkClass =
   "transition-colors duration-500 hover:text-[#FF00E5] hover:underline hover:decoration-2 hover:underline-offset-5";
 
 const Header = () => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -50,7 +52,8 @@ const Header = () => {
         </div>
         <img className="h-[1vw] w-[1vw]" src={main_img_14} />
         <span className="hidden md:inline text-[0.8vw] font-normal">
-          ASEAN's Next Generation Platform
+          {/* ASEAN's Next Generation Platform */}
+          {t("header.tagline")}
         </span>
       </div>
 
@@ -62,16 +65,16 @@ const Header = () => {
           className={linkClass}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          Home
+          {t("header.home")}
         </NavLink>
         <NavLink to="/#services" end className={linkClass}>
-          Services
+          {t("header.services")}
         </NavLink>
         <NavLink to="/#platform" end className={linkClass}>
-          Platform
+          {t("header.platform")}
         </NavLink>
         <NavLink to="/#network" end className={linkClass}>
-          Network
+          {t("header.network")}
         </NavLink>
       </nav>
 
@@ -92,7 +95,9 @@ const Header = () => {
 
           {/* Inner white area */}
           <div className="relative flex flex-row items-center gap-x-[1vw] px-[2vw] py-[0.5vw] bg-white rounded-full">
-            <span className="text-[#4F378A] font-semibold">Book a Demo</span>
+            <span className="text-[#4F378A] font-semibold">
+              {t("header.book_a_demo")}
+            </span>
           </div>
         </motion.button>
         <NavLink
@@ -107,7 +112,7 @@ const Header = () => {
             text-white font-medium
           "
         >
-          Contact Us
+          {t("header.contact_us")}
         </NavLink>
       </div>
 
@@ -159,7 +164,7 @@ const Header = () => {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             >
-              Home
+              {t("header.home")}
             </NavLink>
             <NavLink
               to="/#services"
@@ -167,7 +172,7 @@ const Header = () => {
               className={`${linkClass} w-full text-left px-[5vw]`}
               onClick={() => setIsOpen(false)}
             >
-              Services
+              {t("header.services")}
             </NavLink>
             <NavLink
               to="/#platform"
@@ -175,7 +180,7 @@ const Header = () => {
               className={`${linkClass} w-full text-left px-[5vw]`}
               onClick={() => setIsOpen(false)}
             >
-              Platform
+              {t("header.platform")}
             </NavLink>
             <NavLink
               to="/#network"
@@ -183,7 +188,7 @@ const Header = () => {
               className={`${linkClass} w-full text-left px-[5vw]`}
               onClick={() => setIsOpen(false)}
             >
-              Network
+              {t("header.network")}
             </NavLink>
             <NavLink
               to="/"
@@ -191,7 +196,7 @@ const Header = () => {
               className={`${linkClass} w-full text-left px-[5vw]`}
               onClick={() => setIsOpen(false)}
             >
-              Book a Demo
+              {t("header.book_a_demo")}
             </NavLink>
             <NavLink
               to="/#contact-us"
@@ -199,7 +204,7 @@ const Header = () => {
               className={`${linkClass} w-full text-left px-[5vw]`}
               onClick={() => setIsOpen(false)}
             >
-              Contact Us
+              {t("header.contact_us")}
             </NavLink>
           </motion.div>
         )}

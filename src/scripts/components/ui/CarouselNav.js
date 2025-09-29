@@ -12,8 +12,10 @@ import {
 import { Carousel } from "@material-tailwind/react";
 import { useSwipeable } from "react-swipeable";
 import * as motion from "motion/react-client";
+import { useTranslation } from "react-i18next";
 
 export default function CarouselNav() {
+  const { t } = useTranslation();
   const handlers = useSwipeable({
     onSwipedLeft: () => document.querySelector(".mt-prev")?.click(),
     onSwipedRight: () => document.querySelector(".mt-next")?.click(),
@@ -118,10 +120,10 @@ export default function CarouselNav() {
                 }}
               >
                 <span className="bg-white md:px-[0.5vw] px-[1.5vw] md:py-[0.05vw] py-[0.5vw] rounded-full border border-[#E9D7FE]">
-                  ShipX
+                  {t("hero_section.slide_1.badge_1")}
                 </span>
                 <span className="md:pl-[0.5vw] pl-[1vw] md:pr-[0.5vw] pr-[1vw]">
-                  Your Gateway Abroad
+                  {t("hero_section.slide_1.badge_2")}
                 </span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -147,10 +149,11 @@ export default function CarouselNav() {
                     fontFamily: "Karla, system-ui, -apple-system, sans-serif",
                   }}
                 >
-                  Everything You Need <br className="md:block hidden" />
-                  To Grow{" "}
+                  {t("hero_section.slide_1.header_1")}{" "}
+                  <br className="md:block hidden" />
+                  {t("hero_section.slide_1.header_2")}{" "}
                   <p className="inline text-[#FF00E5] font-black">
-                    Internationally
+                    {t("hero_section.slide_1.header_3")}
                   </p>
                 </h1>
                 <p
@@ -159,9 +162,9 @@ export default function CarouselNav() {
                     fontFamily: "Inter, system-ui, -apple-system, sans-serif",
                   }}
                 >
-                  From Economy Shipping To Express Delivery, FBA Fulfillment To
-                  Marketplace <br className="md:block hidden" /> integrations,
-                  ShipX Equips You With The Tools To Scale Worldwide
+                  {t("hero_section.slide_1.p_1")}
+                  <br className="md:block hidden" />
+                  {t("hero_section.slide_1.p_1_1")}
                 </p>
                 <p
                   className="text-[#402B73] md:text-[0.8vw] text-[2.5vw] font-bold"
@@ -169,7 +172,7 @@ export default function CarouselNav() {
                     fontFamily: "Inter, system-ui, -apple-system, sans-serif",
                   }}
                 >
-                  Community Of 1000+ International Shippers From ASEAN
+                  {t("hero_section.slide_1.p_2")}
                 </p>
               </div>
 
@@ -190,7 +193,7 @@ export default function CarouselNav() {
                     text-white font-medium cursor-pointer
                   "
                 >
-                  Book A Demo Now!
+                  {t("hero_section.slide_1.book_a_demo")}
                 </button>
                 <motion.button
                   className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
@@ -209,7 +212,7 @@ export default function CarouselNav() {
                   {/* Inner white area */}
                   <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
                     <span className="text-[#4F378A] font-semibold">
-                      Learn More
+                      {t("hero_section.slide_1.learn_more")}
                     </span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -249,7 +252,8 @@ export default function CarouselNav() {
                 fontFamily: "Inter, system-ui, -apple-system, sans-serif",
               }}
             >
-              Trusted By Industry <b>Leaders & 2500+ More</b>
+              {t("hero_section.slide_1.trusted_by_1")}&nbsp;
+              <b>{t("hero_section.slide_1.trusted_by_2")}</b>
             </span>
             <div className="relative w-full h-fit overflow-hidden">
               <div className="absolute top-[-2.5vw] md:left-[-10vw] left-[-20vw] md:size-[10vw] size-[20vw] rounded-full shadow-[5vw_0.5vw_3vw_rgba(255,255,255,1)] z-40"></div>
@@ -340,10 +344,10 @@ export default function CarouselNav() {
                 }}
               >
                 <span className="bg-white md:px-[0.5vw] px-[1.5vw] md:py-[0.05vw] py-[0.5vw] rounded-full border border-[#E9D7FE]">
-                  ShipX
+                  {t("hero_section.slide_2.badge_1")}
                 </span>
                 <span className="md:pl-[0.5vw] pl-[1vw] md:pr-[0.5vw] pr-[1vw]">
-                  Destination US
+                  {t("hero_section.slide_2.badge_2")}
                 </span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -369,9 +373,12 @@ export default function CarouselNav() {
                     fontFamily: "Karla, system-ui, -apple-system, sans-serif",
                   }}
                 >
-                  Seamless Entry To The
-                  <p className="inline text-[#FF00E5] font-black"> US</p>{" "}
-                  Ecosystem
+                  {t("hero_section.slide_2.header_1")}
+                  <p className="inline text-[#FF00E5] font-black">
+                    {" "}
+                    {t("hero_section.slide_2.header_2")}
+                  </p>{" "}
+                  {t("hero_section.slide_2.header_3")}
                 </h1>
                 <p
                   className="text-[#63666D] md:text-[0.8vw] text-[2.5vw] font-medium opacity-80"
@@ -379,9 +386,9 @@ export default function CarouselNav() {
                     fontFamily: "Inter, system-ui, -apple-system, sans-serif",
                   }}
                 >
-                  Enter And Scale In The U.S. Market With Custom Logistics
-                  Solutions Built To <br className="md:block hidden" />
-                  Support Sellers From Launch To Nationwide Expansion
+                  {t("hero_section.slide_2.p_1")}
+                  <br className="md:block hidden" />
+                  {t("hero_section.slide_2.p_1_1")}
                 </p>
                 <p
                   className="text-[#402B73] md:text-[0.8vw] text-[2.5vw] font-bold"
@@ -389,7 +396,7 @@ export default function CarouselNav() {
                     fontFamily: "Inter, system-ui, -apple-system, sans-serif",
                   }}
                 >
-                  Your Gateway To U.S. E-Commerce
+                  {t("hero_section.slide_2.p_2")}
                 </p>
               </div>
 
@@ -410,7 +417,7 @@ export default function CarouselNav() {
                     text-white font-medium cursor-pointer
                   "
                 >
-                  Book A Demo Now!
+                  {t("hero_section.slide_2.book_a_demo")}
                 </button>
                 <motion.button
                   className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
@@ -429,7 +436,7 @@ export default function CarouselNav() {
                   {/* Inner white area */}
                   <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
                     <span className="text-[#4F378A] font-semibold">
-                      Learn More
+                      {t("hero_section.slide_2.learn_more")}
                     </span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -469,7 +476,8 @@ export default function CarouselNav() {
                 fontFamily: "Inter, system-ui, -apple-system, sans-serif",
               }}
             >
-              Synergized By Industry <b>Partners & 50+ More</b>
+              {t("hero_section.slide_2.trusted_by_1")}&nbsp;
+              <b>{t("hero_section.slide_2.trusted_by_2")}</b>
             </span>
             <div className="relative w-full h-fit overflow-hidden">
               <div className="absolute top-[-2.5vw] md:left-[-10vw] left-[-20vw] md:size-[10vw] size-[20vw] rounded-full shadow-[5vw_0.5vw_3vw_rgba(255,255,255,1)] z-40"></div>
@@ -560,10 +568,10 @@ export default function CarouselNav() {
                 }}
               >
                 <span className="bg-white md:px-[0.5vw] px-[1.5vw] md:py-[0.05vw] py-[0.5vw] rounded-full border border-[#E9D7FE]">
-                  ShipX
+                  {t("hero_section.slide_3.badge_1")}
                 </span>
                 <span className="md:pl-[0.5vw] pl-[1vw] md:pr-[0.5vw] pr-[1vw]">
-                  Worldwide Delivery
+                  {t("hero_section.slide_3.badge_2")}
                 </span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -589,12 +597,13 @@ export default function CarouselNav() {
                     fontFamily: "Karla, system-ui, -apple-system, sans-serif",
                   }}
                 >
-                  Delivering To{" "}
+                  {t("hero_section.slide_3.header_1")}{" "}
                   <p className="inline text-[#FF00E5]">
-                    190+ <br className="md:block hidden" />
-                    Countries
+                    {t("hero_section.slide_3.header_2")}{" "}
+                    <br className="md:block hidden" />
+                    {t("hero_section.slide_3.header_3")}
                   </p>{" "}
-                  With Ease
+                  {t("hero_section.slide_3.header_4")}
                 </h1>
                 <p
                   className="text-[#63666D] md:text-[0.8vw] text-[2.5vw] font-medium opacity-80"
@@ -602,11 +611,9 @@ export default function CarouselNav() {
                     fontFamily: "Inter, system-ui, -apple-system, sans-serif",
                   }}
                 >
-                  Reach Customers Worldwide With Seamless Logistics That
-                  Simplify Cross-
+                  {t("hero_section.slide_3.p_1")}
                   <br className="md:block hidden" />
-                  Border Sales, Ensuring Smooth Growth Without Operational
-                  Headaches
+                  {t("hero_section.slide_3.p_1_1")}
                 </p>
                 <p
                   className="text-[#402B73] md:text-[0.8vw] text-[3vw] font-bold"
@@ -614,7 +621,7 @@ export default function CarouselNav() {
                     fontFamily: "Inter, system-ui, -apple-system, sans-serif",
                   }}
                 >
-                  Community Of 1000+ International Shippers From ASEAN
+                  {t("hero_section.slide_3.p_2")}
                 </p>
               </div>
 
@@ -635,7 +642,7 @@ export default function CarouselNav() {
                     text-white font-medium cursor-pointer
                   "
                 >
-                  Book A Demo Now!
+                  {t("hero_section.slide_3.book_a_demo")}
                 </button>
                 <motion.button
                   className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
@@ -654,7 +661,7 @@ export default function CarouselNav() {
                   {/* Inner white area */}
                   <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
                     <span className="text-[#4F378A] font-semibold">
-                      Learn More
+                      {t("hero_section.slide_3.learn_more")}
                     </span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -694,7 +701,8 @@ export default function CarouselNav() {
                 fontFamily: "Inter, system-ui, -apple-system, sans-serif",
               }}
             >
-              Trusted By Industry <b>Leaders & 2500+ More</b>
+              {t("hero_section.slide_3.trusted_by_1")}&nbsp;
+              <b>{t("hero_section.slide_3.trusted_by_2")}</b>
             </span>
             <div className="relative w-full h-fit overflow-hidden">
               <div className="absolute top-[-2.5vw] md:left-[-10vw] left-[-20vw] md:size-[10vw] size-[20vw] rounded-full shadow-[5vw_0.5vw_3vw_rgba(255,255,255,1)] z-40"></div>

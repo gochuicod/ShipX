@@ -9,6 +9,7 @@ import Layout from "./scripts/Layout";
 import Main from "./scripts/components/Main";
 import PrivacyPolicy from "./scripts/components/PrivacyPolicy";
 import TermsAndConditions from "./scripts/components/TermsAndConditions";
+import "./i18n";
 
 const App = () => {
   useEffect(() => {
