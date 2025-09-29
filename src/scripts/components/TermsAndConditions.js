@@ -4,14 +4,29 @@ const TermsAndConditions = () => {
   return (
     <div className={`flex flex-col justify-center items-center ${margin}`}>
       <div className="flex flex-col justify-center items-center md:py-[5vw] py-[10vw]">
-        <span className="text-[#FF00E5] md:text-[5vw] text-[7vw] md:font-semibold font-bold text-center">
+        <span
+          className="text-[#FF00E5] md:text-[5vw] text-[7vw] md:font-semibold font-bold text-center"
+          style={{
+            fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+          }}
+        >
           Terms and Conditions
         </span>
-        <span className="text-[#63666D] md:text-[0.8vw] text-[2.2vw] md:font-medium font-semibold">
+        <span
+          className="text-[#63666D] md:text-[0.8vw] text-[2.2vw] md:font-medium font-semibold"
+          style={{
+            fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+          }}
+        >
           Last Updated September 1, 2025
         </span>
       </div>
-      <div className="flex flex-col md:pb-[5vw] pb-[10vw] md:w-[50vw] w-full">
+      <div
+        className="flex flex-col md:pb-[5vw] pb-[10vw] md:w-[50vw] w-full"
+        style={{
+          fontFamily: "Poppins, system-ui, -apple-system, sans-serif",
+        }}
+      >
         <p className="text=[#63666D] md:text-[0.8vw] text-[2.2vw] font-normal text-justify opacity-70">
           Welcome to ShipX, a joint platform developed by Amilo and SG Link and
           operated by INFI COMMERCE ECOSYSTEMS PTE. LTD. (“Company,” “we,”
