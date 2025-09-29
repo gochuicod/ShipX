@@ -7,6 +7,7 @@ import {
   main_svg_7,
   main_svg_8,
   main_svg_10,
+  main_svg_13,
   main_icon_1,
   main_icon_2,
   main_icon_3,
@@ -30,6 +31,7 @@ import { NavLink } from "react-router-dom";
 import * as motion from "motion/react-client";
 
 import ContactForm from "./ui/ContactForm";
+import NewsletterForm from "./ui/NewsletterForm";
 import Carousel from "./ui/CarouselNav";
 import CarouselServices from "./ui/CarouselServices";
 import Counter from "./ui/Counter";
@@ -1180,22 +1182,51 @@ const Main = ({ margin }) => {
         {/* Contact Us Section Start */}
         <div
           id="contact-us"
-          className="relative flex flex-col justify-center items-center md:pt-[15vw] pt-[10vw] overflow-hidden"
+          className="relative flex flex-col justify-center items-center md:pt-[0.5vw] pt-[1vw] overflow-hidden"
         >
           <img
             src={main_svg_7}
             alt=""
-            className="absolute md:-translate-y-[17vw] -translate-y-[60vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none z-10"
+            className="absolute md:-translate-y-[4vw] -translate-y-[35vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none -z-10"
             aria-hidden="true"
           />
           <img
             src={main_svg_7}
             alt=""
-            className="absolute translate-x-[30vw] md:-translate-y-[5vw] -translate-y-[45vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none opacity-20 -z-10"
+            className="absolute translate-x-[30vw] md:translate-y-[10vw] -translate-y-[15vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none opacity-20 -z-10"
             aria-hidden="true"
           />
+          {/* Future Announcements Banner Start */}
+          <div
+            className={`flex md:flex-row flex-col md:justify-between justify-center items-center md:gap-x-[5vw] gap-x-[11vw] bg-gradient-to-r from-[#4F378A] from-5% to-[#FF00E5] to-100% md:rounded-[2vw] rounded-[4vw] md:pl-[8vw] pl-[5vw] md:pt-0 pt-[5vw] md:pb-0 pb-[5vw] md:pr-0 pr-[5vw] md:my-[5vw] my-[10vw] md:w-[70vw] w-[90vw]`}
+          >
+            <div className="flex flex-col">
+              <span
+                className="text-[#FFFFFF] md:text-[2.3vw] text-[6vw] font-semibold md:text-start text-center"
+                style={{
+                  fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+                }}
+              >
+                Be The First To Know
+              </span>
+              <p className="text-[#FFFFFF] md:text-[0.85vw] text-[2.5vw] md:text-start text-center md:pt-[0.5vw] pt-[2vw]">
+                Exclusive ShipX Announcements, New Platform Launches, And
+                Special Updates
+                <br className="md:block hidden" />
+                —Straight To Your Inbox.
+              </p>
+              <NewsletterForm />
+            </div>
+            <div className="flex flex-col">
+              <div
+                className="md:flex hidden md:w-[25vw] w-[80vw] md:h-[15vw] h-[30vw] md:bg-size-[25vw_15vw] bg-size-[100vw_50vw] bg-center bg-no-repeat"
+                style={{ backgroundImage: `url(${main_svg_13})` }}
+              ></div>
+            </div>
+          </div>
+          {/* Future Announcements Banner End */}
           <span
-            className="flex flex-row md:gap-x-[0.5vw] gap-x-[1.5vw] items-center md:text-[0.8vw] text-[2.5vw] text-[#FF00E5] font-semibold bg-[#F3F1FF] md:rounded-[0.5vw] rounded-[1.5vw] md:px-[0.5vw] px-[1.5vw] md:py-[0.2vw] py-[0.5vw] cursor-pointer select-none z-20"
+            className="flex flex-row md:gap-x-[0.5vw] gap-x-[1.5vw] items-center md:text-[0.8vw] text-[2.5vw] text-[#FF00E5] font-semibold bg-[#F3F1FF] md:rounded-[0.5vw] rounded-[1.5vw] md:px-[0.5vw] px-[1.5vw] md:py-[0.2vw] py-[0.5vw] cursor-pointer select-none z-20 md:mt-[5vw] mt-0"
             style={{
               fontFamily: "Inter, system-ui, -apple-system, sans-serif",
             }}

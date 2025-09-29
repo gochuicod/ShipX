@@ -80,8 +80,8 @@ const Footer = () => {
             <NavLink to="/privacy-policy" end>
               Privacy Policy
             </NavLink>
-            <NavLink to="/terms-and-services" end>
-              Terms & Services
+            <NavLink to="/terms-and-conditions" end>
+              Terms & Conditions
             </NavLink>
           </div>
           <div className="flex flex-col gap-y-[1vw]">

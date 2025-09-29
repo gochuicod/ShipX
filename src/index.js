@@ -1,20 +1,14 @@
 import "./index.css";
 import React, { useEffect } from "react";
-import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ReactDOM from "react-dom/client";
+import Lenis from "@studio-freight/lenis";
+import { margin } from "./scripts/utils/constants";
+import ScrollToHash from "./scripts/components/ui/ScrollToHash";
 import Layout from "./scripts/Layout";
 import Main from "./scripts/components/Main";
-import ScrollToHash from "./scripts/components/ui/ScrollToHash";
-import { margin } from "./scripts/utils/constants";
-import Lenis from "@studio-freight/lenis";
-
-function PrivacyPolicy() {
-  return <div>Privacy Policy Page</div>;
-}
-
-function TermsAndServices() {
-  return <div>Terms & Services Page</div>;
-}
+import PrivacyPolicy from "./scripts/components/PrivacyPolicy";
+import TermsAndConditions from "./scripts/components/TermsAndConditions";
 
 const App = () => {
   useEffect(() => {
@@ -44,7 +38,10 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Main margin={margin} />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-and-services" element={<TermsAndServices />} />
+          <Route
+            path="/terms-and-conditions"
+            element={<TermsAndConditions />}
+          />
         </Routes>
       </Layout>
     </BrowserRouter>

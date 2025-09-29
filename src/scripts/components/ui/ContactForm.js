@@ -39,30 +39,28 @@ const ContactForm = () => {
         <div className="flex flex-col">
           <label className="text-nowrap">Your Name</label>
           <input
-            className="border-b border-[#CACACA] w-full p-2 focus:outline-none"
+            className={`border-b border-[#CACACA] w-full p-2 focus:outline-none ${errors.name ? "placeholder-red-500" : "placeholder-black/50"}`}
             {...register("name", { required: "Name is required" })}
+            placeholder={errors.name ? errors.name.message : ""}
           />
-          {errors.name && <p className="text-red-500">{errors.name.message}</p>}
         </div>
         <div className="flex flex-col">
           <label className="text-nowrap">Email Address</label>
           <input
             type="email"
-            className="border-b border-[#CACACA] w-full p-2 focus:outline-none"
+            className={`border-b border-[#CACACA] w-full p-2 focus:outline-none ${errors.email ? "placeholder-red-500" : "placeholder-black/50"}`}
             {...register("email", {
               required: "Email is required",
               pattern: { value: /^\S+@\S+$/i, message: "Invalid email" },
             })}
+            placeholder={errors.email ? errors.email.message : ""}
           />
-          {errors.email && (
-            <p className="text-red-500">{errors.email.message}</p>
-          )}
         </div>
         <div className="flex flex-col">
           <label className="text-nowrap">Phone Number (optional)</label>
           <input
             type="tel"
-            className="border-b border-[#CACACA] w-full p-2 focus:outline-none"
+            className={`border-b border-[#CACACA] w-full p-2 focus:outline-none ${errors.name ? "placeholder-red-500" : "placeholder-black/50"}`}
             {...register("phone", {
               pattern: {
                 value: /^\+?[\d\s\-()]{7,}$/,
@@ -71,22 +69,18 @@ const ContactForm = () => {
             })}
             inputMode="tel"
             autoComplete="tel"
+            placeholder={errors.phone ? errors.phone.message : ""}
           />
-          {errors.phone && (
-            <p className="text-red-500">{errors.phone.message}</p>
-          )}
         </div>
       </div>
 
       <div className="flex flex-col md:mt-[1vw] mt-0 md:pt-0 pt-[5vw]">
         <label className="text-nowrap">Message</label>
         <textarea
-          className="border-b border-[#CACACA] w-full resize-none md:h-[5vw] h-[15vw] focus:outline-none"
+          className={`border-b border-[#CACACA] w-full resize-none md:h-[5vw] h-[15vw] focus:outline-none ${errors.name ? "placeholder-red-500" : "placeholder-black/50"}`}
           {...register("message", { required: "Message is required" })}
+          placeholder={errors.message ? errors.message.message : ""}
         />
-        {errors.message && (
-          <p className="text-red-500">{errors.message.message}</p>
-        )}
       </div>
 
       <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.5vw] font-normal justify-start items-center md:mt-[1vw] mt-0 md:pt-0 pt-[5vw]">
