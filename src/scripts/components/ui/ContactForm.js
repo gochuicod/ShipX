@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import * as motion from "motion/react-client";
+import { useTranslation } from "react-i18next";
 
 const ContactForm = () => {
   const {
@@ -29,6 +30,8 @@ const ContactForm = () => {
     }
   };
 
+  const { t } = useTranslation();
+
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -37,34 +40,45 @@ const ContactForm = () => {
     >
       <div className="flex md:flex-row flex-col gap-x-[1vw] md:gap-y-0 gap-y-[5vw]">
         <div className="flex flex-col">
-          <label className="text-nowrap">Your Name</label>
+          <label className="text-nowrap">
+            {t("contact_us_section.form.name")}
+          </label>
           <input
             className={`border-b border-[#CACACA] w-full p-2 focus:outline-none ${errors.name ? "placeholder-red-500" : "placeholder-black/50"}`}
-            {...register("name", { required: "Name is required" })}
+            {...register("name", {
+              required: t("contact_us_section.form.name_placeholder"),
+            })}
             placeholder={errors.name ? errors.name.message : ""}
           />
         </div>
         <div className="flex flex-col">
-          <label className="text-nowrap">Email Address</label>
+          <label className="text-nowrap">
+            {t("contact_us_section.form.email")}
+          </label>
           <input
             type="email"
             className={`border-b border-[#CACACA] w-full p-2 focus:outline-none ${errors.email ? "placeholder-red-500" : "placeholder-black/50"}`}
             {...register("email", {
-              required: "Email is required",
-              pattern: { value: /^\S+@\S+$/i, message: "Invalid email" },
+              required: t("contact_us_section.form.email_placeholder_1"),
+              pattern: {
+                value: /^\S+@\S+$/i,
+                message: t("contact_us_section.form.email_placeholder_2"),
+              },
             })}
             placeholder={errors.email ? errors.email.message : ""}
           />
         </div>
         <div className="flex flex-col">
-          <label className="text-nowrap">Phone Number (optional)</label>
+          <label className="text-nowrap">
+            {t("contact_us_section.form.phone")}
+          </label>
           <input
             type="tel"
             className={`border-b border-[#CACACA] w-full p-2 focus:outline-none ${errors.name ? "placeholder-red-500" : "placeholder-black/50"}`}
             {...register("phone", {
               pattern: {
                 value: /^\+?[\d\s\-()]{7,}$/,
-                message: "Invalid phone number",
+                message: t("contact_us_section.form.phone_placeholder"),
               },
             })}
             inputMode="tel"
@@ -75,10 +89,14 @@ const ContactForm = () => {
       </div>
 
       <div className="flex flex-col md:mt-[1vw] mt-0 md:pt-0 pt-[5vw]">
-        <label className="text-nowrap">Message</label>
+        <label className="text-nowrap">
+          {t("contact_us_section.form.message")}
+        </label>
         <textarea
           className={`border-b border-[#CACACA] w-full resize-none md:h-[5vw] h-[15vw] focus:outline-none ${errors.name ? "placeholder-red-500" : "placeholder-black/50"}`}
-          {...register("message", { required: "Message is required" })}
+          {...register("message", {
+            required: t("contact_us_section.form.message_placeholder"),
+          })}
           placeholder={errors.message ? errors.message.message : ""}
         />
       </div>
@@ -96,7 +114,11 @@ const ContactForm = () => {
             text-white font-medium shadow-[0_0.5vw_1vw_rgba(255,0,229,0.25)]
           "
         >
-          {isSubmitting ? "Sending..." : isSent ? "Sent!" : "Send a Message"}
+          {isSubmitting
+            ? t("contact_us_section.form.button_sending")
+            : isSent
+              ? t("contact_us_section.form.button_sent")
+              : t("contact_us_section.form.button_default")}
         </button>
 
         <motion.button

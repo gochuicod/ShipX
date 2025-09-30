@@ -3,13 +3,15 @@ import { initReactI18next } from "react-i18next";
 
 import en from "./locales/en.json";
 import vn from "./locales/vn.json";
+import my from "./locales/my.json";
 
 i18n.use(initReactI18next).init({
   resources: {
     en: { translation: en },
     vn: { translation: vn },
+    my: { translation: my },
   },
-  lng: localStorage.getItem("lang") || "en", // default from localStorage
+  lng: localStorage.getItem("lang") || "my",
   fallbackLng: "en",
   interpolation: { escapeValue: false },
 });

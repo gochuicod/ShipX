@@ -527,8 +527,7 @@ const Main = ({ margin }) => {
             <CarouselServices slide={slide} />
           </div>
           <span className="text-[#63666D] md:text-[0.6vw] text-[2vw] text-center select-none md:pt-0 pt-[3vw]">
-            *Prices shown are starting prices only and may vary by country,
-            specifications, and applicable conditions
+            {t("services_section.note")}
           </span>
         </div>
         {/* Services Section End */}
@@ -769,7 +768,7 @@ const Main = ({ margin }) => {
           className={`flex flex-col md:gap-y-[2vw] gap-y-0 ${margin} select-none`}
         >
           <div className="flex md:flex-row flex-col justify-between items-center gap-x-[5vw]">
-            <div className="flex flex-col gap-y-[1vw] md:justify-start justify-center md:items-start items-center">
+            <div className="flex flex-col gap-y-[1vw] md:justify-start justify-center md:items-start items-center md:w-[21vw] w-auto">
               <span
                 className="flex flex-row md:gap-x-[0.5vw] gap-x-[1.5vw] items-center md:text-[0.7vw] text-[2.5vw] text-[#FF00E5] font-semibold bg-[#F3F1FF] md:rounded-[0.5vw] rounded-[1.5vw] md:px-[0.5vw] px-[1.5vw] md:py-[0.2vw] py-[0.5vw]"
                 style={{
@@ -939,12 +938,23 @@ const Main = ({ margin }) => {
                               <img
                                 className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
                                 src={service.icon}
-                                alt={service.title}
+                                alt={t(
+                                  `freight_section.services_1.${service.key}.title`,
+                                )}
                               />
                               <div className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
-                                {service.title} <br />
+                                {t(
+                                  `freight_section.services_1.${service.key}.title`,
+                                )}{" "}
+                                <br />
                                 <p className="text-[#63666D] text-normal">
-                                  {service.description}
+                                  {t(
+                                    `freight_section.services_1.${service.key}.description_1`,
+                                  )}{" "}
+                                  <br className="md:block hidden" />
+                                  {t(
+                                    `freight_section.services_1.${service.key}.description_2`,
+                                  )}
                                 </p>
                               </div>
                             </div>
@@ -969,12 +979,15 @@ const Main = ({ margin }) => {
                     <img
                       className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
                       src={service.icon}
-                      alt={service.title}
+                      alt={t(`freight_section.services_1.${service.key}.title`)}
                     />
                     <div className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
-                      {service.title} <br />
+                      {t(`freight_section.services_1.${service.key}.title`)}{" "}
+                      <br />
                       <p className="text-[#63666D] text-normal">
-                        {service.description}
+                        {t(
+                          `freight_section.services_1.${service.key}.description`,
+                        )}
                       </p>
                     </div>
                   </div>
@@ -1038,12 +1051,19 @@ const Main = ({ margin }) => {
                               <img
                                 className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
                                 src={service.icon}
-                                alt={service.title}
+                                alt={t(
+                                  `freight_section.services_2.${service.key}.title`,
+                                )}
                               />
                               <div className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
-                                {service.title} <br />
+                                {t(
+                                  `freight_section.services_2.${service.key}.title`,
+                                )}{" "}
+                                <br />
                                 <p className="text-[#63666D] text-normal">
-                                  {service.description}
+                                  {t(
+                                    `freight_section.services_2.${service.key}.description`,
+                                  )}
                                 </p>
                               </div>
                             </div>
@@ -1073,12 +1093,15 @@ const Main = ({ margin }) => {
                         d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
                       />
                     </svg>
-                    Warehousing & Fulfillment
+                    {t("freight_section.badge_3")}
                   </span>
                   <p className="md:text-[1.8vw] text-[4vw] text-[#1A1A1A] text-start font-semibold md:leading-[2.5vw] leading-[5.5vw]">
-                    <p className="inline text-[#FF00E5]">Strategic hubs</p>{" "}
-                    across Vietnam, <br className="md:block hidden" />
-                    Thailand, Singapore, and Malaysia
+                    <p className="inline text-[#FF00E5]">
+                      {t("freight_section.header_8")}
+                    </p>{" "}
+                    {t("freight_section.header_9")}&nbsp;
+                    <br className="md:block hidden" />
+                    {t("freight_section.header_10")}
                   </p>
                 </div>
               </div>
@@ -1101,30 +1124,33 @@ const Main = ({ margin }) => {
                     <img
                       className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
                       src={service.icon}
-                      alt={service.title}
+                      alt={t(`freight_section.services_2.${service.key}.title`)}
                     />
                     <div className="font-semibold text-start md:pl-[1.5vw] pl-[3vw]">
-                      {service.title} <br />
+                      {t(`freight_section.services_2.${service.key}.title`)}{" "}
+                      <br />
                       <p className="text-[#63666D] text-normal">
-                        {service.description}
+                        {t(
+                          `freight_section.services_2.${service.key}.description`,
+                        )}
                       </p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="flex flex-col md:pt-0 pt-[10vw]">
+            <div className="flex flex-col md:pt-0 pt-[10vw] md:w-[21vw] w-auto">
               <p
                 className="text-[#63666D] md:text-[1vw] text-[4vw] text-center font-medium italic opacity-90"
                 style={{
                   fontFamily: "Inter, system-ui, -apple-system, sans-serif",
                 }}
               >
-                Trusted Infrastructure And Smart{" "}
+                {t("freight_section.header_11")}{" "}
                 <br className="md:block hidden" />
-                Integrations That Make International{" "}
+                {t("freight_section.header_12")}{" "}
                 <br className="md:block hidden" />
-                Growth Simpler And Faster
+                {t("freight_section.header_13")}
               </p>
             </div>
           </div>
@@ -1145,9 +1171,11 @@ const Main = ({ margin }) => {
             className={`flex md:flex-row flex-col gap-x-[2vw] justify-center items-center w-full`}
           >
             <p className="text-[#1A1A1A] md:text-[2.3vw] text-[6vw] md:text-start text-center font-semibold md:leading-[3.5vw] leading-[6.5vw]">
-              Local presence, global corridors{" "}
-              <br className="md:block hidden" />—{" "}
-              <p className="inline text-[#FF00E5]">the ShipX advantage</p>
+              {t("offices_section.header_1")} <br className="md:block hidden" />
+              {t("offices_section.header_2")}{" "}
+              <p className="inline text-[#FF00E5]">
+                {t("offices_section.header_3")}
+              </p>
             </p>
             <div className="flex flex-col gap-y-[1vw] md:pt-0 pt-[3vw]">
               <div className="flex flex-row md:justify-start justify-center md:gap-x-[3vw] gap-x-[10vw]">
@@ -1166,7 +1194,7 @@ const Main = ({ margin }) => {
                       d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
                     />
                   </svg>
-                  Our Offices
+                  {t("offices_section.badge_1")}
                 </span>
                 <div
                   className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.6vw] font-normal justify-center items-center"
@@ -1199,7 +1227,7 @@ const Main = ({ margin }) => {
                     {/* Inner white area */}
                     <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
                       <span className="text-[#4F378A] font-semibold">
-                        Book a Demo
+                        {t("offices_section.book_a_demo")}
                       </span>
                     </div>
                   </motion.button>
@@ -1215,13 +1243,14 @@ const Main = ({ margin }) => {
                       text-white font-medium shadow-[0_0.5vw_1vw_rgba(255,0,229,0.25)]
                     "
                   >
-                    Contact Us
+                    {t("offices_section.contact_us")}
                   </NavLink>
                 </div>
               </div>
               <p className="text-[#63666D] md:text-[0.85vw] text-[2.5vw] font-medium opacity-80 tracking-wider md:pt-0 pt-[2vw]">
-                Our Network Of Regional Hubs And Domain Experts Ensures <br />
-                Your Business Thrives Globally, Without Losing Its Local Edge
+                {t("offices_section.description_1")}&nbsp;
+                <br />
+                {t("offices_section.description_2")}
               </p>
             </div>
           </div>
@@ -1232,24 +1261,33 @@ const Main = ({ margin }) => {
             }}
           >
             <div className="flex md:flex-col flex-wrap md:justify-normal justify-center md:gap-y-[1.5vw] gap-y-[3vw] md:gap-x-0 gap-x-[3vw] md:pl-[8vw] pl-[1.5vw] md:pr-0 pr-[1.5vw]">
-              {offices.map((office, index) => (
-                <TooltipCard
-                  key={index}
-                  image={office.image}
-                  country_name={office.country_name}
-                  description={office.description}
-                  contact_number={office.contact_number}
-                  email={office.email}
-                  hidden={office.hidden}
-                />
-              ))}
+              {offices.map((office, index) =>
+                office.hidden ? null : (
+                  <TooltipCard
+                    key={index}
+                    image={office.image}
+                    country_name={t(
+                      `offices_section.offices.${office.key}.country_name`,
+                    )}
+                    description={
+                      <span className="text-[#757577] md:text-[0.7vw] text-[2vw]">
+                        {t(`offices_section.offices.${office.key}.address`)}
+                      </span>
+                    }
+                    contact_number={t(
+                      `offices_section.offices.${office.key}.contact_number`,
+                      "",
+                    )}
+                    email={t(`offices_section.offices.${office.key}.email`)}
+                  />
+                ),
+              )}
             </div>
             {/* Map Image */}
             <div
               className="flex md:w-[60vw] w-[100vw] md:h-[40vw] h-[75vw] md:bg-size-[auto_47vw] bg-size-[130vw_120vw] bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${main_svg_6})` }}
             ></div>
-            {/* <img className="md:w-[60vw] w-full h-full" src={main_svg_6} /> */}
           </div>
         </div>
         {/* Offices Section End */}
@@ -1281,13 +1319,12 @@ const Main = ({ margin }) => {
                   fontFamily: "Inter, system-ui, -apple-system, sans-serif",
                 }}
               >
-                Be The First To Know
+                {t("newsletter_section.header_1")}
               </span>
               <p className="text-[#FFFFFF] md:text-[0.85vw] text-[2.5vw] md:text-start text-center md:pt-[0.5vw] pt-[2vw]">
-                Exclusive ShipX Announcements, New Platform Launches, And
-                Special Updates
+                {t("newsletter_section.description_1")}
                 <br className="md:block hidden" />
-                —Straight To Your Inbox.
+                {t("newsletter_section.description_2")}
               </p>
               <NewsletterForm />
             </div>
@@ -1319,7 +1356,7 @@ const Main = ({ margin }) => {
                 d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
               />
             </svg>
-            Contact Us
+            {t("contact_us_section.badge_1")}
           </span>
           <p
             className={`md:text-[2.3vw] text-[6vw] text-[#1A1A1A] text-center font-semibold md:leading-[2.5vw] leading-[6.5vw] mt-[1vw] md:mb-[8vw] mb-[15vw] select-none z-20 md:px-0 px-[5vw]`}
@@ -1327,10 +1364,12 @@ const Main = ({ margin }) => {
               fontFamily: "Inter, system-ui, -apple-system, sans-serif",
             }}
           >
-            Ready to take your products{" "}
-            <p className="inline text-[#FF00E5]">global?</p>{" "}
+            {t("contact_us_section.header_1")}{" "}
+            <p className="inline text-[#FF00E5]">
+              {t("contact_us_section.header_2")}
+            </p>{" "}
             <br className="md:block hidden" />
-            Let's talk.
+            {t("contact_us_section.header_3")}
           </p>
           <div className="relative flex md:flex-row flex-col-reverse justify-start items-center gap-x-[5vw] md:shadow-[0_0.5vw_2vw_rgba(255,0,229,0.15)] shadow-[0_0.5vw_3vw_rgba(255,0,229,0.25)] md:pl-[10vw] pl-[15vw] pr-[8vw] py-[8vw] rounded-t-[2vw] md:w-[70vw] w-[90vw] bg-white z-10">
             <img
@@ -1346,10 +1385,10 @@ const Main = ({ margin }) => {
               }}
             >
               <span className="text-[#0E0E0E] md:text-[1.5vw] text-[5vw] font-semibold select-none">
-                Contact Information
+                {t("contact_us_section.header_4")}
               </span>
               <span className="text-black md:text-[0.9vw] text-[3vw] font-normal mt-[1vw] select-none">
-                Let's partner and grow
+                {t("contact_us_section.subheader_1")}
               </span>
               <div className="flex md:flex-col flex-wrap md:gap-y-[1vw] gap-y-[5vw] md:mt-[3vw] mt-[10vw] md:gap-x-0 gap-x-[5vw]">
                 {/* Contact Number */}
@@ -1368,7 +1407,9 @@ const Main = ({ margin }) => {
                       d="M20.25 3.75v4.5m0-4.5h-4.5m4.5 0-6 6m3 12c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 0 1 4.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 0 0-.38 1.21 12.035 12.035 0 0 0 7.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 0 1 1.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 0 1-2.25 2.25h-2.25Z"
                     />
                   </svg>
-                  <span className="md:pl-[1vw] pl-[3vw]">+1012 3456 789</span>
+                  <span className="md:pl-[1vw] pl-[3vw]">
+                    {t("contact_us_section.number")}
+                  </span>
                 </div>
                 {/* Email Address */}
                 <div className="flex flex-row items-center w-fit">
@@ -1381,7 +1422,9 @@ const Main = ({ margin }) => {
                     <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
                     <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
                   </svg>
-                  <span className="md:pl-[1vw] pl-[3vw]">info@shipx.asia</span>
+                  <span className="md:pl-[1vw] pl-[3vw]">
+                    {t("contact_us_section.email")}
+                  </span>
                 </div>
                 {/* Address */}
                 <div className="flex flex-row items-center w-fit">
@@ -1398,8 +1441,9 @@ const Main = ({ margin }) => {
                     />
                   </svg>
                   <p className="md:pl-[1vw] pl-[3vw]">
-                    391B Orchard Road #22, <br />
-                    Ngee Ann City Singapore, 238874
+                    {t("contact_us_section.address_1")}&nbsp;
+                    <br />
+                    {t("contact_us_section.address_2")}
                   </p>
                 </div>
               </div>
