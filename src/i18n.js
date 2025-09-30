@@ -11,7 +11,7 @@ i18n.use(initReactI18next).init({
     vn: { translation: vn },
     my: { translation: my },
   },
-  lng: localStorage.getItem("lang") || "my",
+  lng: localStorage.getItem("lang") || "en",
   fallbackLng: "en",
   interpolation: { escapeValue: false },
 });
