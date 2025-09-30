@@ -11,205 +11,232 @@ const linkClass =
 const Header = () => {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
+  const [bannerOpen, setBannerOpen] = useState(true);
 
   return (
-    <header
-      className="
-        sticky top-0 z-50 select-none
-        flex flex-row bg-white text-[#1A1A1A] justify-between items-center 
-        md:py-[1vw] md:px-[8vw] py-[5vw] px-[10vw] md:shadow-[0_0.5vw_0.5vw_rgba(255,0,229,0.15)]
-        shadow-[0_3vw_5vw_rgba(255,0,229,0.15)]
-      "
-      style={{ fontFamily: "Karla, system-ui, -apple-system, sans-serif" }}
-    >
-      {/* Left: Logo */}
-      <div className="flex flex-row gap-x-[1vw] justify-center items-center">
-        <div className="flex flex-row gap-x-[0.5vw] justify-center items-center">
+    <div>
+      <div
+        className={`${bannerOpen ? "block" : "hidden"} isolate flex items-center gap-x-6 overflow-hidden bg-gray-800/50 px-6 py-2.5 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10 sm:px-3.5 sm:before:flex-1`}
+      >
+        <div className="flex flex-row justify-center items-center">
+          <span>{t("header.banner.message")}</span>
+        </div>
+        <div className="flex flex-1 justify-end">
+          <button
+            type="button"
+            className="-m-3 p-3 focus-visible:-outline-offset-4 cursor-pointer"
+            onClick={() => setBannerOpen(!bannerOpen)}
+          >
+            <span className="sr-only">Dismiss</span>
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+              className="size-5 text-gray-100"
+            >
+              <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <header
+        className="
+          sticky top-0 z-50 select-none
+          flex flex-row bg-white text-[#1A1A1A] justify-between items-center 
+          md:py-[1vw] md:px-[8vw] py-[5vw] px-[10vw] md:shadow-[0_0.5vw_0.5vw_rgba(255,0,229,0.15)]
+          shadow-[0_3vw_5vw_rgba(255,0,229,0.15)]
+        "
+        style={{ fontFamily: "Karla, system-ui, -apple-system, sans-serif" }}
+      >
+        {/* Left: Logo */}
+        <div className="flex flex-row gap-x-[1vw] justify-center items-center">
+          <div className="flex flex-row gap-x-[0.5vw] justify-center items-center">
+            <NavLink
+              to="/"
+              end
+              className={linkClass}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
+              <img
+                src={shipx}
+                alt="ShipX Logo"
+                className="md:w-[3vw] md:h-[1.5vw] w-[14vw] h-[7vw]"
+              />
+            </NavLink>
+            <NavLink
+              to="/"
+              end
+              className={linkClass}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
+              <img
+                src={sglink}
+                alt="SGLink Logo"
+                className="md:w-[3vw] md:h-[1.5vw] w-[16vw] h-[5vw]"
+              />
+            </NavLink>
+          </div>
+          <img className="h-[1vw] w-[1vw]" src={main_img_14} />
+          <span className="hidden md:inline text-[0.8vw] font-normal">
+            {/* ASEAN's Next Generation Platform */}
+            {t("header.tagline")}
+          </span>
+        </div>
+
+        {/* Right: Nav + Buttons (hidden on mobile) */}
+        <nav className="hidden md:flex flex-row gap-x-[2.5vw] font-medium text-[0.8vw]">
           <NavLink
             to="/"
             end
             className={linkClass}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            <img
-              src={shipx}
-              alt="ShipX Logo"
-              className="md:w-[3vw] md:h-[1.5vw] w-[14vw] h-[7vw]"
-            />
+            {t("header.home")}
           </NavLink>
-          <NavLink
-            to="/"
-            end
-            className={linkClass}
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          <NavLink to="/#services" end className={linkClass}>
+            {t("header.services")}
+          </NavLink>
+          <NavLink to="/#platform" end className={linkClass}>
+            {t("header.platform")}
+          </NavLink>
+          <NavLink to="/#network" end className={linkClass}>
+            {t("header.network")}
+          </NavLink>
+        </nav>
+
+        <div className="hidden md:flex flex-row gap-x-[1vw] text-[0.8vw] font-normal">
+          <motion.button
+            className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
+            whileHover={{
+              y: -5,
+              transition: { type: "spring", stiffness: 300, damping: 15 },
+            }}
+            whileTap={{
+              scale: 0.9,
+              transition: { type: "spring", stiffness: 500, damping: 10 },
+            }}
           >
-            <img
-              src={sglink}
-              alt="SGLink Logo"
-              className="md:w-[3vw] md:h-[1.5vw] w-[16vw] h-[5vw]"
-            />
+            {/* Gradient border */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+
+            {/* Inner white area */}
+            <div className="relative flex flex-row items-center gap-x-[1vw] px-[2vw] py-[0.5vw] bg-white rounded-full">
+              <span className="text-[#4F378A] font-semibold">
+                {t("header.book_a_demo")}
+              </span>
+            </div>
+          </motion.button>
+          <NavLink
+            to="/#contact-us"
+            end
+            className="
+              bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
+              bg-[length:200%_100%] bg-[position:0%_0%]
+              hover:bg-[position:100%_0%]
+              transition-[background-position] duration-1000 ease-in-out
+              py-[0.5vw] px-[1.5vw] rounded-[2vw]
+              text-white font-medium
+            "
+          >
+            {t("header.contact_us")}
           </NavLink>
         </div>
-        <img className="h-[1vw] w-[1vw]" src={main_img_14} />
-        <span className="hidden md:inline text-[0.8vw] font-normal">
-          {/* ASEAN's Next Generation Platform */}
-          {t("header.tagline")}
-        </span>
-      </div>
 
-      {/* Right: Nav + Buttons (hidden on mobile) */}
-      <nav className="hidden md:flex flex-row gap-x-[2.5vw] font-medium text-[0.8vw]">
-        <NavLink
-          to="/"
-          end
-          className={linkClass}
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        {/* Mobile Hamburger */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="relative md:hidden flex flex-col justify-between w-[8vw] h-[4.5vw] p-[0.1vw] focus:outline-none"
         >
-          {t("header.home")}
-        </NavLink>
-        <NavLink to="/#services" end className={linkClass}>
-          {t("header.services")}
-        </NavLink>
-        <NavLink to="/#platform" end className={linkClass}>
-          {t("header.platform")}
-        </NavLink>
-        <NavLink to="/#network" end className={linkClass}>
-          {t("header.network")}
-        </NavLink>
-      </nav>
+          {/* Top bar */}
+          <motion.span
+            animate={isOpen ? { rotate: 45, y: 10 } : { rotate: 0, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="block h-[0.5vw] w-full bg-black rounded-full"
+          />
 
-      <div className="hidden md:flex flex-row gap-x-[1vw] text-[0.8vw] font-normal">
-        <motion.button
-          className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
-          whileHover={{
-            y: -5,
-            transition: { type: "spring", stiffness: 300, damping: 15 },
-          }}
-          whileTap={{
-            scale: 0.9,
-            transition: { type: "spring", stiffness: 500, damping: 10 },
-          }}
-        >
-          {/* Gradient border */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+          {/* Middle bar */}
+          <motion.span
+            animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
+            transition={{ duration: 0.2 }}
+            className="block h-[0.5vw] w-full bg-black rounded-full"
+          />
 
-          {/* Inner white area */}
-          <div className="relative flex flex-row items-center gap-x-[1vw] px-[2vw] py-[0.5vw] bg-white rounded-full">
-            <span className="text-[#4F378A] font-semibold">
-              {t("header.book_a_demo")}
-            </span>
-          </div>
-        </motion.button>
-        <NavLink
-          to="/#contact-us"
-          end
-          className="
-            bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
-            bg-[length:200%_100%] bg-[position:0%_0%]
-            hover:bg-[position:100%_0%]
-            transition-[background-position] duration-1000 ease-in-out
-            py-[0.5vw] px-[1.5vw] rounded-[2vw]
-            text-white font-medium
-          "
-        >
-          {t("header.contact_us")}
-        </NavLink>
-      </div>
+          {/* Bottom bar */}
+          <motion.span
+            animate={isOpen ? { rotate: -45, y: -10 } : { rotate: 0, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="block h-[0.5vw] w-full bg-black rounded-full"
+          />
+        </button>
 
-      {/* Mobile Hamburger */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="relative md:hidden flex flex-col justify-between w-[8vw] h-[4.5vw] p-[0.1vw] focus:outline-none"
-      >
-        {/* Top bar */}
-        <motion.span
-          animate={isOpen ? { rotate: 45, y: 10 } : { rotate: 0, y: 0 }}
-          transition={{ duration: 0.3 }}
-          className="block h-[0.5vw] w-full bg-black rounded-full"
-        />
-
-        {/* Middle bar */}
-        <motion.span
-          animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-          transition={{ duration: 0.2 }}
-          className="block h-[0.5vw] w-full bg-black rounded-full"
-        />
-
-        {/* Bottom bar */}
-        <motion.span
-          animate={isOpen ? { rotate: -45, y: -10 } : { rotate: 0, y: 0 }}
-          transition={{ duration: 0.3 }}
-          className="block h-[0.5vw] w-full bg-black rounded-full"
-        />
-      </button>
-
-      {/* Mobile Dropdown Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ y: -20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -20, opacity: 0 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="absolute top-full right-0 w-full bg-white shadow-[0_7vw_10vw_rgba(255,0,229,0.10)] 
-                      flex flex-col items-start p-[5vw] gap-y-[3vw] md:hidden 
-                      text-[#1A1A1A] text-[3.5vw] font-medium"
-          >
-            <NavLink
-              to="/"
-              end
-              className={`${linkClass} w-full text-left px-[5vw]`}
-              onClick={() => {
-                setIsOpen(false);
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
+        {/* Mobile Dropdown Menu */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -20, opacity: 0 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="absolute top-full right-0 w-full bg-white shadow-[0_7vw_10vw_rgba(255,0,229,0.10)] 
+                        flex flex-col items-start p-[5vw] gap-y-[3vw] md:hidden 
+                        text-[#1A1A1A] text-[3.5vw] font-medium"
             >
-              {t("header.home")}
-            </NavLink>
-            <NavLink
-              to="/#services"
-              end
-              className={`${linkClass} w-full text-left px-[5vw]`}
-              onClick={() => setIsOpen(false)}
-            >
-              {t("header.services")}
-            </NavLink>
-            <NavLink
-              to="/#platform"
-              end
-              className={`${linkClass} w-full text-left px-[5vw]`}
-              onClick={() => setIsOpen(false)}
-            >
-              {t("header.platform")}
-            </NavLink>
-            <NavLink
-              to="/#network"
-              end
-              className={`${linkClass} w-full text-left px-[5vw]`}
-              onClick={() => setIsOpen(false)}
-            >
-              {t("header.network")}
-            </NavLink>
-            <NavLink
-              to="/"
-              end
-              className={`${linkClass} w-full text-left px-[5vw]`}
-              onClick={() => setIsOpen(false)}
-            >
-              {t("header.book_a_demo")}
-            </NavLink>
-            <NavLink
-              to="/#contact-us"
-              end
-              className={`${linkClass} w-full text-left px-[5vw]`}
-              onClick={() => setIsOpen(false)}
-            >
-              {t("header.contact_us")}
-            </NavLink>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </header>
+              <NavLink
+                to="/"
+                end
+                className={`${linkClass} w-full text-left px-[5vw]`}
+                onClick={() => {
+                  setIsOpen(false);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              >
+                {t("header.home")}
+              </NavLink>
+              <NavLink
+                to="/#services"
+                end
+                className={`${linkClass} w-full text-left px-[5vw]`}
+                onClick={() => setIsOpen(false)}
+              >
+                {t("header.services")}
+              </NavLink>
+              <NavLink
+                to="/#platform"
+                end
+                className={`${linkClass} w-full text-left px-[5vw]`}
+                onClick={() => setIsOpen(false)}
+              >
+                {t("header.platform")}
+              </NavLink>
+              <NavLink
+                to="/#network"
+                end
+                className={`${linkClass} w-full text-left px-[5vw]`}
+                onClick={() => setIsOpen(false)}
+              >
+                {t("header.network")}
+              </NavLink>
+              <NavLink
+                to="/"
+                end
+                className={`${linkClass} w-full text-left px-[5vw]`}
+                onClick={() => setIsOpen(false)}
+              >
+                {t("header.book_a_demo")}
+              </NavLink>
+              <NavLink
+                to="/#contact-us"
+                end
+                className={`${linkClass} w-full text-left px-[5vw]`}
+                onClick={() => setIsOpen(false)}
+              >
+                {t("header.contact_us")}
+              </NavLink>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </header>
+    </div>
   );
 };
 

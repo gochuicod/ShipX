@@ -6,7 +6,10 @@
     "platform": "Platform",
     "network": "Network",
     "book_a_demo": "Book a Demo",
-    "contact_us": "Contact Us"
+    "contact_us": "Contact Us",
+    "banner": {
+      "message": "Choose another country or region to see content specific to your location and shop online."
+    }
   },
   "hero_section": {
     "slide_1": {
