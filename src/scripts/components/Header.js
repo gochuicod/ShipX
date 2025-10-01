@@ -1,40 +1,154 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { shipx, sglink, main_img_14 } from "../../assets/assets";
 import * as motion from "motion/react-client";
 import { AnimatePresence } from "motion/react";
 import { useTranslation } from "react-i18next";
+import { languages } from "../utils/constants";
+import {
+  Listbox,
+  ListboxButton,
+  ListboxOption,
+  ListboxOptions,
+  Portal,
+} from "@headlessui/react";
 
 const linkClass =
   "transition-colors duration-500 hover:text-[#FF00E5] hover:underline hover:decoration-2 hover:underline-offset-5";
 
 const Header = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
-  const [bannerOpen, setBannerOpen] = useState(true);
+  const [bannerOpen, setBannerOpen] = useState(false);
+
+  const [selected, setSelected] = useState(() => {
+    const current = i18n.language || localStorage.getItem("lang") || "en";
+    return (
+      languages.find((language) => language.key === current) || languages[0]
+    );
+  });
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setBannerOpen(true);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <div>
+    <div className="sticky top-0 z-50 select-none">
       <div
-        className={`${bannerOpen ? "block" : "hidden"} isolate flex items-center gap-x-6 overflow-hidden bg-gray-800/50 px-6 py-2.5 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10 sm:px-3.5 sm:before:flex-1`}
+        className={`${bannerOpen ? "block" : "hidden"} overflow-hidden relative isolate flex items-center gap-x-6 bg-white after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px sm:px-3.5 sm:before:flex-1`}
       >
-        <div className="flex flex-row justify-center items-center">
-          <span>{t("header.banner.message")}</span>
+        <div
+          aria-hidden="true"
+          className="absolute top-1/2 left-[max(-7rem,calc(50%-52rem))] -z-10 -translate-y-1/2 transform-gpu blur-2xl"
+        >
+          <div
+            style={{
+              clipPath:
+                "polygon(74.8% 41.9%, 97.2% 73.2%, 100% 34.9%, 92.5% 0.4%, 87.5% 0%, 75% 28.6%, 58.5% 54.6%, 50.1% 56.8%, 46.9% 44%, 48.3% 17.4%, 24.7% 53.9%, 0% 27.9%, 11.9% 74.2%, 24.9% 54.1%, 68.6% 100%, 74.8% 41.9%)",
+            }}
+            className="aspect-577/310 md:w-[25vw] w-[115vw] bg-linear-to-r from-[#4F378A] to-[#FF00E5] opacity-30"
+          />
+        </div>
+        <div
+          aria-hidden="true"
+          className="absolute top-1/2 left-[max(45rem,calc(50%+8rem))] -z-10 -translate-y-1/2 transform-gpu blur-2xl"
+        >
+          <div
+            style={{
+              clipPath:
+                "polygon(74.8% 41.9%, 97.2% 73.2%, 100% 34.9%, 92.5% 0.4%, 87.5% 0%, 75% 28.6%, 58.5% 54.6%, 50.1% 56.8%, 46.9% 44%, 48.3% 17.4%, 24.7% 53.9%, 0% 27.9%, 11.9% 74.2%, 24.9% 54.1%, 68.6% 100%, 74.8% 41.9%)",
+            }}
+            className="aspect-577/310 md:w-[25vw] w-[115vw] bg-linear-to-r from-[#4F378A] to-[#FF00E5] opacity-30"
+          />
+        </div>
+        <div className="flex flex-row justify-center items-center md:gap-x-[1vw] gap-x-[3vw] md:py-[0.5vw] py-[3vw] md:px-0 px-[3vw]">
+          <span className="text-[#1A1A1A] md:text-[0.8vw] text-[2.2vw]">
+            {t("header.banner.message")}
+          </span>
+          <Listbox
+            value={selected}
+            onChange={(language) => {
+              setSelected(language);
+              i18n.changeLanguage(language.key);
+              localStorage.setItem("lang", language.key);
+            }}
+          >
+            <div className="relative">
+              <ListboxButton className="relative flex flex-row w-full cursor-default grid-cols-1 md:rounded-[0.5vw] rounded-[2vw] bg-white/70 py-1.5 pr-2 pl-3 text-left text-white outline-1 -outline-offset-1 outline-white/10 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-indigo-500 sm:text-sm/6">
+                <span className="col-start-1 row-start-1 flex items-center gap-3 pr-6">
+                  <span className="block truncate text-[#1A1A1A] md:text-[0.8vw] text-[2.2vw] font-semibold">
+                    {selected.name}
+                  </span>
+                </span>
+                {/* Check Up Down Icon */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="#1A1A1A"
+                  className="md:size-[1vw] size-[4vw]"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                  />
+                </svg>
+              </ListboxButton>
+
+              <Portal>
+                <ListboxOptions
+                  anchor="bottom start"
+                  transition
+                  className="relative max-h-56 overflow-auto md:rounded-[0.5vw] rounded-[2vw] bg-white py-1 text-base outline-1 -outline-offset-1 outline-white/10 data-leave:transition data-leave:duration-100 data-leave:ease-in data-closed:data-leave:opacity-0 sm:text-sm [--anchor-gap:0.25rem] z-[9999] md:shadow-[0_0.5vw_0.5vw_rgba(255,0,229,0.15)] shadow-[0_3vw_5vw_rgba(255,0,229,0.15)]"
+                >
+                  {languages.map((language) => (
+                    <ListboxOption
+                      key={language.id}
+                      value={language}
+                      className="group relative cursor-default py-2 pr-9 pl-3 text-white select-none data-focus:bg-[#FF00E5] data-focus:outline-hidden"
+                    >
+                      <div className="flex items-center">
+                        <span
+                          className="ml-3 block truncate font-normal group-data-focus:font-semibold group-data-focus:text-white text-[#1A1A1A] md:text-[0.8vw] text-[2.2vw]"
+                          onClick={() => changeLanguage(language.key)}
+                        >
+                          {language.name}
+                        </span>
+                      </div>
+                    </ListboxOption>
+                  ))}
+                </ListboxOptions>
+              </Portal>
+            </div>
+          </Listbox>
         </div>
         <div className="flex flex-1 justify-end">
           <button
             type="button"
-            className="-m-3 p-3 focus-visible:-outline-offset-4 cursor-pointer"
+            className="p-3 focus-visible:-outline-offset-4 cursor-pointer"
             onClick={() => setBannerOpen(!bannerOpen)}
           >
+            {/* X Mark Icon */}
             <span className="sr-only">Dismiss</span>
             <svg
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              aria-hidden="true"
-              className="size-5 text-gray-100"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="md:size-[1vw] size-[4vw]"
             >
-              <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18 18 6M6 6l12 12"
+              />
             </svg>
           </button>
         </div>

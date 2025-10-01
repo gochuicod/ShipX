@@ -6,7 +6,10 @@
     "platform": "Platform",
     "network": "Jaringan",
     "book_a_demo": "Pesan Demo",
-    "contact_us": "Hubungi Kami"
+    "contact_us": "Hubungi Kami",
+    "banner": {
+      "message": "Pilih negara atau wilayah Anda di Asia untuk melihat halaman ini dalam bahasa Anda."
+    }
   },
   "hero_section": {
     "slide_1": {
@@ -86,7 +89,7 @@
     "link_2": "Ekonomi Global",
     "link_3": "Koridor Tujuan AS",
     "link_4": "Pemenuhan Tujuan AS",
-    "link_5": "Fulfillment by Amazon",
+    "link_5": "Pemenuhan oleh Amazon",
     "link_6": "Pengiriman Massal ke AS",
     "link_7": "Kepatuhan & Dokumentasi Global",
     "link_8": "Pembiayaan dan Layanan Pelanggan",

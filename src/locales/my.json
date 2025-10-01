@@ -6,7 +6,10 @@
     "platform": "Platform",
     "network": "Rangkaian",
     "book_a_demo": "Tempah Demo",
-    "contact_us": "Hubungi Kami"
+    "contact_us": "Hubungi Kami",
+    "banner": {
+      "message": "Pilih negara atau wilayah anda di Asia untuk melihat halaman ini dalam bahasa anda."
+    }
   },
   "hero_section": {
     "slide_1": {
@@ -85,8 +88,8 @@
     "link_1": "Ekspres Seluruh Dunia",
     "link_2": "Ekonomi Seluruh Dunia",
     "link_3": "Koridor Destinasi AS",
-    "link_4": "Pemenuhan Destinasi AS",
-    "link_5": "Fulfilment by Amazon",
+    "link_4": "Pemenuhan oleh Amazon",
+    "link_5": "Fulfillment by Amazon",
     "link_6": "Penghantaran Pukal ke AS",
     "link_7": "Pematuhan Global & Dokumentasi",
     "link_8": "Kewangan dan Khidmat Pelanggan",

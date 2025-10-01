@@ -6,7 +6,10 @@
     "platform": "Nền tảng",
     "network": "Mạng lưới",
     "book_a_demo": "Đặt lịch Demo",
-    "contact_us": "Liên hệ"
+    "contact_us": "Liên hệ",
+    "banner": {
+      "message": "Chọn quốc gia hoặc khu vực của bạn ở Châu Á để xem trang này bằng ngôn ngữ của bạn."
+    }
   },
   "hero_section": {
     "slide_1": {

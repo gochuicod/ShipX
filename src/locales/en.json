@@ -8,7 +8,7 @@
     "book_a_demo": "Book a Demo",
     "contact_us": "Contact Us",
     "banner": {
-      "message": "Choose another country or region to see content specific to your location and shop online."
+      "message": "Choose your country or region in Asia to view this page in your language."
     }
   },
   "hero_section": {
@@ -283,8 +283,8 @@
       },
       "philippines": {
         "country_name": "Philippines",
-        "address": "address",
-        "contact_number": "number",
+        "address": "",
+        "contact_number": "(+63) 976 167 1128",
         "email": "contact.ph@shipx.asia"
       },
       "united_states": {
