@@ -21,7 +21,7 @@ export const offices = [
   { image: main_icon_21, key: "thailand" },
   { image: main_icon_22, key: "vietnam" },
   { image: main_icon_18, key: "malaysia" },
-  { image: main_icon_17, key: "indonesia" },
+  // { image: main_icon_17, key: "indonesia" },
   { image: main_icon_19, key: "philippines", hidden: true },
   { image: main_icon_16, key: "united_states" },
 ];

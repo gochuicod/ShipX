@@ -949,12 +949,9 @@ const Main = ({ margin }) => {
                                 <br />
                                 <p className="text-[#63666D] text-normal">
                                   {t(
-                                    `freight_section.services_1.${service.key}.description_1`,
+                                    `freight_section.services_1.${service.key}.description`,
                                   )}{" "}
-                                  <br className="md:block hidden" />
-                                  {t(
-                                    `freight_section.services_1.${service.key}.description_2`,
-                                  )}
+                                  {/* <br className="md:block hidden" /> */}
                                 </p>
                               </div>
                             </div>
