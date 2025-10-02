@@ -363,5 +363,8 @@
     "reach_us_3": "info@shipx.asia",
     "reach_us_4": "391B Orchard Road #22 Ngee Ann City Singapore, 238874",
     "copyright": "ShipX Copyright and rights reserved"
+  },
+  "messenger_bubble": {
+    "message": "Send us a message"
   }
 }
