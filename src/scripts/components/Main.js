@@ -712,7 +712,7 @@ const Main = ({ margin }) => {
               </div>
             </div>
             <div
-              className="flex flex-col justify-start items-center text-[#1A1A1A] md:text-[0.8vw] text-[2.2vw] font-medium md:w-[35vw] w-[80vw] md:gap-y-[1.5vw] gap-y-[4vw] md:pl-[5vw] pl-0 md:pr-[10vw] pr-0 md:pb-0 pb-[5vw]"
+              className="flex flex-col justify-start items-center text-[#1A1A1A] md:text-[0.8vw] text-[2.2vw] font-medium md:w-[40vw] w-[80vw] md:gap-y-[1.5vw] gap-y-[4vw] md:pl-[5vw] pl-0 md:pr-[10vw] pr-0 md:pb-0 pb-[5vw]"
               style={{
                 fontFamily: "Inter, system-ui, -apple-system, sans-serif",
               }}
@@ -770,7 +770,7 @@ const Main = ({ margin }) => {
           className={`flex flex-col md:gap-y-[2vw] gap-y-0 ${margin} select-none`}
         >
           <div className="flex md:flex-row flex-col justify-between items-center gap-x-[5vw]">
-            <div className="flex flex-col gap-y-[1vw] md:justify-start justify-center md:items-start items-center md:w-[21vw] w-auto">
+            <div className="flex flex-col gap-y-[1vw] md:justify-start justify-center md:items-start items-center md:w-[25vw] w-auto">
               <span
                 className="flex flex-row md:gap-x-[0.5vw] gap-x-[1.5vw] items-center md:text-[0.7vw] text-[2.5vw] text-[#FF00E5] font-semibold bg-[#F3F1FF] md:rounded-[0.5vw] rounded-[1.5vw] md:px-[0.5vw] px-[1.5vw] md:py-[0.2vw] py-[0.5vw]"
                 style={{
@@ -1309,7 +1309,7 @@ const Main = ({ margin }) => {
           />
           {/* Future Announcements Banner Start */}
           <div
-            className={`flex md:flex-row flex-col md:justify-between justify-center items-center md:gap-x-[5vw] gap-x-[11vw] bg-gradient-to-r from-[#4F378A] from-5% to-[#FF00E5] to-100% md:rounded-[2vw] rounded-[4vw] md:pl-[8vw] pl-[5vw] md:pt-0 pt-[5vw] md:pb-0 pb-[5vw] md:pr-0 pr-[5vw] md:my-[5vw] my-[10vw] md:w-[70vw] w-[90vw]`}
+            className={`flex md:flex-row flex-col md:justify-between justify-center items-center md:gap-x-[3vw] gap-x-[11vw] bg-gradient-to-r from-[#4F378A] from-5% to-[#FF00E5] to-100% md:rounded-[2vw] rounded-[4vw] md:pl-[8vw] pl-[5vw] md:pt-0 pt-[5vw] md:pb-0 pb-[5vw] md:pr-0 pr-[5vw] md:my-[5vw] my-[10vw] md:w-[70vw] w-[90vw]`}
           >
             <div className="flex flex-col">
               <span

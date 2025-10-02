@@ -146,7 +146,7 @@ const Footer = () => {
         className="text-center md:pt-0 pt-[2vw]"
         style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
       >
-        &copy; {new Date().getFullYear()} ShipX Copyright and rights reserved
+        &copy; {new Date().getFullYear()} {t("footer.copyright")}
       </span>
     </footer>
   );
