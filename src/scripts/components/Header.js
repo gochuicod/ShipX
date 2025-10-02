@@ -105,7 +105,7 @@ const Header = () => {
                 <ListboxOptions
                   anchor="bottom start"
                   transition
-                  className="relative max-h-56 overflow-auto md:rounded-[0.5vw] rounded-[2vw] bg-white py-1 text-base outline-1 -outline-offset-1 outline-white/10 data-leave:transition data-leave:duration-100 data-leave:ease-in data-closed:data-leave:opacity-0 sm:text-sm [--anchor-gap:0.25rem] z-[9999] md:shadow-[0_0.5vw_0.5vw_rgba(255,0,229,0.15)] shadow-[0_3vw_5vw_rgba(255,0,229,0.15)]"
+                  className="relative max-h-56 overflow-auto md:rounded-[0.5vw] rounded-[2vw] bg-white py-1 text-base outline-1 -outline-offset-1 outline-white/10 data-leave:transition data-leave:duration-100 data-leave:ease-in data-closed:data-leave:opacity-0 sm:text-sm [--anchor-gap:0.25rem] z-[1000] md:shadow-[0_0.5vw_0.5vw_rgba(255,0,229,0.15)] shadow-[0_3vw_5vw_rgba(255,0,229,0.15)]"
                 >
                   {languages.map((language) => (
                     <ListboxOption

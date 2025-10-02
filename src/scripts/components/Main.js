@@ -36,6 +36,7 @@ import Carousel from "./ui/CarouselNav";
 import CarouselServices from "./ui/CarouselServices";
 import Counter from "./ui/Counter";
 import TooltipCard from "./ui/ToolTipCard";
+import MessengerButton from "./ui/MessengerButton";
 
 import { useTranslation } from "react-i18next";
 
@@ -47,6 +48,7 @@ const Main = ({ margin }) => {
 
   return (
     <div className="relative overflow-hidden">
+      <MessengerButton />
       <div className="absolute top-[-5vw] left-[-10vw] size-[10vw] rounded-full shadow-[5vw_0.5vw_15vw_rgba(79,55,138,1)] z-40"></div>
       <div className="absolute top-[8vw] right-[-15vw] size-[15vw] rounded-full shadow-[-5vw_0.5vw_20vw_rgba(255,0,229,0.2)] z-40"></div>
       <div className="absolute top-1/2 left-[-30vw] size-[30vw] rounded-full shadow-[15vw_-10vw_20vw_rgba(255,0,229,0.1)] -z-10"></div>
