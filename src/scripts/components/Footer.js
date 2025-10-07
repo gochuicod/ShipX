@@ -135,7 +135,7 @@ const Footer = () => {
                 />
               </svg>
               <span className="md:pl-[1vw] pl-[3vw]">
-                391B Orchard Road #22 Ngee Ann City Singapore, 238874
+                {t("footer.reach_us_4")}
               </span>
             </div>
           </div>
