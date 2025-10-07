@@ -42,6 +42,9 @@ import main_icon_19 from "./main_icon_19.svg";
 import main_icon_20 from "./main_icon_20.svg";
 import main_icon_21 from "./main_icon_21.svg";
 import main_icon_22 from "./main_icon_22.svg";
+import main_icon_23 from "./main_icon_23.svg";
+import main_icon_24 from "./main_icon_24.svg";
+import main_icon_25 from "./main_icon_25.svg";
 
 import main_img_1 from "./main_img_1.webp";
 import main_img_2 from "./main_img_2.webp";
@@ -110,6 +113,9 @@ export {
   main_icon_20,
   main_icon_21,
   main_icon_22,
+  main_icon_23,
+  main_icon_24,
+  main_icon_25,
   main_img_1,
   main_img_2,
   main_img_3,

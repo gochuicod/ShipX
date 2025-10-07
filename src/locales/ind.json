@@ -92,7 +92,7 @@
     "link_5": "Pemenuhan oleh Amazon",
     "link_6": "Pengiriman Massal ke AS",
     "link_7": "Kepatuhan & Dokumentasi Global",
-    "link_8": "Pembiayaan dan Layanan Pelanggan",
+    "link_8": "Solusi Terpadu",
     "book_a_demo": "Pesan Demo",
     "contact_us": "Hubungi Kami",
     "carousel": {
@@ -166,7 +166,17 @@
         "currency": "$"
       },
       "slide_8": {
-        "header_1": "Segera Hadir!"
+        "badge_1": "Segera Hadir!",
+        "header_1": "Terpercaya",
+        "header_2": "Solusi",
+        "header_3": "segera hadir untuk Anda!",
+        "list_1": {
+          "item_1": "Perbandingan Harga",
+          "item_2": "Kalkulator Biaya Pendaratan Lengkap",
+          "item_3": "Kalkulator Tarif",
+          "item_4": "Kode HS dengan AI",
+          "item_5": "Pembiayaan dan Layanan Pelanggan"
+        }
       }
     },
     "note": "*Harga yang ditampilkan hanya harga awal dan dapat berbeda tergantung negara, spesifikasi, dan kondisi yang berlaku"

@@ -92,7 +92,7 @@
     "link_5": "Fulfillment by Amazon",
     "link_6": "Penghantaran Pukal ke AS",
     "link_7": "Pematuhan Global & Dokumentasi",
-    "link_8": "Kewangan dan Khidmat Pelanggan",
+    "link_8": "Penyelesaian Bersepadu",
     "book_a_demo": "Tempah Demo",
     "contact_us": "Hubungi Kami",
     "carousel": {
@@ -166,7 +166,17 @@
         "currency": "$"
       },
       "slide_8": {
-        "header_1": "Akan Datang!"
+        "badge_1": "Akan Datang!",
+        "header_1": "Boleh dipercayai",
+        "header_2": "Penyelesaian",
+        "header_3": "akan tiba kepada anda!",
+        "list_1": {
+          "item_1": "Perbandingan Harga",
+          "item_2": "Kalkulator Kos Pendaratan Penuh",
+          "item_3": "Kalkulator Tarif",
+          "item_4": "Kod HS dengan AI",
+          "item_5": "Pembiayaan dan Khidmat Pelanggan"
+        }
       }
     },
     "note": "*Harga yang ditunjukkan adalah harga permulaan sahaja dan mungkin berbeza mengikut negara, spesifikasi, dan syarat yang berkenaan"

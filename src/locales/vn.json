@@ -92,7 +92,7 @@
     "link_5": "Sự hoàn thành by Amazon",
     "link_6": "Vận tải hàng hóa sang Mỹ",
     "link_7": "Tuân thủ & Tài liệu toàn cầu",
-    "link_8": "Tài chính & Dịch vụ khách hàng",
+    "link_8": "Giải pháp tích hợp",
     "book_a_demo": "Đặt lịch Demo",
     "contact_us": "Liên hệ",
     "carousel": {
@@ -166,7 +166,17 @@
         "currency": "$"
       },
       "slide_8": {
-        "header_1": "Sắp ra mắt!"
+        "badge_1": "Sắp ra mắt!",
+        "header_1": "Đáng tin cậy",
+        "header_2": "Giải pháp",
+        "header_3": "đang đến với bạn!",
+        "list_1": {
+          "item_1": "So sánh giá",
+          "item_2": "Máy tính chi phí trọn gói",
+          "item_3": "Máy tính thuế quan",
+          "item_4": "Mã HS với AI",
+          "item_5": "Tài chính và Dịch vụ khách hàng"
+        }
       }
     },
     "note": "*Giá chỉ mang tính tham khảo, có thể thay đổi theo quốc gia, yêu cầu và điều kiện áp dụng"

@@ -92,7 +92,7 @@
     "link_5": "Fulfilment by Amazon",
     "link_6": "Bulk Freight to USA",
     "link_7": "Global Compliance & Documentation",
-    "link_8": "Financing and Customer Service",
+    "link_8": "Integrated Solutions",
     "book_a_demo": "Book a Demo",
     "contact_us": "Contact Us",
     "carousel": {
@@ -166,7 +166,17 @@
         "currency": "$"
       },
       "slide_8": {
-        "header_1": "Coming Soon!"
+        "badge_1": "Coming Soon!",
+        "header_1": "Reliable",
+        "header_2": "solutions",
+        "header_3": "coming your way!",
+        "list_1": {
+          "item_1": "Pricing Comparison",
+          "item_2": "Fully Landed Cost Calculator",
+          "item_3": "Tariff Calculator",
+          "item_4": "HS Codes with AI",
+          "item_5": "Financing and Customer Service"
+        }
       }
     },
     "note": "*Prices shown are starting prices only and may vary by country, specifications, and applicable conditions"

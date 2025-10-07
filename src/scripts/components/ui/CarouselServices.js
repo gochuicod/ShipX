@@ -7,7 +7,10 @@ import {
   main_img_10,
   main_img_11,
   main_img_12,
-  main_img_13,
+  main_icon_8,
+  main_icon_23,
+  main_icon_24,
+  main_icon_25,
 } from "../../../assets/assets";
 import { useSwipeable } from "react-swipeable";
 import { useEffect, useRef } from "react";
@@ -548,7 +551,7 @@ export default function CarouselServices({ slide }) {
           />
         </div>
         {/* Eighth slide: custom hero section */}
-        <div className="flex flex-col md:justify-between justify-between md:gap-y-[1vw] gap-y-[1.5vw] md:w-[25vw] w-full bg-[#F8F7FF] md:p-[2vw] p-[5vw] md:rounded-[2vw] rounded-[5vw] md:h-[36vw] h-[100vw]">
+        <div className="flex flex-col md:justify-between justify-evenly md:gap-y-[1vw] gap-y-[1.5vw] md:w-[25vw] w-full bg-[#F8F7FF] md:p-[2vw] p-[5vw] md:rounded-[2vw] rounded-[5vw] md:h-[36vw] h-[100vw]">
           <span
             className="flex flex-row  md:gap-x-[0.5vw] gap-x-[1vw] items-center md:text-[0.8vw] text-[2.2vw] text-[#4F378A] font-semibold bg-white rounded-[2vw] md:px-[0.7vw] px-[3vw] md:py-[0.4vw] py-[1vw]"
             style={{
@@ -569,15 +572,68 @@ export default function CarouselServices({ slide }) {
                 d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
               />
             </svg>
-            {t("services_section.link_8")}
+            {t("services_section.carousel.slide_8.badge_1")}
           </span>
-          <p className="md:text-[1.8vw] text-[5.5vw] text-[#FF00E5] text-center font-bold md:leading-[1.5vw] leading-[7vw]">
-            {t("services_section.carousel.slide_8.header_1")}
+          <p
+            className="md:text-[1.6vw] text-[5vw] text-[#1A1A1A] text-start font-semibold  md:leading-[2vw] leading-[7vw]"
+            style={{
+              fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+            }}
+          >
+            {t("services_section.carousel.slide_8.header_1")}&nbsp;
+            <p className="inline text-[#FF00E5]">
+              {t("services_section.carousel.slide_8.header_2")}
+            </p>
+            <br />
+            {t("services_section.carousel.slide_8.header_3")}
           </p>
-          <img
-            className="w-full md:h-[15vw] h-[45vw] rounded-[2vw]"
-            src={main_img_13}
-          />
+          <div className="flex flex-col md:gap-y-[1vw] gap-y-[2vw]">
+            <div className="flex flex-row w-full md:rounded-[1vw] rounded-[3vw] bg-white z-10 md:px-[1.5vw] px-[3vw] md:py-[1vw] py-[3vw] items-center justify-start cursor-pointer select-none">
+              <img
+                className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
+                src={main_icon_23}
+              />
+              <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[1.5vw] pl-[3vw]">
+                {t("services_section.carousel.slide_8.list_1.item_1")}
+              </span>
+            </div>
+            <div className="flex flex-row w-full md:rounded-[1vw] rounded-[3vw] bg-white z-10 md:px-[1.5vw] px-[3vw] md:py-[1vw] py-[3vw] items-center justify-start cursor-pointer select-none">
+              <img
+                className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
+                src={main_icon_24}
+              />
+              <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[1.5vw] pl-[3vw]">
+                {t("services_section.carousel.slide_8.list_1.item_2")}
+              </span>
+            </div>
+            <div className="flex flex-row w-full md:rounded-[1vw] rounded-[3vw] bg-white z-10 md:px-[1.5vw] px-[3vw] md:py-[1vw] py-[3vw] items-center justify-start cursor-pointer select-none">
+              <img
+                className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
+                src={main_icon_24}
+              />
+              <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[1.5vw] pl-[3vw]">
+                {t("services_section.carousel.slide_8.list_1.item_3")}
+              </span>
+            </div>
+            <div className="flex flex-row w-full md:rounded-[1vw] rounded-[3vw] bg-white z-10 md:px-[1.5vw] px-[3vw] md:py-[1vw] py-[3vw] items-center justify-start cursor-pointer select-none">
+              <img
+                className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
+                src={main_icon_25}
+              />
+              <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[1.5vw] pl-[3vw]">
+                {t("services_section.carousel.slide_8.list_1.item_4")}
+              </span>
+            </div>
+            <div className="flex flex-row w-full md:rounded-[1vw] rounded-[3vw] bg-white z-10 md:px-[1.5vw] px-[3vw] md:py-[1vw] py-[3vw] items-center justify-start cursor-pointer select-none">
+              <img
+                className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
+                src={main_icon_8}
+              />
+              <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[1.5vw] pl-[3vw]">
+                {t("services_section.carousel.slide_8.list_1.item_5")}
+              </span>
+            </div>
+          </div>
         </div>
       </Carousel>
     </div>
