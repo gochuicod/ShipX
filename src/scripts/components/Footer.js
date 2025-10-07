@@ -135,7 +135,9 @@ const Footer = () => {
                 />
               </svg>
               <span className="md:pl-[1vw] pl-[3vw]">
-                {t("footer.reach_us_4")}
+                28 Street N0.6, Bay Hien Ward,{" "}
+                <br className="md:block hidden" />
+                Ho Chi Minh City, Vietnam
               </span>
             </div>
           </div>
