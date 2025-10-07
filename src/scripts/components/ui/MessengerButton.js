@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 const MessengerButton = () => {
-  const messengerLink = "https://m.me/YOUR_PAGE_USERNAME_OR_ID";
+  const messengerLink = "https://m.me/sglinkvn";
   const [messengerVisibility, setMessengerVisibility] = useState(false);
   const { t } = useTranslation();
 
