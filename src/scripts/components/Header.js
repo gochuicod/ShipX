@@ -71,30 +71,6 @@ const Header = () => {
             {/* ASEAN's Next Generation Platform */}
             {t("header.tagline")}
           </span>
-        </div>
-
-        {/* Right: Nav + Buttons (hidden on mobile) */}
-        <nav className="hidden md:flex flex-row gap-x-[2.5vw] font-medium text-[0.8vw]">
-          <NavLink
-            to="/"
-            end
-            className={linkClass}
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          >
-            {t("header.home")}
-          </NavLink>
-          <NavLink to="/#services" end className={linkClass}>
-            {t("header.services")}
-          </NavLink>
-          <NavLink to="/#platform" end className={linkClass}>
-            {t("header.platform")}
-          </NavLink>
-          <NavLink to="/#network" end className={linkClass}>
-            {t("header.network")}
-          </NavLink>
-        </nav>
-
-        <div className="hidden md:flex flex-row justify-center items-center gap-x-[1vw] text-[0.8vw] font-normal">
           <Listbox
             value={selected}
             onChange={(language) => {
@@ -153,6 +129,33 @@ const Header = () => {
               </Portal>
             </div>
           </Listbox>
+        </div>
+
+        {/* Right: Nav + Buttons (hidden on mobile) */}
+        <nav className="hidden md:flex flex-row gap-x-[2.5vw] font-medium text-[0.8vw]">
+          <NavLink
+            to="/"
+            end
+            className={linkClass}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            {t("header.home")}
+          </NavLink>
+          <NavLink to="/#services" end className={linkClass}>
+            {t("header.services")}
+          </NavLink>
+          <NavLink to="/#platform" end className={linkClass}>
+            {t("header.platform")}
+          </NavLink>
+          <NavLink to="/#network" end className={linkClass}>
+            {t("header.network")}
+          </NavLink>
+        </nav>
+
+        <div className="hidden md:flex flex-row justify-center items-center gap-x-[1vw] text-[0.8vw] font-normal">
+          <span className="text-[#FF00E5] hover:text-shadow-[0_0_0.5vw_rgba(255,0,229,0.5)] transition-text-shadow duration-500 ease-in-out cursor-pointer font-bold mr-[1vw]">
+            {t("header.login_signup")}
+          </span>
           <motion.button
             className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
             whileHover={{
@@ -163,6 +166,10 @@ const Header = () => {
               scale: 0.9,
               transition: { type: "spring", stiffness: 500, damping: 10 },
             }}
+            onClick={() =>
+              (window.location.href =
+                "https://calendar.app.google/Rfe2S7Vswp9NmjJaA")
+            }
           >
             {/* Gradient border */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />

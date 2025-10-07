@@ -137,7 +137,9 @@ const ContactForm = () => {
 
           {/* Inner white area */}
           <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
-            <span className="text-[#4F378A] font-semibold">Book a Demo</span>
+            <span className="text-[#4F378A] font-semibold">
+              {t("contact_us_section.form.book_a_demo")}
+            </span>
           </div>
         </motion.button>
       </div>

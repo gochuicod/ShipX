@@ -7,6 +7,7 @@
     "network": "เครือข่าย",
     "book_a_demo": "จองการสาธิต",
     "contact_us": "ติดต่อเรา",
+    "login_signup": "เข้าสู่ระบบ/สมัครสมาชิก",
     "banner": {
       "message": "เลือกประเทศหรือภูมิภาคของคุณในเอเชียเพื่อดูหน้านี้เป็นภาษาของคุณ"
     }
@@ -312,7 +313,7 @@
       "placeholder": "กรอกอีเมล",
       "button_sending": "กำลังส่ง...",
       "button_sent": "ส่งแล้ว!",
-      "button_default": "จองการสาธิต"
+      "button_default": "ส่งข้อความ"
     }
   },
   "contact_us_section": {
@@ -340,7 +341,7 @@
       "message_placeholder": "กรุณากรอกข้อความ",
       "button_sending": "กำลังส่ง...",
       "button_sent": "ส่งแล้ว!",
-      "button_default": "จองการสาธิต"
+      "button_default": "ส่งข้อความ"
     }
   },
   "privacy_policy_page": {

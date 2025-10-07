@@ -7,6 +7,7 @@
     "network": "Rangkaian",
     "book_a_demo": "Tempah Demo",
     "contact_us": "Hubungi Kami",
+    "login_signup": "Log Masuk/Daftar",
     "banner": {
       "message": "Pilih negara atau wilayah anda di Asia untuk melihat halaman ini dalam bahasa anda."
     }
@@ -312,7 +313,7 @@
       "placeholder": "Masukkan Emel",
       "button_sending": "Menghantar...",
       "button_sent": "Dihantar!",
-      "button_default": "Tempah Demo"
+      "button_default": "Hantar Mesej"
     }
   },
   "contact_us_section": {
@@ -340,7 +341,7 @@
       "message_placeholder": "Mesej diperlukan",
       "button_sending": "Menghantar...",
       "button_sent": "Dihantar!",
-      "button_default": "Tempah Demo"
+      "button_default": "Hantar Mesej"
     }
   },
   "privacy_policy_page": {

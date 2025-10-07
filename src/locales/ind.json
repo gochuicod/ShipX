@@ -7,6 +7,7 @@
     "network": "Jaringan",
     "book_a_demo": "Pesan Demo",
     "contact_us": "Hubungi Kami",
+    "login_signup": "Masuk/Daftar",
     "banner": {
       "message": "Pilih negara atau wilayah Anda di Asia untuk melihat halaman ini dalam bahasa Anda."
     }
@@ -312,7 +313,7 @@
       "placeholder": "Masukkan Email",
       "button_sending": "Mengirim...",
       "button_sent": "Terkirim!",
-      "button_default": "Pesan Demo"
+      "button_default": "Kirim Pesan"
     }
   },
   "contact_us_section": {
@@ -340,7 +341,7 @@
       "message_placeholder": "Pesan wajib diisi",
       "button_sending": "Mengirim...",
       "button_sent": "Terkirim!",
-      "button_default": "Pesan Demo"
+      "button_default": "Kirim Pesan"
     }
   },
   "privacy_policy_page": {

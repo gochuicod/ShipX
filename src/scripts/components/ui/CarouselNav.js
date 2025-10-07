@@ -192,6 +192,10 @@ export default function CarouselNav() {
                     md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
                     text-white font-medium cursor-pointer
                   "
+                  onClick={() =>
+                    (window.location.href =
+                      "https://calendar.app.google/Rfe2S7Vswp9NmjJaA")
+                  }
                 >
                   {t("hero_section.slide_1.book_a_demo")}
                 </button>
@@ -416,6 +420,10 @@ export default function CarouselNav() {
                     md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
                     text-white font-medium cursor-pointer
                   "
+                  onClick={() =>
+                    (window.location.href =
+                      "https://calendar.app.google/Rfe2S7Vswp9NmjJaA")
+                  }
                 >
                   {t("hero_section.slide_2.book_a_demo")}
                 </button>
@@ -641,6 +649,10 @@ export default function CarouselNav() {
                     md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
                     text-white font-medium cursor-pointer
                   "
+                  onClick={() =>
+                    (window.location.href =
+                      "https://calendar.app.google/Rfe2S7Vswp9NmjJaA")
+                  }
                 >
                   {t("hero_section.slide_3.book_a_demo")}
                 </button>

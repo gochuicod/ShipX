@@ -7,6 +7,7 @@
     "network": "Mạng lưới",
     "book_a_demo": "Đặt lịch Demo",
     "contact_us": "Liên hệ",
+    "login_signup": "Đăng nhập/Đăng ký",
     "banner": {
       "message": "Chọn quốc gia hoặc khu vực của bạn ở Châu Á để xem trang này bằng ngôn ngữ của bạn."
     }
@@ -312,7 +313,7 @@
       "placeholder": "Nhập email",
       "button_sending": "Đang gửi...",
       "button_sent": "Đã gửi!",
-      "button_default": "Đặt lịch Demo"
+      "button_default": "Gửi tin nhắn"
     }
   },
   "contact_us_section": {
@@ -340,7 +341,7 @@
       "message_placeholder": "Yêu cầu nhập tin nhắn",
       "button_sending": "Đang gửi...",
       "button_sent": "Đã gửi!",
-      "button_default": "Đặt lịch Demo"
+      "button_default": "Gửi tin nhắn"
     }
   },
   "privacy_policy_page": {
