@@ -11,6 +11,14 @@ import main_svg_10 from "./main_svg_10.svg";
 import main_svg_11 from "./main_svg_11.svg";
 import main_svg_12 from "./main_svg_12.svg";
 import main_svg_13 from "./main_svg_13.svg";
+import main_svg_14 from "./main_svg_14.svg";
+import main_svg_15 from "./main_svg_15.svg";
+import main_svg_16 from "./main_svg_16.svg";
+import main_svg_17 from "./main_svg_17.svg";
+import main_svg_18 from "./main_svg_18.svg";
+import main_svg_19 from "./main_svg_19.svg";
+import main_svg_20 from "./main_svg_20.svg";
+import main_svg_21 from "./main_svg_21.svg";
 
 import header_svg_1 from "./header_svg_1.svg";
 import header_svg_2 from "./header_svg_2.svg";
@@ -89,6 +97,14 @@ export {
   main_svg_11,
   main_svg_12,
   main_svg_13,
+  main_svg_14,
+  main_svg_15,
+  main_svg_16,
+  main_svg_17,
+  main_svg_18,
+  main_svg_19,
+  main_svg_20,
+  main_svg_21,
   header_svg_1,
   header_svg_2,
   trusted_by_leaders,

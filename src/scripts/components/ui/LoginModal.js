@@ -111,7 +111,7 @@ const LoginModal = () => {
                     </span>
                     <img
                       src={header_svg_2}
-                      alt="Amilo Logo"
+                      alt="SG Link Logo"
                       className="md:h-[1vw] h-[4vw] md:w-[4vw] w-[10vw]"
                     />
                   </div>

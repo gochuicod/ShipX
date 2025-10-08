@@ -1,4 +1,6 @@
 import {
+  header_svg_1,
+  header_svg_2,
   main_svg_2,
   main_svg_3,
   main_svg_4,
@@ -8,6 +10,14 @@ import {
   main_svg_8,
   main_svg_10,
   main_svg_13,
+  main_svg_14,
+  main_svg_15,
+  main_svg_16,
+  main_svg_17,
+  main_svg_18,
+  main_svg_19,
+  main_svg_20,
+  main_svg_21,
   main_icon_1,
   main_icon_2,
   main_icon_3,
@@ -1294,6 +1304,219 @@ const Main = ({ margin }) => {
           </div>
         </div>
         {/* Offices Section End */}
+        {/* SG Link and Amilo Cards Start */}
+        <div
+          className={`relative w-[100vw] ${margin} flex md:flex-row flex-col justify-center items-center md:gap-x-[3vw] gap-x-0 md:gap-y-0 gap-y-[5vw]`}
+        >
+          {/* Don't have an account button */}
+          <button
+            to="/#contact-us"
+            end
+            className="
+              bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
+              bg-[length:200%_100%] bg-[position:0%_0%]
+              hover:bg-[position:100%_0%]
+              transition-[background-position] duration-1000 ease-in-out
+              md:py-[0.6vw] py-[1.5vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
+              text-white font-medium absolute md:bottom-[-1vw] bottom-[-3vw] cursor-pointer
+              flex flex-row md:gap-x-[1vw] gap-x-[3vw] justify-center items-center z-[10]
+            "
+          >
+            <span className="md:text-[0.8vw] text-[2.5vw] font-normal">
+              Don't have an Account yet?
+            </span>
+            <span className="flex flex-row md:text-[0.8vw] text-[2.5vw] md:gap-x-[0.1vw] gap-x-[0.5vw] justify-center items-center text-white font-bold">
+              Sign Up
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={3.5}
+                stroke="#FFFFFF"
+                className="md:size-[0.7vw] size-[2.5vw]"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                />
+              </svg>
+            </span>
+          </button>
+          {/* SG Link Card */}
+          <div className="relative overflow-hidden flex flex-col md:gap-y-[1vw] gap-y-[3vw] md:w-[35vw] w-full md:shadow-[0_0vw_1vw_rgba(79,55,138,0.15)] shadow-[0_0vw_5vw_rgba(79,55,138,0.15)] md:rounded-[2vw] rounded-[3vw] md:px-[3vw] px-[5vw] md:pt-[3vw] pt-[5vw] md:pb-[23vw] pb-[33vw]">
+            <div className="flex justify-center items-center">
+              <img
+                src={main_svg_14}
+                alt="Amilo Logo"
+                className="md:h-[4vw] h-[15vw] md:w-[12vw] w-[30vw]"
+              />
+            </div>
+            <p
+              className="text-[#0E0E0E] md:text-[1.7vw] text-[4vw] text-wrap text-left font-semibold md:leading-[2.1vw] leading-[4.5vw]"
+              style={{
+                fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+              }}
+            >
+              <span className="inline text-[#FF00E5]">
+                Expand your business&nbsp;
+              </span>
+              abroad with SG Link's cross-border expertise
+            </p>
+            <p className="text-[#63666D]/80 md:text-[1.05vw] text-[2.55vw] text-wrap text-justify font-medium md:leading-[1.55vw] leading-[3.05vw]">
+              Ship Products To Global Markets Quickly And Securely With
+              End-To-End Delivery Solutions Tailored For eCommerce Sellers
+            </p>
+            <motion.button
+              className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer w-fit z-[10]"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.8 }}
+              onClick={() =>
+                (window.location.href = "https://admin.sglinkapi.com/")
+              }
+            >
+              {/* Gradient border */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+
+              {/* Inner white area */}
+              <div className="relative flex flex-row items-center gap-x-[1vw] px-[2vw] py-[0.5vw] bg-white rounded-full">
+                <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2.5vw]">
+                  {t("header.login_modal.sglink.button")}
+                </span>
+                <img
+                  src={header_svg_2}
+                  alt="Amilo Logo"
+                  className="md:h-[1vw] h-[4vw] md:w-[4vw] w-[10vw]"
+                />
+              </div>
+            </motion.button>
+            <div className="flex flex-row md:gap-x-[2vw] gap-x-[5vw] items-center justify-center absolute bottom-0 left-0">
+              <div
+                className="
+                  md:h-[13vw] h-[20vw]
+                  md:w-[20vw] w-[50vw]
+                  opacity-30
+                  bg-no-repeat md:bg-top bg-top-left
+                  bg-[length:50vw_50vw]
+                  md:bg-[length:30vw_30vw]
+                "
+                style={{ backgroundImage: `url(${main_svg_16})` }}
+              ></div>
+
+              <div className="flex flex-col gap-y-[3vw]">
+                <div
+                  className="
+                    md:h-[12vw] h-[17vw]
+                    md:w-[20vw] w-[25vw]
+                    opacity-30
+                    bg-no-repeat bg-top
+                    bg-[length:120vw_60vw]
+                    md:bg-[length:100vw_50vw]
+                  "
+                  style={{ backgroundImage: `url(${main_svg_17})` }}
+                ></div>
+
+                <div
+                  className="
+                    md:h-[12vw] h-[17vw]
+                    md:w-[20vw] w-[25vw]
+                    opacity-30
+                    bg-no-repeat bg-center
+                    bg-[length:120vw_60vw]
+                    md:bg-[length:100vw_50vw]
+                  "
+                  style={{ backgroundImage: `url(${main_svg_18})` }}
+                ></div>
+              </div>
+            </div>
+          </div>
+          {/* Amilo Card */}
+          <div className="relative overflow-hidden flex flex-col md:gap-y-[1vw] gap-y-[3vw] md:w-[35vw] w-full md:shadow-[0_0vw_1vw_rgba(79,55,138,0.15)] shadow-[0_0vw_5vw_rgba(79,55,138,0.15)] md:rounded-[2vw] rounded-[3vw] md:px-[3vw] px-[5vw] md:pt-[3vw] pt-[5vw] md:pb-[23vw] pb-[33vw]">
+            <div className="flex justify-center items-center">
+              <img
+                src={main_svg_15}
+                alt="Amilo Logo"
+                className="md:h-[4vw] h-[15vw] md:w-[12vw] w-[30vw]"
+              />
+            </div>
+            <p
+              className="text-[#0E0E0E] md:text-[1.7vw] text-[4vw] text-wrap text-left font-semibold md:leading-[2.1vw] leading-[4.5vw]"
+              style={{
+                fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+              }}
+            >
+              <span className="inline text-[#FF00E5]">
+                Your all-in-one partner&nbsp;
+              </span>
+              for logistics, fulfillment and global shipping
+            </p>
+            <p className="text-[#63666D]/80 md:text-[1.05vw] text-[2.55vw] text-wrap text-justify font-medium md:leading-[1.55vw] leading-[3.05vw]">
+              From Warehousing To Last-Mile Delivery, Amilo Streamlines Every
+              Step Of Your Supply Chain So You Can Focus On Scaling Your Brand
+            </p>
+            <motion.button
+              className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer w-fit z-[10]"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.8 }}
+              onClick={() => (window.location.href = "https://vip.amilo.co/")}
+            >
+              {/* Gradient border */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+
+              {/* Inner white area */}
+              <div className="relative flex flex-row items-center gap-x-[1vw] px-[2vw] py-[0.5vw] bg-white rounded-full">
+                <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2.5vw]">
+                  {t("header.login_modal.amilo.button")}
+                </span>
+                <img
+                  src={header_svg_1}
+                  alt="Amilo Logo"
+                  className="md:h-[1vw] h-[4vw] md:w-[4vw] w-[10vw]"
+                />
+              </div>
+            </motion.button>
+            <div className="flex flex-row md:gap-x-[2vw] gap-x-[5vw] items-center justify-center absolute bottom-0 left-0">
+              <div
+                className="
+                  md:h-[13vw] h-[20vw]
+                  md:w-[20vw] w-[50vw]
+                  opacity-30
+                  bg-no-repeat md:bg-top bg-center
+                  bg-[length:150vw_25vw]
+                  md:bg-[length:100vw_13vw]
+                "
+                style={{ backgroundImage: `url(${main_svg_20})` }}
+              ></div>
+
+              <div className="flex flex-col gap-y-[3vw]">
+                <div
+                  className="
+                    md:h-[12vw] h-[17vw]
+                    md:w-[20vw] w-[25vw]
+                    opacity-30
+                    bg-no-repeat bg-top
+                    bg-[length:120vw_25vw]
+                    md:bg-[length:100vw_20vw]
+                  "
+                  style={{ backgroundImage: `url(${main_svg_19})` }}
+                ></div>
+
+                <div
+                  className="
+                    md:h-[12vw] h-[17vw]
+                    md:w-[20vw] w-[25vw]
+                    opacity-30
+                    bg-no-repeat bg-center
+                    bg-[length:150vw_60vw]
+                    md:bg-[length:100vw_15vw]
+                  "
+                  style={{ backgroundImage: `url(${main_svg_21})` }}
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* SG Link and Amilo Cards End */}
         {/* Future Announcements Banner Start */}
         <div className="w-full justify-center items-center flex md:px-0 px-[5vw]">
           <div
@@ -1389,7 +1612,7 @@ const Main = ({ margin }) => {
                 fontFamily: "Poppins, system-ui, -apple-system, sans-serif",
               }}
             >
-              <span className="text-[#0E0E0E] md:text-[1.5vw] text-[5vw] font-semibold select-none">
+              <span className="text-[#0E0E0E] md:text-[1.7vw] text-[5vw] font-semibold select-none">
                 {t("contact_us_section.header_4")}
               </span>
               <span className="text-black md:text-[0.9vw] text-[3vw] font-normal mt-[1vw] select-none">

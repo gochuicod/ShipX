@@ -6,7 +6,7 @@ import {
   main_icon_14,
   main_icon_15,
   main_icon_16,
-  main_icon_17,
+  // main_icon_17,
   main_icon_18,
   main_icon_19,
   main_icon_20,
