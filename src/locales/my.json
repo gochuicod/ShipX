@@ -8,6 +8,23 @@
     "book_a_demo": "Tempah Demo",
     "contact_us": "Hubungi Kami",
     "login_signup": "Log Masuk/Daftar",
+    "login_modal": {
+      "amilo": {
+        "title": "Amilo",
+        "description": "Pemenuhan Laut + Penghantaran Rentas Sempadan",
+        "button": "Log masuk ke"
+      },
+      "sglink": {
+        "title": "SG Link",
+        "description": "Penghantaran Antarabangsa untuk Peniaga VN",
+        "button": "Log masuk ke"
+      },
+      "sign_up": {
+        "title": "Daftar",
+        "description": "Belum ada akaun? Hubungi Jualan!",
+        "button": "Mula Sekarang"
+      }
+    },
     "banner": {
       "message": "Pilih negara atau wilayah anda di Asia untuk melihat halaman ini dalam bahasa anda."
     }
@@ -295,7 +312,7 @@
       "philippines": {
         "country_name": "Filipina",
         "address": "alamat",
-        "contact_number": "nombor",
+        "contact_number": "(+63) 976 167 1128",
         "email": "contact.ph@shipx.asia"
       },
       "united_states": {

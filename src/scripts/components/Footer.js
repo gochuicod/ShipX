@@ -37,13 +37,15 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.6vw]">
-            <motion.button
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.8 }}
-              className="border-1 border-white text-white font-normal md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] rounded-[2vw] cursor-pointer"
-            >
-              {t("footer.book_a_demo")}
-            </motion.button>
+            <div className="flex flex-col relative overflow-hidden md:p-[0.10vw] p-[0.5vw]">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#4F378A] to-[#FF00E5] rounded-full" />
+              <button
+                type="button"
+                className={`relative flex flex-row items-center justify-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-[#8E3CAD] rounded-full text-white transition-all duration-300 hover:bg-[#A24BD0] focus:outline-none cursor-pointer`}
+              >
+                {t("footer.book_a_demo")}
+              </button>
+            </div>
             <motion.button
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.8 }}

@@ -5,6 +5,7 @@ import * as motion from "motion/react-client";
 import { AnimatePresence } from "motion/react";
 import { useTranslation } from "react-i18next";
 import { languages } from "../utils/constants";
+import LoginModal from "./ui/LoginModal";
 import {
   Listbox,
   ListboxButton,
@@ -72,6 +73,7 @@ const Header = () => {
             {t("header.tagline")}
           </span>
           <Listbox
+            className="md:block hidden"
             value={selected}
             onChange={(language) => {
               setSelected(language);
@@ -153,9 +155,7 @@ const Header = () => {
         </nav>
 
         <div className="hidden md:flex flex-row justify-center items-center gap-x-[1vw] text-[0.8vw] font-normal">
-          <span className="text-[#FF00E5] hover:text-shadow-[0_0_0.5vw_rgba(255,0,229,0.5)] transition-text-shadow duration-500 ease-in-out cursor-pointer font-bold mr-[1vw]">
-            {t("header.login_signup")}
-          </span>
+          <LoginModal />
           <motion.button
             className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
             whileHover={{
@@ -346,6 +346,7 @@ const Header = () => {
                   </Portal>
                 </div>
               </Listbox>
+              <LoginModal />
             </motion.div>
           )}
         </AnimatePresence>

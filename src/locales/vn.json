@@ -8,6 +8,23 @@
     "book_a_demo": "Đặt lịch Demo",
     "contact_us": "Liên hệ",
     "login_signup": "Đăng nhập/Đăng ký",
+    "login_modal": {
+      "amilo": {
+        "title": "Amilo",
+        "description": "Hoàn tất đơn hàng đường biển + Vận chuyển xuyên biên giới",
+        "button": "Đăng nhập vào"
+      },
+      "sglink": {
+        "title": "SG Link",
+        "description": "Giao hàng quốc tế cho thương nhân Việt Nam",
+        "button": "Đăng nhập vào"
+      },
+      "sign_up": {
+        "title": "Đăng ký",
+        "description": "Chưa có tài khoản? Liên hệ với bộ phận kinh doanh!",
+        "button": "Bắt đầu ngay"
+      }
+    },
     "banner": {
       "message": "Chọn quốc gia hoặc khu vực của bạn ở Châu Á để xem trang này bằng ngôn ngữ của bạn."
     }
@@ -295,7 +312,7 @@
       "philippines": {
         "country_name": "Philippines",
         "address": "địa chỉ",
-        "contact_number": "số điện thoại",
+        "contact_number": "(+63) 976 167 1128",
         "email": "contact.ph@shipx.asia"
       },
       "united_states": {

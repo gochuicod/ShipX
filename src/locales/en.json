@@ -8,6 +8,23 @@
     "book_a_demo": "Book a Demo",
     "contact_us": "Contact Us",
     "login_signup": "Login/Signup",
+    "login_modal": {
+      "amilo": {
+        "title": "Amilo",
+        "description": "Sea Fulfillment + Cross-Border Shipping",
+        "button": "Log in to"
+      },
+      "sglink": {
+        "title": "SG Link",
+        "description": "International Delivery for VN Merchants",
+        "button": "Log in to"
+      },
+      "sign_up": {
+        "title": "Sign Up",
+        "description": "Don't have an Account yet? Talk to Sales!",
+        "button": "Get Started"
+      }
+    },
     "banner": {
       "message": "Choose your country or region in Asia to view this page in your language."
     }

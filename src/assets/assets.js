@@ -12,6 +12,9 @@ import main_svg_11 from "./main_svg_11.svg";
 import main_svg_12 from "./main_svg_12.svg";
 import main_svg_13 from "./main_svg_13.svg";
 
+import header_svg_1 from "./header_svg_1.svg";
+import header_svg_2 from "./header_svg_2.svg";
+
 import trusted_by_leaders from "./trusted-by-leaders.webp";
 import site_icon from "./site_icon_shipx.webp";
 
@@ -85,6 +88,8 @@ export {
   main_svg_11,
   main_svg_12,
   main_svg_13,
+  header_svg_1,
+  header_svg_2,
   trusted_by_leaders,
   site_icon,
   shipx,

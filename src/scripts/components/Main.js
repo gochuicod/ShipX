@@ -1306,26 +1306,10 @@ const Main = ({ margin }) => {
           </div>
         </div>
         {/* Offices Section End */}
-        {/* Contact Us Section Start */}
-        <div
-          id="contact-us"
-          className="relative flex flex-col justify-center items-center md:pt-[0.5vw] pt-[1vw] overflow-hidden"
-        >
-          <img
-            src={main_svg_7}
-            alt=""
-            className="absolute md:-translate-y-[2vw] -translate-y-[35vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none -z-10"
-            aria-hidden="true"
-          />
-          <img
-            src={main_svg_7}
-            alt=""
-            className="absolute translate-x-[30vw] md:translate-y-[10vw] -translate-y-[15vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none opacity-20 -z-10"
-            aria-hidden="true"
-          />
-          {/* Future Announcements Banner Start */}
+        {/* Future Announcements Banner Start */}
+        <div className="w-full justify-center items-center flex md:px-0 px-[5vw]">
           <div
-            className={`flex md:flex-row flex-col md:justify-between justify-center items-center md:gap-x-[3vw] gap-x-[11vw] bg-gradient-to-r from-[#4F378A] from-5% to-[#FF00E5] to-100% md:rounded-[2vw] rounded-[4vw] md:pl-[8vw] pl-[5vw] md:pt-0 pt-[5vw] md:pb-0 pb-[5vw] md:pr-0 pr-[5vw] md:my-[5vw] my-[10vw] md:w-[70vw] w-[90vw]`}
+            className={`flex md:flex-row flex-col w-fit justify-center items-center md:gap-x-[3vw] gap-x-[11vw] bg-gradient-to-r from-[#4F378A] from-5% to-[#FF00E5] to-100% md:rounded-[2vw] rounded-[4vw] md:pl-[8vw] pl-[5vw] md:pt-0 pt-[5vw] md:pb-0 pb-[5vw] md:pr-0 pr-[5vw] md:my-[5vw] my-[10vw]`}
           >
             <div className="flex flex-col">
               <span
@@ -1350,7 +1334,25 @@ const Main = ({ margin }) => {
               ></div>
             </div>
           </div>
-          {/* Future Announcements Banner End */}
+        </div>
+        {/* Future Announcements Banner End */}
+        {/* Contact Us Section Start */}
+        <div
+          id="contact-us"
+          className="relative flex flex-col justify-center items-center md:pt-[0.5vw] pt-[1vw] overflow-hidden"
+        >
+          <img
+            src={main_svg_7}
+            alt=""
+            className="absolute md:-translate-y-[2vw] -translate-y-[35vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none -z-10"
+            aria-hidden="true"
+          />
+          <img
+            src={main_svg_7}
+            alt=""
+            className="absolute translate-x-[30vw] md:translate-y-[10vw] -translate-y-[15vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none opacity-20 -z-10"
+            aria-hidden="true"
+          />
           <span
             className="flex flex-row md:gap-x-[0.5vw] gap-x-[1.5vw] items-center md:text-[0.8vw] text-[2.5vw] text-[#FF00E5] font-semibold bg-[#F3F1FF] md:rounded-[0.5vw] rounded-[1.5vw] md:px-[0.5vw] px-[1.5vw] md:py-[0.2vw] py-[0.5vw] cursor-pointer select-none z-20 md:mt-[5vw] mt-0"
             style={{

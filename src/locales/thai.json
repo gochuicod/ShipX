@@ -8,6 +8,23 @@
     "book_a_demo": "จองการสาธิต",
     "contact_us": "ติดต่อเรา",
     "login_signup": "เข้าสู่ระบบ/สมัครสมาชิก",
+    "login_modal": {
+      "amilo": {
+        "title": "Amilo",
+        "description": "การเติมเต็มทางทะเล + การขนส่งข้ามพรมแดน",
+        "button": "เข้าสู่ระบบที่"
+      },
+      "sglink": {
+        "title": "SG Link",
+        "description": "การจัดส่งระหว่างประเทศสำหรับผู้ค้าชาวเวียดนาม",
+        "button": "เข้าสู่ระบบที่"
+      },
+      "sign_up": {
+        "title": "สมัครสมาชิก",
+        "description": "ยังไม่มีบัญชี? ติดต่อฝ่ายขาย!",
+        "button": "เริ่มต้นเลย"
+      }
+    },
     "banner": {
       "message": "เลือกประเทศหรือภูมิภาคของคุณในเอเชียเพื่อดูหน้านี้เป็นภาษาของคุณ"
     }
@@ -295,7 +312,7 @@
       "philippines": {
         "country_name": "ฟิลิปปินส์",
         "address": "ที่อยู่",
-        "contact_number": "เบอร์โทร",
+        "contact_number": "(+63) 976 167 1128",
         "email": "contact.ph@shipx.asia"
       },
       "united_states": {
