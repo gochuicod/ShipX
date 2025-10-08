@@ -322,6 +322,24 @@
       }
     }
   },
+  "systems_section": {
+    "signup_button": {
+      "question": "Don't have an Account yet?",
+      "button": "Sign Up"
+    },
+    "sglink_card": {
+      "title_highlight": "Expand your business",
+      "title_rest": "abroad with SG Link's cross-border expertise",
+      "description": "Ship Products To Global Markets Quickly And Securely With End-To-End Delivery Solutions Tailored For eCommerce Sellers",
+      "button": "Log in to"
+    },
+    "amilo_card": {
+      "title_highlight": "Your all-in-one partner",
+      "title_rest": "for logistics, fulfillment and global shipping",
+      "description": "From Warehousing To Last-Mile Delivery, Amilo Streamlines Every Step Of Your Supply Chain So You Can Focus On Scaling Your Brand",
+      "button": "Log in to"
+    }
+  },
   "newsletter_section": {
     "header_1": "Be The First To Know",
     "description_1": "Exclusive ShipX Announcements, New Platform Launches, And Special Updates",

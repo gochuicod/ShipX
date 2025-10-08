@@ -322,6 +322,24 @@
       }
     }
   },
+  "systems_section": {
+    "signup_button": {
+      "question": "Belum punya akun?",
+      "button": "Daftar"
+    },
+    "sglink_card": {
+      "title_highlight": "Kembangkan bisnismu",
+      "title_rest": "ke luar negeri dengan keahlian lintas batas SG Link",
+      "description": "Kirim produk ke pasar global dengan cepat dan aman menggunakan solusi pengiriman menyeluruh yang disesuaikan untuk penjual eCommerce",
+      "button": "Masuk ke"
+    },
+    "amilo_card": {
+      "title_highlight": "Mitra lengkapmu",
+      "title_rest": "untuk logistik, pemenuhan, dan pengiriman global",
+      "description": "Dari penyimpanan hingga pengiriman akhir, Amilo menyederhanakan setiap langkah rantai pasokanmu agar kamu bisa fokus mengembangkan merekmu",
+      "button": "Masuk ke"
+    }
+  },
   "newsletter_section": {
     "header_1": "Jadilah yang Pertama Tahu",
     "description_1": "Pengumuman Eksklusif ShipX, Peluncuran Platform Baru, dan Pembaruan Spesial",

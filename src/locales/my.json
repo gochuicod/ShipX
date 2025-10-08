@@ -322,6 +322,24 @@
       }
     }
   },
+  "systems_section": {
+    "signup_button": {
+      "question": "Belum ada akaun?",
+      "button": "Daftar"
+    },
+    "sglink_card": {
+      "title_highlight": "Kembangkan perniagaan anda",
+      "title_rest": "ke luar negara dengan kepakaran rentas sempadan SG Link",
+      "description": "Hantar produk ke pasaran global dengan cepat dan selamat menggunakan penyelesaian penghantaran menyeluruh yang direka khas untuk penjual eDagang",
+      "button": "Log masuk ke"
+    },
+    "amilo_card": {
+      "title_highlight": "Rakan sehenti anda",
+      "title_rest": "untuk logistik, pemenuhan dan penghantaran global",
+      "description": "Dari penyimpanan hingga penghantaran terakhir, Amilo memudahkan setiap langkah rantaian bekalan supaya anda boleh fokus mengembangkan jenama anda",
+      "button": "Log masuk ke"
+    }
+  },
   "newsletter_section": {
     "header_1": "Jadi Yang Pertama Mengetahui",
     "description_1": "Pengumuman Eksklusif ShipX, Pelancaran Platform Baharu, Dan Kemas Kini Istimewa",

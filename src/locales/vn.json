@@ -322,6 +322,24 @@
       }
     }
   },
+  "systems_section": {
+    "signup_button": {
+      "question": "Chưa có tài khoản?",
+      "button": "Đăng ký"
+    },
+    "sglink_card": {
+      "title_highlight": "Mở rộng doanh nghiệp của bạn",
+      "title_rest": "ra quốc tế với chuyên môn vận chuyển xuyên biên giới của SG Link",
+      "description": "Vận chuyển sản phẩm đến thị trường toàn cầu nhanh chóng và an toàn với giải pháp giao hàng trọn gói được thiết kế riêng cho người bán thương mại điện tử",
+      "button": "Đăng nhập vào"
+    },
+    "amilo_card": {
+      "title_highlight": "Đối tác toàn diện của bạn",
+      "title_rest": "về logistics, hoàn tất đơn hàng và vận chuyển toàn cầu",
+      "description": "Từ kho bãi đến giao hàng chặng cuối, Amilo tối ưu mọi bước trong chuỗi cung ứng giúp bạn tập trung phát triển thương hiệu",
+      "button": "Đăng nhập vào"
+    }
+  },
   "newsletter_section": {
     "header_1": "Là người đầu tiên nhận thông tin",
     "description_1": "Thông báo độc quyền từ ShipX, ra mắt nền tảng mới và cập nhật đặc biệt",

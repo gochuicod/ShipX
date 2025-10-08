@@ -1323,10 +1323,10 @@ const Main = ({ margin }) => {
             "
           >
             <span className="md:text-[0.8vw] text-[2.5vw] font-normal">
-              Don't have an Account yet?
+              {t("systems_section.signup_button.question")}
             </span>
             <span className="flex flex-row md:text-[0.8vw] text-[2.5vw] md:gap-x-[0.1vw] gap-x-[0.5vw] justify-center items-center text-white font-bold">
-              Sign Up
+              {t("systems_section.signup_button.button")}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -1359,13 +1359,12 @@ const Main = ({ margin }) => {
               }}
             >
               <span className="inline text-[#FF00E5]">
-                Expand your business&nbsp;
+                {t("systems_section.sglink_card.title_highlight")}&nbsp;
               </span>
-              abroad with SG Link's cross-border expertise
+              {t("systems_section.sglink_card.title_rest")}
             </p>
             <p className="text-[#63666D]/80 md:text-[1.05vw] text-[2.55vw] text-wrap text-justify font-medium md:leading-[1.55vw] leading-[3.05vw]">
-              Ship Products To Global Markets Quickly And Securely With
-              End-To-End Delivery Solutions Tailored For eCommerce Sellers
+              {t("systems_section.sglink_card.description")}
             </p>
             <motion.button
               className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer w-fit z-[10]"
@@ -1381,7 +1380,7 @@ const Main = ({ margin }) => {
               {/* Inner white area */}
               <div className="relative flex flex-row items-center gap-x-[1vw] px-[2vw] py-[0.5vw] bg-white rounded-full">
                 <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2.5vw]">
-                  {t("header.login_modal.sglink.button")}
+                  {t("systems_section.sglink_card.button")}
                 </span>
                 <img
                   src={header_svg_2}
@@ -1446,13 +1445,12 @@ const Main = ({ margin }) => {
               }}
             >
               <span className="inline text-[#FF00E5]">
-                Your all-in-one partner&nbsp;
+                {t("systems_section.amilo_card.title_highlight")}&nbsp;
               </span>
-              for logistics, fulfillment and global shipping
+              {t("systems_section.amilo_card.title_rest")}
             </p>
             <p className="text-[#63666D]/80 md:text-[1.05vw] text-[2.55vw] text-wrap text-justify font-medium md:leading-[1.55vw] leading-[3.05vw]">
-              From Warehousing To Last-Mile Delivery, Amilo Streamlines Every
-              Step Of Your Supply Chain So You Can Focus On Scaling Your Brand
+              {t("systems_section.amilo_card.description")}
             </p>
             <motion.button
               className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer w-fit z-[10]"
@@ -1466,7 +1464,7 @@ const Main = ({ margin }) => {
               {/* Inner white area */}
               <div className="relative flex flex-row items-center gap-x-[1vw] px-[2vw] py-[0.5vw] bg-white rounded-full">
                 <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2.5vw]">
-                  {t("header.login_modal.amilo.button")}
+                  {t("systems_section.amilo_card.button")}
                 </span>
                 <img
                   src={header_svg_1}
