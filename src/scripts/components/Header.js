@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { shipx, sglink, main_img_14 } from "../../assets/assets";
+import { shipx, sglink_amilo, main_img_14, sglink } from "../../assets/assets";
 import * as motion from "motion/react-client";
 import { AnimatePresence } from "motion/react";
 import { useTranslation } from "react-i18next";
@@ -61,7 +61,7 @@ const Header = () => {
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               <img
-                src={sglink}
+                src={sglink_amilo}
                 alt="SGLink Logo"
                 className="md:w-[3vw] md:h-[1.5vw] w-[16vw] h-[5vw]"
               />
@@ -166,10 +166,7 @@ const Header = () => {
               scale: 0.9,
               transition: { type: "spring", stiffness: 500, damping: 10 },
             }}
-            onClick={() =>
-              (window.location.href =
-                "https://calendar.app.google/Rfe2S7Vswp9NmjJaA")
-            }
+            onClick={() => (window.location.href = "/book-a-demo")}
           >
             {/* Gradient border */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />

@@ -42,6 +42,7 @@ const Footer = () => {
               <button
                 type="button"
                 className={`relative flex flex-row items-center justify-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-[#8E3CAD] rounded-full text-white transition-all duration-300 hover:bg-[#A24BD0] focus:outline-none cursor-pointer`}
+                onClick={() => (window.location.href = "/book-a-demo")}
               >
                 {t("footer.book_a_demo")}
               </button>

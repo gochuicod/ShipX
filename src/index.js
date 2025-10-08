@@ -9,6 +9,7 @@ import Layout from "./scripts/Layout";
 import Main from "./scripts/components/Main";
 import PrivacyPolicy from "./scripts/components/PrivacyPolicy";
 import TermsAndConditions from "./scripts/components/TermsAndConditions";
+import BookADemo from "./scripts/components/BookADemo";
 import "./i18n";
 
 const App = () => {
@@ -43,6 +44,7 @@ const App = () => {
             path="/terms-and-conditions"
             element={<TermsAndConditions />}
           />
+          <Route path="/book-a-demo" element={<BookADemo />} />
         </Routes>
       </Layout>
     </BrowserRouter>

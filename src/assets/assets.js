@@ -19,9 +19,10 @@ import trusted_by_leaders from "./trusted-by-leaders.webp";
 import site_icon from "./site_icon_shipx.webp";
 
 import shipx from "./logo-shipx.webp";
-import sglink from "./logo-sglink.webp";
+import sglink from "./header_svg_2.svg";
 import shipx_white from "./logo-shipx-white.webp";
 import sglink_white from "./logo-sglink-white.webp";
+import sglink_amilo from "./logo_sglink_amilo.svg";
 
 import main_icon_1 from "./main_icon_1.svg";
 import main_icon_2 from "./main_icon_2.svg";
@@ -96,6 +97,7 @@ export {
   sglink,
   shipx_white,
   sglink_white,
+  sglink_amilo,
   main_icon_1,
   main_icon_2,
   main_icon_3,
