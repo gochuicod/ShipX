@@ -32,13 +32,51 @@ function mytheme_handle_contact(WP_REST_Request $request) {
   $phone   = sanitize_text_field($params['phone'] ?? '');
   $message = sanitize_textarea_field($params['message'] ?? '');
 
-  $to = "info@shipx.asia"; // <- replace with your target email
-  $subject = "New Contact Form Submission";
-  $body = "Name: $name\nEmail: $email\nPhone: $phone\nMessage:\n$message";
-  $headers = array('Content-Type: text/plain; charset=UTF-8');
+  $to_admin = "info@shipx.asia";
+  $subject  = "New Contact Form Submission from $name";
 
-  if (wp_mail($to, $subject, $body, $headers)) {
-    return array('success' => true, 'message' => 'Message sent successfully!');
+  // 📨 HTML email body for the admin
+  $admin_body = "
+  <html>
+    <body style='font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px;'>
+      <div style='max-width: 600px; margin: auto; background: white; border-radius: 8px; padding: 20px;'>
+        <h2 style='color: #333;'>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> {$name}</p>
+        <p><strong>Email:</strong> {$email}</p>
+        <p><strong>Phone:</strong> {$phone}</p>
+        <p><strong>Message:</strong></p>
+        <div style='background: #f1f1f1; padding: 10px; border-radius: 5px;'>
+          " . nl2br($message) . "
+        </div>
+      </div>
+    </body>
+  </html>";
+
+  // 📨 Optional — confirmation email for the sender
+  $user_subject = "Thanks for contacting ShipX Asia!";
+  $user_body = "
+  <html>
+    <body style='font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px;'>
+      <div style='max-width: 600px; margin: auto; background: white; border-radius: 8px; padding: 20px;'>
+        <h2 style='color: #333;'>Hi {$name},</h2>
+        <p>Thanks for reaching out to <strong>ShipX Asia</strong>! We've received your message and will get back to you soon.</p>
+        <p>Here’s a copy of what you sent us:</p>
+        <div style='background: #f1f1f1; padding: 10px; border-radius: 5px;'>
+          " . nl2br($message) . "
+        </div>
+        <p style='margin-top: 20px;'>Warm regards,<br><strong>ShipX Asia Team</strong></p>
+      </div>
+    </body>
+  </html>";
+
+  $headers = array('Content-Type: text/html; charset=UTF-8');
+
+  // Send to admin and user
+  $admin_sent = wp_mail($to_admin, $subject, $admin_body, $headers);
+  $user_sent  = wp_mail($email, $user_subject, $user_body, $headers);
+
+  if ($admin_sent && $user_sent) {
+    return array('success' => true, 'message' => 'Messages sent successfully!');
   } else {
     return new WP_Error('mail_failed', 'Email failed to send.', array('status' => 500));
   }

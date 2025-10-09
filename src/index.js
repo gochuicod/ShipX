@@ -1,4 +1,5 @@
 import "./index.css";
+import "./i18n";
 import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReactDOM from "react-dom/client";
@@ -10,8 +11,7 @@ import Main from "./scripts/components/Main";
 import PrivacyPolicy from "./scripts/components/PrivacyPolicy";
 import TermsAndConditions from "./scripts/components/TermsAndConditions";
 import BookADemo from "./scripts/components/BookADemo";
-import "./i18n";
-import UserConfirmation from "./scripts/components/email/UserConfirmation";
+import UserConfirmation from "./scripts/components/emails/UserConfirmation";
 
 const App = () => {
   useEffect(() => {
@@ -46,7 +46,17 @@ const App = () => {
             element={<TermsAndConditions />}
           />
           <Route path="/book-a-demo" element={<BookADemo />} />
-          <Route path="/user-confirmation" element={<UserConfirmation />} />
+          <Route
+            path="/user-confirmation"
+            element={
+              <UserConfirmation
+                name="Darelle"
+                email="darelle@example.com"
+                phone="123-456-7890"
+                message="Hello, this is a test message."
+              />
+            }
+          />
         </Routes>
       </Layout>
     </BrowserRouter>
