@@ -168,16 +168,18 @@ const Header = () => {
               scale: 0.9,
               transition: { type: "spring", stiffness: 500, damping: 10 },
             }}
-            onClick={() => navigate("/book-a-demo")}
           >
             {/* Gradient border */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
             {/* Inner white area */}
             <div className="relative flex flex-row items-center gap-x-[1vw] px-[2vw] py-[0.5vw] bg-white rounded-full">
-              <span className="text-[#4F378A] font-semibold">
+              <NavLink
+                to="/book-a-demo"
+                className="text-[#4F378A] font-semibold"
+              >
                 {t("header.book_a_demo")}
-              </span>
+              </NavLink>
             </div>
           </motion.button>
           <NavLink
@@ -271,7 +273,7 @@ const Header = () => {
                 {t("header.network")}
               </NavLink>
               <NavLink
-                to="/"
+                to="/book-a-demo"
                 end
                 className={`${linkClass} w-full text-left px-[5vw]`}
                 onClick={() => setIsOpen(false)}

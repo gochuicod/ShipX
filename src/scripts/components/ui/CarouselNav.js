@@ -193,7 +193,7 @@ export default function CarouselNav() {
                     md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
                     text-white font-medium cursor-pointer
                   "
-                  to={"/book-a-demo"}
+                  to="/book-a-demo"
                 >
                   {t("hero_section.slide_1.book_a_demo")}
                 </NavLink>
@@ -418,7 +418,7 @@ export default function CarouselNav() {
                     md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
                     text-white font-medium cursor-pointer
                   "
-                  to={"/book-a-demo"}
+                  to="/book-a-demo"
                 >
                   {t("hero_section.slide_2.book_a_demo")}
                 </NavLink>
@@ -644,7 +644,7 @@ export default function CarouselNav() {
                     md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
                     text-white font-medium cursor-pointer
                   "
-                  to={"/book-a-demo"}
+                  to="/book-a-demo"
                 >
                   {t("hero_section.slide_3.book_a_demo")}
                 </NavLink>
