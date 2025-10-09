@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import * as motion from "motion/react-client";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const ContactForm = () => {
   const {
@@ -11,6 +12,7 @@ const ContactForm = () => {
     formState: { errors, isSubmitting },
   } = useForm();
   const [isSent, setIsSent] = useState(false);
+  const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     try {
@@ -131,7 +133,7 @@ const ContactForm = () => {
             scale: 0.9,
             transition: { type: "spring", stiffness: 500, damping: 10 },
           }}
-          onClick={() => (window.location.href = "/book-a-demo")}
+          onClick={() => navigate("/book-a-demo")}
         >
           {/* Gradient border */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />

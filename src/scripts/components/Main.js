@@ -49,12 +49,14 @@ import TooltipCard from "./ui/ToolTipCard";
 import MessengerButton from "./ui/MessengerButton";
 
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const Main = ({ margin }) => {
   const { t } = useTranslation();
   const [slide, setSlide] = useState(0);
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="relative overflow-hidden">
@@ -509,7 +511,7 @@ const Main = ({ margin }) => {
                     scale: 0.9,
                     transition: { type: "spring", stiffness: 500, damping: 10 },
                   }}
-                  onClick={() => (window.location.href = "/book-a-demo")}
+                  onClick={() => navigate("/book-a-demo")}
                 >
                   {/* Gradient border */}
                   <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
@@ -618,7 +620,7 @@ const Main = ({ margin }) => {
                     scale: 0.9,
                     transition: { type: "spring", stiffness: 500, damping: 10 },
                   }}
-                  onClick={() => (window.location.href = "/book-a-demo")}
+                  onClick={() => navigate("/book-a-demo")}
                 >
                   {/* Gradient border */}
                   <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
@@ -834,7 +836,7 @@ const Main = ({ margin }) => {
                     scale: 0.9,
                     transition: { type: "spring", stiffness: 500, damping: 10 },
                   }}
-                  onClick={() => (window.location.href = "/book-a-demo")}
+                  onClick={() => navigate("/book-a-demo")}
                 >
                   {/* Gradient border */}
                   <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
@@ -1232,7 +1234,7 @@ const Main = ({ margin }) => {
                         damping: 10,
                       },
                     }}
-                    onClick={() => (window.location.href = "/book-a-demo")}
+                    onClick={() => navigate("/book-a-demo")}
                   >
                     {/* Gradient border */}
                     <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
@@ -1306,7 +1308,7 @@ const Main = ({ margin }) => {
         {/* Offices Section End */}
         {/* SG Link and Amilo Cards Start */}
         <div
-          className={`relative w-[100vw] ${margin} flex md:flex-row flex-col justify-center items-center md:gap-x-[3vw] gap-x-0 md:gap-y-0 gap-y-[5vw]`}
+          className={`relative w-[100vw] ${margin} flex md:flex-row flex-col justify-center items-center md:gap-x-[3vw] gap-x-0 md:gap-y-0 gap-y-[5vw] md:pt-[5vw] pt-[10vw]`}
         >
           <div className="absolute top-[15vw] left-[-15vw] size-[15vw] rounded-full shadow-[15vw_0vw_25vw_rgba(74,58,255,0.3)] -z-10"></div>
           <div className="absolute top-[15vw] left-[-15vw] size-[15vw] rounded-full shadow-[20vw_10vw_15vw_rgba(255,0,229,0.3)] -z-30"></div>
@@ -1519,7 +1521,7 @@ const Main = ({ margin }) => {
         </div>
         {/* SG Link and Amilo Cards End */}
         {/* Future Announcements Banner Start */}
-        <div className="w-full justify-center items-center flex md:px-0 px-[5vw]">
+        <div className="w-full justify-center items-center flex md:px-0 px-[5vw] md:pt-[15vw] pt-[10vw]">
           <div
             className={`flex md:flex-row flex-col w-fit justify-center items-center md:gap-x-[3vw] gap-x-[11vw] bg-gradient-to-r from-[#4F378A] from-5% to-[#FF00E5] to-100% md:rounded-[2vw] rounded-[4vw] md:pl-[8vw] pl-[5vw] md:pt-0 pt-[5vw] md:pb-0 pb-[5vw] md:pr-0 pr-[5vw] md:my-[5vw] my-[10vw]`}
           >

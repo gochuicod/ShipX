@@ -54,20 +54,8 @@ function mytheme_handle_contact(WP_REST_Request $request) {
 
   // 📨 Optional — confirmation email for the sender
   $user_subject = "Thanks for contacting ShipX Asia!";
-  $user_body = "
-  <html>
-    <body style='font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px;'>
-      <div style='max-width: 600px; margin: auto; background: white; border-radius: 8px; padding: 20px;'>
-        <h2 style='color: #333;'>Hi {$name},</h2>
-        <p>Thanks for reaching out to <strong>ShipX Asia</strong>! We've received your message and will get back to you soon.</p>
-        <p>Here’s a copy of what you sent us:</p>
-        <div style='background: #f1f1f1; padding: 10px; border-radius: 5px;'>
-          " . nl2br($message) . "
-        </div>
-        <p style='margin-top: 20px;'>Warm regards,<br><strong>ShipX Asia Team</strong></p>
-      </div>
-    </body>
-  </html>";
+  $user_body = <<<HTML
+  HTML;
 
   $headers = array('Content-Type: text/html; charset=UTF-8');
 

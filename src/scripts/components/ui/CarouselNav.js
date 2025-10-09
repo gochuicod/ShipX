@@ -13,6 +13,7 @@ import { Carousel } from "@material-tailwind/react";
 import { useSwipeable } from "react-swipeable";
 import * as motion from "motion/react-client";
 import { useTranslation } from "react-i18next";
+import { NavLink } from "react-router-dom";
 
 export default function CarouselNav() {
   const { t } = useTranslation();
@@ -183,7 +184,7 @@ export default function CarouselNav() {
                   fontFamily: "Karla, system-ui, -apple-system, sans-serif",
                 }}
               >
-                <button
+                <NavLink
                   className="
                     bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
                     bg-[length:200%_100%] bg-[position:0%_0%]
@@ -192,10 +193,10 @@ export default function CarouselNav() {
                     md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
                     text-white font-medium cursor-pointer
                   "
-                  onClick={() => (window.location.href = "/book-a-demo")}
+                  to={"/book-a-demo"}
                 >
                   {t("hero_section.slide_1.book_a_demo")}
-                </button>
+                </NavLink>
                 <motion.button
                   className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
                   whileHover={{
@@ -408,7 +409,7 @@ export default function CarouselNav() {
                   fontFamily: "Karla, system-ui, -apple-system, sans-serif",
                 }}
               >
-                <button
+                <NavLink
                   className="
                     bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
                     bg-[length:200%_100%] bg-[position:0%_0%]
@@ -417,10 +418,10 @@ export default function CarouselNav() {
                     md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
                     text-white font-medium cursor-pointer
                   "
-                  onClick={() => (window.location.href = "/book-a-demo")}
+                  to={"/book-a-demo"}
                 >
                   {t("hero_section.slide_2.book_a_demo")}
-                </button>
+                </NavLink>
                 <motion.button
                   className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
                   whileHover={{
@@ -634,7 +635,7 @@ export default function CarouselNav() {
                   fontFamily: "Karla, system-ui, -apple-system, sans-serif",
                 }}
               >
-                <button
+                <NavLink
                   className="
                     bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
                     bg-[length:200%_100%] bg-[position:0%_0%]
@@ -643,10 +644,10 @@ export default function CarouselNav() {
                     md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
                     text-white font-medium cursor-pointer
                   "
-                  onClick={() => (window.location.href = "/book-a-demo")}
+                  to={"/book-a-demo"}
                 >
                   {t("hero_section.slide_3.book_a_demo")}
-                </button>
+                </NavLink>
                 <motion.button
                   className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
                   whileHover={{

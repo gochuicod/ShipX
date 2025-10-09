@@ -11,6 +11,7 @@ import Main from "./scripts/components/Main";
 import PrivacyPolicy from "./scripts/components/PrivacyPolicy";
 import TermsAndConditions from "./scripts/components/TermsAndConditions";
 import BookADemo from "./scripts/components/BookADemo";
+import NotFound from "./scripts/components/ui/NotFound";
 
 const App = () => {
   useEffect(() => {
@@ -45,6 +46,7 @@ const App = () => {
             element={<TermsAndConditions />}
           />
           <Route path="/book-a-demo" element={<BookADemo />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
     </BrowserRouter>

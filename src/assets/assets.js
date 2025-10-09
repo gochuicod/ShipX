@@ -20,6 +20,12 @@ import main_svg_19 from "./main_svg_19.svg";
 import main_svg_20 from "./main_svg_20.svg";
 import main_svg_21 from "./main_svg_21.svg";
 
+import email_template_icon_1 from "./email_template_icon_1.webp";
+import email_template_icon_2 from "./email_template_icon_2.webp";
+import email_template_icon_3 from "./email_template_icon_3.webp";
+import email_template_image_1 from "./email_template_image_1.webp";
+import email_template_image_2 from "./email_template_image_2.webp";
+
 import header_svg_1 from "./header_svg_1.svg";
 import header_svg_2 from "./header_svg_2.svg";
 
@@ -162,4 +168,9 @@ export {
   main_logo_7,
   main_logo_8,
   main_logo_9,
+  email_template_icon_1,
+  email_template_icon_2,
+  email_template_icon_3,
+  email_template_image_1,
+  email_template_image_2,
 };
