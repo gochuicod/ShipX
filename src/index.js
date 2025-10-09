@@ -11,6 +11,7 @@ import PrivacyPolicy from "./scripts/components/PrivacyPolicy";
 import TermsAndConditions from "./scripts/components/TermsAndConditions";
 import BookADemo from "./scripts/components/BookADemo";
 import "./i18n";
+import UserConfirmation from "./scripts/components/email/UserConfirmation";
 
 const App = () => {
   useEffect(() => {
@@ -45,6 +46,7 @@ const App = () => {
             element={<TermsAndConditions />}
           />
           <Route path="/book-a-demo" element={<BookADemo />} />
+          <Route path="/user-confirmation" element={<UserConfirmation />} />
         </Routes>
       </Layout>
     </BrowserRouter>
