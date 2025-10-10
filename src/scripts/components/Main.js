@@ -1529,7 +1529,7 @@ const Main = ({ margin }) => {
         </div>
         {/* SG Link and Amilo Cards End */}
         {/* Future Announcements Banner Start */}
-        <div className="w-full justify-center items-center flex md:px-0 px-[5vw] md:pt-[15vw] pt-[10vw]">
+        <div className="w-full justify-center items-center flex md:px-0 px-[5vw] md:pt-[5vw] pt-[10vw]">
           <div
             className={`flex md:flex-row flex-col w-fit justify-center items-center md:gap-x-[3vw] gap-x-[11vw] bg-gradient-to-r from-[#4F378A] from-5% to-[#FF00E5] to-100% md:rounded-[2vw] rounded-[4vw] md:pl-[8vw] pl-[5vw] md:pt-0 pt-[5vw] md:pb-0 pb-[5vw] md:pr-0 pr-[5vw] md:my-[5vw] my-[10vw]`}
           >
@@ -1566,7 +1566,7 @@ const Main = ({ margin }) => {
           <img
             src={main_svg_7}
             alt=""
-            className="absolute md:-translate-y-[2vw] -translate-y-[35vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none -z-10"
+            className="absolute md:-translate-y-[6vw] -translate-y-[35vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none -z-10"
             aria-hidden="true"
           />
           <img

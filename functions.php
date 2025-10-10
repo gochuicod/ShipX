@@ -55,788 +55,398 @@ function mytheme_handle_contact(WP_REST_Request $request) {
   // 📨 Optional — confirmation email for the sender
   $user_subject = "Thanks for contacting ShipX Asia!";
   $user_body = <<<HTML
-  <!DOCTYPE html>
-  <html lang="en">
+  <!doctype html>
+  <html>
     <head>
-      <!-- Load Kantumruy Pro from Google Fonts -->
-      <link
-        href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-      />
       <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>ShipX - Thank You</title>
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <title>ShipX — Thank you</title>
     </head>
-    <body
-      style="
-        margin: 0;
-        padding: 0;
-        background-color: #ffffff;
-        font-family: 'Kantumruy Pro', Arial, sans-serif;
-      "
-    >
-      <center style="width: 100%; background-color: #ffffff">
-        <table
-          align="center"
-          border="0"
-          cellpadding="0"
-          cellspacing="0"
-          width="100%"
-          style="
-            max-width: 600px;
-            border-collapse: collapse;
-            background-color: #ffffff;
-            background-image: url('https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/bg-images/Laptop.png');
-            background-repeat: no-repeat;
-            background-position: center top;
-            background-size: cover;
-          "
-        >
-          <!-- Logo -->
-          <tr>
-            <td align="center" style="padding: 30px 0 10px 0">
-              <a href="http://shipx.asia/" target="_blank">
-                <img
-                  src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/ShipX%20Logo.png"
-                  width="108"
-                  height="49"
-                  alt="ShipX Logo"
-                  style="display: block; border: 0; padding-top: 50px"
-                />
-              </a>
-            </td>
-          </tr>
+    <body style="margin:0; padding:20px; background-color:#f9f9f9; font-family: Arial, sans-serif;">
+      <!-- Outer container -->
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
+        <tr>
+          <td align="center">
+            <!-- White card (max width 600) -->
+            <table width="600" cellpadding="0" cellspacing="0" border="0" role="presentation" style="max-width:600px; width:100%; border-radius:8px; overflow:hidden; background-color: none; background-image:url('https://res.cloudinary.com/dsk7gzqur/image/upload/v1760073548/Full_Email_Template_uv6wbd.png'); background-repeat:no-repeat; background-position:center top; background-size: cover">
+              <!-- Top padding -->
+              <tr>
+                <td style="padding-top:40px; padding-bottom:20px;">
+                  <!-- Branding row -->
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
+                    <tr>
+                      <td align="center" style="padding-bottom:0px;">
+                        <img src="https://res.cloudinary.com/dsk7gzqur/image/upload/v1760068032/Vector_zyknjh.png" alt="ShipX" width="100px" height="50px" style="display:block; border:0; outline:0; text-decoration:none;" />
+                      </td>
+                    </tr>
 
-          <!-- Title -->
-          <tr>
-            <td align="center" style="padding: 10px 20px">
-              <h1
-                style="
-                  color: #ff00e5;
-                  font-size: 34px;
-                  font-weight: 700;
-                  margin: 0;
-                  font-family: Karla, Arial, sans-serif;
-                "
-              >
-                THANKS!
-              </h1>
-              <p
-                style="
-                  color: #1a1a1a;
-                  font-size: 20px;
-                  font-weight: 500;
-                  margin: 10px 0 0 0;
-                  font-family: Karla, Arial, sans-serif;
-                "
-              >
-                WE'VE GOT YOUR MESSAGE
-              </p>
-            </td>
-          </tr>
+                    <!-- Message section with background -->
+                  <tr>
+                      <td align="center" 
+                          background="https://res.cloudinary.com/dsk7gzqur/image/upload/v1760066696/image_38_dhf8qc.png"
+                          style="background-position: bottom; background-repeat: no-repeat; background-size: contain; text-align: center; padding:40px 20px;">
+                          
+                          <!-- Fallback content inside -->
+                          <div style="font-size:25px; line-height:40px; color:#1A1A1A; font-weight:600;">
+                          <div style="font-size:45px; color:#FF00E5; font-weight:700; line-height:46px;">THANKS!</div>
+                          <div style="font-size:25px; letter-spacing:1px; margin-top:6px; opacity: 85%;">WE'VE GOT YOUR MESSAGE</div>
+                          </div>
+                      </td>
+                  </tr>
 
-          <!-- Greeting -->
-          <tr>
-            <td align="center" style="padding: 150px 20px 10px">
-              <p
-                style="
-                  font-size: 18px;
-                  color: #000000;
-                  font-weight: 700;
-                  margin: 0;
-                  font-family: Karla, Arial, sans-serif;
-                "
-              >
-                Hi {{first_name}},
-              </p>
-            </td>
-          </tr>
+                    <!-- Greeting -->
+                    <tr>
+                      <td align="center" style="padding-top:25px; padding-bottom:25px;">
+                        <div style="color:#1A1A1A; font-size:15px; text-align:center;">
+                          <strong>Hi {$name},</strong>
+                        </div>
+                      </td>
+                    </tr>
 
-          <!-- Message -->
-          <tr>
-            <td align="center" style="padding: 10px 30px">
-              <p
-                style="
-                  font-size: 16px;
-                  color: #000000;
-                  line-height: 24px;
-                  margin: 0;
-                "
-              >
-                Thanks for reaching out to ShipX. We've received your message and
-                routed it to the right teammate. A member of our sales team will
-                contact you within one business day.
-              </p>
-            </td>
-          </tr>
+                    <!-- Body copy -->
+                    <tr>
+                      <td align="center" style="padding-left:40px; padding-right:40px; padding-bottom:12px;">
+                        <div style="color:#1A1A1A; opacity:0.85; font-size:15px; line-height:22px; text-align:center;">
+                          Thanks for reaching out to ShipX. We've received your message and routed it to the right teammate. A member of our sales team will contact you within one business day.
+                        </div>
+                      </td>
+                    </tr>
 
-          <!-- CTA -->
-          <tr>
-            <td align="center" style="padding: 40px 20px 10px">
-              <p
-                style="
-                  color: #ff00e5;
-                  font-weight: 700;
-                  font-size: 18px;
-                  margin: 0;
-                "
-              >
-                Want to move faster?
-              </p>
-              <p style="font-size: 16px; color: #000000; margin: 5px 0 20px 0">
-                Book a time that suits you
-              </p>
-              <a
-                href="http://shipx.asia/book-a-demo"
-                target="_blank"
-                style="
-                  display: inline-block;
-                  padding: 12px 30px;
-                  background: radial-gradient(
-                    circle at 76% 51%,
-                    #ff00e5 0%,
-                    #4f378a 100%
-                  );
-                  border-radius: 20px;
-                  color: #ffffff;
-                  font-size: 18px;
-                  font-weight: bold;
-                  text-decoration: none;
-                "
-              >
-                Book A Demo Now!
-              </a>
-            </td>
-          </tr>
+                    <tr>
+                      <td align="center" style="padding-bottom:10px;">
+                        <div style="color:#1A1A1A; opacity:0.85; font-size:15px; text-align:center;">
+                          If there's anything urgent, just reply to this email with more details.
+                        </div>
+                      </td>
+                    </tr>
 
-          <!-- Local Team -->
-          <tr>
-            <td align="center" style="padding: 10px 30px 30px 20px">
-              <p
-                style="
-                  color: #ff00e5;
-                  font-weight: 700;
-                  font-size: 18px;
-                  margin: 0;
-                "
-              >
-                Connect with Our Local Team
-              </p>
-              <p style="font-size: 16px; color: #000000; margin: 5px 0 10px 0">
-                See contacts below
-              </p>
+                    <!-- Call to action header -->
+                    <tr>
+                      <td align="center" style="padding-top:18px; padding-bottom:6px;">
+                        <div style="color:#FF00E5; font-weight:900; font-size:15px; text-align:center;">
+                          Want to move faster?
+                        </div>
+                        <div style="color:#1A1A1A; font-size:15px; opacity:0.85; text-align:center; margin-top:6px;">
+                          Book a time that suits you
+                        </div>
+                      </td>
+                    </tr>
 
-              <!-- Contacts Table -->
-              <table
-                align="center"
-                cellpadding="0"
-                cellspacing="0"
-                border="0"
-                style="width: 100%; max-width: 520px; border-collapse: collapse"
-              >
-                <!-- Row 1 -->
-                <tr>
-                  <!-- Vietnam -->
-                  <td
-                    align="center"
-                    valign="top"
-                    style="
-                      background-color: #f8f7ff;
-                      border-radius: 7px;
-                      padding: 15px;
-                    "
-                  >
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/country-logos/vn.png"
-                      width="25"
-                      alt="Vietnam"
-                      style="margin-bottom: 5px; display: block"
-                    /><br />
-                    <a
-                      href="mailto:contact.vn@shipx.asia"
-                      style="
-                        font-size: 12px;
-                        color: #4d4d4d;
-                        text-decoration: none;
-                      "
-                      >contact.vn@shipx.asia</a
-                    ><br />
-                    <a
-                      href="tel:+842873001234"
-                      style="
-                        font-size: 12px;
-                        color: #4d4d4d;
-                        text-decoration: none;
-                      "
-                      >+84 28 7300 1234</a
-                    >
+                    <!-- CTA button -->
+                    <tr>
+                      <td align="center" style="padding-top:14px; padding-bottom:24px;">
+                        <a href="https://calendar.app.google/Rfe2S7Vswp9NmjJaA" target="_blank" style="display:inline-block; padding:10px 30px; border-radius:9999px; background: linear-gradient(90deg, #4F378A 0%, #FF00E5 60%, #FF00E5 100%); color:#ffffff; text-decoration:none; font-weight:700; font-size:15px; font-family:Arial, sans-serif;">
+                          Book a Demo Now!
+                        </a>
+                      </td>
+                    </tr>
+
+                    <!-- Connect header -->
+                    <tr>
+                      <td align="center" style="padding-top:8px; padding-bottom:18px;">
+                        <div style="color:#FF00E5; font-weight:900; font-size:15px;">Connect with Our Local Team</div>
+                        <div style="color:#1A1A1A; opacity:0.85; font-size:15px; margin-top:6px;">see contacts below</div>
+                      </td>
+                    </tr>
+
+                    <!-- Contact boxes (two rows of three columns) -->
+                    <tr>
+                      <td align="center" style="padding-top:4px; padding-bottom:20px;">
+                        <!-- Outer table for contact boxes -->
+                        <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width:100%; max-width:520px;">
+                          <!-- Row 1 -->
+                          <tr>
+                            <td align="center" valign="top" style="padding:6px;">
+                              <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="background:#F8F7FF; border-radius:8px; padding:12px; width:150px;">
+                                <tr>
+                                  <td align="center" style="padding-bottom:8px;">
+                                    <!-- flag or icon placeholder -->
+                                    <img src="https://res.cloudinary.com/dsk7gzqur/image/upload/v1760067634/contents-1_cfy4tp.png" alt="VN" width="25" height="25" style="display:block; border:0; border-radius: 100px;" />
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" style="font-size:14px; color:#1A1A1A; opacity:0.7;">
+                                    (+84) 90 270 23 45
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" style="font-size:14px; color:#1A1A1A; opacity:0.7; padding-top:6px;">
+                                    contact.vn@shipx.asia
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+
+                            <td align="center" valign="top" style="padding:6px;">
+                              <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="background:#F8F7FF; border-radius:8px; padding:12px; width:150px;">
+                                <tr>
+                                  <td align="center" style="padding-bottom:8px;">
+                                    <img src="https://res.cloudinary.com/dsk7gzqur/image/upload/v1760067633/sg_n1pszf.png" alt="SG" width="25" height="25" style="display:block; border:0; border-radius: 100px;" />
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" style="font-size:14px; color:#1A1A1A; opacity:0.7;">
+                                    (+65) 9001 9941
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" style="font-size:14px; color:#1A1A1A; opacity:0.7; padding-top:6px;">
+                                    contact.sg@shipx.asia
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+
+                            <td align="center" valign="top" style="padding:6px;">
+                              <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="background:#F8F7FF; border-radius:8px; padding:12px; width:150px;">
+                                <tr>
+                                  <td align="center" style="padding-bottom:8px;">
+                                    <img src="https://res.cloudinary.com/dsk7gzqur/image/upload/v1760067633/contents-4_nruthj.png" alt="PH" width="25" height="25" style="display:block; border:0; border-radius: 100px;" />
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" style="font-size:14px; color:#1A1A1A; opacity:0.7;">
+                                    (+63) 97616 71128
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" style="font-size:14px; color:#1A1A1A; opacity:0.7; padding-top:6px;">
+                                    contact.ph@shipx.asia
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+
+                          <!-- Row 2 -->
+                          <tr>
+                            <td align="center" valign="top" style="padding:6px;">
+                              <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="background:#F8F7FF; border-radius:8px; padding:12px; width:150px;">
+                                <tr>
+                                  <td align="center" style="padding-bottom:8px;">
+                                    <img src="https://res.cloudinary.com/dsk7gzqur/image/upload/v1760067633/contents_ii07yz.png" alt="TH" width="25" height="25" style="display:block; border:0; border-radius: 100px;" />
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" style="font-size:14px; color:#1A1A1A; opacity:0.7;">
+                                    (+66) 96 798 8971
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" style="font-size:14px; color:#1A1A1A; opacity:0.7; padding-top:6px;">
+                                    contact.th@shipx.asia
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+
+                            <td align="center" valign="top" style="padding:6px;">
+                              <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="background:#F8F7FF; border-radius:8px; padding:12px; width:150px;">
+                                <tr>
+                                  <td align="center" style="padding-bottom:8px;">
+                                    <img src="https://res.cloudinary.com/dsk7gzqur/image/upload/v1760067633/contents-5_fx1snw.png" alt="US" width="25" height="25" style="display:block; border:0; border-radius: 100px; border-radius: 100px;" />
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" style="font-size:14px; color:#1A1A1A; opacity:0;">
+                                    (+60) 12 525 5019
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" style="font-size:14px; color:#1A1A1A; opacity:0.7; padding-top:6px;">
+                                    contact.us@shipx.asia
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+
+                            <td align="center" valign="top" style="padding:6px;">
+                              <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="background:#F8F7FF; border-radius:8px; padding:12px; width:150px;">
+                                <tr>
+                                  <td align="center" style="padding-bottom:8px;">
+                                    <img src="https://res.cloudinary.com/dsk7gzqur/image/upload/v1760067633/contents-2_lpzrio.png" alt="MY" width="25" height="25" style="display:block; border:0; border-radius: 100px;" />
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" style="font-size:14px; color:#1A1A1A; opacity:0.7;">
+                                    (+60) 12 525 5019
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" style="font-size:14px; color:#1A1A1A; opacity:0.7; padding-top:6px;">
+                                    contact.my@shipx.asia
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+
+                    <!-- Closing / signature -->
+                    <tr>
+                      <td align="center" style="padding-top:16px; padding-bottom:12px;">
+                        <div style="color:#1A1A1A; font-size:15px; line-height:22px; text-align:center;">
+                          Best,<br/>
+                          <span style="font-weight:900; font-size:16px;">The <span style="color:#FF00E5;">Ship</span>X Team</span><br/>
+                          by SG Link & Amilo
+                        </div>
+                      </td>
+                    </tr>
+
+                    <!-- Small contact row -->
+                      <tr>
+                          <td align="center" style="padding-top:12px; padding-bottom:24px; padding-left:40px; padding-right:40px;">
+                              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-size:14px; color:#0E0E0E; max-width:600px; margin:0 auto;">
+                              <tr>
+                                  <!-- Email -->
+                                  <td align="left" style="padding-right:12px;">
+                                  <table cellpadding="0" cellspacing="0" border="0">
+                                      <tr>
+                                      <td style="padding-right:10px;">
+                                          <img src="https://res.cloudinary.com/dsk7gzqur/image/upload/v1760067801/Vector_wbv8ve.png" alt="email" width="16" height="16" style="display:block;">
+                                      </td>
+                                      <td>info@shipx.asia</td>
+                                      </tr>
+                                  </table>
+                                  </td>
+
+                                  <!-- Phone -->
+                                  <td align="left" style="padding-right:12px;">
+                                  <table cellpadding="0" cellspacing="0" border="0">
+                                      <tr>
+                                      <td style="padding-right:10px;">
+                                          <img src="https://res.cloudinary.com/dsk7gzqur/image/upload/v1760067800/Group_1000001832_gbmlmk.png" alt="phone" width="16" height="16" style="display:block;">
+                                      </td>
+                                      <td>(+84) 90 270 23 45</td>
+                                      </tr>
+                                  </table>
+                                  </td>
+
+                                  <!-- Website -->
+                                  <td align="right">
+                                  <table cellpadding="0" cellspacing="0" border="0">
+                                      <tr>
+                                      <td style="padding-right:10px;">
+                                          <img src="https://res.cloudinary.com/dsk7gzqur/image/upload/v1760067801/Vector_1_x5x9rg.png" alt="website" width="16" height="16" style="display:block;">
+                                      </td>
+                                      <td>shipx.asia</td>
+                                      </tr>
+                                  </table>
+                                  </td>
+                              </tr>
+                              </table>
+                          </td>
+                      </tr>
+
+                    <!-- Feature block (image + text + CTA) -->
+                    <tr>
+                      <td align="center" style="padding-top:6px; padding-bottom:20px; padding-left:40px; padding-right:40px;">
+                        <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width:100%; border-radius:12px; background:#FFF; overflow:hidden; background-color: #FFD6FA40;">
+                          <tr>
+                            <td>
+                              <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
+                                <tr>
+                                  <td valign="top" style="width:240px; padding-right:16px;" align="left">
+                                    <img src="https://res.cloudinary.com/dsk7gzqur/image/upload/v1760068151/1013_1_spw3ll.png" alt="ShipX Goes Live" width="240" height="151" style="box-shadow: 0 0vw 1vw rgba(79, 55, 138, 0.15); display:block; border:0; border-radius:8px;" />
+                                  </td>
+                                  <td valign="middle" style="padding-left:8px; padding-top: 30px; padding-bottom: 30px; padding-right: 8px;">
+                                    <div style="font-size:16px; color:#1A1A1A; font-weight:600; padding-bottom:8px; font-size: 20px; font-weight: 600">Want to learn more about the <span style="color: #FF00E5">ShipX</span> launch?</div>
+                                    <a href="https://shipx.asia/blog" target="_blank" style="display:inline-block; padding:10px 45px; font-size: 15px; border-radius:9999px; background: linear-gradient(90deg, #4F378A 0%, #FF00E5 60%, #FF00E5 100%); color:#ffffff; text-decoration:none; font-weight:700;"">Read our blog here</a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+
+                  </table> <!-- end inner content table -->
+                </td>
+              </tr>
+
+              <!-- Footer area (solid purple background) -->
+              <tr>
+                  <td style="background-color: none; background-image:url('https://res.cloudinary.com/dsk7gzqur/image/upload/v1760082358/Group_1000001835_vsizob.png'); background-repeat:no-repeat; background-position:center top; background-size: cover; padding:80px 40px 40px 40px; color:#ffffff;">
+                      <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
+
+                      <!-- TOP SECTION: Logos and image -->
+                      <tr>
+                          <!-- Left: Two logos and text below -->
+                          <td width="50%" valign="top" style="padding-bottom:18px;">
+                          <table cellpadding="0" cellspacing="0" border="0" role="presentation">
+                              <tr>
+                              <td style="padding-right:8px;">
+                                  <img src="https://res.cloudinary.com/dsk7gzqur/image/upload/v1760068032/Logo_dqdkhd.png" alt="Logo1" width="100" height="50" style="display:block; border:0;">
+                              </td>
+                              <td>
+                                  <img src="https://res.cloudinary.com/dsk7gzqur/image/upload/v1760068032/Group_1000001779_jzor6k.png" alt="Logo2" width="100" height="50" style="display:block; border:0;">
+                              </td>
+                              </tr>
+                              <tr>
+                              <td colspan="2" style="padding-top:6px; font-size:15px; line-height:16px; color:#ffffff;">
+                                  ASEAN's Next Generation Platform
+                              </td>
+                              </tr>
+                          </table>
+                          </td>
+
+                          <!-- Right: Full-width image -->
+                          <td width="50%" valign="top" style="padding-bottom:18px;">
+                            <!-- <img src="https://res.cloudinary.com/dsk7gzqur/image/upload/v1760068032/Group_1000001799_dcbtqr.png" alt="Right Image" width="100%" style="display:block; border:0;"> -->
+                          </td>
+                      </tr>
+
+                      <!-- BOTTOM SECTION: Description and links -->
+                      <tr>
+                          <td width="50%" valign="top" style="font-size:12px; line-height:18px; color:#ffffff; opacity:0.95;">
+                          Empowering businesses to ship globally with confidence. Our platform simplifies international shipping, customs, and logistics.
+                          </td>
+
+                          <td width="50%" valign="top" style="font-size:12px; color:#ffffff; text-align:right;">
+                          <div align="center" style="padding-bottom:8px;">
+                              <span style="display:inline-block; margin-right:8px;">Terms and Conditions</span>
+                              <span style="margin:0 8px;">•</span>
+                              <span style="display:inline-block; margin-left:8px;">Privacy Policy</span>
+                          </div>
+                          <div align="center" style="font-size:12px; line-height:18px; padding-top:4px;">
+                              © 2025 ShipX Copyright and rights reserved
+                          </div>
+                          </td>
+                      </tr>
+
+                      <!-- Address row spanning both columns -->
+                      <tr>
+                          <td colspan="2" style="padding-top:20px; font-size:12px; line-height:18px; color:#ffffff; text-align:center;">
+                          350 National Highway 1A, Binh Hung Hoa B, Binh Tan, Ho Chi Minh
+                          </td>
+                      </tr>
+
+                      </table>
                   </td>
+              </tr>
 
-                  <td width="20"></td>
+              <!-- Tiny legal row under card -->
+              <tr>
+                <td style="padding:14px 40px 40px 40px; text-align:center; color:#4D4D4D; font-size:12px; opacity:0.6;">
+                  You're receiving this as confirmation of your inquiry with ShipX (by SG Link & Amilo). For urgent matters, reply to this email.
+                </td>
+              </tr>
 
-                  <!-- Singapore -->
-                  <td
-                    align="center"
-                    valign="top"
-                    style="
-                      background-color: #f8f7ff;
-                      border-radius: 7px;
-                      padding: 15px;
-                    "
-                  >
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/country-logos/sg.png"
-                      width="25"
-                      alt="Singapore"
-                      style="margin-bottom: 5px; display: block"
-                    /><br />
-                    <a
-                      href="mailto:contact.sg@shipx.asia"
-                      style="
-                        font-size: 12px;
-                        color: #4d4d4d;
-                        text-decoration: none;
-                      "
-                      >contact.sg@shipx.asia</a
-                    ><br />
-                    <a
-                      href="tel:+6567890123"
-                      style="
-                        font-size: 12px;
-                        color: #4d4d4d;
-                        text-decoration: none;
-                      "
-                      >+65 6789 0123</a
-                    >
-                  </td>
-
-                  <td width="20"></td>
-
-                  <!-- Philippines -->
-                  <td
-                    align="center"
-                    valign="top"
-                    style="
-                      background-color: #f8f7ff;
-                      border-radius: 7px;
-                      padding: 15px;
-                    "
-                  >
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/country-logos/ph.png"
-                      width="25"
-                      alt="Philippines"
-                      style="margin-bottom: 5px; display: block"
-                    /><br />
-                    <a
-                      href="mailto:contact.ph@shipx.asia"
-                      style="
-                        font-size: 12px;
-                        color: #4d4d4d;
-                        text-decoration: none;
-                      "
-                      >contact.ph@shipx.asia</a
-                    ><br />
-                    <a
-                      href="tel:+63281234567"
-                      style="
-                        font-size: 12px;
-                        color: #4d4d4d;
-                        text-decoration: none;
-                      "
-                      >+63 2 8123 4567</a
-                    >
-                  </td>
-                </tr>
-
-                <!-- Vertical spacer row -->
-                <tr>
-                  <td colspan="5" height="20"></td>
-                </tr>
-
-                <!-- Row 2 -->
-                <tr>
-                  <!-- Malaysia -->
-                  <td
-                    align="center"
-                    valign="top"
-                    style="
-                      background-color: #f8f7ff;
-                      border-radius: 7px;
-                      padding: 15px;
-                    "
-                  >
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/country-logos/my.png"
-                      width="25"
-                      alt="Malaysia"
-                      style="margin-bottom: 5px; display: block"
-                    /><br />
-                    <a
-                      href="mailto:contact.my@shipx.asia"
-                      style="
-                        font-size: 12px;
-                        color: #4d4d4d;
-                        text-decoration: none;
-                      "
-                      >contact.my@shipx.asia</a
-                    ><br />
-                    <a
-                      href="tel:+60392123456"
-                      style="
-                        font-size: 12px;
-                        color: #4d4d4d;
-                        text-decoration: none;
-                      "
-                      >+60 3 9212 3456</a
-                    >
-                  </td>
-
-                  <td width="20"></td>
-
-                  <!-- USA -->
-                  <td
-                    align="center"
-                    valign="top"
-                    style="
-                      background-color: #f8f7ff;
-                      border-radius: 7px;
-                      padding: 15px;
-                    "
-                  >
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/country-logos/us.png"
-                      width="25"
-                      alt="USA"
-                      style="margin-bottom: 5px; display: block"
-                    /><br />
-                    <a
-                      href="mailto:contact.us@shipx.asia"
-                      style="
-                        font-size: 12px;
-                        color: #4d4d4d;
-                        text-decoration: none;
-                      "
-                      >contact.us@shipx.asia</a
-                    ><br />
-                    <a
-                      href="tel:+14155550198"
-                      style="
-                        font-size: 12px;
-                        color: #4d4d4d;
-                        text-decoration: none;
-                      "
-                      >+1 415 555 0198</a
-                    >
-                  </td>
-
-                  <td width="20"></td>
-
-                  <!-- Thailand -->
-                  <td
-                    align="center"
-                    valign="top"
-                    style="
-                      background-color: #f8f7ff;
-                      border-radius: 7px;
-                      padding: 15px;
-                    "
-                  >
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/country-logos/th.png"
-                      width="25"
-                      alt="Thailand"
-                      style="margin-bottom: 5px; display: block"
-                    /><br />
-                    <a
-                      href="mailto:contact.th@shipx.asia"
-                      style="
-                        font-size: 12px;
-                        color: #4d4d4d;
-                        text-decoration: none;
-                      "
-                      >contact.th@shipx.asia</a
-                    ><br />
-                    <a
-                      href="tel:+6623456789"
-                      style="
-                        font-size: 12px;
-                        color: #4d4d4d;
-                        text-decoration: none;
-                      "
-                      >+66 2 345 6789</a
-                    >
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-          <!-- Signature -->
-          <tr>
-            <td align="center" style="padding: 2px 0px 20px 0px">
-              <p
-                style="
-                  font-size: 16px;
-                  color: #1a1a1a;
-                  margin: 0;
-                  line-height: 20px;
-                  font-weight: 400;
-                  line-height: 24px;
-                "
-              >
-                Best, <br />
-                The
-                <strong>Ship<span style="color: #ff00e5">X</span></strong>
-                Team<br />
-                by SG Link & Amilo
-              </p>
-            </td>
-          </tr>
-
-          <!-- Contact Info Bar -->
-          <tr>
-            <td align="center">
-              <table
-                cellpadding="0"
-                cellspacing="0"
-                border="0"
-                align="center"
-                style="
-                  border-radius: 8px;
-                  padding: 0px 20px;
-                  max-width: 600px;
-                  width: 100%;
-                  font-family: Karla, Arial, sans-serif;
-                "
-              >
-                <tr>
-                  <!-- Email -->
-                  <td align="center" style="padding: 5px 15px">
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/icons/ic_sharp-email.png"
-                      alt="Email"
-                      width="20"
-                      style="vertical-align: middle; margin-right: 6px"
-                    />
-                    <a
-                      href="mailto:info@shipx.asia"
-                      style="
-                        color: #000000;
-                        text-decoration: none;
-                        font-size: 14px;
-                      "
-                    >
-                      info@shipx.asia
-                    </a>
-                  </td>
-
-                  <!-- Phone -->
-                  <td align="center" style="padding: 5px 15px">
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/icons/bxs_phone-call.png"
-                      alt="Phone"
-                      width="20"
-                      style="vertical-align: middle; margin-right: 6px"
-                    />
-                    <a
-                      href="tel:+84902702345"
-                      style="
-                        color: #000000;
-                        text-decoration: none;
-                        font-size: 14px;
-                      "
-                    >
-                      (+84) 90 270 23 45
-                    </a>
-                  </td>
-
-                  <!-- Website -->
-                  <td align="center" style="padding: 5px 15px">
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/icons/Frame.png"
-                      alt="Website"
-                      width="20"
-                      style="vertical-align: middle; margin-right: 6px"
-                    />
-                    <a
-                      href="https://shipx.asia"
-                      target="_blank"
-                      style="
-                        color: #000000;
-                        text-decoration: none;
-                        font-size: 14px;
-                      "
-                    >
-                      shipx.asia
-                    </a>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-          <!-- Top Section: ShipX Goes Live -->
-          <tr>
-            <td
-              align="center"
-              style="background-color: transparent; padding: 0px 20px"
-            >
-              <table
-                align="center"
-                cellpadding="0"
-                cellspacing="0"
-                border="0"
-                style="max-width: 520px; width: 100%; border-collapse: collapse"
-              >
-                <tr>
-                  <!-- Left Column: Image -->
-                  <td
-                    align="left"
-                    valign="middle"
-                    style="width: 50%; padding-right: 10px"
-                  >
-                    <a
-                      href="https://shipx.asia/en/news/shipx-goes-live-smarter-future-asean-cross-border-logistics/"
-                      target="_blank"
-                      style="display: inline-block; text-decoration: none"
-                    >
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/Blog%20image.png"
-                        alt="ShipX Goes Live"
-                        width="100%"
-                        style="display: block; border-radius: 10px"
-                      />
-                    </a>
-                  </td>
-
-                  <!-- Right Column: Text + Button -->
-                  <td align="left" valign="middle" style="width: 50%">
-                    <p
-                      style="
-                        font-size: 18px;
-                        font-weight: 700;
-                        color: #1b1b1b;
-                        margin: 0 0 8px;
-                        line-height: 22px;
-                      "
-                    >
-                      Want to learn more about the
-                      <a
-                        href="https://shipx.asia"
-                        target="_blank"
-                        style="
-                          color: #ff00e5;
-                          text-decoration: none;
-                          font-weight: 600;
-                        "
-                        >ShipX</a
-                      >
-                      launch?
-                    </p>
-
-                    <a
-                      href="https://shipx.asia/en/news/shipx-goes-live-smarter-future-asean-cross-border-logistics/"
-                      target="_blank"
-                      style="
-                        background: linear-gradient(
-                          90deg,
-                          #4f378a 0%,
-                          #ff00e5 100%
-                        );
-                        color: #ffffff;
-                        padding: 10px 22px;
-                        font-size: 14px;
-                        font-weight: 600;
-                        border-radius: 9999px;
-                        text-decoration: none;
-                        display: inline-block;
-                        line-height: 20px;
-                      "
-                    >
-                      Read our blog here
-                    </a>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-          <!-- Footer -->
-          <tr>
-            <td
-              align="center"
-              style="
-                background: linear-gradient(250deg, #ff00e5 0%, #4f378a 100%);
-                padding: 30px 20px;
-                color: #ffffff;
-              "
-            >
-              <table
-                cellpadding="0"
-                cellspacing="0"
-                border="0"
-                align="center"
-                style="max-width: 520px; width: 100%; border-collapse: collapse"
-              >
-                <tr>
-                  <!-- Left Section -->
-                  <td
-                    valign="top"
-                    align="left"
-                    style="width: 50%; padding-right: 25px"
-                  >
-                    <a
-                      href="https://shipx.asia"
-                      target="_blank"
-                      style="display: inline-block; text-decoration: none"
-                    >
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/Footer%20Logo%20(1).png"
-                        width="200"
-                        alt="ShipX Footer Logo"
-                        style="display: block; padding-bottom: 10px"
-                      />
-                    </a>
-
-                    <p
-                      style="
-                        font-size: 12px;
-                        margin: 0;
-                        line-height: 18px;
-                        color: #ffffff;
-                        font-weight: 600;
-                        font-family: 'Kantumruy Pro', Arial, sans-serif;
-                      "
-                    >
-                      ASEAN's Next Generation Platform
-                    </p>
-
-                    <p
-                      style="
-                        font-size: 12px;
-                        padding-top: 30px;
-                        line-height: 16px;
-                        color: #f2f2f2;
-                        font-family: 'Kantumruy Pro', Arial, sans-serif;
-                      "
-                    >
-                      Empowering businesses to ship globally with confidence. Our
-                      platform simplifies international shipping, customs, and
-                      logistics.
-                    </p>
-                  </td>
-
-                  <!-- Right Section -->
-                  <td
-                    valign="top"
-                    align="right"
-                    style="width: 50%; padding-left: 10px"
-                  >
-                    <!-- Top Row: Placeholder Image -->
-                    <a
-                      href="https://shipx.asia/"
-                      target="_blank"
-                      style="display: inline-block; text-decoration: none"
-                    >
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/Mask%20group.png"
-                        width="250px"
-                        alt="ShipX Blog"
-                        style="display: flex; margin: 0 0 0px auto"
-                      />
-                    </a>
-
-                    <!-- Bottom Row: Links and Copyright -->
-                    <p
-                      style="
-                        font-size: 12px;
-                        margin-bottom: 8px;
-                        text-align: left;
-                        line-height: 16px;
-                      "
-                    >
-                      <a
-                        href="https://shipx.asia/terms"
-                        target="_blank"
-                        style="color: #ffffff; text-decoration: underline"
-                        >Terms and Conditions</a
-                      >
-                      &nbsp;•&nbsp;
-                      <a
-                        href="https://shipx.asia/privacy-policy"
-                        target="_blank"
-                        style="color: #ffffff; text-decoration: underline"
-                        >Privacy Policy</a
-                      >
-                    </p>
-
-                    <p
-                      style="
-                        font-size: 12px;
-                        margin: 0;
-                        line-height: 16px;
-                        color: #ffffff;
-                        text-align: center;
-                      "
-                    >
-                      © 2025 ShipX Copyright and rights reserved
-                    </p>
-                  </td>
-                </tr>
-              </table>
-
-              <!-- Address Line -->
-              <table
-                align="center"
-                cellpadding="0"
-                cellspacing="0"
-                border="0"
-                style="max-width: 520px; width: 100%; margin-top: 0px"
-              >
-                <tr>
-                  <td
-                    align="center"
-                    style="font-size: 11px; color: #ffffff; padding: 8px 10px"
-                  >
-                    350 National Highway 1A, Binh Hung Hoa B, Binh Tan, Ho Chi
-                    Minh
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-          <!-- Disclaimer -->
-          <tr>
-            <td
-              align="center"
-              style="
-                background-color: #ffffff;
-                padding: 15px 20px;
-                color: #777777;
-                font-size: 10px;
-                line-height: 16px;
-              "
-            >
-              You’re receiving this as confirmation of your inquiry with ShipX (by
-              SG Link & Amilo). For urgent matters, reply to this email. Privacy
-              details available on
-              <a
-                href="https://shipx.asia"
-                target="_blank"
-                style="color: #4f378a; text-decoration: underline"
-                >shipx.asia</a
-              >.
-            </td>
-          </tr>
-        </table>
-      </center>
+            </table> <!-- end white card -->
+          </td>
+        </tr>
+      </table>
     </body>
   </html>
   HTML;
 
-  $headers = array('Content-Type: text/html; charset=UTF-8');
+  $headers = array(
+    'Content-Type: text/html; charset=UTF-8',
+    'From: ShipX Asia <info@shipx.asia>'
+  );
 
   // Send to admin and user
   $admin_sent = wp_mail($to_admin, $subject, $admin_body, $headers);

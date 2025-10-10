@@ -1,6 +1,6 @@
 import "./index.css";
 import "./i18n";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import Lenis from "@studio-freight/lenis";
@@ -12,8 +12,12 @@ import PrivacyPolicy from "./scripts/components/PrivacyPolicy";
 import TermsAndConditions from "./scripts/components/TermsAndConditions";
 import BookADemo from "./scripts/components/BookADemo";
 import NotFound from "./scripts/components/ui/NotFound";
+import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
+import { initGTM } from "./tagmanager";
 
 const App = () => {
+  const [gtmInitialized, setGtmInitialized] = useState(false);
+
   useEffect(() => {
     const lenis = new Lenis({
       lerp: 0.1,
@@ -34,6 +38,15 @@ const App = () => {
     };
   }, []);
 
+  // ✅ Initialize GTM if user already consented earlier
+  useEffect(() => {
+    const consent = getCookieConsentValue("analyticsConsent");
+    if (consent === "true" && !gtmInitialized) {
+      initGTM();
+      setGtmInitialized(true);
+    }
+  }, [gtmInitialized]);
+
   return (
     <BrowserRouter>
       <Layout>
@@ -48,6 +61,41 @@ const App = () => {
           <Route path="/book-a-demo" element={<BookADemo />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+
+        {/* ✅ Cookie Banner for consent */}
+        <CookieConsent
+          location="bottom"
+          buttonText="Accept"
+          declineButtonText="Decline"
+          enableDeclineButton
+          cookieName="analyticsConsent"
+          style={{
+            background: "#2B373B",
+            color: "#fff",
+            fontSize: "14px",
+            textAlign: "center",
+          }}
+          buttonStyle={{
+            background: "#fff",
+            color: "#000",
+            fontWeight: "bold",
+            borderRadius: "4px",
+            padding: "6px 12px",
+          }}
+          declineButtonStyle={{
+            background: "#555",
+            color: "#fff",
+            borderRadius: "4px",
+          }}
+          expires={150}
+          onAccept={() => {
+            initGTM();
+            setGtmInitialized(true);
+          }}
+        >
+          We use cookies for analytics and marketing. You can accept or decline
+          tracking.
+        </CookieConsent>
       </Layout>
     </BrowserRouter>
   );
