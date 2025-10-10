@@ -4,7 +4,7 @@ import * as motion from "motion/react-client";
 import { NavLink } from "react-router-dom";
 import { header_svg_1, header_svg_2 } from "../../../assets/assets";
 
-const LoginDropdown = () => {
+const LoginModal = () => {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -113,7 +113,7 @@ const LoginDropdown = () => {
               {t("header.login_modal.sign_up.description")}
             </span>
             <NavLink
-              to="/#contact-us"
+              to="/book-a-demo"
               end
               className="
                 bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
@@ -133,7 +133,7 @@ const LoginDropdown = () => {
   );
 };
 
-export default LoginDropdown;
+export default LoginModal;
 
 // import { useState } from "react";
 // import { useTranslation } from "react-i18next";

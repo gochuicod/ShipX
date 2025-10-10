@@ -1322,8 +1322,8 @@ const Main = ({ margin }) => {
           <div className="absolute top-[15vw] left-[-15vw] size-[15vw] rounded-full shadow-[20vw_10vw_15vw_rgba(255,0,229,0.3)] -z-30"></div>
           <div className="absolute top-[15vw] left-[-15vw] size-[15vw] rounded-full shadow-[5vw_0.5vw_25vw_rgba(45,91,255,0.35)] -z-20"></div>
           {/* Don't have an account button */}
+          <NavLink to="/book-a-demo" end></NavLink>
           <button
-            to="/#contact-us"
             end
             className="
               bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
@@ -1336,10 +1336,14 @@ const Main = ({ margin }) => {
             "
           >
             <span className="md:text-[0.8vw] text-[2.5vw] font-normal">
-              {t("systems_section.signup_button.question")}
+              <NavLink to="/book-a-demo" end>
+                {t("systems_section.signup_button.question")}
+              </NavLink>
             </span>
             <span className="flex flex-row md:text-[0.8vw] text-[2.5vw] md:gap-x-[0.1vw] gap-x-[0.5vw] justify-center items-center text-white font-bold">
-              {t("systems_section.signup_button.button")}
+              <NavLink to="/book-a-demo" end>
+                {t("systems_section.signup_button.button")}
+              </NavLink>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
