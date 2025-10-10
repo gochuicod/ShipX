@@ -1600,7 +1600,7 @@ const Main = ({ margin }) => {
             {t("contact_us_section.badge_1")}
           </span>
           <p
-            className={`md:text-[2.3vw] text-[6vw] text-[#1A1A1A] text-center font-semibold md:leading-[2.5vw] leading-[6.5vw] mt-[1vw] md:mb-[8vw] mb-[15vw] select-none z-20 md:px-0 px-[5vw]`}
+            className={`md:text-[2.3vw] text-[6vw] text-[#1A1A1A] text-center font-semibold md:leading-[2.5vw] leading-[6.5vw] mt-[1vw] md:mb-[5vw] mb-[15vw] select-none z-20 md:px-0 px-[5vw]`}
             style={{
               fontFamily: "Inter, system-ui, -apple-system, sans-serif",
             }}
@@ -1620,7 +1620,7 @@ const Main = ({ margin }) => {
               aria-hidden="true"
             />
             <div
-              className="flex flex-col md:w-[20vw] w-full md:text-[0.8vw] text-[2.5vw] md:pt-0 pt-[10vw]"
+              className="flex flex-col md:w-[23vw] w-full md:text-[0.8vw] text-[2.5vw] md:pt-0 pt-[10vw]"
               style={{
                 fontFamily: "Poppins, system-ui, -apple-system, sans-serif",
               }}

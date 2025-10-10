@@ -29,6 +29,8 @@ import email_template_image_2 from "./email_template_image_2.webp";
 import header_svg_1 from "./header_svg_1.svg";
 import header_svg_2 from "./header_svg_2.svg";
 
+import main_sglink_banner_image_1 from "./main_sglink_banner_image_1.webp";
+
 import trusted_by_leaders from "./trusted-by-leaders.webp";
 import site_icon from "./site_icon_shipx.webp";
 
@@ -173,4 +175,5 @@ export {
   email_template_icon_3,
   email_template_image_1,
   email_template_image_2,
+  main_sglink_banner_image_1,
 };
