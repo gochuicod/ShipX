@@ -1,11 +1,17 @@
 import { margin } from "../utils/constants";
 import { useTranslation } from "react-i18next";
+import SEO from "./SEO";
 
 const TermsAndConditions = () => {
   const { t } = useTranslation();
 
   return (
     <div className={`flex flex-col justify-center items-center ${margin}`}>
+      <SEO
+        title="ShipX | Terms & Conditions"
+        description="The official terms and conditions for using the ShipX Asia platform and services. Includes licensing, user conduct, and payment policies."
+        url="/terms-and-conditions"
+      />
       <div className="flex flex-col justify-center items-center md:py-[5vw] py-[10vw]">
         <span
           className="text-[#FF00E5] md:text-[5vw] text-[7vw] md:font-semibold font-bold text-center"

@@ -47,19 +47,23 @@ import CarouselServices from "./ui/CarouselServices";
 import Counter from "./ui/Counter";
 import TooltipCard from "./ui/ToolTipCard";
 import MessengerButton from "./ui/MessengerButton";
+import SEO from "./SEO";
 
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 
 const Main = ({ margin }) => {
   const { t } = useTranslation();
   const [slide, setSlide] = useState(0);
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
-  const navigate = useNavigate();
 
   return (
     <div className="relative overflow-hidden">
+      <SEO
+        title="ShipX | ASEAN's Next Generation Platform"
+        description="Everything You Need to Grow Internationally. From economy shipping to express delivery, FBA fulfillment to marketplace integrations, ShipX equips you with the tools to scale worldwide"
+        url="/"
+      />
       <MessengerButton />
       <div className="absolute top-[-5vw] left-[-10vw] size-[10vw] rounded-full shadow-[5vw_0.5vw_15vw_rgba(79,55,138,1)] z-40"></div>
       <div className="absolute top-[8vw] right-[-15vw] size-[15vw] rounded-full shadow-[-5vw_0.5vw_20vw_rgba(255,0,229,0.2)] z-40"></div>

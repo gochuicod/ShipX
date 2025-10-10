@@ -14,6 +14,7 @@ import BookADemo from "./scripts/components/BookADemo";
 import NotFound from "./scripts/components/ui/NotFound";
 import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
 import { initGTM } from "./tagmanager";
+import { HelmetProvider } from "react-helmet-async";
 
 const App = () => {
   const [gtmInitialized, setGtmInitialized] = useState(false);

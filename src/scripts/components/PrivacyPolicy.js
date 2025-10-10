@@ -1,11 +1,17 @@
 import { margin } from "../utils/constants";
 import { useTranslation } from "react-i18next";
+import SEO from "./SEO";
 
 const PrivacyPolicy = () => {
   const { t } = useTranslation();
 
   return (
     <div className={`flex flex-col justify-center items-center ${margin}`}>
+      <SEO
+        title="ShipX | Privacy Policy"
+        description="Review the ShipX Asia Privacy Policy detailing data handling, user rights, and compliance standards."
+        url="/privacy-policy"
+      />
       <div className="flex flex-col justify-center items-center md:py-[5vw] py-[10vw]">
         <span
           className="text-[#FF00E5] md:text-[5vw] text-[7vw] md:font-semibold font-bold text-center"
