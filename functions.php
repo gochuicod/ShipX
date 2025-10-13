@@ -32,7 +32,11 @@ function mytheme_handle_contact(WP_REST_Request $request) {
   $phone   = sanitize_text_field($params['phone'] ?? '');
   $message = sanitize_textarea_field($params['message'] ?? '');
 
-  $to_admin = "info@shipx.asia";
+  $to_admins = array(
+    'info@shipx.asia',
+    'support@shipx.asia',
+    'shy@shipx.asia'
+  );
   $subject  = "New Contact Form Submission from $name";
 
   // 📨 HTML email body for the admin
@@ -147,7 +151,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                   font-family: Karla, Arial, sans-serif;
                 "
               >
-                Hi {{first_name}},
+                Hi {$name},
               </p>
             </td>
           </tr>
@@ -851,7 +855,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
   );
 
   // Send to admin and user
-  $admin_sent = wp_mail($to_admin, $subject, $admin_body, $headers);
+  $admin_sent = wp_mail($to_admins, $subject, $admin_body, $headers);
   $user_sent  = wp_mail($email, $user_subject, $user_body, $headers);
 
   if ($admin_sent && $user_sent) {
