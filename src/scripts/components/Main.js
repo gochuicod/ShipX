@@ -100,12 +100,12 @@ const Main = ({ margin }) => {
                   />
                   +
                 </span>
-                <span className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
+                <h6 className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
                   {t("statistics_section.customers_label")}
-                </span>
+                </h6>
               </div>
               <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
-                <span
+                <h6
                   className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
                   style={{
                     fontFamily:
@@ -118,13 +118,13 @@ const Main = ({ margin }) => {
                     duration={5}
                   />
                   +
-                </span>
-                <span className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
+                </h6>
+                <h6 className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
                   {t("statistics_section.global_partners_label")}
-                </span>
+                </h6>
               </div>
               <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
-                <span
+                <h6
                   className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
                   style={{
                     fontFamily:
@@ -138,15 +138,15 @@ const Main = ({ margin }) => {
                     )}
                     duration={5}
                   />
-                </span>
-                <span className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
+                </h6>
+                <h6 className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
                   {t("statistics_section.countries_covered_label")}
-                </span>
+                </h6>
               </div>
             </div>
             <div className="flex flex-col gap-x-[5vw] justify-center items-center">
               <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
-                <span
+                <h6
                   className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
                   style={{
                     fontFamily:
@@ -162,13 +162,13 @@ const Main = ({ margin }) => {
                     duration={5}
                   />
                   M+
-                </span>
-                <span className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
+                </h6>
+                <h6 className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
                   {t("statistics_section.orders_processed_label")}
-                </span>
+                </h6>
               </div>
               <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
-                <span
+                <h6
                   className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
                   style={{
                     fontFamily:
@@ -181,13 +181,13 @@ const Main = ({ margin }) => {
                     duration={5}
                   />
                   +
-                </span>
-                <span className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
+                </h6>
+                <h6 className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
                   {t("statistics_section.tech_warehouses_label")}
-                </span>
+                </h6>
               </div>
               <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
-                <span
+                <h6
                   className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
                   style={{
                     fontFamily:
@@ -202,15 +202,15 @@ const Main = ({ margin }) => {
                     duration={5}
                   />
                   M+
-                </span>
-                <span className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
+                </h6>
+                <h6 className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
                   {t("statistics_section.orders_fulfilled_label")}
-                </span>
+                </h6>
               </div>
             </div>
             <div className="flex flex-col gap-x-[5vw] justify-center items-center">
               <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
-                <span
+                <h6
                   className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
                   style={{
                     fontFamily:
@@ -223,13 +223,13 @@ const Main = ({ margin }) => {
                     duration={5}
                   />
                   +
-                </span>
-                <span className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
+                </h6>
+                <h6 className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
                   {t("statistics_section.logistics_label")}
-                </span>
+                </h6>
               </div>
               <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
-                <span
+                <h6
                   className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
                   style={{
                     fontFamily:
@@ -242,13 +242,13 @@ const Main = ({ margin }) => {
                     duration={5}
                   />
                   +
-                </span>
-                <span className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
+                </h6>
+                <h6 className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
                   {t("statistics_section.trucks_label")}
-                </span>
+                </h6>
               </div>
               <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
-                <span
+                <h6
                   className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
                   style={{
                     fontFamily:
@@ -262,10 +262,10 @@ const Main = ({ margin }) => {
                     duration={5}
                   />
                   M+
-                </span>
-                <span className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
+                </h6>
+                <h6 className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
                   {t("statistics_section.gmv_label")}
-                </span>
+                </h6>
               </div>
             </div>
           </div>
@@ -276,7 +276,7 @@ const Main = ({ margin }) => {
             }}
           >
             <div className="flex flex-col md:items-start items-center md:gap-y-[0.5vw] gap-y-[1.5vw]">
-              <span className="flex flex-row md:gap-x-[0.5vw] gap-x-[1.5vw] items-center md:text-[0.7vw] text-[2.5vw] text-[#FF00E5] font-semibold bg-[#FFD6FA] md:rounded-[0.5vw] rounded-[1.5vw] md:px-[0.5vw] px-[1.5vw] md:py-[0.2vw] py-[0.5vw]">
+              <h6 className="flex flex-row md:gap-x-[0.5vw] gap-x-[1.5vw] items-center md:text-[0.7vw] text-[2.5vw] text-[#FF00E5] font-semibold bg-[#FFD6FA] md:rounded-[0.5vw] rounded-[1.5vw] md:px-[0.5vw] px-[1.5vw] md:py-[0.2vw] py-[0.5vw]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="#FF00E5"
@@ -292,14 +292,14 @@ const Main = ({ margin }) => {
                   />
                 </svg>
                 {t("statistics_section.badge_1")}
-              </span>
-              <p className="md:text-[2vw] text-[6vw] text-[#1A1A1A] md:text-start text-center font-semibold md:leading-[2.5vw] leading-[6.5vw]">
+              </h6>
+              <h1 className="md:text-[2vw] text-[6vw] text-[#1A1A1A] md:text-start text-center font-semibold md:leading-[2.5vw] leading-[6.5vw]">
                 {t("statistics_section.tagline_1")}&nbsp;
                 <br />
                 {t("statistics_section.tagline_2")}&nbsp;
                 <br className="md:block hidden" />
                 {t("statistics_section.tagline_3")}
-              </p>
+              </h1>
             </div>
           </div>
         </div>

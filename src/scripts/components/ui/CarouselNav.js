@@ -120,12 +120,12 @@ export default function CarouselNav() {
                   fontFamily: "Inter, system-ui, -apple-system, sans-serif",
                 }}
               >
-                <span className="bg-white md:px-[0.5vw] px-[1.5vw] md:py-[0.05vw] py-[0.5vw] rounded-full border border-[#E9D7FE]">
+                <h1 className="bg-white md:px-[0.5vw] px-[1.5vw] md:py-[0.05vw] py-[0.5vw] rounded-full border border-[#E9D7FE]">
                   {t("hero_section.slide_1.badge_1")}
-                </span>
-                <span className="md:pl-[0.5vw] pl-[1vw] md:pr-[0.5vw] pr-[1vw]">
+                </h1>
+                <h2 className="md:pl-[0.5vw] pl-[1vw] md:pr-[0.5vw] pr-[1vw]">
                   {t("hero_section.slide_1.badge_2")}
-                </span>
+                </h2>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -345,12 +345,12 @@ export default function CarouselNav() {
                   fontFamily: "Inter, system-ui, -apple-system, sans-serif",
                 }}
               >
-                <span className="bg-white md:px-[0.5vw] px-[1.5vw] md:py-[0.05vw] py-[0.5vw] rounded-full border border-[#E9D7FE]">
+                <h1 className="bg-white md:px-[0.5vw] px-[1.5vw] md:py-[0.05vw] py-[0.5vw] rounded-full border border-[#E9D7FE]">
                   {t("hero_section.slide_2.badge_1")}
-                </span>
-                <span className="md:pl-[0.5vw] pl-[1vw] md:pr-[0.5vw] pr-[1vw]">
+                </h1>
+                <h2 className="md:pl-[0.5vw] pl-[1vw] md:pr-[0.5vw] pr-[1vw]">
                   {t("hero_section.slide_2.badge_2")}
-                </span>
+                </h2>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -570,12 +570,12 @@ export default function CarouselNav() {
                   fontFamily: "Inter, system-ui, -apple-system, sans-serif",
                 }}
               >
-                <span className="bg-white md:px-[0.5vw] px-[1.5vw] md:py-[0.05vw] py-[0.5vw] rounded-full border border-[#E9D7FE]">
+                <h1 className="bg-white md:px-[0.5vw] px-[1.5vw] md:py-[0.05vw] py-[0.5vw] rounded-full border border-[#E9D7FE]">
                   {t("hero_section.slide_3.badge_1")}
-                </span>
-                <span className="md:pl-[0.5vw] pl-[1vw] md:pr-[0.5vw] pr-[1vw]">
+                </h1>
+                <h2 className="md:pl-[0.5vw] pl-[1vw] md:pr-[0.5vw] pr-[1vw]">
                   {t("hero_section.slide_3.badge_2")}
-                </span>
+                </h2>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

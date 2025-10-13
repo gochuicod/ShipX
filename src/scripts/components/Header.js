@@ -4,7 +4,6 @@ import { shipx, sglink_amilo, main_img_14, sglink } from "../../assets/assets";
 import * as motion from "motion/react-client";
 import { AnimatePresence } from "motion/react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 import { languages } from "../utils/constants";
 import LoginModal from "./ui/LoginModal";
 import {
@@ -20,7 +19,6 @@ const linkClass =
 
 const Header = () => {
   const { t, i18n } = useTranslation();
-  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
   const [selected, setSelected] = useState(() => {
