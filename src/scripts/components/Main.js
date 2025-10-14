@@ -35,6 +35,8 @@ import {
   main_logo_3,
 } from "../../assets/assets";
 
+import i18n from "../../i18n";
+
 import { useState } from "react";
 import { offices, services, services_2 } from "../utils/constants";
 import { NavLink } from "react-router-dom";
