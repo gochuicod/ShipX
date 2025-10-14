@@ -1,4 +1,3 @@
-import { main_sglink_banner_image_1 } from "../../../assets/assets";
 import * as motion from "motion/react-client";
 import { margin } from "../../utils/constants";
 import { useTranslation } from "react-i18next";
@@ -17,7 +16,7 @@ const ServiceHeadline = () => {
         <div className="flex md:w-[30vw] w-full">
           <img
             className="shadow-[0_0_1vw_rgba(79,55,138,0.15)] md:rounded-[1.5vw] rounded-[3.5vw]"
-            src={main_sglink_banner_image_1}
+            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_sglink_banner_image_1.webp"
             alt="ShipX Goes Live"
           />
         </div>
