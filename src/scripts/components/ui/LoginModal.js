@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import * as motion from "motion/react-client";
 import { NavLink } from "react-router-dom";
-import { header_svg_1, header_svg_2 } from "../../../assets/assets";
 
 const LoginModal = () => {
   const { t } = useTranslation();
@@ -98,7 +97,7 @@ const LoginModal = () => {
                   {t("header.login_modal.amilo.button")}
                 </span>
                 <img
-                  src={header_svg_1}
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/header_svg_1.svg"
                   alt="Amilo Logo"
                   className="md:h-[1vw] h-[4vw] md:w-[4vw] w-[10vw]"
                 />
@@ -128,7 +127,7 @@ const LoginModal = () => {
                   {t("header.login_modal.sglink.button")}
                 </span>
                 <img
-                  src={header_svg_2}
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/header_svg_2.svg"
                   alt="SG Link Logo"
                   className="md:h-[1vw] h-[4vw] md:w-[4vw] w-[10vw]"
                 />

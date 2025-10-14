@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import { shipx_white, sglink_white } from "../../assets/assets";
 import * as motion from "motion/react-client";
 import { useTranslation } from "react-i18next";
 
@@ -17,12 +16,12 @@ const Footer = () => {
           <div className="flex flex-col">
             <div className="flex flex-row md:gap-x-[0.5vw] gap-x-[1vw] justify-start items-center">
               <img
-                src={shipx_white}
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx_logo_white.svg"
                 alt="ShipX Logo"
                 className="md:w-[5vw] w-[20vw] md:h-[2.5vw] h-[10vw]"
               />
               <img
-                src={sglink_white}
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/sglink_amilo_logo_white.svg"
                 alt="SGLink Logo"
                 className="md:w-[5vw] w-[22vw] md:h-[1.5vw] h-[6vw]"
               />

@@ -1,40 +1,3 @@
-import {
-  header_svg_1,
-  header_svg_2,
-  main_svg_2,
-  main_svg_3,
-  main_svg_4,
-  main_svg_5,
-  main_svg_6,
-  main_svg_7,
-  main_svg_8,
-  main_svg_10,
-  main_svg_13,
-  main_svg_14,
-  main_svg_15,
-  main_svg_16,
-  main_svg_17,
-  main_svg_18,
-  main_svg_19,
-  main_svg_20,
-  main_svg_21,
-  main_icon_1,
-  main_icon_2,
-  main_icon_3,
-  main_icon_4,
-  main_icon_5,
-  main_icon_6,
-  main_icon_7,
-  main_icon_8,
-  main_icon_9,
-  main_img_2,
-  main_img_4,
-  main_img_5,
-  main_img_6,
-  main_logo_2,
-  main_logo_3,
-} from "../../assets/assets";
-
 import i18n from "../../i18n";
 
 import { useState } from "react";
@@ -105,13 +68,13 @@ const Main = ({ margin, slug = "", customSeo }) => {
             className={`relative flex md:flex-row flex-col-reverse justify-center items-center gap-x-[3vw] md:gap-y-0 gap-y-[10vw] md:pt-[15vw] pt-[40vw] md:pb-[5vw] pb-[30vw] overflow-hidden select-none ${margin}`}
           >
             <img
-              src={main_svg_2}
+              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_2.svg"
               alt=""
               className="absolute -translate-x-[0.01vw] md:-translate-y-[5vw] -translate-y-[50vw] w-[200vw] h-[45vw] pointer-events-none select-none z-0"
               aria-hidden="true"
             />
             <img
-              src={main_svg_3}
+              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_3.svg"
               alt=""
               className="absolute md:-translate-y-[5.5vw] -translate-y-[40vw] translate-x-[40vw] md:w-[25vw] w-[45vw] md:h-[25vw] h-[45vw] pointer-events-none select-none z-0"
               aria-hidden="true"
@@ -347,19 +310,19 @@ const Main = ({ margin, slug = "", customSeo }) => {
             className={`md:h-screen h-auto relative flex flex-col md:gap-y-[1vw] gap-y-0 justify-center items-center pt-[5vw] overflow-hidden`}
           >
             <img
-              src={main_svg_4}
+              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_4.svg"
               alt=""
               className="absolute -translate-x-[40vw] translate-y-[12vw] w-[200vw] h-[45vw] pointer-events-none select-none z-0"
               aria-hidden="true"
             />
             <img
-              src={main_svg_5}
+              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_5.svg"
               alt=""
               className="absolute -translate-x-[41vw] -translate-y-[35vw] w-[150vw] h-[80vw] pointer-events-none select-none z-0"
               aria-hidden="true"
             />
             <img
-              src={main_svg_5}
+              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_5.svg"
               alt=""
               className="absolute translate-x-[23vw] translate-y-[24vw] w-[200vw] h-[80vw] pointer-events-none select-none -z-10 rotate-190"
               aria-hidden="true"
@@ -416,7 +379,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
                   >
                     <img
                       className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                      src={main_icon_1}
+                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_1.svg"
                     />
                     <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                       {t("services_section.link_1")}
@@ -432,7 +395,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
                   >
                     <img
                       className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                      src={main_icon_2}
+                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_2.svg"
                     />
                     <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                       {t("services_section.link_2")}
@@ -448,7 +411,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
                   >
                     <img
                       className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                      src={main_icon_3}
+                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_3.svg"
                     />
                     <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                       {t("services_section.link_3")}
@@ -464,7 +427,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
                   >
                     <img
                       className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                      src={main_icon_4}
+                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_4.svg"
                     />
                     <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                       {t("services_section.link_4")}
@@ -480,7 +443,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
                   >
                     <img
                       className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                      src={main_icon_5}
+                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_5.svg"
                     />
                     <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                       {t("services_section.link_5")}
@@ -496,7 +459,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
                   >
                     <img
                       className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                      src={main_icon_6}
+                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_6.svg"
                     />
                     <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                       {t("services_section.link_6")}
@@ -512,7 +475,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
                   >
                     <img
                       className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                      src={main_icon_7}
+                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_7.svg"
                     />
                     <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                       {t("services_section.link_7")}
@@ -528,7 +491,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
                   >
                     <img
                       className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                      src={main_icon_8}
+                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_8.svg"
                     />
                     <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                       {t("services_section.link_8")}
@@ -598,7 +561,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
           >
             <img
               className="absolute md:w-[50vw] w-[80vw] md:h-[45vw] h-[80vw] md:translate-x-[17vw] translate-x-[10vw] md:-translate-y-[1vw] translate-y-[1vw] -z-10"
-              src={main_img_4}
+              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_4.webp"
             />
             <div className="flex md:flex-row flex-col gap-x-[0.1vw] justify-center items-center">
               <div className="flex flex-col gap-y-[1vw] md:justify-start justify-center md:items-start items-center">
@@ -705,7 +668,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
               </div>
               <img
                 className="md:w-[35vw] w-[60vw] md:h-[25vw] h-[20vh]"
-                src={main_img_2}
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_2.webp"
               />
             </div>
             <div className="flex md:flex-row flex-col-reverse justify-center items-center">
@@ -717,14 +680,14 @@ const Main = ({ margin, slug = "", customSeo }) => {
                   <div className="flex animate-scroll-right items-center gap-y-[3vw]">
                     {/* Original logos */}
                     <img
-                      src={main_logo_2}
+                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_logo_2.webp"
                       alt="scrolling"
                       className="md:h-[6vw] h-[10vw] object-contain"
                     />
 
                     {/* Duplicate logos for seamless loop */}
                     <img
-                      src={main_logo_2}
+                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_logo_2.webp"
                       alt="scrolling"
                       className="md:h-[6vw] h-[10vw] object-contain"
                     />
@@ -750,14 +713,14 @@ const Main = ({ margin, slug = "", customSeo }) => {
                   <div className="flex animate-scroll items-center gap-y-[3vw]">
                     {/* Original logos */}
                     <img
-                      src={main_logo_3}
+                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_logo_3.webp"
                       alt="scrolling"
                       className="md:h-[6vw] h-[10vw] object-contain"
                     />
 
                     {/* Duplicate logos for seamless loop */}
                     <img
-                      src={main_logo_3}
+                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_logo_3.webp"
                       alt="scrolling"
                       className="md:h-[6vw] h-[10vw] object-contain"
                     />
@@ -789,7 +752,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
                 <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] items-center w-full">
                   <img
                     className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
-                    src={main_icon_2}
+                    src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_2.svg"
                   />
                   <p className="pl-[1vw]">
                     {t("platform_section.info_1")}{" "}
@@ -800,7 +763,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
                 <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] items-center w-full">
                   <img
                     className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
-                    src={main_icon_9}
+                    src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_9.svg"
                   />
                   <p className="pl-[1vw]">
                     {t("platform_section.info_2")}{" "}
@@ -811,7 +774,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
                 <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] items-center w-full">
                   <img
                     className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
-                    src={main_icon_7}
+                    src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_7.svg"
                   />
                   <p className="pl-[1vw]">
                     {t("platform_section.info_3")}{" "}
@@ -822,7 +785,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
                 <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] items-center w-full">
                   <img
                     className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
-                    src={main_icon_6}
+                    src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_6.svg"
                   />
                   <p className="pl-[1vw]">
                     {t("platform_section.info_4")}{" "}
@@ -970,7 +933,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
                   </div>
                   <img
                     className="md:w-[20vw] w-[80vw] md:h-[14vw] h-[50vw] rounded-[2vw] shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)]"
-                    src={main_img_5}
+                    src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_5.webp"
                   />
                   {/* Collapsible Area */}
                   <div className="md:hidden flex flex-col justify-start items-start w-full mt-[1vw]">
@@ -1156,7 +1119,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
                   </div>
                   <img
                     className="md:w-[20vw] w-[80vw] md:h-[14vw] h-[50vw] rounded-[2vw] shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)]"
-                    src={main_img_6}
+                    src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_6.webp"
                   />
                   <div className="flex flex-col">
                     <span className="flex flex-row md:gap-x-[0.5vw] gap-x-[1.5vw] items-center md:text-[0.8vw] text-[2.5vw] text-[#4F378A] font-semibold bg-transparent md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-0 md:py-[0.2vw] py-[0.5vw]">
@@ -1245,7 +1208,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
             className={`md:min-h-screen h-auto relative flex flex-col justify-center items-center pt-[16vw] overflow-hidden select-none md:px-[8vw] px-[5vw]`}
           >
             <img
-              src={main_svg_10}
+              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_10.svg"
               alt=""
               className="absolute translate-x-[36vw] -translate-y-[18vw] w-[200vw] md:h-[43vw] h-[83vw] pointer-events-none select-none -z-10"
               aria-hidden="true"
@@ -1373,7 +1336,9 @@ const Main = ({ margin, slug = "", customSeo }) => {
               {/* Map Image */}
               <div
                 className="flex md:w-[60vw] w-[100vw] md:h-[40vw] h-[75vw] md:bg-size-[auto_47vw] bg-size-[130vw_120vw] bg-center bg-no-repeat"
-                style={{ backgroundImage: `url(${main_svg_6})` }}
+                style={{
+                  backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_6.svg")`,
+                }}
               ></div>
             </div>
           </div>
@@ -1428,7 +1393,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
             <div className="relative overflow-hidden flex flex-col md:gap-y-[1vw] gap-y-[3vw] md:w-[35vw] w-full md:shadow-[0_0vw_1vw_rgba(79,55,138,0.15)] shadow-[0_0vw_5vw_rgba(79,55,138,0.15)] md:rounded-[2vw] rounded-[3vw] md:px-[3vw] px-[5vw] md:pt-[3vw] pt-[5vw] md:pb-[23vw] pb-[33vw] bg-white">
               <div className="flex justify-center items-center">
                 <img
-                  src={main_svg_14}
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_14.svg"
                   alt="Amilo Logo"
                   className="md:h-[4vw] h-[15vw] md:w-[12vw] w-[30vw]"
                 />
@@ -1464,7 +1429,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
                     {t("systems_section.sglink_card.button")}
                   </span>
                   <img
-                    src={header_svg_2}
+                    src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/header_svg_2.svg"
                     alt="Amilo Logo"
                     className="md:h-[1vw] h-[4vw] md:w-[4vw] w-[10vw]"
                   />
@@ -1480,7 +1445,9 @@ const Main = ({ margin, slug = "", customSeo }) => {
                     bg-[length:50vw_50vw]
                     md:bg-[length:30vw_30vw]
                   "
-                  style={{ backgroundImage: `url(${main_svg_16})` }}
+                  style={{
+                    backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_16.svg")`,
+                  }}
                 ></div>
 
                 <div className="flex flex-col gap-y-[3vw]">
@@ -1493,7 +1460,9 @@ const Main = ({ margin, slug = "", customSeo }) => {
                       bg-[length:120vw_60vw]
                       md:bg-[length:100vw_50vw]
                     "
-                    style={{ backgroundImage: `url(${main_svg_17})` }}
+                    style={{
+                      backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_17.svg")`,
+                    }}
                   ></div>
 
                   <div
@@ -1505,7 +1474,9 @@ const Main = ({ margin, slug = "", customSeo }) => {
                       bg-[length:120vw_60vw]
                       md:bg-[length:100vw_50vw]
                     "
-                    style={{ backgroundImage: `url(${main_svg_18})` }}
+                    style={{
+                      backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_18.svg")`,
+                    }}
                   ></div>
                 </div>
               </div>
@@ -1514,7 +1485,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
             <div className="relative overflow-hidden flex flex-col md:gap-y-[1vw] gap-y-[3vw] md:w-[35vw] w-full md:shadow-[0_0vw_1vw_rgba(79,55,138,0.15)] shadow-[0_0vw_5vw_rgba(79,55,138,0.15)] md:rounded-[2vw] rounded-[3vw] md:px-[3vw] px-[5vw] md:pt-[3vw] pt-[5vw] md:pb-[23vw] pb-[33vw] bg-white">
               <div className="flex justify-center items-center">
                 <img
-                  src={main_svg_15}
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_15.svg"
                   alt="Amilo Logo"
                   className="md:h-[4vw] h-[15vw] md:w-[12vw] w-[30vw]"
                 />
@@ -1548,7 +1519,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
                     {t("systems_section.amilo_card.button")}
                   </span>
                   <img
-                    src={header_svg_1}
+                    src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/header_svg_1.svg"
                     alt="Amilo Logo"
                     className="md:h-[1vw] h-[4vw] md:w-[4vw] w-[10vw]"
                   />
@@ -1564,7 +1535,9 @@ const Main = ({ margin, slug = "", customSeo }) => {
                     bg-[length:150vw_25vw]
                     md:bg-[length:100vw_13vw]
                   "
-                  style={{ backgroundImage: `url(${main_svg_20})` }}
+                  style={{
+                    backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_20.svg")`,
+                  }}
                 ></div>
 
                 <div className="flex flex-col gap-y-[3vw]">
@@ -1577,7 +1550,9 @@ const Main = ({ margin, slug = "", customSeo }) => {
                       bg-[length:120vw_25vw]
                       md:bg-[length:100vw_20vw]
                     "
-                    style={{ backgroundImage: `url(${main_svg_19})` }}
+                    style={{
+                      backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_19.svg")`,
+                    }}
                   ></div>
 
                   <div
@@ -1589,7 +1564,9 @@ const Main = ({ margin, slug = "", customSeo }) => {
                       bg-[length:150vw_60vw]
                       md:bg-[length:100vw_15vw]
                     "
-                    style={{ backgroundImage: `url(${main_svg_21})` }}
+                    style={{
+                      backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_21.svg")`,
+                    }}
                   ></div>
                 </div>
               </div>
@@ -1620,7 +1597,9 @@ const Main = ({ margin, slug = "", customSeo }) => {
               <div className="flex flex-col">
                 <div
                   className="md:flex hidden md:w-[25vw] w-[80vw] md:h-[15vw] h-[30vw] md:bg-size-[25vw_15vw] bg-size-[100vw_50vw] bg-center bg-no-repeat"
-                  style={{ backgroundImage: `url(${main_svg_13})` }}
+                  style={{
+                    backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_13.svg")`,
+                  }}
                 ></div>
               </div>
             </div>
@@ -1632,13 +1611,13 @@ const Main = ({ margin, slug = "", customSeo }) => {
             className="relative flex flex-col justify-center items-center md:pt-[0.5vw] pt-[1vw] overflow-hidden"
           >
             <img
-              src={main_svg_7}
+              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_7.svg"
               alt=""
               className="absolute md:-translate-y-[6vw] -translate-y-[35vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none -z-10"
               aria-hidden="true"
             />
             <img
-              src={main_svg_7}
+              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_7.svg"
               alt=""
               className="absolute translate-x-[30vw] md:translate-y-[10vw] -translate-y-[15vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none opacity-20 -z-10"
               aria-hidden="true"
@@ -1680,7 +1659,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
             </p>
             <div className="relative flex md:flex-row flex-col-reverse justify-start items-center gap-x-[5vw] md:shadow-[0_0.5vw_2vw_rgba(255,0,229,0.15)] shadow-[0_0.5vw_3vw_rgba(255,0,229,0.25)] md:pl-[10vw] pl-[15vw] pr-[8vw] py-[8vw] rounded-t-[2vw] md:w-[70vw] w-[90vw] bg-white z-10">
               <img
-                src={main_svg_8}
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_8.svg"
                 alt=""
                 className="absolute md:-translate-x-[44vw] -translate-x-[65vw] md:-translate-y-0 translate-y-[5vw] w-[200vw] md:h-[29vw] h-[145vw] pointer-events-none select-none z-0"
                 aria-hidden="true"

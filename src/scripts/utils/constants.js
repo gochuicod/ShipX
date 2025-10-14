@@ -1,57 +1,65 @@
-import {
-  main_icon_10,
-  main_icon_11,
-  main_icon_12,
-  main_icon_13,
-  main_icon_14,
-  main_icon_15,
-  main_icon_16,
-  // main_icon_17,
-  main_icon_18,
-  main_icon_19,
-  main_icon_20,
-  main_icon_21,
-  main_icon_22,
-} from "../../assets/assets";
-
 export const margin = "md:px-[8vw] px-[10vw]";
 
 export const offices = [
-  { image: main_icon_20, key: "singapore" },
-  { image: main_icon_21, key: "thailand" },
-  { image: main_icon_22, key: "vietnam" },
-  { image: main_icon_18, key: "malaysia" },
-  // { image: main_icon_17, key: "indonesia" },
-  { image: main_icon_19, key: "philippines", hidden: true },
-  { image: main_icon_16, key: "united_states" },
+  {
+    image:
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_20.svg",
+    key: "singapore",
+  },
+  {
+    image:
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_21.svg",
+    key: "thailand",
+  },
+  {
+    image:
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_22.svg",
+    key: "vietnam",
+  },
+  {
+    image:
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_18.svg",
+    key: "malaysia",
+  },
+  {
+    image:
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_19.svg",
+    key: "philippines",
+    hidden: true,
+  },
+  {
+    image:
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_16.svg",
+    key: "united_states",
+  },
 ];
 
 export const services = [
   {
-    icon: main_icon_10,
+    icon: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_10.svg",
     key: "multimodal",
   },
   {
-    icon: main_icon_11,
+    icon: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_11.svg",
     key: "cross_border",
   },
   {
-    icon: main_icon_12,
+    icon: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_12.svg",
     key: "customs",
   },
 ];
 
 export const services_2 = [
   {
-    icon: main_icon_14,
+    icon: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_14.svg",
     key: "inventory_services",
   },
   {
-    icon: main_icon_13,
+    icon: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_13.svg",
     key: "seamless_integrations",
   },
   {
-    icon: main_icon_15,
+    icon: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_15.svg",
     key: "regional_advantage",
   },
 ];

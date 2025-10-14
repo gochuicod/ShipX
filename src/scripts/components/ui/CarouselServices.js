@@ -1,17 +1,4 @@
 import { Carousel } from "@material-tailwind/react";
-import {
-  main_img_1,
-  main_img_7,
-  main_img_8,
-  main_img_9,
-  main_img_10,
-  main_img_11,
-  main_img_12,
-  main_icon_8,
-  main_icon_23,
-  main_icon_24,
-  main_icon_25,
-} from "../../../assets/assets";
 import { useSwipeable } from "react-swipeable";
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
@@ -175,7 +162,7 @@ export default function CarouselServices({ slide }) {
           </div>
           <img
             className="w-full md:h-[15vw] h-[45vw] rounded-[2vw]"
-            src={main_img_1}
+            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_1.webp"
           />
         </div>
         {/* Second slide: custom hero section */}
@@ -236,7 +223,7 @@ export default function CarouselServices({ slide }) {
           </div>
           <img
             className="w-full md:h-[15vw] h-[45vw] rounded-[2vw]"
-            src={main_img_7}
+            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_7.webp"
           />
         </div>
         {/* Third slide: custom hero section */}
@@ -299,7 +286,7 @@ export default function CarouselServices({ slide }) {
           </div>
           <img
             className="w-full md:h-[15vw] h-[45vw] rounded-[2vw]"
-            src={main_img_8}
+            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_8.webp"
           />
         </div>
         {/* Fourth slide: custom hero section */}
@@ -361,7 +348,7 @@ export default function CarouselServices({ slide }) {
           </div>
           <img
             className="w-full md:h-[15vw] h-[45vw] rounded-[2vw]"
-            src={main_img_9}
+            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_9.webp"
           />
         </div>
         {/* Fifth slide: custom hero section */}
@@ -425,7 +412,7 @@ export default function CarouselServices({ slide }) {
           </div>
           <img
             className="w-full md:h-[15vw] h-[45vw] rounded-[2vw]"
-            src={main_img_10}
+            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_10.webp"
           />
         </div>
         {/* Sixth slide: custom hero section */}
@@ -487,7 +474,7 @@ export default function CarouselServices({ slide }) {
           </div>
           <img
             className="w-full md:h-[15vw] h-[45vw] rounded-[2vw]"
-            src={main_img_11}
+            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_11.webp"
           />
         </div>
         {/* Seventh slide: custom hero section */}
@@ -547,7 +534,7 @@ export default function CarouselServices({ slide }) {
           </div>
           <img
             className="w-full md:h-[15vw] h-[45vw] rounded-[2vw]"
-            src={main_img_12}
+            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_12.webp"
           />
         </div>
         {/* Eighth slide: custom hero section */}
@@ -591,7 +578,7 @@ export default function CarouselServices({ slide }) {
             <div className="flex flex-row w-full md:rounded-[1vw] rounded-[3vw] bg-white z-10 md:px-[1.5vw] px-[3vw] md:py-[1vw] py-[3vw] items-center justify-start cursor-pointer select-none">
               <img
                 className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                src={main_icon_23}
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_23.svg"
               />
               <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[1.5vw] pl-[3vw]">
                 {t("services_section.carousel.slide_8.list_1.item_1")}
@@ -600,7 +587,7 @@ export default function CarouselServices({ slide }) {
             <div className="flex flex-row w-full md:rounded-[1vw] rounded-[3vw] bg-white z-10 md:px-[1.5vw] px-[3vw] md:py-[1vw] py-[3vw] items-center justify-start cursor-pointer select-none">
               <img
                 className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                src={main_icon_24}
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_24.svg"
               />
               <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[1.5vw] pl-[3vw]">
                 {t("services_section.carousel.slide_8.list_1.item_2")}
@@ -609,7 +596,7 @@ export default function CarouselServices({ slide }) {
             <div className="flex flex-row w-full md:rounded-[1vw] rounded-[3vw] bg-white z-10 md:px-[1.5vw] px-[3vw] md:py-[1vw] py-[3vw] items-center justify-start cursor-pointer select-none">
               <img
                 className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                src={main_icon_24}
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_24.svg"
               />
               <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[1.5vw] pl-[3vw]">
                 {t("services_section.carousel.slide_8.list_1.item_3")}
@@ -618,7 +605,7 @@ export default function CarouselServices({ slide }) {
             <div className="flex flex-row w-full md:rounded-[1vw] rounded-[3vw] bg-white z-10 md:px-[1.5vw] px-[3vw] md:py-[1vw] py-[3vw] items-center justify-start cursor-pointer select-none">
               <img
                 className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                src={main_icon_25}
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_25.svg"
               />
               <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[1.5vw] pl-[3vw]">
                 {t("services_section.carousel.slide_8.list_1.item_4")}
@@ -627,7 +614,7 @@ export default function CarouselServices({ slide }) {
             <div className="flex flex-row w-full md:rounded-[1vw] rounded-[3vw] bg-white z-10 md:px-[1.5vw] px-[3vw] md:py-[1vw] py-[3vw] items-center justify-start cursor-pointer select-none">
               <img
                 className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                src={main_icon_8}
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_8.svg"
               />
               <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[1.5vw] pl-[3vw]">
                 {t("services_section.carousel.slide_8.list_1.item_5")}

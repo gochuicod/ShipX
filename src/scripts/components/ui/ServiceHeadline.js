@@ -8,7 +8,7 @@ const ServiceHeadline = () => {
 
   return (
     <div
-      className={`flex flex-col ${margin} justify-center items-center md:py-[5vw] py-[15vw]`}
+      className={`flex flex-col ${margin} justify-center items-center md:py-[10vw] py-[15vw]`}
       style={{
         fontFamily: "Public_Sans, system-ui, -apple-system, sans-serif",
       }}

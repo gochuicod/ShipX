@@ -1,14 +1,3 @@
-import {
-  main_logo_4,
-  main_logo_5,
-  main_logo_6,
-  main_logo_7,
-  main_logo_8,
-  main_logo_9,
-  main_svg_1,
-  main_svg_11,
-  main_svg_12,
-} from "../../../assets/assets";
 import { Carousel } from "@material-tailwind/react";
 import { useSwipeable } from "react-swipeable";
 import * as motion from "motion/react-client";
@@ -240,7 +229,7 @@ export default function CarouselNav() {
               <img
                 className="md:w-fit w-full md:h-[35vw] h-[35vh] md:p-0 pb-0"
                 loading="lazy"
-                src={main_svg_1}
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_1.svg"
                 alt="Main SVG 1"
               />
             </div>
@@ -263,7 +252,7 @@ export default function CarouselNav() {
               <div className="flex animate-scroll-left items-center gap-y-[3vw]">
                 {/* Original logos */}
                 <img
-                  src={main_logo_4}
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_logo_4.webp"
                   loading="lazy"
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
@@ -271,7 +260,7 @@ export default function CarouselNav() {
 
                 {/* Duplicate logos for seamless loop */}
                 <img
-                  src={main_logo_4}
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_logo_4.webp"
                   loading="lazy"
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
@@ -300,7 +289,7 @@ export default function CarouselNav() {
               <div className="flex animate-scroll-right items-center gap-y-[3vw]">
                 {/* Original logos */}
                 <img
-                  src={main_logo_5}
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_logo_5.webp"
                   loading="lazy"
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
@@ -308,7 +297,7 @@ export default function CarouselNav() {
 
                 {/* Duplicate logos for seamless loop */}
                 <img
-                  src={main_logo_5}
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_logo_5.webp"
                   loading="lazy"
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
@@ -465,7 +454,7 @@ export default function CarouselNav() {
               <img
                 className="md:w-fit w-full md:h-[35vw] h-[35vh] md:p-0 pb-0"
                 loading="lazy"
-                src={main_svg_11}
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_11.svg"
                 alt="Main SVG 11"
               />
             </div>
@@ -488,7 +477,7 @@ export default function CarouselNav() {
               <div className="flex animate-scroll-left items-center gap-y-[3vw]">
                 {/* Original logos */}
                 <img
-                  src={main_logo_6}
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_logo_6.webp"
                   loading="lazy"
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
@@ -496,7 +485,7 @@ export default function CarouselNav() {
 
                 {/* Duplicate logos for seamless loop */}
                 <img
-                  src={main_logo_6}
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_logo_6.webp"
                   loading="lazy"
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
@@ -525,7 +514,7 @@ export default function CarouselNav() {
               <div className="flex animate-scroll-right items-center gap-y-[3vw]">
                 {/* Original logos */}
                 <img
-                  src={main_logo_7}
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_logo_7.webp"
                   loading="lazy"
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
@@ -533,7 +522,7 @@ export default function CarouselNav() {
 
                 {/* Duplicate logos for seamless loop */}
                 <img
-                  src={main_logo_7}
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_logo_7.webp"
                   loading="lazy"
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
@@ -691,7 +680,7 @@ export default function CarouselNav() {
               <img
                 className="md:w-fit w-full md:h-[35vw] h-[35vh] md:p-0 pb-0"
                 loading="lazy"
-                src={main_svg_12}
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_12.svg"
                 alt="Main SVG 12"
               />
             </div>
@@ -714,7 +703,7 @@ export default function CarouselNav() {
               <div className="flex animate-scroll-left items-center gap-y-[3vw]">
                 {/* Original logos */}
                 <img
-                  src={main_logo_8}
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_logo_8.webp"
                   loading="lazy"
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
@@ -722,7 +711,7 @@ export default function CarouselNav() {
 
                 {/* Duplicate logos for seamless loop */}
                 <img
-                  src={main_logo_8}
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_logo_8.webp"
                   loading="lazy"
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
@@ -751,7 +740,7 @@ export default function CarouselNav() {
               <div className="flex animate-scroll-right items-center gap-y-[3vw]">
                 {/* Original logos */}
                 <img
-                  src={main_logo_9}
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_logo_9.webp"
                   loading="lazy"
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
@@ -759,7 +748,7 @@ export default function CarouselNav() {
 
                 {/* Duplicate logos for seamless loop */}
                 <img
-                  src={main_logo_9}
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_logo_9.webp"
                   loading="lazy"
                   alt="scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"

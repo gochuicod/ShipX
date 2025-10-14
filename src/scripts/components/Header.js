@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { shipx, sglink_amilo, main_img_14, sglink } from "../../assets/assets";
 import * as motion from "motion/react-client";
 import { AnimatePresence } from "motion/react";
 import { useTranslation } from "react-i18next";
@@ -49,7 +48,7 @@ const Header = () => {
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               <img
-                src={shipx}
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx_logo.svg"
                 alt="ShipX Logo"
                 className="md:w-[3vw] md:h-[1.5vw] w-[14vw] h-[7vw]"
               />
@@ -61,13 +60,16 @@ const Header = () => {
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               <img
-                src={sglink_amilo}
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/logo_sglink_amilo.svg"
                 alt="SGLink Logo"
                 className="md:w-[3vw] md:h-[1.5vw] w-[16vw] h-[5vw]"
               />
             </NavLink>
           </div>
-          <img className="h-[1vw] w-[1vw]" src={main_img_14} />
+          <img
+            className="h-[1vw] w-[1vw]"
+            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_14.webp"
+          />
           <span className="hidden md:inline text-[0.8vw] font-normal">
             {/* ASEAN's Next Generation Platform */}
             {t("header.tagline")}

@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import * as motion from "motion/react-client";
 import { useTranslation } from "react-i18next";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const ContactForm = () => {
   const {
@@ -12,7 +12,6 @@ const ContactForm = () => {
     formState: { errors, isSubmitting },
   } = useForm();
   const [isSent, setIsSent] = useState(false);
-  const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     try {

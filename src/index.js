@@ -8,6 +8,7 @@ import Lenis from "@studio-freight/lenis";
 import { margin } from "./scripts/utils/constants";
 import ScrollToHash from "./scripts/components/ui/ScrollToHash";
 import Layout from "./scripts/Layout";
+import MultiStepLoader from "./scripts/components/ui/MultiStepLoader";
 
 const Main = lazy(() => import("./scripts/components/Main"));
 const PrivacyPolicy = lazy(() => import("./scripts/components/PrivacyPolicy"));
@@ -56,7 +57,7 @@ const App = () => {
     <BrowserRouter>
       <Layout>
         <ScrollToHash />
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<MultiStepLoader />}>
           <Routes>
             <Route path="/" element={<Main margin={margin} />} />
             <Route
