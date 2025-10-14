@@ -1,47 +1,70 @@
 import { margin } from "../utils/constants";
 import { useTranslation } from "react-i18next";
 
-const PrivacyPolicy = () => {
+import SEO from "./ui/SEO";
+import useYoastSEO from "../hooks/useYoastSEO";
+
+const PrivacyPolicy = ({ slug = "" }) => {
   const { t } = useTranslation();
 
+  const page = useYoastSEO(slug); // fetch WP page based on slug
+
+  // Fallback SEO if Yoast data is not available yet
+  const seo = page?.yoast_head_json || {
+    title: "ShipX - ASEAN's Next Generation Platform",
+    description:
+      "Enter And Scale In The U.S. Market With Custom Logistics Solutions Built To Support Sellers From Launch To Nationwide Expansion",
+    canonical: "https://shipx.asia",
+    og_image: [{ url: "https://shipx.asia/assets/default-og.jpg" }],
+  };
+
   return (
-    <div className={`flex flex-col justify-center items-center ${margin}`}>
-      <div className="flex flex-col justify-center items-center md:py-[5vw] py-[10vw]">
-        <span
-          className="text-[#FF00E5] md:text-[5vw] text-[7vw] md:font-semibold font-bold text-center"
+    <>
+      <SEO
+        title={seo.title}
+        description={seo.description}
+        canonical={seo.canonical}
+        ogImage={seo.og_image?.[0]?.url}
+      />
+
+      <div className={`flex flex-col justify-center items-center ${margin}`}>
+        <div className="flex flex-col justify-center items-center md:py-[5vw] py-[10vw]">
+          <span
+            className="text-[#FF00E5] md:text-[5vw] text-[7vw] md:font-semibold font-bold text-center"
+            style={{
+              fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+            }}
+          >
+            {t("privacy_policy_page.header")}
+          </span>
+          <span
+            className="text-[#63666D] md:text-[0.8vw] text-[2.2vw] md:font-medium font-semibold"
+            style={{
+              fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+            }}
+          >
+            {t("privacy_policy_page.subheader")}
+          </span>
+        </div>
+
+        <div
+          className="flex flex-col md:pb-[5vw] pb-[10vw] md:w-[50vw] w-full"
           style={{
-            fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+            fontFamily: "Poppins, system-ui, -apple-system, sans-serif",
           }}
         >
-          {t("privacy_policy_page.header")}
-        </span>
-        <span
-          className="text-[#63666D] md:text-[0.8vw] text-[2.2vw] md:font-medium font-semibold"
-          style={{
-            fontFamily: "Inter, system-ui, -apple-system, sans-serif",
-          }}
-        >
-          {t("privacy_policy_page.subheader")}
-        </span>
+          <p className="text-[#63666D] md:text-[0.8vw] text-[2.2vw] font-normal text-justify opacity-70 whitespace-pre-line">
+            {t("privacy_policy_page.message")}
+          </p>
+
+          <hr className="bg-[#63666D] h-[0.05vw] border-none opacity-70 mt-[2vw]" />
+
+          <p className="text-[#63666D] opacity-60 md:text-[0.6vw] text-[2vw] font-normal mt-[1vw]">
+            {t("privacy_policy_page.note")}
+          </p>
+        </div>
       </div>
-
-      <div
-        className="flex flex-col md:pb-[5vw] pb-[10vw] md:w-[50vw] w-full"
-        style={{
-          fontFamily: "Poppins, system-ui, -apple-system, sans-serif",
-        }}
-      >
-        <p className="text-[#63666D] md:text-[0.8vw] text-[2.2vw] font-normal text-justify opacity-70 whitespace-pre-line">
-          {t("privacy_policy_page.message")}
-        </p>
-
-        <hr className="bg-[#63666D] h-[0.05vw] border-none opacity-70 mt-[2vw]" />
-
-        <p className="text-[#63666D] opacity-60 md:text-[0.6vw] text-[2vw] font-normal mt-[1vw]">
-          {t("privacy_policy_page.note")}
-        </p>
-      </div>
-    </div>
+    </>
   );
 };
 

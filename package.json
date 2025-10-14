@@ -7,11 +7,13 @@
     "preview": "npm-run-all --parallel sync wpstart tailwindwatch",
     "sync": "browser-sync start -p 'shiennac5.sg-host.local' --files '**/*.php' 'build/*.js' 'build/*.css'",
     "buildwp": "wp-scripts build",
-    "build": "npm-run-all --sequential buildwp tailwindbuild",
+    "build": "npm-run-all --sequential clean buildwp tailwindbuild sitemap",
     "wpstart": "wp-scripts start",
     "start": "npm-run-all --parallel wpstart tailwindwatch",
     "tailwindbuild": "tailwindcss -i ./src/index.css -o ./build/index.css --minify",
     "tailwindwatch": "tailwindcss -i ./src/index.css -o ./build/index.css --watch --minify",
+    "clean": "rimraf build",
+    "sitemap": "node generate-sitemap.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier": "npx prettier src/ --write"
   },
@@ -26,6 +28,7 @@
     "npm-run-all": "^4.1.5",
     "postcss": "^8.5.6",
     "react-email": "4.3.0",
+    "rimraf": "^6.0.1",
     "tailwindcss": "^4.1.13"
   },
   "dependencies": {
@@ -37,17 +40,20 @@
     "clsx": "^2.1.1",
     "i18next": "^25.5.2",
     "motion": "^12.23.18",
+    "node-fetch": "^3.3.2",
     "prettier": "^3.6.2",
     "react": "^18.3.1",
     "react-cookie-consent": "^9.0.0",
     "react-countup": "^6.5.3",
     "react-dom": "^18.3.1",
     "react-gtm-module": "^2.0.11",
+    "react-helmet": "^6.1.0",
     "react-helmet-async": "^2.0.5",
     "react-hook-form": "^7.62.0",
     "react-i18next": "^16.0.0",
     "react-intersection-observer": "^9.16.0",
     "react-router-dom": "^7.9.1",
+    "react-snap": "^1.23.0",
     "react-swipeable": "^7.0.2",
     "tailwind-merge": "^3.3.1"
   }

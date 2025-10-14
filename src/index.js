@@ -53,13 +53,19 @@ const App = () => {
         <ScrollToHash />
         <Routes>
           <Route path="/" element={<Main margin={margin} />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route
+            path="/privacy-policy"
+            element={<PrivacyPolicy slug="privacy-policy" />}
+          />
           <Route
             path="/terms-and-conditions"
-            element={<TermsAndConditions />}
+            element={<TermsAndConditions slug="terms-and-conditions" />}
           />
-          <Route path="/book-a-demo" element={<BookADemo />} />
-          <Route path="*" element={<NotFound />} />
+          <Route
+            path="/book-a-demo"
+            element={<BookADemo slug="book-a-demo" />}
+          />
+          <Route path="*" element={<NotFound slug="not-found" />} />
         </Routes>
 
         {/* ✅ Cookie Banner for consent */}
