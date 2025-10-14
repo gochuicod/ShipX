@@ -1,17 +1,22 @@
 import "./index.css";
 import "./i18n";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReactDOM from "react-dom/client";
+
 import Lenis from "@studio-freight/lenis";
 import { margin } from "./scripts/utils/constants";
 import ScrollToHash from "./scripts/components/ui/ScrollToHash";
 import Layout from "./scripts/Layout";
-import Main from "./scripts/components/Main";
-import PrivacyPolicy from "./scripts/components/PrivacyPolicy";
-import TermsAndConditions from "./scripts/components/TermsAndConditions";
-import BookADemo from "./scripts/components/BookADemo";
-import NotFound from "./scripts/components/ui/NotFound";
+
+const Main = lazy(() => import("./scripts/components/Main"));
+const PrivacyPolicy = lazy(() => import("./scripts/components/PrivacyPolicy"));
+const TermsAndConditions = lazy(
+  () => import("./scripts/components/TermsAndConditions"),
+);
+const BookADemo = lazy(() => import("./scripts/components/BookADemo"));
+const NotFound = lazy(() => import("./scripts/components/ui/NotFound"));
+
 import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
 import { initGTM } from "./tagmanager";
 
@@ -51,22 +56,24 @@ const App = () => {
     <BrowserRouter>
       <Layout>
         <ScrollToHash />
-        <Routes>
-          <Route path="/" element={<Main margin={margin} />} />
-          <Route
-            path="/privacy-policy"
-            element={<PrivacyPolicy slug="privacy-policy" />}
-          />
-          <Route
-            path="/terms-and-conditions"
-            element={<TermsAndConditions slug="terms-and-conditions" />}
-          />
-          <Route
-            path="/book-a-demo"
-            element={<BookADemo slug="book-a-demo" />}
-          />
-          <Route path="*" element={<NotFound slug="not-found" />} />
-        </Routes>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Main margin={margin} />} />
+            <Route
+              path="/privacy-policy"
+              element={<PrivacyPolicy slug="privacy-policy" />}
+            />
+            <Route
+              path="/terms-and-conditions"
+              element={<TermsAndConditions slug="terms-and-conditions" />}
+            />
+            <Route
+              path="/book-a-demo"
+              element={<BookADemo slug="book-a-demo" />}
+            />
+            <Route path="*" element={<NotFound slug="not-found" />} />
+          </Routes>
+        </Suspense>
 
         {/* ✅ Cookie Banner for consent */}
         <CookieConsent

@@ -49,6 +49,7 @@ import CarouselServices from "./ui/CarouselServices";
 import Counter from "./ui/Counter";
 import TooltipCard from "./ui/ToolTipCard";
 import MessengerButton from "./ui/MessengerButton";
+import ServiceHeadline from "./ui/ServiceHeadline";
 
 import SEO from "./ui/SEO";
 import useYoastSEO from "../hooks/useYoastSEO";
@@ -95,6 +96,9 @@ const Main = ({ margin, slug = "", customSeo }) => {
           {/* Hero Section */}
           <Carousel margin={margin} />
           {/* Hero Section End */}
+          {/* Service Headline Section Start */}
+          <ServiceHeadline />
+          {/* Service Headline Section End */}
           {/* Statistics Section Start */}
           <div
             id="statistics"

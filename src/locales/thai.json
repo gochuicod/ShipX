@@ -74,6 +74,12 @@
       "trusted_by_2": "และการเชื่อมต่ออีกกว่า 20+ ราย"
     }
   },
+  "service_headline_section": {
+    "heading_1": "ต้องการเรียนรู้เพิ่มเติมเกี่ยวกับ",
+    "heading_2": "ShipX",
+    "heading_3": "การเปิดตัวหรือไม่?",
+    "button_text_1": "อ่านบล็อก"
+  },
   "statistics_section": {
     "badge_1": "สถิติของเรา",
     "tagline_1": "ขับเคลื่อนด้วยเครือข่าย",

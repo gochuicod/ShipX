@@ -74,6 +74,12 @@
       "trusted_by_2": "các nền tảng tích hợp hàng đầu & hơn 20+ đối tác khác"
     }
   },
+  "service_headline_section": {
+    "heading_1": "Bạn muốn tìm hiểu thêm về",
+    "heading_2": "ShipX",
+    "heading_3": "buổi ra mắt chứ?",
+    "button_text_1": "Đọc Blog"
+  },
   "statistics_section": {
     "badge_1": "Thống kê của chúng tôi",
     "tagline_1": "Được vận hành bởi mạng lưới",

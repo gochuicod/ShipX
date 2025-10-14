@@ -2,11 +2,9 @@ import { NavLink } from "react-router-dom";
 import { shipx_white, sglink_white } from "../../assets/assets";
 import * as motion from "motion/react-client";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
 
   return (
     <footer className="flex flex-col justify-center bg-gradient-to-t from-[#4F378A] from-10% to-[rgb(255,0,229)] text-white px-[6vw] md:py-[1.5vw] py-[3vw] md:text-[0.8vw] text-[2.6vw]">

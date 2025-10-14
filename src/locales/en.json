@@ -74,6 +74,12 @@
       "trusted_by_2": "Integrations & 20+ More"
     }
   },
+  "service_headline_section": {
+    "heading_1": "Want to learn more about the",
+    "heading_2": "ShipX",
+    "heading_3": "launch?",
+    "button_text_1": "Read Blog"
+  },
   "statistics_section": {
     "badge_1": "Our Statistics",
     "tagline_1": "Powered by our unified",
