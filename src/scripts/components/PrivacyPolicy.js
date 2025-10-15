@@ -1,30 +1,17 @@
 import { margin } from "../utils/constants";
 import { useTranslation } from "react-i18next";
-
 import SEO from "./ui/SEO";
-import useYoastSEO from "../hooks/useYoastSEO";
 
-const PrivacyPolicy = ({ slug = "" }) => {
+const PrivacyPolicy = () => {
   const { t } = useTranslation();
-
-  const page = useYoastSEO(slug); // fetch WP page based on slug
-
-  // Fallback SEO if Yoast data is not available yet
-  const seo = page?.yoast_head_json || {
-    title: "ShipX - ASEAN's Next Generation Platform",
-    description:
-      "Enter And Scale In The U.S. Market With Custom Logistics Solutions Built To Support Sellers From Launch To Nationwide Expansion",
-    canonical: "https://shipx.asia",
-    og_image: [{ url: "https://shipx.asia/assets/default-og.jpg" }],
-  };
 
   return (
     <>
       <SEO
-        title={seo.title}
-        description={seo.description}
-        canonical={seo.canonical}
-        ogImage={seo.og_image?.[0]?.url}
+        title="ShipX - Privacy Policy"
+        description="Welcome to ShipX's Privacy Policy Page!"
+        canonical="https://shipx.asia"
+        ogImage="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/logo-shipx.webp"
       />
 
       <div className={`flex flex-col justify-center items-center ${margin}`}>

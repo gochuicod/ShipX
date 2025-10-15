@@ -99,7 +99,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
           <!-- Logo -->
           <tr>
             <td align="center" style="padding: 30px 0 10px 0">
-              <a href="http://shipx.asia/" target="_blank">
+              <a href="https://shipx.asia/" target="_blank">
                 <img
                   src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/ShipX%20Logo.png"
                   width="108"
@@ -151,7 +151,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                   font-family: Karla, Arial, sans-serif;
                 "
               >
-                Hi {{first_name}},
+                Hi {$name},
               </p>
             </td>
           </tr>
@@ -193,7 +193,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                 Book a time that suits you
               </p>
               <a
-                href="http://shipx.asia/book-a-demo"
+                href="https://shipx.asia/book-a-demo"
                 target="_blank"
                 style="
                   display: inline-block;

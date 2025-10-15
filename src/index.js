@@ -5,9 +5,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 
 import Lenis from "@studio-freight/lenis";
+import { HelmetProvider } from "react-helmet-async";
+
+import Layout from "./scripts/Layout";
 import { margin } from "./scripts/utils/constants";
 import ScrollToHash from "./scripts/components/ui/ScrollToHash";
-import Layout from "./scripts/Layout";
 import MultiStepLoader from "./scripts/components/ui/MultiStepLoader";
 
 const Main = lazy(() => import("./scripts/components/Main"));
@@ -60,19 +62,13 @@ const App = () => {
         <Suspense fallback={<MultiStepLoader />}>
           <Routes>
             <Route path="/" element={<Main margin={margin} />} />
-            <Route
-              path="/privacy-policy"
-              element={<PrivacyPolicy slug="privacy-policy" />}
-            />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route
               path="/terms-and-conditions"
-              element={<TermsAndConditions slug="terms-and-conditions" />}
+              element={<TermsAndConditions />}
             />
-            <Route
-              path="/book-a-demo"
-              element={<BookADemo slug="book-a-demo" />}
-            />
-            <Route path="*" element={<NotFound slug="not-found" />} />
+            <Route path="/book-a-demo" element={<BookADemo />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
 
@@ -122,5 +118,9 @@ const App = () => {
 
 if (document.querySelector("#render")) {
   const root = ReactDOM.createRoot(document.querySelector("#render"));
-  root.render(<App />);
+  root.render(
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>,
+  );
 }

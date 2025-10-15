@@ -1,5 +1,3 @@
-import i18n from "../../i18n";
-
 import { useState } from "react";
 import { offices, services, services_2 } from "../utils/constants";
 import { NavLink } from "react-router-dom";
@@ -15,39 +13,22 @@ import MessengerButton from "./ui/MessengerButton";
 import ServiceHeadline from "./ui/ServiceHeadline";
 
 import SEO from "./ui/SEO";
-import useYoastSEO from "../hooks/useYoastSEO";
 
 import { useTranslation } from "react-i18next";
 
-const Main = ({ margin, slug = "", customSeo }) => {
+const Main = ({ margin }) => {
   const { t } = useTranslation();
   const [slide, setSlide] = useState(0);
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
 
-  const page = useYoastSEO(slug); // fetch WP page based on slug
-
-  // Fallback SEO if Yoast data is not available yet
-  const seo = page?.yoast_head_json || {
-    title: customSeo?.title || "ShipX - ASEAN's Next Generation Platform",
-    description:
-      customSeo?.description ||
-      "Enter And Scale In The U.S. Market With Custom Logistics Solutions Built To Support Sellers From Launch To Nationwide Expansion",
-    canonical:
-      customSeo?.canonical ||
-      `https://shipx.asia${i18n.language !== "en" ? `/${i18n.language}` : ""}${slug ? `/${slug}` : ""}`,
-    og_image: customSeo?.ogImage
-      ? [{ url: customSeo.ogImage }]
-      : [{ url: "https://shipx.asia/assets/default-og.jpg" }],
-  };
-
   return (
     <>
       <SEO
-        title={seo.title}
-        description={seo.description}
-        canonical={seo.canonical}
-        ogImage={seo.og_image?.[0]?.url}
+        title="ShipX - ASEAN's Next Generation Platform"
+        description="Enter And Scale In The U.S. Market With Custom Logistics Solutions Built To Support Sellers From Launch To Nationwide Expansion"
+        canonical="https://shipx.asia"
+        ogImage="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/logo-shipx.webp"
       />
 
       <div className="relative overflow-hidden">
