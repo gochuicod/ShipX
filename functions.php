@@ -876,18 +876,8 @@ function shipx_enqueue_styles() {
 }
 add_action('wp_enqueue_scripts', 'shipx_enqueue_styles');
 
-// Preload fonts
-function shipx_preload_fonts() {
-  $fonts = [
-    'Inter-VariableFont_opsz,wght.woff2',
-    'KantumruyPro-VariableFont_wght.woff2',
-    'Karla-VariableFont_wght.woff2',
-    'Poppins-Regular.woff2',
-    'Poppins-SemiBold.woff2',
-  ];
-
-  foreach ($fonts as $font) {
-    echo '<link rel="preload" href="' . get_stylesheet_directory_uri() . '/fonts/' . $font . '" as="font" type="font/woff2" crossorigin="anonymous">' . "\n";
-  }
+function shipx_preconnect_fonts() {
+  echo '<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>' . "\n";
+  echo '<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">' . "\n";
 }
-add_action('wp_head', 'shipx_preload_fonts');
+add_action('wp_head', 'shipx_preconnect_fonts');

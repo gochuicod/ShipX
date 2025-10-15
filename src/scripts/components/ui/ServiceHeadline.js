@@ -30,7 +30,7 @@ const ServiceHeadline = () => {
           </h4>
           <motion.button
             type="button"
-            className="bg-[#FF00E5] flex flex-row md:gap-x-[0.5vw] gap-[1.5vw] justify-center items-center md:px-[1.5vw] px-[5vw] md:py-[0.5vw] py-[1.5vw] md:rounded-[0.5vw] rounded-[2vw] text-white font-medium md:text-[0.8vw] text-[4vw] text-center cursor-pointer"
+            className="bg-[#FF00E5] flex flex-row md:gap-x-[0.5vw] gap-[1.5vw] justify-center items-center md:px-[1.5vw] px-[5vw] md:py-[0.5vw] py-[1.5vw] md:rounded-[0.5vw] rounded-[2vw] text-white font-medium md:text-[0.8vw] text-[2.5vw] text-center cursor-pointer"
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.8 }}
           >
@@ -41,7 +41,7 @@ const ServiceHeadline = () => {
               viewBox="0 0 24 24"
               strokeWidth={2.5}
               stroke="currentColor"
-              className="md:w-[1vw] w-[3.5vw] md:h-[1vw] h-[3.5vw]"
+              className="md:w-[1vw] w-[2.5vw] md:h-[1vw] h-[2.5vw]"
             >
               <path
                 strokeLinecap="round"

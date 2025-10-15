@@ -65,7 +65,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
           {/* Statistics Section Start */}
           <div
             id="statistics"
-            className={`relative flex md:flex-row flex-col-reverse justify-center items-center gap-x-[3vw] md:gap-y-0 gap-y-[10vw] md:pt-[15vw] pt-[40vw] md:pb-[5vw] pb-[30vw] overflow-hidden select-none ${margin}`}
+            className={`relative flex md:flex-row flex-col-reverse justify-center items-center gap-x-[3vw] md:gap-y-0 gap-y-[10vw] md:pt-[15vw] pt-[40vw] lg:pb-[5vw] md:pb-[5vw] pb-[30vw] overflow-hidden select-none ${margin}`}
           >
             <img
               src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_2.svg"
@@ -307,7 +307,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
           {/* Services Section Start */}
           <div
             id="services"
-            className={`md:h-screen h-auto relative flex flex-col md:gap-y-[1vw] gap-y-0 justify-center items-center pt-[5vw] overflow-hidden`}
+            className={`lg:h-screen md:h-fit h-auto relative flex flex-col md:gap-y-[1vw] gap-y-0 justify-center items-center pt-[5vw] overflow-hidden`}
           >
             <img
               src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_4.svg"
@@ -557,7 +557,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
           {/* Platform Section Start */}
           <div
             id="platform"
-            className={`min-h-screen relative flex flex-col justify-center items-center py-[10vw] overflow-hidden select-none`}
+            className={`lg:min-h-screen md:min-h-fit min-h-screen relative flex flex-col justify-center items-center py-[10vw] overflow-hidden select-none`}
           >
             <img
               className="absolute md:w-[50vw] w-[80vw] md:h-[45vw] h-[80vw] md:translate-x-[17vw] translate-x-[10vw] md:-translate-y-[1vw] translate-y-[1vw] -z-10"
@@ -1205,7 +1205,7 @@ const Main = ({ margin, slug = "", customSeo }) => {
           {/* Offices Section Start */}
           <div
             id="network"
-            className={`md:min-h-screen h-auto relative flex flex-col justify-center items-center pt-[16vw] overflow-hidden select-none md:px-[8vw] px-[5vw]`}
+            className={`lg:min-h-screen md:h-fit h-auto relative flex flex-col justify-center items-center pt-[16vw] overflow-hidden select-none md:px-[8vw] px-[5vw]`}
           >
             <img
               src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_10.svg"

@@ -3,6 +3,7 @@ import { useSwipeable } from "react-swipeable";
 import * as motion from "motion/react-client";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 export default function CarouselNav() {
   const { t } = useTranslation();
@@ -14,14 +15,37 @@ export default function CarouselNav() {
     trackMouse: true,
   });
 
+  const [height, setHeight] = useState("75vh");
+
+  useEffect(() => {
+    const updateHeight = () => {
+      if (window.innerWidth < 768) {
+        // 📱 Mobile screens
+        setHeight("100vh");
+      } else if (window.innerWidth >= 768 && window.innerWidth < 1024) {
+        // 💻 Tablet screens
+        setHeight("45vw");
+      } else {
+        // 🖥️ Desktop screens
+        setHeight("90vh");
+      }
+    };
+
+    updateHeight(); // run on mount
+    window.addEventListener("resize", updateHeight);
+
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
+
   return (
     <div {...handlers}>
       <Carousel
+        style={{ height }}
         autoplay={true}
         autoplayDelay={10000}
         loop={true}
         transition={{ duration: 1 }}
-        className="w-screen rounded-none md:pb-[1vw] pb-[10vw]"
+        className="w-screen rounded-none md:pb-[1vw] pb-[10vw] lg:mt-0 md:mt-[5vw] mt-0"
         swipe={true}
         draggable={true}
         touchMove={true}
@@ -100,7 +124,7 @@ export default function CarouselNav() {
       >
         {/* First slide: custom hero section */}
         <div className="flex flex-col">
-          <div className="relative flex md:flex-row flex-col-reverse md:gap-y-0 items-center md:pt-0 pt-[10vw] md:min-h-[75vh] min-h-fit bg-white md:px-[10vw] px-[10vw]">
+          <div className="relative flex md:flex-row flex-col-reverse md:gap-y-0 items-center md:pt-0 pt-[10vw] lg:min-h-[75vh] md:min-h-fit min-h-fit bg-white md:px-[10vw] px-[10vw]">
             <div className="md:flex-1 flex flex-col md:w-[55%] w-full">
               {/* Tagline */}
               <div
@@ -325,7 +349,7 @@ export default function CarouselNav() {
 
         {/* Second slide: custom hero section */}
         <div className="flex flex-col">
-          <div className="relative flex md:flex-row flex-col-reverse md:gap-y-0 items-center md:pt-0 pt-[10vw] md:min-h-[75vh] min-h-fit bg-white md:px-[10vw] px-[10vw]">
+          <div className="relative flex md:flex-row flex-col-reverse md:gap-y-0 items-center md:pt-0 pt-[10vw] lg:min-h-[75vh] md:min-h-fit min-h-fit bg-white md:px-[10vw] px-[10vw]">
             <div className="flex-1 flex-col md:w-[55%] w-full">
               {/* Tagline */}
               <div
@@ -550,7 +574,7 @@ export default function CarouselNav() {
 
         {/* Third slide: custom hero section */}
         <div className="flex flex-col">
-          <div className="relative flex md:flex-row flex-col-reverse md:gap-y-0 items-center md:pt-0 pt-[10vw] md:min-h-[75vh] min-h-fit bg-white md:px-[10vw] px-[10vw]">
+          <div className="relative flex md:flex-row flex-col-reverse md:gap-y-0 items-center md:pt-0 pt-[10vw] lg:min-h-[75vh] md:min-h-fit min-h-fit bg-white md:px-[10vw] px-[10vw]">
             <div className="flex-1 flex-col md:w-[55%] w-full">
               {/* Tagline */}
               <div
