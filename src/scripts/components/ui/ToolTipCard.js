@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function TooltipCard({
   image,
@@ -9,6 +9,53 @@ export default function TooltipCard({
   hidden,
 }) {
   const [open, setOpen] = useState(false);
+  const [isTouch, setIsTouch] = useState(false);
+  const tooltipRef = useRef(null);
+  const cardRef = useRef(null);
+  const hoverTimeoutRef = useRef(null);
+
+  // Detect touch device
+  useEffect(() => {
+    setIsTouch("ontouchstart" in window || navigator.maxTouchPoints > 0);
+  }, []);
+
+  // Close when clicking outside (for touch)
+  useEffect(() => {
+    if (!isTouch) return;
+    const handleClickOutside = (e) => {
+      if (
+        cardRef.current &&
+        !cardRef.current.contains(e.target) &&
+        tooltipRef.current &&
+        !tooltipRef.current.contains(e.target)
+      ) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isTouch]);
+
+  // Hover logic (desktop)
+  const handleMouseEnter = () => {
+    if (!isTouch) {
+      if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
+      setOpen(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (!isTouch) {
+      hoverTimeoutRef.current = setTimeout(() => {
+        setOpen(false);
+      }, 200); // small delay to prevent flicker
+    }
+  };
+
+  // Click logic (touch)
+  const handleClick = () => {
+    if (isTouch) setOpen((prev) => !prev);
+  };
 
   return (
     <div
@@ -18,7 +65,9 @@ export default function TooltipCard({
                  hover:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.35)] 
                  transition-shadow duration-1000 ease-in-out
                  relative"
-      onClick={() => setOpen((prev) => !prev)}
+      onClick={handleClick}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <img
         loading="lazy"
@@ -31,6 +80,9 @@ export default function TooltipCard({
 
       {/* Tooltip */}
       <div
+        ref={tooltipRef}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         className={`
           absolute md:left-full left-[-2.5vw] md:top-1/2 top-0 ml-[1vw] -translate-y-1/2
           flex flex-col gap-y-[0.5vw] 
@@ -54,9 +106,12 @@ export default function TooltipCard({
         <span className="text-[#757577] md:text-[0.7vw] text-[2vw] pt-[1.5vw]">
           {contact_number}
         </span>
-        <span className="text-[#757577] md:text-[0.7vw] text-[2vw]">
+        <a
+          href={`mailto:${email}`}
+          className="text-[#757577] md:text-[0.7vw] text-[2vw]"
+        >
           {email}
-        </span>
+        </a>
       </div>
     </div>
   );

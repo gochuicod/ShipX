@@ -23,9 +23,13 @@ export const offices = [
   },
   {
     image:
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_17.svg",
+    key: "indonesia",
+  },
+  {
+    image:
       "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_19.svg",
     key: "philippines",
-    hidden: true,
   },
   {
     image:

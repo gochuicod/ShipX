@@ -313,7 +313,7 @@
       "indonesia": {
         "country_name": "อินโดนีเซีย",
         "address": "Jl. KH Mas Mansyur No. 119 - 121. Nyamplungan Kecamatan Pabean Cantikan, Surabaya",
-        "email": "contact.in@shipx.asia"
+        "email": "contact.id@shipx.asia"
       },
       "philippines": {
         "country_name": "ฟิลิปปินส์",
@@ -408,6 +408,7 @@
     "services": "บริการ",
     "platform": "แพลตฟอร์ม",
     "contact": "ติดต่อ",
+    "network": "เครือข่าย",
     "privacy_policy": "นโยบายความเป็นส่วนตัว",
     "terms_and_conditions": "ข้อกำหนดและเงื่อนไข",
     "reach_us_1": "ติดต่อเรา",
