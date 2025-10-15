@@ -38,7 +38,7 @@ const MultiStepLoader = ({
 
   return (
     <div
-      className="multi-step-loader fixed inset-0 flex flex-col justify-center items-center bg-white/80 z-50"
+      className="multi-step-loader fixed inset-0 flex flex-col justify-center items-center bg-white z-50"
       style={{ pointerEvents: "none" }}
     >
       <AnimatePresence exitBeforeEnter>

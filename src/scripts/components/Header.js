@@ -48,6 +48,7 @@ const Header = () => {
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               <img
+                loading="lazy"
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx_logo.svg"
                 alt="ShipX Logo"
                 className="md:w-[3vw] md:h-[1.5vw] w-[14vw] h-[7vw]"
@@ -60,6 +61,7 @@ const Header = () => {
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               <img
+                loading="lazy"
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/logo_sglink_amilo.svg"
                 alt="SGLink Logo"
                 className="md:w-[3vw] md:h-[1.5vw] w-[16vw] h-[5vw]"
@@ -67,6 +69,7 @@ const Header = () => {
             </NavLink>
           </div>
           <img
+            loading="lazy"
             className="h-[1vw] w-[1vw]"
             src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_14.webp"
           />

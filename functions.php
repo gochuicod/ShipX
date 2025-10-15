@@ -90,7 +90,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
             max-width: 600px;
             border-collapse: collapse;
             background-color: #ffffff;
-            background-image: url('https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/bg-images/Main%20BG.png');
+            background-image: url('https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/bg-images/Updated%20BG.png');
             background-repeat: no-repeat;
             background-position: center top;
             background-size: contain;
@@ -151,7 +151,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                   font-family: Karla, Arial, sans-serif;
                 "
               >
-                Hi {$name},
+                Hi {{first_name}},
               </p>
             </td>
           </tr>
@@ -498,7 +498,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                 The
                 <strong>Ship<span style="color: #ff00e5">X</span></strong>
                 Team<br />
-                by SG Link & Amilo
+                by SG LINK & Amilo
               </p>
             </td>
           </tr>
@@ -833,7 +833,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
               "
             >
               You’re receiving this as confirmation of your inquiry with ShipX (by
-              SG Link & Amilo). For urgent matters, reply to this email. Privacy
+              SG LINK & Amilo). For urgent matters, reply to this email. Privacy
               details available on
               <a
                 href="https://shipx.asia"

@@ -21,6 +21,7 @@ export default function TooltipCard({
       onClick={() => setOpen((prev) => !prev)}
     >
       <img
+        loading="lazy"
         className="md:w-[1.5vw] w-[3vw] md:h-[1.5vw] h-[3vw] rounded-full"
         src={image}
       />
@@ -42,6 +43,7 @@ export default function TooltipCard({
         `}
       >
         <img
+          loading="lazy"
           className="md:w-[1.5vw] w-[3vw] md:h-[1.5vw] h-[3vw] rounded-full"
           src={image}
         />

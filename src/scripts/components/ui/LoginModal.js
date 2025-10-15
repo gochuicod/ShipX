@@ -97,6 +97,7 @@ const LoginModal = () => {
                   {t("header.login_modal.amilo.button")}
                 </span>
                 <img
+                  loading="lazy"
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/header_svg_1.svg"
                   alt="Amilo Logo"
                   className="md:h-[1vw] h-[4vw] md:w-[4vw] w-[10vw]"
@@ -127,6 +128,7 @@ const LoginModal = () => {
                   {t("header.login_modal.sglink.button")}
                 </span>
                 <img
+                  loading="lazy"
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/header_svg_2.svg"
                   alt="SG Link Logo"
                   className="md:h-[1vw] h-[4vw] md:w-[4vw] w-[10vw]"

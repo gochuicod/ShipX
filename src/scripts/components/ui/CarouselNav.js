@@ -227,7 +227,9 @@ export default function CarouselNav() {
                   {/* Inner white area */}
                   <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
                     <span className="text-[#4F378A] font-semibold">
-                      {t("hero_section.slide_1.learn_more")}
+                      <NavLink to="/#services" end>
+                        {t("hero_section.slide_1.learn_more")}
+                      </NavLink>
                     </span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -452,7 +454,9 @@ export default function CarouselNav() {
                   {/* Inner white area */}
                   <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
                     <span className="text-[#4F378A] font-semibold">
-                      {t("hero_section.slide_2.learn_more")}
+                      <NavLink to="/#services" end>
+                        {t("hero_section.slide_2.learn_more")}
+                      </NavLink>
                     </span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -678,7 +682,9 @@ export default function CarouselNav() {
                   {/* Inner white area */}
                   <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
                     <span className="text-[#4F378A] font-semibold">
-                      {t("hero_section.slide_3.learn_more")}
+                      <NavLink to="/#services" end>
+                        {t("hero_section.slide_3.learn_more")}
+                      </NavLink>
                     </span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

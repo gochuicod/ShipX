@@ -84,22 +84,27 @@ const App = () => {
           enableDeclineButton
           cookieName="analyticsConsent"
           style={{
-            background: "#2B373B",
-            color: "#fff",
+            background: "#FFF",
+            color: "#1A1A1A",
             fontSize: "14px",
             textAlign: "center",
+            boxShadow: "0 -0.5vw 0.5vw rgba(255, 0, 229, 0.15)",
+            flexWrap: "wrap",
+            justifyContent: "center",
           }}
           buttonStyle={{
-            background: "#fff",
-            color: "#000",
+            background: "#FFF",
+            color: "#1A1A1A",
             fontWeight: "bold",
-            borderRadius: "4px",
-            padding: "6px 12px",
+            borderRadius: "10px",
+            padding: "8px 16px",
+            margin: "6px",
           }}
           declineButtonStyle={{
-            background: "#555",
-            color: "#fff",
-            borderRadius: "4px",
+            background: "#FFF",
+            color: "#1A1A1A",
+            borderRadius: "10px",
+            margin: "6px",
           }}
           expires={150}
           onAccept={() => {

@@ -16,11 +16,13 @@ const Footer = () => {
           <div className="flex flex-col">
             <div className="flex flex-row md:gap-x-[0.5vw] gap-x-[1vw] justify-start items-center">
               <img
+                loading="lazy"
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx_logo_white.svg"
                 alt="ShipX Logo"
                 className="md:w-[5vw] w-[20vw] md:h-[2.5vw] h-[10vw]"
               />
               <img
+                loading="lazy"
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/sglink_amilo_logo_white.svg"
                 alt="SGLink Logo"
                 className="md:w-[5vw] w-[22vw] md:h-[1.5vw] h-[6vw]"
@@ -52,7 +54,9 @@ const Footer = () => {
               whileTap={{ scale: 0.8 }}
               className="bg-white text-[#FF00E5] font-bold md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] rounded-[2vw] cursor-pointer"
             >
-              {t("footer.contact_us")}
+              <NavLink to="/#contact-us" end>
+                {t("footer.contact_us")}
+              </NavLink>
             </motion.button>
           </div>
         </div>

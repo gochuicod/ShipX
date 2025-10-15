@@ -15,6 +15,7 @@ const ServiceHeadline = () => {
       <div className="flex md:flex-row flex-col md:gap-x-[5vw] gap-x-0 md:gap-y-0 gap-y-[10vw] justify-center items-center bg-[#FFD6FA]/50 md:rounded-[1.5vw] rounded-[3.5vw]">
         <div className="flex md:w-[30vw] w-full">
           <img
+            loading="lazy"
             className="shadow-[0_0_1vw_rgba(79,55,138,0.15)] md:rounded-[1.5vw] rounded-[3.5vw]"
             src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_sglink_banner_image_1.webp"
             alt="ShipX Goes Live"
