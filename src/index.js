@@ -57,6 +57,28 @@ const App = () => {
     }
   }, [gtmInitialized]);
 
+  const [textSize, setTextSize] = useState("0.8vw");
+
+  useEffect(() => {
+    const updateTextSize = () => {
+      if (window.innerWidth < 768) {
+        // 📱 Mobile screens
+        setTextSize("2.2vw");
+      } else if (window.innerWidth >= 768 && window.innerWidth < 1024) {
+        // 💻 Tablet screens
+        setTextSize("0.8vw");
+      } else {
+        // 🖥️ Desktop screens
+        setTextSize("0.8vw");
+      }
+    };
+
+    updateTextSize(); // run on mount
+    window.addEventListener("resize", updateTextSize);
+
+    return () => window.removeEventListener("resize", updateTextSize);
+  }, []);
+
   return (
     <HelmetProvider context={helmetContext}>
       <BrowserRouter>
@@ -90,6 +112,7 @@ const App = () => {
               boxShadow: "0 -0.5vw 0.5vw rgba(255, 0, 229, 0.15)",
               flexWrap: "wrap",
               justifyContent: "center",
+              fontSize: textSize,
             }}
             buttonStyle={{
               background: "#FFF",
