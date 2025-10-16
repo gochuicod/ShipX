@@ -1,16 +1,23 @@
+import { useEffect } from "react";
 import { margin } from "../utils/constants";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 import SEO from "./ui/SEO";
 
 const PrivacyPolicy = () => {
   const { t } = useTranslation();
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); // optional smooth scroll
+  }, [pathname]);
 
   return (
     <>
       <SEO
         title="ShipX - Privacy Policy"
         description="Welcome to ShipX's Privacy Policy Page!"
-        canonical="https://shipx.asia"
+        canonical="https://shipx.asia/privacy-policy"
         ogImage="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/logo-shipx.webp"
       />
 

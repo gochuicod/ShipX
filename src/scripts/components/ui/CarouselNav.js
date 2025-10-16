@@ -203,7 +203,7 @@ export default function CarouselNav() {
                     bg-[length:200%_100%] bg-[position:0%_0%]
                     hover:bg-[position:100%_0%]
                     transition-[background-position] duration-1000 ease-in-out
-                    md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
+                    md:py-[0.6vw] py-[1.5vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
                     text-white font-medium cursor-pointer
                   "
                   to="/book-a-demo"
@@ -430,7 +430,7 @@ export default function CarouselNav() {
                     bg-[length:200%_100%] bg-[position:0%_0%]
                     hover:bg-[position:100%_0%]
                     transition-[background-position] duration-1000 ease-in-out
-                    md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
+                    md:py-[0.6vw] py-[1.5vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
                     text-white font-medium cursor-pointer
                   "
                   to="/book-a-demo"
@@ -658,7 +658,7 @@ export default function CarouselNav() {
                     bg-[length:200%_100%] bg-[position:0%_0%]
                     hover:bg-[position:100%_0%]
                     transition-[background-position] duration-1000 ease-in-out
-                    md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
+                    md:py-[0.6vw] py-[1.5vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
                     text-white font-medium cursor-pointer
                   "
                   to="/book-a-demo"

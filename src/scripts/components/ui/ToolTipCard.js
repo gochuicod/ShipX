@@ -103,9 +103,12 @@ export default function TooltipCard({
           {country_name}
         </span>
         {description}
-        <span className="text-[#757577] md:text-[0.7vw] text-[2vw] pt-[1.5vw]">
+        <a
+          href={`tel:${contact_number}`}
+          className="text-[#757577] md:text-[0.7vw] text-[2vw] pt-[1.5vw]"
+        >
           {contact_number}
-        </span>
+        </a>
         <a
           href={`mailto:${email}`}
           className="text-[#757577] md:text-[0.7vw] text-[2vw]"

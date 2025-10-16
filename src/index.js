@@ -11,6 +11,7 @@ import Layout from "./scripts/Layout";
 import { margin } from "./scripts/utils/constants";
 import ScrollToHash from "./scripts/components/ui/ScrollToHash";
 import MultiStepLoader from "./scripts/components/ui/MultiStepLoader";
+import ResetOnRefresh from "./scripts/components/ui/ResetOnRefresh";
 
 const Main = lazy(() => import("./scripts/components/Main"));
 const PrivacyPolicy = lazy(() => import("./scripts/components/PrivacyPolicy"));
@@ -82,6 +83,7 @@ const App = () => {
   return (
     <HelmetProvider context={helmetContext}>
       <BrowserRouter>
+        <ResetOnRefresh paths={["/"]} />
         <Layout>
           <ScrollToHash />
           <Suspense fallback={<MultiStepLoader />}>
