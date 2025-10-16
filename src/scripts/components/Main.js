@@ -1,3 +1,4 @@
+import i18n from "i18next";
 import { useState } from "react";
 import { offices, services, services_2 } from "../utils/constants";
 import { NavLink } from "react-router-dom";
@@ -41,12 +42,33 @@ const Main = ({ margin }) => {
           <Carousel margin={margin} />
           {/* Hero Section End */}
           {/* Service Headline Section Start */}
-          <ServiceHeadline />
+          <motion.div
+            initial={{ opacity: 0, y: 80, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{
+              type: "spring", // makes it bouncy
+              stiffness: 120, // how tight the spring is
+              damping: 12, // how quickly it settles
+              mass: 0.8, // how heavy the motion feels
+            }}
+            viewport={{ once: true, amount: 0.5 }}
+          >
+            <ServiceHeadline />
+          </motion.div>
           {/* Service Headline Section End */}
           {/* Statistics Section Start */}
-          <div
+          <motion.div
             id="statistics"
             className={`relative flex md:flex-row flex-col-reverse justify-center items-center gap-x-[3vw] md:gap-y-0 gap-y-[10vw] md:pt-[15vw] pt-[40vw] lg:pb-[5vw] md:pb-[5vw] pb-[30vw] overflow-hidden select-none ${margin}`}
+            initial={{ opacity: 0, y: 80, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{
+              type: "spring", // makes it bouncy
+              stiffness: 120, // how tight the spring is
+              damping: 12, // how quickly it settles
+              mass: 0.8, // how heavy the motion feels
+            }}
+            viewport={{ once: true, amount: 0.5 }}
           >
             <img
               src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_2.svg"
@@ -276,19 +298,28 @@ const Main = ({ margin }) => {
                 </h6>
                 <h1 className="md:text-[2vw] text-[6vw] text-[#1A1A1A] md:text-start text-center font-semibold md:leading-[2.5vw] leading-[6.5vw]">
                   {t("statistics_section.tagline_1")}&nbsp;
-                  <br />
+                  {i18n.language !== "vn" && <br />}
                   {t("statistics_section.tagline_2")}&nbsp;
                   <br className="md:block hidden" />
                   {t("statistics_section.tagline_3")}
                 </h1>
               </div>
             </div>
-          </div>
+          </motion.div>
           {/* Statistics Section End */}
           {/* Services Section Start */}
-          <div
+          <motion.div
             id="services"
             className={`lg:h-screen md:h-fit h-auto relative flex flex-col md:gap-y-[1vw] gap-y-0 justify-center items-center pt-[5vw] overflow-hidden`}
+            initial={{ opacity: 0, y: 80, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{
+              type: "spring", // makes it bouncy
+              stiffness: 120, // how tight the spring is
+              damping: 12, // how quickly it settles
+              mass: 0.8, // how heavy the motion feels
+            }}
+            viewport={{ once: true, amount: 0.5 }}
           >
             <img
               src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_4.svg"
@@ -533,12 +564,21 @@ const Main = ({ margin }) => {
             <span className="text-[#63666D] md:text-[0.6vw] text-[2vw] text-center select-none md:pt-0 pt-[3vw]">
               {t("services_section.note")}
             </span>
-          </div>
+          </motion.div>
           {/* Services Section End */}
           {/* Platform Section Start */}
-          <div
+          <motion.div
             id="platform"
             className={`lg:min-h-screen md:min-h-fit min-h-screen relative flex flex-col justify-center items-center py-[10vw] overflow-hidden select-none`}
+            initial={{ opacity: 0, y: 80, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{
+              type: "spring", // makes it bouncy
+              stiffness: 120, // how tight the spring is
+              damping: 12, // how quickly it settles
+              mass: 0.8, // how heavy the motion feels
+            }}
+            viewport={{ once: true, amount: 0.5 }}
           >
             <img
               className="absolute md:w-[50vw] w-[80vw] md:h-[45vw] h-[80vw] md:translate-x-[17vw] translate-x-[10vw] md:-translate-y-[1vw] translate-y-[1vw] -z-10"
@@ -776,11 +816,20 @@ const Main = ({ margin }) => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
           {/* Platform Section End */}
           {/* SG Link and Amilo Cards Start */}
-          <div
+          <motion.div
             className={`relative w-[100vw] ${margin} flex md:flex-row flex-col justify-center items-center md:gap-x-[3vw] gap-x-0 md:gap-y-0 gap-y-[10vw] md:pb-[10vw] pb-[25vw]`}
+            initial={{ opacity: 0, y: 80, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{
+              type: "spring", // makes it bouncy
+              stiffness: 120, // how tight the spring is
+              damping: 12, // how quickly it settles
+              mass: 0.8, // how heavy the motion feels
+            }}
+            viewport={{ once: true, amount: 0.5 }}
           >
             <div className="absolute top-[15vw] left-[-15vw] size-[15vw] rounded-full shadow-[15vw_0vw_25vw_rgba(74,58,255,0.3)] -z-10"></div>
             <div className="absolute top-[15vw] left-[-15vw] size-[15vw] rounded-full shadow-[20vw_10vw_15vw_rgba(255,0,229,0.3)] -z-30"></div>
@@ -1048,11 +1097,20 @@ const Main = ({ margin }) => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
           {/* SG Link and Amilo Cards End */}
           {/* Freight & Customs Section Start */}
-          <div
+          <motion.div
             className={`flex flex-col md:gap-y-[2vw] gap-y-0 ${margin} select-none`}
+            initial={{ opacity: 0, y: 80, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{
+              type: "spring", // makes it bouncy
+              stiffness: 120, // how tight the spring is
+              damping: 12, // how quickly it settles
+              mass: 0.8, // how heavy the motion feels
+            }}
+            viewport={{ once: true, amount: 0.5 }}
           >
             <div className="flex md:flex-row flex-col justify-between items-center gap-x-[5vw]">
               <div className="flex flex-col gap-y-[1vw] md:justify-start justify-center md:items-start items-center md:w-[25vw] w-auto">
@@ -1453,12 +1511,21 @@ const Main = ({ margin }) => {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
           {/* Freight & Customs Section End */}
           {/* Offices Section Start */}
-          <div
+          <motion.div
             id="network"
             className={`lg:min-h-screen md:h-fit h-auto relative flex flex-col justify-center items-center pt-[16vw] overflow-hidden select-none md:px-[8vw] px-[5vw]`}
+            initial={{ opacity: 0, y: 80, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{
+              type: "spring", // makes it bouncy
+              stiffness: 120, // how tight the spring is
+              damping: 12, // how quickly it settles
+              mass: 0.8, // how heavy the motion feels
+            }}
+            viewport={{ once: true, amount: 0.5 }}
           >
             <img
               src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_10.svg"
@@ -1616,10 +1683,21 @@ const Main = ({ margin }) => {
                 }}
               ></div>
             </div>
-          </div>
+          </motion.div>
           {/* Offices Section End */}
           {/* Future Announcements Banner Start */}
-          <div className="w-full justify-center items-center flex md:px-0 px-[5vw]">
+          <motion.div
+            className="w-full justify-center items-center flex md:px-0 px-[5vw]"
+            initial={{ opacity: 0, y: 80, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{
+              type: "spring", // makes it bouncy
+              stiffness: 120, // how tight the spring is
+              damping: 12, // how quickly it settles
+              mass: 0.8, // how heavy the motion feels
+            }}
+            viewport={{ once: true, amount: 0.5 }}
+          >
             <div
               className={`flex md:flex-row flex-col w-fit justify-center items-center md:gap-x-[3vw] gap-x-[11vw] bg-gradient-to-r from-[#4F378A] from-5% to-[#FF00E5] to-100% md:rounded-[2vw] rounded-[4vw] md:pl-[8vw] pl-[5vw] md:pt-0 pt-[5vw] md:pb-0 pb-[5vw] md:pr-0 pr-[5vw] md:my-[5vw] my-[10vw]`}
             >
@@ -1648,12 +1726,21 @@ const Main = ({ margin }) => {
                 ></div>
               </div>
             </div>
-          </div>
+          </motion.div>
           {/* Future Announcements Banner End */}
           {/* Contact Us Section Start */}
-          <div
+          <motion.div
             id="contact-us"
             className="relative flex flex-col justify-center items-center md:pt-[10vw] pt-[1vw] overflow-hidden"
+            initial={{ opacity: 0, y: 80, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{
+              type: "spring", // makes it bouncy
+              stiffness: 120, // how tight the spring is
+              damping: 12, // how quickly it settles
+              mass: 0.8, // how heavy the motion feels
+            }}
+            viewport={{ once: true, amount: 0.5 }}
           >
             <img
               src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_7.svg"
@@ -1791,7 +1878,7 @@ const Main = ({ margin }) => {
                 <ContactForm />
               </div>
             </div>
-          </div>
+          </motion.div>
           {/* Contact Us Section End */}
         </div>
       </div>
