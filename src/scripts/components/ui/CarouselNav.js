@@ -222,30 +222,30 @@ export default function CarouselNav() {
                   }}
                 >
                   {/* Gradient border */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+                  <NavLink to="/#services" end>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
-                  {/* Inner white area */}
-                  <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
-                    <span className="text-[#4F378A] font-semibold">
-                      <NavLink to="/#services" end>
+                    {/* Inner white area */}
+                    <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
+                      <span className="text-[#4F378A] font-semibold">
                         {t("hero_section.slide_1.learn_more")}
-                      </NavLink>
-                    </span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={3.5}
-                      stroke="#FF00E5"
-                      className="md:size-[0.7vw] size-[2.5vw]"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                      />
-                    </svg>
-                  </div>
+                      </span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={3.5}
+                        stroke="#FF00E5"
+                        className="md:size-[0.7vw] size-[2.5vw]"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                        />
+                      </svg>
+                    </div>
+                  </NavLink>
                 </motion.button>
               </div>
             </div>
@@ -449,30 +449,30 @@ export default function CarouselNav() {
                   }}
                 >
                   {/* Gradient border */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+                  <NavLink to="/#services" end>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
-                  {/* Inner white area */}
-                  <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
-                    <span className="text-[#4F378A] font-semibold">
-                      <NavLink to="/#services" end>
+                    {/* Inner white area */}
+                    <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
+                      <span className="text-[#4F378A] font-semibold">
                         {t("hero_section.slide_2.learn_more")}
-                      </NavLink>
-                    </span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={3.5}
-                      stroke="#FF00E5"
-                      className="md:size-[0.7vw] size-[2.5vw]"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                      />
-                    </svg>
-                  </div>
+                      </span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={3.5}
+                        stroke="#FF00E5"
+                        className="md:size-[0.7vw] size-[2.5vw]"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                        />
+                      </svg>
+                    </div>
+                  </NavLink>
                 </motion.button>
               </div>
             </div>
@@ -677,30 +677,30 @@ export default function CarouselNav() {
                   }}
                 >
                   {/* Gradient border */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+                  <NavLink to="/#services" end>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
-                  {/* Inner white area */}
-                  <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
-                    <span className="text-[#4F378A] font-semibold">
-                      <NavLink to="/#services" end>
+                    {/* Inner white area */}
+                    <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
+                      <span className="text-[#4F378A] font-semibold">
                         {t("hero_section.slide_3.learn_more")}
-                      </NavLink>
-                    </span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={3.5}
-                      stroke="#FF00E5"
-                      className="md:size-[0.7vw] size-[2.5vw]"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                      />
-                    </svg>
-                  </div>
+                      </span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={3.5}
+                        stroke="#FF00E5"
+                        className="md:size-[0.7vw] size-[2.5vw]"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                        />
+                      </svg>
+                    </div>
+                  </NavLink>
                 </motion.button>
               </div>
             </div>

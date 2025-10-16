@@ -1,7 +1,7 @@
 import "./index.css";
 import "./i18n";
 import React, { useEffect, useState, Suspense, lazy } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 
 import Lenis from "@studio-freight/lenis";
@@ -19,6 +19,7 @@ const TermsAndConditions = lazy(
   () => import("./scripts/components/TermsAndConditions"),
 );
 const BookADemo = lazy(() => import("./scripts/components/BookADemo"));
+const Blog = lazy(() => import("./scripts/components/Blog"));
 const NotFound = lazy(() => import("./scripts/components/ui/NotFound"));
 
 import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
@@ -95,6 +96,11 @@ const App = () => {
                 element={<TermsAndConditions />}
               />
               <Route path="/book-a-demo" element={<BookADemo />} />
+              <Route
+                path="/blog"
+                element={<Navigate to="/blog/18" replace />}
+              />
+              <Route path="/blog/:id" element={<Blog />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

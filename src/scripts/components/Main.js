@@ -797,7 +797,7 @@ const Main = ({ margin }) => {
                   transition-[background-position] duration-1000 ease-in-out
                   md:py-[0.6vw] py-[1.5vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
                   text-white font-medium absolute md:bottom-[-1vw] bottom-[-3vw] left-1/2 transform -translate-x-1/2 cursor-pointer
-                  flex flex-row md:gap-x-[1vw] gap-x-[3vw] justify-center items-center z-[10] lg:w-auto md:w-auto w-[55vw]
+                  flex flex-row md:gap-x-[1vw] gap-x-[3vw] justify-center items-center z-[10] lg:w-auto md:w-auto w-[60vw]
                 "
               >
                 <span className="md:text-[0.8vw] text-[2.5vw] font-normal">
@@ -928,7 +928,7 @@ const Main = ({ margin }) => {
                   transition-[background-position] duration-1000 ease-in-out
                   md:py-[0.6vw] py-[1.5vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
                   text-white font-medium absolute md:bottom-[-1vw] bottom-[-3vw] left-1/2 transform -translate-x-1/2 cursor-pointer
-                  flex flex-row md:gap-x-[1vw] gap-x-[3vw] justify-center items-center z-[10] lg:w-auto md:w-auto w-[55vw]
+                  flex flex-row md:gap-x-[1vw] gap-x-[3vw] justify-center items-center z-[10] lg:w-auto md:w-auto w-[60vw]
                 "
               >
                 <span className="md:text-[0.8vw] text-[2.5vw] font-normal">

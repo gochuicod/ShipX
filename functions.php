@@ -69,17 +69,20 @@ function mytheme_handle_contact(WP_REST_Request $request) {
       />
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="color-scheme" content="light dark" />
+      <meta name="supported-color-schemes" content="light dark" />
+
       <title>ShipX - Thank You</title>
     </head>
     <body
       style="
         margin: 0;
         padding: 0;
-        background-color: #ffffff;
+        background-color: #ffffff !important;
         font-family: 'Kantumruy Pro', Arial, sans-serif;
       "
     >
-      <center style="width: 100%; background-color: #ffffff">
+      <center style="width: 100%; background-color: #ffffff !important">
         <table
           align="center"
           border="0"
@@ -89,7 +92,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
           style="
             max-width: 600px;
             border-collapse: collapse;
-            background-color: #ffffff;
+            background-color: #ffffff !important;
             background-image: url('https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/bg-images/Updated%20BG.png');
             background-repeat: no-repeat;
             background-position: center top;
@@ -99,7 +102,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
           <!-- Logo -->
           <tr>
             <td align="center" style="padding: 30px 0 10px 0">
-              <a href="https://shipx.asia/" target="_blank">
+              <a href="http://shipx.asia/" target="_blank">
                 <img
                   src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/ShipX%20Logo.png"
                   width="108"
@@ -116,7 +119,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
             <td align="center" style="padding: 10px 20px">
               <h1
                 style="
-                  color: #ff00e5;
+                  color: #ff00e5 !important;
                   font-size: 54px;
                   font-weight: 700;
                   margin: 0;
@@ -127,7 +130,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
               </h1>
               <p
                 style="
-                  color: #1a1a1a;
+                  color: #1a1a1a !important;
                   font-size: 24px;
                   font-weight: 500;
                   margin: 10px 0 0 0;
@@ -145,7 +148,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
               <p
                 style="
                   font-size: 18px;
-                  color: #000000;
+                  color: #000000 !important;
                   font-weight: 700;
                   margin: 0;
                   font-family: Karla, Arial, sans-serif;
@@ -162,7 +165,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
               <p
                 style="
                   font-size: 16px;
-                  color: #000000;
+                  color: #000000 !important;
                   line-height: 24px;
                   margin: 0;
                 "
@@ -181,7 +184,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
             <td align="center" style="padding: 20px 40px">
               <p
                 style="
-                  color: #ff00e5;
+                  color: #ff00e5 !important;
                   font-weight: 700;
                   font-size: 18px;
                   margin: 0;
@@ -189,11 +192,11 @@ function mytheme_handle_contact(WP_REST_Request $request) {
               >
                 Want to move faster?
               </p>
-              <p style="font-size: 16px; color: #000000">
+              <p style="font-size: 16px; color: #000000 !important">
                 Book a time that suits you
               </p>
               <a
-                href="https://shipx.asia/book-a-demo"
+                href="http://shipx.asia/book-a-demo"
                 target="_blank"
                 style="
                   display: inline-block;
@@ -202,9 +205,9 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                     circle at 76% 51%,
                     #ff00e5 0%,
                     #4f378a 100%
-                  );
+                  ) !important;
                   border-radius: 20px;
-                  color: #ffffff;
+                  color: #ffffff !important;
                   font-size: 18px;
                   font-weight: bold;
                   text-decoration: none;
@@ -221,7 +224,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
             <td align="center" style="padding: 0px 40px">
               <p
                 style="
-                  color: #ff00e5;
+                  color: #ff00e5 !important;
                   font-weight: 700;
                   font-size: 18px;
                   margin: 0;
@@ -229,7 +232,13 @@ function mytheme_handle_contact(WP_REST_Request $request) {
               >
                 Connect with Our Local Team
               </p>
-              <p style="font-size: 16px; color: #000000; margin: 5px 0 10px 20px">
+              <p
+                style="
+                  font-size: 16px;
+                  color: #000000 !important;
+                  margin: 5px 0 10px 20px;
+                "
+              >
                 See contacts below
               </p>
 
@@ -254,7 +263,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                     align="center"
                     valign="top"
                     style="
-                      background-color: #f8f7ff;
+                      background-color: #f8f7ff !important;
                       border-radius: 7px;
                       padding: 15px;
                     "
@@ -269,7 +278,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                       href="tel:+842873001234"
                       style="
                         font-size: 12px;
-                        color: #4d4d4d;
+                        color: #4d4d4d !important;
                         text-decoration: none;
                       "
                       >(+84) 28 7300 1234</a
@@ -293,7 +302,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                     align="center"
                     valign="top"
                     style="
-                      background-color: #f8f7ff;
+                      background-color: #f8f7ff !important;
                       border-radius: 7px;
                       padding: 15px;
                     "
@@ -308,7 +317,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                       href="tel:+6567890123"
                       style="
                         font-size: 12px;
-                        color: #4d4d4d;
+                        color: #4d4d4d !important;
                         text-decoration: none;
                       "
                       >(+65) 6789 0123</a
@@ -317,7 +326,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                       href="mailto:contact.sg@shipx.asia?subject=ShipX%20Business%20Inquiry%20-%20Singapore%20Region"
                       style="
                         font-size: 12px;
-                        color: #4d4d4d;
+                        color: #4d4d4d !important;
                         text-decoration: none;
                       "
                       >contact.sg@shipx.asia</a
@@ -332,7 +341,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                     align="center"
                     valign="top"
                     style="
-                      background-color: #f8f7ff;
+                      background-color: #f8f7ff !important;
                       border-radius: 7px;
                       padding: 15px;
                     "
@@ -347,7 +356,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                       href="tel:+63281234567"
                       style="
                         font-size: 12px;
-                        color: #4d4d4d;
+                        color: #4d4d4d !important;
                         text-decoration: none;
                       "
                       >(+63) 2 8123 4567</a
@@ -356,7 +365,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                       href="mailto:contact.ph@shipx.asia?subject=ShipX%20Business%20Inquiry%20-%20Philippines%20Region"
                       style="
                         font-size: 12px;
-                        color: #4d4d4d;
+                        color: #4d4d4d !important;
                         text-decoration: none;
                       "
                       >contact.ph@shipx.asia</a
@@ -376,7 +385,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                     align="center"
                     valign="top"
                     style="
-                      background-color: #f8f7ff;
+                      background-color: #f8f7ff !important;
                       border-radius: 7px;
                       padding: 15px;
                     "
@@ -391,7 +400,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                       href="tel:+60392123456"
                       style="
                         font-size: 12px;
-                        color: #4d4d4d;
+                        color: #4d4d4d !important;
                         text-decoration: none;
                       "
                       >(+60) 3 9212 3456</a
@@ -400,7 +409,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                       href="mailto:contact.my@shipx.asia?subject=ShipX%20Business%20Inquiry%20-%20Malaysia%20Region"
                       style="
                         font-size: 12px;
-                        color: #4d4d4d;
+                        color: #4d4d4d !important;
                         text-decoration: none;
                       "
                       >contact.my@shipx.asia</a
@@ -415,7 +424,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                     align="center"
                     valign="top"
                     style="
-                      background-color: #f8f7ff;
+                      background-color: #f8f7ff !important;
                       border-radius: 7px;
                       padding: 15px;
                     "
@@ -431,7 +440,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                       href="mailto:contact.us@shipx.asia?subject=ShipX%20Business%20Inquiry%20-%20United%20States%20Region"
                       style="
                         font-size: 12px;
-                        color: #4d4d4d;
+                        color: #4d4d4d !important;
                         text-decoration: none;
                       "
                       >contact.us@shipx.asia</a
@@ -446,7 +455,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                     align="center"
                     valign="top"
                     style="
-                      background-color: #f8f7ff;
+                      background-color: #f8f7ff !important;
                       border-radius: 7px;
                       padding: 15px;
                     "
@@ -461,7 +470,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                       href="tel:+6623456789"
                       style="
                         font-size: 12px;
-                        color: #4d4d4d;
+                        color: #4d4d4d !important;
                         text-decoration: none;
                       "
                       >(+66) 2 345 6789</a
@@ -470,7 +479,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                       href="mailto:contact.th@shipx.asia?subject=ShipX%20Business%20Inquiry%20-%20Thailand%20Region"
                       style="
                         font-size: 12px;
-                        color: #4d4d4d;
+                        color: #4d4d4d !important;
                         text-decoration: none;
                       "
                       >contact.th@shipx.asia</a
@@ -487,7 +496,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
               <p
                 style="
                   font-size: 16px;
-                  color: #1a1a1a;
+                  color: #1a1a1a !important;
                   margin: 0;
                   line-height: 20px;
                   font-weight: 400;
@@ -496,9 +505,11 @@ function mytheme_handle_contact(WP_REST_Request $request) {
               >
                 Best, <br />
                 The
-                <strong>Ship<span style="color: #ff00e5">X</span></strong>
+                <strong
+                  >Ship<span style="color: #ff00e5 !important">X</span></strong
+                >
                 Team<br />
-                by SG LINK & Amilo
+                by SG Link & Amilo
               </p>
             </td>
           </tr>
@@ -531,7 +542,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                     <a
                       href="mailto:info@shipx.asia?subject=ShipX%20Business%20Inquiry"
                       style="
-                        color: #000000;
+                        color: #000000 !important;
                         text-decoration: none;
                         font-size: 14px;
                       "
@@ -551,7 +562,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                     <a
                       href="tel:+84902702345"
                       style="
-                        color: #000000;
+                        color: #000000 !important;
                         text-decoration: none;
                         font-size: 14px;
                       "
@@ -572,7 +583,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                       href="https://shipx.asia"
                       target="_blank"
                       style="
-                        color: #000000;
+                        color: #000000 !important;
                         text-decoration: none;
                         font-size: 14px;
                       "
@@ -594,7 +605,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                   circle at center,
                   #ffd6fa60 0%,
                   #ffffff23 100%
-                );
+                ) !important;
                 padding: 0px 0px;
               "
             >
@@ -636,7 +647,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                       style="
                         font-size: 18px;
                         font-weight: 700;
-                        color: #1b1b1b;
+                        color: #1b1b1b !important;
                         margin: 0 0 8px;
                         line-height: 22px;
                       "
@@ -646,7 +657,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                         href="https://shipx.asia"
                         target="_blank"
                         style="
-                          color: #ff00e5;
+                          color: #ff00e5 !important;
                           text-decoration: none;
                           font-weight: 600;
                         "
@@ -663,8 +674,8 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                           90deg,
                           #4f378a 0%,
                           #ff00e5 100%
-                        );
-                        color: #ffffff;
+                        ) !important;
+                        color: #ffffff !important;
                         padding: 10px 22px;
                         font-size: 14px;
                         font-weight: 600;
@@ -691,7 +702,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
               "
               style="
                 padding: 30px 0px;
-                color: #ffffff;
+                color: #ffffff !important;
                 background-repeat: no-repeat;
                 background-position: center top;
                 background-size: contain;
@@ -729,7 +740,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                         font-size: 12px;
                         margin: 0;
                         line-height: 18px;
-                        color: #ffffff;
+                        color: #ffffff !important;
                         font-weight: 600;
                         font-family: 'Kantumruy Pro', Arial, sans-serif;
                       "
@@ -741,7 +752,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                       style="
                         font-size: 12px;
                         line-height: 14px;
-                        color: #f2f2f2;
+                        color: #f2f2f2 !important;
                         font-family: 'Kantumruy Pro', Arial, sans-serif;
                       "
                     >
@@ -768,14 +779,20 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                       <a
                         href="https://shipx.asia/terms-and-conditions"
                         target="_blank"
-                        style="color: #ffffff; text-decoration: underline"
+                        style="
+                          color: #ffffff !important;
+                          text-decoration: underline;
+                        "
                         >Terms and Conditions</a
                       >
                       &nbsp;•&nbsp;
                       <a
                         href="https://shipx.asia/privacy-policy"
                         target="_blank"
-                        style="color: #ffffff; text-decoration: underline"
+                        style="
+                          color: #ffffff !important;
+                          text-decoration: underline;
+                        "
                         >Privacy Policy</a
                       >
                     </p>
@@ -785,7 +802,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                         font-size: 12px;
                         margin: 0;
                         line-height: 16px;
-                        color: #ffffff;
+                        color: #ffffff !important;
                         text-align: center;
                       "
                     >
@@ -808,7 +825,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                     align="center"
                     style="
                       font-size: 11px;
-                      color: #ffffff;
+                      color: #ffffff !important;
                       padding: 0px 10px 0px 10px;
                     "
                   >
@@ -825,20 +842,20 @@ function mytheme_handle_contact(WP_REST_Request $request) {
             <td
               align="center"
               style="
-                background-color: #ffffff;
+                background-color: #ffffff !important;
                 padding: 0px 10px 20px 10px;
-                color: #777777;
+                color: #777777 !important;
                 font-size: 10px;
                 line-height: 16px;
               "
             >
               You’re receiving this as confirmation of your inquiry with ShipX (by
-              SG LINK & Amilo). For urgent matters, reply to this email. Privacy
+              SG Link & Amilo). For urgent matters, reply to this email. Privacy
               details available on
               <a
                 href="https://shipx.asia"
                 target="_blank"
-                style="color: #4f378a; text-decoration: underline"
+                style="color: #4f378a !important; text-decoration: underline"
                 >shipx.asia</a
               >.
             </td>
