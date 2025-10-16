@@ -23,6 +23,8 @@ const NotFound = lazy(() => import("./scripts/components/ui/NotFound"));
 import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
 import { initGTM } from "./tagmanager";
 
+const helmetContext = {};
+
 const App = () => {
   const [gtmInitialized, setGtmInitialized] = useState(false);
 
@@ -56,63 +58,65 @@ const App = () => {
   }, [gtmInitialized]);
 
   return (
-    <BrowserRouter>
-      <Layout>
-        <ScrollToHash />
-        <Suspense fallback={<MultiStepLoader />}>
-          <Routes>
-            <Route path="/" element={<Main margin={margin} />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route
-              path="/terms-and-conditions"
-              element={<TermsAndConditions />}
-            />
-            <Route path="/book-a-demo" element={<BookADemo />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
+    <HelmetProvider context={helmetContext}>
+      <BrowserRouter>
+        <Layout>
+          <ScrollToHash />
+          <Suspense fallback={<MultiStepLoader />}>
+            <Routes>
+              <Route path="/" element={<Main margin={margin} />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route
+                path="/terms-and-conditions"
+                element={<TermsAndConditions />}
+              />
+              <Route path="/book-a-demo" element={<BookADemo />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
 
-        {/* ✅ Cookie Banner for consent */}
-        <CookieConsent
-          location="bottom"
-          buttonText="Accept"
-          declineButtonText="Decline"
-          enableDeclineButton
-          cookieName="analyticsConsent"
-          style={{
-            background: "#FFF",
-            color: "#1A1A1A",
-            fontSize: "14px",
-            textAlign: "center",
-            boxShadow: "0 -0.5vw 0.5vw rgba(255, 0, 229, 0.15)",
-            flexWrap: "wrap",
-            justifyContent: "center",
-          }}
-          buttonStyle={{
-            background: "#FFF",
-            color: "#1A1A1A",
-            fontWeight: "bold",
-            borderRadius: "10px",
-            padding: "8px 16px",
-            margin: "6px",
-          }}
-          declineButtonStyle={{
-            background: "#FFF",
-            color: "#1A1A1A",
-            borderRadius: "10px",
-            margin: "6px",
-          }}
-          expires={150}
-          onAccept={() => {
-            initGTM();
-            setGtmInitialized(true);
-          }}
-        >
-          We use cookies for analytics and marketing. You can accept or decline
-          tracking.
-        </CookieConsent>
-      </Layout>
-    </BrowserRouter>
+          {/* ✅ Cookie Banner for consent */}
+          <CookieConsent
+            location="bottom"
+            buttonText="Accept"
+            declineButtonText="Decline"
+            enableDeclineButton
+            cookieName="analyticsConsent"
+            style={{
+              background: "#FFF",
+              color: "#1A1A1A",
+              fontSize: "14px",
+              textAlign: "center",
+              boxShadow: "0 -0.5vw 0.5vw rgba(255, 0, 229, 0.15)",
+              flexWrap: "wrap",
+              justifyContent: "center",
+            }}
+            buttonStyle={{
+              background: "#FFF",
+              color: "#1A1A1A",
+              fontWeight: "bold",
+              borderRadius: "10px",
+              padding: "8px 16px",
+              margin: "6px",
+            }}
+            declineButtonStyle={{
+              background: "#FFF",
+              color: "#1A1A1A",
+              borderRadius: "10px",
+              margin: "6px",
+            }}
+            expires={150}
+            onAccept={() => {
+              initGTM();
+              setGtmInitialized(true);
+            }}
+          >
+            We use cookies for analytics and marketing. You can accept or
+            decline tracking.
+          </CookieConsent>
+        </Layout>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 };
 
