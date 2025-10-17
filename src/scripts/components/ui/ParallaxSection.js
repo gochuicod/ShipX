@@ -5,9 +5,9 @@ import { useRef } from "react";
 export default function ParallaxSection({
   children,
   className = "",
-  distance = 100, // how far it moves up/down
+  distance = 150, // how far it moves up/down
   stiffness = 120,
-  damping = 8,
+  damping = 12,
   mass = 0.8,
   once = false,
 }) {

@@ -52,7 +52,7 @@ const Footer = () => {
             <motion.button
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.8 }}
-              className="bg-white text-[#FF00E5] font-bold md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] rounded-[2vw] cursor-pointer"
+              className="bg-white text-[#FF00E5] font-bold md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] rounded-full cursor-pointer"
             >
               <NavLink to="/#contact-us" end>
                 {t("footer.contact_us")}
@@ -94,8 +94,8 @@ const Footer = () => {
               {t("footer.terms_and_conditions")}
             </NavLink>
           </div>
-          <div className="flex flex-col gap-y-[1vw]">
-            <span className="font-medium">Reach us</span>
+          <div className="flex flex-col gap-y-[1vw] md:w-[15vw]">
+            <span className="font-medium">{t("footer.reach_us_1")}</span>
             {/* Contact Number */}
             <div className="flex flex-row items-center md:pl-[1vw] pl-[3vw]">
               <svg
@@ -113,7 +113,7 @@ const Footer = () => {
                 />
               </svg>
               <a href="tel:+841900633027" className="md:pl-[1vw] pl-[3vw]">
-                +84 1900 633 027
+                {t("footer.reach_us_2")}
               </a>
             </div>
             {/* Email Address */}
@@ -127,8 +127,11 @@ const Footer = () => {
                 <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
                 <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
               </svg>
-              <a href="mailto:info@shipx.asia" className="md:pl-[1vw] pl-[3vw]">
-                info@shipx.asia
+              <a
+                href={`mailto:${t("footer.reach_us_1")}`}
+                className="md:pl-[1vw] pl-[3vw]"
+              >
+                {t("footer.reach_us_3")}
               </a>
             </div>
             {/* Address */}
@@ -137,7 +140,7 @@ const Footer = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="md:size-[1vw] size-[4vw]"
+                className="md:size-[2vw] size-[4vw]"
               >
                 <path
                   fillRule="evenodd"
@@ -146,9 +149,7 @@ const Footer = () => {
                 />
               </svg>
               <span className="md:pl-[1vw] pl-[3vw]">
-                28 Street N0.6, Bay Hien Ward,{" "}
-                <br className="md:block hidden" />
-                Ho Chi Minh City, Vietnam
+                {t("footer.reach_us_4")}
               </span>
             </div>
           </div>
