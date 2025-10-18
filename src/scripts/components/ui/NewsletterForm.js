@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import * as motion from "motion/react-client";
+import { button as MotionButton } from "motion/react-client";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 
@@ -56,7 +56,7 @@ const NewsletterForm = () => {
         />
       </div>
 
-      <motion.button
+      <MotionButton
         type="submit"
         className="md:p-[0.10vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
         disabled={isSubmitting}
@@ -82,7 +82,7 @@ const NewsletterForm = () => {
                 : t("newsletter_section.form.button_default")}
           </NavLink>
         </div>
-      </motion.button>
+      </MotionButton>
     </form>
   );
 };

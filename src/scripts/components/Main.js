@@ -368,6 +368,7 @@ const Main = ({ margin }) => {
                       <img
                         className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                         src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_1.svg"
+                        alt="globe"
                       />
                       <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                         {t("services_section.link_1")}
@@ -384,6 +385,7 @@ const Main = ({ margin }) => {
                       <img
                         className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                         src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_2.svg"
+                        alt="plane"
                       />
                       <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                         {t("services_section.link_2")}
@@ -400,6 +402,7 @@ const Main = ({ margin }) => {
                       <img
                         className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                         src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_3.svg"
+                        alt="flag"
                       />
                       <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                         {t("services_section.link_3")}
@@ -416,6 +419,7 @@ const Main = ({ margin }) => {
                       <img
                         className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                         src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_4.svg"
+                        alt="warehouse"
                       />
                       <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                         {t("services_section.link_4")}
@@ -432,6 +436,7 @@ const Main = ({ margin }) => {
                       <img
                         className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                         src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_5.svg"
+                        alt="amazon icon"
                       />
                       <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                         {t("services_section.link_5")}
@@ -448,6 +453,7 @@ const Main = ({ margin }) => {
                       <img
                         className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                         src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_6.svg"
+                        alt="package"
                       />
                       <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                         {t("services_section.link_6")}
@@ -464,6 +470,7 @@ const Main = ({ margin }) => {
                       <img
                         className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                         src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_7.svg"
+                        alt="magnifier"
                       />
                       <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                         {t("services_section.link_7")}
@@ -480,6 +487,7 @@ const Main = ({ margin }) => {
                       <img
                         className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                         src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_8.svg"
+                        alt="dollar"
                       />
                       <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                         {t("services_section.link_8")}
@@ -488,6 +496,7 @@ const Main = ({ margin }) => {
                   </div>
                   <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.6vw] font-normal justify-center items-center select-none">
                     <MotionButton
+                      type="button"
                       className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
                       whileHover={{
                         y: -5,
@@ -551,6 +560,7 @@ const Main = ({ margin }) => {
             <img
               className="absolute md:w-[50vw] w-[80vw] md:h-[45vw] h-[80vw] md:translate-x-[17vw] translate-x-[10vw] md:-translate-y-[1vw] translate-y-[1vw] -z-10"
               src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_4.webp"
+              alt=""
             />
             <ParallaxSection className="lg:min-h-screen md:min-h-fit min-h-screen relative flex flex-col justify-center items-center overflow-hidden select-none">
               <div className="flex md:flex-row flex-col gap-x-[0.1vw] justify-center items-center">
@@ -609,6 +619,7 @@ const Main = ({ margin }) => {
                     }}
                   >
                     <MotionButton
+                      type="button"
                       className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
                       whileHover={{
                         y: -5,
@@ -659,6 +670,7 @@ const Main = ({ margin }) => {
                 <img
                   className="md:w-[35vw] w-[60vw] md:h-[25vw] h-[20vh]"
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_2.webp"
+                  alt=""
                 />
               </div>
               <div className="flex md:flex-row flex-col-reverse justify-center items-center">
@@ -743,6 +755,7 @@ const Main = ({ margin }) => {
                     <img
                       className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
                       src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_2.svg"
+                      alt="plane"
                     />
                     <p className="pl-[1vw]">
                       {t("platform_section.info_1")}{" "}
@@ -756,6 +769,7 @@ const Main = ({ margin }) => {
                     <img
                       className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
                       src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_9.svg"
+                      alt="basket"
                     />
                     <p className="pl-[1vw]">
                       {t("platform_section.info_2")}{" "}
@@ -769,6 +783,7 @@ const Main = ({ margin }) => {
                     <img
                       className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
                       src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_7.svg"
+                      alt="magnifier"
                     />
                     <p className="pl-[1vw]">
                       {t("platform_section.info_3")}{" "}
@@ -782,6 +797,7 @@ const Main = ({ margin }) => {
                     <img
                       className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
                       src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_6.svg"
+                      alt="package"
                     />
                     <p className="pl-[1vw]">
                       {t("platform_section.info_4")}{" "}
@@ -808,6 +824,7 @@ const Main = ({ margin }) => {
               <div className="relative">
                 {/* Don't have an account button */}
                 <button
+                  type="button"
                   end
                   className="
                     bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
@@ -867,6 +884,7 @@ const Main = ({ margin }) => {
                     {t("systems_section.sglink_card.description")}
                   </p>
                   <MotionButton
+                    type="button"
                     className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer w-fit z-[10]"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.8 }}
@@ -939,6 +957,7 @@ const Main = ({ margin }) => {
               {/* Amilo Card */}
               <div className="relative">
                 <button
+                  type="button"
                   end
                   className="
                     bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
@@ -998,6 +1017,7 @@ const Main = ({ margin }) => {
                     {t("systems_section.amilo_card.description")}
                   </p>
                   <MotionButton
+                    type="button"
                     className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer w-fit z-[10]"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.8 }}
@@ -1123,6 +1143,7 @@ const Main = ({ margin }) => {
                     }}
                   >
                     <MotionButton
+                      type="button"
                       className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
                       whileHover={{
                         y: -5,
@@ -1214,11 +1235,13 @@ const Main = ({ margin }) => {
                     <img
                       className="md:w-[20vw] w-[80vw] md:h-[14vw] h-[50vw] rounded-[2vw] shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)]"
                       src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_5.webp"
+                      alt="Freight Section - Freight & Customs"
                     />
                     {/* Collapsible Area */}
                     <div className="md:hidden flex flex-col justify-start items-start w-full mt-[1vw]">
                       {/* Button */}
                       <button
+                        type="button"
                         onClick={() => setIsOpen1(!isOpen1)}
                         className="w-full text-[#1A1A1A] text-[2.4vw] text-center transition"
                       >
@@ -1331,6 +1354,7 @@ const Main = ({ margin }) => {
                     <div className="md:hidden flex flex-col justify-start items-start w-full mt-[1vw]">
                       {/* Button */}
                       <button
+                        type="button"
                         onClick={() => setIsOpen2(!isOpen2)}
                         className="w-full text-[#1A1A1A] text-[2.4vw] text-center transition"
                       >
@@ -1400,6 +1424,7 @@ const Main = ({ margin }) => {
                     <img
                       className="md:w-[20vw] w-[80vw] md:h-[14vw] h-[50vw] rounded-[2vw] shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)]"
                       src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_6.webp"
+                      alt="Freight Section - Customs & Fulfillment Solutions"
                     />
                     <div className="flex flex-col">
                       <span className="flex flex-row md:gap-x-[0.5vw] gap-x-[1.5vw] items-center md:text-[0.8vw] text-[2.5vw] text-[#4F378A] font-semibold bg-transparent md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-0 md:py-[0.2vw] py-[0.5vw]">
@@ -1567,6 +1592,7 @@ const Main = ({ margin }) => {
                       }}
                     >
                       <MotionButton
+                        type="button"
                         className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
                         whileHover={{
                           y: -5,

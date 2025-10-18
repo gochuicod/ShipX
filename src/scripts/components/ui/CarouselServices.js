@@ -31,6 +31,7 @@ export default function CarouselServices({ slide }) {
         className="md:w-[25vw] w-[75vw] rounded-none select-none md:pt-0 pt-[5vw]"
         prevArrow={({ handlePrev }) => (
           <button
+            type="button"
             onClick={handlePrev}
             className="
               !absolute top-2/4 left-[1vw] -translate-y-2/4 st-next
@@ -59,6 +60,7 @@ export default function CarouselServices({ slide }) {
         )}
         nextArrow={({ handleNext }) => (
           <button
+            type="button"
             onClick={handleNext}
             className="
               !absolute top-2/4 right-[1vw] -translate-y-2/4 st-prev
@@ -164,6 +166,7 @@ export default function CarouselServices({ slide }) {
           <img
             className="w-full md:h-[15vw] h-[45vw] rounded-[2vw]"
             src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_1.webp"
+            alt="Main Image 1"
           />
         </div>
         {/* Second slide: custom hero section */}
@@ -225,6 +228,7 @@ export default function CarouselServices({ slide }) {
           <img
             className="w-full md:h-[15vw] h-[45vw] rounded-[2vw]"
             src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_7.webp"
+            alt="Main Image 7"
           />
         </div>
         {/* Third slide: custom hero section */}
@@ -288,6 +292,7 @@ export default function CarouselServices({ slide }) {
           <img
             className="w-full md:h-[15vw] h-[45vw] rounded-[2vw]"
             src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_8.webp"
+            alt="Main Image 8"
           />
         </div>
         {/* Fourth slide: custom hero section */}
@@ -350,6 +355,7 @@ export default function CarouselServices({ slide }) {
           <img
             className="w-full md:h-[15vw] h-[45vw] rounded-[2vw]"
             src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_9.webp"
+            alt="Main Image 9"
           />
         </div>
         {/* Fifth slide: custom hero section */}
@@ -414,6 +420,7 @@ export default function CarouselServices({ slide }) {
           <img
             className="w-full md:h-[15vw] h-[45vw] rounded-[2vw]"
             src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_10.webp"
+            alt="Main Image 10"
           />
         </div>
         {/* Sixth slide: custom hero section */}
@@ -476,6 +483,7 @@ export default function CarouselServices({ slide }) {
           <img
             className="w-full md:h-[15vw] h-[45vw] rounded-[2vw]"
             src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_11.webp"
+            alt="Main Image 11"
           />
         </div>
         {/* Seventh slide: custom hero section */}
@@ -536,6 +544,7 @@ export default function CarouselServices({ slide }) {
           <img
             className="w-full md:h-[15vw] h-[45vw] rounded-[2vw]"
             src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_12.webp"
+            alt="Main Image 12"
           />
         </div>
         {/* Eighth slide: custom hero section */}
@@ -580,6 +589,7 @@ export default function CarouselServices({ slide }) {
               <img
                 className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_23.svg"
+                alt="Main Icon 23"
               />
               <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[1.5vw] pl-[3vw]">
                 {t("services_section.carousel.slide_8.list_1.item_1")}
@@ -589,6 +599,7 @@ export default function CarouselServices({ slide }) {
               <img
                 className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_24.svg"
+                alt="Main Icon 24"
               />
               <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[1.5vw] pl-[3vw]">
                 {t("services_section.carousel.slide_8.list_1.item_2")}
@@ -598,6 +609,7 @@ export default function CarouselServices({ slide }) {
               <img
                 className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_24.svg"
+                alt="Main Icon 24"
               />
               <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[1.5vw] pl-[3vw]">
                 {t("services_section.carousel.slide_8.list_1.item_3")}
@@ -607,6 +619,7 @@ export default function CarouselServices({ slide }) {
               <img
                 className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_25.svg"
+                alt="Main Icon 25"
               />
               <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[1.5vw] pl-[3vw]">
                 {t("services_section.carousel.slide_8.list_1.item_4")}
@@ -616,6 +629,7 @@ export default function CarouselServices({ slide }) {
               <img
                 className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_8.svg"
+                alt="Main Icon 8"
               />
               <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[1.5vw] pl-[3vw]">
                 {t("services_section.carousel.slide_8.list_1.item_5")}

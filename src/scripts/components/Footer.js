@@ -51,6 +51,7 @@ const Footer = memo(() => {
               </button>
             </div>
             <MotionButton
+              type="button"
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.8 }}
               className="bg-white text-[#FF00E5] font-bold md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] rounded-full cursor-pointer"

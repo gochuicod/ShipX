@@ -86,6 +86,7 @@ const LoginModal = () => {
               {t("header.login_modal.amilo.description")}
             </span>
             <MotionButton
+              type="button"
               className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer w-fit"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.8 }}
@@ -115,6 +116,7 @@ const LoginModal = () => {
               {t("header.login_modal.sglink.description")}
             </span>
             <MotionButton
+              type="button"
               className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer w-fit"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.8 }}

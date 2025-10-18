@@ -4,7 +4,6 @@ import React, { useEffect, useState, Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 
-import Lenis from "@studio-freight/lenis";
 import { HelmetProvider } from "react-helmet-async";
 
 import Layout from "./scripts/Layout";
@@ -23,7 +22,6 @@ const Blog = lazy(() => import("./scripts/components/Blog"));
 const NotFound = lazy(() => import("./scripts/components/ui/NotFound"));
 
 import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
-import { initGTM } from "./tagmanager";
 
 const helmetContext = {};
 
@@ -31,32 +29,47 @@ const App = () => {
   const [gtmInitialized, setGtmInitialized] = useState(false);
 
   useEffect(() => {
-    const lenis = new Lenis({
-      lerp: 0.1,
-      duration: 1.2,
-      smoothWheel: true,
-      smoothTouch: false,
-    });
+    let lenis;
+    const initLenis = async () => {
+      const LenisModule = await import("@studio-freight/lenis");
+      lenis = new LenisModule.default({
+        lerp: 0.1,
+        duration: 1.2,
+        smoothWheel: true,
+      });
 
-    function raf(time) {
-      lenis.raf(time);
+      const raf = (time) => {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      };
       requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
-    return () => {
-      lenis.destroy();
     };
+    initLenis();
+
+    return () => lenis?.destroy();
   }, []);
 
   // ✅ Initialize GTM if user already consented earlier
   useEffect(() => {
-    const consent = getCookieConsentValue("analyticsConsent");
-    if (consent === "true" && !gtmInitialized) {
-      initGTM();
-      setGtmInitialized(true);
+    const handle = () => {
+      const consent = getCookieConsentValue("analyticsConsent");
+      if (consent === "true" && !gtmInitialized) {
+        import("./tagmanager") // dynamically import GTM code
+          .then(({ initGTM }) => {
+            initGTM();
+            setGtmInitialized(true);
+          })
+          .catch((err) => console.error("Failed to load GTM:", err));
+      }
+    };
+
+    if (document.readyState === "complete") {
+      handle();
+    } else {
+      window.addEventListener("DOMContentLoaded", handle);
     }
+
+    return () => window.removeEventListener("DOMContentLoaded", handle);
   }, [gtmInitialized]);
 
   const [textSize, setTextSize] = useState("0.8vw");

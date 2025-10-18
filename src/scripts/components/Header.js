@@ -76,6 +76,7 @@ const Header = memo(() => {
             loading="lazy"
             className="h-[1vw] w-[1vw]"
             src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_14.webp"
+            alt="Separator"
           />
           <span className="hidden md:inline text-[0.8vw] font-normal">
             {/* ASEAN's Next Generation Platform */}
@@ -95,7 +96,10 @@ const Header = memo(() => {
             }}
           >
             <div className="relative">
-              <ListboxButton className="relative flex flex-row w-full justify-center items-center gap-x-[0.5vw] px-[0.6vw] py-[0.3vw] cursor-pointer md:rounded-[0.5vw] rounded-[2vw] text-center focus-visible:outline-0 shadow-[0_0.1vw_0.5vw_rgba(255,0,229,0.15)]">
+              <ListboxButton
+                type="button"
+                className="relative flex flex-row w-full justify-center items-center gap-x-[0.5vw] px-[0.6vw] py-[0.3vw] cursor-pointer md:rounded-[0.5vw] rounded-[2vw] text-center focus-visible:outline-0 shadow-[0_0.1vw_0.5vw_rgba(255,0,229,0.15)]"
+              >
                 <span className="flex items-center">
                   <span className="block text-[#1A1A1A] md:text-[0.8vw] text-[2.2vw] font-semibold">
                     {selected.name}
@@ -170,6 +174,7 @@ const Header = memo(() => {
         <div className="hidden md:flex flex-row justify-center items-center gap-x-[1vw] text-[0.8vw] font-normal">
           <LoginModal />
           <MotionButton
+            type="button"
             className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
             whileHover={{
               y: -5,
@@ -211,6 +216,7 @@ const Header = memo(() => {
 
         {/* Mobile Hamburger */}
         <button
+          type="button"
           onClick={() => setIsOpen(!isOpen)}
           className="relative md:hidden flex flex-col justify-between w-[8vw] h-[4.5vw] p-[0.1vw] focus:outline-none"
         >
@@ -309,7 +315,10 @@ const Header = memo(() => {
                 }}
               >
                 <div className="relative">
-                  <ListboxButton className="relative flex flex-row w-full gap-x-[2vw] justify-start items-center focus-visible:outline-0">
+                  <ListboxButton
+                    type="button"
+                    className="relative flex flex-row w-full gap-x-[2vw] justify-start items-center focus-visible:outline-0"
+                  >
                     <span className="flex items-center">
                       <span className="block text-[#1A1A1A] text-[3.5vw] font-medium">
                         {selected.name}

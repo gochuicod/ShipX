@@ -73,6 +73,7 @@ export default function TooltipCard({
         loading="lazy"
         className="md:w-[1.5vw] w-[3vw] md:h-[1.5vw] h-[3vw] rounded-full"
         src={image}
+        alt={country_name}
       />
       <span className="text-[#1A1A1A] font-semibold md:text-[0.8vw] text-[2.3vw] md:pl-[1vw] pl-[3vw]">
         {country_name}
@@ -98,6 +99,7 @@ export default function TooltipCard({
           loading="lazy"
           className="md:w-[1.5vw] w-[3vw] md:h-[1.5vw] h-[3vw] rounded-full"
           src={image}
+          alt={country_name}
         />
         <span className="text-[#19191D] md:text-[0.8vw] text-[2.3vw] font-bold">
           {country_name}

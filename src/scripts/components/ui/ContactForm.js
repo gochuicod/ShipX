@@ -41,10 +41,12 @@ const ContactForm = () => {
     >
       <div className="flex md:flex-row flex-col gap-x-[1vw] md:gap-y-0 gap-y-[5vw]">
         <div className="flex flex-col">
-          <label className="text-nowrap">
+          <label className="text-nowrap" htmlFor="name">
             {t("contact_us_section.form.name")}
           </label>
           <input
+            aria-invalid={errors.name ? "true" : "false"}
+            id="name"
             className={`border-b border-[#CACACA] w-full p-2 focus:outline-none ${errors.name ? "placeholder-red-500" : "placeholder-black/50"}`}
             {...register("name", {
               required: t("contact_us_section.form.name_placeholder"),
@@ -53,10 +55,12 @@ const ContactForm = () => {
           />
         </div>
         <div className="flex flex-col">
-          <label className="text-nowrap">
+          <label className="text-nowrap" htmlFor="email">
             {t("contact_us_section.form.email")}
           </label>
           <input
+            aria-invalid={errors.email ? "true" : "false"}
+            id="email"
             type="email"
             className={`border-b border-[#CACACA] w-full p-2 focus:outline-none ${errors.email ? "placeholder-red-500" : "placeholder-black/50"}`}
             {...register("email", {
@@ -70,10 +74,12 @@ const ContactForm = () => {
           />
         </div>
         <div className="flex flex-col">
-          <label className="text-nowrap">
+          <label className="text-nowrap" htmlFor="tel">
             {t("contact_us_section.form.phone")}
           </label>
           <input
+            aria-invalid={errors.phone ? "true" : "false"}
+            id="tel"
             type="tel"
             className={`border-b border-[#CACACA] w-full p-2 focus:outline-none ${errors.name ? "placeholder-red-500" : "placeholder-black/50"}`}
             {...register("phone", {
@@ -90,10 +96,12 @@ const ContactForm = () => {
       </div>
 
       <div className="flex flex-col md:mt-[1vw] mt-0 md:pt-0 pt-[5vw]">
-        <label className="text-nowrap">
+        <label className="text-nowrap" htmlFor="message">
           {t("contact_us_section.form.message")}
         </label>
         <textarea
+          aria-invalid={errors.message ? "true" : "false"}
+          id="message"
           className={`border-b border-[#CACACA] w-full resize-none md:h-[5vw] h-[15vw] focus:outline-none ${errors.name ? "placeholder-red-500" : "placeholder-black/50"}`}
           {...register("message", {
             required: t("contact_us_section.form.message_placeholder"),
@@ -123,6 +131,7 @@ const ContactForm = () => {
         </button>
 
         <MotionButton
+          type="button"
           className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
           whileHover={{
             y: -5,

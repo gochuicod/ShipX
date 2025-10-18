@@ -52,6 +52,7 @@ export default function CarouselNav() {
         verticalSwiping={false} // make sure it only reacts to horizontal
         prevArrow={({ handlePrev }) => (
           <button
+            type="button"
             onClick={handlePrev}
             className="
               !absolute top-2/4 left-[1vw] -translate-y-2/4 mt-next
@@ -80,6 +81,7 @@ export default function CarouselNav() {
         )}
         nextArrow={({ handleNext }) => (
           <button
+            type="button"
             onClick={handleNext}
             className="
               !absolute top-2/4 right-[1vw] -translate-y-2/4 mt-prev

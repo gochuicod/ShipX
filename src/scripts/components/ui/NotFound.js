@@ -17,6 +17,7 @@ const NotFound = () => {
       </p>
 
       <button
+        type="button"
         onClick={() => navigate("/")}
         className="
           bg-gradient-to-r from-[#4F378A] via-[#FF00E5] to-[#FF00E5]
