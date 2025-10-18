@@ -46,14 +46,11 @@ const Blog = () => {
         ogImage="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/logo-shipx.webp"
       />
 
-      <div
-        className={`flex flex-col justify-center items-center ${margin} pt-[5vw]`}
+      <article
+        className={`flex flex-col gap-y-[3vw] md:text-[0.8vw] text-[2.2vw] ${margin}`}
       >
-        <article className="flex flex-col gap-y-[3vw] md:text-[0.8vw] text-[2.2vw]">
-          <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-          <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
-        </article>
-      </div>
+        <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+      </article>
     </>
   );
 };

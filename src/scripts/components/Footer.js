@@ -1,8 +1,9 @@
 import { NavLink } from "react-router-dom";
-import * as motion from "motion/react-client";
+import { button as MotionButton } from "motion/react-client";
 import { useTranslation } from "react-i18next";
+import { memo } from "react";
 
-const Footer = () => {
+const Footer = memo(() => {
   const { t } = useTranslation();
 
   return (
@@ -49,7 +50,7 @@ const Footer = () => {
                 </NavLink>
               </button>
             </div>
-            <motion.button
+            <MotionButton
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.8 }}
               className="bg-white text-[#FF00E5] font-bold md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] rounded-full cursor-pointer"
@@ -57,7 +58,7 @@ const Footer = () => {
               <NavLink to="/#contact-us" end>
                 {t("footer.contact_us")}
               </NavLink>
-            </motion.button>
+            </MotionButton>
           </div>
         </div>
         {/* Links */}
@@ -164,6 +165,6 @@ const Footer = () => {
       </span>
     </footer>
   );
-};
+});
 
 export default Footer;

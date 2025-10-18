@@ -36,7 +36,7 @@ const NewsletterForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-row md:justify-start justify-center gap-x-[1vw] md:text-[0.8vw] text-[2.5vw] font-normal z-10 select-none md:w-auto w-full md:pt-[1vw] pt-[5vw]"
+      className="flex flex-row md:justify-start justify-center gap-x-[1vw] md:text-[0.8vw] text-[2.3vw] font-normal z-10 select-none md:w-auto w-full md:pt-[1vw] pt-[5vw]"
       style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
     >
       <div className="flex flex-col relative overflow-hidden md:p-[0.10vw] p-[0.5vw]">

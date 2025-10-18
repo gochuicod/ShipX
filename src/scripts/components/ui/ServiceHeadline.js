@@ -1,4 +1,4 @@
-import * as motion from "motion/react-client";
+import { button as MotionButton } from "motion/react-client";
 import { margin } from "../../utils/constants";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
@@ -31,7 +31,7 @@ const ServiceHeadline = () => {
               </span>
               &nbsp;{t("service_headline_section.heading_3")}
             </h4>
-            <motion.button
+            <MotionButton
               type="button"
               className="bg-[#FF00E5] flex flex-row md:gap-x-[0.5vw] gap-[1.5vw] justify-center items-center md:px-[1.5vw] px-[5vw] md:py-[0.5vw] py-[1.5vw] md:rounded-[0.5vw] rounded-[2vw] text-white font-medium md:text-[0.8vw] text-[2.5vw] text-center cursor-pointer"
               whileHover={{ scale: 1.2 }}
@@ -52,7 +52,7 @@ const ServiceHeadline = () => {
                   d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
                 />
               </svg>
-            </motion.button>
+            </MotionButton>
           </div>
         </div>
       </NavLink>

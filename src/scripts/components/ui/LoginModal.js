@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import * as motion from "motion/react-client";
+import { button as MotionButton } from "motion/react-client";
 import { NavLink } from "react-router-dom";
 
 const LoginModal = () => {
@@ -85,7 +85,7 @@ const LoginModal = () => {
             <span className="text-[#757577] md:text-[0.8vw] text-[3.3vw] font-normal">
               {t("header.login_modal.amilo.description")}
             </span>
-            <motion.button
+            <MotionButton
               className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer w-fit"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.8 }}
@@ -103,7 +103,7 @@ const LoginModal = () => {
                   className="md:h-[1vw] h-[4vw] md:w-[4vw] w-[10vw]"
                 />
               </div>
-            </motion.button>
+            </MotionButton>
           </div>
 
           {/* SGLink */}
@@ -114,7 +114,7 @@ const LoginModal = () => {
             <span className="text-[#757577] md:text-[0.8vw] text-[3.3vw] font-normal">
               {t("header.login_modal.sglink.description")}
             </span>
-            <motion.button
+            <MotionButton
               className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer w-fit"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.8 }}
@@ -134,7 +134,7 @@ const LoginModal = () => {
                   className="md:h-[1vw] h-[4vw] md:w-[4vw] w-[10vw]"
                 />
               </div>
-            </motion.button>
+            </MotionButton>
           </div>
 
           {/* Sign Up */}

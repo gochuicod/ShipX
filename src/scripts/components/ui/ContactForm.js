@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import * as motion from "motion/react-client";
+import { button as MotionButton } from "motion/react-client";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 
@@ -122,7 +122,7 @@ const ContactForm = () => {
               : t("contact_us_section.form.button_default")}
         </button>
 
-        <motion.button
+        <MotionButton
           className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
           whileHover={{
             y: -5,
@@ -142,7 +142,7 @@ const ContactForm = () => {
               {t("contact_us_section.form.book_a_demo")}
             </NavLink>
           </div>
-        </motion.button>
+        </MotionButton>
       </div>
     </form>
   );

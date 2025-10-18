@@ -130,7 +130,7 @@ export default function CarouselServices({ slide }) {
             {t("services_section.link_1")}
           </span>
           <p
-            className={`${i18n.language === "vn" ? "md:text-[1.2vw] md:leading-[1.7vw]" : "md:text-[1.6vw] md:leading-[2vw]"} text-[4.5vw] text-[#1A1A1A] text-start font-semibold leading-[7vw]`}
+            className={`${i18n.language === "vn" ? "md:text-[1.2vw] md:leading-[1.7vw] text-[4vw] leading-[4.5vw]" : "md:text-[1.6vw] md:leading-[2vw] text-[4.5vw] leading-[7vw]"} text-[#1A1A1A] text-start font-semibold`}
             style={{
               fontFamily: "Karla, system-ui, -apple-system, sans-serif",
             }}
@@ -144,7 +144,7 @@ export default function CarouselServices({ slide }) {
             {t("services_section.carousel.slide_1.header_4")}
           </p>
           <div
-            className="flex flex-row font-normal gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]"
+            className="flex flex-row font-normal gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[3vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]"
             style={{
               fontFamily: "Inter, system-ui, -apple-system, sans-serif",
             }}
@@ -191,7 +191,7 @@ export default function CarouselServices({ slide }) {
             {t("services_section.link_2")}
           </span>
           <p
-            className={`${i18n.language === "vn" ? "md:text-[1.2vw] md:leading-[1.7vw]" : "md:text-[1.6vw] md:leading-[2vw]"} text-[4.5vw] text-[#1A1A1A] text-start font-semibold leading-[7vw]`}
+            className={`${i18n.language === "vn" ? "md:text-[1.2vw] md:leading-[1.7vw] text-[4vw] leading-[4.5vw]" : "md:text-[1.6vw] md:leading-[2vw] text-[4.5vw] leading-[7vw]"} text-[#1A1A1A] text-start font-semibold`}
             style={{
               fontFamily: "Karla, system-ui, -apple-system, sans-serif",
             }}
@@ -205,7 +205,7 @@ export default function CarouselServices({ slide }) {
             {t("services_section.carousel.slide_2.header_4")}
           </p>
           <div
-            className="flex flex-row font-normal gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[1vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]"
+            className="flex flex-row font-normal gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[3vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]"
             style={{
               fontFamily: "Inter, system-ui, -apple-system, sans-serif",
             }}
@@ -252,7 +252,7 @@ export default function CarouselServices({ slide }) {
             {t("services_section.link_3")}
           </span>
           <p
-            className={`${i18n.language === "vn" ? "md:text-[1.2vw] md:leading-[1.7vw]" : "md:text-[1.3vw] md:leading-[2vw]"} text-[4vw] text-[#1A1A1A] text-start font-semibold leading-[6vw]`}
+            className={`${i18n.language === "vn" ? "md:text-[1.2vw] md:leading-[1.7vw] text-[4vw] leading-[4.5vw]" : "md:text-[1.3vw] md:leading-[2vw] text-[4vw] leading-[6vw]"} text-[#1A1A1A] text-start font-semibold`}
             style={{
               fontFamily: "Karla, system-ui, -apple-system, sans-serif",
             }}
@@ -268,7 +268,7 @@ export default function CarouselServices({ slide }) {
             {t("services_section.carousel.slide_3.header_5")}
           </p>
           <div
-            className="flex flex-row font-normal gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]"
+            className="flex flex-row font-normal gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[3vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]"
             style={{
               fontFamily: "Inter, system-ui, -apple-system, sans-serif",
             }}
@@ -315,7 +315,7 @@ export default function CarouselServices({ slide }) {
             {t("services_section.link_4")}
           </span>
           <p
-            className={`${i18n.language === "vn" ? "md:text-[1.2vw] md:leading-[1.7vw]" : "md:text-[1.4vw] md:leading-[2.2vw]"} text-[4vw] text-[#1A1A1A] text-start font-semibold leading-[6vw]`}
+            className={`${i18n.language === "vn" ? "md:text-[1.2vw] md:leading-[1.7vw] text-[4vw] leading-[4.5vw]" : "md:text-[1.4vw] md:leading-[2.2vw] text-[4vw] leading-[6vw]"} text-[#1A1A1A] text-start font-semibold`}
             style={{
               fontFamily: "Karla, system-ui, -apple-system, sans-serif",
             }}
@@ -328,7 +328,7 @@ export default function CarouselServices({ slide }) {
             {t("services_section.carousel.slide_4.header_3")}
           </p>
           <div
-            className="flex flex-row font-normal gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]"
+            className="flex flex-row font-normal gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[3vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]"
             style={{
               fontFamily: "Inter, system-ui, -apple-system, sans-serif",
             }}
@@ -377,7 +377,7 @@ export default function CarouselServices({ slide }) {
             {t("services_section.link_5")}
           </span>
           <p
-            className={`${i18n.language === "vn" ? "md:text-[1.2vw] md:leading-[1.7vw]" : "md:text-[1.8vw] md:leading-[2.5vw]"}  text-[5vw] text-[#1A1A1A] text-start font-semibold leading-[7vw]`}
+            className={`${i18n.language === "vn" ? "md:text-[1.2vw] md:leading-[1.7vw] text-[4vw] leading-[4.5vw]" : "md:text-[1.8vw] md:leading-[2.5vw] text-[5vw] leading-[7vw]"} text-[#1A1A1A] text-start font-semibold`}
             style={{
               fontFamily: "Karla, system-ui, -apple-system, sans-serif",
             }}
@@ -388,7 +388,7 @@ export default function CarouselServices({ slide }) {
             {i18n.language !== "vn" ? <br /> : <>&nbsp;</>}
             {t("services_section.carousel.slide_5.header_2")}
           </p>
-          <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[0.7vw] py-[1.5vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]">
+          <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] justify-center items-center bg-white md:px-[0.5vw] px-[3vw] md:py-[0.7vw] py-[1.5vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]">
             {/* Left: Description */}
             <p className="text-[#63666D] md:text-[0.6vw] text-[2vw] leading-snug text-left">
               {t("services_section.carousel.slide_5.price_desc_1")}&nbsp;
@@ -441,7 +441,7 @@ export default function CarouselServices({ slide }) {
             {t("services_section.link_6")}
           </span>
           <p
-            className={`${i18n.language === "vn" ? "md:text-[1.2vw] md:leading-[1.7vw]" : "md:text-[1.3vw] md:leading-[1.5vw]"} text-[4vw] text-[#1A1A1A] text-start font-semibold leading-[5vw]`}
+            className={`${i18n.language === "vn" ? "md:text-[1.2vw] md:leading-[1.7vw] text-[4vw] leading-[4.5vw]" : "md:text-[1.3vw] md:leading-[1.5vw] text-[4vw] leading-[5vw]"} text-[#1A1A1A] text-start font-semibold`}
             style={{
               fontFamily: "Karla, system-ui, -apple-system, sans-serif",
             }}
@@ -456,7 +456,7 @@ export default function CarouselServices({ slide }) {
             </p>
           </p>
           <div
-            className="flex flex-row font-normal gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]"
+            className="flex flex-row font-normal gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[3vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]"
             style={{
               fontFamily: "Inter, system-ui, -apple-system, sans-serif",
             }}
@@ -503,7 +503,7 @@ export default function CarouselServices({ slide }) {
             {t("services_section.link_7")}
           </span>
           <p
-            className={`${i18n.language === "vn" ? "md:text-[1.1vw] md:leading-[1.6vw]" : "md:text-[1.6vw] md:leading-[2vw]"} text-[5vw] text-[#1A1A1A] text-start font-semibold leading-[7vw]`}
+            className={`${i18n.language === "vn" ? "md:text-[1.1vw] md:leading-[1.6vw] text-[4vw] leading-[4.5vw]" : "md:text-[1.6vw] md:leading-[2vw] text-[5vw] leading-[7vw]"} text-[#1A1A1A] text-start font-semibold`}
             style={{
               fontFamily: "Karla, system-ui, -apple-system, sans-serif",
             }}
@@ -516,7 +516,7 @@ export default function CarouselServices({ slide }) {
             {t("services_section.carousel.slide_7.header_3")}
           </p>
           <div
-            className="flex flex-row font-normal gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[1vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]"
+            className="flex flex-row font-normal gap-x-[1vw] justify-center items-center bg-white md:px-[0.5vw] px-[3vw] md:py-[2vw] py-[3vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]"
             style={{
               fontFamily: "Inter, system-ui, -apple-system, sans-serif",
             }}
@@ -563,7 +563,7 @@ export default function CarouselServices({ slide }) {
             {t("services_section.carousel.slide_8.badge_1")}
           </span>
           <p
-            className={`${i18n.language === "vn" ? "md:text-[1.2vw] md:leading-[1.7vw]" : "md:text-[1.6vw] md:leading-[2vw]"} text-[5vw] text-[#1A1A1A] text-start font-semibold leading-[7vw]`}
+            className={`${i18n.language === "vn" ? "md:text-[1.2vw] md:leading-[1.7vw] text-[4vw] leading-[4.5vw]" : "md:text-[1.6vw] md:leading-[2vw] text-[5vw] leading-[7vw]"} text-[#1A1A1A] text-start font-semibold`}
             style={{
               fontFamily: "Karla, system-ui, -apple-system, sans-serif",
             }}

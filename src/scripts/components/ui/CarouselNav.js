@@ -1,6 +1,6 @@
 import { Carousel } from "@material-tailwind/react";
 import { useSwipeable } from "react-swipeable";
-import * as motion from "motion/react-client";
+import { button as MotionButton } from "motion/react-client";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -210,7 +210,7 @@ export default function CarouselNav() {
                 >
                   {t("hero_section.slide_1.book_a_demo")}
                 </NavLink>
-                <motion.button
+                <MotionButton
                   className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
                   whileHover={{
                     y: -5,
@@ -246,7 +246,7 @@ export default function CarouselNav() {
                       </svg>
                     </div>
                   </NavLink>
-                </motion.button>
+                </MotionButton>
               </div>
             </div>
 
@@ -437,7 +437,7 @@ export default function CarouselNav() {
                 >
                   {t("hero_section.slide_2.book_a_demo")}
                 </NavLink>
-                <motion.button
+                <MotionButton
                   className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
                   whileHover={{
                     y: -5,
@@ -473,7 +473,7 @@ export default function CarouselNav() {
                       </svg>
                     </div>
                   </NavLink>
-                </motion.button>
+                </MotionButton>
               </div>
             </div>
 
@@ -665,7 +665,7 @@ export default function CarouselNav() {
                 >
                   {t("hero_section.slide_3.book_a_demo")}
                 </NavLink>
-                <motion.button
+                <MotionButton
                   className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
                   whileHover={{
                     y: -5,
@@ -701,7 +701,7 @@ export default function CarouselNav() {
                       </svg>
                     </div>
                   </NavLink>
-                </motion.button>
+                </MotionButton>
               </div>
             </div>
 

@@ -1,6 +1,10 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { NavLink } from "react-router-dom";
-import * as motion from "motion/react-client";
+import {
+  div as MotionDiv,
+  button as MotionButton,
+  span as MotionSpan,
+} from "motion/react-client";
 import { AnimatePresence } from "motion/react";
 import { useTranslation } from "react-i18next";
 import { languages } from "../utils/constants";
@@ -16,7 +20,7 @@ import {
 const linkClass =
   "transition-colors duration-500 hover:text-[#FF00E5] hover:underline hover:decoration-2 hover:underline-offset-5";
 
-const Header = () => {
+const Header = memo(() => {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -161,7 +165,7 @@ const Header = () => {
 
         <div className="hidden md:flex flex-row justify-center items-center gap-x-[1vw] text-[0.8vw] font-normal">
           <LoginModal />
-          <motion.button
+          <MotionButton
             className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
             whileHover={{
               y: -5,
@@ -184,7 +188,7 @@ const Header = () => {
                 {t("header.book_a_demo")}
               </NavLink>
             </div>
-          </motion.button>
+          </MotionButton>
           <NavLink
             to="/#contact-us"
             end
@@ -207,21 +211,21 @@ const Header = () => {
           className="relative md:hidden flex flex-col justify-between w-[8vw] h-[4.5vw] p-[0.1vw] focus:outline-none"
         >
           {/* Top bar */}
-          <motion.span
+          <MotionSpan
             animate={isOpen ? { rotate: 45, y: 10 } : { rotate: 0, y: 0 }}
             transition={{ duration: 0.3 }}
             className="block h-[0.5vw] w-full bg-black rounded-full"
           />
 
           {/* Middle bar */}
-          <motion.span
+          <MotionSpan
             animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
             transition={{ duration: 0.2 }}
             className="block h-[0.5vw] w-full bg-black rounded-full"
           />
 
           {/* Bottom bar */}
-          <motion.span
+          <MotionSpan
             animate={isOpen ? { rotate: -45, y: -10 } : { rotate: 0, y: 0 }}
             transition={{ duration: 0.3 }}
             className="block h-[0.5vw] w-full bg-black rounded-full"
@@ -231,7 +235,7 @@ const Header = () => {
         {/* Mobile Dropdown Menu */}
         <AnimatePresence>
           {isOpen && (
-            <motion.div
+            <MotionDiv
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -20, opacity: 0 }}
@@ -351,12 +355,12 @@ const Header = () => {
                 </div>
               </Listbox>
               <LoginModal />
-            </motion.div>
+            </MotionDiv>
           )}
         </AnimatePresence>
       </header>
     </div>
   );
-};
+});
 
 export default Header;

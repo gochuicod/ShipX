@@ -2,7 +2,7 @@ import i18n from "i18next";
 import { useState } from "react";
 import { offices, services, services_2 } from "../utils/constants";
 import { NavLink } from "react-router-dom";
-import * as motion from "motion/react-client";
+import { button as MotionButton } from "motion/react-client";
 
 import ContactForm from "./ui/ContactForm";
 import NewsletterForm from "./ui/NewsletterForm";
@@ -487,7 +487,7 @@ const Main = ({ margin }) => {
                     </div>
                   </div>
                   <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.6vw] font-normal justify-center items-center select-none">
-                    <motion.button
+                    <MotionButton
                       className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
                       whileHover={{
                         y: -5,
@@ -518,7 +518,7 @@ const Main = ({ margin }) => {
                           {t("services_section.book_a_demo")}
                         </NavLink>
                       </div>
-                    </motion.button>
+                    </MotionButton>
                     <NavLink
                       to="/#contact-us"
                       end
@@ -608,7 +608,7 @@ const Main = ({ margin }) => {
                       fontFamily: "Karla, system-ui, -apple-system, sans-serif",
                     }}
                   >
-                    <motion.button
+                    <MotionButton
                       className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
                       whileHover={{
                         y: -5,
@@ -639,7 +639,7 @@ const Main = ({ margin }) => {
                           {t("platform_section.book_a_demo")}
                         </NavLink>
                       </div>
-                    </motion.button>
+                    </MotionButton>
                     <NavLink
                       to="/#contact-us"
                       end
@@ -866,7 +866,7 @@ const Main = ({ margin }) => {
                   <p className="text-[#63666D]/80 md:text-[1.05vw] text-[2.55vw] text-wrap text-justify font-medium md:leading-[1.55vw] leading-[3.05vw]">
                     {t("systems_section.sglink_card.description")}
                   </p>
-                  <motion.button
+                  <MotionButton
                     className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer w-fit z-[10]"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.8 }}
@@ -888,7 +888,7 @@ const Main = ({ margin }) => {
                         className="md:h-[1vw] h-[4vw] md:w-[4vw] w-[10vw]"
                       />
                     </div>
-                  </motion.button>
+                  </MotionButton>
                   <div className="flex flex-row md:gap-x-[2vw] gap-x-[5vw] items-center justify-center absolute bottom-0 left-0">
                     <div
                       className="
@@ -997,7 +997,7 @@ const Main = ({ margin }) => {
                   <p className="text-[#63666D]/80 md:text-[1.05vw] text-[2.55vw] text-wrap text-justify font-medium md:leading-[1.55vw] leading-[3.05vw]">
                     {t("systems_section.amilo_card.description")}
                   </p>
-                  <motion.button
+                  <MotionButton
                     className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer w-fit z-[10]"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.8 }}
@@ -1019,7 +1019,7 @@ const Main = ({ margin }) => {
                         className="md:h-[1vw] h-[4vw] md:w-[4vw] w-[10vw]"
                       />
                     </div>
-                  </motion.button>
+                  </MotionButton>
                   <div className="flex flex-row md:gap-x-[2vw] gap-x-[5vw] items-center justify-center absolute bottom-0 left-0">
                     <div
                       className="
@@ -1122,7 +1122,7 @@ const Main = ({ margin }) => {
                       fontFamily: "Karla, system-ui, -apple-system, sans-serif",
                     }}
                   >
-                    <motion.button
+                    <MotionButton
                       className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
                       whileHover={{
                         y: -5,
@@ -1153,7 +1153,7 @@ const Main = ({ margin }) => {
                           {t("freight_section.book_a_demo")}
                         </NavLink>
                       </div>
-                    </motion.button>
+                    </MotionButton>
                     <NavLink
                       to="/#contact-us"
                       end
@@ -1504,11 +1504,11 @@ const Main = ({ margin }) => {
             />
             <ParallaxSection>
               <div
-                className={`flex md:flex-row flex-col gap-x-[2vw] justify-center items-center w-full ${i18n.language !== "vn" ? "ml-[5vw]" : "ml-[2vw]"}`}
+                className={`flex md:flex-row flex-col gap-x-[2vw] justify-center items-center w-full ${i18n.language !== "vn" ? "md:ml-[5vw]" : "md:ml-[2vw]"}`}
               >
                 <div className="md:w-[36vw] w-auto">
                   <span
-                    className="md:hidden flex flex-row md:gap-x-[0.5vw] gap-x-[1.5vw] items-center md:text-[0.7vw] text-[2.5vw] text-[#FF00E5] font-semibold bg-[#F3F1FF] md:rounded-[0.5vw] rounded-[1.5vw] md:px-[0.5vw] px-[1.5vw] md:py-[0.2vw] py-[0.5vw] w-fit"
+                    className="md:hidden flex flex-row md:gap-x-[0.5vw] gap-x-[1.5vw] items-center md:text-[0.7vw] text-[2.5vw] text-[#FF00E5] font-semibold bg-[#F3F1FF] md:rounded-[0.5vw] rounded-[1.5vw] md:px-[0.5vw] px-[1.5vw] md:py-[0.2vw] py-[0.5vw] w-fit mx-auto"
                     style={{
                       fontFamily: "Inter, system-ui, -apple-system, sans-serif",
                     }}
@@ -1566,7 +1566,7 @@ const Main = ({ margin }) => {
                           "Karla, system-ui, -apple-system, sans-serif",
                       }}
                     >
-                      <motion.button
+                      <MotionButton
                         className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
                         whileHover={{
                           y: -5,
@@ -1597,7 +1597,7 @@ const Main = ({ margin }) => {
                             {t("offices_section.book_a_demo")}
                           </NavLink>
                         </div>
-                      </motion.button>
+                      </MotionButton>
                       <NavLink
                         to="/#contact-us"
                         end
@@ -1614,7 +1614,7 @@ const Main = ({ margin }) => {
                       </NavLink>
                     </div>
                   </div>
-                  <p className="text-[#63666D] md:text-[0.85vw] text-[2.5vw] font-medium opacity-80 tracking-wider md:pt-0 pt-[2vw]">
+                  <p className="text-[#63666D] md:text-[0.85vw] text-[2.5vw] font-medium opacity-80 tracking-wider md:pt-0 pt-[2vw] md:text-start text-center">
                     {t("offices_section.description_1")}&nbsp;
                     {i18n.language !== "vn" && <br />}
                     {t("offices_section.description_2")}
@@ -1744,7 +1744,7 @@ const Main = ({ margin }) => {
                     {t("contact_us_section.badge_1")}
                   </span>
                   <p
-                    className={`md:text-[2.3vw] text-[6vw] text-[#1A1A1A] text-center font-semibold md:leading-[2.5vw] leading-[6.5vw] mt-[1vw] select-none z-20 md:px-0 px-[5vw]`}
+                    className={`md:text-[2.3vw] text-[6vw] text-[#1A1A1A] text-center font-semibold md:leading-[2.5vw] leading-[6.5vw] mt-[1vw] select-none z-20 ${i18n.language === "vn" ? "" : "md:px-0 px-[5vw]"}`}
                     style={{
                       fontFamily: "Inter, system-ui, -apple-system, sans-serif",
                     }}
@@ -1753,7 +1753,9 @@ const Main = ({ margin }) => {
                     <p className="inline text-[#FF00E5]">
                       {t("contact_us_section.header_2")}
                     </p>{" "}
-                    <br className="md:block hidden" />
+                    {i18n.language !== "vn" && (
+                      <br className="md:block hidden" />
+                    )}
                     {t("contact_us_section.header_3")}
                   </p>
                 </div>

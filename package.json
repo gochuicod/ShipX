@@ -17,6 +17,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier": "npx prettier src/ --write"
   },
+  "sideEffects": false,
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -30,14 +31,12 @@
     "postcss": "^8.5.6",
     "react-email": "4.3.0",
     "rimraf": "^6.0.1",
-    "source-map-explorer": "^2.5.3",
     "tailwindcss": "^4.1.13"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",
     "@material-tailwind/react": "^2.1.10",
     "@studio-freight/lenis": "^1.0.42",
-    "@tabler/icons-react": "^3.35.0",
     "@wordpress/scripts": "^30.25.0",
     "clsx": "^2.1.1",
     "i18next": "^25.5.2",
