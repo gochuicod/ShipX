@@ -84,10 +84,14 @@ const Header = memo(() => {
           <Listbox
             className="md:block hidden"
             value={selected}
-            onChange={(language) => {
+            onChange={async (language) => {
               setSelected(language);
-              i18n.changeLanguage(language.key);
-              localStorage.setItem("lang", language.key);
+              try {
+                await i18n.changeLanguage(language.key); // loads from CDN
+                localStorage.setItem("lang", language.key);
+              } catch (err) {
+                console.error("Failed to load language:", err);
+              }
             }}
           >
             <div className="relative">
