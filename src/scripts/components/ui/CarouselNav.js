@@ -256,7 +256,7 @@ export default function CarouselNav() {
             <div className="md:w-fit w-full flex justify-end items-center select-none">
               <img
                 className="md:w-fit w-full md:h-[35vw] h-[35vh] md:p-0 pb-0"
-                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_1.svg"
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_1.webp"
                 alt="Main SVG 1"
               />
             </div>
@@ -482,7 +482,7 @@ export default function CarouselNav() {
             <div className="md:w-fit w-full flex justify-end items-center select-none">
               <img
                 className="md:w-fit w-full md:h-[35vw] h-[35vh] md:p-0 pb-0"
-                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_11.svg"
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_11.webp"
                 alt="Main SVG 11"
               />
             </div>
@@ -709,7 +709,7 @@ export default function CarouselNav() {
             <div className="md:w-fit w-full flex justify-end items-center select-none">
               <img
                 className="md:w-fit w-full md:h-[35vw] h-[35vh] md:p-0 pb-0"
-                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_12.svg"
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_12.webp"
                 alt="Main SVG 12"
               />
             </div>
