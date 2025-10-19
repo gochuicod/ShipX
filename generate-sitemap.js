@@ -24,7 +24,7 @@ function generateSitemap() {
 
   sitemap += `</urlset>`;
 
-  fs.writeFileSync(path.join(__dirname, "react_sitemap.xml"), sitemap);
+  fs.writeFileSync(path.join(__dirname, "sitemap.xml"), sitemap);
   console.log("✅ Sitemap generated successfully!");
 }
 
