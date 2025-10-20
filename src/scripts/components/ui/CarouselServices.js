@@ -458,8 +458,8 @@ export default function CarouselServices({ slide }) {
             {t("services_section.carousel.slide_6.header_2")}{" "}
             <p className="inline text-[#FF00E5]">
               {t("services_section.carousel.slide_6.header_3")}
-              {i18n.language !== "vn" && <br />}
-              &nbsp;{t("services_section.carousel.slide_6.header_4")}
+              {i18n.language === "en" ? <br /> : <>&nbsp;</>}
+              {t("services_section.carousel.slide_6.header_4")}
             </p>
           </p>
           <div
@@ -572,7 +572,7 @@ export default function CarouselServices({ slide }) {
             {t("services_section.carousel.slide_8.badge_1")}
           </span>
           <p
-            className={`${i18n.language === "vn" ? "md:text-[1.2vw] md:leading-[1.7vw] text-[4vw] leading-[4.5vw]" : "md:text-[1.3vw] md:leading-[2vw] text-[4vw] leading-[6vw]"} text-[#1A1A1A] text-start font-semibold`}
+            className={`${i18n.language === "vn" ? "md:text-[1.2vw] md:leading-[1.7vw] text-[4vw] leading-[4.5vw]" : "md:text-[1.3vw] md:leading-[2vw] text-[4vw] leading-[6vw]"} text-[#1A1A1A] text-center font-semibold`}
             style={{
               fontFamily: "Karla, system-ui, -apple-system, sans-serif",
             }}
@@ -581,7 +581,8 @@ export default function CarouselServices({ slide }) {
             <p className="inline text-[#FF00E5]">
               {t("services_section.carousel.slide_8.header_2")}
             </p>
-            {i18n.language !== "vn" ? <br /> : <>&nbsp;</>}
+            &nbsp;
+            {/* {i18n.language !== "vn" ? <br /> : <>&nbsp;</>} */}
             {t("services_section.carousel.slide_8.header_3")}
           </p>
           <div className="flex flex-col md:gap-y-[1vw] gap-y-[2vw]">
