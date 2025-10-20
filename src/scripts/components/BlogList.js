@@ -19,8 +19,11 @@ const BlogList = () => {
         ogImage="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/logo-shipx.webp"
       />
 
-      <div className="flex flex-col gap-y-[1vw] md:px-[8vw] px-[10vw] md:py-[5vw] py-[10vw]">
-        <h1 className="text-4xl font-bold mb-8">
+      <div
+        className="flex flex-col md:gap-y-[2vw] gap-y-[4vw] md:px-[8vw] px-[10vw] md:py-[5vw] py-[10vw]"
+        style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
+      >
+        <h1 className="md:text-[2vw] text-[6vw] font-bold">
           {t("service_headline_section.blog_page_heading")}
         </h1>
 
@@ -35,15 +38,21 @@ const BlogList = () => {
                 <img
                   src={post.cover}
                   alt={post.title}
-                  className="w-full h-56 object-cover"
+                  className="w-full md:h-[20vw] h-full object-cover"
                   loading="lazy"
                 />
-                <div className="p-6">
-                  <h2 className="text-2xl font-semibold mb-2">{post.title}</h2>
-                  {post.content_preview && (
-                    <p className="text-gray-600">{post.content_preview}...</p>
+                <div className="md:p-[2vw] p-[4vw]">
+                  <h2 className="md:text-[1.5vw] text-[5vw] md:leading-[2vw] leading-[5.5vw] font-bold md:pb-[0.5vw] pb-[1.5vw]">
+                    {post.title}
+                  </h2>
+                  {post.content && (
+                    <p className="text-[#1A1A1A]/80 md:text-[1vw] text-[3vw] truncate">
+                      {post.content.slice(3)}...
+                    </p>
                   )}
-                  <p className="text-sm text-gray-400 mt-2">{post.date}</p>
+                  <p className="text-[#1A1A1A]/50 md:text-[0.8vw] text-[2.5vw] mt-2">
+                    {post.date}
+                  </p>
                 </div>
               </SmartNavLink>
             ))}
