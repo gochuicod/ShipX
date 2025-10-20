@@ -262,12 +262,12 @@
     "collapsible_text_closed_2": "Xem thêm",
     "services_1": {
       "multimodal": {
-        "title": "Vận chuyển đa phương thức bằng đường biển,",
-        "description": "đường hàng không, đường bộ & kết hợp chuỗi cung ứng vận tải"
+        "title": "Vận tải đa phương thức",
+        "description": "đường biển, đường hàng không, đường bộ và hậu cần kết hợp"
       },
       "cross_border": {
-        "title": "Vận chuyển đường bộ xuyên",
-        "description": "biên giới (VN-SG, TH-VN)"
+        "title": "Vận tải xuyên biên giới",
+        "description": "làn đường liên kết (VN-SG, TH-VN)"
       },
       "customs": {
         "title": "Giải pháp hải quan toàn điện:",
