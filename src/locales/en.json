@@ -308,26 +308,26 @@
     "offices": {
       "singapore": {
         "country_name": "Singapore",
-        "address": "60 Kaki Bukit Place, Eunos Techpark #03-19, S415979",
-        "contact_number": "(+65) 9001 9941",
+        "address": "60 Kaki Bukit Place, Eunos Techpark",
+        "contact_number": "",
         "email": "contact.sg@shipx.asia"
       },
       "thailand": {
         "country_name": "Thailand",
         "address": "450/2 Boonyasathit Building, 2th Floor, Rama III Rd., Bangkok 10120",
-        "contact_number": "(+65) 96 798 8971",
+        "contact_number": "",
         "email": "contact.th@shipx.asia"
       },
       "vietnam": {
         "country_name": "Vietnam",
         "address": "28 Street N0.6, Bay Hien Ward, Ho Chi Minh City, Vietnam",
-        "contact_number": "(+84) 1900 633 027",
+        "contact_number": "",
         "email": "contact.vn@shipx.asia"
       },
       "malaysia": {
         "country_name": "Malaysia",
         "address": "Suite 5.03 Level 5 Block, Bangunan Pan Global, 1A, Jln Tandang, Seksyen 51, 46050 Petaling Jaya, Selangor",
-        "contact_number": "(+60) 12 525 5019",
+        "contact_number": "",
         "email": "contact.my@shipx.asia"
       },
       "indonesia": {
@@ -338,7 +338,7 @@
       "philippines": {
         "country_name": "Philippines",
         "address": "",
-        "contact_number": "(+63) 967 204 5276",
+        "contact_number": "",
         "email": "contact.ph@shipx.asia"
       },
       "united_states": {
@@ -384,10 +384,10 @@
     "header_3": "Let's talk.",
     "header_4": "Contact Information",
     "subheader_1": "Let's partner and grow",
-    "number": "+84 1900 633 027",
+    "number": "",
     "email": "info@shipx.asia",
-    "address_1": "28 Street N0.6, Bay Hien Ward,",
-    "address_2": "Ho Chi Minh City, Vietnam",
+    "address_1": "60 Kaki Bukit Place, ",
+    "address_2": "Eunos Techpark",
     "form": {
       "name": "Your Name",
       "email": "Email Address",
@@ -432,9 +432,9 @@
     "privacy_policy": "Privacy Policy",
     "terms_and_conditions": "Terms & Conditions",
     "reach_us_1": "Reach us",
-    "reach_us_2": "+84 1900 633 027",
+    "reach_us_2": "",
     "reach_us_3": "info@shipx.asia",
-    "reach_us_4": "28 Street N0.6, Bay Hien Ward, Ho Chi Minh City, Vietnam",
+    "reach_us_4": "60 Kaki Bukit Place, Eunos Techpark",
     "copyright": "ShipX Copyright and rights reserved"
   },
   "messenger_bubble": {
@@ -444,5 +444,13 @@
     "title": "404 — Page Not Found",
     "description": "The page you're looking for doesn't exist or may have been moved.",
     "button": "Go Back Home"
-  }
+  },
+  "loading_states": [
+    "Loading resources...",
+    "Initializing modules...",
+    "Fetching data...",
+    "Setting things up...",
+    "Almost ready...",
+    "Finalizing..."
+  ]
 }

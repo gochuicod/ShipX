@@ -28,7 +28,7 @@ export default function CarouselServices({ slide }) {
         autoplayDelay={5000}
         loop={true}
         transition={{ duration: 1 }}
-        className="md:w-[25vw] w-[75vw] rounded-none select-none md:pt-0 pt-[5vw]"
+        className="md:w-[25vw] w-[80vw] rounded-none select-none md:pt-0 pt-[5vw]"
         prevArrow={({ handlePrev }) => (
           <button
             type="button"

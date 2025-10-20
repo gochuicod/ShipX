@@ -1130,7 +1130,7 @@ const Main = ({ margin }) => {
                     <p className="inline text-[#FF00E5]">
                       {t("freight_section.header_1")}
                     </p>
-                    &nbsp;{t("freight_section.header_2")} $
+                    &nbsp;{t("freight_section.header_2")}
                     {i18n.language !== "vn" && (
                       <br className="md:block hidden" />
                     )}
@@ -1223,7 +1223,7 @@ const Main = ({ margin }) => {
                         &nbsp;
                         {t("freight_section.header_5")}&nbsp;
                         {i18n.language !== "vn" && (
-                          <br className="md:block hidden" />
+                          <br className="hidden md:block" />
                         )}
                         <p className="inline text-[#FF00E5]">
                           {t("freight_section.header_6")}

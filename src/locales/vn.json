@@ -289,7 +289,7 @@
       }
     },
     "badge_3": "Giải pháp Vận chuyển,Thông quan & Fulfillment chuẩn quốc tế",
-    "header_8": "Mạng lưới trung tâm vận hành rộng khắp",
+    "header_8": "Mạng lưới trung tâm ",
     "header_9": "vận hành rộng khắp",
     "header_10": "Việt Nam, Thái Lan, Singapore và Malaysia",
     "header_11": "Cơ sở hạ tầng đáng tin cậy &",
@@ -308,26 +308,26 @@
     "offices": {
       "singapore": {
         "country_name": "Singapore",
-        "address": "60 Kaki Bukit Place, Eunos Techpark #03-19, S415979",
-        "contact_number": "(+65) 9001 9941",
+        "address": "60 Kaki Bukit Place, Khu công nghệ",
+        "contact_number": "",
         "email": "contact.sg@shipx.asia"
       },
       "thailand": {
         "country_name": "Thái Lan",
         "address": "450/2 Boonyasathit Building, Tầng 2, Rama III Rd., Bangkok 10120",
-        "contact_number": "(+65) 96 798 8971",
+        "contact_number": "",
         "email": "contact.th@shipx.asia"
       },
       "vietnam": {
         "country_name": "Việt Nam",
         "address": "Số 28, Đường Số 6, Phường Bay Hiên, Thành phố Hồ Chí Minh, Việt Nam",
-        "contact_number": "(+84) 1900 633 027",
+        "contact_number": "",
         "email": "contact.vn@shipx.asia"
       },
       "malaysia": {
         "country_name": "Malaysia",
         "address": "Suite 5.03 Level 5 Block, Bangunan Pan Global, 1A, Jln Tandang, Seksyen 51, 46050 Petaling Jaya, Selangor",
-        "contact_number": "(+60) 12 525 5019",
+        "contact_number": "",
         "email": "contact.my@shipx.asia"
       },
       "indonesia": {
@@ -338,7 +338,7 @@
       "philippines": {
         "country_name": "Philippines",
         "address": "địa chỉ",
-        "contact_number": "(+63) 976 167 1128",
+        "contact_number": "",
         "email": "contact.ph@shipx.asia"
       },
       "united_states": {
@@ -384,10 +384,10 @@
     "header_3": "Kết nối với chúng tôi ngay.",
     "header_4": "Thông tin liên hệ",
     "subheader_1": "Cùng hợp tác và phát triển",
-    "number": "+84 1900 633 027",
+    "number": "",
     "email": "info@shipx.asia",
-    "address_1": "391B Orchard Road #22,",
-    "address_2": "Ngee Ann City Singapore, 238874",
+    "address_1": "60 Kaki Bukit Place, ",
+    "address_2": "Khu công nghệ",
     "form": {
       "name": "Tên của bạn",
       "email": "Email của bạn",
@@ -432,9 +432,9 @@
     "privacy_policy": "Chính Sách Quyền Riêng Tư",
     "terms_and_conditions": "Điều khoản và Điều kiện",
     "reach_us_1": "Thông tin liên hệ",
-    "reach_us_2": "+84 1900 633 027",
+    "reach_us_2": "",
     "reach_us_3": "info@shipx.asia",
-    "reach_us_4": "Số 28, Đường Số 6, Phường Bay Hiên, Thành phố Hồ Chí Minh, Việt Nam",
+    "reach_us_4": "60 Kaki Bukit Place, Khu công nghệ",
     "copyright": "ShipX Bản quyền và đã đăng ký"
   },
   "messenger_bubble": {
@@ -444,5 +444,13 @@
     "title": "404 — Không tìm thấy trang",
     "description": "Trang bạn đang tìm kiếm không tồn tại hoặc có thể đã được di chuyển.",
     "button": "Quay lại trang chủ"
-  }
+  },
+  "loading_states": [
+    "Đang tải tài nguyên...",
+    "Đang khởi tạo mô-đun...",
+    "Đang lấy dữ liệu...",
+    "Đang thiết lập hệ thống...",
+    "Sắp xong rồi...",
+    "Đang hoàn tất..."
+  ]
 }

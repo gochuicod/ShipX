@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
-const defaultStates = [
-  { text: "Loading assets..." },
-  { text: "Initializing modules..." },
-  { text: "Finalizing setup..." },
-  { text: "Ready!" },
-];
-
-const MultiStepLoader = ({
-  loadingStates = defaultStates,
-  loading = true,
-  duration = 2000,
-  loop = true,
-}) => {
+const MultiStepLoader = ({ loading = true, duration = 2000, loop = true }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { t } = useTranslation();
+
+  const loadingStates = [
+    { text: t("loading_states.0") },
+    { text: t("loading_states.1") },
+    { text: t("loading_states.2") },
+    { text: t("loading_states.3") },
+    { text: t("loading_states.4") },
+    { text: t("loading_states.5") },
+  ];
 
   useEffect(() => {
     if (!loading) return;

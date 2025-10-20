@@ -308,26 +308,26 @@
     "offices": {
       "singapore": {
         "country_name": "สิงคโปร์",
-        "address": "60 Kaki Bukit Place, Eunos Techpark #03-19, S415979",
-        "contact_number": "(+65) 9001 9941",
+        "address": "60 Kaki Bukit Place, อีูโนส เทคพาร์ค",
+        "contact_number": "",
         "email": "contact.sg@shipx.asia"
       },
       "thailand": {
         "country_name": "ประเทศไทย",
         "address": "450/2 อาคารบุญญสถิต ชั้น 2 ถนนพระราม 3 กรุงเทพฯ 10120",
-        "contact_number": "(+65) 96 798 8971",
+        "contact_number": "",
         "email": "contact.th@shipx.asia"
       },
       "vietnam": {
         "country_name": "เวียดนาม",
         "address": "ถนนหมายเลข 6 เลขที่ 28 แขวงบ่ายเฮียน เมืองโฮจิมินห์ ประเทศเวียดนาม",
-        "contact_number": "(+84) 1900 633 027",
+        "contact_number": "",
         "email": "contact.vn@shipx.asia"
       },
       "malaysia": {
         "country_name": "มาเลเซีย",
         "address": "Suite 5.03 Level 5 Block, Bangunan Pan Global, 1A, Jln Tandang, Seksyen 51, 46050 Petaling Jaya, Selangor",
-        "contact_number": "(+60) 12 525 5019",
+        "contact_number": "",
         "email": "contact.my@shipx.asia"
       },
       "indonesia": {
@@ -338,7 +338,7 @@
       "philippines": {
         "country_name": "ฟิลิปปินส์",
         "address": "ที่อยู่",
-        "contact_number": "(+63) 976 167 1128",
+        "contact_number": "",
         "email": "contact.ph@shipx.asia"
       },
       "united_states": {
@@ -384,10 +384,10 @@
     "header_3": "มาคุยกัน",
     "header_4": "ข้อมูลการติดต่อ",
     "subheader_1": "มาร่วมเป็นพันธมิตรและเติบโตไปด้วยกัน",
-    "number": "+84 1900 633 027",
+    "number": "",
     "email": "info@shipx.asia",
-    "address_1": "ถนน 28 หมายเลข 6 แขวงบ่ายเหียน,",
-    "address_2": "นครโฮจิมินห์ ประเทศเวียดนาม",
+    "address_1": "60 Kaki Bukit Place, ",
+    "address_2": "อีูโนส เทคพาร์ค",
     "form": {
       "name": "ชื่อของคุณ",
       "email": "ที่อยู่อีเมล",
@@ -432,9 +432,9 @@
     "privacy_policy": "นโยบายความเป็นส่วนตัว",
     "terms_and_conditions": "ข้อกำหนดและเงื่อนไข",
     "reach_us_1": "ติดต่อเรา",
-    "reach_us_2": "+84 1900 633 027",
+    "reach_us_2": "",
     "reach_us_3": "info@shipx.asia",
-    "reach_us_4": "ถนนหมายเลข 6 เลขที่ 28 แขวงบ่ายเฮียน เมืองโฮจิมินห์ ประเทศเวียดนาม",
+    "reach_us_4": "60 Kaki Bukit Place, อีูโนส เทคพาร์ค",
     "copyright": "ShipX ลิขสิทธิ์และสงวนสิทธิ์"
   },
   "messenger_bubble": {
@@ -444,5 +444,13 @@
     "title": "404 — ไม่พบหน้าที่ต้องการ",
     "description": "หน้าที่คุณกำลังค้นหาไม่มีอยู่หรืออาจถูกย้ายไปแล้ว",
     "button": "กลับไปหน้าหลัก"
-  }
+  },
+  "loading_states": [
+    "กำลังโหลดแหล่งข้อมูล...",
+    "กำลังเริ่มต้นโมดูล...",
+    "กำลังดึงข้อมูล...",
+    "กำลังตั้งค่าระบบ...",
+    "ใกล้เสร็จแล้ว...",
+    "กำลังดำเนินการขั้นสุดท้าย..."
+  ]
 }

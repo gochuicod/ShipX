@@ -308,26 +308,26 @@
     "offices": {
       "singapore": {
         "country_name": "Singapura",
-        "address": "60 Kaki Bukit Place, Eunos Techpark #03-19, S415979",
-        "contact_number": "(+65) 9001 9941",
+        "address": "60 Kaki Bukit Place, Eunos Techpark",
+        "contact_number": "",
         "email": "contact.sg@shipx.asia"
       },
       "thailand": {
         "country_name": "Thailand",
         "address": "450/2 Gedung Boonyasathit, Lantai 2, Rama III Rd., Bangkok 10120",
-        "contact_number": "(+65) 96 798 8971",
+        "contact_number": "",
         "email": "contact.th@shipx.asia"
       },
       "vietnam": {
         "country_name": "Vietnam",
         "address": "Jalan No.6 Nomor 28, Kelurahan Bay Hien, Kota Ho Chi Minh, Vietnam",
-        "contact_number": "(+84) 1900 633 027",
+        "contact_number": "",
         "email": "contact.vn@shipx.asia"
       },
       "malaysia": {
         "country_name": "Malaysia",
         "address": "Suite 5.03 Level 5 Block, Bangunan Pan Global, 1A, Jln Tandang, Seksyen 51, 46050 Petaling Jaya, Selangor",
-        "contact_number": "(+60) 12 525 5019",
+        "contact_number": "",
         "email": "contact.my@shipx.asia"
       },
       "indonesia": {
@@ -338,7 +338,7 @@
       "philippines": {
         "country_name": "Filipina",
         "address": "alamat",
-        "contact_number": "(+63) 976 167 1128",
+        "contact_number": "",
         "email": "contact.ph@shipx.asia"
       },
       "united_states": {
@@ -384,10 +384,10 @@
     "header_3": "Mari bicara.",
     "header_4": "Informasi Kontak",
     "subheader_1": "Mari bermitra dan berkembang bersama",
-    "number": "+84 1900 633 027",
+    "number": "",
     "email": "info@shipx.asia",
-    "address_1": "Jalan 28 No.6, Kelurahan Bay Hien,",
-    "address_2": "Kota Ho Chi Minh, Vietnam",
+    "address_1": "60 Kaki Bukit Place, ",
+    "address_2": "Eunos Techpark",
     "form": {
       "name": "Nama Anda",
       "email": "Alamat Email",
@@ -432,9 +432,9 @@
     "privacy_policy": "Kebijakan Privasi",
     "terms_and_conditions": "Syarat & Ketentuan",
     "reach_us_1": "Hubungi kami",
-    "reach_us_2": "+84 1900 633 027",
+    "reach_us_2": "",
     "reach_us_3": "info@shipx.asia",
-    "reach_us_4": "Jalan No.6 Nomor 28, Kelurahan Bay Hien, Kota Ho Chi Minh, Vietnam",
+    "reach_us_4": "60 Kaki Bukit Place, Eunos Techpark",
     "copyright": "Hak Cipta ShipX. Semua hak dilindungi."
   },
   "messenger_bubble": {
@@ -444,5 +444,13 @@
     "title": "404 — Halaman Tidak Ditemukan",
     "description": "Halaman yang Anda cari tidak ada atau mungkin telah dipindahkan.",
     "button": "Kembali ke Beranda"
-  }
+  },
+  "loading_states": [
+    "Memuat sumber daya...",
+    "Menginisialisasi modul...",
+    "Mengambil data...",
+    "Menyiapkan sistem...",
+    "Hampir selesai...",
+    "Menyelesaikan..."
+  ]
 }
