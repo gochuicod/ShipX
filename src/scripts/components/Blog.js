@@ -56,7 +56,7 @@ const Blog = () => {
                 to="/"
                 className="hover:text-[#1A1A1A]/70 transition-colors"
               >
-                Home
+                {t("service_headline_section.breadcrumbs.home")}
               </SmartNavLink>
             </li>
             <li>/</li>
@@ -65,7 +65,7 @@ const Blog = () => {
                 to="/blog"
                 className="hover:text-[#1A1A1A]/70 transition-colors"
               >
-                Blog
+                {t("service_headline_section.breadcrumbs.blog")}
               </SmartNavLink>
             </li>
             <li>/</li>
