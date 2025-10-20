@@ -22,6 +22,7 @@ const Blog = lazy(() => import("./scripts/components/Blog"));
 const NotFound = lazy(() => import("./scripts/components/ui/NotFound"));
 
 import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
+import BlogList from "./scripts/components/BlogList";
 
 const helmetContext = {};
 
@@ -109,11 +110,8 @@ const App = () => {
                 element={<TermsAndConditions />}
               />
               <Route path="/book-a-demo" element={<BookADemo />} />
-              <Route
-                path="/blog"
-                element={<Navigate to="/blog/18" replace />}
-              />
-              <Route path="/blog/:id" element={<Blog />} />
+              <Route path="/blog" element={<BlogList />} />
+              <Route path="/blog/:slug" element={<Blog />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

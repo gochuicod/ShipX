@@ -1,7 +1,7 @@
 import { button as MotionButton } from "motion/react-client";
 import { margin } from "../../utils/constants";
 import { useTranslation } from "react-i18next";
-import { NavLink } from "react-router-dom";
+import SmartNavLink from "./SmartNavLink";
 
 const ServiceHeadline = () => {
   const { t } = useTranslation();
@@ -13,7 +13,7 @@ const ServiceHeadline = () => {
         fontFamily: "Public_Sans, system-ui, -apple-system, sans-serif",
       }}
     >
-      <NavLink to="/blog" end>
+      <SmartNavLink to="/blog" end>
         <div className="flex md:flex-row flex-col md:gap-x-[5vw] gap-x-0 md:gap-y-0 gap-y-[10vw] justify-center items-center bg-[#FFD6FA]/50 md:rounded-[1.5vw] rounded-[3.5vw]">
           <div className="flex md:w-[30vw] w-full">
             <img
@@ -55,7 +55,7 @@ const ServiceHeadline = () => {
             </MotionButton>
           </div>
         </div>
-      </NavLink>
+      </SmartNavLink>
     </div>
   );
 };

@@ -78,7 +78,22 @@
     "heading_1": "Ingin tahu lebih lanjut tentang",
     "heading_2": "ShipX",
     "heading_3": "pelancarannya?",
-    "button_text_1": "Baca Blog"
+    "button_text_1": "Baca Blog",
+    "blogs": [
+      {
+        "slug": "shipx-goes-live",
+        "title": "ShipX Dilancarkan Secara Rasmi – Masa Depan Lebih Pintar untuk Logistik Rentas Sempadan ASEAN",
+        "date": "14 Oktober 2025",
+        "author": "zeke@infigroup.co",
+        "cover": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_sglink_banner_image_1.webp",
+        "content": "<p>Momen yang dinantikan akhirnya tiba. Selepas berbulan-bulan merancang, membangun, dan memperhalusi, ShipX kini rasmi dilancarkan.<br/><br/>ShipX, hasil daripada kerjasama strategik antara Amilo dan SG Link, bukan sekadar platform logistik. Ia merupakan langkah berani untuk memperkasa perusahaan kecil dan sederhana (PKS) ASEAN agar yakin dalam menembusi dan berkembang di pasaran perdagangan rentas sempadan.<br/><br/>Selama bertahun-tahun, PKS di seluruh Asia Tenggara berdepan cabaran yang sama: kos penghantaran yang tidak menentu, prosedur kastam yang rumit, serta rantaian bekalan yang berpecah-belah yang memakan masa dan sumber. ShipX dibina untuk menghapuskan halangan-halangan ini, membolehkan PKS beroperasi dengan kelajuan, ketelusan, dan kecekapan kos seperti syarikat global. Kini, dengan pelancaran ShipX, PKS di seluruh ASEAN mempunyai rakan baharu yang memahami cabaran mereka dan komited terhadap kejayaan mereka.</p><br/><img src='https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx_blog_img_1.webp' alt='ShipX Blog Image 1' loading='lazy' /><br/><p><strong>Mengapa ShipX Penting untuk PKS ASEAN</strong><br/><br/>ASEAN merupakan rantau yang penuh peluang. Dengan populasi melebihi 650 juta orang dan pertumbuhan kelas menengah yang pesat, ia adalah pasaran yang semakin terhubung. Jualan e-dagang rentas sempadan dijangka melebihi $200 bilion menjelang tahun 2025, membuka peluang besar kepada PKS.<br/><br/>Namun, peluang ini turut disertai cabaran:<br/><br/><ul style='list-style-type: disc; margin-left: 1rem; padding-left: 0.5rem'><li><strong>Pembekal logistik yang tidak konsisten</strong> memaksa PKS bekerjasama dengan banyak pihak.</li><li><strong>Kelewatan kastam dan peraturan pematuhan yang tidak jelas</strong> menimbulkan tekanan.</li><li><strong>Kos penghantaran yang tidak menentu</strong> menyukarkan perancangan.</li><li><strong>Keterlihatan yang terhad</strong> menjadikan perniagaan tidak tahu status barangan selepas dihantar.</li></ul><br/><br/>Bagi banyak PKS, cabaran ini menjadi penghalang utama. Ia menyukarkan mereka menembusi pasaran baharu atau memaksa mereka beroperasi dengan margin yang kecil.<br/><br/>ShipX dibina untuk menangani cabaran ini secara menyeluruh. Dengan menggabungkan infrastruktur kukuh Amilo dan kepakaran serantau SG Link, platform ini menyediakan penyelesaian hujung ke hujung yang memudahkan perdagangan serta mempercepatkan pertumbuhan.</p><br/><img src='https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx_blog_img_2.webp' alt='ShipX Blog Image 2' loading='lazy' /><br/>",
+        "image_links": [
+          "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx_blog_img_1.webp",
+          "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx_blog_img_2.webp",
+          "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx_blog_img_3.webp"
+        ]
+      }
+    ]
   },
   "statistics_section": {
     "badge_1": "Statistik Kami",
