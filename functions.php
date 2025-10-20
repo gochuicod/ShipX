@@ -272,9 +272,9 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                       src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/country-logos/vn.png"
                       width="25"
                       alt="Vietnam"
-                      style="margin-bottom: 2px; display: block"
+                      style="margin-bottom: 8px; display: block"
                     />
-                    <a
+                    <!-- <a
                       href="tel:+841900633027"
                       style="
                         font-size: 12px;
@@ -282,7 +282,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                         text-decoration: none;
                       "
                       >(+84) 1900 633 027</a
-                    ><br />
+                    ><br /> -->
                     <a
                       href="mailto:contact.vn@shipx.asia?subject=ShipX%20Business%20Inquiry%20-%20Vietnam%20Region"
                       style="
@@ -311,9 +311,9 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                       src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/country-logos/sg.png"
                       width="25"
                       alt="Singapore"
-                      style="margin-bottom: 2px; display: block"
+                      style="margin-bottom: 8px; display: block"
                     />
-                    <a
+                    <!-- <a
                       href="tel:+6590019941"
                       style="
                         font-size: 12px;
@@ -321,7 +321,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                         text-decoration: none;
                       "
                       >(+65) 9001 9941</a
-                    ><br />
+                    ><br /> -->
                     <a
                       href="mailto:contact.sg@shipx.asia?subject=ShipX%20Business%20Inquiry%20-%20Singapore%20Region"
                       style="
@@ -350,9 +350,9 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                       src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/country-logos/ph.png"
                       width="25"
                       alt="Philippines"
-                      style="margin-bottom: 2px; display: block"
+                      style="margin-bottom: 8px; display: block"
                     />
-                    <a
+                    <!-- <a
                       href="tel:+639672045276"
                       style="
                         font-size: 12px;
@@ -360,7 +360,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                         text-decoration: none;
                       "
                       >(+63) 967 204 5276</a
-                    ><br />
+                    ><br /> -->
                     <a
                       href="mailto:contact.ph@shipx.asia?subject=ShipX%20Business%20Inquiry%20-%20Philippines%20Region"
                       style="
@@ -394,9 +394,9 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                       src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/country-logos/th.png"
                       width="25"
                       alt="Thailand"
-                      style="margin-bottom: 2px; display: block"
+                      style="margin-bottom: 8px; display: block"
                     />
-                    <a
+                    <!-- <a
                       href="tel:+66967988971"
                       style="
                         font-size: 12px;
@@ -404,7 +404,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                         text-decoration: none;
                       "
                       >(+66) 96 798 8971</a
-                    ><br />
+                    ><br /> -->
                     <a
                       href="mailto:contact.th@shipx.asia?subject=ShipX%20Business%20Inquiry%20-%20Thailand%20Region"
                       style="
@@ -433,9 +433,9 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                       src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/country-logos/us.png"
                       width="25"
                       alt="USA"
-                      style="margin-bottom: 2px; display: block"
+                      style="margin-bottom: 8px; display: block"
                     />
-                    <br />
+                    <!-- <br /> -->
                     <a
                       href="mailto:contact.us@shipx.asia?subject=ShipX%20Business%20Inquiry%20-%20United%20States%20Region"
                       style="
@@ -464,9 +464,9 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                       src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/country-logos/my.png"
                       width="25"
                       alt="Malaysia"
-                      style="margin-bottom: 2px; display: block"
+                      style="margin-bottom: 8px; display: block"
                     />
-                    <a
+                    <!-- <a
                       href="tel:+60125255019"
                       style="
                         font-size: 12px;
@@ -474,7 +474,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                         text-decoration: none;
                       "
                       >(+60) 12 525 5019</a
-                    ><br />
+                    ><br /> -->
                     <a
                       href="mailto:contact.my@shipx.asia?subject=ShipX%20Business%20Inquiry%20-%20Malaysia%20Region"
                       style="
@@ -552,7 +552,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                   </td>
 
                   <!-- Phone -->
-                  <td align="center" style="padding: 5px 15px">
+                  <!-- <td align="center" style="padding: 5px 15px">
                     <img
                       src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/icons/bxs_phone-call.png"
                       alt="Phone"
@@ -569,7 +569,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                     >
                       (+84) 90 270 23 45
                     </a>
-                  </td>
+                  </td> -->
 
                   <!-- Website -->
                   <td align="center" style="padding: 5px 15px">
