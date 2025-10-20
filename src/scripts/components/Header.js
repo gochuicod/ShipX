@@ -1,5 +1,5 @@
 import { memo, useState } from "react";
-import { NavLink } from "react-router-dom";
+import SmartNavLink from "./ui/SmartNavLink";
 import {
   div as MotionDiv,
   button as MotionButton,
@@ -45,9 +45,8 @@ const Header = memo(() => {
         {/* Left: Logo */}
         <div className="flex flex-row gap-x-[1vw] justify-center items-center">
           <div className="flex flex-row gap-x-[0.5vw] justify-center items-center">
-            <NavLink
+            <SmartNavLink
               to="/"
-              end
               className={linkClass}
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
@@ -57,10 +56,9 @@ const Header = memo(() => {
                 alt="ShipX Logo"
                 className="md:w-[3vw] md:h-[1.5vw] w-[14vw] h-[7vw]"
               />
-            </NavLink>
-            <NavLink
+            </SmartNavLink>
+            <SmartNavLink
               to="/"
-              end
               className={linkClass}
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
@@ -70,7 +68,7 @@ const Header = memo(() => {
                 alt="SGLink Logo"
                 className="md:w-[3vw] md:h-[1.5vw] w-[16vw] h-[5vw]"
               />
-            </NavLink>
+            </SmartNavLink>
           </div>
           <img
             loading="lazy"
@@ -152,23 +150,22 @@ const Header = memo(() => {
 
         {/* Right: Nav + Buttons (hidden on mobile) */}
         <nav className="hidden md:flex flex-row gap-x-[2.5vw] font-medium text-[0.8vw]">
-          <NavLink
+          <SmartNavLink
             to="/"
-            end
             className={linkClass}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             {t("header.home")}
-          </NavLink>
-          <NavLink to="/#services" end className={linkClass}>
+          </SmartNavLink>
+          <SmartNavLink to="/#services" className={linkClass}>
             {t("header.services")}
-          </NavLink>
-          <NavLink to="/#platform" end className={linkClass}>
+          </SmartNavLink>
+          <SmartNavLink to="/#platform" className={linkClass}>
             {t("header.platform")}
-          </NavLink>
-          <NavLink to="/#network" end className={linkClass}>
+          </SmartNavLink>
+          <SmartNavLink to="/#network" className={linkClass}>
             {t("header.network")}
-          </NavLink>
+          </SmartNavLink>
         </nav>
 
         <div className="hidden md:flex flex-row justify-center items-center gap-x-[1vw] text-[0.8vw] font-normal">
@@ -190,17 +187,16 @@ const Header = memo(() => {
 
             {/* Inner white area */}
             <div className="relative flex flex-row items-center gap-x-[1vw] px-[2vw] py-[0.5vw] bg-white rounded-full">
-              <NavLink
+              <SmartNavLink
                 to="/book-a-demo"
                 className="text-[#4F378A] font-semibold"
               >
                 {t("header.book_a_demo")}
-              </NavLink>
+              </SmartNavLink>
             </div>
           </MotionButton>
-          <NavLink
+          <SmartNavLink
             to="/#contact-us"
-            end
             className="
               bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
               bg-[length:200%_100%] bg-[position:0%_0%]
@@ -211,7 +207,7 @@ const Header = memo(() => {
             "
           >
             {t("header.contact_us")}
-          </NavLink>
+          </SmartNavLink>
         </div>
 
         {/* Mobile Hamburger */}
@@ -254,57 +250,42 @@ const Header = memo(() => {
                         flex flex-col items-start p-[5vw] gap-y-[3vw] md:hidden 
                         text-[#1A1A1A] text-[3.5vw] font-medium"
             >
-              <NavLink
+              <SmartNavLink
                 to="/"
-                end
                 className={`${linkClass} w-full text-left px-[5vw]`}
-                onClick={() => {
-                  setIsOpen(false);
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }}
               >
                 {t("header.home")}
-              </NavLink>
-              <NavLink
+              </SmartNavLink>
+              <SmartNavLink
                 to="/#services"
-                end
                 className={`${linkClass} w-full text-left px-[5vw]`}
-                onClick={() => setIsOpen(false)}
               >
                 {t("header.services")}
-              </NavLink>
-              <NavLink
+              </SmartNavLink>
+              <SmartNavLink
                 to="/#platform"
-                end
                 className={`${linkClass} w-full text-left px-[5vw]`}
-                onClick={() => setIsOpen(false)}
               >
                 {t("header.platform")}
-              </NavLink>
-              <NavLink
+              </SmartNavLink>
+              <SmartNavLink
                 to="/#network"
-                end
                 className={`${linkClass} w-full text-left px-[5vw]`}
-                onClick={() => setIsOpen(false)}
               >
                 {t("header.network")}
-              </NavLink>
-              <NavLink
+              </SmartNavLink>
+              <SmartNavLink
                 to="/book-a-demo"
-                end
                 className={`${linkClass} w-full text-left px-[5vw]`}
-                onClick={() => setIsOpen(false)}
               >
                 {t("header.book_a_demo")}
-              </NavLink>
-              <NavLink
+              </SmartNavLink>
+              <SmartNavLink
                 to="/#contact-us"
-                end
                 className={`${linkClass} w-full text-left px-[5vw]`}
-                onClick={() => setIsOpen(false)}
               >
                 {t("header.contact_us")}
-              </NavLink>
+              </SmartNavLink>
               <Listbox
                 className={`${linkClass} w-full text-left px-[5vw]`}
                 value={selected}

@@ -173,8 +173,49 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                 Thanks for reaching out to ShipX. We've received your message and
                 routed it to the right teammate. A member of our sales team will
                 contact you within one business day. <br /><br />
-                If there's anything urgent, just reply to this email with more details or contact our local team for the prompt support
+                If there’s anything urgent, just reply to this email with more
+                details.
               </p>
+            </td>
+          </tr>
+
+          <!-- CTA -->
+          <tr>
+            <td align="center" style="padding: 20px 40px">
+              <p
+                style="
+                  color: #ff00e5 !important;
+                  font-weight: 700;
+                  font-size: 18px;
+                  margin: 0;
+                "
+              >
+                Want to move faster?
+              </p>
+              <p style="font-size: 16px; color: #000000 !important">
+                Book a time that suits you
+              </p>
+              <a
+                href="http://shipx.asia/book-a-demo"
+                target="_blank"
+                style="
+                  display: inline-block;
+                  padding: 12px 30px;
+                  background: radial-gradient(
+                    circle at 76% 51%,
+                    #ff00e5 0%,
+                    #4f378a 100%
+                  ) !important;
+                  border-radius: 20px;
+                  color: #ffffff !important;
+                  font-size: 18px;
+                  font-weight: bold;
+                  text-decoration: none;
+                  margin: 20px 0px;
+                "
+              >
+                Book A Demo Now!
+              </a>
             </td>
           </tr>
 
@@ -234,13 +275,13 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                       style="margin-bottom: 2px; display: block"
                     />
                     <a
-                      href="tel:+842873001234"
+                      href="tel:+841900633027"
                       style="
                         font-size: 12px;
                         color: #4d4d4d !important;
                         text-decoration: none;
                       "
-                      >(+84) 28 7300 1234</a
+                      >(+84) 1900 633 027</a
                     ><br />
                     <a
                       href="mailto:contact.vn@shipx.asia?subject=ShipX%20Business%20Inquiry%20-%20Vietnam%20Region"
@@ -273,13 +314,13 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                       style="margin-bottom: 2px; display: block"
                     />
                     <a
-                      href="tel:+6567890123"
+                      href="tel:+6590019941"
                       style="
                         font-size: 12px;
                         color: #4d4d4d !important;
                         text-decoration: none;
                       "
-                      >(+65) 6789 0123</a
+                      >(+65) 9001 9941</a
                     ><br />
                     <a
                       href="mailto:contact.sg@shipx.asia?subject=ShipX%20Business%20Inquiry%20-%20Singapore%20Region"
@@ -312,13 +353,13 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                       style="margin-bottom: 2px; display: block"
                     />
                     <a
-                      href="tel:+63281234567"
+                      href="tel:+639672045276"
                       style="
                         font-size: 12px;
                         color: #4d4d4d !important;
                         text-decoration: none;
                       "
-                      >(+63) 2 8123 4567</a
+                      >(+63) 967 204 5276</a
                     ><br />
                     <a
                       href="mailto:contact.ph@shipx.asia?subject=ShipX%20Business%20Inquiry%20-%20Philippines%20Region"
@@ -339,7 +380,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
 
                 <!-- Row 2 -->
                 <tr>
-                  <!-- Malaysia -->
+                  <!-- Thailand -->
                   <td
                     align="center"
                     valign="top"
@@ -350,28 +391,28 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                     "
                   >
                     <img
-                      src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/country-logos/my.png"
+                      src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/country-logos/th.png"
                       width="25"
-                      alt="Malaysia"
+                      alt="Thailand"
                       style="margin-bottom: 2px; display: block"
                     />
                     <a
-                      href="tel:+60392123456"
+                      href="tel:+66967988971"
                       style="
                         font-size: 12px;
                         color: #4d4d4d !important;
                         text-decoration: none;
                       "
-                      >(+60) 3 9212 3456</a
+                      >(+66) 96 798 8971</a
                     ><br />
                     <a
-                      href="mailto:contact.my@shipx.asia?subject=ShipX%20Business%20Inquiry%20-%20Malaysia%20Region"
+                      href="mailto:contact.th@shipx.asia?subject=ShipX%20Business%20Inquiry%20-%20Thailand%20Region"
                       style="
                         font-size: 12px;
                         color: #4d4d4d !important;
                         text-decoration: none;
                       "
-                      >contact.my@shipx.asia</a
+                      >contact.th@shipx.asia</a
                     >
                   </td>
 
@@ -409,7 +450,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                   <td width="30"></td>
                   <!-- Increased column spacing -->
 
-                  <!-- Thailand -->
+                  <!-- Malaysia -->
                   <td
                     align="center"
                     valign="top"
@@ -420,28 +461,28 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                     "
                   >
                     <img
-                      src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/country-logos/th.png"
+                      src="https://cdn.jsdelivr.net/gh/hezekiahdane/shipx-email-assets@main/country-logos/my.png"
                       width="25"
-                      alt="Thailand"
+                      alt="Malaysia"
                       style="margin-bottom: 2px; display: block"
                     />
                     <a
-                      href="tel:+6623456789"
+                      href="tel:+60125255019"
                       style="
                         font-size: 12px;
                         color: #4d4d4d !important;
                         text-decoration: none;
                       "
-                      >(+66) 2 345 6789</a
+                      >(+60) 12 525 5019</a
                     ><br />
                     <a
-                      href="mailto:contact.th@shipx.asia?subject=ShipX%20Business%20Inquiry%20-%20Thailand%20Region"
+                      href="mailto:contact.my@shipx.asia?subject=ShipX%20Business%20Inquiry%20-%20Malaysia%20Region"
                       style="
                         font-size: 12px;
                         color: #4d4d4d !important;
                         text-decoration: none;
                       "
-                      >contact.th@shipx.asia</a
+                      >contact.my@shipx.asia</a
                     >
                   </td>
                 </tr>
