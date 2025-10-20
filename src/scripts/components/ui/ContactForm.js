@@ -52,6 +52,7 @@ const ContactForm = () => {
               required: t("contact_us_section.form.name_placeholder"),
             })}
             placeholder={errors.name ? errors.name.message : ""}
+            autoComplete="name"
           />
         </div>
         <div className="flex flex-col">
@@ -71,6 +72,7 @@ const ContactForm = () => {
               },
             })}
             placeholder={errors.email ? errors.email.message : ""}
+            autoComplete="email"
           />
         </div>
         <div className="flex flex-col">
@@ -107,6 +109,7 @@ const ContactForm = () => {
             required: t("contact_us_section.form.message_placeholder"),
           })}
           placeholder={errors.message ? errors.message.message : ""}
+          autoComplete="off"
         />
       </div>
 

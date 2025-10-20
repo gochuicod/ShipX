@@ -1801,7 +1801,7 @@ const Main = ({ margin }) => {
                     </span>
                     <div className="flex md:flex-col flex-wrap md:gap-y-[1vw] gap-y-[5vw] md:mt-[3vw] mt-[10vw] md:gap-x-0 gap-x-[5vw]">
                       {/* Contact Number */}
-                      <div className="flex flex-row items-center w-fit">
+                      {/* <div className="flex flex-row items-center w-fit">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="#FF00E5"
@@ -1822,7 +1822,7 @@ const Main = ({ margin }) => {
                         >
                           {t("contact_us_section.number")}
                         </a>
-                      </div>
+                      </div> */}
                       {/* Email Address */}
                       <div className="flex flex-row items-center w-fit">
                         <svg

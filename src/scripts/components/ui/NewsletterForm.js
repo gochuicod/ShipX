@@ -53,6 +53,7 @@ const NewsletterForm = () => {
               ? errors.email.message
               : t("newsletter_section.form.placeholder")
           }
+          autoComplete="email"
         />
       </div>
 

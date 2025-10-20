@@ -48,7 +48,7 @@ const Blog = () => {
       >
         <nav
           aria-label="breadcrumb"
-          className="w-full mb-4 text-[#1A1A1A] md:text-[0.8vw] text-[2.2vw] text-left"
+          className="w-full text-[#1A1A1A] md:text-[0.8vw] text-[3vw] text-left"
         >
           <ol className="flex flex-wrap items-center gap-x-[0.5vw]">
             <li>
@@ -83,7 +83,7 @@ const Blog = () => {
         />
 
         <div className="flex flex-row gap-x-[1vw] md:text-[0.8vw] text-[2.2vw]">
-          <span>{post.author}</span>
+          <a href={`mailto:${post.author}`}>{post.author}</a>
           <span className="text-[#FF00E5]">{post.date}</span>
         </div>
 

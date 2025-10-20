@@ -99,7 +99,7 @@ const Footer = memo(() => {
           <div className="flex flex-col gap-y-[1vw] md:w-[15vw]">
             <span className="font-medium">{t("footer.reach_us_1")}</span>
             {/* Contact Number */}
-            <div className="flex flex-row items-center md:pl-[1vw] pl-[3vw]">
+            {/* <div className="flex flex-row items-center md:pl-[1vw] pl-[3vw]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="white"
@@ -117,7 +117,7 @@ const Footer = memo(() => {
               <a href="tel:+841900633027" className="md:pl-[1vw] pl-[3vw]">
                 {t("footer.reach_us_2")}
               </a>
-            </div>
+            </div> */}
             {/* Email Address */}
             <div className="flex flex-row items-center md:pl-[1vw] pl-[3vw]">
               <svg
@@ -142,7 +142,7 @@ const Footer = memo(() => {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="md:size-[2vw] size-[4vw]"
+                className="md:size-[1vw] size-[4vw]"
               >
                 <path
                   fillRule="evenodd"
