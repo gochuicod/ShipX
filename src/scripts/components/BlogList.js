@@ -1,46 +1,14 @@
-// src/scripts/components/BlogList.jsx
-import React, { useEffect, useState } from "react";
+import React from "react";
 import SmartNavLink from "./ui/SmartNavLink";
 import SEO from "./ui/SEO";
-import i18n from "i18next";
+import { useTranslation } from "react-i18next";
 
 const BlogList = () => {
-  const [blogs, setBlogs] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const { t } = useTranslation();
 
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      const baseUrl = "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/locales";
-      const lang = i18n.language || "en"; // current app language
-
-      try {
-        // Try current language first
-        let url = `${baseUrl}/${lang}.json?v=${Date.now()}`;
-        let res = await fetch(url);
-        if (!res.ok) throw new Error(`Failed to fetch ${lang}.json`);
-        let data = await res.json();
-        let blogsObj = data?.service_headline_section?.blogs;
-
-        // Fallback to Vietnamese if no blogs found
-        if (!blogsObj && lang !== "vn") {
-          console.warn(`No blogs found for ${lang}, loading Vietnamese fallback`);
-          url = `${baseUrl}/vn.json?v=${Date.now()}`;
-          res = await fetch(url);
-          data = await res.json();
-          blogsObj = data?.service_headline_section?.blogs;
-        }
-
-        setBlogs(Object.values(blogsObj || {}));
-      } catch (err) {
-        console.error("Error fetching blogs:", err);
-        setBlogs([]);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchBlogs();
-  }, [i18n.language]); // refetch whenever language changes
+  // Use returnObjects: true to get the blogs array
+  const blogs =
+    t("service_headline_section.blogs", { returnObjects: true }) || [];
 
   return (
     <>
@@ -54,9 +22,7 @@ const BlogList = () => {
       <div className="max-w-4xl mx-auto py-16 px-6">
         <h1 className="text-4xl font-bold mb-8">Blog</h1>
 
-        {loading ? (
-          <p>Loading blogs...</p>
-        ) : blogs.length > 0 ? (
+        {blogs.length > 0 ? (
           <div className="grid gap-10">
             {blogs.map((post) => (
               <SmartNavLink
