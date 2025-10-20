@@ -843,12 +843,28 @@ function mytheme_handle_contact(WP_REST_Request $request) {
 
 // Fonts config
 function shipx_enqueue_styles() {
-  wp_enqueue_style(
-    'shipx-main-style',
-    get_stylesheet_directory_uri() . '/build/index.css',
-    array(),
-    filemtime(get_stylesheet_directory() . '/build/index.css')
-  );
+  error_log('shipx_enqueue_styles fired');
+
+  $css_path = get_stylesheet_directory() . '/build/index.css';
+  $css_uri  = get_stylesheet_directory_uri() . '/build/index.css';
+
+  if (file_exists($css_path)) {
+      error_log('CSS file found at: ' . $css_path);
+      wp_enqueue_style(
+          'shipx-main-style',
+          $css_uri,
+          array(),
+          filemtime($css_path)
+      );
+  } else {
+      error_log('❌ CSS file NOT found, using fallback');
+      wp_enqueue_style(
+          'shipx-main-style',
+          get_stylesheet_directory_uri() . '/src/index.css',
+          array(),
+          null
+      );
+  }
 }
 add_action('wp_enqueue_scripts', 'shipx_enqueue_styles');
 

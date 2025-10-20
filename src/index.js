@@ -150,9 +150,21 @@ const App = () => {
               margin: "6px",
             }}
             expires={150}
-            onAccept={() => {
-              initGTM();
-              setGtmInitialized(true);
+            onAccept={async () => {
+              try {
+                const mod = await import(
+                  /* webpackChunkName: "tagmanager" */ "./tagmanager"
+                );
+                if (mod && typeof mod.initGTM === "function") {
+                  mod.initGTM();
+                  setGtmInitialized(true);
+                  console.log("GTM initialized after consent");
+                } else {
+                  console.error("initGTM not found in tagmanager module:", mod);
+                }
+              } catch (err) {
+                console.error("Failed to dynamically import tagmanager:", err);
+              }
             }}
           >
             We use cookies for analytics and marketing. You can accept or
