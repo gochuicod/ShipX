@@ -79,6 +79,7 @@
     "heading_2": "ShipX",
     "heading_3": "peluncurannya?",
     "button_text_1": "Baca Blog",
+    "blog_page_heading": "Terbaru",
     "breadcrumbs": {
       "home": "Beranda",
       "blog": "Blog"
@@ -438,5 +439,10 @@
   },
   "messenger_bubble": {
     "message": "Kirimkan pesan kepada kami"
+  },
+  "not_found": {
+    "title": "404 — Halaman Tidak Ditemukan",
+    "description": "Halaman yang Anda cari tidak ada atau mungkin telah dipindahkan.",
+    "button": "Kembali ke Beranda"
   }
 }

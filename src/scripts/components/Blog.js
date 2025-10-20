@@ -78,7 +78,7 @@ const Blog = () => {
         <img
           src={post.cover}
           alt={post.title}
-          className="w-full rounded-[2vw] shadow-[0_0vw_1vw_rgba(79,55,138,0.15)]"
+          className="w-full md:rounded-[2vw] rounded-[3vw] shadow-[0_0vw_1vw_rgba(79,55,138,0.15)]"
           loading="lazy"
         />
 

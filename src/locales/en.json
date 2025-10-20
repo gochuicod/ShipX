@@ -79,6 +79,7 @@
     "heading_2": "ShipX",
     "heading_3": "launch?",
     "button_text_1": "Read Blog",
+    "blog_page_heading": "Latest",
     "breadcrumbs": {
       "home": "Home",
       "blog": "Blog"
@@ -438,5 +439,10 @@
   },
   "messenger_bubble": {
     "message": "Send us a message"
+  },
+  "not_found": {
+    "title": "404 — Page Not Found",
+    "description": "The page you're looking for doesn't exist or may have been moved.",
+    "button": "Go Back Home"
   }
 }

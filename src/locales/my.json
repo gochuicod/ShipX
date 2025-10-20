@@ -79,6 +79,7 @@
     "heading_2": "ShipX",
     "heading_3": "pelancarannya?",
     "button_text_1": "Baca Blog",
+    "blog_page_heading": "Terkini",
     "breadcrumbs": {
       "home": "Utama",
       "blog": "Blog"
@@ -438,5 +439,10 @@
   },
   "messenger_bubble": {
     "message": "Hantar mesej kepada kami"
+  },
+  "not_found": {
+    "title": "404 — Halaman Tidak Dijumpai",
+    "description": "Halaman yang anda cari tidak wujud atau mungkin telah dipindahkan.",
+    "button": "Kembali ke Laman Utama"
   }
 }

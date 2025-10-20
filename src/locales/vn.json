@@ -79,6 +79,7 @@
     "heading_2": "ShipX",
     "heading_3": "buổi ra mắt chứ?",
     "button_text_1": "Đọc Blog",
+    "blog_page_heading": "Mới nhất",
     "breadcrumbs": {
       "home": "Trang chủ",
       "blog": "Blog"
@@ -438,5 +439,10 @@
   },
   "messenger_bubble": {
     "message": "Gửi tin nhắn ngay"
+  },
+  "not_found": {
+    "title": "404 — Không tìm thấy trang",
+    "description": "Trang bạn đang tìm kiếm không tồn tại hoặc có thể đã được di chuyển.",
+    "button": "Quay lại trang chủ"
   }
 }

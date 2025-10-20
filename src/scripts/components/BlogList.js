@@ -19,16 +19,18 @@ const BlogList = () => {
         ogImage="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/logo-shipx.webp"
       />
 
-      <div className="max-w-4xl mx-auto py-16 px-6">
-        <h1 className="text-4xl font-bold mb-8">Blog</h1>
+      <div className="flex flex-col gap-y-[1vw] md:px-[8vw] px-[10vw] md:py-[5vw] py-[10vw]">
+        <h1 className="text-4xl font-bold mb-8">
+          {t("service_headline_section.blog_page_heading")}
+        </h1>
 
         {blogs.length > 0 ? (
-          <div className="grid gap-10">
+          <div className="flex flex-wrap gap-x-[3vw]">
             {blogs.map((post) => (
               <SmartNavLink
                 to={`/blog/${post.slug}`}
                 key={post.slug}
-                className="block rounded-xl overflow-hidden shadow-[0_0vw_1vw_rgba(79,55,138,0.15)] hover:shadow-[0_0vw_1vw_rgba(79,55,138,0.3)] transition"
+                className="flex flex-col md:rounded-[2vw] rounded-[3vw] overflow-hidden shadow-[0_0vw_1vw_rgba(79,55,138,0.15)] hover:shadow-[0_0vw_1vw_rgba(79,55,138,0.3)] transition md:w-[35vw] w-full"
               >
                 <img
                   src={post.cover}
