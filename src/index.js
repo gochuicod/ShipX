@@ -24,14 +24,10 @@ const NotFound = lazy(() => import("./scripts/components/ui/NotFound"));
 import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
 import BlogList from "./scripts/components/BlogList";
 
-import useVersionCheck from "./scripts/hooks/useVersionCheck";
-
 const helmetContext = {};
 
 const App = () => {
   const [gtmInitialized, setGtmInitialized] = useState(false);
-
-  useVersionCheck();
 
   useEffect(() => {
     let lenis;
