@@ -1,0 +1,438 @@
+{
+  "header": {
+    "tagline": "ASEAN's Next Generation Platform",
+    "home": "Home",
+    "services": "Services",
+    "platform": "Platform",
+    "network": "Network",
+    "book_a_demo": "Book a Demo",
+    "contact_us": "Contact Us",
+    "login_signup": "Login/Signup",
+    "login_modal": {
+      "amilo": {
+        "title": "Amilo",
+        "description": "SEA Fulfillment + Cross-Border Shipping",
+        "button": "Log in to"
+      },
+      "sglink": {
+        "title": "SG LINK",
+        "description": "International Delivery for VN Merchants",
+        "button": "Log in to"
+      },
+      "sign_up": {
+        "title": "Sign Up",
+        "description": "Don't have an Account yet? Talk to Sales!",
+        "button": "Get Started"
+      }
+    },
+    "banner": {
+      "message": "Choose your country or region in Asia to view this page in your language."
+    }
+  },
+  "hero_section": {
+    "slide_1": {
+      "badge_1": "ShipX",
+      "badge_2": "Your Gateway Abroad",
+      "header_1": "Everything You Need",
+      "header_2": "To Grow",
+      "header_3": "Internationally",
+      "p_1": "From Economy Shipping To Express Delivery, FBA Fulfillment To Marketplace",
+      "p_1_1": "integrations, ShipX Equips You With The Tools To Scale Worldwide",
+      "p_2": "Community Of 1000+ International Shippers From ASEAN",
+      "book_a_demo": "Book a Demo Now!",
+      "learn_more": "Learn More",
+      "trusted_by_1": "Trusted By Industry",
+      "trusted_by_2": "Leaders & 2500+ More"
+    },
+    "slide_2": {
+      "badge_1": "ShipX",
+      "badge_2": "Destination US",
+      "header_1": "Seamless Entry To The",
+      "header_2": "US",
+      "header_3": "Ecosystem",
+      "p_1": " Enter And Scale In The U.S. Market With Custom Logistics Solutions Built To",
+      "p_1_1": "Support Sellers From Launch To Nationwide Expansion",
+      "p_2": "Your Gateway To U.S. E-Commerce",
+      "book_a_demo": "Book a Demo Now!",
+      "learn_more": "Learn More",
+      "trusted_by_1": "Synergized By Industry",
+      "trusted_by_2": "Partners & 50+ More"
+    },
+    "slide_3": {
+      "badge_1": "ShipX",
+      "badge_2": "Worldwide Delivery",
+      "header_1": "Delivering To",
+      "header_2": "190+",
+      "header_3": "Countries",
+      "header_4": "With Ease",
+      "p_1": " Reach Customers Worldwide With Seamless Logistics That Simplify Cross-",
+      "p_1_1": "Border Sales, Ensuring Smooth Growth Without Operational Headaches",
+      "p_2": "Take Your Brand Global, Stress-Free",
+      "book_a_demo": "Book a Demo Now!",
+      "learn_more": "Learn More",
+      "trusted_by_1": "Connected By Leading",
+      "trusted_by_2": "Integrations & 20+ More"
+    }
+  },
+  "service_headline_section": {
+    "heading_1": "Want to learn more about the",
+    "heading_2": "ShipX",
+    "heading_3": "launch?",
+    "button_text_1": "Read Blog",
+    "blogs": [
+      {
+        "slug": "shipx-goes-live",
+        "title": "ShipX Goes Live – A Smarter Future for ASEAN Cross-Border Logistics",
+        "date": "October 14, 2025",
+        "author": "zeke@infigroup.co",
+        "cover": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_sglink_banner_image_1.webp",
+        "content": "<p>The moment we’ve all been waiting for has arrived. After months of planning, building, and refining, ShipX is officially live.<br/><br/>ShipX, born from the strategic partnership of Amilo and SG Link, represents more than a logistics platform. It is a bold step forward in empowering ASEAN small and medium-sized enterprises (SMEs) to confidently enter and scale in the world of cross-border trade.<br/><br/>For years, SMEs across Southeast Asia have faced the same daunting obstacles: unpredictable shipping costs, opaque customs procedures, and fragmented supply chains that drain time, energy, and resources. ShipX was built to eliminate those pain points, enabling SMEs to operate with the same speed, visibility, and cost efficiency that global enterprises enjoy. Now, with ShipX live, SMEs across ASEAN have a new ally—one that understands their challenges and is committed to their success.</p><br/><img src='https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx_blog_img_1.webp' alt='ShipX Blog Image 1' loading='lazy' /><br/><p><strong>Why ShipX Matters for ASEAN SMEs</strong><br/><br/>ASEAN is a region brimming with opportunity. Home to over 650 million people, with one of the fastest-growing middle-class populations in the world, it’s a vibrant marketplace that’s increasingly interconnected. Cross-border e-commerce sales alone are expected to surpass $200 billion by 2025, creating unprecedented opportunities for SMEs.<br/><br/>Yet, these opportunities come with barriers:<br/><br/><ul style='list-style-type: disc; margin-left: 1rem; padding-left: 0.5rem'><li><strong>Inconsistent logistics providers</strong> that force SMEs to juggle multiple partners.</li><li><strong>Customs delays and unclear compliance</strong> rules that create frustration.</li><li><strong>Unpredictable shipping costs</strong> that make planning difficult.</li><li><strong>Limited visibility</strong> that leaves businesses in the dark once products leave their warehouses.</li></ul><br/><br/>For many SMEs, these obstacles are deal-breakers. They prevent companies from taking the leap into new markets or force them to operate at thin margins.<br/><br/>ShipX was built to solve these challenges head-on. By combining Amilo’s robust infrastructure with SG Link’s deep regional expertise, the platform provides SMEs with an end-to-end solution that simplifies trade and fuels growth.</p><br/><img src='https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx_blog_img_2.webp' alt='ShipX Blog Image 2' loading='lazy' /><br/><section><strong>What ShipX Offers: Key Features and Services</strong><br/><br/><p>At launch, ShipX brings together a comprehensive suite of features designed to meet the needs of SMEs that want to scale beyond their borders.</p><br/><strong>1. All-in-One Dashboard</strong><br/><br/><p>ShipX provides a single platform where SMEs can manage every aspect of their logistics journey. With one login, businesses can:</p><ul style='list-style-type: disc; margin-left: 1rem; padding-left: 0.5rem'><li>Book shipments.</li><li>Track deliveries across borders in real time.</li><li>Monitor performance metrics to improve efficiency.</li><li>Access customer support when needed.</li></ul><p>This means fewer spreadsheets, fewer phone calls, and far less guesswork.</p><br/><strong>2. End-to-End Logistics Coverage</strong><br/><br/><p>One of the biggest pain points for SMEs has been fragmented logistics. ShipX addresses this by offering full supply chain coverage:</p><ul style='list-style-type: disc; margin-left: 1rem; padding-left: 0.5rem'><li>First-mile pickup from the seller’s warehouse or office.</li><li>Customs clearance and compliance support, removing roadblocks.</li><li>International shipping through a unified network.</li><li>Last-mile delivery to customers in multiple countries.</li></ul><p>With ShipX, SMEs no longer need three or four different service providers to move a single shipment—it’s all under one roof.</p><br/><strong>3. Customs Made Simple</strong><br/><br/><p>Navigating customs has historically been one of the hardest parts of cross-border trade. Every country has its own regulations, documentation requirements, and compliance risks. For SMEs, one mistake can mean costly delays.</p><p>ShipX simplifies customs with:</p><ul style='list-style-type: disc; margin-left: 1rem; padding-left: 0.5rem'><li>Expert guidance on documentation.</li><li>Pre-cleared shipping processes.</li><li>Built-in compliance support that minimizes delays.</li></ul><p>This ensures goods move seamlessly across borders, giving SMEs the confidence to scale without fear of regulatory hurdles.</p><br/><strong>4. Transparent and Competitive Pricing</strong><br/><br/><p>Pricing is often unpredictable when working with multiple providers. ShipX introduces a model that prioritizes clarity and fairness.</p><p>SMEs receive upfront, transparent pricing that includes all relevant costs—no hidden fees, no sudden surprises. This allows businesses to calculate margins more accurately and plan for sustainable growth.</p><br/><strong>5. Regional Reach, Global Ambition</strong><br/><br/><p>At launch, ShipX connects SMEs across major ASEAN markets including Singapore, Vietnam, Indonesia, Malaysia, Thailand, and the Philippines. But it doesn’t stop there. With Amilo’s established global connections, ShipX also positions SMEs to expand into markets like the United States, Europe, and beyond.</p><br/><p>This means a small brand in Ho Chi Minh City can confidently sell to customers in Los Angeles or Berlin, backed by logistics that scale with them.</p><br/><strong>The Amilo + SG Link Advantage</strong><p>What makes ShipX possible is the partnership between two logistics powerhouses.</p><br/><ul style='list-style-type: disc; margin-left: 1rem; padding-left: 0.5rem'><li>Amilo brings years of experience helping brands expand across Asia and into the U.S., with a backbone of infrastructure that ensures reliability and scale.</li><li>SG Link contributes its expertise in ASEAN cross-border trade, with a nuanced understanding of customs, regional regulations, and last-mile delivery networks.</li></ul><br/><p>Together, they’ve created a platform that merges global standards with regional expertise—a rare combination that directly benefits SMEs.</p><br/><img src='https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx_blog_img_3.webp' alt='ShipX Blog Image 3' loading='lazy' /><br/><section><strong>Real-World Impact: How SMEs Can Use ShipX</strong><br/><br/><p>To illustrate the power of ShipX, let’s look at a few real-world scenarios:</p><br/><ul style='list-style-type: decimal; margin-left: 1rem; padding-left: 0.5rem'><li>A fashion SME in Jakarta: Previously, expanding into Singapore meant coordinating three providers—one for domestic pickup, another for customs, and a third for last-mile delivery. With ShipX, everything is managed in one dashboard, cutting both time and cost.</li><li>A beauty brand in Manila: Customs delays used to make international orders unreliable. With ShipX’s compliance support, the brand now ships consistently to customers in Malaysia and Thailand without disruptions.</li><li>A tech accessory seller in Ho Chi Minh City: With ShipX’s transparent pricing, the business can confidently offer international shipping rates to customers in Europe, knowing there won’t be hidden costs.</li></ul><br/><p>These examples highlight the tangible benefits SMEs can expect—efficiency, reliability, and scalability.</p><br/><strong>The Bigger Picture: ShipX and ASEAN Integration</strong><br/><br/><p>ShipX is not just about solving logistics challenges; it’s about contributing to the broader vision of ASEAN integration. As regional trade agreements expand and e-commerce adoption accelerates, the role of logistics becomes increasingly strategic.</p><br/><p>By simplifying cross-border trade, ShipX helps ASEAN SMEs take advantage of these macroeconomic shifts. It ensures they are not just participants in this growth story, but leaders who drive it forward.</p><br/><strong>The Road Ahead: Innovation Beyond Launch</strong><br/><br/><p>While today marks the official launch, the journey of ShipX is just beginning. Our roadmap includes:</p><ul style='list-style-type: disc; margin-left: 1rem; padding-left: 0.5rem'><li>Deeper integrations with leading e-commerce platforms.</li><li>Advanced analytics tools to help SMEs optimize costs and delivery performance.</li><li>Expanded service coverage into new ASEAN countries and key global markets.</li><li>Sustainability initiatives that reduce the carbon footprint of cross-border trade.</li></ul><br/><p>Each step is designed to make ShipX not only a logistics solution, but a strategic growth partner for SMEs.</p><br/><strong>Join ShipX Today</strong><br/><br/><p>The launch of ShipX is a milestone, but it’s also an invitation. We’re inviting every SME in ASEAN to join us on this journey. Whether you’re a startup selling handmade goods or a scaling enterprise ready to conquer new markets, ShipX is built for you.</p><br/><p>By joining ShipX, you gain more than just a logistics platform—you gain a partner dedicated to your growth.</p><br/><p>👉 Visit the <a href='https://shipx.asia/book-a-demo' target='_blank' rel='noopener noreferrer'>ShipX website</a>, sign up, and join the movement today.</p><br/><p>Let’s make cross-border trade in ASEAN smarter, faster, and more accessible than ever before.</p></section></section>",
+        "image_links": [
+          "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx_blog_img_1.webp",
+          "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx_blog_img_2.webp",
+          "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx_blog_img_3.webp"
+        ]
+      }
+    ]
+  },
+  "statistics_section": {
+    "badge_1": "Our Statistics",
+    "tagline_1": "Powered by our unified",
+    "tagline_2": "network — delivering",
+    "tagline_3": "excellence through ShipX",
+    "customers_label": "Customers",
+    "customers_number": "2500",
+    "global_partners_label": "Global Partners",
+    "global_partners_number": "10",
+    "countries_covered_label": "Countries Covered",
+    "countries_covered_number": "192",
+    "orders_processed_label": "Orders Processed",
+    "orders_processed_number": "2.5",
+    "tech_warehouses_label": "Tech Enabled Warehouses",
+    "tech_warehouses_number": "40",
+    "orders_fulfilled_label": "Orders Fulfilled",
+    "orders_fulfilled_number": "13",
+    "logistics_label": "Logistics & Ecommerce Partners",
+    "logistics_number": "45",
+    "trucks_label": "Trucks Operated",
+    "trucks_number": "300",
+    "gmv_label": "GMV Per Year",
+    "gmv_number": "60"
+  },
+  "services_section": {
+    "badge_1": "Our Services",
+    "header_1": "All in one platform",
+    "header_2": "ShipX aggregates cross-",
+    "header_3": "border solutions from Amilo & SG LINK",
+    "link_1": "Express Worldwide",
+    "link_2": "Economy Worldwide",
+    "link_3": "USA Destination Corridor",
+    "link_4": "USA Destination Fulfillment",
+    "link_5": "Fulfillment by Amazon",
+    "link_6": "Bulk Freight to USA",
+    "link_7": "Global Compliance & Documentation",
+    "link_8": "Integrated Solutions",
+    "book_a_demo": "Book a Demo",
+    "contact_us": "Contact Us",
+    "carousel": {
+      "slide_1": {
+        "header_1": "From",
+        "header_2": "SG, VN, MY, TH, ID",
+        "header_3": "to anywhere",
+        "header_4": "in the world",
+        "price_desc_1": "Prices starting from as low as",
+        "price_desc_2": "Transit time ~3-5 days",
+        "price": "22",
+        "currency": "$"
+      },
+      "slide_2": {
+        "header_1": "From anywhere in",
+        "header_2": "ASEAN",
+        "header_3": "to anywhere",
+        "header_4": "in the world",
+        "price_desc_1": "Prices starting from as low as",
+        "price_desc_2": "Transit time ~10-15 days",
+        "price": "9",
+        "currency": "$"
+      },
+      "slide_3": {
+        "header_1": "Dedicated Corridor from",
+        "header_2": "ASEAN",
+        "header_3": "to US",
+        "header_4": "with various transit and",
+        "header_5": "cost options",
+        "price_desc_1": "Prices starting from as low as",
+        "price_desc_2": "Transit time $$-$$ days",
+        "price": "4.53",
+        "currency": "$"
+      },
+      "slide_4": {
+        "header_1": "Network of",
+        "header_2": "2+ warehouses",
+        "header_3": "across USA for local fulfillment",
+        "price_desc_1": "Pick & Pack starting from as low as",
+        "price_desc_2": "Preferred carrier last mile rates for",
+        "price_desc_3": "nationwide delivery",
+        "price": "2",
+        "currency": "$"
+      },
+      "slide_5": {
+        "header_1": "End-to-end operations",
+        "header_2": "from origin to FBA",
+        "price_desc_1": "Pick & Pack starting from as low as",
+        "price_desc_2": "Transit time 30-40 days",
+        "price_1": "383",
+        "price_2": "per CBM",
+        "currency": "$"
+      },
+      "slide_6": {
+        "header_1": "Join our scheduled sea-freight",
+        "header_2": "containers for",
+        "header_3": "cheaper",
+        "header_4": "consolidated rates into USA",
+        "price_desc_1": "Prices starting from as low as",
+        "price_desc_2": "Transit time 40-60 days",
+        "price": "3.6",
+        "currency": "$"
+      },
+      "slide_7": {
+        "header_1": "Team of",
+        "header_2": "Experts and APIs",
+        "header_3": "for Efficient Trade",
+        "price_desc_1": "Prices starting from as low as",
+        "price_desc_2": "Transit time 10-15 days",
+        "price": "99",
+        "currency": "$"
+      },
+      "slide_8": {
+        "badge_1": "Coming Soon!",
+        "header_1": "Reliable",
+        "header_2": "solutions",
+        "header_3": "coming your way!",
+        "list_1": {
+          "item_1": "Pricing Comparison",
+          "item_2": "Fully Landed Cost Calculator",
+          "item_3": "Tariff Calculator",
+          "item_4": "HS Codes with AI",
+          "item_5": "Financing and Customer Service"
+        }
+      }
+    },
+    "note": "*Prices shown are starting prices only and may vary by country, specifications, and applicable conditions"
+  },
+  "platform_section": {
+    "badge_1": "Our Platform",
+    "badge_2": "Two proven platforms. One unified solution. That's ShipX",
+    "header_1": "One window for all your",
+    "header_2": "cross-border logistics needs",
+    "description_1": "ShipX Brings Together Modern Cross-Border Platform Technology And Tech-",
+    "description_2": "Enabled Logistics Networks Into A Single, Easy-To-Use Solution.",
+    "book_a_demo": "Book a Demo",
+    "contact_us": "Contact Us",
+    "trusted_by": "Our Trusted Partners",
+    "info_1": "Manage Orders And Shipments Across",
+    "info_1_1": "ASEAN and Global Destinations",
+    "info_2": "Integrate Marketplaces Like Amazon,",
+    "info_2_1": "Shopee, Lazada, eBay, and Shopify",
+    "info_3": "Track Performance In Real Time, With",
+    "info_3_1": "Visibility Across Every Step",
+    "info_4": "Access Warehousing, Fulfillment, Freight,",
+    "info_4_1": "And Delivery From One Dashboard"
+  },
+  "freight_section": {
+    "badge_1": "Global Freight, Customs & Fulfillment Solutions",
+    "header_1": "Seamless",
+    "header_2": "Trade",
+    "header_3": "Across Borders",
+    "book_a_demo": "Book a Demo",
+    "contact_us": "Contact Us",
+    "badge_2": "Freight & Customs",
+    "header_4": "Flexible",
+    "header_5": "freight and clearance",
+    "header_6": "services",
+    "header_7": "for regional & global trade",
+    "collapsible_text_opened_1": "Show Less",
+    "collapsible_text_closed_1": "Show More",
+    "collapsible_text_opened_2": "Show Less",
+    "collapsible_text_closed_2": "Show More",
+    "services_1": {
+      "multimodal": {
+        "title": "Multimodal Transport",
+        "description": "sea, air, road & combined logistics"
+      },
+      "cross_border": {
+        "title": "Cross-Border Trucking",
+        "description": "bonded-lanes (VN-SG, TH-VN)"
+      },
+      "customs": {
+        "title": "Customs Solutions",
+        "description": "clearance, IOSS/VAT, duty management"
+      }
+    },
+    "services_2": {
+      "inventory_services": {
+        "title": "Inventory Services",
+        "description": "storage, pick & pack, returns management"
+      },
+      "seamless_integrations": {
+        "title": "Seamless Integrations",
+        "description": "Shopify, Shopee, Lazada, eBay, Amazon"
+      },
+      "regional_advantage": {
+        "title": "Regional Advantage",
+        "description": "optimized location for fast fulfillment"
+      }
+    },
+    "badge_3": "Global Freight, Customs & Fulfillment Solutions",
+    "header_8": "Strategic hubs",
+    "header_9": "across Vietnam,",
+    "header_10": "Thailand, Singapore, and Malaysia",
+    "header_11": "Trusted Infrastructure And Smart",
+    "header_12": "Integrations That Make International",
+    "header_13": "Growth Simpler And Faster"
+  },
+  "offices_section": {
+    "header_1": "Local presence, global corridors",
+    "header_2": "—",
+    "header_3": "the ShipX advantage",
+    "badge_1": "Our Offices",
+    "book_a_demo": "Book a Demo",
+    "contact_us": "Contact Us",
+    "description_1": "Our Network Of Regional Hubs And Domain Experts Ensures",
+    "description_2": "Your Business Thrives Globally, Without Losing Its Local Edge",
+    "offices": {
+      "singapore": {
+        "country_name": "Singapore",
+        "address": "60 Kaki Bukit Place, Eunos Techpark #03-19, S415979",
+        "contact_number": "(+65) 9001 9941",
+        "email": "contact.sg@shipx.asia"
+      },
+      "thailand": {
+        "country_name": "Thailand",
+        "address": "450/2 Boonyasathit Building, 2th Floor, Rama III Rd., Bangkok 10120",
+        "contact_number": "(+65) 96 798 8971",
+        "email": "contact.th@shipx.asia"
+      },
+      "vietnam": {
+        "country_name": "Vietnam",
+        "address": "28 Street N0.6, Bay Hien Ward, Ho Chi Minh City, Vietnam",
+        "contact_number": "(+84) 1900 633 027",
+        "email": "contact.vn@shipx.asia"
+      },
+      "malaysia": {
+        "country_name": "Malaysia",
+        "address": "Suite 5.03 Level 5 Block, Bangunan Pan Global, 1A, Jln Tandang, Seksyen 51, 46050 Petaling Jaya, Selangor",
+        "contact_number": "(+60) 12 525 5019",
+        "email": "contact.my@shipx.asia"
+      },
+      "indonesia": {
+        "country_name": "Indonesia",
+        "address": "Jl. KH Mas Mansyur No. 119 - 121. Nyamplungan Kecamatan Pabean Cantikan, Surabaya",
+        "email": "contact.id@shipx.asia"
+      },
+      "philippines": {
+        "country_name": "Philippines",
+        "address": "",
+        "contact_number": "(+63) 967 204 5276",
+        "email": "contact.ph@shipx.asia"
+      },
+      "united_states": {
+        "country_name": "United States",
+        "address": "NL 108 Almond CT, Milford, Pennsylvania. Zip code 18337",
+        "email": "contact.us@shipx.asia"
+      }
+    }
+  },
+  "systems_section": {
+    "signup_button": {
+      "question": "Don't have an Account yet?",
+      "button": "Sign Up"
+    },
+    "sglink_card": {
+      "title_highlight": "Expand your business",
+      "title_rest": "abroad with SG LINK's cross-border expertise",
+      "description": "Ship Products To Global Markets Quickly And Securely With End-To-End Delivery Solutions Tailored For eCommerce Sellers",
+      "button": "Log in to"
+    },
+    "amilo_card": {
+      "title_highlight": "Your all-in-one partner",
+      "title_rest": "for logistics, fulfillment and global shipping",
+      "description": "From Warehousing To Last-Mile Delivery, Amilo Streamlines Every Step Of Your Supply Chain So You Can Focus On Scaling Your Brand",
+      "button": "Log in to"
+    }
+  },
+  "newsletter_section": {
+    "header_1": "Be The First To Know",
+    "description_1": "Exclusive ShipX Announcements, New Platform Launches, And Special Updates",
+    "description_2": "—Straight To Your Inbox.",
+    "form": {
+      "placeholder": "Enter Email",
+      "button_sending": "Sending...",
+      "button_sent": "Sent!",
+      "button_default": "Book a Demo"
+    }
+  },
+  "contact_us_section": {
+    "badge_1": "Contact Us",
+    "header_1": "Ready to take your products",
+    "header_2": "global?",
+    "header_3": "Let's talk.",
+    "header_4": "Contact Information",
+    "subheader_1": "Let's partner and grow",
+    "number": "+84 1900 633 027",
+    "email": "info@shipx.asia",
+    "address_1": "28 Street N0.6, Bay Hien Ward,",
+    "address_2": "Ho Chi Minh City, Vietnam",
+    "form": {
+      "name": "Your Name",
+      "email": "Email Address",
+      "phone": "Phone Number (optional)",
+      "message": "Message",
+      "send_a_message_button": "Send a Message",
+      "book_a_demo": "Book a Demo",
+      "name_placeholder": "Name is required",
+      "email_placeholder_1": "Email is required",
+      "email_placeholder_2": "Invalid Email",
+      "phone_placeholder": "Invalid phone number",
+      "message_placeholder": "Message is required",
+      "button_sending": "Sending...",
+      "button_sent": "Sent!",
+      "button_default": "Send a Message"
+    }
+  },
+  "privacy_policy_page": {
+    "header": "Privacy Policy",
+    "subheader": "Last Updated September 1, 2025",
+    "message": "This Privacy Policy describes how ShipX, a joint platform operated by Amilo and SG LINK under the ownership of INFI COMMERCE ECOSYSTEMS PTE. LTD., collects, uses, shares, and protects the personal information of individuals and businesses that engage with our services. ShipX respects your privacy and is committed to safeguarding the information you provide to us. By accessing or using our platform, you acknowledge that you have read and understood this Policy and agree to the practices it describes.\n\nWe collect personal information in several ways, both directly and indirectly. When you register for an account, request services, complete forms, or communicate with our support team, you may provide details such as your full name, email address, phone number, billing and shipping information, payment details, and company identifiers. We also gather technical information automatically when you access our website, including your IP address, browser type, operating system, device identifiers, location data where legally permitted, and records of the pages you visit or the features you use. To improve our services, we may employ cookies, analytics tools, and similar tracking technologies that store preferences, recognize repeat visits, and analyze usage trends. In certain situations, we may also obtain information from third-party partners such as logistics providers, payment processors, and verification services to facilitate your transactions and maintain security.\n\nThe information we collect is used for a wide range of purposes that are essential to the operation of ShipX. Primarily, we use it to provide the services you request, including account management, shipment processing, order fulfillment, billing, and customer support. We also process information to improve and optimize our platform, conduct internal analytics, protect the integrity of our systems, prevent fraudulent activity, and ensure compliance with applicable laws and regulations. When permitted by law and with your consent where required, we may use your contact details to send you updates, promotional offers, and marketing communications related to ShipX and its partners. At the same time, we respect your right to opt out of such communications at any time.\n\nShipX operates under different legal bases depending on the nature of the data processing. In some cases, your consent provides the foundation for our activities, particularly when it comes to marketing communications or optional services. In other situations, we rely on the necessity of processing in order to fulfill our contractual obligations to you, such as delivering shipments or processing payments. We may also process data where required by law, for example, to maintain tax records or respond to lawful requests from authorities. Finally, we may process data based on our legitimate interests in operating and securing our platform, provided those interests do not override your rights and freedoms.\n\nCookies and similar technologies play an important role in the functionality of our services. They enable us to remember your settings, authenticate your account, improve security, and deliver a more personalized experience. We also use cookies to measure traffic, analyze site performance, and support marketing campaigns. You have the ability to control or disable cookies through your browser settings; however, please note that certain features of ShipX may not work properly if cookies are disabled.\n\nWe do not sell or rent your personal information to third parties. Nonetheless, there are circumstances where sharing data is necessary. We may disclose your information to our affiliates, including Amilo and SG LINK, as part of our joint operations. Trusted service providers, such as data hosting companies, IT support providers, analytics vendors, payment processors, and logistics partners, may also have access to your data when assisting us in delivering services. We may disclose information if required to comply with laws, regulations, or legal processes, or in order to protect the safety, rights, or property of ShipX, our users, or the public. Furthermore, in the event of a business transaction such as a merger, acquisition, or sale of assets, your data may be transferred to the successor entity.\n\nSecurity of your information is a top priority for us. ShipX employs a combination of administrative, technical, and physical safeguards designed to protect your personal data from unauthorized access, alteration, or destruction. These measures include encryption, firewalls, secure data storage, and restricted access protocols. While we strive to maintain the highest level of security, no online transmission or electronic storage method can be guaranteed to be 100 percent secure, and you acknowledge that you provide information at your own risk.\n\nWe retain your personal information only for as long as necessary to fulfill the purposes outlined in this Policy. This includes the duration of your account, the period required to comply with legal obligations, and any time necessary to resolve disputes or enforce agreements. Once data is no longer required, we take reasonable steps to delete, anonymize, or otherwise securely dispose of it.\n\nYour rights regarding your personal information vary depending on the jurisdiction in which you reside. In certain regions, such as the European Union under the General Data Protection Regulation (GDPR) or in jurisdictions with similar laws, you may have the right to access the information we hold about you, request corrections, demand deletion of your data subject to lawful exceptions, restrict or object to processing, and request data portability. In jurisdictions with consumer privacy protections, such as the California Consumer Privacy Act (CCPA), you may also have the right to request disclosure of the categories of personal information collected and the purposes for which it is used. To exercise any of these rights, you may contact us directly at info@shipx.asia.\n\nBecause ShipX operates across multiple regions, your information may be transferred, stored, or processed outside your country of residence, including in jurisdictions that may have different levels of data protection. In such cases, we take steps to ensure that your information is treated securely and in accordance with this Policy, including implementing standard contractual clauses or other appropriate safeguards where required by law.\n\nShipX is not directed to children under the age of sixteen, and we do not knowingly collect information from minors. If we discover that a child has submitted personal information to us, we will promptly take steps to delete such information from our systems. Parents or guardians who believe that their child has provided information to ShipX are encouraged to contact us immediately.\n\nWe may use your information to communicate with you regarding important updates about ShipX, changes to our services, and other transactional notices. Marketing communications, when applicable, will only be sent with your consent or as permitted by law. You may unsubscribe or opt out of these messages at any time by following the instructions provided in the communication or by contacting us.\n\nOur website and platform may contain links to third-party websites or may integrate with external services. These third parties are independent of ShipX, and their privacy practices are not covered by this Policy. We encourage you to review the privacy policies of any third-party services you choose to engage with, as we do not accept responsibility for their actions or policies.\n\nTo the fullest extent permitted by law, ShipX, INFI COMMERCE ECOSYSTEMS PTE. LTD., Amilo, and SG LINK disclaim liability for any indirect, incidental, special, or consequential damages arising from the unauthorized access, misuse, or disclosure of data, particularly in cases beyond our reasonable control. You acknowledge and agree that your use of ShipX is at your own risk, subject to the protections and limitations described herein.\n\nThis Privacy Policy may be revised from time to time to reflect changes in technology, legal requirements, or our business practices. Any updates will be published on this page with a revised “Effective Date.” We encourage you to review the Policy periodically to stay informed about how we protect your information. Continued use of our services after such updates constitutes your acceptance of the revised terms.\n\nThis Policy is governed by and shall be construed in accordance with the laws of Singapore. Any disputes arising from or related to this Policy or the use of ShipX shall be subject to the exclusive jurisdiction of the courts of Singapore, unless otherwise required by applicable law. Where appropriate, the parties may agree to resolve disputes through binding arbitration in Singapore in accordance with recognized arbitration procedures.",
+    "note": "If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us at INFI COMMERCE ECOSYSTEMS PTE. LTD.; info@shipx.asia or +65 9674 4446"
+  },
+  "terms_and_conditions_page": {
+    "header": "Terms and Conditions",
+    "subheader": "Last Updated September 1, 2025",
+    "message": "Welcome to ShipX, a joint platform developed by Amilo and SG LINK and operated by INFI COMMERCE ECOSYSTEMS PTE. LTD. (“Company,” “we,” “our,” or “us”). These Terms and Conditions (“Terms”) govern your access to and use of the ShipX platform, website, and services (collectively, the “Services”). By accessing or using ShipX, you acknowledge that you have read, understood, and agree to be bound by these Terms, together with our Privacy Policy. If you do not agree, you should not access or use the Services.\n\nShipX is designed as a logistics and commerce platform that facilitates transactions and services between businesses and other participants in the ecosystem. Access to certain Services may require account registration. When creating an account, you agree to provide accurate, complete, and up-to-date information, and you are solely responsible for maintaining the confidentiality of your login credentials. You accept full responsibility for all activities carried out under your account. If you suspect unauthorized access or use, you must notify us immediately.\n\nYour use of ShipX must comply with all applicable laws and regulations. You agree not to use our Services for unlawful purposes, including but not limited to fraud, money laundering, intellectual property infringement, spamming, or distribution of harmful code. You further agree not to disrupt, interfere with, or attempt to gain unauthorized access to the ShipX systems or networks.\n\nThe content provided on ShipX, including but not limited to text, graphics, software, logos, and trade names, is the intellectual property of INFI COMMERCE ECOSYSTEMS PTE. LTD. and its affiliates, partners, or licensors. You are granted a limited, non-exclusive, non-transferable license to access and use the Services for legitimate business purposes, but you may not copy, reproduce, modify, distribute, or exploit the content without our prior written permission. All rights not expressly granted are reserved.\n\nShipX may include tools, integrations, or links that rely on third-party services. We do not control and are not responsible for the availability, accuracy, or performance of such third-party services. Your use of any third-party products or services is at your own risk and may be subject to the terms and conditions of those third parties.\n\nThe Services may involve financial transactions such as payment for shipping, logistics, or related services. Unless otherwise stated, all fees are due and payable at the time of transaction. You are responsible for providing valid payment details, and you authorize us or our payment processors to charge you for the Services you use. Any disputes regarding charges must be raised promptly, and you remain liable for all costs incurred through your account.\n\nShipX strives to provide accurate and reliable services; however, we do not guarantee uninterrupted, error-free, or timely operation of the platform. The Services are provided on an “as is” and “as available” basis, without warranties of any kind, either express or implied. To the fullest extent permitted by law, we disclaim all warranties, including but not limited to merchantability, fitness for a particular purpose, and non-infringement.\n\nTo the maximum extent allowed by law, INFI COMMERCE ECOSYSTEMS PTE. LTD., Amilo, SG LINK, and their affiliates shall not be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with your use of ShipX, even if we have been advised of the possibility of such damages. Our total liability for any claim shall not exceed the amount you paid, if any, for accessing or using the Services during the twelve months preceding the event giving rise to the claim.\n\nWe reserve the right to suspend or terminate your account and restrict access to ShipX at our sole discretion if we believe you have violated these Terms, misused the Services, or engaged in activities that may harm ShipX, our partners, or other users. Upon termination, your right to use ShipX will immediately cease, but provisions relating to intellectual property, liability limitations, and governing law will remain in effect.\n\nWe may update these Terms periodically to reflect changes in legal, technical, or business requirements. Any modifications will be effective immediately upon posting to the ShipX website, and your continued use of the Services after changes are published will signify your acceptance of the revised Terms.\n\nThese Terms and any disputes arising out of your use of ShipX shall be governed by and construed in accordance with the laws of Singapore. You agree that any legal action or proceeding shall be subject to the exclusive jurisdiction of the courts of Singapore, unless mandatory law requires otherwise. Where applicable, disputes may alternatively be resolved through binding arbitration in Singapore under recognized arbitration procedures.",
+    "note": "If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us at INFI COMMERCE ECOSYSTEMS PTE. LTD.; info@shipx.asia or +65 9674 4446"
+  },
+  "footer": {
+    "tagline": "ASEAN's Next Generation Platform",
+    "description_1": "Empowering businesses to ship globally with confidence.",
+    "description_2": "Our platform simplifies international shipping, customs, and logistics",
+    "book_a_demo": "Book a Demo",
+    "contact_us": "Contact Us",
+    "home": "Home",
+    "statistics": "Statistics",
+    "services": "Services",
+    "platform": "Platform",
+    "contact": "Contact",
+    "network": "Network",
+    "privacy_policy": "Privacy Policy",
+    "terms_and_conditions": "Terms & Conditions",
+    "reach_us_1": "Reach us",
+    "reach_us_2": "+84 1900 633 027",
+    "reach_us_3": "info@shipx.asia",
+    "reach_us_4": "28 Street N0.6, Bay Hien Ward, Ho Chi Minh City, Vietnam",
+    "copyright": "ShipX Copyright and rights reserved"
+  },
+  "messenger_bubble": {
+    "message": "Send us a message"
+  }
+}
