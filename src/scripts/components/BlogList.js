@@ -13,7 +13,7 @@ const BlogList = () => {
   return (
     <>
       <SEO
-        title="ShipX - Blogs"
+        title="ShipX - Blog"
         description="Welcome to ShipX's Blog Posts Page!"
         canonical="https://shipx.asia/blog"
         ogImage="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/logo-shipx.webp"
