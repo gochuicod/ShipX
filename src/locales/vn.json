@@ -308,7 +308,7 @@
     "offices": {
       "singapore": {
         "country_name": "Singapore",
-        "address": "60 Kaki Bukit Place, Khu công nghệ",
+        "address": "60 Kaki Bukit Place, Khu công nghệ #03-19, S415979",
         "contact_number": "",
         "email": "contact.sg@shipx.asia"
       },
@@ -387,7 +387,7 @@
     "number": "",
     "email": "info@shipx.asia",
     "address_1": "60 Kaki Bukit Place, ",
-    "address_2": "Khu công nghệ",
+    "address_2": "Khu công nghệ #03-19, S415979",
     "form": {
       "name": "Tên của bạn",
       "email": "Email của bạn",
@@ -434,7 +434,7 @@
     "reach_us_1": "Thông tin liên hệ",
     "reach_us_2": "",
     "reach_us_3": "info@shipx.asia",
-    "reach_us_4": "60 Kaki Bukit Place, Khu công nghệ",
+    "reach_us_4": "60 Kaki Bukit Place, Khu công nghệ #03-19, S415979",
     "copyright": "ShipX Bản quyền và đã đăng ký"
   },
   "messenger_bubble": {

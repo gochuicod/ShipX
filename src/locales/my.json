@@ -308,7 +308,7 @@
     "offices": {
       "singapore": {
         "country_name": "Singapura",
-        "address": "60 Kaki Bukit Place, Taman Teknologi Eunos",
+        "address": "60 Kaki Bukit Place, Taman Teknologi Eunos #03-19, S415979",
         "contact_number": "",
         "email": "contact.sg@shipx.asia"
       },
@@ -387,7 +387,7 @@
     "number": "",
     "email": "info@shipx.asia",
     "address_1": "60 Kaki Bukit Place, ",
-    "address_2": "Taman Teknologi Eunos",
+    "address_2": "Taman Teknologi Eunos #03-19, S415979",
     "form": {
       "name": "Nama Anda",
       "email": "Alamat Emel",
@@ -434,7 +434,7 @@
     "reach_us_1": "Hubungi Kami",
     "reach_us_2": "",
     "reach_us_3": "info@shipx.asia",
-    "reach_us_4": "60 Kaki Bukit Place, Taman Teknologi Eunos",
+    "reach_us_4": "60 Kaki Bukit Place, Taman Teknologi Eunos #03-19, S415979",
     "copyright": "ShipX Hak cipta dan hak terpelihara"
   },
   "messenger_bubble": {
