@@ -829,8 +829,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                       padding: 0px 10px 0px 10px;
                     "
                   >
-                    350 National Highway 1A, Binh Hung Hoa B, Binh Tan, Ho Chi
-                    Minh
+                  60 Kaki Bukit Place, Eunos Techpark #03-19, S415979
                   </td>
                 </tr>
               </table>
