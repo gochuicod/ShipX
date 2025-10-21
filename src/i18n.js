@@ -15,7 +15,7 @@ i18n
     interpolation: { escapeValue: false },
     backend: {
       loadPath:
-        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@b4e89729e7ffcda005c390039e5e9c8fca7858e6/src/locales/{{lng}}.json",
+        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@51f6d44bb5a4dd9b940f7698f338f713f6c8ef60/src/locales/{{lng}}.json",
     },
     react: {
       useSuspense: true, // you already use Suspense in your app
