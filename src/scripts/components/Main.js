@@ -17,6 +17,7 @@ import SEO from "./ui/SEO";
 
 import { useTranslation } from "react-i18next";
 import ParallaxSection from "./ui/ParallaxSection";
+import SmartNavLink from "./ui/SmartNavLink";
 
 const Main = ({ margin }) => {
   const { t } = useTranslation();
@@ -528,7 +529,7 @@ const Main = ({ margin }) => {
                         </NavLink>
                       </div>
                     </MotionButton>
-                    <NavLink
+                    <SmartNavLink
                       to="/#contact-us"
                       end
                       className="
@@ -541,7 +542,7 @@ const Main = ({ margin }) => {
                       "
                     >
                       {t("services_section.contact_us")}
-                    </NavLink>
+                    </SmartNavLink>
                   </div>
                 </div>
                 <CarouselServices slide={slide} />
@@ -651,7 +652,7 @@ const Main = ({ margin }) => {
                         </NavLink>
                       </div>
                     </MotionButton>
-                    <NavLink
+                    <SmartNavLink
                       to="/#contact-us"
                       end
                       className="
@@ -664,7 +665,7 @@ const Main = ({ margin }) => {
                       "
                     >
                       {t("platform_section.contact_us")}
-                    </NavLink>
+                    </SmartNavLink>
                   </div>
                 </div>
                 <img
@@ -1175,7 +1176,7 @@ const Main = ({ margin }) => {
                         </NavLink>
                       </div>
                     </MotionButton>
-                    <NavLink
+                    <SmartNavLink
                       to="/#contact-us"
                       end
                       className="
@@ -1188,7 +1189,7 @@ const Main = ({ margin }) => {
                       "
                     >
                       {t("freight_section.contact_us")}
-                    </NavLink>
+                    </SmartNavLink>
                   </div>
                 </div>
                 <div className="flex flex-col gap-y-[1vw] md:pt-0 pt-[3vw]">
@@ -1624,7 +1625,7 @@ const Main = ({ margin }) => {
                           </NavLink>
                         </div>
                       </MotionButton>
-                      <NavLink
+                      <SmartNavLink
                         to="/#contact-us"
                         end
                         className="
@@ -1637,7 +1638,7 @@ const Main = ({ margin }) => {
                         "
                       >
                         {t("offices_section.contact_us")}
-                      </NavLink>
+                      </SmartNavLink>
                     </div>
                   </div>
                   <p className="text-[#63666D] md:text-[0.85vw] text-[2.5vw] font-medium opacity-80 tracking-wider md:pt-0 pt-[2vw] md:text-start text-center">

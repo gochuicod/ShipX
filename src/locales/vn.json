@@ -230,7 +230,7 @@
     "badge_2": "Kết hợp hai nền tảng uy tín. Một giải pháp tối ưu - ShipX",
     "header_1": "Nền tảng duy nhất cho mọi",
     "header_2": "nhu cầu logistics xuyên biên giới",
-    "description_1": "ShipX tích hợp công nghệ hiện đại và mạng lưới logistics",
+    "description_1": "ShipX tích hợp công nghệ hiện đại và mạng lưới logistics ",
     "description_2": "thông minh thành một giải pháp trọn gói, dễ dàng sử dụng.",
     "book_a_demo": "Đối tác của chúng tôi",
     "contact_us": "Liên hệ ngay",
@@ -262,12 +262,12 @@
     "collapsible_text_closed_2": "Xem thêm",
     "services_1": {
       "multimodal": {
-        "title": "Vận tải đa phương thức",
+        "title": "Vận chuyển đa phương thức bằng",
         "description": "đường biển, đường hàng không, đường bộ và hậu cần kết hợp"
       },
       "cross_border": {
-        "title": "Vận tải xuyên biên giới",
-        "description": "làn đường liên kết (VN-SG, TH-VN)"
+        "title": "Vận chuyển đường bộ",
+        "description": "xuyên biên giới (VN-SG, TH-VN)"
       },
       "customs": {
         "title": "Giải pháp hải quan toàn điện:",
@@ -276,16 +276,16 @@
     },
     "services_2": {
       "inventory_services": {
-        "title": "Dịch vụ Quản lý Tồn kho lưu",
-        "description": "kho, lấy hàng & đóng gói, quản lý hàng hoàn trả"
+        "title": "Dịch vụ Quản lý Tồn kho",
+        "description": "lưu kho, lấy hàng & đóng gói, quản lý hàng hoàn trả"
       },
       "seamless_integrations": {
         "title": "Tích hợp sàn thương mại điện tử quốc tế:",
         "description": "Shopify, Shopee, Lazada, eBay, Amazon"
       },
       "regional_advantage": {
-        "title": "Lợi thế Khu vực vị trí kho chiến",
-        "description": "lược đảm bảo xử lý đơn hàng nhanh chóng"
+        "title": "Lợi thế Khu vực",
+        "description": "vị trí kho chiến lược đảm bảo xử lý đơn hàng nhanh chóng"
       }
     },
     "badge_3": "Giải pháp Vận chuyển,Thông quan & Fulfillment chuẩn quốc tế",
