@@ -624,7 +624,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                     style="width: 50%; padding-right: 10px"
                   >
                     <a
-                      href="https://shipx.asia/en/news/shipx-goes-live-smarter-future-asean-cross-border-logistics/"
+                      href="https://shipx.asia/blog/shipx-goes-live-smarter-future-asean-cross-border-logistics"
                       target="_blank"
                       style="display: inline-block; text-decoration: none"
                     >
@@ -667,7 +667,7 @@ function mytheme_handle_contact(WP_REST_Request $request) {
                     </p>
 
                     <a
-                      href="https://shipx.asia/en/news/shipx-goes-live-smarter-future-asean-cross-border-logistics/"
+                      href="https://shipx.asia/blog/shipx-goes-live-smarter-future-asean-cross-border-logistics"
                       target="_blank"
                       style="
                         background: linear-gradient(
