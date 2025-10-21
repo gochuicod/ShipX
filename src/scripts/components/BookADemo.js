@@ -20,7 +20,7 @@ const BookADemo = () => {
         ogImage="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/logo-shipx.webp"
       />
 
-      <div style={{ width: "100%", height: "100vh" }}>
+      <div className="w-full md:h-[70vw] h-[100vh]">
         {loading && <MultiStepLoader />}
 
         <iframe
