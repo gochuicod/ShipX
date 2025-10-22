@@ -452,5 +452,8 @@
     "Menyiapkan sistem...",
     "Hampir selesai...",
     "Menyelesaikan..."
-  ]
+  ],
+  "cookies": {
+    "text": "Kami menggunakan cookie untuk analitik dan pemasaran. Anda dapat menerima atau menolak pelacakan."
+  }
 }

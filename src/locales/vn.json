@@ -452,5 +452,8 @@
     "Đang thiết lập hệ thống...",
     "Sắp xong rồi...",
     "Đang hoàn tất..."
-  ]
+  ],
+  "cookies": {
+    "text": "Chúng tôi sử dụng cookie cho mục đích phân tích và tiếp thị. Bạn có thể chấp nhận hoặc từ chối theo dõi."
+  }
 }
