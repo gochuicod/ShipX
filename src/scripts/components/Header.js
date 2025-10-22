@@ -221,6 +221,7 @@ const Header = memo(() => {
         {/* Mobile Hamburger */}
         <button
           type="button"
+          aria-label="Hamburger menu"
           onClick={() => setIsOpen(!isOpen)}
           className="relative md:hidden flex flex-col justify-between w-[8vw] h-[4.5vw] p-[0.1vw] focus:outline-none"
         >
