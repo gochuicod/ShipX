@@ -27,13 +27,13 @@ const ServiceHeadline = () => {
             />
           </div>
           <div className="flex flex-col md:gap-y-[0.5vw] gap-y-[2vw] md:w-[15vw] w-auto justify-center md:items-start items-center md:pb-0 pb-[5vw]">
-            <h4 className="text-[#1A1A1A] md:text-[1vw] text-[5vw] font-semibold md:leading-[1vw] leading-[5vw] md:text-start text-center">
+            <h5 className="text-[#1A1A1A] md:text-[1vw] text-[5vw] font-semibold md:leading-[1vw] leading-[5vw] md:text-start text-center">
               {t("service_headline_section.heading_1")}&nbsp;
               <span className="text-[#FF00E5]">
                 {t("service_headline_section.heading_2")}
               </span>
               &nbsp;{t("service_headline_section.heading_3")}
-            </h4>
+            </h5>
             <MotionButton
               type="button"
               className="bg-[#FF00E5] flex flex-row md:gap-x-[0.5vw] gap-[1.5vw] justify-center items-center md:px-[1.5vw] px-[5vw] md:py-[0.5vw] py-[1.5vw] md:rounded-[0.5vw] rounded-[2vw] text-white font-medium md:text-[0.8vw] text-[2.5vw] text-center cursor-pointer"

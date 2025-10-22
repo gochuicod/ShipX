@@ -178,31 +178,31 @@ const Header = memo(() => {
 
         <div className="hidden md:flex flex-row justify-center items-center gap-x-[1vw] text-[0.8vw] font-normal">
           <LoginModal />
-          <MotionButton
-            type="button"
-            className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
-            whileHover={{
-              y: -5,
-              transition: { type: "spring", stiffness: 300, damping: 15 },
-            }}
-            whileTap={{
-              scale: 0.9,
-              transition: { type: "spring", stiffness: 500, damping: 10 },
-            }}
+          <SmartNavLink
+            to="/book-a-demo"
+            className="text-[#4F378A] font-semibold"
           >
-            {/* Gradient border */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+            <MotionButton
+              type="button"
+              className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
+              whileHover={{
+                y: -5,
+                transition: { type: "spring", stiffness: 300, damping: 15 },
+              }}
+              whileTap={{
+                scale: 0.9,
+                transition: { type: "spring", stiffness: 500, damping: 10 },
+              }}
+            >
+              {/* Gradient border */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
-            {/* Inner white area */}
-            <div className="relative flex flex-row items-center gap-x-[1vw] px-[2vw] py-[0.5vw] bg-white rounded-full">
-              <SmartNavLink
-                to="/book-a-demo"
-                className="text-[#4F378A] font-semibold"
-              >
+              {/* Inner white area */}
+              <div className="relative flex flex-row items-center gap-x-[1vw] px-[2vw] py-[0.5vw] bg-white rounded-full">
                 {t("header.book_a_demo")}
-              </SmartNavLink>
-            </div>
-          </MotionButton>
+              </div>
+            </MotionButton>
+          </SmartNavLink>
           <SmartNavLink
             to="/#contact-us"
             className="

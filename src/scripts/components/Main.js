@@ -1,7 +1,6 @@
 import i18n from "i18next";
 import { useState } from "react";
 import { offices, services, services_2 } from "../utils/constants";
-import { NavLink } from "react-router-dom";
 import { button as MotionButton } from "motion/react-client";
 
 import ContactForm from "./ui/ContactForm";
@@ -521,12 +520,12 @@ const Main = ({ margin }) => {
 
                       {/* Inner white area */}
                       <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
-                        <NavLink
+                        <SmartNavLink
                           to="/book-a-demo"
                           className="text-[#4F378A] font-semibold"
                         >
                           {t("services_section.book_a_demo")}
-                        </NavLink>
+                        </SmartNavLink>
                       </div>
                     </MotionButton>
                     <SmartNavLink
@@ -644,12 +643,12 @@ const Main = ({ margin }) => {
 
                       {/* Inner white area */}
                       <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
-                        <NavLink
+                        <SmartNavLink
                           to="/book-a-demo"
                           className="text-[#4F378A] font-semibold"
                         >
                           {t("platform_section.book_a_demo")}
-                        </NavLink>
+                        </SmartNavLink>
                       </div>
                     </MotionButton>
                     <SmartNavLink
@@ -824,44 +823,42 @@ const Main = ({ margin }) => {
               {/* SG Link Card */}
               <div className="relative">
                 {/* Don't have an account button */}
-                <button
-                  type="button"
-                  end
-                  className="
-                    bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
-                    bg-[length:200%_100%] bg-[position:0%_0%]
-                    hover:bg-[position:100%_0%]
-                    transition-[background-position] duration-1000 ease-in-out
-                    md:py-[0.6vw] py-[1.5vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
-                    text-white font-medium absolute md:bottom-[-1vw] bottom-[-3vw] left-1/2 transform -translate-x-1/2 cursor-pointer
-                    flex flex-row md:gap-x-[1vw] gap-x-[3vw] justify-center items-center z-[10] lg:w-auto md:w-auto w-[60vw]
-                  "
-                >
-                  <span className="md:text-[0.8vw] text-[2.5vw] font-normal">
-                    <NavLink to="/book-a-demo" end>
+                <SmartNavLink to="/book-a-demo" end>
+                  <button
+                    type="button"
+                    end
+                    className="
+                      bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
+                      bg-[length:200%_100%] bg-[position:0%_0%]
+                      hover:bg-[position:100%_0%]
+                      transition-[background-position] duration-1000 ease-in-out
+                      md:py-[0.6vw] py-[1.5vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
+                      text-white font-medium absolute md:bottom-[-1vw] bottom-[-3vw] left-1/2 transform -translate-x-1/2 cursor-pointer
+                      flex flex-row md:gap-x-[1vw] gap-x-[3vw] justify-center items-center z-[10] lg:w-auto md:w-auto w-[60vw]
+                    "
+                  >
+                    <span className="md:text-[0.8vw] text-[2.5vw] font-normal">
                       {t("systems_section.signup_button.question")}
-                    </NavLink>
-                  </span>
-                  <span className="flex flex-row md:text-[0.8vw] text-[2.5vw] md:gap-x-[0.1vw] gap-x-[0.5vw] justify-center items-center text-white font-bold">
-                    <NavLink to="/book-a-demo" end>
+                    </span>
+                    <span className="flex flex-row md:text-[0.8vw] text-[2.5vw] md:gap-x-[0.1vw] gap-x-[0.5vw] justify-center items-center text-white font-bold">
                       {t("systems_section.signup_button.button")}
-                    </NavLink>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={3.5}
-                      stroke="#FFFFFF"
-                      className="md:size-[0.7vw] size-[2.5vw]"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                      />
-                    </svg>
-                  </span>
-                </button>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={3.5}
+                        stroke="#FFFFFF"
+                        className="md:size-[0.7vw] size-[2.5vw]"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </SmartNavLink>
                 <div className="relative overflow-hidden flex flex-col md:gap-y-[1vw] gap-y-[3vw] md:w-[35vw] w-full md:shadow-[0_0vw_1vw_rgba(79,55,138,0.15)] shadow-[0_0vw_5vw_rgba(79,55,138,0.15)] md:rounded-[2vw] rounded-[3vw] md:px-[3vw] px-[5vw] md:pt-[3vw] pt-[5vw] md:pb-[23vw] pb-[33vw] bg-white">
                   <div className="flex justify-center items-center">
                     <img
@@ -957,44 +954,42 @@ const Main = ({ margin }) => {
               </div>
               {/* Amilo Card */}
               <div className="relative">
-                <button
-                  type="button"
-                  end
-                  className="
-                    bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
-                    bg-[length:200%_100%] bg-[position:0%_0%]
-                    hover:bg-[position:100%_0%]
-                    transition-[background-position] duration-1000 ease-in-out
-                    md:py-[0.6vw] py-[1.5vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
-                    text-white font-medium absolute md:bottom-[-1vw] bottom-[-3vw] left-1/2 transform -translate-x-1/2 cursor-pointer
-                    flex flex-row md:gap-x-[1vw] gap-x-[3vw] justify-center items-center z-[10] lg:w-auto md:w-auto w-[60vw]
-                  "
-                >
-                  <span className="md:text-[0.8vw] text-[2.5vw] font-normal">
-                    <NavLink to="/book-a-demo" end>
+                <SmartNavLink to="/book-a-demo" end>
+                  <button
+                    type="button"
+                    end
+                    className="
+                      bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
+                      bg-[length:200%_100%] bg-[position:0%_0%]
+                      hover:bg-[position:100%_0%]
+                      transition-[background-position] duration-1000 ease-in-out
+                      md:py-[0.6vw] py-[1.5vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
+                      text-white font-medium absolute md:bottom-[-1vw] bottom-[-3vw] left-1/2 transform -translate-x-1/2 cursor-pointer
+                      flex flex-row md:gap-x-[1vw] gap-x-[3vw] justify-center items-center z-[10] lg:w-auto md:w-auto w-[60vw]
+                    "
+                  >
+                    <span className="md:text-[0.8vw] text-[2.5vw] font-normal">
                       {t("systems_section.signup_button.question")}
-                    </NavLink>
-                  </span>
-                  <span className="flex flex-row md:text-[0.8vw] text-[2.5vw] md:gap-x-[0.1vw] gap-x-[0.5vw] justify-center items-center text-white font-bold">
-                    <NavLink to="/book-a-demo" end>
+                    </span>
+                    <span className="flex flex-row md:text-[0.8vw] text-[2.5vw] md:gap-x-[0.1vw] gap-x-[0.5vw] justify-center items-center text-white font-bold">
                       {t("systems_section.signup_button.button")}
-                    </NavLink>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={3.5}
-                      stroke="#FFFFFF"
-                      className="md:size-[0.7vw] size-[2.5vw]"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                      />
-                    </svg>
-                  </span>
-                </button>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={3.5}
+                        stroke="#FFFFFF"
+                        className="md:size-[0.7vw] size-[2.5vw]"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </SmartNavLink>
                 <div className="relative overflow-hidden flex flex-col md:gap-y-[1vw] gap-y-[3vw] md:w-[35vw] w-full md:shadow-[0_0vw_1vw_rgba(79,55,138,0.15)] shadow-[0_0vw_5vw_rgba(79,55,138,0.15)] md:rounded-[2vw] rounded-[3vw] md:px-[3vw] px-[5vw] md:pt-[3vw] pt-[5vw] md:pb-[23vw] pb-[33vw] bg-white">
                   <div className="flex justify-center items-center">
                     <img
@@ -1168,12 +1163,12 @@ const Main = ({ margin }) => {
 
                       {/* Inner white area */}
                       <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
-                        <NavLink
+                        <SmartNavLink
                           to="/book-a-demo"
                           className="text-[#4F378A] font-semibold"
                         >
                           {t("freight_section.book_a_demo")}
-                        </NavLink>
+                        </SmartNavLink>
                       </div>
                     </MotionButton>
                     <SmartNavLink
@@ -1617,12 +1612,12 @@ const Main = ({ margin }) => {
 
                         {/* Inner white area */}
                         <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
-                          <NavLink
+                          <SmartNavLink
                             to="/book-a-demo"
                             className="text-[#4F378A] font-semibold"
                           >
                             {t("offices_section.book_a_demo")}
-                          </NavLink>
+                          </SmartNavLink>
                         </div>
                       </MotionButton>
                       <SmartNavLink

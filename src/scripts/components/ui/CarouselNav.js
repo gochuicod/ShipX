@@ -2,7 +2,7 @@ import { Carousel } from "@material-tailwind/react";
 import { useSwipeable } from "react-swipeable";
 import { button as MotionButton } from "motion/react-client";
 import { useTranslation } from "react-i18next";
-import { NavLink } from "react-router-dom";
+import SmartNavLink from "./SmartNavLink";
 import { useState, useEffect } from "react";
 
 export default function CarouselNav() {
@@ -54,6 +54,7 @@ export default function CarouselNav() {
           <button
             type="button"
             onClick={handlePrev}
+            aria-label="Previous slide"
             className="
               !absolute top-2/4 left-[1vw] -translate-y-2/4 mt-next
               bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
@@ -83,6 +84,7 @@ export default function CarouselNav() {
           <button
             type="button"
             onClick={handleNext}
+            aria-label="Next slide"
             className="
               !absolute top-2/4 right-[1vw] -translate-y-2/4 mt-prev
               bg-gradient-to-r from-[#FF00E5] from-0% via-[#FF00E5] via-60% to-[#4F378A] to-100%
@@ -199,7 +201,7 @@ export default function CarouselNav() {
                   fontFamily: "Karla, system-ui, -apple-system, sans-serif",
                 }}
               >
-                <NavLink
+                <SmartNavLink
                   className="
                     bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
                     bg-[length:200%_100%] bg-[position:0%_0%]
@@ -211,20 +213,28 @@ export default function CarouselNav() {
                   to="/book-a-demo"
                 >
                   {t("hero_section.slide_1.book_a_demo")}
-                </NavLink>
-                <MotionButton
-                  className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
-                  whileHover={{
-                    y: -5,
-                    transition: { type: "spring", stiffness: 300, damping: 15 },
-                  }}
-                  whileTap={{
-                    scale: 0.9,
-                    transition: { type: "spring", stiffness: 500, damping: 10 },
-                  }}
-                >
-                  {/* Gradient border */}
-                  <NavLink to="/#services" end>
+                </SmartNavLink>
+                <SmartNavLink to="/#services" end>
+                  <MotionButton
+                    className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
+                    whileHover={{
+                      y: -5,
+                      transition: {
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 15,
+                      },
+                    }}
+                    whileTap={{
+                      scale: 0.9,
+                      transition: {
+                        type: "spring",
+                        stiffness: 500,
+                        damping: 10,
+                      },
+                    }}
+                  >
+                    {/* Gradient border */}
                     <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
                     {/* Inner white area */}
@@ -247,8 +257,8 @@ export default function CarouselNav() {
                         />
                       </svg>
                     </div>
-                  </NavLink>
-                </MotionButton>
+                  </MotionButton>
+                </SmartNavLink>
               </div>
             </div>
 
@@ -425,7 +435,7 @@ export default function CarouselNav() {
                   fontFamily: "Karla, system-ui, -apple-system, sans-serif",
                 }}
               >
-                <NavLink
+                <SmartNavLink
                   className="
                     bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
                     bg-[length:200%_100%] bg-[position:0%_0%]
@@ -437,20 +447,28 @@ export default function CarouselNav() {
                   to="/book-a-demo"
                 >
                   {t("hero_section.slide_2.book_a_demo")}
-                </NavLink>
-                <MotionButton
-                  className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
-                  whileHover={{
-                    y: -5,
-                    transition: { type: "spring", stiffness: 300, damping: 15 },
-                  }}
-                  whileTap={{
-                    scale: 0.9,
-                    transition: { type: "spring", stiffness: 500, damping: 10 },
-                  }}
-                >
-                  {/* Gradient border */}
-                  <NavLink to="/#services" end>
+                </SmartNavLink>
+                <SmartNavLink to="/#services" end>
+                  <MotionButton
+                    className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
+                    whileHover={{
+                      y: -5,
+                      transition: {
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 15,
+                      },
+                    }}
+                    whileTap={{
+                      scale: 0.9,
+                      transition: {
+                        type: "spring",
+                        stiffness: 500,
+                        damping: 10,
+                      },
+                    }}
+                  >
+                    {/* Gradient border */}
                     <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
                     {/* Inner white area */}
@@ -473,8 +491,8 @@ export default function CarouselNav() {
                         />
                       </svg>
                     </div>
-                  </NavLink>
-                </MotionButton>
+                  </MotionButton>
+                </SmartNavLink>
               </div>
             </div>
 
@@ -652,7 +670,7 @@ export default function CarouselNav() {
                   fontFamily: "Karla, system-ui, -apple-system, sans-serif",
                 }}
               >
-                <NavLink
+                <SmartNavLink
                   className="
                     bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
                     bg-[length:200%_100%] bg-[position:0%_0%]
@@ -664,20 +682,28 @@ export default function CarouselNav() {
                   to="/book-a-demo"
                 >
                   {t("hero_section.slide_3.book_a_demo")}
-                </NavLink>
-                <MotionButton
-                  className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
-                  whileHover={{
-                    y: -5,
-                    transition: { type: "spring", stiffness: 300, damping: 15 },
-                  }}
-                  whileTap={{
-                    scale: 0.9,
-                    transition: { type: "spring", stiffness: 500, damping: 10 },
-                  }}
-                >
-                  {/* Gradient border */}
-                  <NavLink to="/#services" end>
+                </SmartNavLink>
+                <SmartNavLink to="/#services" end>
+                  <MotionButton
+                    className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
+                    whileHover={{
+                      y: -5,
+                      transition: {
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 15,
+                      },
+                    }}
+                    whileTap={{
+                      scale: 0.9,
+                      transition: {
+                        type: "spring",
+                        stiffness: 500,
+                        damping: 10,
+                      },
+                    }}
+                  >
+                    {/* Gradient border */}
                     <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
                     {/* Inner white area */}
@@ -700,8 +726,8 @@ export default function CarouselNav() {
                         />
                       </svg>
                     </div>
-                  </NavLink>
-                </MotionButton>
+                  </MotionButton>
+                </SmartNavLink>
               </div>
             </div>
 
