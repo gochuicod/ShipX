@@ -22,7 +22,7 @@ i18n
     },
   });
 
-["en", "vn"].forEach((lang) => {
+languages.forEach((lang) => {
   if (lang !== i18n.language) {
     i18n.loadLanguages(lang).catch((err) => {
       console.warn(`Failed to preload language ${lang}:`, err);

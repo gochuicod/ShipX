@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
+import { useTranslation } from "react-i18next";
 
-export default function ({ children }) {
+export default function () {
   const [gtmInitialized, setGtmInitialized] = useState(false);
   const [textSize, setTextSize] = useState("0.8vw");
+  const { t } = useTranslation();
 
   // ✅ Initialize GTM if user already consented earlier
   useEffect(() => {
@@ -98,7 +100,7 @@ export default function ({ children }) {
           }
         }}
       >
-        {children}
+        {t("cookies.text")}
       </CookieConsent>
     </>
   );

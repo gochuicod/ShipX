@@ -14,6 +14,7 @@ import MultiStepLoader from "./scripts/components/ui/MultiStepLoader";
 import ResetOnRefresh from "./scripts/components/ui/ResetOnRefresh";
 import BlogList from "./scripts/components/BlogList";
 import CookieBanner from "./scripts/components/ui/CookieBanner";
+import LanguagePrompt from "./scripts/components/ui/LanguagePrompt";
 
 const Main = lazy(() => import("./scripts/components/Main"));
 const PrivacyPolicy = lazy(() => import("./scripts/components/PrivacyPolicy"));
@@ -30,6 +31,7 @@ const App = () => {
   return (
     <HelmetProvider context={helmetContext}>
       <BrowserRouter>
+        <LanguagePrompt />
         <LenisProvider>
           <ResetOnRefresh paths={["/"]} />
           <Layout>
@@ -48,11 +50,7 @@ const App = () => {
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
-
-            <CookieBanner>
-              We use cookies for analytics and marketing. You can accept or
-              decline tracking.
-            </CookieBanner>
+            <CookieBanner />
           </Layout>
         </LenisProvider>
       </BrowserRouter>

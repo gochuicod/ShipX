@@ -15,6 +15,23 @@ function boilerplate_add_support() {
 
 add_action('after_setup_theme', 'boilerplate_add_support');
 
+function shipx_get_user_country() {
+    // Cloudflare, SiteGround, or some proxies send this header
+    $country = $_SERVER['HTTP_CF_IPCOUNTRY'] ?? '';
+
+    // Optional fallback: use a simple IP lookup (not ideal if privacy is a concern)
+    if (empty($country) && !empty($_SERVER['REMOTE_ADDR'])) {
+        // As fallback only: use wp_remote_get() to ipwho.is
+        $response = wp_remote_get('https://ipwho.is/' . $_SERVER['REMOTE_ADDR']);
+        if (!is_wp_error($response)) {
+            $body = json_decode(wp_remote_retrieve_body($response), true);
+            $country = $body['country_code'] ?? '';
+        }
+    }
+
+    return strtoupper($country);
+}
+
 function shipx_enqueue_assets() {
     $theme_dir = get_stylesheet_directory_uri() . '/build';
 
@@ -28,9 +45,14 @@ function shipx_enqueue_assets() {
 
     wp_enqueue_script('shipx-js', $theme_dir . '/' . $js_file, [], null, true);
     wp_enqueue_style('shipx-css', $theme_dir . '/' . $css_file, [], null);
+
+    $geo_data = [
+        'country' => shipx_get_user_country(),
+    ];
+
+    wp_localize_script('shipx-js', 'ShipXGeo', $geo_data);
 }
 add_action('wp_enqueue_scripts', 'shipx_enqueue_assets');
-
 
 add_action('rest_api_init', function () {
   register_rest_route('mytheme/v1', '/contact', array(

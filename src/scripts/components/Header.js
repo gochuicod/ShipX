@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo, useState, useEffect } from "react";
 import SmartNavLink from "./ui/SmartNavLink";
 import {
   div as MotionDiv,
@@ -30,6 +30,14 @@ const Header = memo(() => {
       languages.find((language) => language.key === current) || languages[0]
     );
   });
+
+  useEffect(() => {
+    const currentLang = i18n.language || localStorage.getItem("lang") || "en";
+    const matched = languages.find((lang) => lang.key === currentLang);
+    if (matched && matched.key !== selected.key) {
+      setSelected(matched);
+    }
+  }, [i18n.language]);
 
   return (
     <div className="sticky top-0 z-50 select-none">
