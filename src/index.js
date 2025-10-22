@@ -1,7 +1,7 @@
 import "./index.css";
 import "./i18n";
 import React, { useEffect, useState, Suspense, lazy } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 
 import { HelmetProvider } from "react-helmet-async";

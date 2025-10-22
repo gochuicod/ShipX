@@ -15,6 +15,23 @@ function boilerplate_add_support() {
 
 add_action('after_setup_theme', 'boilerplate_add_support');
 
+function shipx_enqueue_assets() {
+    $theme_dir = get_stylesheet_directory_uri() . '/build';
+
+    $js_file = file_exists(__DIR__ . '/build/js-hash.txt')
+        ? trim(file_get_contents(__DIR__ . '/build/js-hash.txt'))
+        : 'index.js';
+
+    $css_file = file_exists(__DIR__ . '/build/css-hash.txt')
+        ? trim(file_get_contents(__DIR__ . '/build/css-hash.txt'))
+        : 'index.css';
+
+    wp_enqueue_script('shipx-js', $theme_dir . '/' . $js_file, [], null, true);
+    wp_enqueue_style('shipx-css', $theme_dir . '/' . $css_file, [], null);
+}
+add_action('wp_enqueue_scripts', 'shipx_enqueue_assets');
+
+
 add_action('rest_api_init', function () {
   register_rest_route('mytheme/v1', '/contact', array(
     'methods' => 'POST',
