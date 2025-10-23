@@ -272,8 +272,6 @@ export default function CarouselNav() {
                 className="md:w-fit w-full md:h-[35vw] h-[35vh] md:p-0 pb-0"
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_1.webp"
                 alt="Main SVG 1"
-                fetchpriority="high"
-                decoding="async"
               />
             </div>
           </div>
