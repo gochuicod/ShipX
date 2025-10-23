@@ -1,15 +1,15 @@
 import "./index.css";
 import "./i18n";
-import React, { Suspense, lazy, useState, useEffect } from "react";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
-import { getCookieConsentValue } from "react-cookie-consent";
 
 import { LenisProvider } from "./scripts/hooks/useLenis";
 import Layout from "./scripts/Layout";
 import { margin } from "./scripts/utils/constants";
 
+import GtmLoader from "./scripts/components/GtmLoader";
 import ScrollToHash from "./scripts/components/ui/ScrollToHash";
 import MultiStepLoader from "./scripts/components/ui/MultiStepLoader";
 import ResetOnRefresh from "./scripts/components/ui/ResetOnRefresh";
@@ -40,50 +40,11 @@ gtag("consent", "default", {
 });
 // --- END CONSENT SNIPPET ---
 
-// ✅ HELPER FUNCTION FOR GTM
-const updateGtmConsent = (state) => {
-  if (window.gtag) {
-    window.gtag("consent", "update", {
-      analytics_storage: state,
-    });
-    console.log(`GTM consent updated to '${state}'`);
-  } else {
-    console.warn("window.gtag function not found.");
-  }
-};
-
 const App = () => {
-  // ADD GTM LOADER STATE
-  const [isGtmLoaded, setIsGtmLoaded] = useState(false);
-
-  // LOAD GTM FOR ALL USERS (RUNS ONCE)
-  useEffect(() => {
-    // We import from './tagmanager' since index.js is in the root /src
-    import("./tagmanager")
-      .then(({ initGTM }) => {
-        initGTM();
-        console.log("GTM initialized (consent 'denied' by default)");
-        setIsGtmLoaded(true);
-      })
-      .catch((err) => console.error("Failed to load GTM:", err));
-  }, []); // Empty array ensures it runs only once
-
-  //STEP 3: HANDLE RETURNING VISITORS
-  useEffect(() => {
-    // Only run this check *after* GTM has loaded
-    if (isGtmLoaded) {
-      const consent = getCookieConsentValue("analyticsConsent");
-      // If user already said 'true', update consent
-      if (consent === "true") {
-        updateGtmConsent("granted");
-      }
-      // If 'false' or undefined, we do nothing (it correctly stays 'denied')
-    }
-  }, [isGtmLoaded]); // Runs when isGtmLoaded becomes true
-
   return (
     <HelmetProvider context={helmetContext}>
       <BrowserRouter>
+        <GtmLoader />
         <LanguagePrompt />
         <LenisProvider>
           <ResetOnRefresh paths={["/"]} />

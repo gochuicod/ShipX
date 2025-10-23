@@ -1,48 +1,11 @@
 import { useEffect, useState } from "react";
-import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
+import CookieConsent from "react-cookie-consent";
 import { useTranslation } from "react-i18next";
-
-// ✅ HELPER FUNCTION (same as in index.js)
-// This component needs it to send updates
-const updateGtmConsent = (state) => {
-  if (window.gtag) {
-    window.gtag("consent", "update", {
-      analytics_storage: state,
-    });
-    console.log(`GTM consent updated to '${state}'`);
-  } else {
-    console.warn("window.gtag function not found.");
-  }
-};
+import { updateGtmConsent } from "../../../tagmanager";
 
 export default function () {
-  // const [gtmInitialized, setGtmInitialized] = useState(false);
   const [textSize, setTextSize] = useState("0.8vw");
   const { t } = useTranslation();
-
-  // REMOVED: The entire useEffect for loading GTM, index.js now handles all GTM loading.
-  // Initialize GTM if user already consented earlier
-  // useEffect(() => {
-  //   const handle = () => {
-  //     const consent = getCookieConsentValue("analyticsConsent");
-  //     if (consent === "true" && !gtmInitialized) {
-  //       import("../../../tagmanager") // dynamically import GTM code
-  //         .then(({ initGTM }) => {
-  //           initGTM();
-  //           setGtmInitialized(true);
-  //         })
-  //         .catch((err) => console.error("Failed to load GTM:", err));
-  //     }
-  //   };
-
-  //   if (document.readyState === "complete") {
-  //     handle();
-  //   } else {
-  //     window.addEventListener("DOMContentLoaded", handle);
-  //   }
-
-  //   return () => window.removeEventListener("DOMContentLoaded", handle);
-  // }, [gtmInitialized]);
 
   useEffect(() => {
     const updateTextSize = () => {
