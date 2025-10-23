@@ -12,9 +12,6 @@ import { margin } from "./scripts/utils/constants";
 import ScrollToHash from "./scripts/components/ui/ScrollToHash";
 import MultiStepLoader from "./scripts/components/ui/MultiStepLoader";
 import ResetOnRefresh from "./scripts/components/ui/ResetOnRefresh";
-import BlogList from "./scripts/components/BlogList";
-import CookieBanner from "./scripts/components/ui/CookieBanner";
-import LanguagePrompt from "./scripts/components/ui/LanguagePrompt";
 
 const Main = lazy(() => import("./scripts/components/Main"));
 const PrivacyPolicy = lazy(() => import("./scripts/components/PrivacyPolicy"));
@@ -22,8 +19,13 @@ const TermsAndConditions = lazy(
   () => import("./scripts/components/TermsAndConditions"),
 );
 const BookADemo = lazy(() => import("./scripts/components/BookADemo"));
+const BlogList = lazy(() => import("./scripts/components/BlogList"));
 const Blog = lazy(() => import("./scripts/components/Blog"));
 const NotFound = lazy(() => import("./scripts/components/ui/NotFound"));
+const CookieBanner = lazy(() => import("./scripts/components/ui/CookieBanner"));
+const LanguagePrompt = lazy(
+  () => import("./scripts/components/ui/LanguagePrompt"),
+);
 
 const helmetContext = {};
 

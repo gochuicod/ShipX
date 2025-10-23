@@ -4,7 +4,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/site_icon_shipx.ico" sizes="32x32">
-    <link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_1.webp">
+    <link rel="preload" as="image" fetchpriority="high" href="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_1.webp">
     <link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_11.webp">
     <link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_12.webp">
     <?php wp_head(); ?>

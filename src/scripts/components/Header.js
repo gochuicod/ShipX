@@ -345,7 +345,7 @@ const Header = memo(() => {
                         >
                           <div className="flex items-center">
                             <span
-                              className="ml-3 block truncate font-normal group-data-focus:font-semibold group-data-focus:text-white text-[#1A1A1A] text-[3.5vw]"
+                              className="ml-3 block truncate font-normal group-data-focus:font-semibold group-data-focus:text-white text-[#1A1A1A] md:text-[3.5vw] text-[3vw]"
                               onClick={() => i18n.changeLanguage(language.key)}
                             >
                               {language.name}

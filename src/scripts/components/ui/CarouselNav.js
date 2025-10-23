@@ -6,7 +6,7 @@ import SmartNavLink from "./SmartNavLink";
 import { useState, useEffect } from "react";
 
 export default function CarouselNav() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const handlers = useSwipeable({
     onSwipedLeft: () => document.querySelector(".mt-prev")?.click(),
     onSwipedRight: () => document.querySelector(".mt-next")?.click(),
@@ -168,7 +168,11 @@ export default function CarouselNav() {
                   }}
                 >
                   {t("hero_section.slide_1.header_1")}{" "}
-                  <br className="md:block hidden" />
+                  {i18n.language === "en" ? (
+                    <br className="md:block hidden" />
+                  ) : (
+                    ""
+                  )}
                   {t("hero_section.slide_1.header_2")}{" "}
                   <p className="inline text-[#FF00E5] font-black">
                     {t("hero_section.slide_1.header_3")}
@@ -268,6 +272,8 @@ export default function CarouselNav() {
                 className="md:w-fit w-full md:h-[35vw] h-[35vh] md:p-0 pb-0"
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_1.webp"
                 alt="Main SVG 1"
+                fetchpriority="high"
+                decoding="async"
               />
             </div>
           </div>
@@ -363,7 +369,7 @@ export default function CarouselNav() {
         {/* Second slide: custom hero section */}
         <div className="flex flex-col">
           <div className="relative flex md:flex-row flex-col-reverse md:gap-y-0 items-center md:pt-0 pt-[10vw] lg:min-h-[75vh] md:min-h-fit min-h-fit bg-white md:px-[10vw] px-[10vw]">
-            <div className="flex-1 flex-col md:w-[55%] w-full">
+            <div className={`flex-1 flex-col md:w-[55%] w-full`}>
               {/* Tagline */}
               <div
                 className="flex flex-row bg-[#F9F5FF] w-fit select-none rounded-full md:pl-[0.3vw] pl-[0.7vw] md:pr-[0.45vw] pr-[2vw] md:py-[0.2vw] py-[0.5vw] md:text-[0.6vw] text-[2.5vw] items-center font-semibold text-[#6941C6]"
@@ -638,7 +644,11 @@ export default function CarouselNav() {
                   {t("hero_section.slide_3.header_1")}{" "}
                   <p className="inline text-[#FF00E5]">
                     {t("hero_section.slide_3.header_2")}{" "}
-                    <br className="md:block hidden" />
+                    {i18n.language === "en" ? (
+                      <br className="md:block hidden" />
+                    ) : (
+                      ""
+                    )}
                     {t("hero_section.slide_3.header_3")}
                   </p>{" "}
                   {t("hero_section.slide_3.header_4")}

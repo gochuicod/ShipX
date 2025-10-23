@@ -91,7 +91,6 @@ export default function () {
             if (mod && typeof mod.initGTM === "function") {
               mod.initGTM();
               setGtmInitialized(true);
-              console.log("GTM initialized after consent");
             } else {
               console.error("initGTM not found in tagmanager module:", mod);
             }
