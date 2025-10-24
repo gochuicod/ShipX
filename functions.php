@@ -5,32 +5,13 @@ function boilerplate_load_assets() {
   wp_enqueue_script('ourmainjs', get_theme_file_uri('/build/index.js'), array('wp-element', 'react-jsx-runtime'), '1.0', true);
   wp_enqueue_style('ourmaincss', get_theme_file_uri('/build/index.css'));
 }
-
 add_action('wp_enqueue_scripts', 'boilerplate_load_assets');
 
 function boilerplate_add_support() {
   add_theme_support('title-tag');
   add_theme_support('post-thumbnails');
 }
-
 add_action('after_setup_theme', 'boilerplate_add_support');
-
-function shipx_get_user_country() {
-    // Cloudflare, SiteGround, or some proxies send this header
-    $country = $_SERVER['HTTP_CF_IPCOUNTRY'] ?? '';
-
-    // Optional fallback: use a simple IP lookup (not ideal if privacy is a concern)
-    if (empty($country) && !empty($_SERVER['REMOTE_ADDR'])) {
-        // As fallback only: use wp_remote_get() to ipwho.is
-        $response = wp_remote_get('https://ipwho.is/' . $_SERVER['REMOTE_ADDR']);
-        if (!is_wp_error($response)) {
-            $body = json_decode(wp_remote_retrieve_body($response), true);
-            $country = $body['country_code'] ?? '';
-        }
-    }
-
-    return strtoupper($country);
-}
 
 function shipx_enqueue_assets() {
     $theme_dir = get_stylesheet_directory_uri() . '/build';
@@ -56,13 +37,61 @@ function shipx_enqueue_assets() {
 }
 add_action('wp_enqueue_scripts', 'shipx_enqueue_assets');
 
-add_action('rest_api_init', function () {
-  register_rest_route('mytheme/v1', '/contact', array(
-    'methods' => 'POST',
-    'callback' => 'mytheme_handle_contact',
-    'permission_callback' => '__return_true',
-  ));
+function shipx_preconnect_fonts() {
+  echo '<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>' . "\n";
+  echo '<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">' . "\n";
+}
+add_action('wp_head', 'shipx_preconnect_fonts');
+
+add_action('template_redirect', function() {
+  status_header(200);
+  include get_template_directory() . '/index.php';
+  exit;
 });
+
+function shipx_get_user_country() {
+    // Cloudflare, SiteGround, or some proxies send this header
+    $country = $_SERVER['HTTP_CF_IPCOUNTRY'] ?? '';
+
+    // Optional fallback: use a simple IP lookup (not ideal if privacy is a concern)
+    if (empty($country) && !empty($_SERVER['REMOTE_ADDR'])) {
+        // As fallback only: use wp_remote_get() to ipwho.is
+        $response = wp_remote_get('https://ipwho.is/' . $_SERVER['REMOTE_ADDR']);
+        if (!is_wp_error($response)) {
+            $body = json_decode(wp_remote_retrieve_body($response), true);
+            $country = $body['country_code'] ?? '';
+        }
+    }
+
+    return strtoupper($country);
+}
+
+// Fonts config
+function shipx_enqueue_styles() {
+  error_log('shipx_enqueue_styles fired');
+
+  $css_path = get_stylesheet_directory() . '/build/index.css';
+  $css_uri  = get_stylesheet_directory_uri() . '/build/index.css';
+
+  if (file_exists($css_path)) {
+      error_log('CSS file found at: ' . $css_path);
+      wp_enqueue_style(
+          'shipx-main-style',
+          $css_uri,
+          array(),
+          filemtime($css_path)
+      );
+  } else {
+      error_log('❌ CSS file NOT found, using fallback');
+      wp_enqueue_style(
+          'shipx-main-style',
+          get_stylesheet_directory_uri() . '/src/index.css',
+          array(),
+          null
+      );
+  }
+}
+add_action('wp_enqueue_scripts', 'shipx_enqueue_styles');
 
 // Contact Form
 function mytheme_handle_contact(WP_REST_Request $request) {
@@ -921,36 +950,10 @@ function mytheme_handle_contact(WP_REST_Request $request) {
     return new WP_Error('mail_failed', 'Email failed to send.', array('status' => 500));
   }
 }
-
-// Fonts config
-function shipx_enqueue_styles() {
-  error_log('shipx_enqueue_styles fired');
-
-  $css_path = get_stylesheet_directory() . '/build/index.css';
-  $css_uri  = get_stylesheet_directory_uri() . '/build/index.css';
-
-  if (file_exists($css_path)) {
-      error_log('CSS file found at: ' . $css_path);
-      wp_enqueue_style(
-          'shipx-main-style',
-          $css_uri,
-          array(),
-          filemtime($css_path)
-      );
-  } else {
-      error_log('❌ CSS file NOT found, using fallback');
-      wp_enqueue_style(
-          'shipx-main-style',
-          get_stylesheet_directory_uri() . '/src/index.css',
-          array(),
-          null
-      );
-  }
-}
-add_action('wp_enqueue_scripts', 'shipx_enqueue_styles');
-
-function shipx_preconnect_fonts() {
-  echo '<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>' . "\n";
-  echo '<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">' . "\n";
-}
-add_action('wp_head', 'shipx_preconnect_fonts');
+add_action('rest_api_init', function () {
+  register_rest_route('mytheme/v1', '/contact', array(
+    'methods' => 'POST',
+    'callback' => 'mytheme_handle_contact',
+    'permission_callback' => '__return_true',
+  ));
+});

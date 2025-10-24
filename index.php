@@ -1,3 +1,6 @@
+<?php
+  status_header(200);
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
   <head>

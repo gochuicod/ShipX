@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { getCookieConsentValue } from "react-cookie-consent";
-import { initGTM, updateGtmConsent } from "../../tagmanager";
+import { initGTM, updateGtmConsent } from "../../../tagmanager";
 
 //Invisible component that handles loading GTM
 //and checking for returning visitor consent.
@@ -11,7 +11,7 @@ const GtmLoader = () => {
   // Load GTM for ALL users (runs once)
   useEffect(() => {
     initGTM();
-    console.log("GTM initialized (consent 'denied' by default)");
+    console.info("GTM initialized (consent 'denied' by default)");
     setIsGtmLoaded(true);
   }, []); // Empty array ensures it runs only once
 

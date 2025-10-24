@@ -14,7 +14,7 @@ export const updateGtmConsent = (state) => {
     window.gtag("consent", "update", {
       analytics_storage: state,
     });
-    console.log(`GTM consent updated to '${state}'`);
+    // console.log(`GTM consent updated to '${state}'`);
   } else {
     console.warn("window.gtag function not found. GTM may not be loaded.");
   }
