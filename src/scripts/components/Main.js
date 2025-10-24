@@ -30,7 +30,7 @@ const Main = ({ margin }) => {
         title="ShipX - ASEAN's Next Generation Platform"
         description="Enter And Scale In The U.S. Market With Custom Logistics Solutions Built To Support Sellers From Launch To Nationwide Expansion"
         canonical="https://shipx.asia"
-        ogImage="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/logo-shipx.webp"
+        ogImage="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
       />
 
       <div className="relative overflow-hidden">
@@ -53,13 +53,13 @@ const Main = ({ margin }) => {
             className={`relative flex md:flex-row flex-col-reverse justify-center items-center gap-x-[3vw] md:gap-y-0 gap-y-[10vw] md:pt-[15vw] pt-[40vw] lg:pb-[5vw] md:pb-[5vw] pb-[30vw] overflow-hidden select-none ${margin}`}
           >
             <img
-              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_2.svg"
+              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_2.svg"
               alt=""
               className="absolute -translate-x-[0.01vw] md:-translate-y-[5vw] -translate-y-[50vw] w-[200vw] h-[45vw] pointer-events-none select-none z-0"
               aria-hidden="true"
             />
             <img
-              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_3.svg"
+              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_3.svg"
               alt=""
               className="absolute md:-translate-y-[5.5vw] -translate-y-[40vw] translate-x-[40vw] md:w-[25vw] w-[45vw] md:h-[25vw] h-[45vw] pointer-events-none select-none z-0"
               aria-hidden="true"
@@ -301,19 +301,19 @@ const Main = ({ margin }) => {
             className={`lg:h-screen md:h-fit h-auto relative flex flex-col md:gap-y-[1vw] gap-y-0 justify-center items-center pt-[5vw] overflow-hidden`}
           >
             <img
-              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_4.svg"
+              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_4.svg"
               alt=""
               className="absolute -translate-x-[40vw] translate-y-[12vw] w-[200vw] h-[45vw] pointer-events-none select-none z-0"
               aria-hidden="true"
             />
             <img
-              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_5.svg"
+              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_5.svg"
               alt=""
               className="absolute -translate-x-[41vw] -translate-y-[35vw] w-[150vw] h-[80vw] pointer-events-none select-none z-0"
               aria-hidden="true"
             />
             <img
-              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_5.svg"
+              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_5.svg"
               alt=""
               className="absolute translate-x-[23vw] translate-y-[24vw] w-[200vw] h-[80vw] pointer-events-none select-none -z-10 rotate-190"
               aria-hidden="true"
@@ -371,7 +371,7 @@ const Main = ({ margin }) => {
                     >
                       <img
                         className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_1.svg"
+                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_1.svg"
                         alt="globe"
                       />
                       <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
@@ -388,7 +388,7 @@ const Main = ({ margin }) => {
                     >
                       <img
                         className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_2.svg"
+                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_2.svg"
                         alt="plane"
                       />
                       <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
@@ -405,7 +405,7 @@ const Main = ({ margin }) => {
                     >
                       <img
                         className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_3.svg"
+                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_3.svg"
                         alt="flag"
                       />
                       <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
@@ -422,7 +422,7 @@ const Main = ({ margin }) => {
                     >
                       <img
                         className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_4.svg"
+                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_4.svg"
                         alt="warehouse"
                       />
                       <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
@@ -439,7 +439,7 @@ const Main = ({ margin }) => {
                     >
                       <img
                         className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_5.svg"
+                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_5.svg"
                         alt="amazon icon"
                       />
                       <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
@@ -456,7 +456,7 @@ const Main = ({ margin }) => {
                     >
                       <img
                         className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_6.svg"
+                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_6.svg"
                         alt="package"
                       />
                       <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
@@ -473,7 +473,7 @@ const Main = ({ margin }) => {
                     >
                       <img
                         className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_7.svg"
+                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_7.svg"
                         alt="magnifier"
                       />
                       <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
@@ -490,7 +490,7 @@ const Main = ({ margin }) => {
                     >
                       <img
                         className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_8.svg"
+                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_8.svg"
                         alt="dollar"
                       />
                       <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
@@ -563,7 +563,7 @@ const Main = ({ margin }) => {
           >
             <img
               className="absolute md:w-[50vw] w-[80vw] md:h-[45vw] h-[80vw] md:translate-x-[17vw] translate-x-[10vw] md:-translate-y-[1vw] translate-y-[1vw] -z-10"
-              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_4.webp"
+              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_img_4.webp"
               alt=""
             />
             <ParallaxSection className="lg:min-h-screen md:min-h-fit min-h-screen relative flex flex-col justify-center items-center overflow-hidden select-none">
@@ -673,7 +673,7 @@ const Main = ({ margin }) => {
                 </div>
                 <img
                   className="md:w-[35vw] w-[60vw] md:h-[25vw] h-[20vh]"
-                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_2.webp"
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_img_2.webp"
                   alt=""
                 />
               </div>
@@ -686,14 +686,14 @@ const Main = ({ margin }) => {
                     <div className="flex animate-scroll-right items-center gap-y-[3vw]">
                       {/* Original logos */}
                       <img
-                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_logo_2.webp"
+                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_logo_2.webp"
                         alt="scrolling"
                         className="md:h-[6vw] h-[10vw] object-contain"
                       />
 
                       {/* Duplicate logos for seamless loop */}
                       <img
-                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_logo_2.webp"
+                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_logo_2.webp"
                         alt="scrolling"
                         className="md:h-[6vw] h-[10vw] object-contain"
                       />
@@ -719,14 +719,14 @@ const Main = ({ margin }) => {
                     <div className="flex animate-scroll items-center gap-y-[3vw]">
                       {/* Original logos */}
                       <img
-                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_logo_3.webp"
+                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_logo_3.webp"
                         alt="scrolling"
                         className="md:h-[6vw] h-[10vw] object-contain"
                       />
 
                       {/* Duplicate logos for seamless loop */}
                       <img
-                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_logo_3.webp"
+                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_logo_3.webp"
                         alt="scrolling"
                         className="md:h-[6vw] h-[10vw] object-contain"
                       />
@@ -758,7 +758,7 @@ const Main = ({ margin }) => {
                   <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] items-center w-full">
                     <img
                       className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
-                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_2.svg"
+                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_2.svg"
                       alt="plane"
                     />
                     <p className="pl-[1vw]">
@@ -772,7 +772,7 @@ const Main = ({ margin }) => {
                   <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] items-center w-full">
                     <img
                       className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
-                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_9.svg"
+                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_9.svg"
                       alt="basket"
                     />
                     <p className="pl-[1vw]">
@@ -786,7 +786,7 @@ const Main = ({ margin }) => {
                   <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] items-center w-full">
                     <img
                       className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
-                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_7.svg"
+                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_7.svg"
                       alt="magnifier"
                     />
                     <p className="pl-[1vw]">
@@ -800,7 +800,7 @@ const Main = ({ margin }) => {
                   <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] items-center w-full">
                     <img
                       className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
-                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_6.svg"
+                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_6.svg"
                       alt="package"
                     />
                     <p className="pl-[1vw]">
@@ -866,7 +866,7 @@ const Main = ({ margin }) => {
                 <div className="relative overflow-hidden flex flex-col md:gap-y-[1vw] gap-y-[3vw] md:w-[35vw] w-full md:shadow-[0_0vw_1vw_rgba(79,55,138,0.15)] shadow-[0_0vw_5vw_rgba(79,55,138,0.15)] md:rounded-[2vw] rounded-[3vw] md:px-[3vw] px-[5vw] md:pt-[3vw] pt-[5vw] md:pb-[23vw] pb-[33vw] bg-white">
                   <div className="flex justify-center items-center">
                     <img
-                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_14.svg"
+                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_14.svg"
                       alt="Amilo Logo"
                       className="md:h-[4vw] h-[15vw] md:w-[12vw] w-[30vw]"
                     />
@@ -903,7 +903,7 @@ const Main = ({ margin }) => {
                         {t("systems_section.sglink_card.button")}
                       </span>
                       <img
-                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/header_svg_2.svg"
+                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/header_svg_2.svg"
                         alt="Amilo Logo"
                         className="md:h-[1vw] h-[4vw] md:w-[4vw] w-[10vw]"
                       />
@@ -920,7 +920,7 @@ const Main = ({ margin }) => {
                         md:bg-[length:30vw_30vw]
                       "
                       style={{
-                        backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_16.svg")`,
+                        backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_16.svg")`,
                       }}
                     ></div>
 
@@ -935,7 +935,7 @@ const Main = ({ margin }) => {
                           md:bg-[length:100vw_50vw]
                         "
                         style={{
-                          backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_17.svg")`,
+                          backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_17.svg")`,
                         }}
                       ></div>
 
@@ -949,7 +949,7 @@ const Main = ({ margin }) => {
                           md:bg-[length:100vw_50vw]
                         "
                         style={{
-                          backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_18.svg")`,
+                          backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_18.svg")`,
                         }}
                       ></div>
                     </div>
@@ -997,7 +997,7 @@ const Main = ({ margin }) => {
                 <div className="relative overflow-hidden flex flex-col md:gap-y-[1vw] gap-y-[3vw] md:w-[35vw] w-full md:shadow-[0_0vw_1vw_rgba(79,55,138,0.15)] shadow-[0_0vw_5vw_rgba(79,55,138,0.15)] md:rounded-[2vw] rounded-[3vw] md:px-[3vw] px-[5vw] md:pt-[3vw] pt-[5vw] md:pb-[23vw] pb-[33vw] bg-white">
                   <div className="flex justify-center items-center">
                     <img
-                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_15.svg"
+                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_15.svg"
                       alt="Amilo Logo"
                       className="md:h-[4vw] h-[15vw] md:w-[12vw] w-[30vw]"
                     />
@@ -1034,7 +1034,7 @@ const Main = ({ margin }) => {
                         {t("systems_section.amilo_card.button")}
                       </span>
                       <img
-                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/header_svg_1.svg"
+                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/header_svg_1.svg"
                         alt="Amilo Logo"
                         className="md:h-[1vw] h-[4vw] md:w-[4vw] w-[10vw]"
                       />
@@ -1051,7 +1051,7 @@ const Main = ({ margin }) => {
                         md:bg-[length:100vw_13vw]
                       "
                       style={{
-                        backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_20.svg")`,
+                        backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_20.svg")`,
                       }}
                     ></div>
 
@@ -1066,7 +1066,7 @@ const Main = ({ margin }) => {
                           md:bg-[length:100vw_20vw]
                         "
                         style={{
-                          backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_19.svg")`,
+                          backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_19.svg")`,
                         }}
                       ></div>
 
@@ -1080,7 +1080,7 @@ const Main = ({ margin }) => {
                           md:bg-[length:100vw_15vw]
                         "
                         style={{
-                          backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_21.svg")`,
+                          backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_21.svg")`,
                         }}
                       ></div>
                     </div>
@@ -1252,7 +1252,7 @@ const Main = ({ margin }) => {
                     </div>
                     <img
                       className="md:w-[20vw] w-[80vw] md:h-[14vw] h-[50vw] rounded-[2vw] shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)]"
-                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_5.webp"
+                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_img_5.webp"
                       alt="Freight Section - Freight & Customs"
                     />
                     {/* Collapsible Area */}
@@ -1443,7 +1443,7 @@ const Main = ({ margin }) => {
                     </div>
                     <img
                       className="md:w-[20vw] w-[80vw] md:h-[14vw] h-[50vw] rounded-[2vw] shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)]"
-                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_6.webp"
+                      src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_img_6.webp"
                       alt="Freight Section - Customs & Fulfillment Solutions"
                     />
                     <div className="flex flex-col">
@@ -1546,7 +1546,7 @@ const Main = ({ margin }) => {
             className={`lg:min-h-screen md:h-fit h-auto relative flex flex-col justify-center items-center pt-[16vw] overflow-hidden select-none md:px-[8vw] px-[5vw]`}
           >
             <img
-              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_10.svg"
+              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_10.svg"
               alt=""
               className="absolute translate-x-[36vw] -translate-y-[18vw] w-[200vw] md:h-[43vw] h-[83vw] pointer-events-none select-none -z-10"
               aria-hidden="true"
@@ -1710,7 +1710,7 @@ const Main = ({ margin }) => {
                 <div
                   className="flex md:w-[60vw] w-[100vw] md:h-[40vw] h-[75vw] md:bg-size-[auto_47vw] bg-size-[125vw_90vw] bg-center bg-no-repeat"
                   style={{
-                    backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/offices_section_map_image.webp")`,
+                    backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/offices_section_map_image.webp")`,
                   }}
                 ></div>
               </div>
@@ -1743,7 +1743,7 @@ const Main = ({ margin }) => {
                   <div
                     className="md:flex hidden md:w-[25vw] w-[80vw] md:h-[15vw] h-[30vw] md:bg-size-[25vw_15vw] bg-size-[100vw_50vw] bg-center bg-no-repeat"
                     style={{
-                      backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_13.svg")`,
+                      backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_13.svg")`,
                     }}
                   ></div>
                 </div>
@@ -1757,13 +1757,13 @@ const Main = ({ margin }) => {
             className="relative flex flex-col justify-center items-center md:pt-[10vw] pt-[1vw] overflow-hidden"
           >
             <img
-              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_7.svg"
+              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_7.svg"
               alt=""
               className="absolute md:-translate-y-[5vw] -translate-y-[35vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none -z-10"
               aria-hidden="true"
             />
             <img
-              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_7.svg"
+              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_7.svg"
               alt=""
               className="absolute translate-x-[30vw] md:translate-y-[10vw] -translate-y-[15vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none opacity-20 -z-10"
               aria-hidden="true"
@@ -1771,7 +1771,7 @@ const Main = ({ margin }) => {
             <ParallaxSection>
               <div className="relative flex flex-col md:shadow-[0_0.5vw_2vw_rgba(255,0,229,0.15)] shadow-[0_0.5vw_3vw_rgba(255,0,229,0.25)] md:pl-[8vw] pl-[15vw] pr-[8vw] md:py-[4vw] py-[8vw] md:rounded-t-[2vw] rounded-t-[5vw] md:w-[70vw] w-[90vw] bg-white z-10">
                 <img
-                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_svg_8.svg"
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_8.svg"
                   alt=""
                   className="absolute md:-translate-x-[43vw] -translate-x-[75vw] md:-translate-y-[2vw] translate-y-[5vw] w-[200vw] md:h-[34vw] h-[145vw] pointer-events-none select-none z-0"
                   aria-hidden="true"

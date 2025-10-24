@@ -18,13 +18,13 @@ const Footer = memo(() => {
             <div className="flex flex-row md:gap-x-[0.5vw] gap-x-[1vw] justify-start items-center">
               <img
                 loading="lazy"
-                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx_logo_white.svg"
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/shipx_logo_white.svg"
                 alt="ShipX Logo"
                 className="md:w-[5vw] w-[20vw] md:h-[2.5vw] h-[10vw]"
               />
               <img
                 loading="lazy"
-                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/sglink_amilo_logo_white.svg"
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/sglink_amilo_logo_white.svg"
                 alt="SGLink Logo"
                 className="md:w-[5vw] w-[22vw] md:h-[1.5vw] h-[6vw]"
               />

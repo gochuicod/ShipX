@@ -60,7 +60,7 @@ const Header = memo(() => {
             >
               <img
                 loading="lazy"
-                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx_logo.svg"
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/shipx_logo.svg"
                 alt="ShipX Logo"
                 className="md:w-[3vw] md:h-[1.5vw] w-[14vw] h-[7vw]"
               />
@@ -72,7 +72,7 @@ const Header = memo(() => {
             >
               <img
                 loading="lazy"
-                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/logo_sglink_amilo.svg"
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo_sglink_amilo.svg"
                 alt="SGLink Logo"
                 className="md:w-[3vw] md:h-[1.5vw] w-[16vw] h-[5vw]"
               />
@@ -81,7 +81,7 @@ const Header = memo(() => {
           <img
             loading="lazy"
             className="h-[1vw] w-[1vw]"
-            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_14.webp"
+            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_img_14.webp"
             alt="Separator"
           />
           <span className="hidden md:inline text-[0.8vw] font-normal">

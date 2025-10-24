@@ -18,7 +18,7 @@ const PrivacyPolicy = () => {
         title="ShipX - Privacy Policy"
         description="Welcome to ShipX's Privacy Policy Page!"
         canonical="https://shipx.asia/privacy-policy"
-        ogImage="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/logo-shipx.webp"
+        ogImage="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
       />
 
       <div className={`flex flex-col justify-center items-center ${margin}`}>

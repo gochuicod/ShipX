@@ -99,7 +99,7 @@ const LoginModal = () => {
                 </span>
                 <img
                   loading="lazy"
-                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/header_svg_1.svg"
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/header_svg_1.svg"
                   alt="Amilo Logo"
                   className="md:h-[1vw] h-[4vw] md:w-[4vw] w-[10vw]"
                 />
@@ -131,7 +131,7 @@ const LoginModal = () => {
                 </span>
                 <img
                   loading="lazy"
-                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/header_svg_2.svg"
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/header_svg_2.svg"
                   alt="SG Link Logo"
                   className="md:h-[1vw] h-[4vw] md:w-[4vw] w-[10vw]"
                 />

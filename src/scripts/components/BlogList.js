@@ -16,7 +16,7 @@ const BlogList = () => {
         title="ShipX - Blog"
         description="Welcome to ShipX's Blog Posts Page!"
         canonical="https://shipx.asia/blog"
-        ogImage="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/logo-shipx.webp"
+        ogImage="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
       />
 
       <div

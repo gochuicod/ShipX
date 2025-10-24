@@ -17,7 +17,7 @@ const BookADemo = () => {
         title="ShipX - Book A Demo"
         description="Book a Demo with ShipX!"
         canonical="https://shipx.asia/book-a-demo"
-        ogImage="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/logo-shipx.webp"
+        ogImage="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
       />
 
       <div className="w-full md:h-[70vw] h-[100vh]">

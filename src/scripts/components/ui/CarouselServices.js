@@ -165,7 +165,7 @@ export default function CarouselServices({ slide }) {
           </div>
           <img
             className="w-full md:h-[15vw] h-[45vw] rounded-[2vw]"
-            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_1.webp"
+            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_img_1.webp"
             alt="Main Image 1"
           />
         </div>
@@ -227,7 +227,7 @@ export default function CarouselServices({ slide }) {
           </div>
           <img
             className="w-full md:h-[15vw] h-[45vw] rounded-[2vw]"
-            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_7.webp"
+            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_img_7.webp"
             alt="Main Image 7"
           />
         </div>
@@ -291,7 +291,7 @@ export default function CarouselServices({ slide }) {
           </div>
           <img
             className="w-full md:h-[15vw] h-[45vw] rounded-[2vw]"
-            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_8.webp"
+            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_img_8.webp"
             alt="Main Image 8"
           />
         </div>
@@ -354,7 +354,7 @@ export default function CarouselServices({ slide }) {
           </div>
           <img
             className="w-full md:h-[15vw] h-[45vw] rounded-[2vw]"
-            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_9.webp"
+            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_img_9.webp"
             alt="Main Image 9"
           />
         </div>
@@ -419,7 +419,7 @@ export default function CarouselServices({ slide }) {
           </div>
           <img
             className="w-full md:h-[15vw] h-[45vw] rounded-[2vw]"
-            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_10.webp"
+            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_img_10.webp"
             alt="Main Image 10"
           />
         </div>
@@ -482,7 +482,7 @@ export default function CarouselServices({ slide }) {
           </div>
           <img
             className="w-full md:h-[15vw] h-[45vw] rounded-[2vw]"
-            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_11.webp"
+            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_img_11.webp"
             alt="Main Image 11"
           />
         </div>
@@ -543,7 +543,7 @@ export default function CarouselServices({ slide }) {
           </div>
           <img
             className="w-full md:h-[15vw] h-[45vw] rounded-[2vw]"
-            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_img_12.webp"
+            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_img_12.webp"
             alt="Main Image 12"
           />
         </div>
@@ -589,7 +589,7 @@ export default function CarouselServices({ slide }) {
             <div className="flex flex-row w-full md:rounded-[1vw] rounded-[3vw] bg-white z-10 md:px-[1.5vw] px-[3vw] md:py-[1vw] py-[3vw] items-center justify-start cursor-pointer select-none">
               <img
                 className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_23.svg"
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_23.svg"
                 alt="Main Icon 23"
               />
               <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[1.5vw] pl-[3vw]">
@@ -599,7 +599,7 @@ export default function CarouselServices({ slide }) {
             <div className="flex flex-row w-full md:rounded-[1vw] rounded-[3vw] bg-white z-10 md:px-[1.5vw] px-[3vw] md:py-[1vw] py-[3vw] items-center justify-start cursor-pointer select-none">
               <img
                 className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_24.svg"
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_24.svg"
                 alt="Main Icon 24"
               />
               <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[1.5vw] pl-[3vw]">
@@ -609,7 +609,7 @@ export default function CarouselServices({ slide }) {
             <div className="flex flex-row w-full md:rounded-[1vw] rounded-[3vw] bg-white z-10 md:px-[1.5vw] px-[3vw] md:py-[1vw] py-[3vw] items-center justify-start cursor-pointer select-none">
               <img
                 className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_24.svg"
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_24.svg"
                 alt="Main Icon 24"
               />
               <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[1.5vw] pl-[3vw]">
@@ -619,7 +619,7 @@ export default function CarouselServices({ slide }) {
             <div className="flex flex-row w-full md:rounded-[1vw] rounded-[3vw] bg-white z-10 md:px-[1.5vw] px-[3vw] md:py-[1vw] py-[3vw] items-center justify-start cursor-pointer select-none">
               <img
                 className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_25.svg"
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_25.svg"
                 alt="Main Icon 25"
               />
               <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[1.5vw] pl-[3vw]">
@@ -629,7 +629,7 @@ export default function CarouselServices({ slide }) {
             <div className="flex flex-row w-full md:rounded-[1vw] rounded-[3vw] bg-white z-10 md:px-[1.5vw] px-[3vw] md:py-[1vw] py-[3vw] items-center justify-start cursor-pointer select-none">
               <img
                 className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
-                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/main_icon_8.svg"
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_8.svg"
                 alt="Main Icon 8"
               />
               <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[1.5vw] pl-[3vw]">
