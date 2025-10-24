@@ -1,18 +1,5 @@
 <?php
 
-// Boilerplate init essentials
-function boilerplate_load_assets() {
-  wp_enqueue_script('ourmainjs', get_theme_file_uri('/build/index.js'), array('wp-element', 'react-jsx-runtime'), '1.0', true);
-  wp_enqueue_style('ourmaincss', get_theme_file_uri('/build/index.css'));
-}
-add_action('wp_enqueue_scripts', 'boilerplate_load_assets');
-
-function boilerplate_add_support() {
-  add_theme_support('title-tag');
-  add_theme_support('post-thumbnails');
-}
-add_action('after_setup_theme', 'boilerplate_add_support');
-
 function shipx_enqueue_assets() {
     $theme_dir = get_stylesheet_directory_uri() . '/build';
     $theme_path = get_stylesheet_directory() . '/build';
@@ -26,7 +13,7 @@ function shipx_enqueue_assets() {
     $css_version = file_exists($theme_path . '/' . $css_file) ? filemtime($theme_path . '/' . $css_file) : false;
 
     // Enqueue scripts and styles
-    wp_enqueue_script('shipx-js', $theme_dir . '/' . $js_file, [], $js_version, true);
+    wp_enqueue_script('shipx-js', $theme_dir . '/' . $js_file, array('wp-element', 'react-jsx-runtime'), $js_version, true);
     wp_enqueue_style('shipx-css', $theme_dir . '/' . $css_file, [], $css_version);
 
     // Pass geo data to JS (unchanged)
@@ -36,6 +23,25 @@ function shipx_enqueue_assets() {
     wp_localize_script('shipx-js', 'ShipXGeo', $geo_data);
 }
 add_action('wp_enqueue_scripts', 'shipx_enqueue_assets');
+
+function shipx_defer_scripts($tag, $handle, $src) {
+    // Only add defer to your main JS bundle (and optionally React libs)
+    $defer_scripts = ['shipx-js', 'react', 'react-dom', 'react-jsx-runtime'];
+
+    if (in_array($handle, $defer_scripts)) {
+        // Add defer attribute
+        return '<script src="' . esc_url($src) . '" defer></script>' . "\n";
+    }
+
+    return $tag;
+}
+add_filter('script_loader_tag', 'shipx_defer_scripts', 10, 3);
+
+add_action('wp_enqueue_scripts', function() {
+    wp_dequeue_style('wp-block-library');
+    wp_dequeue_style('wp-block-library-theme');
+    wp_dequeue_style('global-styles');
+}, 100);
 
 function shipx_preconnect_fonts() {
   echo '<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>' . "\n";
@@ -65,33 +71,6 @@ function shipx_get_user_country() {
 
     return strtoupper($country);
 }
-
-// Fonts config
-function shipx_enqueue_styles() {
-  error_log('shipx_enqueue_styles fired');
-
-  $css_path = get_stylesheet_directory() . '/build/index.css';
-  $css_uri  = get_stylesheet_directory_uri() . '/build/index.css';
-
-  if (file_exists($css_path)) {
-      error_log('CSS file found at: ' . $css_path);
-      wp_enqueue_style(
-          'shipx-main-style',
-          $css_uri,
-          array(),
-          filemtime($css_path)
-      );
-  } else {
-      error_log('❌ CSS file NOT found, using fallback');
-      wp_enqueue_style(
-          'shipx-main-style',
-          get_stylesheet_directory_uri() . '/src/index.css',
-          array(),
-          null
-      );
-  }
-}
-add_action('wp_enqueue_scripts', 'shipx_enqueue_styles');
 
 // Contact Form
 function mytheme_handle_contact(WP_REST_Request $request) {
