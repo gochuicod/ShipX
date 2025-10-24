@@ -38,7 +38,10 @@ const App = () => {
   );
 };
 
-if (document.querySelector("#render")) {
-  const root = ReactDOM.createRoot(document.querySelector("#render"));
-  root.render(<App />);
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const root = document.querySelector("#render");
+  if (root) {
+    const reactRoot = ReactDOM.createRoot(root);
+    reactRoot.render(<App />);
+  }
+});

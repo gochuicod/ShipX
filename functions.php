@@ -26,7 +26,7 @@ add_action('wp_enqueue_scripts', 'shipx_enqueue_assets');
 
 function shipx_defer_scripts($tag, $handle, $src) {
     // Only add defer to your main JS bundle (and optionally React libs)
-    $defer_scripts = ['shipx-js', 'react', 'react-dom', 'react-jsx-runtime'];
+    $defer_scripts = ['wp-element', 'wp-escape-html', 'shipx-js', 'react', 'react-dom', 'react-jsx-runtime'];
 
     if (in_array($handle, $defer_scripts)) {
         // Add defer attribute

@@ -271,6 +271,9 @@ export default function CarouselNav() {
               <img
                 className="md:w-fit w-full md:h-[35vw] h-[35vh] md:p-0 pb-0"
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_1.webp"
+                fetchpriority="high"
+                decoding="async"
+                loading="eager"
                 alt="Main SVG 1"
               />
             </div>
