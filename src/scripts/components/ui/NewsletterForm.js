@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { button as MotionButton } from "motion/react-client";
 import { useTranslation } from "react-i18next";
-import { NavLink } from "react-router-dom";
+import SmartNavLink from "../ui/SmartNavLink";
 
 const NewsletterForm = () => {
   const {
@@ -75,13 +75,13 @@ const NewsletterForm = () => {
 
         {/* Inner white area */}
         <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-[#8E3CAD] text-white rounded-full">
-          <NavLink to="/book-a-demo">
+          <SmartNavLink to="/book-a-demo">
             {isSubmitting
               ? t("newsletter_section.form.button_sending")
               : isSent
                 ? t("newsletter_section.form.button_sent")
                 : t("newsletter_section.form.button_default")}
-          </NavLink>
+          </SmartNavLink>
         </div>
       </MotionButton>
     </form>

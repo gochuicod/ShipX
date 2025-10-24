@@ -499,39 +499,39 @@ const Main = ({ margin }) => {
                     </div>
                   </div>
                   <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.6vw] font-normal justify-center items-center select-none">
-                    <MotionButton
-                      type="button"
-                      className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
-                      whileHover={{
-                        y: -5,
-                        transition: {
-                          type: "spring",
-                          stiffness: 300,
-                          damping: 15,
-                        },
-                      }}
-                      whileTap={{
-                        scale: 0.9,
-                        transition: {
-                          type: "spring",
-                          stiffness: 500,
-                          damping: 10,
-                        },
-                      }}
+                    <SmartNavLink
+                      to="/book-a-demo"
+                      className="text-[#4F378A] font-semibold"
                     >
-                      {/* Gradient border */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+                      <MotionButton
+                        type="button"
+                        className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
+                        whileHover={{
+                          y: -5,
+                          transition: {
+                            type: "spring",
+                            stiffness: 300,
+                            damping: 15,
+                          },
+                        }}
+                        whileTap={{
+                          scale: 0.9,
+                          transition: {
+                            type: "spring",
+                            stiffness: 500,
+                            damping: 10,
+                          },
+                        }}
+                      >
+                        {/* Gradient border */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
-                      {/* Inner white area */}
-                      <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
-                        <SmartNavLink
-                          to="/book-a-demo"
-                          className="text-[#4F378A] font-semibold"
-                        >
+                        {/* Inner white area */}
+                        <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
                           {t("services_section.book_a_demo")}
-                        </SmartNavLink>
-                      </div>
-                    </MotionButton>
+                        </div>
+                      </MotionButton>
+                    </SmartNavLink>
                     <SmartNavLink
                       to="/#contact-us"
                       end
@@ -622,39 +622,39 @@ const Main = ({ margin }) => {
                       fontFamily: "Karla, system-ui, -apple-system, sans-serif",
                     }}
                   >
-                    <MotionButton
-                      type="button"
-                      className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
-                      whileHover={{
-                        y: -5,
-                        transition: {
-                          type: "spring",
-                          stiffness: 300,
-                          damping: 15,
-                        },
-                      }}
-                      whileTap={{
-                        scale: 0.9,
-                        transition: {
-                          type: "spring",
-                          stiffness: 500,
-                          damping: 10,
-                        },
-                      }}
+                    <SmartNavLink
+                      to="/book-a-demo"
+                      className="text-[#4F378A] font-semibold"
                     >
-                      {/* Gradient border */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+                      <MotionButton
+                        type="button"
+                        className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
+                        whileHover={{
+                          y: -5,
+                          transition: {
+                            type: "spring",
+                            stiffness: 300,
+                            damping: 15,
+                          },
+                        }}
+                        whileTap={{
+                          scale: 0.9,
+                          transition: {
+                            type: "spring",
+                            stiffness: 500,
+                            damping: 10,
+                          },
+                        }}
+                      >
+                        {/* Gradient border */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
-                      {/* Inner white area */}
-                      <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
-                        <SmartNavLink
-                          to="/book-a-demo"
-                          className="text-[#4F378A] font-semibold"
-                        >
+                        {/* Inner white area */}
+                        <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
                           {t("platform_section.book_a_demo")}
-                        </SmartNavLink>
-                      </div>
-                    </MotionButton>
+                        </div>
+                      </MotionButton>
+                    </SmartNavLink>
                     <SmartNavLink
                       to="/#contact-us"
                       end
@@ -1158,39 +1158,39 @@ const Main = ({ margin }) => {
                       fontFamily: "Karla, system-ui, -apple-system, sans-serif",
                     }}
                   >
-                    <MotionButton
-                      type="button"
-                      className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
-                      whileHover={{
-                        y: -5,
-                        transition: {
-                          type: "spring",
-                          stiffness: 300,
-                          damping: 15,
-                        },
-                      }}
-                      whileTap={{
-                        scale: 0.9,
-                        transition: {
-                          type: "spring",
-                          stiffness: 500,
-                          damping: 10,
-                        },
-                      }}
+                    <SmartNavLink
+                      to="/book-a-demo"
+                      className="text-[#4F378A] font-semibold"
                     >
-                      {/* Gradient border */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+                      <MotionButton
+                        type="button"
+                        className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
+                        whileHover={{
+                          y: -5,
+                          transition: {
+                            type: "spring",
+                            stiffness: 300,
+                            damping: 15,
+                          },
+                        }}
+                        whileTap={{
+                          scale: 0.9,
+                          transition: {
+                            type: "spring",
+                            stiffness: 500,
+                            damping: 10,
+                          },
+                        }}
+                      >
+                        {/* Gradient border */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
-                      {/* Inner white area */}
-                      <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
-                        <SmartNavLink
-                          to="/book-a-demo"
-                          className="text-[#4F378A] font-semibold"
-                        >
+                        {/* Inner white area */}
+                        <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
                           {t("freight_section.book_a_demo")}
-                        </SmartNavLink>
-                      </div>
-                    </MotionButton>
+                        </div>
+                      </MotionButton>
+                    </SmartNavLink>
                     <SmartNavLink
                       to="/#contact-us"
                       end
@@ -1617,39 +1617,39 @@ const Main = ({ margin }) => {
                           "Karla, system-ui, -apple-system, sans-serif",
                       }}
                     >
-                      <MotionButton
-                        type="button"
-                        className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
-                        whileHover={{
-                          y: -5,
-                          transition: {
-                            type: "spring",
-                            stiffness: 300,
-                            damping: 15,
-                          },
-                        }}
-                        whileTap={{
-                          scale: 0.9,
-                          transition: {
-                            type: "spring",
-                            stiffness: 500,
-                            damping: 10,
-                          },
-                        }}
+                      <SmartNavLink
+                        to="/book-a-demo"
+                        className="text-[#4F378A] font-semibold"
                       >
-                        {/* Gradient border */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+                        <MotionButton
+                          type="button"
+                          className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
+                          whileHover={{
+                            y: -5,
+                            transition: {
+                              type: "spring",
+                              stiffness: 300,
+                              damping: 15,
+                            },
+                          }}
+                          whileTap={{
+                            scale: 0.9,
+                            transition: {
+                              type: "spring",
+                              stiffness: 500,
+                              damping: 10,
+                            },
+                          }}
+                        >
+                          {/* Gradient border */}
+                          <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
-                        {/* Inner white area */}
-                        <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
-                          <SmartNavLink
-                            to="/book-a-demo"
-                            className="text-[#4F378A] font-semibold"
-                          >
+                          {/* Inner white area */}
+                          <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
                             {t("offices_section.book_a_demo")}
-                          </SmartNavLink>
-                        </div>
-                      </MotionButton>
+                          </div>
+                        </MotionButton>
+                      </SmartNavLink>
                       <SmartNavLink
                         to="/#contact-us"
                         end

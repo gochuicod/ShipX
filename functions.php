@@ -37,6 +37,13 @@ function shipx_defer_scripts($tag, $handle, $src) {
 }
 add_filter('script_loader_tag', 'shipx_defer_scripts', 10, 3);
 
+add_filter('style_loader_tag', function($html, $handle){
+    if ($handle === 'shipx-css') {
+        return str_replace("media='all'", "media='print' onload=\"this.media='all'\"", $html);
+    }
+    return $html;
+}, 10, 2);
+
 add_action('wp_enqueue_scripts', function() {
     wp_dequeue_style('wp-block-library');
     wp_dequeue_style('wp-block-library-theme');

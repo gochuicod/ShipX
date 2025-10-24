@@ -1,7 +1,7 @@
-import { NavLink } from "react-router-dom";
 import { button as MotionButton } from "motion/react-client";
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
+import SmartNavLink from "./ui/SmartNavLink";
 
 const Footer = memo(() => {
   const { t } = useTranslation();
@@ -41,25 +41,25 @@ const Footer = memo(() => {
           <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.6vw]">
             <div className="flex flex-col relative overflow-hidden md:p-[0.10vw] p-[0.5vw]">
               <div className="absolute inset-0 bg-gradient-to-t from-[#4F378A] to-[#FF00E5] rounded-full" />
-              <button
-                type="button"
-                className={`relative flex flex-row items-center justify-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-[#8E3CAD] rounded-full text-white transition-all duration-300 hover:bg-[#A24BD0] focus:outline-none cursor-pointer`}
-              >
-                <NavLink to="/book-a-demo" end>
+              <SmartNavLink to="/book-a-demo" end>
+                <button
+                  type="button"
+                  className={`relative flex flex-row items-center justify-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-[#8E3CAD] rounded-full text-white transition-all duration-300 hover:bg-[#A24BD0] focus:outline-none cursor-pointer`}
+                >
                   {t("footer.book_a_demo")}
-                </NavLink>
-              </button>
+                </button>
+              </SmartNavLink>
             </div>
-            <MotionButton
-              type="button"
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.8 }}
-              className="bg-white text-[#FF00E5] font-bold md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] rounded-full cursor-pointer"
-            >
-              <NavLink to="/#contact-us" end>
+            <SmartNavLink to="/#contact-us" end>
+              <MotionButton
+                type="button"
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.8 }}
+                className="bg-white text-[#FF00E5] font-bold md:py-[0.5vw] py-[1vw] md:px-[1.5vw] px-[3vw] rounded-full cursor-pointer"
+              >
                 {t("footer.contact_us")}
-              </NavLink>
-            </MotionButton>
+              </MotionButton>
+            </SmartNavLink>
           </div>
         </div>
         {/* Links */}
@@ -68,33 +68,33 @@ const Footer = memo(() => {
           style={{ fontFamily: "Karla, system-ui, -apple-system, sans-serif" }}
         >
           <div className="flex flex-col gap-y-[1vw]">
-            <NavLink
+            <SmartNavLink
               to="/"
               end
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               {t("footer.home")}
-            </NavLink>
-            <NavLink to="/#services" end>
+            </SmartNavLink>
+            <SmartNavLink to="/#services" end>
               {t("footer.services")}
-            </NavLink>
-            <NavLink to="/#platform" end>
+            </SmartNavLink>
+            <SmartNavLink to="/#platform" end>
               {t("footer.platform")}
-            </NavLink>
-            <NavLink to="/#network" end>
+            </SmartNavLink>
+            <SmartNavLink to="/#network" end>
               {t("footer.network")}
-            </NavLink>
+            </SmartNavLink>
           </div>
           <div className="flex flex-col gap-y-[1vw]">
-            <NavLink to="/#contact-us" end>
+            <SmartNavLink to="/#contact-us" end>
               {t("footer.contact")}
-            </NavLink>
-            <NavLink to="/privacy-policy" end>
+            </SmartNavLink>
+            <SmartNavLink to="/privacy-policy" end>
               {t("footer.privacy_policy")}
-            </NavLink>
-            <NavLink to="/terms-and-conditions" end>
+            </SmartNavLink>
+            <SmartNavLink to="/terms-and-conditions" end>
               {t("footer.terms_and_conditions")}
-            </NavLink>
+            </SmartNavLink>
           </div>
           <div className="flex flex-col gap-y-[1vw] md:w-[15vw]">
             <span className="font-medium">{t("footer.reach_us_1")}</span>
