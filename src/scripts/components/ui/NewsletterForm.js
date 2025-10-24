@@ -57,33 +57,33 @@ const NewsletterForm = () => {
         />
       </div>
 
-      <MotionButton
-        type="submit"
-        className="md:p-[0.10vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
-        disabled={isSubmitting}
-        whileHover={{
-          y: -5,
-          transition: { type: "spring", stiffness: 300, damping: 15 },
-        }}
-        whileTap={{
-          scale: 0.9,
-          transition: { type: "spring", stiffness: 500, damping: 10 },
-        }}
-      >
-        {/* Gradient border */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#4F378A] to-[#FF00E5] rounded-full" />
+      <SmartNavLink to="/book-a-demo">
+        <MotionButton
+          type="submit"
+          className="md:p-[0.10vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
+          disabled={isSubmitting}
+          whileHover={{
+            y: -5,
+            transition: { type: "spring", stiffness: 300, damping: 15 },
+          }}
+          whileTap={{
+            scale: 0.9,
+            transition: { type: "spring", stiffness: 500, damping: 10 },
+          }}
+        >
+          {/* Gradient border */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#4F378A] to-[#FF00E5] rounded-full" />
 
-        {/* Inner white area */}
-        <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-[#8E3CAD] text-white rounded-full">
-          <SmartNavLink to="/book-a-demo">
+          {/* Inner white area */}
+          <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-[#8E3CAD] text-white rounded-full">
             {isSubmitting
               ? t("newsletter_section.form.button_sending")
               : isSent
                 ? t("newsletter_section.form.button_sent")
                 : t("newsletter_section.form.button_default")}
-          </SmartNavLink>
-        </div>
-      </MotionButton>
+          </div>
+        </MotionButton>
+      </SmartNavLink>
     </form>
   );
 };

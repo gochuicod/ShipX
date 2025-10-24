@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { button as MotionButton } from "motion/react-client";
 import { useTranslation } from "react-i18next";
-import { NavLink } from "react-router-dom";
+import SmartNavLink from "./SmartNavLink";
 
 const ContactForm = () => {
   const {
@@ -133,28 +133,31 @@ const ContactForm = () => {
               : t("contact_us_section.form.button_default")}
         </button>
 
-        <MotionButton
-          type="button"
-          className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
-          whileHover={{
-            y: -5,
-            transition: { type: "spring", stiffness: 300, damping: 15 },
-          }}
-          whileTap={{
-            scale: 0.9,
-            transition: { type: "spring", stiffness: 500, damping: 10 },
-          }}
+        <SmartNavLink
+          to="/book-a-demo"
+          className="text-[#4F378A] font-semibold"
         >
-          {/* Gradient border */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+          <MotionButton
+            type="button"
+            className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
+            whileHover={{
+              y: -5,
+              transition: { type: "spring", stiffness: 300, damping: 15 },
+            }}
+            whileTap={{
+              scale: 0.9,
+              transition: { type: "spring", stiffness: 500, damping: 10 },
+            }}
+          >
+            {/* Gradient border */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
-          {/* Inner white area */}
-          <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
-            <NavLink to="/book-a-demo" className="text-[#4F378A] font-semibold">
+            {/* Inner white area */}
+            <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
               {t("contact_us_section.form.book_a_demo")}
-            </NavLink>
-          </div>
-        </MotionButton>
+            </div>
+          </MotionButton>
+        </SmartNavLink>
       </div>
     </form>
   );

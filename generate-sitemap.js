@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const DOMAIN = "https://shipx.asia";
-const SPA_ROUTES = ["/", "/book-a-demo", "/privacy-policy", "/terms-and-conditions", "/blog", "/blog/shipx-goes-live"];
+const SPA_ROUTES = ["/", "/book-a-demo", "/privacy-policy", "/terms-and-conditions", "/blog", "/blog/shipx-goes-live-smarter-future-asean-cross-border-logistics"];
 
 function generateSitemap() {
   const urls = SPA_ROUTES.map((route) => ({

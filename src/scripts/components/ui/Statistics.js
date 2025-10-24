@@ -1,0 +1,246 @@
+import { lazy } from "react";
+import { useTranslation } from "react-i18next";
+import { margin } from "../../utils/constants";
+const ParallaxSection = lazy(() => import("./ParallaxSection"));
+const Counter = lazy(() => import("./Counter"));
+
+const Statistics = () => {
+  const { t, i18n } = useTranslation();
+
+  return (
+    <div
+      id="statistics"
+      className={`relative flex md:flex-row flex-col-reverse justify-center items-center gap-x-[3vw] md:gap-y-0 gap-y-[10vw] md:pt-[15vw] pt-[40vw] lg:pb-[5vw] md:pb-[5vw] pb-[30vw] overflow-hidden select-none ${margin}`}
+    >
+      <img
+        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_2.svg"
+        alt=""
+        className="absolute -translate-x-[0.01vw] md:-translate-y-[5vw] -translate-y-[50vw] w-[200vw] h-[45vw] pointer-events-none select-none z-0"
+        aria-hidden="true"
+      />
+      <img
+        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_3.svg"
+        alt=""
+        className="absolute md:-translate-y-[5.5vw] -translate-y-[40vw] translate-x-[40vw] md:w-[25vw] w-[45vw] md:h-[25vw] h-[45vw] pointer-events-none select-none z-0"
+        aria-hidden="true"
+      />
+      <ParallaxSection className="relative flex md:flex-row flex-col-reverse justify-center items-center gap-x-[3vw] md:gap-y-0 gap-y-[10vw] overflow-hidden select-none">
+        <div className={`flex flex-row md:gap-x-[0.5vw] gap-x-[0.5vw]`}>
+          <div className="flex flex-col gap-x-[5vw] justify-center items-center">
+            <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
+              <span
+                className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
+                style={{
+                  fontFamily:
+                    "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
+                }}
+              >
+                <Counter
+                  className=""
+                  end={Number(t("statistics_section.customers_number"))}
+                  duration={5}
+                />
+                +
+              </span>
+              <h2 className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
+                {t("statistics_section.customers_label")}
+              </h2>
+            </div>
+            <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
+              <h6
+                className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
+                style={{
+                  fontFamily:
+                    "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
+                }}
+              >
+                <Counter
+                  className=""
+                  end={Number(t("statistics_section.global_partners_number"))}
+                  duration={5}
+                />
+                +
+              </h6>
+              <h2 className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
+                {t("statistics_section.global_partners_label")}
+              </h2>
+            </div>
+            <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
+              <h6
+                className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
+                style={{
+                  fontFamily:
+                    "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
+                }}
+              >
+                <Counter
+                  className=""
+                  end={Number(t("statistics_section.countries_covered_number"))}
+                  duration={5}
+                />
+              </h6>
+              <h2 className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
+                {t("statistics_section.countries_covered_label")}
+              </h2>
+            </div>
+          </div>
+          <div className="flex flex-col gap-x-[5vw] justify-center items-center">
+            <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
+              <h6
+                className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
+                style={{
+                  fontFamily:
+                    "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
+                }}
+              >
+                <Counter
+                  className=""
+                  end={Number(t("statistics_section.orders_processed_number"))}
+                  decimals={1}
+                  duration={5}
+                />
+                M+
+              </h6>
+              <h2 className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
+                {t("statistics_section.orders_processed_label")}
+              </h2>
+            </div>
+            <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
+              <h6
+                className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
+                style={{
+                  fontFamily:
+                    "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
+                }}
+              >
+                <Counter
+                  className=""
+                  end={Number(t("statistics_section.tech_warehouses_number"))}
+                  duration={5}
+                />
+                +
+              </h6>
+              <h2 className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
+                {t("statistics_section.tech_warehouses_label")}
+              </h2>
+            </div>
+            <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
+              <h6
+                className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
+                style={{
+                  fontFamily:
+                    "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
+                }}
+              >
+                <Counter
+                  className=""
+                  end={Number(t("statistics_section.orders_fulfilled_number"))}
+                  duration={5}
+                />
+                M+
+              </h6>
+              <h2 className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
+                {t("statistics_section.orders_fulfilled_label")}
+              </h2>
+            </div>
+          </div>
+          <div className="flex flex-col gap-x-[5vw] justify-center items-center">
+            <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
+              <h6
+                className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
+                style={{
+                  fontFamily:
+                    "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
+                }}
+              >
+                <Counter
+                  className=""
+                  end={Number(t("statistics_section.logistics_number"))}
+                  duration={5}
+                />
+                +
+              </h6>
+              <h2 className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
+                {t("statistics_section.logistics_label")}
+              </h2>
+            </div>
+            <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
+              <h6
+                className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
+                style={{
+                  fontFamily:
+                    "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
+                }}
+              >
+                <Counter
+                  className=""
+                  end={Number(t("statistics_section.trucks_number"))}
+                  duration={5}
+                />
+                +
+              </h6>
+              <h2 className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
+                {t("statistics_section.trucks_label")}
+              </h2>
+            </div>
+            <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
+              <h6
+                className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
+                style={{
+                  fontFamily:
+                    "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
+                }}
+              >
+                $
+                <Counter
+                  className=""
+                  end={Number(t("statistics_section.gmv_number"))}
+                  duration={5}
+                />
+                M+
+              </h6>
+              <h2 className="md:text-[0.8vw] text-[2vw] text-center text-[#1A1A1A] font-medium">
+                {t("statistics_section.gmv_label")}
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div
+          className="flex flex-col"
+          style={{
+            fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+          }}
+        >
+          <div className="flex flex-col md:items-start items-center md:gap-y-[0.5vw] gap-y-[1.5vw]">
+            <h6 className="flex flex-row md:gap-x-[0.5vw] gap-x-[1.5vw] items-center md:text-[0.7vw] text-[2.5vw] text-[#FF00E5] font-semibold bg-[#FFD6FA] md:rounded-[0.5vw] rounded-[1.5vw] md:px-[0.5vw] px-[1.5vw] md:py-[0.2vw] py-[0.5vw]">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#FF00E5"
+                viewBox="0 0 24 24"
+                strokeWidth={0}
+                stroke="currentColor"
+                className="md:size-[0.5vw] size-[1.5vw]"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+                />
+              </svg>
+              {t("statistics_section.badge_1")}
+            </h6>
+            <h1 className="md:text-[2vw] text-[6vw] text-[#1A1A1A] md:text-start text-center font-semibold md:leading-[2.5vw] leading-[6.5vw]">
+              {t("statistics_section.tagline_1")}&nbsp;
+              {i18n.language === "en" ? <br /> : ""}
+              {t("statistics_section.tagline_2")}&nbsp;
+              {i18n.language === "en" ? <br className="md:block hidden" /> : ""}
+              {t("statistics_section.tagline_3")}
+            </h1>
+          </div>
+        </div>
+      </ParallaxSection>
+    </div>
+  );
+};
+
+export default Statistics;

@@ -1,23 +1,23 @@
 import "./index.css";
 import "./i18n";
-import { BrowserRouter } from "react-router-dom";
-import ReactDOM from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
+import { BrowserRouter } from "react-router-dom";
+import { lazy } from "react";
+import ReactDOM from "react-dom/client";
 
-import AppRoutes from "./scripts/routes/AppRoutes";
-import { LenisProvider } from "./scripts/hooks/useLenis";
 import Layout from "./scripts/Layout";
-import { margin } from "./scripts/utils/constants";
-import { initGTMConsent } from "./scripts/utils/InitGTMConsent";
 import GtmLoader from "./scripts/components/ui/GtmLoader";
 import ScrollToHash from "./scripts/components/ui/ScrollToHash";
 import ResetOnRefresh from "./scripts/components/ui/ResetOnRefresh";
-import CookieBanner from "./scripts/components/ui/CookieBanner";
-import LanguagePrompt from "./scripts/components/ui/LanguagePrompt";
+import AppRoutes from "./scripts/routes/AppRoutes";
+const CookieBanner = lazy(() => import("./scripts/components/ui/CookieBanner"));
+const LanguagePrompt = lazy(
+  () => import("./scripts/components/ui/LanguagePrompt"),
+);
+import { LenisProvider } from "./scripts/hooks/useLenis";
+import { margin } from "./scripts/utils/constants";
 
 const helmetContext = {};
-
-initGTMConsent();
 
 const App = () => {
   return (
