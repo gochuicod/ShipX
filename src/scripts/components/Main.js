@@ -281,9 +281,13 @@ const Main = ({ margin }) => {
                   </h6>
                   <h1 className="md:text-[2vw] text-[6vw] text-[#1A1A1A] md:text-start text-center font-semibold md:leading-[2.5vw] leading-[6.5vw]">
                     {t("statistics_section.tagline_1")}&nbsp;
-                    {i18n.language !== "vn" && <br />}
+                    {i18n.language === "en" ? <br /> : ""}
                     {t("statistics_section.tagline_2")}&nbsp;
-                    <br className="md:block hidden" />
+                    {i18n.language === "en" ? (
+                      <br className="md:block hidden" />
+                    ) : (
+                      ""
+                    )}
                     {t("statistics_section.tagline_3")}
                   </h1>
                 </div>
@@ -1093,7 +1097,20 @@ const Main = ({ margin }) => {
             >
               <div className="flex md:flex-row flex-col justify-between items-center gap-x-[5vw]">
                 <div
-                  className={`flex flex-col gap-y-[1vw] md:justify-start justify-center md:items-start items-center ${i18n.language === "vn" ? "md:w-[42vw]" : "md:w-[25vw]"} w-auto`}
+                  className={`
+                    flex flex-col gap-y-[1vw] md:justify-start justify-center md:items-start items-center w-auto
+                    ${
+                      i18n.language === "en"
+                        ? "md:w-[25vw]"
+                        : i18n.language === "vn"
+                          ? "md:w-[42vw]"
+                          : i18n.language === "my"
+                            ? "md:w-[42vw]"
+                            : i18n.language === "thai"
+                              ? "md:w-[36vw]"
+                              : "md:w-[30vw]"
+                    }
+                  `}
                 >
                   <span
                     className="flex flex-row md:gap-x-[0.5vw] gap-x-[1.5vw] items-center md:text-[0.7vw] text-[2.5vw] text-[#FF00E5] font-semibold bg-[#F3F1FF] md:rounded-[0.5vw] rounded-[1.5vw] md:px-[0.5vw] px-[1.5vw] md:py-[0.2vw] py-[0.5vw]"
@@ -1127,9 +1144,12 @@ const Main = ({ margin }) => {
                       {t("freight_section.header_1")}
                     </p>
                     &nbsp;{t("freight_section.header_2")}
-                    {i18n.language !== "vn" && (
+                    {i18n.language === "en" ? (
                       <br className="md:block hidden" />
+                    ) : (
+                      ""
                     )}
+                    <span className="md:hidden">&nbsp;</span>
                     {t("freight_section.header_3")}
                   </p>
                   <div
@@ -1218,8 +1238,10 @@ const Main = ({ margin }) => {
                         </p>
                         &nbsp;
                         {t("freight_section.header_5")}&nbsp;
-                        {i18n.language !== "vn" && (
-                          <br className="hidden md:block" />
+                        {i18n.language === "en" ? (
+                          <br className="md:block hidden" />
+                        ) : (
+                          ""
                         )}
                         <p className="inline text-[#FF00E5]">
                           {t("freight_section.header_6")}
@@ -1295,7 +1317,6 @@ const Main = ({ margin }) => {
                                       {t(
                                         `freight_section.services_1.${service.key}.description`,
                                       )}{" "}
-                                      {/* <br className="md:block hidden" /> */}
                                     </p>
                                   </div>
                                 </div>
@@ -1341,7 +1362,10 @@ const Main = ({ margin }) => {
               <div className="flex md:flex-row flex-col justify-between md:items-center items-start gap-x-[5vw]">
                 <div className="flex flex-col gap-y-[1vw] md:pt-0 pt-[3vw]">
                   <div
-                    className="flex md:flex-row flex-col-reverse justify-start md:items-center items-start gap-x-[4vw] md:gap-y-0 gap-y-[2vw] rounded-[2vw] md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:p-0 p-[5vw]"
+                    className={`
+                      flex md:flex-row flex-col-reverse justify-start md:items-center items-start gap-x-[4vw] md:gap-y-0 gap-y-[2vw] rounded-[2vw] md:shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)] shadow-[0_0.5vw_3vw_rgba(79,55,138,0.15)] md:p-0 p-[5vw]
+                      ${i18n.language === "thai" && "md:pr-[2vw]"}
+                    `}
                     style={{
                       fontFamily: "Karla, system-ui, -apple-system, sans-serif",
                     }}
@@ -1447,8 +1471,10 @@ const Main = ({ margin }) => {
                           {t("freight_section.header_8")}
                         </p>{" "}
                         {t("freight_section.header_9")}&nbsp;
-                        {i18n.language !== "vn" && (
+                        {i18n.language === "en" ? (
                           <br className="md:block hidden" />
+                        ) : (
+                          ""
                         )}
                         {t("freight_section.header_10")}
                       </p>
@@ -1502,8 +1528,10 @@ const Main = ({ margin }) => {
                     {t("freight_section.header_11")}{" "}
                     <br className="md:block hidden" />
                     {t("freight_section.header_12")}{" "}
-                    {i18n.language !== "vn" && (
+                    {i18n.language === "en" ? (
                       <br className="md:block hidden" />
+                    ) : (
+                      ""
                     )}
                     {t("freight_section.header_13")}
                   </p>
@@ -1552,8 +1580,10 @@ const Main = ({ margin }) => {
                   </span>
                   <p className="text-[#1A1A1A] md:text-[2.3vw] text-[6vw] md:text-start text-center font-semibold md:leading-[3.5vw] leading-[6.5vw]">
                     {t("offices_section.header_1")}{" "}
-                    {i18n.language !== "vn" && (
+                    {i18n.language === "en" ? (
                       <br className="md:block hidden" />
+                    ) : (
+                      ""
                     )}
                     {t("offices_section.header_2")}{" "}
                     <p className="inline text-[#FF00E5]">
@@ -1638,7 +1668,11 @@ const Main = ({ margin }) => {
                   </div>
                   <p className="text-[#63666D] md:text-[0.85vw] text-[2.5vw] font-medium opacity-80 tracking-wider md:pt-0 pt-[2vw] md:text-start text-center">
                     {t("offices_section.description_1")}&nbsp;
-                    {i18n.language !== "vn" && <br />}
+                    {i18n.language === "en" ? (
+                      <br className="md:block hidden" />
+                    ) : (
+                      ""
+                    )}
                     {t("offices_section.description_2")}
                   </p>
                 </div>
@@ -1775,8 +1809,10 @@ const Main = ({ margin }) => {
                     <p className="inline text-[#FF00E5]">
                       {t("contact_us_section.header_2")}
                     </p>{" "}
-                    {i18n.language !== "vn" && (
+                    {i18n.language === "en" ? (
                       <br className="md:block hidden" />
+                    ) : (
+                      ""
                     )}
                     {t("contact_us_section.header_3")}
                   </p>

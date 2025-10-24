@@ -142,7 +142,7 @@ const Footer = memo(() => {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="md:size-[1vw] size-[4vw]"
+                className="md:size-[1.5vw] size-[4vw]"
               >
                 <path
                   fillRule="evenodd"

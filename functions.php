@@ -34,22 +34,24 @@ function shipx_get_user_country() {
 
 function shipx_enqueue_assets() {
     $theme_dir = get_stylesheet_directory_uri() . '/build';
+    $theme_path = get_stylesheet_directory() . '/build';
 
-    $js_file = file_exists(__DIR__ . '/build/js-hash.txt')
-        ? trim(file_get_contents(__DIR__ . '/build/js-hash.txt'))
-        : 'index.js';
+    // File names (no hashes)
+    $js_file = 'index.js';
+    $css_file = 'index.css';
 
-    $css_file = file_exists(__DIR__ . '/build/css-hash.txt')
-        ? trim(file_get_contents(__DIR__ . '/build/css-hash.txt'))
-        : 'index.css';
+    // Use file modification time for cache busting
+    $js_version = file_exists($theme_path . '/' . $js_file) ? filemtime($theme_path . '/' . $js_file) : false;
+    $css_version = file_exists($theme_path . '/' . $css_file) ? filemtime($theme_path . '/' . $css_file) : false;
 
-    wp_enqueue_script('shipx-js', $theme_dir . '/' . $js_file, [], null, true);
-    wp_enqueue_style('shipx-css', $theme_dir . '/' . $css_file, [], null);
+    // Enqueue scripts and styles
+    wp_enqueue_script('shipx-js', $theme_dir . '/' . $js_file, [], $js_version, true);
+    wp_enqueue_style('shipx-css', $theme_dir . '/' . $css_file, [], $css_version);
 
+    // Pass geo data to JS (unchanged)
     $geo_data = [
         'country' => shipx_get_user_country(),
     ];
-
     wp_localize_script('shipx-js', 'ShipXGeo', $geo_data);
 }
 add_action('wp_enqueue_scripts', 'shipx_enqueue_assets');

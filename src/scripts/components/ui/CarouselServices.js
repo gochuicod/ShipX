@@ -140,7 +140,7 @@ export default function CarouselServices({ slide }) {
             {t("services_section.carousel.slide_1.header_1")}{" "}
             <p className="inline text-[#FF00E5]">
               {t("services_section.carousel.slide_1.header_2")}&nbsp;
-              {i18n.language !== "vn" && <br />}
+              {i18n.language === "en" ? <br /> : ""}
               {t("services_section.carousel.slide_1.header_3")}
             </p>{" "}
             {t("services_section.carousel.slide_1.header_4")}
@@ -202,7 +202,7 @@ export default function CarouselServices({ slide }) {
             {t("services_section.carousel.slide_2.header_1")}{" "}
             <p className="inline text-[#FF00E5]">
               {t("services_section.carousel.slide_2.header_2")}&nbsp;
-              {i18n.language !== "vn" && <br />}
+              {i18n.language === "en" ? <br /> : ""}
               {t("services_section.carousel.slide_2.header_3")}
             </p>{" "}
             {t("services_section.carousel.slide_2.header_4")}
@@ -264,11 +264,11 @@ export default function CarouselServices({ slide }) {
             {t("services_section.carousel.slide_3.header_1")}{" "}
             <p className="inline text-[#FF00E5]">
               {t("services_section.carousel.slide_3.header_2")}&nbsp;
-              {i18n.language !== "vn" && <br />}
+              {i18n.language === "en" ? <br /> : ""}
               {t("services_section.carousel.slide_3.header_3")}
             </p>{" "}
             {t("services_section.carousel.slide_3.header_4")}&nbsp;
-            {i18n.language !== "vn" && <br />}
+            {i18n.language === "en" ? <br /> : ""}
             {t("services_section.carousel.slide_3.header_5")}
           </p>
           <div
@@ -279,7 +279,7 @@ export default function CarouselServices({ slide }) {
           >
             <p className="text-[#63666D] md:text-[0.6vw] text-[2.3vw]">
               {t("services_section.carousel.slide_3.price_desc_1")}&nbsp;
-              {i18n.language !== "vn" && <br />}
+              {i18n.language === "en" ? <br /> : ""}
               {t("services_section.carousel.slide_3.price_desc_2")}
             </p>
             <p className="flex flex-row tracking-0 text-[#FF99F5] md:text-[2vw] text-[4vw] font-black items-start leading-0">
@@ -329,7 +329,7 @@ export default function CarouselServices({ slide }) {
             <p className="inline text-[#FF00E5]">
               {t("services_section.carousel.slide_4.header_2")}
             </p>{" "}
-            {i18n.language !== "vn" && <br />}
+            {i18n.language === "en" ? <br /> : ""}
             {t("services_section.carousel.slide_4.header_3")}
           </p>
           <div
@@ -341,7 +341,7 @@ export default function CarouselServices({ slide }) {
             <p className="text-[#63666D] md:text-[0.6vw] text-[2.3vw]">
               {t("services_section.carousel.slide_4.price_desc_1")}{" "}
               <br className="md:block hidden" />
-              {i18n.language !== "vn" && <br />}
+              {i18n.language === "en" ? <br /> : ""}
               {t("services_section.carousel.slide_4.price_desc_2")}&nbsp;
               {t("services_section.carousel.slide_4.price_desc_3")}
             </p>
@@ -391,7 +391,7 @@ export default function CarouselServices({ slide }) {
             <p className="inline text-[#FF00E5]">
               {t("services_section.carousel.slide_5.header_1")}
             </p>
-            {i18n.language !== "vn" ? <br /> : <>&nbsp;</>}
+            {i18n.language === "en" ? <br /> : <>&nbsp;</>}
             {t("services_section.carousel.slide_5.header_2")}
           </p>
           <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] justify-center items-center bg-white md:px-[0.5vw] px-[3vw] md:py-[0.7vw] py-[1.5vw] md:rounded-[1vw] rounded-[3vw] shadow-[0_0.5vw_1vw_rgba(0,0,0,0.05)]">
@@ -454,7 +454,7 @@ export default function CarouselServices({ slide }) {
             }}
           >
             {t("services_section.carousel.slide_6.header_1")}
-            {i18n.language !== "vn" && <br />}
+            {i18n.language === "en" ? <br /> : ""}
             {t("services_section.carousel.slide_6.header_2")}{" "}
             <p className="inline text-[#FF00E5]">
               {t("services_section.carousel.slide_6.header_3")}
@@ -520,7 +520,7 @@ export default function CarouselServices({ slide }) {
             <p className="inline text-[#FF00E5]">
               {t("services_section.carousel.slide_7.header_2")}
             </p>
-            {i18n.language === "vn" ? <>&nbsp;</> : <br />}
+            {i18n.language === "en" ? <br /> : <>&nbsp;</>}
             {t("services_section.carousel.slide_7.header_3")}
           </p>
           <div
@@ -581,7 +581,7 @@ export default function CarouselServices({ slide }) {
             <p className="inline text-[#FF00E5]">
               {t("services_section.carousel.slide_8.header_2")}
             </p>
-            &nbsp;
+            {i18n.language === "en" ? <br /> : <>&nbsp;</>}
             {/* {i18n.language !== "vn" ? <br /> : <>&nbsp;</>} */}
             {t("services_section.carousel.slide_8.header_3")}
           </p>

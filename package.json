@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "preview": "npm-run-all --parallel sync wpstart tailwindwatch",
-    "sync": "browser-sync start -p 'shiennac5.sg-host.local' --files '**/*.php' 'build/*.js' 'build/*.css'",
+    "sync": "browser-sync start -p 'shipx.local' --files '**/*.php' 'build/*.js' 'build/*.css'",
     "buildwp": "wp-scripts build",
-    "build": "npm-run-all --sequential clean buildwp tailwindbuild cachebust sitemap",
+    "build": "npm-run-all --sequential clean buildwp tailwindbuild sitemap",
     "cachebust": "node cache-bust.js",
     "wpstart": "wp-scripts start",
     "start": "npm-run-all --parallel wpstart tailwindwatch",
