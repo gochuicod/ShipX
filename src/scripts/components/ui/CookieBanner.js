@@ -1,34 +1,11 @@
 import { useEffect, useState } from "react";
-import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
+import CookieConsent from "react-cookie-consent";
 import { useTranslation } from "react-i18next";
+import { updateGtmConsent } from "../../../tagmanager";
 
 export default function () {
-  const [gtmInitialized, setGtmInitialized] = useState(false);
   const [textSize, setTextSize] = useState("0.8vw");
   const { t } = useTranslation();
-
-  // ✅ Initialize GTM if user already consented earlier
-  useEffect(() => {
-    const handle = () => {
-      const consent = getCookieConsentValue("analyticsConsent");
-      if (consent === "true" && !gtmInitialized) {
-        import("../../../tagmanager") // dynamically import GTM code
-          .then(({ initGTM }) => {
-            initGTM();
-            setGtmInitialized(true);
-          })
-          .catch((err) => console.error("Failed to load GTM:", err));
-      }
-    };
-
-    if (document.readyState === "complete") {
-      handle();
-    } else {
-      window.addEventListener("DOMContentLoaded", handle);
-    }
-
-    return () => window.removeEventListener("DOMContentLoaded", handle);
-  }, [gtmInitialized]);
 
   useEffect(() => {
     const updateTextSize = () => {
@@ -83,20 +60,13 @@ export default function () {
           margin: "6px",
         }}
         expires={150}
-        onAccept={async () => {
-          try {
-            const mod = await import(
-              /* webpackChunkName: "tagmanager" */ "../../../tagmanager"
-            );
-            if (mod && typeof mod.initGTM === "function") {
-              mod.initGTM();
-              setGtmInitialized(true);
-            } else {
-              console.error("initGTM not found in tagmanager module:", mod);
-            }
-          } catch (err) {
-            console.error("Failed to dynamically import tagmanager:", err);
-          }
+        // HANDLE NEW USER CLICKS
+        onAccept={() => {
+          updateGtmConsent("granted");
+        }}
+        // ADD onDecline HANDLER
+        onDecline={() => {
+          updateGtmConsent("denied");
         }}
       >
         {t("cookies.text")}

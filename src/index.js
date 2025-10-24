@@ -9,6 +9,7 @@ import { LenisProvider } from "./scripts/hooks/useLenis";
 import Layout from "./scripts/Layout";
 import { margin } from "./scripts/utils/constants";
 
+import GtmLoader from "./scripts/components/GtmLoader";
 import ScrollToHash from "./scripts/components/ui/ScrollToHash";
 import MultiStepLoader from "./scripts/components/ui/MultiStepLoader";
 import ResetOnRefresh from "./scripts/components/ui/ResetOnRefresh";
@@ -27,10 +28,23 @@ const NotFound = lazy(() => import("./scripts/components/ui/NotFound"));
 
 const helmetContext = {};
 
+// SET DEFAULT CONSENT (BEFORE REACT LOADS)
+window.dataLayer = window.dataLayer || [];
+// ATTACH gtag TO THE WINDOW OBJECT (prevents 'not found' error)
+window.gtag = function () {
+  dataLayer.push(arguments);
+};
+gtag("consent", "default", {
+  analytics_storage: "denied",
+  ad_storage: "denied",
+});
+// --- END CONSENT SNIPPET ---
+
 const App = () => {
   return (
     <HelmetProvider context={helmetContext}>
       <BrowserRouter>
+        <GtmLoader />
         <LanguagePrompt />
         <LenisProvider>
           <ResetOnRefresh paths={["/"]} />
