@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { useTranslation } from "react-i18next";
 
 const MultiStepLoader = ({ loading = true, duration = 2000, loop = true }) => {
@@ -40,7 +40,7 @@ const MultiStepLoader = ({ loading = true, duration = 2000, loop = true }) => {
       className="multi-step-loader fixed inset-0 flex flex-col justify-center items-center bg-white z-50"
       style={{ pointerEvents: "none" }}
     >
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
           initial={{ opacity: 0, y: 10 }}
