@@ -15,13 +15,38 @@ const ContactForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      const res = await fetch("/wp-json/mytheme/v1/contact", {
+      // POST to WordPress
+      const wpRes = await fetch("/wp-json/mytheme/v1/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
 
-      const result = await res.json();
+      const wpData = await wpRes.json();
+
+      // Prepare CRM payload
+      const crmPayload = {
+        contactName: data.name,
+        email: data.email,
+        leadSource: "website",
+        services: ["crossborder_shipping"], // adjust as needed
+        companyId: "8d612638-ffef-4457-a876-05e655dcc93e",
+        website: "https://shipx.asia/",
+        description: data.message,
+        location: wpData.country || "Unknown",
+      };
+
+      // POST to CRM API
+      const crmRes = await fetch("https://crm.infigroup.co/api/public/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(crmPayload),
+      });
+
+      if (!crmRes.ok) {
+        throw new Error("Failed to submit to CRM");
+      }
+
       setIsSent(true);
       setTimeout(() => setIsSent(false), 5000);
       reset();
@@ -118,9 +143,9 @@ const ContactForm = () => {
           type="submit"
           disabled={isSubmitting}
           className="
-            bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
-            bg-[length:200%_100%] bg-[position:0%_0%]
-            hover:bg-[position:100%_0%]
+            bg-linear-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
+            bg-size-[200%_100%] bg-position-[0%_0%]
+            hover:bg-position-[100%_0%]
             transition-[background-position] duration-1000 ease-in-out
             md:py-[0.6vw] py-[1vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full cursor-pointer
             text-white font-medium shadow-[0_0.5vw_1vw_rgba(255,0,229,0.25)]
@@ -150,7 +175,7 @@ const ContactForm = () => {
             }}
           >
             {/* Gradient border */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+            <div className="absolute inset-0 bg-linear-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
             {/* Inner white area */}
             <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">

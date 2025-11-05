@@ -88,6 +88,9 @@ function mytheme_handle_contact(WP_REST_Request $request) {
   $phone   = sanitize_text_field($params['phone'] ?? '');
   $message = sanitize_textarea_field($params['message'] ?? '');
 
+  // ✅ Get user country via Cloudflare / IP lookup
+  $country = shipx_get_user_country();
+
   $to_admins = array(
     'info@shipx.asia',
     'support@shipx.asia',
@@ -931,7 +934,11 @@ function mytheme_handle_contact(WP_REST_Request $request) {
   $user_sent  = wp_mail($email, $user_subject, $user_body, $headers);
 
   if ($admin_sent && $user_sent) {
-    return array('success' => true, 'message' => 'Messages sent successfully!');
+    return array(
+      'success' => true,
+      'message' => 'Messages sent successfully!',
+      'country' => $country // ✅ IMPORTANT
+    );
   } else {
     return new WP_Error('mail_failed', 'Email failed to send.', array('status' => 500));
   }
