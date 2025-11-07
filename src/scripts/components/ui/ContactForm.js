@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { button as MotionButton } from "motion/react-client";
 import { useTranslation } from "react-i18next";
 import SmartNavLink from "./SmartNavLink";
@@ -11,7 +11,37 @@ const ContactForm = () => {
     reset,
     formState: { errors, isSubmitting },
   } = useForm();
+  const [leadSource, setLeadSource] = useState("website");
   const [isSent, setIsSent] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const url = new URL(window.location.href);
+    const params = url.searchParams;
+
+    const utmSource = params.get("utm_source");
+    const utmMedium = params.get("utm_medium");
+
+    if (utmSource && utmMedium) {
+      const sourceKey = `${utmSource}_${utmMedium}`.toLowerCase();
+      setLeadSource(sourceKey);
+      return;
+    }
+
+    // Fallback to referrer
+    const ref = document.referrer || "";
+
+    if (ref.includes("facebook.com")) {
+      setLeadSource("facebook_organic");
+    } else if (ref.includes("google.com")) {
+      setLeadSource("google_organic");
+    } else if (ref.trim() !== "") {
+      setLeadSource("generic_referral");
+    } else {
+      setLeadSource("website");
+    }
+  }, []);
 
   const onSubmit = async (data) => {
     try {
@@ -28,7 +58,7 @@ const ContactForm = () => {
       const crmPayload = {
         contactName: data.name,
         email: data.email,
-        leadSource: "website",
+        leadSource,
         services: ["crossborder_shipping"], // adjust as needed
         companyId: "8d612638-ffef-4457-a876-05e655dcc93e",
         website: "https://shipx.asia/",
