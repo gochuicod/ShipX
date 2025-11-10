@@ -99,7 +99,7 @@ const FreightAndCustoms = () => {
                   }}
                 >
                   {/* Gradient border */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+                  <div className="absolute inset-0 bg-linear-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
                   {/* Inner white area */}
                   <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
@@ -111,9 +111,9 @@ const FreightAndCustoms = () => {
                 to="/#contact-us"
                 end
                 className="
-                        bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
-                        bg-[length:200%_100%] bg-[position:0%_0%]
-                        hover:bg-[position:100%_0%]
+                        bg-linear-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
+                        bg-size-[200%_100%] bg-position-[0%_0%]
+                        hover:bg-position-[100%_0%]
                         transition-[background-position] duration-1000 ease-in-out
                         md:py-[0.6vw] py-[1.3vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full cursor-pointer
                         text-white font-medium shadow-[0_0.5vw_1vw_rgba(255,0,229,0.25)]

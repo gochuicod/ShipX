@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
+import { useState, useEffect } from "react";
+// import { useTranslation } from "react-i18next";
 
 const MessengerButton = () => {
   const messengerLink = "https://m.me/sglinkvn";
   const [messengerVisibility, setMessengerVisibility] = useState(false);
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -20,7 +20,7 @@ const MessengerButton = () => {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on Messenger"
-      className={`${messengerVisibility ? "fixed" : "hidden"} flex justify-center items-center md:gap-x-[0.5vw] gap-x-[2vw] md:bottom-[1vw] bottom-[2vw] md:left-[1vw] left-[2vw] bg-blue-600 hover:bg-blue-700 text-white md:py-[0.6vw] py-[2vw] md:px-[0.6vw] px-[2vw] rounded-full z-[1001] animate-bounce hover:animate-none md:text-[0.8vw] text-[2.2vw]`}
+      className={`${messengerVisibility ? "fixed" : "hidden"} flex justify-center items-center md:gap-x-[0.5vw] gap-x-[2vw] md:bottom-[1vw] bottom-[2vw] md:left-[1vw] left-[2vw] bg-blue-600 hover:bg-blue-700 text-white md:py-[0.6vw] py-[2vw] md:px-[0.6vw] px-[2vw] rounded-full z-1001 animate-bounce hover:animate-none md:text-[0.8vw] text-[2.2vw]`}
       // className={`${messengerVisibility ? "fixed" : "hidden"} flex justify-center items-center md:gap-x-[0.5vw] gap-x-[2vw] md:bottom-[1vw] bottom-[2vw] md:left-[1vw] left-[2vw] bg-blue-600 hover:bg-blue-700 text-white md:py-[0.6vw] py-[2vw] md:px-[1vw] px-[2.4vw] rounded-full z-[1001] animate-bounce hover:animate-none md:text-[0.8vw] text-[2.2vw]`}
     >
       <svg

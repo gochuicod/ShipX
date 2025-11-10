@@ -29,7 +29,7 @@ const Statistics = () => {
           <div className="flex flex-col gap-x-[5vw] justify-center items-center">
             <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
               <span
-                className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
+                className="md:text-[4vw] text-[8vw] font-bold bg-linear-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
                 style={{
                   fontFamily:
                     "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
@@ -48,7 +48,7 @@ const Statistics = () => {
             </div>
             <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
               <h6
-                className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
+                className="md:text-[4vw] text-[8vw] font-bold bg-linear-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
                 style={{
                   fontFamily:
                     "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
@@ -67,7 +67,7 @@ const Statistics = () => {
             </div>
             <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
               <h6
-                className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
+                className="md:text-[4vw] text-[8vw] font-bold bg-linear-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
                 style={{
                   fontFamily:
                     "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
@@ -87,7 +87,7 @@ const Statistics = () => {
           <div className="flex flex-col gap-x-[5vw] justify-center items-center">
             <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
               <h6
-                className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
+                className="md:text-[4vw] text-[8vw] font-bold bg-linear-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
                 style={{
                   fontFamily:
                     "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
@@ -107,7 +107,7 @@ const Statistics = () => {
             </div>
             <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
               <h6
-                className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
+                className="md:text-[4vw] text-[8vw] font-bold bg-linear-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
                 style={{
                   fontFamily:
                     "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
@@ -126,7 +126,7 @@ const Statistics = () => {
             </div>
             <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
               <h6
-                className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
+                className="md:text-[4vw] text-[8vw] font-bold bg-linear-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
                 style={{
                   fontFamily:
                     "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
@@ -147,7 +147,7 @@ const Statistics = () => {
           <div className="flex flex-col gap-x-[5vw] justify-center items-center">
             <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
               <h6
-                className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
+                className="md:text-[4vw] text-[8vw] font-bold bg-linear-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
                 style={{
                   fontFamily:
                     "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
@@ -166,7 +166,7 @@ const Statistics = () => {
             </div>
             <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
               <h6
-                className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
+                className="md:text-[4vw] text-[8vw] font-bold bg-linear-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
                 style={{
                   fontFamily:
                     "Kantumruy_Pro, system-ui, -apple-system, sans-serif",
@@ -185,7 +185,7 @@ const Statistics = () => {
             </div>
             <div className="flex flex-col items-center md:w-[15vw] w-[30vw]">
               <h6
-                className="md:text-[4vw] text-[8vw] font-bold bg-gradient-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
+                className="md:text-[4vw] text-[8vw] font-bold bg-linear-to-t from-[#4F378A] to-[#FF00E5] inline-block text-transparent bg-clip-text md:h-[5vw] h-[10vw]"
                 style={{
                   fontFamily:
                     "Kantumruy_Pro, system-ui, -apple-system, sans-serif",

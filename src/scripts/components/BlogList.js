@@ -1,4 +1,3 @@
-import React from "react";
 import SmartNavLink from "./ui/SmartNavLink";
 import SEO from "./ui/SEO";
 import { useTranslation } from "react-i18next";

@@ -73,7 +73,7 @@ const LoginModal = () => {
             bg-white md:rounded-[1vw] rounded-[3vw]
             md:shadow-[0_0_0.5vw_rgba(255,0,229,0.2)]
             shadow-[0_0_1.5vw_rgba(255,0,229,0.3)]
-            z-[1000] md:p-[2vw] p-[5vw]
+            z-1000 md:p-[2vw] p-[5vw]
             flex md:flex-row flex-col md:gap-[2vw] gap-[5vw]
           "
         >
@@ -92,7 +92,7 @@ const LoginModal = () => {
               whileTap={{ scale: 0.8 }}
               onClick={() => (window.location.href = "https://vip.amilo.co/")}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+              <div className="absolute inset-0 bg-linear-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
               <div className="relative flex flex-row items-center gap-x-[1vw] px-[2vw] py-[0.5vw] bg-white rounded-full">
                 <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[3.3vw]">
                   {t("header.login_modal.amilo.button")}
@@ -124,7 +124,7 @@ const LoginModal = () => {
                 (window.location.href = "https://admin.sglinkapi.com/")
               }
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+              <div className="absolute inset-0 bg-linear-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
               <div className="relative flex flex-row items-center gap-x-[1vw] px-[2vw] py-[0.5vw] bg-white rounded-full">
                 <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[3.3vw]">
                   {t("header.login_modal.sglink.button")}
@@ -151,9 +151,9 @@ const LoginModal = () => {
               to="/book-a-demo"
               end
               className="
-                bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
-                bg-[length:200%_100%] bg-[position:0%_0%]
-                hover:bg-[position:100%_0%]
+                bg-linear-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
+                bg-size-[200%_100%] bg-position-[0%_0%]
+                hover:bg-position-[100%_0%]
                 transition-[background-position] duration-1000 ease-in-out
                 md:py-[0.6vw] py-[0.5vw] md:px-[1.5vw] px-[3vw] rounded-full
                 text-white font-medium w-fit md:text-[0.8vw] text-[3.3vw]

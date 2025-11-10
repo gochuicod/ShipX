@@ -7,7 +7,7 @@ const Footer = memo(() => {
   const { t } = useTranslation();
 
   return (
-    <footer className="flex flex-col justify-center bg-gradient-to-t from-[#4F378A] from-10% to-[rgb(255,0,229)] text-white px-[6vw] md:py-[1.5vw] py-[3vw] md:text-[0.8vw] text-[2.6vw]">
+    <footer className="flex flex-col justify-center bg-linear-to-t from-[#4F378A] from-10% to-[rgb(255,0,229)] text-white px-[6vw] md:py-[1.5vw] py-[3vw] md:text-[0.8vw] text-[2.6vw]">
       <div className="flex md:flex-row flex-col justify-between">
         {/* Description */}
         <div
@@ -40,7 +40,7 @@ const Footer = memo(() => {
           </div>
           <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.6vw]">
             <div className="flex flex-col relative overflow-hidden md:p-[0.10vw] p-[0.5vw]">
-              <div className="absolute inset-0 bg-gradient-to-t from-[#4F378A] to-[#FF00E5] rounded-full" />
+              <div className="absolute inset-0 bg-linear-to-t from-[#4F378A] to-[#FF00E5] rounded-full" />
               <SmartNavLink to="/book-a-demo" end>
                 <button
                   type="button"

@@ -77,17 +77,17 @@ export default function LanguagePrompt() {
   if (!open) return null;
 
   const modal = (
-    <Dialog open={open} onClose={setOpen} className="relative z-[9999]">
+    <Dialog open={open} onClose={setOpen} className="relative z-9999">
       <DialogBackdrop
         transition
-        className="fixed inset-0 bg-black/60 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200"
+        className="fixed inset-0 bg-black/60 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-leave:duration-200"
       />
 
-      <div className="fixed inset-0 z-[9999] w-screen overflow-y-auto">
+      <div className="fixed inset-0 z-9999 w-screen overflow-y-auto">
         <div className="flex min-h-full justify-center text-center items-center">
           <DialogPanel
             transition
-            className="relative transform overflow-hidden md:rounded-[2vw] rounded-[3vw] bg-white text-[#1A1A1A] transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
+            className="relative transform overflow-hidden md:rounded-[2vw] rounded-[3vw] bg-white text-[#1A1A1A] transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-leave:duration-200 data-closed:sm:translate-y-0 data-closed:sm:scale-95"
           >
             <div className="flex flex-col md:gap-y-[2vw] gap-y-[3vw] md:px-[3vw] px-[5vw] md:py-[1vw] py-[3vw]">
               <DialogTitle
@@ -110,9 +110,9 @@ export default function LanguagePrompt() {
                 type="button"
                 onClick={handleAccept}
                 className="
-                  bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
-                  bg-[length:200%_100%] bg-[position:0%_0%]
-                  hover:bg-[position:100%_0%]
+                  bg-linear-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
+                  bg-size-[200%_100%] bg-position-[0%_0%]
+                  hover:bg-position-[100%_0%]
                   transition-[background-position] duration-1000 ease-in-out
                   md:py-[0.6vw] py-[1vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
                   text-white font-medium cursor-pointer

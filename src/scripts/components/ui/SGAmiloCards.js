@@ -11,7 +11,7 @@ const SGAmiloCards = () => {
   return (
     <ParallaxSection>
       <div
-        className={`relative w-[100vw] ${margin} flex md:flex-row flex-col justify-center items-center md:gap-x-[3vw] gap-x-0 md:gap-y-0 gap-y-[10vw] md:pb-[10vw] pb-[25vw]`}
+        className={`relative w-screen ${margin} flex md:flex-row flex-col justify-center items-center md:gap-x-[3vw] gap-x-0 md:gap-y-0 gap-y-[10vw] md:pb-[10vw] pb-[25vw]`}
       >
         <div className="absolute top-[15vw] left-[-15vw] size-[15vw] rounded-full shadow-[15vw_0vw_25vw_rgba(74,58,255,0.3)] -z-10"></div>
         <div className="absolute top-[15vw] left-[-15vw] size-[15vw] rounded-full shadow-[20vw_10vw_15vw_rgba(255,0,229,0.3)] -z-30"></div>
@@ -24,13 +24,13 @@ const SGAmiloCards = () => {
               type="button"
               end
               className="
-                      bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
-                      bg-[length:200%_100%] bg-[position:0%_0%]
-                      hover:bg-[position:100%_0%]
+                      bg-linear-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
+                      bg-size-[200%_100%] bg-position-[0%_0%]
+                      hover:bg-position-[100%_0%]
                       transition-[background-position] duration-1000 ease-in-out
                       md:py-[0.6vw] py-[1.5vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
                       text-white font-medium absolute md:bottom-[-1vw] bottom-[-3vw] left-1/2 transform -translate-x-1/2 cursor-pointer
-                      flex flex-row md:gap-x-[1vw] gap-x-[3vw] justify-center items-center z-[10] lg:w-auto md:w-auto w-[60vw]
+                      flex flex-row md:gap-x-[1vw] gap-x-[3vw] justify-center items-center z-10 lg:w-auto md:w-auto w-[60vw]
                     "
             >
               <span className="md:text-[0.8vw] text-[2.5vw] font-normal">
@@ -79,7 +79,7 @@ const SGAmiloCards = () => {
             </p>
             <MotionButton
               type="button"
-              className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer w-fit z-[10]"
+              className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer w-fit z-10"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.8 }}
               onClick={() =>
@@ -87,7 +87,7 @@ const SGAmiloCards = () => {
               }
             >
               {/* Gradient border */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+              <div className="absolute inset-0 bg-linear-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
               {/* Inner white area */}
               <div className="relative flex flex-row items-center gap-x-[1vw] px-[2vw] py-[0.5vw] bg-white rounded-full">
@@ -108,8 +108,8 @@ const SGAmiloCards = () => {
                         md:w-[20vw] w-[50vw]
                         opacity-30
                         bg-no-repeat md:bg-top bg-top-left
-                        bg-[length:50vw_50vw]
-                        md:bg-[length:30vw_30vw]
+                        bg-size-[50vw_50vw]
+                        md:bg-size-[30vw_30vw]
                       "
                 style={{
                   backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_16.svg")`,
@@ -123,8 +123,8 @@ const SGAmiloCards = () => {
                           md:w-[20vw] w-[25vw]
                           opacity-30
                           bg-no-repeat bg-top
-                          bg-[length:120vw_60vw]
-                          md:bg-[length:100vw_50vw]
+                          bg-size-[120vw_60vw]
+                          md:bg-size-[100vw_50vw]
                         "
                   style={{
                     backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_17.svg")`,
@@ -137,8 +137,8 @@ const SGAmiloCards = () => {
                           md:w-[20vw] w-[25vw]
                           opacity-30
                           bg-no-repeat bg-center
-                          bg-[length:120vw_60vw]
-                          md:bg-[length:100vw_50vw]
+                          bg-size-[120vw_60vw]
+                          md:bg-size-[100vw_50vw]
                         "
                   style={{
                     backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_18.svg")`,
@@ -155,13 +155,13 @@ const SGAmiloCards = () => {
               type="button"
               end
               className="
-                      bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
-                      bg-[length:200%_100%] bg-[position:0%_0%]
-                      hover:bg-[position:100%_0%]
+                      bg-linear-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
+                      bg-size-[200%_100%] bg-position-[0%_0%]
+                      hover:bg-position-[100%_0%]
                       transition-[background-position] duration-1000 ease-in-out
                       md:py-[0.6vw] py-[1.5vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
                       text-white font-medium absolute md:bottom-[-1vw] bottom-[-3vw] left-1/2 transform -translate-x-1/2 cursor-pointer
-                      flex flex-row md:gap-x-[1vw] gap-x-[3vw] justify-center items-center z-[10] lg:w-auto md:w-auto w-[60vw]
+                      flex flex-row md:gap-x-[1vw] gap-x-[3vw] justify-center items-center z-10 lg:w-auto md:w-auto w-[60vw]
                     "
             >
               <span className="md:text-[0.8vw] text-[2.5vw] font-normal">
@@ -210,13 +210,13 @@ const SGAmiloCards = () => {
             </p>
             <MotionButton
               type="button"
-              className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer w-fit z-[10]"
+              className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer w-fit z-10"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.8 }}
               onClick={() => (window.location.href = "https://vip.amilo.co/")}
             >
               {/* Gradient border */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+              <div className="absolute inset-0 bg-linear-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
               {/* Inner white area */}
               <div className="relative flex flex-row items-center gap-x-[1vw] px-[2vw] py-[0.5vw] bg-white rounded-full">
@@ -237,8 +237,8 @@ const SGAmiloCards = () => {
                         md:w-[20vw] w-[50vw]
                         opacity-30
                         bg-no-repeat md:bg-top bg-center
-                        bg-[length:150vw_25vw]
-                        md:bg-[length:100vw_13vw]
+                        bg-size-[150vw_25vw]
+                        md:bg-size-[100vw_13vw]
                       "
                 style={{
                   backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_20.svg")`,
@@ -252,8 +252,8 @@ const SGAmiloCards = () => {
                           md:w-[20vw] w-[25vw]
                           opacity-30
                           bg-no-repeat bg-top
-                          bg-[length:120vw_25vw]
-                          md:bg-[length:100vw_20vw]
+                          bg-size-[120vw_25vw]
+                          md:bg-size-[100vw_20vw]
                         "
                   style={{
                     backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_19.svg")`,
@@ -266,8 +266,8 @@ const SGAmiloCards = () => {
                           md:w-[20vw] w-[25vw]
                           opacity-30
                           bg-no-repeat bg-center
-                          bg-[length:150vw_60vw]
-                          md:bg-[length:100vw_15vw]
+                          bg-size-[150vw_60vw]
+                          md:bg-size-[100vw_15vw]
                         "
                   style={{
                     backgroundImage: `url("https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_21.svg")`,

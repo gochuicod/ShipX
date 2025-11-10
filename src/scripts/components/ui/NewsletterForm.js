@@ -40,7 +40,7 @@ const NewsletterForm = () => {
       style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
     >
       <div className="flex flex-col relative overflow-hidden md:p-[0.10vw] p-[0.5vw]">
-        <div className="absolute inset-0 bg-gradient-to-t from-[#4F378A] to-[#FF00E5] rounded-full" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#4F378A] to-[#FF00E5] rounded-full" />
         <input
           type="email"
           className={`relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-[#8E3CAD] rounded-full ${errors.email ? "placeholder-red-500" : "placeholder-white/50"} text-white focus:outline-none`}
@@ -72,7 +72,7 @@ const NewsletterForm = () => {
           }}
         >
           {/* Gradient border */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#4F378A] to-[#FF00E5] rounded-full" />
+          <div className="absolute inset-0 bg-linear-to-t from-[#4F378A] to-[#FF00E5] rounded-full" />
 
           {/* Inner white area */}
           <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-[#8E3CAD] text-white rounded-full">

@@ -34,9 +34,9 @@ export default function CarouselServices({ slide }) {
             type="button"
             onClick={handlePrev}
             className="
-              !absolute top-2/4 left-[1vw] -translate-y-2/4 st-next
-              bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
-              bg-[length:200%_100%] bg-[position:0%_0%] hover:bg-[position:100%_0%]
+              absolute! top-2/4 left-[1vw] -translate-y-2/4 st-next
+              bg-linear-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
+              bg-size-[200%_100%] bg-position-[0%_0%] hover:bg-position-[100%_0%]
               transition-[background-position] duration-1000 ease-in-out
               rounded-full p-[0.5vw] shadow-lg cursor-pointer hidden
             "
@@ -63,9 +63,9 @@ export default function CarouselServices({ slide }) {
             type="button"
             onClick={handleNext}
             className="
-              !absolute top-2/4 right-[1vw] -translate-y-2/4 st-prev
-              bg-gradient-to-r from-[#FF00E5] from-0% via-[#FF00E5] via-60% to-[#4F378A] to-100%
-              bg-[length:200%_100%] bg-[position:100%_0%] hover:bg-[position:0%_0%]
+              absolute! top-2/4 right-[1vw] -translate-y-2/4 st-prev
+              bg-linear-to-r from-[#FF00E5] from-0% via-[#FF00E5] via-60% to-[#4F378A] to-100%
+              bg-size-[200%_100%] bg-position-[100%_0%] hover:bg-position-[0%_0%]
               transition-[background-position] duration-1000 ease-in-out
               rounded-full p-[0.5vw] shadow-lg cursor-pointer hidden
             "

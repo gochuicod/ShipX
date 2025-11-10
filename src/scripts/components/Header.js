@@ -132,7 +132,7 @@ const Header = memo(() => {
                 <ListboxOptions
                   anchor="bottom start"
                   transition
-                  className="relative h-fit overflow-auto md:rounded-[0.5vw] rounded-[2vw] bg-white py-[0.5vw] mt-[0.5vw] text-start outline-1 -outline-offset-1 outline-white/10 data-leave:transition data-leave:duration-100 data-leave:ease-in data-closed:data-leave:opacity-0 z-[1000] md:shadow-[0_0.5vw_0.5vw_rgba(255,0,229,0.15)] shadow-[0_3vw_5vw_rgba(255,0,229,0.15)]"
+                  className="relative h-fit overflow-auto md:rounded-[0.5vw] rounded-[2vw] bg-white py-[0.5vw] mt-[0.5vw] text-start outline-1 -outline-offset-1 outline-white/10 data-leave:transition data-leave:duration-100 data-leave:ease-in data-closed:data-leave:opacity-0 z-1000 md:shadow-[0_0.5vw_0.5vw_rgba(255,0,229,0.15)] shadow-[0_3vw_5vw_rgba(255,0,229,0.15)]"
                 >
                   {languages.map((language) => (
                     <ListboxOption
@@ -195,7 +195,7 @@ const Header = memo(() => {
               }}
             >
               {/* Gradient border */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+              <div className="absolute inset-0 bg-linear-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
               {/* Inner white area */}
               <div className="relative flex flex-row items-center gap-x-[1vw] px-[2vw] py-[0.5vw] bg-white rounded-full">
@@ -206,9 +206,9 @@ const Header = memo(() => {
           <SmartNavLink
             to="/#contact-us"
             className="
-              bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
-              bg-[length:200%_100%] bg-[position:0%_0%]
-              hover:bg-[position:100%_0%]
+              bg-linear-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
+              bg-size-[200%_100%] bg-position-[0%_0%]
+              hover:bg-position-[100%_0%]
               transition-[background-position] duration-1000 ease-in-out
               md:py-[0.6vw] py-[0.5vw] px-[1.5vw] rounded-[2vw]
               text-white font-medium
@@ -335,7 +335,7 @@ const Header = memo(() => {
                     <ListboxOptions
                       anchor="bottom start"
                       transition
-                      className="relative h-fit overflow-auto md:rounded-[0.5vw] rounded-[2vw] bg-white py-[0.5vw] mt-[0.5vw] text-start outline-1 -outline-offset-1 outline-white/10 data-leave:transition data-leave:duration-100 data-leave:ease-in data-closed:data-leave:opacity-0 z-[1000] md:shadow-[0_0.5vw_0.5vw_rgba(255,0,229,0.15)] shadow-[0_3vw_5vw_rgba(255,0,229,0.15)]"
+                      className="relative h-fit overflow-auto md:rounded-[0.5vw] rounded-[2vw] bg-white py-[0.5vw] mt-[0.5vw] text-start outline-1 -outline-offset-1 outline-white/10 data-leave:transition data-leave:duration-100 data-leave:ease-in data-closed:data-leave:opacity-0 z-1000 md:shadow-[0_0.5vw_0.5vw_rgba(255,0,229,0.15)] shadow-[0_3vw_5vw_rgba(255,0,229,0.15)]"
                     >
                       {languages.map((language) => (
                         <ListboxOption

@@ -1,4 +1,3 @@
-import React from "react";
 import { margin } from "../../utils/constants";
 import { useTranslation } from "react-i18next";
 import SmartNavLink from "./SmartNavLink";
@@ -20,9 +19,9 @@ const NotFound = () => {
       <SmartNavLink
         to="/"
         className="
-          bg-gradient-to-r from-[#4F378A] via-[#FF00E5] to-[#FF00E5]
-          bg-[length:200%_100%] bg-[position:0%_0%]
-          hover:bg-[position:100%_0%]
+          bg-linear-to-r from-[#4F378A] via-[#FF00E5] to-[#FF00E5]
+          bg-size-[200%_100%] bg-position-[0%_0%]
+          hover:bg-position-[100%_0%]
           transition-[background-position] duration-1000 ease-in-out
           text-white font-semibold rounded-full px-8 py-3
           shadow-md hover:shadow-lg cursor-pointer md:text-[0.8vw] text-[3vw]

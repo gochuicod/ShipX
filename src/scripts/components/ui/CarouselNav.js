@@ -56,9 +56,9 @@ export default function CarouselNav() {
             onClick={handlePrev}
             aria-label="Previous slide"
             className="
-              !absolute top-2/4 left-[1vw] -translate-y-2/4 mt-next
-              bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
-              bg-[length:200%_100%] bg-[position:0%_0%] hover:bg-[position:100%_0%]
+              absolute! top-2/4 left-[1vw] -translate-y-2/4 mt-next
+              bg-linear-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
+              bg-size-[200%_100%] bg-position-[0%_0%] hover:bg-position-[100%_0%]
               transition-[background-position] duration-1000 ease-in-out
               rounded-full p-[0.5vw] shadow-lg cursor-pointer md:flex hidden
             "
@@ -86,9 +86,9 @@ export default function CarouselNav() {
             onClick={handleNext}
             aria-label="Next slide"
             className="
-              !absolute top-2/4 right-[1vw] -translate-y-2/4 mt-prev
-              bg-gradient-to-r from-[#FF00E5] from-0% via-[#FF00E5] via-60% to-[#4F378A] to-100%
-              bg-[length:200%_100%] bg-[position:100%_0%] hover:bg-[position:0%_0%]
+              absolute! top-2/4 right-[1vw] -translate-y-2/4 mt-prev
+              bg-linear-to-r from-[#FF00E5] from-0% via-[#FF00E5] via-60% to-[#4F378A] to-100%
+              bg-size-[200%_100%] bg-position-[100%_0%] hover:bg-position-[0%_0%]
               transition-[background-position] duration-1000 ease-in-out
               rounded-full p-[0.5vw] shadow-lg cursor-pointer md:flex hidden
             "
@@ -207,9 +207,9 @@ export default function CarouselNav() {
               >
                 <SmartNavLink
                   className="
-                    bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
-                    bg-[length:200%_100%] bg-[position:0%_0%]
-                    hover:bg-[position:100%_0%]
+                    bg-linear-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
+                    bg-size-[200%_100%] bg-position-[0%_0%]
+                    hover:bg-position-[100%_0%]
                     transition-[background-position] duration-1000 ease-in-out
                     md:py-[0.6vw] py-[1.5vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
                     text-white font-medium cursor-pointer
@@ -239,7 +239,7 @@ export default function CarouselNav() {
                     }}
                   >
                     {/* Gradient border */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+                    <div className="absolute inset-0 bg-linear-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
                     {/* Inner white area */}
                     <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
@@ -444,9 +444,9 @@ export default function CarouselNav() {
               >
                 <SmartNavLink
                   className="
-                    bg-gradient-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
-                    bg-[length:200%_100%] bg-[position:0%_0%]
-                    hover:bg-[position:100%_0%]
+                    bg-linear-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
+                    bg-size-[200%_100%] bg-position-[0%_0%]
+                    hover:bg-position-[100%_0%]
                     transition-[background-position] duration-1000 ease-in-out
                     md:py-[0.6vw] py-[1.5vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
                     text-white font-medium cursor-pointer
