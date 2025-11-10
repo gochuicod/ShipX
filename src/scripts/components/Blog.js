@@ -76,7 +76,7 @@ const Blog = () => {
 
         <img
           src={
-            i18n.language === "vi" && post.cover_vn ? post.cover_vn : post.cover
+            i18n.language === "vn" && post.cover_vn ? post.cover_vn : post.cover
           }
           alt={post.title}
           className="w-full md:rounded-[2vw] rounded-[3vw] shadow-[0_0vw_1vw_rgba(79,55,138,0.15)]"
