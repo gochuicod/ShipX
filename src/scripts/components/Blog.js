@@ -14,7 +14,11 @@ const Blog = () => {
   const loadBlog = () => {
     setLoading(true);
     const blogs =
-      t("service_headline_section.blogs", { returnObjects: true }) || [];
+      JSON.parse(
+        JSON.stringify(
+          t("service_headline_section.blogs", { returnObjects: true }),
+        ),
+      ) || [];
     const foundPost = blogs.find((b) => b.slug === slug) || null;
     setPost(foundPost);
     setLoading(false);
@@ -27,7 +31,7 @@ const Blog = () => {
     i18n.on("languageChanged", handleLangChange);
 
     return () => i18n.off("languageChanged", handleLangChange);
-  }, [slug, i18n]);
+  }, [slug, i18n.language]);
 
   if (loading) return <p>Loading blog...</p>;
   if (!post) return <NotFound />;

@@ -28,7 +28,7 @@ const BlogList = () => {
         </h1>
 
         {blogs.length > 0 ? (
-          <div className="flex flex-wrap gap-x-[3vw]">
+          <div className="flex flex-wrap gap-x-[3vw] gap-y-[5vw]">
             {blogs.map((post) => (
               <SmartNavLink
                 to={`/blog/${post.slug}`}
