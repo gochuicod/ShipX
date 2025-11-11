@@ -58,6 +58,7 @@ const ContactForm = () => {
       const crmPayload = {
         contactName: data.name,
         email: data.email,
+        phoneNumber: data.phone || "N/A",
         leadSource,
         services: ["crossborder_shipping"], // adjust as needed
         companyId: "8d612638-ffef-4457-a876-05e655dcc93e",
