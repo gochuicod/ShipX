@@ -56,9 +56,7 @@ export default function () {
             fontFamily: "Inter, system-ui, -apple-system, sans-serif",
           }}
         >
-          <div
-            dangerouslySetInnerHTML={{ __html: t("cookies.description") }}
-          />
+          <div dangerouslySetInnerHTML={{ __html: t("cookies.description") }} />
         </section>
         {/* Cookie Buttons */}
         <section
