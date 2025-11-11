@@ -15,6 +15,12 @@ const ContactForm = () => {
   const [isSent, setIsSent] = useState(false);
 
   useEffect(() => {
+    if (typeof window !== "undefined" && window.ShipXGeo) {
+      console.log("User country:", window.ShipXGeo.country);
+    }
+  }, []);
+
+  useEffect(() => {
     if (typeof window === "undefined") return;
 
     const url = new URL(window.location.href);
@@ -52,8 +58,6 @@ const ContactForm = () => {
         body: JSON.stringify(data),
       });
 
-      const wpData = await wpRes.json();
-
       // Prepare CRM payload
       const crmPayload = {
         contactName: data.name,
@@ -64,7 +68,7 @@ const ContactForm = () => {
         companyId: "8d612638-ffef-4457-a876-05e655dcc93e",
         website: "https://shipx.asia/",
         description: data.message,
-        location: wpData.country || "Unknown",
+        location: window.ShipXGeo.country || "Unknown",
       };
 
       // POST to CRM API
