@@ -45,7 +45,7 @@ export default function () {
             src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/cookies_icon.webp"
             alt="ShipX Cookie Icon"
           />
-          <span className="md:text-[1.5vw] text-[6vw] font-semibold">
+          <span className="md:text-[1.5vw] text-[6vw] font-semibold text-[#1A1A1A]">
             {t("cookies.header")}
           </span>
         </section>
@@ -56,7 +56,10 @@ export default function () {
             fontFamily: "Inter, system-ui, -apple-system, sans-serif",
           }}
         >
-          <div dangerouslySetInnerHTML={{ __html: t("cookies.description") }} />
+          <div
+            className="text-[#4D4D4D]"
+            dangerouslySetInnerHTML={{ __html: t("cookies.description") }}
+          />
         </section>
         {/* Cookie Buttons */}
         <section
