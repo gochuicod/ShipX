@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { updateGtmConsent } from "../../../tagmanager";
 
 export default function () {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -23,14 +23,14 @@ export default function () {
 
   return (
     <div
-      className="
-        fixed
+      className={`
+        fixed z-9999
         md:bottom-[3vw] md:left-[3vw] bottom-[5vw] left-0 right-0 md:mx-0 mx-auto
         bg-white md:shadow-[0_0.5vw_1vw_rgba(0,0,0,0.5)] shadow-[0_1.5vw_3vw_rgba(0,0,0,0.5)]
         md:rounded-[1.5vw] rounded-[4vw]
         md:px-[2vw] px-[6vw] md:pb-[2vw] pb-[6vw] md:pt-[2vw] pt-[5vw]
-        md:w-[23vw] w-[90vw] z-9999
-      "
+        ${i18n.language === "vn" || i18n.language === "ind" ? "md:w-[25vw]" : "md:w-[23vw]"} w-[90vw]
+      `}
     >
       <div className="flex flex-col md:gap-y-[1vw] gap-y-[3vw]">
         {/* Cookie Header */}
@@ -60,7 +60,12 @@ export default function () {
         </section>
         {/* Cookie Buttons */}
         <section
-          className="flex flex-row md:gap-x-[1vw] gap-x-[2vw] md:text-[0.65vw] text-[3vw]"
+          className={`
+            flex flex-row
+            md:gap-x-[1vw] gap-x-[2vw]
+            md:text-[0.65vw]
+            ${i18n.language === "vn" || i18n.language === "ind" ? "text-[2.5vw]" : "text-[3vw]"}
+          `}
           style={{
             fontFamily: "Karla, system-ui, -apple-system, sans-serif",
           }}
