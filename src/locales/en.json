@@ -469,6 +469,9 @@
     "Finalizing..."
   ],
   "cookies": {
-    "text": "We use cookies for analytics and marketing. You can accept or decline tracking."
+    "header": "Cookies",
+    "description": "We use cookies to enhance your browsing experience, analyze site traffic, and understand how users interact with our website.</br></br>Some cookies are essential for the site to function properly — others help us improve performance and user experience through analytics.</br></br>You can choose to accept only the necessary cookies or allow all cookies for the best experience.",
+    "accept_necessary": "Accept Necessary Cookies",
+    "accept_all": "Accept All Cookies"
   }
 }

@@ -469,6 +469,9 @@
     "Melengkapkan..."
   ],
   "cookies": {
-    "text": "Kami menggunakan kuki untuk analitik dan pemasaran. Anda boleh menerima atau menolak penjejakan."
+    "header": "Kuki",
+    "description": "Kami menggunakan kuki untuk meningkatkan pengalaman pelayaran anda, menganalisis trafik laman, dan memahami bagaimana pengguna berinteraksi dengan laman web kami.</br></br>Sesetengah kuki penting untuk memastikan laman berfungsi dengan betul — manakala yang lain membantu kami menambah baik prestasi dan pengalaman pengguna melalui analitik.</br></br>Anda boleh memilih untuk menerima kuki yang perlu sahaja atau benarkan semua kuki untuk pengalaman terbaik.",
+    "accept_necessary": "Terima Kuki Diperlukan",
+    "accept_all": "Terima Semua Kuki"
   }
 }

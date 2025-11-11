@@ -469,6 +469,9 @@
     "Menyelesaikan..."
   ],
   "cookies": {
-    "text": "Kami menggunakan cookie untuk analitik dan pemasaran. Anda dapat menerima atau menolak pelacakan."
+    "header": "Cookie",
+    "description": "Kami menggunakan cookie untuk meningkatkan pengalaman Anda saat menjelajahi situs, menganalisis lalu lintas, dan memahami bagaimana pengguna berinteraksi dengan situs web kami.</br></br>Beberapa cookie sangat penting agar situs dapat berfungsi dengan baik — sementara yang lainnya membantu kami meningkatkan kinerja dan pengalaman pengguna melalui analitik.</br></br>Anda dapat memilih untuk hanya menerima cookie yang diperlukan atau mengizinkan semua cookie untuk pengalaman terbaik.",
+    "accept_necessary": "Terima Cookie yang Diperlukan",
+    "accept_all": "Terima Semua Cookie"
   }
 }
