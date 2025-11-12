@@ -335,7 +335,7 @@
       },
       "vietnam": {
         "country_name": "เวียดนาม",
-        "address": "ถนนหมายเลข 6 เลขที่ 28 แขวงบ่ายเฮียน เมืองโฮจิมินห์ ประเทศเวียดนาม",
+        "address": "28 ซอย 6, แขวง Bay Hien, นครโฮจิมินห์, เวียดนาม",
         "contact_number": "",
         "email": "contact.vn@shipx.asia"
       },
@@ -401,8 +401,8 @@
     "subheader_1": "มาร่วมเป็นพันธมิตรและเติบโตไปด้วยกัน",
     "number": "",
     "email": "info@shipx.asia",
-    "address_1": "28 ถนน หมายเลข 6, ",
-    "address_2": "ตำบลเบย์เฮียน, นครโฮจิมินห์, เวียดนาม",
+    "address_1": "28 ซอย 6, แขวง Bay Hien, ",
+    "address_2": "นครโฮจิมินห์, เวียดนาม",
     "form": {
       "name": "ชื่อของคุณ",
       "email": "ที่อยู่อีเมล",
@@ -449,7 +449,7 @@
     "reach_us_1": "ติดต่อเรา",
     "reach_us_2": "",
     "reach_us_3": "info@shipx.asia",
-    "reach_us_4": "60 Kaki Bukit Place, อีูโนส เทคพาร์ค #03-19, S415979",
+    "reach_us_4": "28 ซอย 6, แขวง Bay Hien, นครโฮจิมินห์, เวียดนาม",
     "copyright": "ShipX ลิขสิทธิ์และสงวนสิทธิ์"
   },
   "messenger_bubble": {
