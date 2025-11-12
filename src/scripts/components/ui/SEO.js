@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
-import i18n from "../../../i18n";
 import { languages } from "../../utils/constants";
 
 const SEO = ({

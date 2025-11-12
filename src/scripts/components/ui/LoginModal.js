@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { button as MotionButton } from "motion/react-client";
-import { NavLink } from "react-router-dom";
 import SmartNavLink from "./SmartNavLink";
 
 const LoginModal = () => {

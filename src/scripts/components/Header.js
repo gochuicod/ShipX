@@ -26,6 +26,13 @@ const Header = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
+  const navLinks = [
+    { to: "/", label: t("header.home") },
+    { to: "/#services", label: t("header.services") },
+    { to: "/#platform", label: t("header.platform") },
+    { to: "/#network", label: t("header.network") },
+  ];
+
   const [selected, setSelected] = useState(() => {
     const current = i18n.language || localStorage.getItem("lang") || "en";
     return (
@@ -174,22 +181,11 @@ const Header = memo(() => {
 
         {/* Right: Nav + Buttons (hidden on mobile) */}
         <nav className="hidden md:flex flex-row gap-x-[2.5vw] font-medium text-[0.8vw]">
-          <SmartNavLink
-            to="/"
-            className={linkClass}
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          >
-            {t("header.home")}
-          </SmartNavLink>
-          <SmartNavLink to="/#services" className={linkClass}>
-            {t("header.services")}
-          </SmartNavLink>
-          <SmartNavLink to="/#platform" className={linkClass}>
-            {t("header.platform")}
-          </SmartNavLink>
-          <SmartNavLink to="/#network" className={linkClass}>
-            {t("header.network")}
-          </SmartNavLink>
+          {navLinks.map((link) => (
+            <SmartNavLink key={link.to} to={link.to} className={linkClass}>
+              {link.label}
+            </SmartNavLink>
+          ))}
         </nav>
 
         <div className="hidden md:flex flex-row justify-center items-center gap-x-[1vw] text-[0.8vw] font-normal">
@@ -283,49 +279,55 @@ const Header = memo(() => {
                         flex flex-col items-start p-[5vw] gap-y-[3vw] md:hidden 
                         text-[#1A1A1A] text-[3.5vw] font-medium"
             >
-              <SmartNavLink
-                to="/"
-                className={`${linkClass} w-full text-left px-[5vw]`}
-              >
-                {t("header.home")}
-              </SmartNavLink>
-              <SmartNavLink
-                to="/#services"
-                className={`${linkClass} w-full text-left px-[5vw]`}
-              >
-                {t("header.services")}
-              </SmartNavLink>
-              <SmartNavLink
-                to="/#platform"
-                className={`${linkClass} w-full text-left px-[5vw]`}
-              >
-                {t("header.platform")}
-              </SmartNavLink>
-              <SmartNavLink
-                to="/#network"
-                className={`${linkClass} w-full text-left px-[5vw]`}
-              >
-                {t("header.network")}
-              </SmartNavLink>
-              <SmartNavLink
-                to="/book-a-demo"
-                className={`${linkClass} w-full text-left px-[5vw]`}
-              >
-                {t("header.book_a_demo")}
-              </SmartNavLink>
-              <SmartNavLink
-                to="/#contact-us"
-                className={`${linkClass} w-full text-left px-[5vw]`}
-              >
-                {t("header.contact_us")}
-              </SmartNavLink>
+              {[
+                "/",
+                "/#services",
+                "/#platform",
+                "/#network",
+                "/book-a-demo",
+                "/#contact-us",
+              ].map((path) => (
+                <SmartNavLink
+                  key={path}
+                  to={path}
+                  className={`${linkClass} w-full text-left px-[5vw]`}
+                >
+                  {t(
+                    `header.${path === "/" ? "home" : path.split("#")[1] || "book_a_demo"}`,
+                  )}
+                </SmartNavLink>
+              ))}
+
               <Listbox
                 className={`${linkClass} w-full text-left px-[5vw]`}
                 value={selected}
-                onChange={(language) => {
+                onChange={async (language) => {
                   setSelected(language);
-                  i18n.changeLanguage(language.key);
-                  localStorage.setItem("lang", language.key);
+
+                  try {
+                    await i18n.changeLanguage(language.key); // update i18n
+                    localStorage.setItem("lang", language.key);
+
+                    // Preserve current path segments
+                    const segments = window.location.pathname
+                      .split("/")
+                      .filter(Boolean);
+
+                    // Remove language prefix if present
+                    if (languages.some((l) => l.key === segments[0])) {
+                      segments.shift();
+                    }
+
+                    // Build new path with language prefix (skip 'en')
+                    const newPath =
+                      language.key === "en"
+                        ? `/${segments.join("/")}`
+                        : `/${language.key}${segments.length ? "/" + segments.join("/") : ""}`;
+
+                    navigate(newPath, { replace: true });
+                  } catch (err) {
+                    console.error("Failed to switch language:", err);
+                  }
                 }}
               >
                 <div className="relative">
@@ -338,7 +340,7 @@ const Header = memo(() => {
                         {selected.name}
                       </span>
                     </span>
-                    {/* Check Up Down Icon */}
+                    {/* Dropdown Icon */}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -368,10 +370,7 @@ const Header = memo(() => {
                           className="group relative cursor-default py-2 pr-9 pl-3 text-white select-none data-focus:bg-[#FF00E5] data-focus:outline-hidden"
                         >
                           <div className="flex items-center">
-                            <span
-                              className="ml-3 block truncate font-normal group-data-focus:font-semibold group-data-focus:text-white text-[#1A1A1A] md:text-[3.5vw] text-[3vw]"
-                              onClick={() => i18n.changeLanguage(language.key)}
-                            >
+                            <span className="ml-3 block truncate font-normal group-data-focus:font-semibold group-data-focus:text-white text-[#1A1A1A] md:text-[3.5vw] text-[3vw]">
                               {language.name}
                             </span>
                           </div>
