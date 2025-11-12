@@ -16,7 +16,7 @@ const ServiceHeadline = () => {
         }}
       >
         <SmartNavLink
-          to="/blog/shipx-goes-live-smarter-future-asean-cross-border-logistics"
+          to="/blog/empowering-asean-smes-in-cross-border-trade-the-shipx-way"
           end
         >
           <div
@@ -26,7 +26,7 @@ const ServiceHeadline = () => {
               <img
                 loading="lazy"
                 className="shadow-[0_0_1vw_rgba(79,55,138,0.15)] md:rounded-[1.5vw] rounded-[3.5vw]"
-                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_sglink_banner_image_1.webp"
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx_blog_post_2_cover_img_v4.webp"
                 alt="ShipX Goes Live"
               />
             </div>
