@@ -33,6 +33,15 @@ const Header = memo(() => {
     { to: "/#network", label: t("header.network") },
   ];
 
+  const pathToLocaleKey = {
+    "/": "home",
+    "/#services": "services",
+    "/#platform": "platform",
+    "/#network": "network",
+    "/book-a-demo": "book_a_demo",
+    "/#contact-us": "contact_us",
+  };
+
   const [selected, setSelected] = useState(() => {
     const current = i18n.language || localStorage.getItem("lang") || "en";
     return (
@@ -292,9 +301,7 @@ const Header = memo(() => {
                   to={path}
                   className={`${linkClass} w-full text-left px-[5vw]`}
                 >
-                  {t(
-                    `header.${path === "/" ? "home" : path.split("#")[1] || "book_a_demo"}`,
-                  )}
+                  {t(`header.${pathToLocaleKey[path]}`)}
                 </SmartNavLink>
               ))}
 
