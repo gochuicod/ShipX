@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { button as MotionButton } from "motion/react-client";
 import { NavLink } from "react-router-dom";
+import SmartNavLink from "./SmartNavLink";
 
 const LoginModal = () => {
   const { t } = useTranslation();
@@ -147,7 +148,7 @@ const LoginModal = () => {
             <span className="text-[#757577] md:text-[0.8vw] text-[3.3vw] font-normal">
               {t("header.login_modal.sign_up.description")}
             </span>
-            <NavLink
+            <SmartNavLink
               to="/book-a-demo"
               end
               className="
@@ -160,7 +161,7 @@ const LoginModal = () => {
               "
             >
               {t("header.login_modal.sign_up.button")}
-            </NavLink>
+            </SmartNavLink>
           </div>
         </div>
       )}
