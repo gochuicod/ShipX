@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import SEO from "./ui/SEO";
 import MultiStepLoader from "./ui/MultiStepLoader";
 
 const BookADemo = () => {
   const { pathname } = useLocation();
   const [loading, setLoading] = useState(true);
+  const { t } = useTranslation();
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); // optional smooth scroll
@@ -14,9 +16,9 @@ const BookADemo = () => {
   return (
     <>
       <SEO
-        title="ShipX - Book A Demo"
-        description="Book a Demo with ShipX!"
-        canonical="https://shipx.asia/book-a-demo"
+        title={t("book_a_demo_page.seo.title")}
+        description={t("book_a_demo_page.seo.description")}
+        canonical={t("book_a_demo_page.seo.canonical")}
         ogImage="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
       />
 
@@ -25,7 +27,7 @@ const BookADemo = () => {
 
         <iframe
           src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2xm9gkOC9hplYucI1nHkQApNfYFGrcfsjxq96a-TR3S8ZwacBAz-2lRcgARMGJx9F40_9OP_uO?gv=true"
-          title="Book a Demo with ShipX"
+          title={t("book_a_demo_page.seo.iframeTitle")}
           style={{
             width: "100%",
             height: "100%",

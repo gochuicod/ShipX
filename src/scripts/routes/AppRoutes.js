@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import MultiStepLoader from "../components/ui/MultiStepLoader";
 
@@ -15,12 +15,15 @@ const NotFound = lazy(() => import("../components/ui/NotFound"));
 const AppRoutes = ({ margin }) => (
   <Suspense fallback={<MultiStepLoader />}>
     <Routes>
-      <Route path="/" element={<Main margin={margin} />} />
-      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-      <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-      <Route path="/book-a-demo" element={<BookADemo />} />
-      <Route path="/blog" element={<BlogList />} />
-      <Route path="/blog/:slug" element={<Blog />} />
+      <Route path="/:lang?/">
+        <Route index element={<Main margin={margin} />} />
+        <Route path="privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="book-a-demo" element={<BookADemo />} />
+        <Route path="blog" element={<BlogList />} />
+        <Route path="blog/:slug" element={<Blog />} />
+      </Route>
+
       <Route path="*" element={<NotFound />} />
     </Routes>
   </Suspense>

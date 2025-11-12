@@ -401,8 +401,8 @@
     "subheader_1": "Mari bermitra dan berkembang bersama",
     "number": "",
     "email": "info@shipx.asia",
-    "address_1": "60 Kaki Bukit Place, ",
-    "address_2": "Eunos Techpark #03-19, S415979",
+    "address_1": "Jl. No.6, Bay Hien, ",
+    "address_2": "Kota Ho Chi Minh, Vietnam",
     "form": {
       "name": "Nama Anda",
       "email": "Alamat Email",
@@ -473,5 +473,13 @@
     "description": "Kami menggunakan cookie untuk meningkatkan pengalaman Anda saat menjelajahi situs, menganalisis lalu lintas, dan memahami bagaimana pengguna berinteraksi dengan situs web kami.</br></br>Beberapa cookie sangat penting agar situs dapat berfungsi dengan baik — sementara yang lainnya membantu kami meningkatkan kinerja dan pengalaman pengguna melalui analitik.</br></br>Anda dapat memilih untuk hanya menerima cookie yang diperlukan atau mengizinkan semua cookie untuk pengalaman terbaik.",
     "accept_necessary": "Terima Cookie yang Diperlukan",
     "accept_all": "Terima Semua Cookie"
+  },
+  "book_a_demo_page": {
+    "seo": {
+      "title": "ShipX | Jadwalkan Demo",
+      "description": "Jadwalkan demo personal dari ShipX, platform logistik generasi berikutnya di ASEAN. Temukan bagaimana solusi kami dapat menyederhanakan kebutuhan pengiriman dan pemenuhan lintas batas Anda.",
+      "canonical": "https://www.shipx.asia/ind/book-a-demo",
+      "iframeTitle": "Jadwalkan Demo dengan ShipX"
+    }
   }
 }

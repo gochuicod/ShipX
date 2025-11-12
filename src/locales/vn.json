@@ -401,8 +401,8 @@
     "subheader_1": "Cùng hợp tác và phát triển",
     "number": "",
     "email": "info@shipx.asia",
-    "address_1": "60 Kaki Bukit Place, ",
-    "address_2": "Khu công nghệ #03-19, S415979",
+    "address_1": "Số 28, Đường số 6, Phường Bảy Hiền, ",
+    "address_2": "Thành phố Hồ Chí Minh, Việt Nam",
     "form": {
       "name": "Tên của bạn",
       "email": "Email của bạn",
@@ -473,5 +473,13 @@
     "description": "Chúng tôi sử dụng cookie để nâng cao trải nghiệm duyệt web của bạn, phân tích lưu lượng truy cập và hiểu cách người dùng tương tác với trang web của chúng tôi.</br></br>Một số cookie là cần thiết để trang web hoạt động đúng cách — trong khi các cookie khác giúp chúng tôi cải thiện hiệu suất và trải nghiệm người dùng thông qua phân tích dữ liệu.</br></br>Bạn có thể chọn chỉ chấp nhận cookie cần thiết hoặc cho phép tất cả cookie để có trải nghiệm tốt nhất.",
     "accept_necessary": "Chấp nhận Cookie cần thiết",
     "accept_all": "Chấp nhận Tất cả Cookie"
+  },
+  "book_a_demo_page": {
+    "seo": {
+      "title": "ShipX | Đặt lịch Demo",
+      "description": "Đặt lịch demo cá nhân hóa của ShipX, nền tảng logistics thế hệ mới tại ASEAN. Khám phá cách các giải pháp của chúng tôi có thể tối ưu hóa nhu cầu vận chuyển và hoàn tất đơn hàng xuyên biên giới của bạn.",
+      "canonical": "https://www.shipx.asia/vn/book-a-demo",
+      "iframeTitle": "Đặt lịch Demo với ShipX"
+    }
   }
 }

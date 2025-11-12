@@ -16,6 +16,7 @@ const LanguagePrompt = lazy(
 );
 import { LenisProvider } from "./scripts/hooks/useLenis";
 import { margin } from "./scripts/utils/constants";
+import LanguageRouterListener from "./scripts/utils/languageRouterListener";
 
 const helmetContext = {};
 
@@ -28,6 +29,7 @@ const App = () => {
         <LenisProvider>
           <ResetOnRefresh paths={["/"]} />
           <Layout>
+            <LanguageRouterListener />
             <ScrollToHash />
             <AppRoutes margin={margin} />
             <CookieBanner />

@@ -401,8 +401,8 @@
     "subheader_1": "Let's partner and grow",
     "number": "",
     "email": "info@shipx.asia",
-    "address_1": "60 Kaki Bukit Place, ",
-    "address_2": "Eunos Techpark #03-19, S415979",
+    "address_1": "28 Street No.6, Bay Hien Ward, ",
+    "address_2": "Ho Chi Minh City, Vietnam",
     "form": {
       "name": "Your Name",
       "email": "Email Address",
@@ -449,7 +449,7 @@
     "reach_us_1": "Reach us",
     "reach_us_2": "",
     "reach_us_3": "info@shipx.asia",
-    "reach_us_4": "60 Kaki Bukit Place, Eunos Techpark #03-19, S415979",
+    "reach_us_4": "28 Street No.6, Bay Hien Ward, Ho Chi Minh City, Vietnam",
     "copyright": "ShipX Copyright and rights reserved"
   },
   "messenger_bubble": {
@@ -473,5 +473,13 @@
     "description": "We use cookies to enhance your browsing experience, analyze site traffic, and understand how users interact with our website.</br></br>Some cookies are essential for the site to function properly — others help us improve performance and user experience through analytics.</br></br>You can choose to accept only the necessary cookies or allow all cookies for the best experience.",
     "accept_necessary": "Accept Necessary Cookies",
     "accept_all": "Accept All Cookies"
+  },
+  "book_a_demo_page": {
+    "seo": {
+      "title": "ShipX | Book a Demo",
+      "description": "Schedule a personalized demo of ShipX, ASEAN's next-generation logistics platform. Discover how our solutions can streamline your cross-border shipping and fulfillment needs.",
+      "canonical": "https://www.shipx.asia/book-a-demo",
+      "iframeTitle": "Book a Demo with ShipX"
+    }
   }
 }

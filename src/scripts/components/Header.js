@@ -1,4 +1,5 @@
 import { memo, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import SmartNavLink from "./ui/SmartNavLink";
 import {
   div as MotionDiv,
@@ -23,6 +24,7 @@ const linkClass =
 const Header = memo(() => {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const [selected, setSelected] = useState(() => {
     const current = i18n.language || localStorage.getItem("lang") || "en";
@@ -96,6 +98,20 @@ const Header = memo(() => {
               try {
                 await i18n.changeLanguage(language.key); // loads from CDN
                 localStorage.setItem("lang", language.key);
+
+                const segments = window.location.pathname
+                  .split("/")
+                  .filter(Boolean);
+
+                if (languages.some((l) => l.key === segments[0])) {
+                  segments.shift();
+                }
+
+                const newPath =
+                  language.key === "en"
+                    ? `/${segments.join("/")}`
+                    : `/${language.key}${segments.length ? "/" + segments.join("/") : ""}`;
+                navigate(newPath, { replace: true });
               } catch (err) {
                 console.error("Failed to load language:", err);
               }
@@ -187,19 +203,27 @@ const Header = memo(() => {
               className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
               whileHover={{
                 y: -5,
-                transition: { type: "spring", stiffness: 300, damping: 15 },
+                transition: {
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 15,
+                },
               }}
               whileTap={{
                 scale: 0.9,
-                transition: { type: "spring", stiffness: 500, damping: 10 },
+                transition: {
+                  type: "spring",
+                  stiffness: 500,
+                  damping: 10,
+                },
               }}
             >
               {/* Gradient border */}
               <div className="absolute inset-0 bg-linear-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
               {/* Inner white area */}
-              <div className="relative flex flex-row items-center gap-x-[1vw] px-[2vw] py-[0.5vw] bg-white rounded-full">
-                {t("header.book_a_demo")}
+              <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
+                {t("services_section.book_a_demo")}
               </div>
             </MotionButton>
           </SmartNavLink>

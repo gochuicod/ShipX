@@ -1,4 +1,5 @@
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import i18n from "../../../i18n";
 
 const SmartNavLink = ({
   to = "/",
@@ -10,39 +11,37 @@ const SmartNavLink = ({
   const location = useLocation();
   const navigate = useNavigate();
 
+  // Prepend language prefix if not default
+  const langPrefix = i18n.language !== "en" ? `/${i18n.language}` : "";
+  let fullPath = to.startsWith("/")
+    ? `${langPrefix}${to}`
+    : `${langPrefix}/${to}`;
+
+  // Remove double slashes if any
+  fullPath = fullPath.replace(/\/+/g, "/");
+
   const handleClick = (e) => {
-    const [pathname, hash] = to.split("#"); // Split route and hash (if any)
+    const [pathname, hash] = fullPath.split("#");
     const isSamePath = location.pathname === pathname;
 
-    // Case 1: Link with a hash (e.g. /#services)
     if (hash) {
       e.preventDefault();
 
-      // If on another page, navigate first then scroll
       if (!isSamePath) {
         navigate(pathname);
         setTimeout(() => {
           const target = document.getElementById(hash);
-          if (target) {
-            target.scrollIntoView({ behavior: "smooth" });
-          }
+          if (target) target.scrollIntoView({ behavior: "smooth" });
         }, 300);
       } else {
-        // Already on same page: scroll directly to section
         const target = document.getElementById(hash);
-        if (target) {
-          target.scrollIntoView({ behavior: "smooth" });
-        }
+        if (target) target.scrollIntoView({ behavior: "smooth" });
       }
 
-      // Optional: clean up hash from URL after a delay
       setTimeout(() => {
         window.history.replaceState(null, "", pathname);
       }, delay);
-    }
-
-    // Case 2: Normal route navigation (no hash)
-    else {
+    } else {
       if (isSamePath) {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -61,7 +60,12 @@ const SmartNavLink = ({
   };
 
   return (
-    <NavLink to={to} end={end} className={className} onClick={handleClick}>
+    <NavLink
+      to={fullPath}
+      end={end}
+      className={className}
+      onClick={handleClick}
+    >
       {children}
     </NavLink>
   );
