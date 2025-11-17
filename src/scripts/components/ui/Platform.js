@@ -15,7 +15,7 @@ const Platform = () => {
       <img
         className="absolute md:w-[50vw] w-[80vw] md:h-[45vw] h-[80vw] md:translate-x-[17vw] translate-x-[10vw] md:-translate-y-[1vw] translate-y-[1vw] -z-10"
         src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_img_4.webp"
-        alt=""
+        alt="ShipX Platform Background Decoration"
       />
       <ParallaxSection className="lg:min-h-screen md:min-h-fit min-h-screen relative flex flex-col justify-center items-center overflow-hidden select-none">
         <div className="flex md:flex-row flex-col gap-x-[0.1vw] justify-center items-center">
@@ -125,7 +125,7 @@ const Platform = () => {
           <img
             className="md:w-[35vw] w-[60vw] md:h-[25vw] h-[20vh]"
             src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_img_2.webp"
-            alt=""
+            alt="ShipX Platform Illustration"
           />
         </div>
         <div className="flex md:flex-row flex-col-reverse justify-center items-center">
@@ -138,14 +138,14 @@ const Platform = () => {
                 {/* Original logos */}
                 <img
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_logo_2.webp"
-                  alt="scrolling"
+                  alt="ShipX - scrolling"
                   className="md:h-[6vw] h-[10vw] object-contain"
                 />
 
                 {/* Duplicate logos for seamless loop */}
                 <img
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_logo_2.webp"
-                  alt="scrolling"
+                  alt="ShipX - scrolling"
                   className="md:h-[6vw] h-[10vw] object-contain"
                 />
               </div>
@@ -171,14 +171,14 @@ const Platform = () => {
                 {/* Original logos */}
                 <img
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_logo_3.webp"
-                  alt="scrolling"
+                  alt="ShipX - scrolling"
                   className="md:h-[6vw] h-[10vw] object-contain"
                 />
 
                 {/* Duplicate logos for seamless loop */}
                 <img
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_logo_3.webp"
-                  alt="scrolling"
+                  alt="ShipX - scrolling"
                   className="md:h-[6vw] h-[10vw] object-contain"
                 />
               </div>
@@ -210,7 +210,7 @@ const Platform = () => {
               <img
                 className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_2.svg"
-                alt="plane"
+                alt="ShipX - plane"
               />
               <p className="pl-[1vw]">
                 {t("platform_section.info_1")}{" "}
@@ -222,7 +222,7 @@ const Platform = () => {
               <img
                 className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_9.svg"
-                alt="basket"
+                alt="ShipX - basket"
               />
               <p className="pl-[1vw]">
                 {t("platform_section.info_2")}{" "}
@@ -234,7 +234,7 @@ const Platform = () => {
               <img
                 className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_7.svg"
-                alt="magnifier"
+                alt="ShipX - magnifier"
               />
               <p className="pl-[1vw]">
                 {t("platform_section.info_3")}{" "}
@@ -246,7 +246,7 @@ const Platform = () => {
               <img
                 className="md:w-[2vw] w-[4vw] md:h-[2vw] h-[4vw]"
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_6.svg"
-                alt="package"
+                alt="ShipX - package"
               />
               <p className="pl-[1vw]">
                 {t("platform_section.info_4")}{" "}

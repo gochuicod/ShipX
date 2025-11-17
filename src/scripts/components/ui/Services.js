@@ -16,19 +16,19 @@ const Services = () => {
     >
       <img
         src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_4.svg"
-        alt=""
+        alt="ShipX Services Background Decoration"
         className="absolute -translate-x-[40vw] translate-y-[12vw] w-[200vw] h-[45vw] pointer-events-none select-none z-0"
         aria-hidden="true"
       />
       <img
         src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_5.svg"
-        alt=""
+        alt="ShipX Services Background Decoration"
         className="absolute -translate-x-[41vw] -translate-y-[35vw] w-[150vw] h-[80vw] pointer-events-none select-none z-0"
         aria-hidden="true"
       />
       <img
         src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_5.svg"
-        alt=""
+        alt="ShipX Services Background Decoration"
         className="absolute translate-x-[23vw] translate-y-[24vw] w-[200vw] h-[80vw] pointer-events-none select-none -z-10 rotate-190"
         aria-hidden="true"
       />
@@ -86,7 +86,7 @@ const Services = () => {
                 <img
                   className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_1.svg"
-                  alt="globe"
+                  alt="ShipX - globe"
                 />
                 <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                   {t("services_section.link_1")}
@@ -103,7 +103,7 @@ const Services = () => {
                 <img
                   className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_2.svg"
-                  alt="plane"
+                  alt="ShipX - plane"
                 />
                 <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                   {t("services_section.link_2")}
@@ -120,7 +120,7 @@ const Services = () => {
                 <img
                   className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_3.svg"
-                  alt="flag"
+                  alt="ShipX - flag"
                 />
                 <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                   {t("services_section.link_3")}
@@ -137,7 +137,7 @@ const Services = () => {
                 <img
                   className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_4.svg"
-                  alt="warehouse"
+                  alt="ShipX - warehouse"
                 />
                 <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                   {t("services_section.link_4")}
@@ -154,7 +154,7 @@ const Services = () => {
                 <img
                   className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_5.svg"
-                  alt="amazon icon"
+                  alt="ShipX - amazon icon"
                 />
                 <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                   {t("services_section.link_5")}
@@ -171,7 +171,7 @@ const Services = () => {
                 <img
                   className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_6.svg"
-                  alt="package"
+                  alt="ShipX - package"
                 />
                 <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                   {t("services_section.link_6")}
@@ -188,7 +188,7 @@ const Services = () => {
                 <img
                   className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_7.svg"
-                  alt="magnifier"
+                  alt="ShipX - magnifier"
                 />
                 <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                   {t("services_section.link_7")}
@@ -205,7 +205,7 @@ const Services = () => {
                 <img
                   className="md:w-[2vw] w-[3vw] md:h-[2vw] h-[3vw]"
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_8.svg"
-                  alt="dollar"
+                  alt="ShipX - dollar"
                 />
                 <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2vw] md:pl-[2vw] pl-[1vw]">
                   {t("services_section.link_8")}

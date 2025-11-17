@@ -15,14 +15,17 @@ const TermsAndConditions = () => {
   return (
     <>
       <SEO
-        title="ShipX - Terms and Conditions"
-        description="Welcome to ShipX's Terms and Conditions Page!"
-        canonical="https://shipx.asia/terms-and-conditions"
-        ogImage="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+        title={t("seo.terms_and_conditions_page.title")}
+        description={t("seo.terms_and_conditions_page.description")}
+        canonical={t("seo.terms_and_conditions_page.canonical")}
+        ogImage={t("seo.terms_and_conditions_page.ogImage")}
       />
 
       <div className={`flex flex-col justify-center items-center ${margin}`}>
         <div className="flex flex-col justify-center items-center md:py-[5vw] py-[10vw]">
+          <h1 className="sr-only">
+            {t("seo.terms_and_conditions_page.title")}
+          </h1>
           <span
             className="text-[#FF00E5] md:text-[5vw] text-[7vw] md:font-semibold font-bold text-center"
             style={{

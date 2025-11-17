@@ -16,7 +16,7 @@ const Offices = () => {
     >
       <img
         src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_10.svg"
-        alt=""
+        alt="ShipX Decorative Background"
         className="absolute translate-x-[36vw] -translate-y-[18vw] w-[200vw] md:h-[43vw] h-[83vw] pointer-events-none select-none -z-10"
         aria-hidden="true"
       />

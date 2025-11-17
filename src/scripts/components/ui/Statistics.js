@@ -14,13 +14,13 @@ const Statistics = () => {
     >
       <img
         src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_2.svg"
-        alt=""
+        alt="ShipX Statistics Background Decoration"
         className="absolute -translate-x-[0.01vw] md:-translate-y-[5vw] -translate-y-[50vw] w-[200vw] h-[45vw] pointer-events-none select-none z-0"
         aria-hidden="true"
       />
       <img
         src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_3.svg"
-        alt=""
+        alt="ShipX Statistics Background Decoration"
         className="absolute md:-translate-y-[5.5vw] -translate-y-[40vw] translate-x-[40vw] md:w-[25vw] w-[45vw] md:h-[25vw] h-[45vw] pointer-events-none select-none z-0"
         aria-hidden="true"
       />
@@ -229,13 +229,13 @@ const Statistics = () => {
               </svg>
               {t("statistics_section.badge_1")}
             </h6>
-            <h1 className="md:text-[2vw] text-[6vw] text-[#1A1A1A] md:text-start text-center font-semibold md:leading-[2.5vw] leading-[6.5vw]">
+            <h2 className="md:text-[2vw] text-[6vw] text-[#1A1A1A] md:text-start text-center font-semibold md:leading-[2.5vw] leading-[6.5vw]">
               {t("statistics_section.tagline_1")}&nbsp;
               {i18n.language === "en" ? <br /> : ""}
               {t("statistics_section.tagline_2")}&nbsp;
               {i18n.language === "en" ? <br className="md:block hidden" /> : ""}
               {t("statistics_section.tagline_3")}
-            </h1>
+            </h2>
           </div>
         </div>
       </ParallaxSection>

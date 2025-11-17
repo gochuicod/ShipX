@@ -481,5 +481,37 @@
       "canonical": "https://www.shipx.asia/my/book-a-demo",
       "iframeTitle": "Tempah Demo dengan ShipX"
     }
+  },
+  "seo": {
+    "home_page": {
+      "title": "ShipX – Logistik E-Dagang & Penghantaran Antarabangsa Rentas Sempadan",
+      "description": "ShipX menawarkan perkhidmatan logistik e-dagang rentas sempadan yang pantas, selamat dan menjimatkan untuk jenama ASEAN berkembang ke pasaran global. Menyokong penghantaran ASEAN ke AS, pematuhan kastam dan fulfillment 3PL.",
+      "canonical": "https://shipx.asia",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "blog_page": {
+      "title": "ShipX Blog – Panduan Logistik E-Dagang & Wawasan Penghantaran Rentas Sempadan",
+      "description": "Dapatkan panduan tentang logistik e-dagang, penghantaran rentas sempadan, kastam, fulfillment antarabangsa dan strategi pengembangan global untuk jenama Asia Tenggara.",
+      "canonical": "https://shipx.asia/my/blog",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "book_a_demo_page": {
+      "title": "Tempah Demo – Logistik E-Dagang & Penghantaran Rentas Sempadan ASEAN-AS ShipX",
+      "description": "Tempah sesi demo untuk mengetahui bagaimana ShipX menyokong penghantaran antarabangsa, fulfillment 3PL, logistik e-dagang dan penyertaan pasaran AS.",
+      "canonical": "https://shipx.asia/my/book-a-demo",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "privacy_policy_page": {
+      "title": "Dasar Privasi ShipX – Perlindungan Data untuk Logistik & Penghantaran Antarabangsa",
+      "description": "Ketahui cara ShipX melindungi data anda ketika penghantaran rentas sempadan, fulfillment, logistik e-dagang serta perkhidmatan platform.",
+      "canonical": "https://shipx.asia/my/privacy-policy",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "terms_and_conditions_page": {
+      "title": "Terma & Syarat ShipX – Polisi Perkhidmatan Logistik & Penghantaran Antarabangsa",
+      "description": "Semak terma penggunaan, polisi perkhidmatan dan garis panduan penghantaran antarabangsa di platform ShipX.",
+      "canonical": "https://shipx.asia/my/terms-and-conditions",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    }
   }
 }

@@ -169,7 +169,7 @@ const FreightAndCustoms = () => {
               <img
                 className="md:w-[20vw] w-[80vw] md:h-[14vw] h-[50vw] rounded-[2vw] shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)]"
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_img_5.webp"
-                alt="Freight Section - Freight & Customs"
+                alt="ShipX - Freight Section - Freight & Customs"
               />
               {/* Collapsible Area */}
               <div className="md:hidden flex flex-col justify-start items-start w-full mt-[1vw]">
@@ -358,7 +358,7 @@ const FreightAndCustoms = () => {
               <img
                 className="md:w-[20vw] w-[80vw] md:h-[14vw] h-[50vw] rounded-[2vw] shadow-[0_0.5vw_1vw_rgba(79,55,138,0.075)]"
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_img_6.webp"
-                alt="Freight Section - Customs & Fulfillment Solutions"
+                alt="ShipX - Freight Section - Customs & Fulfillment Solutions"
               />
               <div className="flex flex-col">
                 <span className="flex flex-row md:gap-x-[0.5vw] gap-x-[1.5vw] items-center md:text-[0.8vw] text-[2.5vw] text-[#4F378A] font-semibold bg-transparent md:rounded-[0.5vw] rounded-[1vw] md:px-[0.5vw] px-0 md:py-[0.2vw] py-[0.5vw]">

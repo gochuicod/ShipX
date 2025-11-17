@@ -13,13 +13,13 @@ const ContactUs = () => {
     >
       <img
         src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_7.svg"
-        alt=""
+        alt="ShipX Contact Us Background"
         className="absolute md:-translate-y-[5vw] -translate-y-[35vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none -z-10"
         aria-hidden="true"
       />
       <img
         src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_7.svg"
-        alt=""
+        alt="ShipX Contact Us Background Accent"
         className="absolute translate-x-[30vw] md:translate-y-[10vw] -translate-y-[15vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none opacity-20 -z-10"
         aria-hidden="true"
       />
@@ -27,7 +27,7 @@ const ContactUs = () => {
         <div className="relative flex flex-col md:shadow-[0_0.5vw_2vw_rgba(255,0,229,0.15)] shadow-[0_0.5vw_3vw_rgba(255,0,229,0.25)] md:pl-[8vw] pl-[15vw] pr-[8vw] md:py-[4vw] py-[8vw] md:rounded-t-[2vw] rounded-t-[5vw] md:w-[70vw] w-[90vw] bg-white z-10">
           <img
             src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_8.svg"
-            alt=""
+            alt="ShipX Contact Us Background Accent 2"
             className="absolute md:-translate-x-[43vw] -translate-x-[75vw] md:-translate-y-[2vw] translate-y-[5vw] w-[200vw] md:h-[34vw] h-[145vw] pointer-events-none select-none z-0"
             aria-hidden="true"
           />

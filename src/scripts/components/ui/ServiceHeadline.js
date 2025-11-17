@@ -27,7 +27,7 @@ const ServiceHeadline = () => {
                 loading="lazy"
                 className="shadow-[0_0_1vw_rgba(79,55,138,0.15)] md:rounded-[1.5vw] rounded-[3.5vw]"
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx_blog_post_2_cover_img_v4.webp"
-                alt="ShipX Goes Live"
+                alt="ShipX - Empowering ASEAN SMEs in Cross-Border Trade"
               />
             </div>
             <div className="flex flex-col md:gap-y-[0.5vw] gap-y-[2vw] md:w-[15vw] w-auto justify-center md:items-start items-center md:pb-0 pb-[5vw]">

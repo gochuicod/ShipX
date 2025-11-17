@@ -78,6 +78,10 @@ const Blog = () => {
           </ol>
         </nav>
 
+        <h1 className="md:text-[3vw] text-[5vw] font-bold text-center md:leading-[3.5vw] leading-[5.5vw]">
+          {post.title}
+        </h1>
+
         <img
           src={
             i18n.language === "vn" && post.cover_vn ? post.cover_vn : post.cover
@@ -91,10 +95,6 @@ const Blog = () => {
           <a href={`mailto:${post.author}`}>{post.author}</a>
           <span className="text-[#FF00E5]">{post.date}</span>
         </div>
-
-        <h1 className="md:text-[3vw] text-[5vw] font-bold text-center md:leading-[3.5vw] leading-[5.5vw]">
-          {post.title}
-        </h1>
 
         <div
           className="md:px-[5vw] px-0 md:text-[1.1vw] text-[3vw] md:leading-[1.6vw] leading-[4.5vw] text-normal text-[#1A1A1A]/80"

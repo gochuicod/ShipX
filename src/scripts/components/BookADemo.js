@@ -23,6 +23,10 @@ const BookADemo = () => {
       />
 
       <div className="w-full md:h-[70vw] h-screen">
+        <h1 className="sr-only">
+          {t("seo.book_a_demo_page.title")}
+        </h1>
+
         {loading && <MultiStepLoader />}
 
         <iframe

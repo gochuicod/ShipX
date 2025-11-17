@@ -481,5 +481,37 @@
       "canonical": "https://www.shipx.asia/vn/book-a-demo",
       "iframeTitle": "Đặt lịch Demo với ShipX"
     }
+  },
+  "seo": {
+    "home_page": {
+      "title": "ShipX – Vận Chuyển Thương Mại Điện Tử Quốc Tế & Logistics Liên Biên Giới | Nền Tảng Thế Hệ Mới ASEAN",
+      "description": "ShipX cung cấp dịch vụ logistics thương mại điện tử, vận chuyển quốc tế và fulfillment nhanh chóng, an toàn và tiết kiệm cho các thương hiệu Đông Nam Á mở rộng ra toàn cầu. Hỗ trợ vận chuyển ASEAN đến Mỹ, thủ tục hải quan và tuân thủ, cùng dịch vụ 3PL chuyên nghiệp.",
+      "canonical": "https://shipx.asia",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "blog_page": {
+      "title": "ShipX Blog – Kiến Thức Logistics Thương Mại Điện Tử & Vận Chuyển Xuyên Biên Giới",
+      "description": "Khám phá kiến thức logistics TMĐT, hướng dẫn vận chuyển xuyên biên giới, fulfillment quốc tế, hải quan và mở rộng kinh doanh toàn cầu dành cho thương hiệu Đông Nam Á.",
+      "canonical": "https://shipx.asia/vn/blog",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "book_a_demo_page": {
+      "title": "Đặt Lịch Demo – ShipX Logistics TMĐT & Vận Chuyển Xuyên Biên Giới ASEAN–Mỹ",
+      "description": "Đặt lịch demo để trải nghiệm nền tảng logistics TMĐT, vận chuyển quốc tế, 3PL fulfillment và giải pháp mở rộng thị trường Hoa Kỳ dành cho thương hiệu Đông Nam Á.",
+      "canonical": "https://shipx.asia/vn/book-a-demo",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "privacy_policy_page": {
+      "title": "Chính Sách Bảo Mật ShipX – Bảo Vệ Dữ Liệu Trong Logistics & Vận Chuyển Quốc Tế",
+      "description": "Tìm hiểu cách ShipX bảo vệ dữ liệu của bạn trong quá trình vận chuyển xuyên biên giới, logistics thương mại điện tử, fulfillment và dịch vụ nền tảng.",
+      "canonical": "https://shipx.asia/vn/privacy-policy",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "terms_and_conditions_page": {
+      "title": "Điều Khoản & Điều Kiện ShipX – Chính Sách Dịch Vụ Logistics & Vận Chuyển Quốc Tế",
+      "description": "Xem chi tiết điều khoản sử dụng, chính sách dịch vụ, quy định vận chuyển quốc tế và trách nhiệm logistics khi sử dụng nền tảng ShipX.",
+      "canonical": "https://shipx.asia/vn/terms-and-conditions",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    }
   }
 }

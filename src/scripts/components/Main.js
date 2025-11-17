@@ -1,4 +1,5 @@
 import { lazy } from "react";
+import { useTranslation } from "react-i18next";
 const Carousel = lazy(() => import("./ui/CarouselNav"));
 const MessengerButton = lazy(() => import("./ui/MessengerButton"));
 const ServiceHeadline = lazy(() => import("./ui/ServiceHeadline"));
@@ -13,13 +14,15 @@ const ContactUs = lazy(() => import("./ui/ContactUs"));
 const SEO = lazy(() => import("./ui/SEO"));
 
 const Main = ({ margin }) => {
+  const { t } = useTranslation();
+
   return (
     <>
       <SEO
-        title="ShipX - ASEAN's Next Generation Platform"
-        description="Enter And Scale In The U.S. Market With Custom Logistics Solutions Built To Support Sellers From Launch To Nationwide Expansion"
-        canonical="https://shipx.asia"
-        ogImage="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+        title={t("seo.home_page.title")}
+        description={t("seo.home_page.description")}
+        canonical={t("seo.home_page.canonical")}
+        ogImage={t("seo.home_page.ogImage")}
       />
 
       <div className="relative overflow-hidden">

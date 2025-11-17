@@ -59,7 +59,7 @@ const SGAmiloCards = () => {
             <div className="flex justify-center items-center">
               <img
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_14.svg"
-                alt="Amilo Logo"
+                alt="ShipX - Amilo Logo"
                 className="md:h-[4vw] h-[15vw] md:w-[12vw] w-[30vw]"
               />
             </div>
@@ -96,7 +96,7 @@ const SGAmiloCards = () => {
                 </span>
                 <img
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/header_svg_2.svg"
-                  alt="Amilo Logo"
+                  alt="ShipX - Amilo Logo"
                   className="md:h-[1vw] h-[4vw] md:w-[4vw] w-[10vw]"
                 />
               </div>
@@ -190,7 +190,7 @@ const SGAmiloCards = () => {
             <div className="flex justify-center items-center">
               <img
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_15.svg"
-                alt="Amilo Logo"
+                alt="ShipX - Amilo Logo"
                 className="md:h-[4vw] h-[15vw] md:w-[12vw] w-[30vw]"
               />
             </div>
@@ -225,7 +225,7 @@ const SGAmiloCards = () => {
                 </span>
                 <img
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/header_svg_1.svg"
-                  alt="Amilo Logo"
+                  alt="ShipX - Amilo Logo"
                   className="md:h-[1vw] h-[4vw] md:w-[4vw] w-[10vw]"
                 />
               </div>

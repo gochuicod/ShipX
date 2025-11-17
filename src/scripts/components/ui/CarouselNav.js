@@ -42,7 +42,7 @@ export default function CarouselNav() {
       <Carousel
         style={{ height }}
         autoplay={true}
-        autoplayDelay={10000}
+        autoplayDelay={20000}
         loop={true}
         transition={{ duration: 1 }}
         className="w-screen rounded-none md:pb-[1vw] pb-[10vw] lg:mt-0 md:mt-[5vw] mt-0"
@@ -131,18 +131,23 @@ export default function CarouselNav() {
           <div className="relative flex md:flex-row flex-col-reverse md:gap-y-0 items-center md:pt-0 pt-[10vw] lg:min-h-[75vh] md:min-h-fit min-h-fit bg-white md:px-[10vw] px-[10vw]">
             <div className="md:flex-1 flex flex-col md:w-[55%] w-full">
               {/* Tagline */}
-              <div
+              {/* Visually hidden H1 for SEO */}
+              <h1 className="sr-only">
+                {t("seo.home_page.title")}
+              </h1>
+
+              <h1
                 className="flex flex-row bg-[#F9F5FF] w-fit select-none rounded-full md:pl-[0.3vw] pl-[0.7vw] md:pr-[0.45vw] pr-[2vw] md:py-[0.2vw] py-[0.5vw] md:text-[0.6vw] text-[2.5vw] items-center font-semibold text-[#6941C6]"
                 style={{
                   fontFamily: "Inter, system-ui, -apple-system, sans-serif",
                 }}
               >
-                <h1 className="bg-white md:px-[0.5vw] px-[1.5vw] md:py-[0.05vw] py-[0.5vw] rounded-full border border-[#E9D7FE]">
+                <span className="bg-white md:px-[0.5vw] px-[1.5vw] md:py-[0.05vw] py-[0.5vw] rounded-full border border-[#E9D7FE]">
                   {t("hero_section.slide_1.badge_1")}
-                </h1>
-                <h2 className="md:pl-[0.5vw] pl-[1vw] md:pr-[0.5vw] pr-[1vw]">
+                </span>
+                <span className="md:pl-[0.5vw] pl-[1vw] md:pr-[0.5vw] pr-[1vw]">
                   {t("hero_section.slide_1.badge_2")}
-                </h2>
+                </span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -157,11 +162,11 @@ export default function CarouselNav() {
                     d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
                   />
                 </svg>
-              </div>
+              </h1>
 
               {/* Headline */}
               <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[5vw] select-none mt-0">
-                <h1
+                <span
                   className="text-[#1A1A1A] font-extrabold md:text-[3.7vw] text-[10vw] md:leading-[4.2vw] leading-[10.5vw]"
                   style={{
                     fontFamily: "Karla, system-ui, -apple-system, sans-serif",
@@ -177,7 +182,7 @@ export default function CarouselNav() {
                   <p className="inline text-[#FF00E5] font-black">
                     {t("hero_section.slide_1.header_3")}
                   </p>
-                </h1>
+                </span>
                 <p
                   className="text-[#63666D] md:text-[0.8vw] text-[2.5vw] font-medium opacity-80"
                   style={{
@@ -274,7 +279,7 @@ export default function CarouselNav() {
                 fetchpriority="high"
                 decoding="async"
                 loading="eager"
-                alt="Main SVG 1"
+                alt="ShipX - Main SVG 1"
               />
             </div>
           </div>
@@ -298,7 +303,7 @@ export default function CarouselNav() {
                 <img
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_logo_4.webp"
                   loading="lazy"
-                  alt="scrolling"
+                  alt="ShipX - scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
 
@@ -306,7 +311,7 @@ export default function CarouselNav() {
                 <img
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_logo_4.webp"
                   loading="lazy"
-                  alt="scrolling"
+                  alt="ShipX - scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
               </div>
@@ -335,7 +340,7 @@ export default function CarouselNav() {
                 <img
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_logo_5.webp"
                   loading="lazy"
-                  alt="scrolling"
+                  alt="ShipX - scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
 
@@ -343,7 +348,7 @@ export default function CarouselNav() {
                 <img
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_logo_5.webp"
                   loading="lazy"
-                  alt="scrolling"
+                  alt="ShipX - scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
               </div>
@@ -378,12 +383,12 @@ export default function CarouselNav() {
                   fontFamily: "Inter, system-ui, -apple-system, sans-serif",
                 }}
               >
-                <h1 className="bg-white md:px-[0.5vw] px-[1.5vw] md:py-[0.05vw] py-[0.5vw] rounded-full border border-[#E9D7FE]">
+                <span className="bg-white md:px-[0.5vw] px-[1.5vw] md:py-[0.05vw] py-[0.5vw] rounded-full border border-[#E9D7FE]">
                   {t("hero_section.slide_2.badge_1")}
-                </h1>
-                <h2 className="md:pl-[0.5vw] pl-[1vw] md:pr-[0.5vw] pr-[1vw]">
+                </span>
+                <span className="md:pl-[0.5vw] pl-[1vw] md:pr-[0.5vw] pr-[1vw]">
                   {t("hero_section.slide_2.badge_2")}
-                </h2>
+                </span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -402,7 +407,7 @@ export default function CarouselNav() {
 
               {/* Headline */}
               <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[5vw] select-none mt-0">
-                <h1
+                <span
                   className="text-[#1A1A1A] font-extrabold md:text-[3.8vw] text-[10vw] md:leading-[4.3vw] leading-[10.5vw]"
                   style={{
                     fontFamily: "Karla, system-ui, -apple-system, sans-serif",
@@ -414,7 +419,7 @@ export default function CarouselNav() {
                     {t("hero_section.slide_2.header_2")}
                   </p>{" "}
                   {t("hero_section.slide_2.header_3")}
-                </h1>
+                </span>
                 <p
                   className="text-[#63666D] md:text-[0.8vw] text-[2.5vw] font-medium opacity-80"
                   style={{
@@ -508,7 +513,7 @@ export default function CarouselNav() {
               <img
                 className="md:w-fit w-full md:h-[35vw] h-[35vh] md:p-0 pb-0"
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_11.webp"
-                alt="Main SVG 11"
+                alt="ShipX - Main SVG 11"
               />
             </div>
           </div>
@@ -532,7 +537,7 @@ export default function CarouselNav() {
                 <img
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_logo_6.webp"
                   loading="lazy"
-                  alt="scrolling"
+                  alt="ShipX - scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
 
@@ -540,7 +545,7 @@ export default function CarouselNav() {
                 <img
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_logo_6.webp"
                   loading="lazy"
-                  alt="scrolling"
+                  alt="ShipX - scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
               </div>
@@ -569,7 +574,7 @@ export default function CarouselNav() {
                 <img
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_logo_7.webp"
                   loading="lazy"
-                  alt="scrolling"
+                  alt="ShipX - scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
 
@@ -577,7 +582,7 @@ export default function CarouselNav() {
                 <img
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_logo_7.webp"
                   loading="lazy"
-                  alt="scrolling"
+                  alt="ShipX - scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
               </div>
@@ -612,12 +617,12 @@ export default function CarouselNav() {
                   fontFamily: "Inter, system-ui, -apple-system, sans-serif",
                 }}
               >
-                <h1 className="bg-white md:px-[0.5vw] px-[1.5vw] md:py-[0.05vw] py-[0.5vw] rounded-full border border-[#E9D7FE]">
+                <span className="bg-white md:px-[0.5vw] px-[1.5vw] md:py-[0.05vw] py-[0.5vw] rounded-full border border-[#E9D7FE]">
                   {t("hero_section.slide_3.badge_1")}
-                </h1>
-                <h2 className="md:pl-[0.5vw] pl-[1vw] md:pr-[0.5vw] pr-[1vw]">
+                </span>
+                <span className="md:pl-[0.5vw] pl-[1vw] md:pr-[0.5vw] pr-[1vw]">
                   {t("hero_section.slide_3.badge_2")}
-                </h2>
+                </span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -636,7 +641,7 @@ export default function CarouselNav() {
 
               {/* Headline */}
               <div className="flex flex-col md:gap-y-[1.5vw] gap-y-[5vw] select-none mt-0">
-                <h1
+                <span
                   className="text-[#1A1A1A] font-extrabold md:text-[3.8vw] text-[10vw] md:leading-[4.3vw] leading-[10.5vw]"
                   style={{
                     fontFamily: "Karla, system-ui, -apple-system, sans-serif",
@@ -653,7 +658,7 @@ export default function CarouselNav() {
                     {t("hero_section.slide_3.header_3")}
                   </p>{" "}
                   {t("hero_section.slide_3.header_4")}
-                </h1>
+                </span>
                 <p
                   className="text-[#63666D] md:text-[0.8vw] text-[2.5vw] font-medium opacity-80"
                   style={{
@@ -747,7 +752,7 @@ export default function CarouselNav() {
               <img
                 className="md:w-fit w-full md:h-[35vw] h-[35vh] md:p-0 pb-0"
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_12.webp"
-                alt="Main SVG 12"
+                alt="ShipX - Main SVG 12"
               />
             </div>
           </div>
@@ -771,7 +776,7 @@ export default function CarouselNav() {
                 <img
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_logo_8.webp"
                   loading="lazy"
-                  alt="scrolling"
+                  alt="ShipX - scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
 
@@ -779,7 +784,7 @@ export default function CarouselNav() {
                 <img
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_logo_8.webp"
                   loading="lazy"
-                  alt="scrolling"
+                  alt="ShipX - scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
               </div>
@@ -808,7 +813,7 @@ export default function CarouselNav() {
                 <img
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_logo_9.webp"
                   loading="lazy"
-                  alt="scrolling"
+                  alt="ShipX - scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
 
@@ -816,7 +821,7 @@ export default function CarouselNav() {
                 <img
                   src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_logo_9.webp"
                   loading="lazy"
-                  alt="scrolling"
+                  alt="ShipX - scrolling"
                   className="md:h-[3vw] h-[7.5vw] object-contain"
                 />
               </div>

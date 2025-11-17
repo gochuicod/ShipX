@@ -481,5 +481,37 @@
       "canonical": "https://www.shipx.asia/book-a-demo",
       "iframeTitle": "Book a Demo with ShipX"
     }
+  },
+  "seo": {
+    "home_page": {
+      "title": "ShipX – E-Commerce Logistics, Cross-Border Shipping & Fulfillment | ASEAN’s Next Generation Platform",
+      "description": "ShipX provides fast and reliable cross-border e-commerce logistics, international shipping, and fulfillment solutions for Southeast Asia brands. We support ASEAN-to-U.S. shipping, customs and compliance, warehouse fulfillment, and global expansion for online sellers.",
+      "canonical": "https://shipx.asia",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "blog_page": {
+      "title": "ShipX Blog – Cross-Border Shipping Insights & E-Commerce Logistics Guides",
+      "description": "Explore expert insights on cross-border shipping, Southeast Asia e-commerce logistics, international fulfillment, customs compliance, and global expansion strategies from the ShipX team.",
+      "canonical": "https://shipx.asia/blog",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "book_a_demo_page": {
+      "title": "Book a Demo – ShipX Cross-Border E-Commerce Logistics & ASEAN-to-U.S. Shipping",
+      "description": "Schedule a live demo with ShipX to discover how our cross-border e-commerce logistics, international shipping, 3PL fulfillment, and U.S.-market expansion support can help your brand grow.",
+      "canonical": "https://shipx.asia/book-a-demo",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "privacy_policy_page": {
+      "title": "ShipX Privacy Policy – Data Protection for Cross-Border Logistics & E-Commerce Services",
+      "description": "Learn how ShipX protects your data across cross-border shipping, e-commerce logistics, fulfillment, and platform services. Read our full privacy policy for transparency and compliance.",
+      "canonical": "https://shipx.asia/privacy-policy",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "terms_and_conditions_page": {
+      "title": "ShipX Terms and Conditions – Cross-Border Shipping & E-Commerce Logistics Service Policies",
+      "description": "Review the official ShipX terms and conditions, service usage policies, logistics responsibilities, international shipping guidelines, and platform agreements.",
+      "canonical": "https://shipx.asia/terms-and-conditions",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    }
   }
 }

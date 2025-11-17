@@ -12,23 +12,27 @@ const BlogList = () => {
   return (
     <>
       <SEO
-        title="ShipX - Blog"
-        description="Welcome to ShipX's Blog Posts Page!"
-        canonical="https://shipx.asia/blog"
-        ogImage="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+        title={t("seo.blog_page.title")}
+        description={t("seo.blog_page.description")}
+        canonical={t("seo.blog_page.canonical")}
+        ogImage={t("seo.blog_page.ogImage")}
       />
 
       <div
         className="flex flex-col md:gap-y-[2vw] gap-y-[4vw] md:px-[8vw] px-[10vw] md:py-[5vw] py-[10vw]"
         style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
       >
+        <h1 className="sr-only">
+          {t("seo.blog_page.title")}
+        </h1>
+        
         <h1 className="md:text-[2vw] text-[6vw] font-bold">
           {t("service_headline_section.blog_page_heading")}
         </h1>
 
         {blogs.length > 0 ? (
           <div className="flex flex-wrap gap-x-[3vw] gap-y-[5vw]">
-            {blogs.map((post) => (
+            {blogs.slice().reverse().map((post) => (
               <SmartNavLink
                 to={`/blog/${post.slug}`}
                 key={post.slug}

@@ -481,5 +481,37 @@
       "canonical": "https://www.shipx.asia/ind/book-a-demo",
       "iframeTitle": "Jadwalkan Demo dengan ShipX"
     }
+  },
+  "seo": {
+    "home_page": {
+      "title": "ShipX – Logistik E-Commerce & Pengiriman Internasional Lintas Batas",
+      "description": "ShipX menyediakan layanan logistik e-commerce lintas batas cepat, aman, dan terjangkau untuk merek Asia Tenggara yang ingin ekspansi ke global. Mendukung pengiriman ASEAN ke AS, kepatuhan bea cukai, dan layanan fulfillment 3PL.",
+      "canonical": "https://shipx.asia",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "blog_page": {
+      "title": "ShipX Blog – Wawasan Pengiriman Lintas Negara & Panduan Logistik E-Commerce",
+      "description": "Pelajari wawasan logistik e-commerce, pengiriman lintas negara, bea cukai, fulfillment internasional, dan strategi ekspansi global untuk brand Asia Tenggara.",
+      "canonical": "https://shipx.asia/ind/blog",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "book_a_demo_page": {
+      "title": "Jadwalkan Demo – ShipX Logistik E-Commerce & Pengiriman Lintas Negara ASEAN-AS",
+      "description": "Jadwalkan demo untuk melihat bagaimana ShipX membantu pengiriman internasional, logistik e-commerce, fulfillment 3PL, dan ekspansi pasar AS untuk brand Asia Tenggara.",
+      "canonical": "https://shipx.asia/ind/book-a-demo",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "privacy_policy_page": {
+      "title": "Kebijakan Privasi ShipX – Perlindungan Data untuk Pengiriman & Logistik Internasional",
+      "description": "Pelajari bagaimana ShipX melindungi data Anda dalam pengiriman lintas negara, logistik e-commerce, fulfillment, dan layanan platform.",
+      "canonical": "https://shipx.asia/ind/privacy-policy",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "terms_and_conditions_page": {
+      "title": "Syarat & Ketentuan ShipX – Kebijakan Layanan Logistik & Pengiriman Internasional",
+      "description": "Baca syarat layanan, ketentuan penggunaan, kebijakan pengiriman internasional, dan tanggung jawab logistik di platform ShipX.",
+      "canonical": "https://shipx.asia/ind/terms-and-conditions",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    }
   }
 }

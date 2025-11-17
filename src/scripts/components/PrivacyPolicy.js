@@ -15,14 +15,17 @@ const PrivacyPolicy = () => {
   return (
     <>
       <SEO
-        title="ShipX - Privacy Policy"
-        description="Welcome to ShipX's Privacy Policy Page!"
-        canonical="https://shipx.asia/privacy-policy"
-        ogImage="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+        title={t("seo.privacy_policy_page.title")}
+        description={t("seo.privacy_policy_page.description")}
+        canonical={t("seo.privacy_policy_page.canonical")}
+        ogImage={t("seo.privacy_policy_page.ogImage")}
       />
 
       <div className={`flex flex-col justify-center items-center ${margin}`}>
         <div className="flex flex-col justify-center items-center md:py-[5vw] py-[10vw]">
+          <h1 className="sr-only">
+            {t("seo.privacy_policy_page.title")}
+          </h1>
           <span
             className="text-[#FF00E5] md:text-[5vw] text-[7vw] md:font-semibold font-bold text-center"
             style={{
