@@ -132,9 +132,7 @@ export default function CarouselNav() {
             <div className="md:flex-1 flex flex-col md:w-[55%] w-full">
               {/* Tagline */}
               {/* Visually hidden H1 for SEO */}
-              <h1 className="sr-only">
-                {t("seo.home_page.title")}
-              </h1>
+              <h1 className="sr-only">{t("seo.home_page.title")}</h1>
 
               <h1
                 className="flex flex-row bg-[#F9F5FF] w-fit select-none rounded-full md:pl-[0.3vw] pl-[0.7vw] md:pr-[0.45vw] pr-[2vw] md:py-[0.2vw] py-[0.5vw] md:text-[0.6vw] text-[2.5vw] items-center font-semibold text-[#6941C6]"

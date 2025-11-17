@@ -22,43 +22,44 @@ const BlogList = () => {
         className="flex flex-col md:gap-y-[2vw] gap-y-[4vw] md:px-[8vw] px-[10vw] md:py-[5vw] py-[10vw]"
         style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
       >
-        <h1 className="sr-only">
-          {t("seo.blog_page.title")}
-        </h1>
-        
+        <h1 className="sr-only">{t("seo.blog_page.title")}</h1>
+
         <h1 className="md:text-[2vw] text-[6vw] font-bold">
           {t("service_headline_section.blog_page_heading")}
         </h1>
 
         {blogs.length > 0 ? (
           <div className="flex flex-wrap gap-x-[3vw] gap-y-[5vw]">
-            {blogs.slice().reverse().map((post) => (
-              <SmartNavLink
-                to={`/blog/${post.slug}`}
-                key={post.slug}
-                className="flex flex-col md:rounded-[2vw] rounded-[3vw] overflow-hidden shadow-[0_0vw_1vw_rgba(79,55,138,0.15)] hover:shadow-[0_0vw_1vw_rgba(79,55,138,0.3)] transition md:w-[35vw] w-full"
-              >
-                <img
-                  src={post.cover}
-                  alt={post.title}
-                  className="w-full md:h-[20vw] h-full object-cover"
-                  loading="lazy"
-                />
-                <div className="md:p-[2vw] p-[4vw]">
-                  <h2 className="md:text-[1.5vw] text-[5vw] md:leading-[2vw] leading-[5.5vw] font-bold md:pb-[0.5vw] pb-[1.5vw]">
-                    {post.title}
-                  </h2>
-                  {post.content && (
-                    <p className="text-[#1A1A1A]/80 md:text-[1vw] text-[3vw] truncate">
-                      {post.content.slice(3)}...
+            {blogs
+              .slice()
+              .reverse()
+              .map((post) => (
+                <SmartNavLink
+                  to={`/blog/${post.slug}`}
+                  key={post.slug}
+                  className="flex flex-col md:rounded-[2vw] rounded-[3vw] overflow-hidden shadow-[0_0vw_1vw_rgba(79,55,138,0.15)] hover:shadow-[0_0vw_1vw_rgba(79,55,138,0.3)] transition md:w-[35vw] w-full"
+                >
+                  <img
+                    src={post.cover}
+                    alt={post.title}
+                    className="w-full md:h-[20vw] h-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="md:p-[2vw] p-[4vw]">
+                    <h2 className="md:text-[1.5vw] text-[5vw] md:leading-[2vw] leading-[5.5vw] font-bold md:pb-[0.5vw] pb-[1.5vw]">
+                      {post.title}
+                    </h2>
+                    {post.content && (
+                      <p className="text-[#1A1A1A]/80 md:text-[1vw] text-[3vw] truncate">
+                        {post.content.slice(3)}...
+                      </p>
+                    )}
+                    <p className="text-[#1A1A1A]/50 md:text-[0.8vw] text-[2.5vw] mt-2">
+                      {post.date}
                     </p>
-                  )}
-                  <p className="text-[#1A1A1A]/50 md:text-[0.8vw] text-[2.5vw] mt-2">
-                    {post.date}
-                  </p>
-                </div>
-              </SmartNavLink>
-            ))}
+                  </div>
+                </SmartNavLink>
+              ))}
           </div>
         ) : (
           <p>No blog posts found.</p>

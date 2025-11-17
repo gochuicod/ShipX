@@ -16,16 +16,14 @@ const BookADemo = () => {
   return (
     <>
       <SEO
-        title={t("book_a_demo_page.seo.title")}
-        description={t("book_a_demo_page.seo.description")}
-        canonical={t("book_a_demo_page.seo.canonical")}
+        title={t("seo.book_a_demo_page.title")}
+        description={t("seo.book_a_demo_page.description")}
+        canonical={t("seo.book_a_demo_page.canonical")}
         ogImage="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
       />
 
       <div className="w-full md:h-[70vw] h-screen">
-        <h1 className="sr-only">
-          {t("seo.book_a_demo_page.title")}
-        </h1>
+        <h1 className="sr-only">{t("seo.book_a_demo_page.title")}</h1>
 
         {loading && <MultiStepLoader />}
 

@@ -23,9 +23,7 @@ const PrivacyPolicy = () => {
 
       <div className={`flex flex-col justify-center items-center ${margin}`}>
         <div className="flex flex-col justify-center items-center md:py-[5vw] py-[10vw]">
-          <h1 className="sr-only">
-            {t("seo.privacy_policy_page.title")}
-          </h1>
+          <h1 className="sr-only">{t("seo.privacy_policy_page.title")}</h1>
           <span
             className="text-[#FF00E5] md:text-[5vw] text-[7vw] md:font-semibold font-bold text-center"
             style={{
