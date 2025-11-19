@@ -95,3 +95,31 @@ export const languages = [
     key: "thai",
   },
 ];
+
+export const hreflang = [
+  {
+    id: 1,
+    name: "EN",
+    key: "en",
+  },
+  {
+    id: 2,
+    name: "VN",
+    key: "vi-VN",
+  },
+  {
+    id: 3,
+    name: "MY",
+    key: "my-MY",
+  },
+  {
+    id: 4,
+    name: "ID",
+    key: "id-ID",
+  },
+  {
+    id: 5,
+    name: "TH",
+    key: "th-TH",
+  },
+];

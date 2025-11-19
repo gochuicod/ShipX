@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
-import { languages } from "../../utils/constants";
+import { hreflang } from "../../utils/constants";
 
 const SEO = ({
   title,
@@ -35,7 +35,7 @@ const SEO = ({
       <meta name="twitter:description" content={description} />
       {ogImage && <meta name="twitter:image" content={ogImage} />}
 
-      {languages.map((lang) => {
+      {hreflang.map((lang) => {
         if (lang.key === "en") return null;
 
         const href = `${baseUrl}/${lang.key}${currentPath.replace(/^\/+/, "")}`;
