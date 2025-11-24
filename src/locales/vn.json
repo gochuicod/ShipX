@@ -513,5 +513,61 @@
       "canonical": "https://shipx.asia/vn/terms-and-conditions",
       "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
     }
+  },
+  "faq_section": {
+    "badge": "Câu Hỏi Thường Gặp",
+    "title": "Mọi Điều Bạn Cần Biết",
+    "items": [
+      {
+        "id": "shipping_costs",
+        "question": "Làm thế nào để giảm chi phí vận chuyển quốc tế với ShipX?",
+        "answer": "ShipX tối ưu hóa vận chuyển quốc tế cho các thương hiệu ASEAN và người bán thương mại điện tử Đông Nam Á. Chúng tôi đảm bảo giá cả cạnh tranh và quy trình hoàn tất đơn hàng xuyên biên giới suôn sẻ từ ASEAN đến Hoa Kỳ."
+      },
+      {
+        "id": "transit_times",
+        "question": "Thời gian vận chuyển thông thường cho các lô hàng quốc tế là bao lâu?",
+        "answer": "Vận chuyển Nhanh (Express) thường mất 3-5 ngày làm việc, trong khi Tiết kiệm (Economy) mất 7-14 ngày. Sử dụng công cụ tính cước của chúng tôi để có ước tính chính xác và lên kế hoạch mở rộng toàn cầu dễ dàng."
+      },
+      {
+        "id": "rates_fees",
+        "question": "Cước phí vận chuyển được tính như thế nào và có phí ẩn không?",
+        "answer": "Cước phí phụ thuộc vào trọng lượng, kích thước, điểm đến và tốc độ. ShipX cam kết giá cả minh bạch 100%—không có phí ẩn—giúp bạn quản lý sự phức tạp của việc vận chuyển một cách tự tin."
+      },
+      {
+        "id": "customs_clearance",
+        "question": "ShipX có xử lý thủ tục hải quan và chứng từ nhập khẩu không?",
+        "answer": "Có. Chúng tôi xử lý hải quan và tuân thủ quy định, chứng từ nhập khẩu và thông quan, đảm bảo hàng hóa xuyên biên giới của bạn đến thị trường Hoa Kỳ mà không bị chậm trễ."
+      },
+      {
+        "id": "door_to_door",
+        "question": "Bạn có cung cấp dịch vụ giao hàng tận nơi (door-to-door) cho đơn hàng quốc tế không?",
+        "answer": "Chắc chắn rồi. ShipX quản lý giao hàng từ đầu đến cuối, từ kho của bạn đến tận cửa khách hàng, biến chúng tôi thành đối tác 3PL lý tưởng cho các thương hiệu ASEAN."
+      },
+      {
+        "id": "specialized_freight",
+        "question": "ShipX có thể xử lý hàng hóa đặc biệt (dễ vỡ, hàng rời hoặc hàng nhạy cảm) không?",
+        "answer": "Có. Dù là bưu kiện dễ vỡ hay hàng rời, mạng lưới của chúng tôi xử lý an toàn các lô hàng đặc biệt cho logistics thương mại điện tử và hoàn tất đơn hàng xuyên biên giới."
+      },
+      {
+        "id": "tracking",
+        "question": "Làm thế nào để tôi theo dõi lô hàng của mình trong thời gian thực?",
+        "answer": "Theo dõi mọi bưu kiện 24/7 thông qua cổng thông tin của chúng tôi. Khả năng hiển thị đầy đủ đảm bảo vận chuyển quốc tế suôn sẻ cho bạn và khách hàng của bạn."
+      },
+      {
+        "id": "integrations",
+        "question": "ShipX có tích hợp với các nền tảng như Shopify hoặc WooCommerce không?",
+        "answer": "Có. API của chúng tôi kết nối cửa hàng của bạn với ShipX, tự động hóa đơn đặt hàng, nhãn dán và theo dõi—hoàn hảo cho các thương hiệu ASEAN đang mở rộng quy mô toàn cầu."
+      },
+      {
+        "id": "service_zones",
+        "question": "ShipX hiện đang phục vụ những quốc gia hoặc khu vực nào?",
+        "answer": "Chúng tôi tập trung vào logistics từ ASEAN đến Hoa Kỳ, hỗ trợ người bán thương mại điện tử Đông Nam Á mở rộng toàn cầu. Truy cập trang \"Điểm đến\" của chúng tôi để biết chi tiết."
+      },
+      {
+        "id": "get_started",
+        "question": "Làm thế nào để bắt đầu hoặc yêu cầu báo giá?",
+        "answer": "Đăng ký để nhận báo giá ngay lập tức hoặc liên hệ với đội ngũ bán hàng của chúng tôi để có giải pháp logistics phù hợp. ShipX là đối tác tăng trưởng thương mại điện tử và chuyên gia 3PL của bạn cho các thương hiệu ASEAN thâm nhập thị trường Hoa Kỳ."
+      }
+    ]
   }
 }
