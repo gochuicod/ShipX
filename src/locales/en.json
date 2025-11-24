@@ -513,5 +513,61 @@
       "canonical": "https://shipx.asia/terms-and-conditions",
       "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
     }
+  },
+  "faq_section": {
+      "badge": "Frequently Asked Questions",
+      "title": "Everything You Need to Know",
+      "items": [
+        {
+          "id": "shipping_costs",
+          "question": "How can I lower my international shipping costs with ShipX?",
+          "answer": "ShipX optimizes international shipping for ASEAN brands and Southeast Asia e-commerce sellers. We ensure competitive rates and smooth cross-border fulfillment from ASEAN to the U.S."
+        },
+        {
+          "id": "transit_times",
+          "question": "What are the typical transit times for international shipments?",
+          "answer": "Express shipments usually take 3-5 business days, while Economy takes 7-14 days. Use our rate calculator for exact estimates and plan your global expansion with ease."
+        },
+        {
+          "id": "rates_fees",
+          "question": "How are shipping rates calculated, and are there hidden fees?",
+          "answer": "Rates depend on weight, dimensions, destination, and speed. ShipX guarantees 100% transparent pricing—no hidden fees—so you can manage shipping complexities confidently."
+        },
+        {
+          "id": "customs_clearance",
+          "question": "Does ShipX handle customs clearance and import documentation?",
+          "answer": "Yes. We handle customs and compliance, import documentation, and clearance, ensuring your cross-border shipments reach the U.S. market without delays."
+        },
+        {
+          "id": "door_to_door",
+          "question": "Do you offer door-to-door delivery for international orders?",
+          "answer": "Absolutely. ShipX manages end-to-end delivery from your warehouse to customers’ doors, making us the ideal 3PL partner for ASEAN brands."
+        },
+        {
+          "id": "specialized_freight",
+          "question": "Can ShipX handle specialized freight (fragile, bulk, or sensitive)?",
+          "answer": "Yes. Whether fragile parcels or bulk cargo, our network safely handles specialized shipments for e-commerce logistics and cross-border fulfillment."
+        },
+        {
+          "id": "tracking",
+          "question": "How can I track my shipments in real-time?",
+          "answer": "Track every parcel 24/7 via our portal. Full visibility ensures smooth international shipping for you and your customers."
+        },
+        {
+          "id": "integrations",
+          "question": "Does ShipX integrate with platforms like Shopify or WooCommerce?",
+          "answer": "Yes. Our API connects your store to ShipX, automating orders, labels, and tracking—perfect for ASEAN brands scaling globally."
+        },
+        {
+          "id": "service_zones",
+          "question": "Which countries or zones does ShipX currently service?",
+          "answer": "We focus on ASEAN to U.S. logistics, supporting Southeast Asia e-commerce sellers in global expansion. Visit our \"Destinations\" page for details."
+        },
+        {
+          "id": "get_started",
+          "question": "How do I get started or request a quote?",
+          "answer": "Sign up for instant rates or contact our sales team for tailored logistics solutions. ShipX is your e-commerce growth partner and 3PL expert for ASEAN brands entering the U.S. market."
+        }
+      ]
   }
 }

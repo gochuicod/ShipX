@@ -12,6 +12,7 @@ const Offices = lazy(() => import("./ui/Offices"));
 const AnnouncementBanner = lazy(() => import("./ui/AnnouncementBanner"));
 const ContactUs = lazy(() => import("./ui/ContactUs"));
 const SEO = lazy(() => import("./ui/SEO"));
+const FAQSection = lazy(() => import("./ui/FAQSection"));
 
 const Main = ({ margin }) => {
   const { t } = useTranslation();
@@ -40,6 +41,7 @@ const Main = ({ margin }) => {
           <FreightAndCustoms />
           <Offices />
           <AnnouncementBanner />
+          <FAQSection />
           <ContactUs />
         </div>
       </div>

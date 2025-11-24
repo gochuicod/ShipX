@@ -513,5 +513,61 @@
       "canonical": "https://shipx.asia/ind/terms-and-conditions",
       "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
     }
+  },
+  "faq_section": {
+    "badge": "Pertanyaan Umum (FAQ)",
+    "title": "Segala Hal yang Perlu Anda Ketahui",
+    "items": [
+      {
+        "id": "shipping_costs",
+        "question": "Bagaimana cara menekan biaya pengiriman internasional saya dengan ShipX?",
+        "answer": "ShipX mengoptimalkan pengiriman internasional untuk merek ASEAN dan penjual e-commerce Asia Tenggara. Kami memastikan tarif yang kompetitif dan pemenuhan lintas batas yang lancar dari ASEAN ke AS."
+      },
+      {
+        "id": "transit_times",
+        "question": "Berapa lama waktu transit umum untuk pengiriman internasional?",
+        "answer": "Pengiriman Express biasanya memakan waktu 3-5 hari kerja, sedangkan Economy memakan waktu 7-14 hari. Gunakan kalkulator tarif kami untuk estimasi yang tepat dan rencanakan ekspansi global Anda dengan mudah."
+      },
+      {
+        "id": "rates_fees",
+        "question": "Bagaimana tarif pengiriman dihitung, dan apakah ada biaya tersembunyi?",
+        "answer": "Tarif bergantung pada berat, dimensi, tujuan, dan kecepatan. ShipX menjamin harga 100% transparan—tanpa biaya tersembunyi—sehingga Anda dapat mengelola kompleksitas pengiriman dengan percaya diri."
+      },
+      {
+        "id": "customs_clearance",
+        "question": "Apakah ShipX menangani bea cukai dan dokumentasi impor?",
+        "answer": "Ya. Kami menangani bea cukai dan kepatuhan, dokumentasi impor, serta penyelesaian (clearance), memastikan pengiriman lintas batas Anda mencapai pasar AS tanpa penundaan."
+      },
+      {
+        "id": "door_to_door",
+        "question": "Apakah Anda menawarkan pengiriman door-to-door untuk pesanan internasional?",
+        "answer": "Tentu saja. ShipX mengelola pengiriman ujung-ke-ujung (end-to-end) dari gudang Anda hingga ke pintu pelanggan, menjadikan kami mitra 3PL yang ideal untuk merek ASEAN."
+      },
+      {
+        "id": "specialized_freight",
+        "question": "Bisakah ShipX menangani kargo khusus (barang pecah belah, kargo curah, atau sensitif)?",
+        "answer": "Ya. Baik paket pecah belah maupun kargo curah, jaringan kami menangani pengiriman khusus dengan aman untuk logistik e-commerce dan pemenuhan lintas batas."
+      },
+      {
+        "id": "tracking",
+        "question": "Bagaimana cara melacak pengiriman saya secara real-time?",
+        "answer": "Lacak setiap paket 24/7 melalui portal kami. Visibilitas penuh memastikan pengiriman internasional yang lancar bagi Anda dan pelanggan Anda."
+      },
+      {
+        "id": "integrations",
+        "question": "Apakah ShipX terintegrasi dengan platform seperti Shopify atau WooCommerce?",
+        "answer": "Ya. API kami menghubungkan toko Anda ke ShipX, mengotomatiskan pesanan, label, dan pelacakan—sempurna untuk merek ASEAN yang melakukan skala global."
+      },
+      {
+        "id": "service_zones",
+        "question": "Negara atau zona mana yang saat ini dilayani oleh ShipX?",
+        "answer": "Kami fokus pada logistik ASEAN ke AS, mendukung penjual e-commerce Asia Tenggara dalam ekspansi global. Kunjungi halaman \"Destinasi\" kami untuk detailnya."
+      },
+      {
+        "id": "get_started",
+        "question": "Bagaimana cara memulai atau meminta penawaran?",
+        "answer": "Daftar untuk tarif instan atau hubungi tim penjualan kami untuk solusi logistik yang disesuaikan. ShipX adalah mitra pertumbuhan e-commerce dan ahli 3PL Anda untuk merek ASEAN yang memasuki pasar AS."
+      }
+    ]
   }
 }
