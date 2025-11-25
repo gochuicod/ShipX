@@ -15,6 +15,7 @@ const LanguagePrompt = lazy(
   () => import("./scripts/components/ui/LanguagePrompt"),
 );
 import { LenisProvider } from "./scripts/hooks/useLenis";
+import { ShipmentProvider } from "./scripts/hooks/useShipment";
 import { margin } from "./scripts/utils/constants";
 import LanguageRouterListener from "./scripts/utils/languageRouterListener";
 
@@ -27,13 +28,15 @@ const App = () => {
         <GtmLoader />
         <LanguagePrompt />
         <LenisProvider>
-          <ResetOnRefresh paths={["/"]} />
-          <Layout>
-            <LanguageRouterListener />
-            <ScrollToHash />
-            <AppRoutes margin={margin} />
-            <CookieBanner />
-          </Layout>
+          <ShipmentProvider>
+            <ResetOnRefresh paths={["/"]} />
+            <Layout>
+              <LanguageRouterListener />
+              <ScrollToHash />
+              <AppRoutes margin={margin} />
+              <CookieBanner />
+            </Layout>
+          </ShipmentProvider>
         </LenisProvider>
       </BrowserRouter>
     </HelmetProvider>

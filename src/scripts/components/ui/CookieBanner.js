@@ -89,7 +89,7 @@ export default function () {
           <button
             type="button"
             onClick={() => handleConsent("granted")}
-            className="bg-[#4F378A] text-white rounded-full md:px-[0.7vw] px-[3vw] md:py-[0.5vw] py-[1vw] font-medium"
+            className="bg-[#4F378A] text-white rounded-full md:px-[0.7vw] px-[3vw] md:py-[0.5vw] py-[1vw] font-medium cursor-pointer"
           >
             {t("cookies.accept_all")}
           </button>

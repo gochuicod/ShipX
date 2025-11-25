@@ -11,6 +11,9 @@ const BookADemo = lazy(() => import("../components/BookADemo"));
 const BlogList = lazy(() => import("../components/BlogList"));
 const Blog = lazy(() => import("../components/Blog"));
 const NotFound = lazy(() => import("../components/ui/NotFound"));
+const ShipmentTracker = lazy(
+  () => import("../components/shipment_tracker/ShipmentTracker"),
+);
 
 const AppRoutes = ({ margin }) => (
   <Suspense fallback={<MultiStepLoader />}>
@@ -22,6 +25,7 @@ const AppRoutes = ({ margin }) => (
         <Route path="book-a-demo" element={<BookADemo />} />
         <Route path="blog" element={<BlogList />} />
         <Route path="blog/:slug" element={<Blog />} />
+        <Route path="shipment-tracker" element={<ShipmentTracker />} />
       </Route>
 
       <Route path="*" element={<NotFound />} />
