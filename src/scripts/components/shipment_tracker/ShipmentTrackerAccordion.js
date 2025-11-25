@@ -3,48 +3,11 @@ import {
   AccordionHeader,
   AccordionBody,
 } from "@material-tailwind/react";
-import Stepper from "./Stepper";
-import ProgressBar from "./ProgressBar";
-import { getLastStatusCode } from "./StatusMap";
 import { useState } from "react";
-
-export const dummyStatuses = [
-  {
-    statusCode: "SHIPMENT_GENERATED",
-    updatedDate: "2024-04-23T02:44:16.9825863",
-    location: "Manila, Philippines",
-  },
-  {
-    statusCode: "SHIPMENT_PROCESSING_AT_HUB",
-    updatedDate: "2024-04-24T06:41:40.4343359",
-    location: "Manila Hub",
-  },
-  {
-    statusCode: "SHIPMENT_LEFT_SGLINK_ORIGIN_FACILITY",
-    updatedDate: "2024-04-24T09:04:43.9903934",
-    location: "Manila International Sorting Center",
-  },
-  {
-    statusCode: "SHIPMENT_IN_TRANSIT",
-    updatedDate: "2024-04-25T10:12:12.9027972",
-    location: "In Transit – Air Cargo",
-  },
-  {
-    statusCode: "SHIPMENT_RECEIVERED_AT_DESTINATION",
-    updatedDate: "2024-04-28T13:47:41.1102219",
-    location: "Cebu Distribution Hub",
-  },
-  {
-    statusCode: "SHIPMENT_OUT_FOR_DELIVERY",
-    updatedDate: "2024-04-29T08:14:33.4473312",
-    location: "Cebu Delivery Team",
-  },
-  {
-    statusCode: "SHIPMENT_DELIVERED",
-    updatedDate: "2024-04-29T15:22:03.7978069",
-    location: "Recipient Address",
-  },
-];
+import ProgressBar, { getShipmentProgressPercentage } from "./ProgressBar";
+import { getLastStatusLabel, mapStatuses } from "./StatusMap";
+import Stepper from "./Stepper";
+import { useTranslation } from "react-i18next";
 
 export default function ShipmentTrackerAccordion({
   shipmentData = [],
@@ -52,6 +15,10 @@ export default function ShipmentTrackerAccordion({
 }) {
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
   const [open, setOpen] = useState(1);
+  const { t } = useTranslation();
+
+  const steps = mapStatuses(shipmentData?.statuses, t);
+  const lastStatus = getLastStatusLabel(shipmentData?.statuses, t);
 
   return (
     <>
@@ -133,20 +100,21 @@ export default function ShipmentTrackerAccordion({
                 {trackingNumber || "1234567890"}
               </span>
               <span className="text-[#1E2939] text-[0.8vw] font-normal">
-                Tracking Number
+                {t(
+                  "shipment_tracker.shipment_activity_section.accordion_header.tracking_number_label",
+                )}
               </span>
             </div>
             <div className="md:flex flex-col gap-y-0 hidden">
               <span className="text-[#1E2939] text-[1vw] font-bold">
                 {new Date(
-                  shipmentData?.statuses[
-                    shipmentData?.statuses.length - 1
+                  shipmentData?.statuses?.[
+                    shipmentData.statuses.length - 1
                   ]?.updatedDate,
                 ).toLocaleString() || "YYYY/MM/DD, 00:00:00 AM"}
               </span>
               <span className="text-[#1E2939] text-[0.8vw] font-normal">
-                {getLastStatusCode(shipmentData) ||
-                  "No shipment information available"}
+                {lastStatus || "null"}
               </span>
             </div>
 
@@ -186,14 +154,15 @@ export default function ShipmentTrackerAccordion({
                   font-medium
                 "
               >
-                {
-                  "Last Updated Date: YYYY/MM/DD, 00:00:00 AM"
-                  /* {new Date(
-                    shipmentData?.statuses[
-                      shipmentData?.statuses.length - 1
-                    ]?.updatedDate,
-                  ).toLocaleString() || "YYYY/MM/DD, 00:00:00 AM"} */
-                }
+                {t(
+                  "shipment_tracker.shipment_activity_section.accordion_header.tracking_number_label",
+                )}
+                &nbsp;
+                {new Date(
+                  shipmentData?.statuses[
+                    shipmentData?.statuses.length - 1
+                  ]?.updatedDate,
+                ).toLocaleString() || "YYYY/MM/DD, 00:00:00 AM"}
               </span>
             </div>
           </AccordionHeader>
@@ -215,11 +184,15 @@ export default function ShipmentTrackerAccordion({
                 fontFamily: "Inter, system-ui, -apple-system, sans-serif",
               }}
             >
-              Shipment Progress
+              {t(
+                "shipment_tracker.shipment_activity_section.accordion_header.shipment_progress_label",
+              )}
             </span>
 
             {/* Range button here for progress slider */}
-            <ProgressBar />
+            <ProgressBar
+              progress={getShipmentProgressPercentage(shipmentData?.statuses)}
+            />
 
             <span
               className="
@@ -233,10 +206,12 @@ export default function ShipmentTrackerAccordion({
                 fontFamily: "Inter, system-ui, -apple-system, sans-serif",
               }}
             >
-              Activity Log
+              {t(
+                "shipment_tracker.shipment_activity_section.accordion_header.shipment_progress_label",
+              )}
             </span>
 
-            <Stepper statuses={shipmentData || dummyStatuses} />
+            <Stepper statuses={steps || []} />
           </AccordionBody>
         </Accordion>
       </div>

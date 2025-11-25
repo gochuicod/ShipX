@@ -79,6 +79,48 @@ function shipx_get_user_country() {
     return strtoupper($country);
 }
 
+// Shipment tracker form proxy handler
+add_action('rest_api_init', function () {
+    register_rest_route('shipx/v1', '/track/(?P<tracking>[a-zA-Z0-9-]+)', array(
+        'methods'  => 'GET',
+        'callback' => 'shipx_proxy_tracking',
+        'permission_callback' => '__return_true'
+    ));
+});
+
+function shipx_proxy_tracking($request) {
+    $tracking = $request['tracking'];
+
+    $url = "https://integration.sglinkapi.com/api/sgl-parcel/shipment/statuses/$tracking";
+
+    $response = wp_remote_get($url, array(
+        'headers' => array(
+            'Authorization' => 'Bearer ae6fkmMv7nw6A-pBqgocXN6BNn3pdfiesJf-hgOeJJJWDFDmLvkFxvzUJWRLw6Rw',
+            'Content-Type'  => 'application/json'
+        )
+    ));
+
+    if (is_wp_error($response)) {
+        return new WP_REST_Response([
+            'error' => $response->get_error_message()
+        ], 500);
+    }
+
+    // Get body and headers
+    $body = wp_remote_retrieve_body($response);
+    $headers = wp_remote_retrieve_headers($response);
+
+    // Expose headers to frontend
+    foreach ($headers as $key => $value) {
+        header("X-SGLINK-$key: $value");
+    }
+
+    // Let browser access these headers
+    header("Access-Control-Expose-Headers: *");
+
+    return new WP_REST_Response(json_decode($body), 200);
+}
+
 // Contact Form
 function mytheme_handle_contact(WP_REST_Request $request) {
   $params = $request->get_json_params();

@@ -1,10 +1,6 @@
-import { useState } from "react";
+import { mapStatuses } from "./StatusMap";
 
-export default function ProgressBar() {
-  const [progress, setProgress] = useState(50);
-
-  const handleChange = (e) => setProgress(e.target.value);
-
+export default function ProgressBar({ progress = 0 }) {
   return (
     <div className="w-full mx-auto">
       {/* Wrapper containing responsive CSS variables */}
@@ -41,10 +37,10 @@ export default function ProgressBar() {
         {/* Range Input Overlay */}
         <input
           type="range"
+          disabled={true}
           min="0"
           max="100"
           value={progress}
-          onChange={handleChange}
           className="
             absolute top-1/2 left-0 w-full -translate-y-1/2
             appearance-none bg-transparent pointer-events-auto rounded-full
@@ -98,4 +94,19 @@ export default function ProgressBar() {
       `}</style>
     </div>
   );
+}
+
+export function getShipmentProgressPercentage(statuses) {
+  if (!Array.isArray(statuses) || statuses.length === 0) return 0;
+
+  const mapped = mapStatuses(statuses);
+  const lastIndex =
+    mapped.findIndex((step) => step.state === "active") !== -1
+      ? mapped.findIndex((step) => step.state === "active")
+      : mapped.length - 1; // if delivered, take last index
+
+  // percentage = (current step / total steps) * 100
+  const percentage = ((lastIndex + 1) / mapped.length) * 100;
+
+  return percentage;
 }

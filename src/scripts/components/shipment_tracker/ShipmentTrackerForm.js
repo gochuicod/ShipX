@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useShipment } from "../../hooks/useShipment";
+import { useTranslation } from "react-i18next";
 
 const ShipmentTrackerForm = () => {
   const {
@@ -7,6 +8,7 @@ const ShipmentTrackerForm = () => {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm();
+  const { t } = useTranslation();
 
   const { setShipmentData, setTrackingNumber } = useShipment();
 
@@ -17,7 +19,7 @@ const ShipmentTrackerForm = () => {
 
     try {
       const response = await fetch(
-        `https://integration.sglinkapi.com/api/sgl-parcel/shipment/statuses/${trackingNumber}`,
+        `https://shipx.asia/wp-json/shipx/v1/track/${trackingNumber}`,
         {
           method: "GET",
           headers: {
@@ -32,7 +34,7 @@ const ShipmentTrackerForm = () => {
       }
 
       const result = await response.json();
-      setShipmentData(result?.statuses);
+      setShipmentData(result);
     } catch (error) {
       console.error("Fetch error:", error);
     }
@@ -83,7 +85,7 @@ const ShipmentTrackerForm = () => {
               src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_1.svg"
               alt="ShipX - globe"
             />
-            Input your shipment tracking number
+            {t("shipment_tracker.track_order_section.form.label")}
           </label>
           <input
             aria-invalid={errors.trackingNumber ? "true" : "false"}
@@ -91,7 +93,7 @@ const ShipmentTrackerForm = () => {
             className={`
                             bg-[#F9FAFB]
                             border border-[#B9AFD0]
-                            md:w-[19vw] w-[55vw]
+                            md:w-full w-full
                             md:h-[2.2vw] h-[6.5vw]
                             md:rounded-[0.5vw] rounded-[2vw]
                             p-2
@@ -126,7 +128,9 @@ const ShipmentTrackerForm = () => {
             fontFamily: "Karla, system-ui, -apple-system, sans-serif",
           }}
         >
-          {isSubmitting ? "Tracking..." : "Track Shipment"}
+          {isSubmitting
+            ? t("shipment_tracker.track_order_section.form.submitting")
+            : t("shipment_tracker.track_order_section.form.submit_button")}
         </button>
       </form>
     </div>
