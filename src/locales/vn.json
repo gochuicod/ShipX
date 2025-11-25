@@ -625,7 +625,9 @@
     "shipment_activity_section": {
       "accordion_header": {
         "tracking_number_label": "Số Theo Dõi",
-        "last_updated_date": "Cập nhật lần cuối:"
+        "last_updated_date": "Cập nhật lần cuối:",
+        "shipment_progress_label": "Tiến Trình Giao Hàng",
+        "shipment_activity_log_label": "Nhật Ký Hoạt Động"
       }
     },
     "shipment_cta_section": {

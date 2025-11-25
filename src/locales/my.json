@@ -625,7 +625,9 @@
     "shipment_activity_section": {
       "accordion_header": {
         "tracking_number_label": "Nombor Penjejakan",
-        "last_updated_date": "Tarikh Dikemas Kini Terakhir:"
+        "last_updated_date": "Tarikh Dikemas Kini Terakhir:",
+        "shipment_progress_label": "Kemajuan Penghantaran",
+        "shipment_activity_log_label": "Log Aktiviti"
       }
     },
     "shipment_cta_section": {

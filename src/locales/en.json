@@ -625,7 +625,9 @@
     "shipment_activity_section": {
       "accordion_header": {
         "tracking_number_label": "Tracking Number",
-        "last_updated_date": "Last Updated Date:"
+        "last_updated_date": "Last Updated Date:",
+        "shipment_progress_label": "Shipment Progress",
+        "shipment_activity_log_label": "Activity Log"
       }
     },
     "shipment_cta_section": {

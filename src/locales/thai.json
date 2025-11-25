@@ -625,7 +625,9 @@
     "shipment_activity_section": {
       "accordion_header": {
         "tracking_number_label": "หมายเลขติดตาม",
-        "last_updated_date": "วันที่อัปเดตล่าสุด:"
+        "last_updated_date": "วันที่อัปเดตล่าสุด:",
+        "shipment_progress_label": "ความคืบหน้าการจัดส่ง",
+        "shipment_activity_log_label": "บันทึกกิจกรรม"
       }
     },
     "shipment_cta_section": {
