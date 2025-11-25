@@ -618,7 +618,8 @@
       "form": {
         "label": "Input your shipment tracking number",
         "placeholder": "1234567890",
-        "submit_button": "Track Shipment"
+        "submit_button": "Track Shipment",
+        "submitting": "Tracking..."
       }
     },
     "shipment_activity_section": {

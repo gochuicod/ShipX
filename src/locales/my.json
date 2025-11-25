@@ -618,7 +618,8 @@
       "form": {
         "label": "Masukkan nombor penjejakan penghantaran anda",
         "placeholder": "1234567890",
-        "submit_button": "Jejaki Penghantaran"
+        "submit_button": "Jejaki Penghantaran",
+        "submitting": "Sedang Menjejak..."
       }
     },
     "shipment_activity_section": {

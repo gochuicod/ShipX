@@ -618,7 +618,8 @@
       "form": {
         "label": "Nhập số theo dõi đơn hàng của bạn",
         "placeholder": "1234567890",
-        "submit_button": "Theo Dõi Đơn Hàng"
+        "submit_button": "Theo Dõi Đơn Hàng",
+        "submitting": "Đang theo dõi..."
       }
     },
     "shipment_activity_section": {

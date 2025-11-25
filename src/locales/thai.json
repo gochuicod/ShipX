@@ -618,7 +618,8 @@
       "form": {
         "label": "กรอกหมายเลขติดตามพัสดุของคุณ",
         "placeholder": "1234567890",
-        "submit_button": "ติดตามพัสดุ"
+        "submit_button": "ติดตามพัสดุ",
+        "submitting": "กำลังติดตาม..."
       }
     },
     "shipment_activity_section": {

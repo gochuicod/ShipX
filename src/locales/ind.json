@@ -618,7 +618,8 @@
       "form": {
         "label": "Masukkan nomor pelacakan pengiriman Anda",
         "placeholder": "1234567890",
-        "submit_button": "Lacak Pengiriman"
+        "submit_button": "Lacak Pengiriman",
+        "submitting": "Sedang Melacak..."
       }
     },
     "shipment_activity_section": {
