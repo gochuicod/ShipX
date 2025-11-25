@@ -54,10 +54,11 @@ export function mapStatuses(statuses) {
   });
 }
 
-// Helper → Get the last status label
-export function getLastStatusLabel(statuses) {
-  const mapped = mapStatuses(statuses);
-  if (mapped.length === 0) return null;
+export function getLastStatusLabel(statuses, t) {
+  if (!Array.isArray(statuses) || statuses.length === 0 || !t) return null;
 
-  return mapped[mapped.length - 1].label;
+  const last = statuses[statuses.length - 1];
+  return t(
+    `shipment_tracker.shipment_status_map.${last.statusCode.toLowerCase()}`,
+  );
 }
