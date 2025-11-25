@@ -17,8 +17,8 @@ export default function ShipmentTrackerAccordion({
   const [open, setOpen] = useState(1);
   const { t } = useTranslation();
 
-  const steps = mapStatuses(shipmentData?.statuses, t);
-  const lastStatus = getLastStatusLabel(shipmentData?.statuses, t);
+  // const steps = mapStatuses(shipmentData?.statuses, t);
+  // const lastStatus = getLastStatusLabel(shipmentData?.statuses, t);
 
   return (
     <>
@@ -114,7 +114,7 @@ export default function ShipmentTrackerAccordion({
                 ).toLocaleString() || "YYYY/MM/DD, 00:00:00 AM"}
               </span>
               <span className="text-[#1E2939] text-[0.8vw] font-normal">
-                {lastStatus || "null"}
+                {getLastStatusLabel(shipmentData) || "null"}
               </span>
             </div>
 
@@ -207,11 +207,11 @@ export default function ShipmentTrackerAccordion({
               }}
             >
               {t(
-                "shipment_tracker.shipment_activity_section.accordion_header.shipment_progress_label",
+                "shipment_tracker.shipment_activity_section.accordion_header.shipment_activity_log_label",
               )}
             </span>
 
-            <Stepper statuses={steps || []} />
+            <Stepper statuses={shipmentData?.statuses || []} />
           </AccordionBody>
         </Accordion>
       </div>
