@@ -512,6 +512,12 @@
       "description": "Semak terma penggunaan, polisi perkhidmatan dan garis panduan penghantaran antarabangsa di platform ShipX.",
       "canonical": "https://shipx.asia/my/terms-and-conditions",
       "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "shipment_tracker_page": {
+      "title": "Penjejak Penghantaran ShipX – Jejak Pakej Masa Sebenar",
+      "description": "Jejaki penghantaran ShipX anda secara masa sebenar, lihat kemas kini status terkini, anggaran progres penghantaran, dan log aktiviti terperinci untuk pengalaman penghantaran yang mudah.",
+      "canonical": "https://shipx.asia/shipment-tracker",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/shipment-tracker-og.webp"
     }
   },
   "faq_section": {
@@ -569,5 +575,65 @@
         "answer": "Daftar untuk kadar segera atau hubungi pasukan jualan kami untuk penyelesaian logistik yang disesuaikan. ShipX ialah rakan pertumbuhan e-dagang dan pakar 3PL anda untuk jenama ASEAN memasuki pasaran AS."
       }
     ]
+  },
+  "shipment_tracker": {
+    "shipment_status_map": {
+      "shipment_generated": "Penghantaran telah dijana.",
+      "creating_failed": "Proses menjana penghantaran gagal.",
+      "shipment_picked_up": "Penghantaran telah diambil.",
+      "shipment_dropped_off_at_the_counter": "Penghantaran telah diserahkan di kaunter.",
+      "shipment_received_at_hub": "Penghantaran telah diterima di hab.",
+      "shipment_processing_at_hub": "Penghantaran sedang diproses di hab.",
+      "shipment_left_sglink_origin_facility": "Penghantaran telah meninggalkan fasiliti asal SGLINK.",
+      "shipment_in_transit": "Penghantaran dalam perjalanan.",
+      "shipment_completed_the_customs_clearance": "Penghantaran telah selesai kastam.",
+      "shipment_hold_by_customs_at_destination": "Penghantaran ditahan oleh kastam di destinasi.",
+      "shipment_received_at_destination": "Penghantaran telah diterima di destinasi.",
+      "shipment_out_for_delivery": "Penghantaran sedang dihantar.",
+      "shipment_delivered": "Penghantaran telah sampai.",
+      "shipment_delivery_unsuccessful": "Penghantaran tidak berjaya.",
+      "shipment_returned_from_overseas": "Penghantaran telah dikembalikan dari luar negara.",
+      "shipment_hold_at_point_of_delivery": "Penghantaran ditahan di titik penghantaran.",
+      "shipment_returned_to_sender": "Penghantaran telah dikembalikan kepada penghantar.",
+      "shipment_damaged": "Penghantaran rosak.",
+      "shipment_lost": "Penghantaran hilang.",
+      "shipment_failed_attempt": "Percubaan penghantaran gagal.",
+      "hold_for_payment": "Penghantaran ditahan untuk pembayaran."
+    },
+    "hero_section": {
+      "title": "Alat Perdagangan Utama",
+      "description": "Lengkapkan perniagaan anda dengan penyelesaian pintar untuk mengurus, memantau, dan menguasai operasi logistik anda.",
+      "buttons": {
+        "shipment_tracker": "Penjejak Penghantaran",
+        "hs_code_generator": "Penjana Kod HS"
+      }
+    },
+    "track_order_section": {
+      "badge_text": "Kit Alat Perdagangan & Logistik",
+      "title": {
+        "regular": "Jejaki",
+        "highlighted": "Pesanan Anda"
+      },
+      "description": "Gunakan nombor penjejakan anda untuk mendapatkan kemas kini terkini mengenai perjalanan pakej anda, dari gudang hingga pintu rumah.",
+      "form": {
+        "label": "Masukkan nombor penjejakan penghantaran anda",
+        "placeholder": "1234567890",
+        "submit_button": "Jejaki Penghantaran"
+      }
+    },
+    "shipment_activity_section": {
+      "accordion_header": {
+        "tracking_number_label": "Nombor Penjejakan",
+        "last_updated_date": "Tarikh Dikemas Kini Terakhir:"
+      }
+    },
+    "shipment_cta_section": {
+      "title": "Rasai Masa Depan Penghantaran",
+      "description": "Jangan hanya membaca tentang alat terbaru kami — biarkan kami tunjukkan cara ia berfungsi dan manfaatnya untuk perniagaan anda.",
+      "buttons": {
+        "book_a_demo": "Tempah Demo",
+        "contact_us": "Hubungi Kami"
+      }
+    }
   }
 }

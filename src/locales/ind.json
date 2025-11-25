@@ -512,6 +512,12 @@
       "description": "Baca syarat layanan, ketentuan penggunaan, kebijakan pengiriman internasional, dan tanggung jawab logistik di platform ShipX.",
       "canonical": "https://shipx.asia/ind/terms-and-conditions",
       "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "shipment_tracker_page": {
+      "title": "Pelacak Pengiriman ShipX – Pelacakan Paket Secara Real-Time",
+      "description": "Lacak pengiriman ShipX Anda secara real-time, lihat pembaruan status terbaru, estimasi progres pengiriman, dan log aktivitas secara detail untuk pengalaman pengiriman yang mudah.",
+      "canonical": "https://shipx.asia/shipment-tracker",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/shipment-tracker-og.webp"
     }
   },
   "faq_section": {
@@ -569,5 +575,65 @@
         "answer": "Daftar untuk tarif instan atau hubungi tim penjualan kami untuk solusi logistik yang disesuaikan. ShipX adalah mitra pertumbuhan e-commerce dan ahli 3PL Anda untuk merek ASEAN yang memasuki pasar AS."
       }
     ]
+  },
+  "shipment_tracker": {
+    "shipment_status_map": {
+      "shipment_generated": "Pengiriman telah dibuat.",
+      "creating_failed": "Proses pembuatan pengiriman gagal.",
+      "shipment_picked_up": "Pengiriman telah diambil.",
+      "shipment_dropped_off_at_the_counter": "Pengiriman telah diserahkan di loket.",
+      "shipment_received_at_hub": "Pengiriman telah diterima di hub.",
+      "shipment_processing_at_hub": "Pengiriman sedang diproses di hub.",
+      "shipment_left_sglink_origin_facility": "Pengiriman telah meninggalkan fasilitas asal SGLINK.",
+      "shipment_in_transit": "Pengiriman dalam perjalanan.",
+      "shipment_completed_the_customs_clearance": "Pengiriman telah melewati bea cukai.",
+      "shipment_hold_by_customs_at_destination": "Pengiriman ditahan oleh bea cukai di tujuan.",
+      "shipment_received_at_destination": "Pengiriman telah diterima di tujuan.",
+      "shipment_out_for_delivery": "Pengiriman sedang dalam pengantaran.",
+      "shipment_delivered": "Pengiriman telah sampai.",
+      "shipment_delivery_unsuccessful": "Pengiriman gagal.",
+      "shipment_returned_from_overseas": "Pengiriman telah dikembalikan dari luar negeri.",
+      "shipment_hold_at_point_of_delivery": "Pengiriman ditahan di titik pengiriman.",
+      "shipment_returned_to_sender": "Pengiriman telah dikembalikan ke pengirim.",
+      "shipment_damaged": "Pengiriman rusak.",
+      "shipment_lost": "Pengiriman hilang.",
+      "shipment_failed_attempt": "Percobaan pengiriman gagal.",
+      "hold_for_payment": "Pengiriman ditahan untuk pembayaran."
+    },
+    "hero_section": {
+      "title": "Alat Perdagangan Penting",
+      "description": "Lengkapi bisnis Anda dengan solusi cerdas untuk mengelola, memantau, dan menguasai operasi logistik Anda.",
+      "buttons": {
+        "shipment_tracker": "Pelacak Pengiriman",
+        "hs_code_generator": "Generator Kode HS"
+      }
+    },
+    "track_order_section": {
+      "badge_text": "Toolkit Perdagangan dan Logistik",
+      "title": {
+        "regular": "Lacak",
+        "highlighted": "Pesanan Anda"
+      },
+      "description": "Gunakan nomor pelacakan Anda untuk mengakses pembaruan terkini tentang perjalanan paket Anda, dari gudang hingga pintu rumah.",
+      "form": {
+        "label": "Masukkan nomor pelacakan pengiriman Anda",
+        "placeholder": "1234567890",
+        "submit_button": "Lacak Pengiriman"
+      }
+    },
+    "shipment_activity_section": {
+      "accordion_header": {
+        "tracking_number_label": "Nomor Pelacakan",
+        "last_updated_date": "Tanggal Terakhir Diperbarui:"
+      }
+    },
+    "shipment_cta_section": {
+      "title": "Rasakan Masa Depan Pengiriman",
+      "description": "Jangan hanya membaca tentang alat terbaru kami — biarkan kami tunjukkan cara kerjanya dan manfaatnya untuk bisnis Anda.",
+      "buttons": {
+        "book_a_demo": "Pesan Demo",
+        "contact_us": "Hubungi Kami"
+      }
+    }
   }
 }

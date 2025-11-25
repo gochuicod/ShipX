@@ -512,6 +512,12 @@
       "description": "Review the official ShipX terms and conditions, service usage policies, logistics responsibilities, international shipping guidelines, and platform agreements.",
       "canonical": "https://shipx.asia/terms-and-conditions",
       "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "shipment_tracker_page": {
+      "title": "ShipX Shipment Tracker – Real-Time Package Tracking for Your Shipments",
+      "description": "Track your ShipX shipments in real-time, view the latest status updates, estimated delivery progress, and detailed activity logs for hassle-free shipping experience.",
+      "canonical": "https://shipx.asia/shipment-tracker",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb97ec7f0/src/assets/shipment-tracker-og.webp"
     }
   },
   "faq_section": {
@@ -569,5 +575,65 @@
         "answer": "Sign up for instant rates or contact our sales team for tailored logistics solutions. ShipX is your e-commerce growth partner and 3PL expert for ASEAN brands entering the U.S. market."
       }
     ]
+  },
+  "shipment_tracker": {
+    "shipment_status_map": {
+      "shipment_generated": "The shipment has been generated.",
+      "creating_failed": "The process of creating the shipment failed.",
+      "shipment_picked_up": "The shipment has been picked up.",
+      "shipment_dropped_off_at_the_counter": "The shipment has been dropped off at the counter.",
+      "shipment_received_at_hub": "The shipment has been received at the hub.",
+      "shipment_processing_at_hub": "The shipment is being processed at the hub.",
+      "shipment_left_sglink_origin_facility": "The shipment has left the SGLINK origin facility.",
+      "shipment_in_transit": "The shipment is in transit.",
+      "shipment_completed_the_customs_clearance": "The shipment has completed customs clearance.",
+      "shipment_hold_by_customs_at_destination": "The shipment is held by customs at the destination.",
+      "shipment_received_at_destination": "The shipment has been received at the destination.",
+      "shipment_out_for_delivery": "The shipment is out for delivery.",
+      "shipment_delivered": "The shipment has been delivered.",
+      "shipment_delivery_unsuccessful": "Delivery was unsuccessful.",
+      "shipment_returned_from_overseas": "The shipment has been returned from overseas.",
+      "shipment_hold_at_point_of_delivery": "The shipment is on hold at point of delivery.",
+      "shipment_returned_to_sender": "The shipment has been returned to sender.",
+      "shipment_damaged": "The shipment was damaged.",
+      "shipment_lost": "The shipment has been lost.",
+      "shipment_failed_attempt": "Failed delivery attempt.",
+      "hold_for_payment": "The shipment is on hold for payment"
+    },
+    "hero_section": {
+      "title": "Essential Trade Tools",
+      "description": "Equip your business with the smart solutions needed to manage, monitor, and master your logistics operations.",
+      "buttons": {
+        "shipment_tracker": "Shipment Tracker",
+        "hs_code_generator": "HS Code Generator"
+      }
+    },
+    "track_order_section": {
+      "badge_text": "Trade and Logistics Toolkit",
+      "title": {
+        "regular": "Track Your",
+        "highlighted": "Order"
+      },
+      "description": "Use your tracking number to instantly access up-to-the-minute updates on your package's journey, from warehouse to doorstep.",
+      "form": {
+        "label": "Input your shipment tracking number",
+        "placeholder": "1234567890",
+        "submit_button": "Track Shipment"
+      }
+    },
+    "shipment_activity_section": {
+      "accordion_header": {
+        "tracking_number_label": "Tracking Number",
+        "last_updated_date": "Last Updated Date:"
+      }
+    },
+    "shipment_cta_section": {
+      "title": "Experience the Future of Shipping",
+      "description": "Don't just read about our latest tools — let us show you how they work and what they can do for your business.",
+      "buttons": {
+        "book_a_demo": "Book a Demo",
+        "contact_us": "Contact Us"
+      }
+    }
   }
 }

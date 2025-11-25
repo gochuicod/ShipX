@@ -512,6 +512,12 @@
       "description": "Xem chi tiết điều khoản sử dụng, chính sách dịch vụ, quy định vận chuyển quốc tế và trách nhiệm logistics khi sử dụng nền tảng ShipX.",
       "canonical": "https://shipx.asia/vn/terms-and-conditions",
       "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "shipment_tracker_page": {
+      "title": "Theo Dõi ShipX – Giám sát Gói Hàng Theo Thời Gian Thực",
+      "description": "Theo dõi ShipX của bạn theo thời gian thực, xem các cập nhật trạng thái mới nhất, tiến trình giao hàng và nhật ký hoạt động chi tiết để trải nghiệm vận chuyển dễ dàng.",
+      "canonical": "https://shipx.asia/shipment-tracker",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/shipment-tracker-og.webp"
     }
   },
   "faq_section": {
@@ -569,5 +575,65 @@
         "answer": "Đăng ký để nhận báo giá ngay lập tức hoặc liên hệ với đội ngũ bán hàng của chúng tôi để có giải pháp logistics phù hợp. ShipX là đối tác tăng trưởng thương mại điện tử và chuyên gia 3PL của bạn cho các thương hiệu ASEAN thâm nhập thị trường Hoa Kỳ."
       }
     ]
+  },
+  "shipment_tracker": {
+    "shipment_status_map": {
+      "shipment_generated": "Đơn hàng đã được tạo.",
+      "creating_failed": "Quá trình tạo đơn hàng thất bại.",
+      "shipment_picked_up": "Đơn hàng đã được lấy.",
+      "shipment_dropped_off_at_the_counter": "Đơn hàng đã được gửi tại quầy.",
+      "shipment_received_at_hub": "Đơn hàng đã được nhận tại trung tâm.",
+      "shipment_processing_at_hub": "Đơn hàng đang được xử lý tại trung tâm.",
+      "shipment_left_sglink_origin_facility": "Đơn hàng đã rời cơ sở xuất phát SGLINK.",
+      "shipment_in_transit": "Đơn hàng đang vận chuyển.",
+      "shipment_completed_the_customs_clearance": "Đơn hàng đã hoàn tất thủ tục hải quan.",
+      "shipment_hold_by_customs_at_destination": "Đơn hàng bị giữ bởi hải quan tại điểm đến.",
+      "shipment_received_at_destination": "Đơn hàng đã đến điểm đến.",
+      "shipment_out_for_delivery": "Đơn hàng đang được giao.",
+      "shipment_delivered": "Đơn hàng đã được giao.",
+      "shipment_delivery_unsuccessful": "Giao hàng không thành công.",
+      "shipment_returned_from_overseas": "Đơn hàng đã được trả về từ nước ngoài.",
+      "shipment_hold_at_point_of_delivery": "Đơn hàng bị giữ tại điểm giao.",
+      "shipment_returned_to_sender": "Đơn hàng đã được trả về người gửi.",
+      "shipment_damaged": "Đơn hàng bị hư hại.",
+      "shipment_lost": "Đơn hàng bị mất.",
+      "shipment_failed_attempt": "Thử giao hàng thất bại.",
+      "hold_for_payment": "Đơn hàng bị giữ để chờ thanh toán."
+    },
+    "hero_section": {
+      "title": "Công Cụ Thương Mại Quan Trọng",
+      "description": "Trang bị cho doanh nghiệp của bạn các giải pháp thông minh để quản lý, giám sát và tối ưu hoạt động logistics.",
+      "buttons": {
+        "shipment_tracker": "Theo Dõi Đơn Hàng",
+        "hs_code_generator": "Tạo Mã HS"
+      }
+    },
+    "track_order_section": {
+      "badge_text": "Bộ Công Cụ Thương Mại & Logistics",
+      "title": {
+        "regular": "Theo Dõi",
+        "highlighted": "Đơn Hàng"
+      },
+      "description": "Sử dụng số theo dõi của bạn để truy cập các cập nhật mới nhất về hành trình gói hàng, từ kho đến cửa nhà bạn.",
+      "form": {
+        "label": "Nhập số theo dõi đơn hàng của bạn",
+        "placeholder": "1234567890",
+        "submit_button": "Theo Dõi Đơn Hàng"
+      }
+    },
+    "shipment_activity_section": {
+      "accordion_header": {
+        "tracking_number_label": "Số Theo Dõi",
+        "last_updated_date": "Cập nhật lần cuối:"
+      }
+    },
+    "shipment_cta_section": {
+      "title": "Trải Nghiệm Tương Lai Của Giao Hàng",
+      "description": "Đừng chỉ đọc về các công cụ mới nhất của chúng tôi — hãy để chúng tôi cho bạn thấy cách hoạt động và lợi ích cho doanh nghiệp của bạn.",
+      "buttons": {
+        "book_a_demo": "Đặt Lịch Demo",
+        "contact_us": "Liên Hệ Chúng Tôi"
+      }
+    }
   }
 }

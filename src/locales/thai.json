@@ -512,6 +512,12 @@
       "description": "ตรวจสอบข้อกำหนดการใช้งาน นโยบายบริการ และแนวทางการขนส่งระหว่างประเทศในการใช้แพลตฟอร์ม ShipX.",
       "canonical": "https://shipx.asia/thai/terms-and-conditions",
       "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "shipment_tracker_page": {
+      "title": "ติดตามพัสดุ ShipX – ตรวจสอบสถานะพัสดุแบบเรียลไทม์",
+      "description": "ติดตามพัสดุ ShipX ของคุณแบบเรียลไทม์ ดูสถานะล่าสุด ความคืบหน้าการจัดส่ง และบันทึกกิจกรรมอย่างละเอียดเพื่อประสบการณ์การจัดส่งที่ง่ายดาย",
+      "canonical": "https://shipx.asia/shipment-tracker",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/shipment-tracker-og.webp"
     }
   },
   "faq_section": {
@@ -569,5 +575,65 @@
         "answer": "ลงทะเบียนเพื่อดูอัตราทันทีหรือติดต่อทีมขายของเราสำหรับโซลูชันโลจิสติกส์ที่ปรับแต่งเฉพาะ ShipX คือพันธมิตรการเติบโตทางอีคอมเมิร์ซและผู้เชี่ยวชาญด้าน 3PL สำหรับแบรนด์อาเซียนที่เข้าสู่ตลาดสหรัฐฯ"
       }
     ]
+  },
+  "shipment_tracker": {
+    "shipment_status_map": {
+      "shipment_generated": "พัสดุถูกสร้างแล้ว",
+      "creating_failed": "การสร้างพัสดุล้มเหลว",
+      "shipment_picked_up": "พัสดุถูกรับไปแล้ว",
+      "shipment_dropped_off_at_the_counter": "พัสดุถูกส่งมอบที่เคาน์เตอร์",
+      "shipment_received_at_hub": "พัสดุถูกส่งถึงศูนย์กลาง",
+      "shipment_processing_at_hub": "พัสดุกำลังถูกประมวลผลที่ศูนย์กลาง",
+      "shipment_left_sglink_origin_facility": "พัสดุออกจากสถานที่ต้นทาง SGLINK แล้ว",
+      "shipment_in_transit": "พัสดุอยู่ระหว่างการจัดส่ง",
+      "shipment_completed_the_customs_clearance": "พัสดุผ่านพิธีการศุลกากรแล้ว",
+      "shipment_hold_by_customs_at_destination": "พัสดุถูกกักโดยศุลกากรที่ปลายทาง",
+      "shipment_received_at_destination": "พัสดุถูกส่งถึงปลายทางแล้ว",
+      "shipment_out_for_delivery": "พัสดุกำลังส่งถึงผู้รับ",
+      "shipment_delivered": "พัสดุจัดส่งสำเร็จแล้ว",
+      "shipment_delivery_unsuccessful": "การจัดส่งพัสดุไม่สำเร็จ",
+      "shipment_returned_from_overseas": "พัสดุถูกส่งคืนจากต่างประเทศ",
+      "shipment_hold_at_point_of_delivery": "พัสดุถูกกักที่จุดส่ง",
+      "shipment_returned_to_sender": "พัสดุถูกส่งคืนผู้ส่ง",
+      "shipment_damaged": "พัสดุเสียหาย",
+      "shipment_lost": "พัสดุสูญหาย",
+      "shipment_failed_attempt": "พยายามจัดส่งไม่สำเร็จ",
+      "hold_for_payment": "พัสดุถูกกักไว้เพื่อรอชำระเงิน"
+    },
+    "hero_section": {
+      "title": "เครื่องมือการค้าสำคัญ",
+      "description": "เสริมธุรกิจของคุณด้วยโซลูชันอัจฉริยะในการจัดการ ติดตาม และควบคุมการดำเนินงานด้านโลจิสติกส์",
+      "buttons": {
+        "shipment_tracker": "ติดตามพัสดุ",
+        "hs_code_generator": "เครื่องสร้างรหัส HS"
+      }
+    },
+    "track_order_section": {
+      "badge_text": "ชุดเครื่องมือการค้าและโลจิสติกส์",
+      "title": {
+        "regular": "ติดตาม",
+        "highlighted": "คำสั่งซื้อของคุณ"
+      },
+      "description": "ใช้หมายเลขติดตามของคุณเพื่อดูข้อมูลอัปเดตล่าสุดเกี่ยวกับพัสดุของคุณ ตั้งแต่คลังสินค้าถึงหน้าประตูบ้าน",
+      "form": {
+        "label": "กรอกหมายเลขติดตามพัสดุของคุณ",
+        "placeholder": "1234567890",
+        "submit_button": "ติดตามพัสดุ"
+      }
+    },
+    "shipment_activity_section": {
+      "accordion_header": {
+        "tracking_number_label": "หมายเลขติดตาม",
+        "last_updated_date": "วันที่อัปเดตล่าสุด:"
+      }
+    },
+    "shipment_cta_section": {
+      "title": "สัมผัสอนาคตของการจัดส่ง",
+      "description": "อย่าเพียงอ่านเกี่ยวกับเครื่องมือใหม่ล่าสุดของเรา — ให้เราสาธิตวิธีการทำงานและประโยชน์สำหรับธุรกิจของคุณ",
+      "buttons": {
+        "book_a_demo": "จองเดโม",
+        "contact_us": "ติดต่อเรา"
+      }
+    }
   }
 }
