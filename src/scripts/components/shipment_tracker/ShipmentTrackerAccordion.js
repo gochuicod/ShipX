@@ -17,7 +17,7 @@ export default function ShipmentTrackerAccordion({
   const [open, setOpen] = useState(1);
   const { t } = useTranslation();
 
-  // const steps = mapStatuses(shipmentData?.statuses, t);
+  const steps = mapStatuses(shipmentData?.statuses, t);
   const lastStatus = getLastStatusLabel(shipmentData?.statuses, t);
 
   return (
@@ -219,9 +219,7 @@ export default function ShipmentTrackerAccordion({
               )}
             </span>
 
-            <Stepper
-              statuses={!shipmentData?.errors ? shipmentData?.statuses : []}
-            />
+            <Stepper statuses={!shipmentData?.errors ? steps : []} />
           </AccordionBody>
         </Accordion>
       </div>
