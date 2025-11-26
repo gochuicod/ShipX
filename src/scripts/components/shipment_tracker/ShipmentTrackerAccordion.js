@@ -107,11 +107,13 @@ export default function ShipmentTrackerAccordion({
             </div>
             <div className="md:flex flex-col gap-y-0 hidden">
               <span className="text-[#1E2939] text-[1vw] font-bold">
-                {new Date(
-                  shipmentData?.statuses?.[
-                    shipmentData.statuses.length - 1
-                  ]?.updatedDate,
-                ).toLocaleString() || "YYYY/MM/DD, 00:00:00 AM"}
+                {!shipmentData?.errors
+                  ? new Date(
+                      shipmentData?.statuses?.[
+                        shipmentData.statuses.length - 1
+                      ]?.updatedDate,
+                    ).toLocaleString() || "YYYY/MM/DD, 00:00:00 AM"
+                  : "Shipment date does not exist."}
               </span>
               <span className="text-[#1E2939] text-[0.8vw] font-normal">
                 {lastStatus || "null"}
@@ -158,11 +160,13 @@ export default function ShipmentTrackerAccordion({
                   "shipment_tracker.shipment_activity_section.accordion_header.tracking_number_label",
                 )}
                 &nbsp;
-                {new Date(
-                  shipmentData?.statuses[
-                    shipmentData?.statuses.length - 1
-                  ]?.updatedDate,
-                ).toLocaleString() || "YYYY/MM/DD, 00:00:00 AM"}
+                {!shipmentData?.errors
+                  ? new Date(
+                      shipmentData?.statuses?.[
+                        shipmentData.statuses.length - 1
+                      ]?.updatedDate,
+                    ).toLocaleString() || "YYYY/MM/DD, 00:00:00 AM"
+                  : "Shipment date does not exist."}
               </span>
             </div>
           </AccordionHeader>
@@ -191,7 +195,11 @@ export default function ShipmentTrackerAccordion({
 
             {/* Range button here for progress slider */}
             <ProgressBar
-              progress={getShipmentProgressPercentage(shipmentData?.statuses)}
+              progress={
+                !shipmentData?.errors
+                  ? getShipmentProgressPercentage(shipmentData?.statuses)
+                  : 0
+              }
             />
 
             <span
@@ -211,7 +219,9 @@ export default function ShipmentTrackerAccordion({
               )}
             </span>
 
-            <Stepper statuses={shipmentData?.statuses || []} />
+            <Stepper
+              statuses={!shipmentData?.errors ? shipmentData?.statuses : []}
+            />
           </AccordionBody>
         </Accordion>
       </div>
