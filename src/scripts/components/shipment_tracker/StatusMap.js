@@ -5,14 +5,13 @@ export function mapStatuses(statuses, t = i18next.t) {
   if (!Array.isArray(statuses)) return [];
 
   const sorted = [...statuses].sort(
-    (a, b) => new Date(a.updatedDate) - new Date(b.updatedDate),
+    (a, b) => new Date(b.updatedDate) - new Date(a.updatedDate),
   );
 
   return sorted.map((step, i) => {
-    const isLast = i === sorted.length - 1;
     let state = "completed";
 
-    if (isLast && step.statusCode !== "SHIPMENT_DELIVERED") {
+    if (i == 0 && step.statusCode !== "SHIPMENT_DELIVERED") {
       state = "active";
     }
 
