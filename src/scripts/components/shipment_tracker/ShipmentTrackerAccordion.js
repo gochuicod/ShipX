@@ -157,7 +157,7 @@ export default function ShipmentTrackerAccordion({
                 "
               >
                 {t(
-                  "shipment_tracker.shipment_activity_section.accordion_header.tracking_number_label",
+                  "shipment_tracker.shipment_activity_section.accordion_header.last_updated_date",
                 )}
                 &nbsp;
                 {!shipmentData?.errors

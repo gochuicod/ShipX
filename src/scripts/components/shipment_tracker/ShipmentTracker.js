@@ -82,28 +82,32 @@ const ShipmentTracker = () => {
                               md:text-[0.8vw] text-[2.8vw]
                           "
             >
-              <button
-                type="button"
-                className="
-                                  bg-[#99008A]
-                                  rounded-full
-                                  md:px-[2.5vw] px-[3.5vw]
-                                  md:py-[0.35vw] py-[1vw]
-                                  text-center
-                                  cursor-pointer
-                              "
-              >
-                {t("shipment_tracker.hero_section.buttons.shipment_tracker")}
-              </button>
-              <button
-                type="button"
-                className="
-                                  text-[#4F378A] text-center
-                                  cursor-pointer
-                              "
-              >
-                {t("shipment_tracker.hero_section.buttons.hs_code_generator")}
-              </button>
+              <SmartNavLink to="/shipment-tracker" end>
+                <button
+                  type="button"
+                  className="
+                                    bg-[#99008A]
+                                    rounded-full
+                                    md:px-[2.5vw] px-[3.5vw]
+                                    md:py-[0.35vw] py-[1vw]
+                                    text-center
+                                    cursor-pointer
+                                "
+                >
+                  {t("shipment_tracker.hero_section.buttons.shipment_tracker")}
+                </button>
+              </SmartNavLink>
+              <SmartNavLink to="/hs-code-generator" end>
+                <button
+                  type="button"
+                  className="
+                                    text-[#4F378A] text-center
+                                    cursor-pointer
+                                "
+                >
+                  {t("shipment_tracker.hero_section.buttons.hs_code_generator")}
+                </button>
+              </SmartNavLink>
             </div>
           </div>
         </div>
