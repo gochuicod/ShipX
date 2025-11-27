@@ -40,7 +40,7 @@ export default function Stepper({ statuses = [] }) {
                     step.state === "completed"
                       ? "text-slate-900"
                       : step.state === "active"
-                        ? "text-green-600"
+                        ? "text-[#FF00E5]"
                         : "text-slate-400"
                   }`}
               >
