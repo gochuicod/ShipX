@@ -14,6 +14,7 @@ const NotFound = lazy(() => import("../components/ui/NotFound"));
 const ShipmentTracker = lazy(
   () => import("../components/shipment_tracker/ShipmentTracker"),
 );
+const ClaimsPage = lazy(() => import("../components/file_a_claim/ClaimsPage"));
 
 const AppRoutes = ({ margin }) => (
   <Suspense fallback={<MultiStepLoader />}>
@@ -26,6 +27,7 @@ const AppRoutes = ({ margin }) => (
         <Route path="blog" element={<BlogList />} />
         <Route path="blog/:slug" element={<Blog />} />
         <Route path="shipment-tracker" element={<ShipmentTracker />} />
+        <Route path="file-a-claim" element={<ClaimsPage />} />
       </Route>
 
       <Route path="*" element={<NotFound />} />

@@ -5,6 +5,7 @@ import SmartNavLink from "../ui/SmartNavLink";
 import { useTranslation } from "react-i18next";
 import { useShipment } from "../../hooks/useShipment";
 import SEO from "../ui/SEO";
+import ToolsHeroSection from "../ui/ToolsHeroSection"; // Import the new Hero Component
 
 const ShipmentTracker = () => {
   const { t, i18n } = useTranslation();
@@ -20,134 +21,28 @@ const ShipmentTracker = () => {
       />
 
       <div className="w-screen min-h-screen flex flex-col">
-        {/* Cover image and text section */}
-        <div
-          className="
-              flex flex-col
-              w-screen md:h-auto h-[70vw]
-              bg-cover bg-center bg-no-repeat
-              text-white text-[0.8vw]
-              font-normal
-              md:bg-[url('https://cdn.jsdelivr.net/gh/gochuicod/ShipX@203c06c5bdc001c743c47953f4f7cab69c259dd7/src/assets/shipment_tracker_cover_image.svg')]
-              bg-[url('https://cdn.jsdelivr.net/gh/gochuicod/ShipX@203c06c5bdc001c743c47953f4f7cab69c259dd7/src/assets/shipment_tracker_cta_image.svg')]
-          "
-          style={{
-            fontFamily: "Inter, system-ui, -apple-system, sans-serif",
-          }}
-        >
-          <div
-            className={`
-                          ${
-                            i18n.language === "en" || i18n.language === "thai"
-                              ? "md:w-[35vw] w-screen"
-                              : "md:w-[50vw] w-screen"
-                          }
-                          md:ps-[10vw] ps-[12vw]
-                          md:pe-0 pe-[12vw]
-                          md:pt-[5vw] pt-[15vw]
-                          md:pb-[5vw] pb-[25vw]
-                          flex flex-col
-                          md:justify-start justify-center md:items-start items-center
-                          md:gap-y-[1vw] gap-y-[3vw]
-                          z-2
-                      `}
-          >
-            <span
-              className="
-                              md:text-[2.5vw] text-[7vw] text-center
-                              md:font-bold font-semibold
-                          "
-            >
-              {t("shipment_tracker.hero_section.title")}
-            </span>
-            <span
-              className="
-                              md:text-[0.8vw] text-[2.8vw]
-                              md:text-start text-center
-                          "
-            >
-              {t("shipment_tracker.hero_section.description")}
-            </span>
-
-            {/* UPDATED NAV LINK TOGGLE SECTION */}
-            <div
-              className="
-                              flex flex-row
-                              md:gap-x-[1.5vw] gap-x-[3vw]
-                              bg-white
-                              rounded-full
-                              md:py-[0.20vw] py-[0.6vw]
-                              md:pe-[1.5vw] pe-[3vw]
-                              md:ps-[0.25vw] ps-[0.55vw]
-                              w-fit
-                              items-center justify-center
-                              md:text-[0.8vw] text-[2.8vw]
-                          "
-            >
-              <SmartNavLink to="/shipment-tracker" end>
-                <button
-                  type="button"
-                  className="
-                                    bg-[#99008A]
-                                    rounded-full
-                                    md:px-[2.5vw] px-[3.5vw]
-                                    md:py-[0.35vw] py-[1vw]
-                                    text-center
-                                    cursor-pointer
-                                "
-                >
-                  {t("shipment_tracker.hero_section.buttons.shipment_tracker")}
-                </button>
-              </SmartNavLink>
-
-              {/* NEW ADDED BUTTON: FILE A CLAIM */}
-              <SmartNavLink to="/file-a-claim" end>
-                <button
-                  type="button"
-                  className="
-                                    text-[#4F378A] text-center
-                                    cursor-pointer
-                                "
-                >
-                  {/* Assuming you add this key to your translation file, otherwise hardcode string: "File a Claim" */}
-                  {t("shipment_tracker.hero_section.buttons.file_a_claim")}
-                </button>
-              </SmartNavLink>
-
-              <SmartNavLink to="/hs-code-generator" end>
-                <button
-                  type="button"
-                  className="
-                                    text-[#4F378A] text-center
-                                    cursor-pointer
-                                "
-                >
-                  {t("shipment_tracker.hero_section.buttons.hs_code_generator")}
-                </button>
-              </SmartNavLink>
-            </div>
-          </div>
-        </div>
+        {/* Reusable Hero Section */}
+        <ToolsHeroSection activePage="shipment-tracker" />
 
         {/* Track your order section */}
         <div
           className="
-                      flex md:flex-row flex-col
-                      gap-x-[4vw]
-                      justify-center items-center
-                      md:mt-[5vw] mt-[10vw]
-                      md:px-0 px-[10vw]
-                  "
+                  flex md:flex-row flex-col
+                  gap-x-[4vw]
+                  justify-center items-center
+                  md:mt-[5vw] mt-[10vw]
+                  md:px-0 px-[10vw]
+              "
         >
           <div
             className="
-                          flex flex-col
-                          justify-center
-                          md:items-end items-center
-                          md:w-[36vw]
-                          md:gap-y-0 gap-y-[2vw]
-                          md:mb-0 mb-[8vw]
-                      "
+                      flex flex-col
+                      justify-center
+                      md:items-end items-center
+                      md:w-[36vw]
+                      md:gap-y-0 gap-y-[2vw]
+                      md:mb-0 mb-[8vw]
+                  "
             style={{
               fontFamily: "Inter, system-ui, -apple-system, sans-serif",
             }}
@@ -160,10 +55,10 @@ const ShipmentTracker = () => {
             />
             <h2
               className="
-                              md:text-[2.5vw] text-[4vw]
-                              text-[#1E2939]
-                              font-semibold
-                          "
+                          md:text-[2.5vw] text-[4vw]
+                          text-[#1E2939]
+                          font-semibold
+                      "
             >
               {t("shipment_tracker.track_order_section.title.regular")}&nbsp;
               <span className="text-[#FF00E5]">
@@ -172,18 +67,18 @@ const ShipmentTracker = () => {
             </h2>
             <p
               className="
-                              text-[#63666D]/95
-                              md:text-[1vw] text-[3vw]
-                              font-medium
-                              md:text-end text-center
-                              md:leading-[1.5vw] leading-[4vw]
-                          "
+                          text-[#63666D]/95
+                          md:text-[1vw] text-[3vw]
+                          font-medium
+                          md:text-end text-center
+                          md:leading-[1.5vw] leading-[4vw]
+                      "
             >
               {t("shipment_tracker.track_order_section.description")}
             </p>
           </div>
 
-          {/* Shipment Form and Accordion */}
+          {/* Shipment Form */}
           <ShipmentTrackerForm />
         </div>
 
@@ -196,19 +91,19 @@ const ShipmentTracker = () => {
         {/* CTA Section */}
         <div
           className="
-                      flex flex-col
-                      md:w-[80vw] w-screen
-                      md:h-auto h-[80vw]
-                      bg-cover bg-center bg-no-repeat
-                      mx-auto
-                      md:mb-[4vw] mb-0
-                      text-white text-[0.8vw]
-                      font-normal
-                      md:rounded-[1vw] rounded-[0.00000001vw]
-                      overflow-hidden
-                      md:bg-[url('https://cdn.jsdelivr.net/gh/gochuicod/ShipX@ffab8ad2ad6bf54f2ed5c615722bff70ee96f7ef/src/assets/shipment_tracker_cta_image.webp')]
-                      bg-[url('https://cdn.jsdelivr.net/gh/gochuicod/ShipX@281b9212a310690d195ec2f7ac6057b96436d583/src/assets/shipment_tracker_cta_image_mobile.svg')]
-                  "
+                  flex flex-col
+                  md:w-[80vw] w-screen
+                  md:h-auto h-[80vw]
+                  bg-cover bg-center bg-no-repeat
+                  mx-auto
+                  md:mb-[4vw] mb-0
+                  text-white text-[0.8vw]
+                  font-normal
+                  md:rounded-[1vw] rounded-[0.00000001vw]
+                  overflow-hidden
+                  md:bg-[url('https://cdn.jsdelivr.net/gh/gochuicod/ShipX@ffab8ad2ad6bf54f2ed5c615722bff70ee96f7ef/src/assets/shipment_tracker_cta_image.webp')]
+                  bg-[url('https://cdn.jsdelivr.net/gh/gochuicod/ShipX@281b9212a310690d195ec2f7ac6057b96436d583/src/assets/shipment_tracker_cta_image_mobile.svg')]
+              "
           style={{
             fontFamily: "Inter, system-ui, -apple-system, sans-serif",
           }}
@@ -265,15 +160,15 @@ const ShipmentTracker = () => {
                   <button
                     type="button"
                     className={`
-                                                                  flex flex-row
-                                                                  items-center justify-center
-                                                                  gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw]
-                                                                  bg-white/15 text-white
-                                                                  border border-white/95
-                                                                  rounded-full
-                                                                  transition-all duration-300 focus:outline-none
-                                                                  cursor-pointer
-                                                              `}
+                                                                                      flex flex-row
+                                                                                      items-center justify-center
+                                                                                      gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw]
+                                                                                      bg-white/15 text-white
+                                                                                      border border-white/95
+                                                                                      rounded-full
+                                                                                      transition-all duration-300 focus:outline-none
+                                                                                      cursor-pointer
+                                                                                  `}
                   >
                     {t("footer.book_a_demo")}
                   </button>
@@ -283,15 +178,15 @@ const ShipmentTracker = () => {
                 <button
                   type="button"
                   className={`
-                                                                  flex flex-row
-                                                                  items-center justify-center
-                                                                  gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw]
-                                                                  bg-white/15 text-white
-                                                                  border border-white/95
-                                                                  rounded-full
-                                                                  transition-all duration-300 focus:outline-none
-                                                                  cursor-pointer
-                                                              `}
+                                                                                      flex flex-row
+                                                                                      items-center justify-center
+                                                                                      gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw]
+                                                                                      bg-white/15 text-white
+                                                                                      border border-white/95
+                                                                                      rounded-full
+                                                                                      transition-all duration-300 focus:outline-none
+                                                                                      cursor-pointer
+                                                                                  `}
                 >
                   {t("footer.contact_us")}
                 </button>
