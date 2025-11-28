@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import Badge from "../shipment_tracker/Badge";
 // Adjust paths as needed based on your folder structure
 import personLaptopIcon from "../../../assets/person-laptop.svg";
@@ -7,6 +8,8 @@ import boxReturnIcon from "../../../assets/file_a_claim_box-return.svg";
 import parachuteIcon from "../../../assets/file_a_claim_parachute.svg";
 
 const FileAClaimForm = () => {
+  const { t } = useTranslation();
+
   // State for form fields
   const [formData, setFormData] = useState({
     fullName: "",
@@ -41,27 +44,25 @@ const FileAClaimForm = () => {
       <div className="flex flex-col items-center gap-y-[1vw] mb-[4vw]">
         <Badge
           className="md:text-[0.8vw] text-[2.5vw]"
-          badge_text="Trade and Logistics Toolkit"
+          badge_text={t("file_a_claim.header_section.badge_text")}
           text_color="#FF00E5"
           bg_color="#F3F1FF"
         />
         <h2 className="text-[24px] font-bold md:text-[2.5vw] text-[#1E2939] text-center">
-          We’re here to make things right.
+          {t("file_a_claim.header_section.title")}
         </h2>
         <p className="text-[#63666D] md:text-[0.9vw] text-[14px] text-center w-full md:max-w-[40vw] leading-[1.4]">
-          We apologize if you experienced an issue with your delivery. Please
-          complete the form below to help our support team investigate the
-          situation and find a resolution for you as quickly as possible.
+          {t("file_a_claim.header_section.description")}
         </p>
       </div>
 
       {/* Main Form Container - Reduced width to compress the layout */}
       <form onSubmit={handleSubmit} className="w-full md:w-[60vw]">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[2vw] gap-y-[2vw]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[2vw] gap-y-[4vw]">
           {/* LEFT COLUMN: Personal Details */}
           <div className="flex flex-col h-full">
             {/* Heading & Subheading Wrapper with 20px padding */}
-            <div className="px-5">
+            <div className="p-[20px]">
               <div className="flex items-center gap-x-3 mb-[0.5vw]">
                 <img
                   src={personLaptopIcon}
@@ -69,26 +70,28 @@ const FileAClaimForm = () => {
                   className="w-[6vw] h-[6vw] md:w-[1.5vw] md:h-[1.5vw]"
                 />
                 <h3 className="text-[#FF00E5] font-bold text-[4.5vw] md:text-[1.2vw]">
-                  Personal Details
+                  {t("file_a_claim.form_section.personal_details.title")}
                 </h3>
               </div>
               <p className="text-gray-500 text-[3vw] md:text-[0.8vw] mb-[1.5vw] leading-relaxed">
-                Please provide your current contact information so we can verify
-                your identity and keep you updated on the claim status.
+                {t("file_a_claim.form_section.personal_details.description")}
               </p>
             </div>
 
             {/* Fields Container (Colored Background) */}
-            <div className="flex flex-col gap-y-[1vw] bg-[#FBF9FF] p-5 rounded-2xl h-full">
+            <div className="flex flex-col gap-y-[1vw] bg-[#FBF9FF] p-[1.5vw] rounded-2xl h-full">
               {/* Full Name */}
               <div className="flex flex-col gap-1">
                 <label className="text-gray-700 font-bold text-[14px] md:text-[18px]">
-                  Full name <span className="text-red-500">*</span>
+                  {t("file_a_claim.form_section.fields.full_name.label")}{" "}
+                  <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
                   name="fullName"
-                  placeholder="e.g., Jane Doe"
+                  placeholder={t(
+                    "file_a_claim.form_section.fields.full_name.placeholder",
+                  )}
                   className="border border-[#B9AFD0] rounded-lg md:p-[0.6vw] p-3 focus:outline-none focus:border-[#99008A] w-full bg-white text-[14px] md:text-[0.9vw]"
                   value={formData.fullName}
                   onChange={handleChange}
@@ -99,12 +102,15 @@ const FileAClaimForm = () => {
               {/* Email */}
               <div className="flex flex-col gap-1">
                 <label className="text-gray-700 font-bold text-[14px] md:text-[18px]">
-                  Email <span className="text-red-500">*</span>
+                  {t("file_a_claim.form_section.fields.email.label")}{" "}
+                  <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="email"
                   name="email"
-                  placeholder="name@example.com"
+                  placeholder={t(
+                    "file_a_claim.form_section.fields.email.placeholder",
+                  )}
                   className="border border-[#B9AFD0] rounded-lg md:p-[0.6vw] p-3 focus:outline-none focus:border-[#99008A] w-full bg-white text-[14px] md:text-[0.9vw]"
                   value={formData.email}
                   onChange={handleChange}
@@ -115,7 +121,8 @@ const FileAClaimForm = () => {
               {/* Phone Number */}
               <div className="flex flex-col gap-1">
                 <label className="text-gray-700 font-bold text-[14px] md:text-[18px]">
-                  Phone Number <span className="text-red-500">*</span>
+                  {t("file_a_claim.form_section.fields.phone_number.label")}{" "}
+                  <span className="text-red-500">*</span>
                 </label>
                 <div className="flex gap-2">
                   <input
@@ -127,7 +134,9 @@ const FileAClaimForm = () => {
                   <input
                     type="tel"
                     name="phone"
-                    placeholder="234 567 8900"
+                    placeholder={t(
+                      "file_a_claim.form_section.fields.phone_number.placeholder",
+                    )}
                     className="border border-[#B9AFD0] rounded-lg md:p-[0.6vw] p-3 w-full focus:outline-none focus:border-[#99008A] bg-white text-[14px] md:text-[0.9vw]"
                     value={formData.phone}
                     onChange={handleChange}
@@ -139,13 +148,14 @@ const FileAClaimForm = () => {
               {/* Claimant Role */}
               <div className="flex flex-col gap-1">
                 <label className="text-gray-700 font-bold text-[14px] md:text-[18px]">
-                  Claimant Role <span className="text-red-500">*</span>
+                  {t("file_a_claim.form_section.fields.claimant_role.label")}{" "}
+                  <span className="text-red-500">*</span>
                 </label>
-                <div className="flex w-full border p-1 border-[#B9AFD0] rounded-lg overflow-hidden bg-white">
+                <div className="flex w-full border border-[#B9AFD0] rounded-lg overflow-hidden bg-white">
                   <button
                     type="button"
                     onClick={() => handleRoleChange("Sender")}
-                    className={`w-1/2 md:p-[0.6vw] p-3 rounded-sm flex items-center justify-center gap-2 transition-colors font-medium text-[3vw] md:text-[0.9vw] hover:cursor-pointer ${
+                    className={`w-1/2 md:p-[0.6vw] p-3 flex items-center justify-center gap-2 transition-colors font-medium text-[3vw] md:text-[0.9vw] hover:cursor-pointer ${
                       formData.role === "Sender"
                         ? "bg-[#4F378A] text-white"
                         : "bg-white text-gray-600 hover:bg-gray-50"
@@ -156,12 +166,14 @@ const FileAClaimForm = () => {
                       alt="Sender"
                       className="w-[4vw] h-[4vw] md:w-[1.2vw] md:h-[1.2vw]"
                     />
-                    Sender
+                    {t(
+                      "file_a_claim.form_section.fields.claimant_role.options.sender",
+                    )}
                   </button>
                   <button
                     type="button"
                     onClick={() => handleRoleChange("Receiver")}
-                    className={`w-1/2 md:p-[0.6vw] p-3 rounded-sm flex items-center justify-center gap-2 transition-colors font-medium text-[3vw] md:text-[0.9vw] hover:cursor-pointer ${
+                    className={`w-1/2 md:p-[0.6vw] p-3 flex items-center justify-center gap-2 transition-colors font-medium text-[3vw] md:text-[0.9vw] hover:cursor-pointer ${
                       formData.role === "Receiver"
                         ? "bg-[#4F378A] text-white"
                         : "bg-white text-gray-600 hover:bg-gray-50"
@@ -172,7 +184,9 @@ const FileAClaimForm = () => {
                       alt="Receiver"
                       className="w-[4vw] h-[4vw] md:w-[1.2vw] md:h-[1.2vw]"
                     />
-                    Receiver
+                    {t(
+                      "file_a_claim.form_section.fields.claimant_role.options.receiver",
+                    )}
                   </button>
                 </div>
               </div>
@@ -180,15 +194,17 @@ const FileAClaimForm = () => {
               {/* Account Number */}
               <div className="flex flex-col gap-1">
                 <label className="text-gray-700 font-bold text-[14px] md:text-[18px]">
-                  Account Number
+                  {t("file_a_claim.form_section.fields.account_number.label")}
                 </label>
                 <p className="text-[2.5vw] md:text-[0.7vw] text-gray-400">
-                  Please provide your account number as the shipper.
+                  {t("file_a_claim.form_section.fields.account_number.hint")}
                 </p>
                 <input
                   type="text"
                   name="accountNumber"
-                  placeholder="234 567 8900"
+                  placeholder={t(
+                    "file_a_claim.form_section.fields.account_number.placeholder",
+                  )}
                   className="border border-[#B9AFD0] rounded-lg md:p-[0.6vw] p-3 focus:outline-none focus:border-[#99008A] w-full bg-white text-[14px] md:text-[0.9vw]"
                   value={formData.accountNumber}
                   onChange={handleChange}
@@ -200,7 +216,7 @@ const FileAClaimForm = () => {
           {/* RIGHT COLUMN: Shipment Details */}
           <div className="flex flex-col h-full">
             {/* Heading & Subheading Wrapper with 20px padding */}
-            <div className="px-5">
+            <div className="p-[20px]">
               <div className="flex items-center gap-x-3 mb-[0.5vw]">
                 <img
                   src={airplaneIcon}
@@ -208,23 +224,22 @@ const FileAClaimForm = () => {
                   className="w-[6vw] h-[6vw] md:w-[1.5vw] md:h-[1.5vw]"
                 />
                 <h3 className="text-[#FF00E5] font-bold text-[4.5vw] md:text-[1.2vw]">
-                  Shipment Details
+                  {t("file_a_claim.form_section.shipment_details.title")}
                 </h3>
               </div>
               <p className="text-gray-500 text-[3vw] md:text-[0.8vw] mb-[1.5vw] leading-relaxed">
-                To help us route your claim to the correct team and begin an
-                investigation, please provide specific details about the
-                package.
+                {t("file_a_claim.form_section.shipment_details.description")}
               </p>
             </div>
 
             {/* Fields Container (Colored Background) */}
-            <div className="flex flex-col gap-y-[1vw] bg-[#FBF9FF] p-5 rounded-2xl h-full">
+            <div className="flex flex-col gap-y-[1vw] bg-[#FBF9FF] p-[1.5vw] rounded-2xl h-full">
               <div className="flex flex-row gap-4 w-full">
                 {/* Country */}
                 <div className="flex flex-col gap-1 w-1/2">
                   <label className="text-gray-700 font-bold text-[14px] md:text-[18px]">
-                    Country <span className="text-red-500">*</span>
+                    {t("file_a_claim.form_section.fields.country.label")}{" "}
+                    <span className="text-red-500">*</span>
                   </label>
                   <select
                     name="country"
@@ -233,18 +248,31 @@ const FileAClaimForm = () => {
                     onChange={handleChange}
                     required
                   >
-                    <option value="">Select a country</option>
-                    <option value="VN">Vietnam</option>
-                    <option value="MY">Malaysia</option>
-                    <option value="TH">Thailand</option>
-                    <option value="PH">Philippines</option>
+                    <option value="">
+                      {t(
+                        "file_a_claim.form_section.fields.country.default_option",
+                      )}
+                    </option>
+                    <option value="VN">
+                      {t("file_a_claim.form_section.fields.country.options.vn")}
+                    </option>
+                    <option value="MY">
+                      {t("file_a_claim.form_section.fields.country.options.my")}
+                    </option>
+                    <option value="TH">
+                      {t("file_a_claim.form_section.fields.country.options.th")}
+                    </option>
+                    <option value="PH">
+                      {t("file_a_claim.form_section.fields.country.options.ph")}
+                    </option>
                   </select>
                 </div>
 
                 {/* Claim Type */}
                 <div className="flex flex-col gap-1 w-1/2">
                   <label className="text-gray-700 font-bold text-[14px] md:text-[18px]">
-                    Claim Type <span className="text-red-500">*</span>
+                    {t("file_a_claim.form_section.fields.claim_type.label")}{" "}
+                    <span className="text-red-500">*</span>
                   </label>
                   <select
                     name="claimType"
@@ -253,10 +281,26 @@ const FileAClaimForm = () => {
                     onChange={handleChange}
                     required
                   >
-                    <option value="">Select claim type</option>
-                    <option value="lost">Lost Package</option>
-                    <option value="damaged">Damaged Item</option>
-                    <option value="late">Late Delivery</option>
+                    <option value="">
+                      {t(
+                        "file_a_claim.form_section.fields.claim_type.default_option",
+                      )}
+                    </option>
+                    <option value="lost">
+                      {t(
+                        "file_a_claim.form_section.fields.claim_type.options.lost",
+                      )}
+                    </option>
+                    <option value="damaged">
+                      {t(
+                        "file_a_claim.form_section.fields.claim_type.options.damaged",
+                      )}
+                    </option>
+                    <option value="late">
+                      {t(
+                        "file_a_claim.form_section.fields.claim_type.options.late",
+                      )}
+                    </option>
                   </select>
                 </div>
               </div>
@@ -264,12 +308,15 @@ const FileAClaimForm = () => {
               {/* Tracking Number */}
               <div className="flex flex-col gap-1">
                 <label className="text-gray-700 font-bold text-[14px] md:text-[18px]">
-                  Tracking Number <span className="text-red-500">*</span>
+                  {t("file_a_claim.form_section.fields.tracking_number.label")}{" "}
+                  <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
                   name="trackingNumber"
-                  placeholder="Enter tracking number (min 8 characters)"
+                  placeholder={t(
+                    "file_a_claim.form_section.fields.tracking_number.placeholder",
+                  )}
                   className="border border-[#B9AFD0] rounded-lg md:p-[0.6vw] p-3 focus:outline-none focus:border-[#99008A] w-full bg-white text-[14px] md:text-[0.9vw]"
                   value={formData.trackingNumber}
                   onChange={handleChange}
@@ -281,11 +328,14 @@ const FileAClaimForm = () => {
               {/* Description */}
               <div className="flex flex-col gap-1 flex-grow">
                 <label className="text-gray-700 font-bold text-[14px] md:text-[18px]">
-                  Description <span className="text-red-500">*</span>
+                  {t("file_a_claim.form_section.fields.description.label")}{" "}
+                  <span className="text-red-500">*</span>
                 </label>
                 <textarea
                   name="description"
-                  placeholder="Please provide as much detail as possible about your claim..."
+                  placeholder={t(
+                    "file_a_claim.form_section.fields.description.placeholder",
+                  )}
                   className="border border-[#B9AFD0] rounded-lg md:p-[0.6vw] p-3 focus:outline-none focus:border-[#99008A] w-full h-[30vw] md:h-full resize-none bg-white text-[14px] md:text-[0.9vw]"
                   value={formData.description}
                   onChange={handleChange}
@@ -298,7 +348,7 @@ const FileAClaimForm = () => {
                 <button
                   type="submit"
                   className="
-                    bg-gradient-to-r from-[#4F378A] to-[#FF00E5]
+                    bg-gradient-to-r from-[#80358E] to-[#E6007E]
                     text-white font-bold
                     py-[1vw] px-[4vw] md:py-[0.7vw] md:px-[2.5vw]
                     rounded-full
@@ -307,7 +357,7 @@ const FileAClaimForm = () => {
                     md:text-[1vw] text-[3.5vw] hover:cursor-pointer
                   "
                 >
-                  Submit Claim
+                  {t("file_a_claim.form_section.buttons.submit_claim")}
                 </button>
               </div>
             </div>

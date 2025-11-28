@@ -1,7 +1,10 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import SmartNavLink from "./SmartNavLink";
 
 const ToolsHeroSection = ({ activePage = "file-a-claim" }) => {
+  const { t } = useTranslation();
+
   // Styles for the ACTIVE button
   const activeButtonStyle =
     "bg-[#99008A] text-white rounded-full md:px-[1.5vw] px-[2.5vw] md:py-[0.2vw] py-[0.5vw] text-center cursor-pointer text-xs whitespace-nowrap";
@@ -48,22 +51,24 @@ const ToolsHeroSection = ({ activePage = "file-a-claim" }) => {
               z-2
           "
       >
+        {/* Dynamic Title */}
         <span
           className="
-              md:text-[45px] text-[7vw] text-center
-              md:font-bold font-semibold
+              md:text-[40px] text-[7vw] md:text-start md:justify-start
+              md:font-bold font-semibold text-center
           "
         >
-          Essential Trade Tools
+          {t("shipment_tracker.hero_section.title")}
         </span>
+
+        {/* Dynamic Description */}
         <span
           className="
               md:text-[20px] text-[2.8vw] md:font-semibold
               md:text-start text-center max-w-full leading-[1.2]
           "
         >
-          Equip your business with the smart solutions needed to manage,
-          monitor, and master your logistics operations.
+          {t("shipment_tracker.hero_section.description")}
         </span>
 
         {/* NAV LINK TOGGLE SECTION */}
@@ -91,7 +96,7 @@ const ToolsHeroSection = ({ activePage = "file-a-claim" }) => {
                   : inactiveButtonStyle
               }
             >
-              Shipment Tracker
+              {t("shipment_tracker.hero_section.buttons.shipment_tracker")}
             </button>
           </SmartNavLink>
 
@@ -105,7 +110,7 @@ const ToolsHeroSection = ({ activePage = "file-a-claim" }) => {
                   : inactiveButtonStyle
               }
             >
-              File a Claim
+              {t("shipment_tracker.hero_section.buttons.file_a_claim")}
             </button>
           </SmartNavLink>
 
@@ -119,7 +124,7 @@ const ToolsHeroSection = ({ activePage = "file-a-claim" }) => {
                   : inactiveButtonStyle
               }
             >
-              HS Code Generator
+              {t("shipment_tracker.hero_section.buttons.hs_code_generator")}
             </button>
           </SmartNavLink>
         </div>
