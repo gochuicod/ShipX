@@ -68,6 +68,8 @@ const ShipmentTracker = () => {
             >
               {t("shipment_tracker.hero_section.description")}
             </span>
+
+            {/* UPDATED NAV LINK TOGGLE SECTION */}
             <div
               className="
                               flex flex-row
@@ -97,6 +99,21 @@ const ShipmentTracker = () => {
                   {t("shipment_tracker.hero_section.buttons.shipment_tracker")}
                 </button>
               </SmartNavLink>
+
+              {/* NEW ADDED BUTTON: FILE A CLAIM */}
+              <SmartNavLink to="/file-a-claim" end>
+                <button
+                  type="button"
+                  className="
+                                    text-[#4F378A] text-center
+                                    cursor-pointer
+                                "
+                >
+                  {/* Assuming you add this key to your translation file, otherwise hardcode string: "File a Claim" */}
+                  {t("shipment_tracker.hero_section.buttons.file_a_claim")}
+                </button>
+              </SmartNavLink>
+
               <SmartNavLink to="/hs-code-generator" end>
                 <button
                   type="button"
@@ -248,15 +265,15 @@ const ShipmentTracker = () => {
                   <button
                     type="button"
                     className={`
-                                          flex flex-row
-                                          items-center justify-center
-                                          gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw]
-                                          bg-white/15 text-white
-                                          border border-white/95
-                                          rounded-full
-                                          transition-all duration-300 focus:outline-none
-                                          cursor-pointer
-                                      `}
+                                                                  flex flex-row
+                                                                  items-center justify-center
+                                                                  gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw]
+                                                                  bg-white/15 text-white
+                                                                  border border-white/95
+                                                                  rounded-full
+                                                                  transition-all duration-300 focus:outline-none
+                                                                  cursor-pointer
+                                                              `}
                   >
                     {t("footer.book_a_demo")}
                   </button>
@@ -266,15 +283,15 @@ const ShipmentTracker = () => {
                 <button
                   type="button"
                   className={`
-                                      flex flex-row
-                                      items-center justify-center
-                                      gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw]
-                                      bg-white/15 text-white
-                                      border border-white/95
-                                      rounded-full
-                                      transition-all duration-300 focus:outline-none
-                                      cursor-pointer
-                                  `}
+                                                                  flex flex-row
+                                                                  items-center justify-center
+                                                                  gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw]
+                                                                  bg-white/15 text-white
+                                                                  border border-white/95
+                                                                  rounded-full
+                                                                  transition-all duration-300 focus:outline-none
+                                                                  cursor-pointer
+                                                              `}
                 >
                   {t("footer.contact_us")}
                 </button>
