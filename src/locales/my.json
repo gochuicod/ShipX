@@ -639,5 +639,78 @@
         "contact_us": "Hubungi Kami"
       }
     }
+  },
+  "file_a_claim": {
+  "header_section": {
+    "badge_text": "Kit Alat Perdagangan dan Logistik",
+    "title": "Kami di sini untuk membetulkan keadaan.",
+    "description": "Kami memohon maaf sekiranya anda mengalami masalah dengan penghantaran anda. Sila lengkapkan borang di bawah untuk membantu pasukan sokongan kami menyiasat situasi dan mencari penyelesaian untuk anda secepat mungkin."
+  },
+  "form_section": {
+    "personal_details": {
+      "title": "Maklumat Peribadi",
+      "description": "Sila berikan maklumat hubungan semasa anda supaya kami dapat mengesahkan identiti anda dan memastikan anda mendapat maklumat terkini mengenai status tuntutan."
+    },
+    "shipment_details": {
+      "title": "Maklumat Penghantaran",
+      "description": "Untuk membantu kami menyalurkan tuntutan anda kepada pasukan yang betul dan memulakan siasatan, sila berikan butiran khusus mengenai pakej tersebut."
+    },
+    "fields": {
+      "full_name": {
+        "label": "Nama penuh",
+        "placeholder": "cth., Jane Doe"
+      },
+      "email": {
+        "label": "Emel",
+        "placeholder": "nama@contoh.com"
+      },
+      "phone_number": {
+        "label": "Nomor Telefon",
+        "placeholder": "234 567 8900"
+      },
+      "claimant_role": {
+        "label": "Peranan Penuntut",
+        "options": {
+          "sender": "Pengirim",
+          "receiver": "Penerima"
+        }
+      },
+      "account_number": {
+        "label": "Nomor Akaun",
+        "hint": "Sila berikan nombor akaun anda sebagai pengirim.",
+        "placeholder": "234 567 8900"
+      },
+      "country": {
+        "label": "Negara",
+        "default_option": "Pilih negara",
+        "options": {
+          "vn": "Vietnam",
+          "my": "Malaysia",
+          "th": "Thailand",
+          "ph": "Filipina"
+        }
+      },
+      "claim_type": {
+        "label": "Jenis Tuntutan",
+        "default_option": "Pilih jenis tuntutan",
+        "options": {
+          "lost": "Pakej Hilang",
+          "damaged": "Barang Rosak",
+          "late": "Penghantaran Lewat"
+        }
+      },
+      "tracking_number": {
+        "label": "Nomor Penjejakan",
+        "placeholder": "Masukkan nombor penjejakan (min 8 aksara)"
+      },
+      "description": {
+        "label": "Penerangan",
+        "placeholder": "Sila berikan butiran sebanyak mungkin mengenai tuntutan anda..."
+      }
+    },
+    "buttons": {
+      "submit_claim": "Hantar Tuntutan"
+    }
+  }
   }
 }
