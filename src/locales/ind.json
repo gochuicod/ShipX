@@ -605,7 +605,8 @@
       "description": "Lengkapi bisnis Anda dengan solusi cerdas untuk mengelola, memantau, dan menguasai operasi logistik Anda.",
       "buttons": {
         "shipment_tracker": "Pelacak Pengiriman",
-        "hs_code_generator": "Generator Kode HS"
+        "hs_code_generator": "Generator Kode HS",
+        "file_a_claim": "Ajukan Klaim"
       }
     },
     "track_order_section": {

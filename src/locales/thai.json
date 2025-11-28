@@ -605,7 +605,8 @@
       "description": "เสริมธุรกิจของคุณด้วยโซลูชันอัจฉริยะในการจัดการ ติดตาม และควบคุมการดำเนินงานด้านโลจิสติกส์",
       "buttons": {
         "shipment_tracker": "ติดตามพัสดุ",
-        "hs_code_generator": "เครื่องสร้างรหัส HS"
+        "hs_code_generator": "เครื่องสร้างรหัส HS",
+        "file_a_claim": "ยื่นเรื่องเคลม"
       }
     },
     "track_order_section": {

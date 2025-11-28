@@ -605,7 +605,8 @@
       "description": "Equip your business with the smart solutions needed to manage, monitor, and master your logistics operations.",
       "buttons": {
         "shipment_tracker": "Shipment Tracker",
-        "hs_code_generator": "HS Code Generator"
+        "hs_code_generator": "HS Code Generator",
+        "file_a_claim": "File a Claim"
       }
     },
     "track_order_section": {

@@ -605,7 +605,8 @@
       "description": "Lengkapkan perniagaan anda dengan penyelesaian pintar untuk mengurus, memantau, dan menguasai operasi logistik anda.",
       "buttons": {
         "shipment_tracker": "Penjejak Penghantaran",
-        "hs_code_generator": "Penjana Kod HS"
+        "hs_code_generator": "Penjana Kod HS",
+        "file_a_claim": "Failkan Tuntutan"
       }
     },
     "track_order_section": {

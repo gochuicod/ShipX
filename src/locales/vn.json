@@ -605,7 +605,8 @@
       "description": "Trang bị cho doanh nghiệp của bạn các giải pháp thông minh để quản lý, giám sát và tối ưu hoạt động logistics.",
       "buttons": {
         "shipment_tracker": "Theo Dõi Đơn Hàng",
-        "hs_code_generator": "Tạo Mã HS"
+        "hs_code_generator": "Tạo Mã HS",
+        "file_a_claim": "Yêu cầu bồi thường"
       }
     },
     "track_order_section": {
