@@ -605,7 +605,8 @@
       "description": "Equip your business with the smart solutions needed to manage, monitor, and master your logistics operations.",
       "buttons": {
         "shipment_tracker": "Shipment Tracker",
-        "hs_code_generator": "HS Code Generator"
+        "hs_code_generator": "HS Code Generator",
+        "file_a_claim": "File a Claim"
       }
     },
     "track_order_section": {
@@ -638,5 +639,78 @@
         "contact_us": "Contact Us"
       }
     }
+  },
+  "file_a_claim": {
+  "header_section": {
+    "badge_text": "Trade and Logistics Toolkit",
+    "title": "We’re here to make things right.",
+    "description": "We apologize if you experienced an issue with your delivery. Please complete the form below to help our support team investigate the situation and find a resolution for you as quickly as possible."
+  },
+  "form_section": {
+    "personal_details": {
+      "title": "Personal Details",
+      "description": "Please provide your current contact information so we can verify your identity and keep you updated on the claim status."
+    },
+    "shipment_details": {
+      "title": "Shipment Details",
+      "description": "To help us route your claim to the correct team and begin an investigation, please provide specific details about the package."
+    },
+    "fields": {
+      "full_name": {
+        "label": "Full name",
+        "placeholder": "e.g., Jane Doe"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "name@example.com"
+      },
+      "phone_number": {
+        "label": "Phone Number",
+        "placeholder": "234 567 8900"
+      },
+      "claimant_role": {
+        "label": "Claimant Role",
+        "options": {
+          "sender": "Sender",
+          "receiver": "Receiver"
+        }
+      },
+      "account_number": {
+        "label": "Account Number",
+        "hint": "Please provide your account number as the shipper.",
+        "placeholder": "234 567 8900"
+      },
+      "country": {
+        "label": "Country",
+        "default_option": "Select a country",
+        "options": {
+          "vn": "Vietnam",
+          "my": "Malaysia",
+          "th": "Thailand",
+          "ph": "Philippines"
+        }
+      },
+      "claim_type": {
+        "label": "Claim Type",
+        "default_option": "Select claim type",
+        "options": {
+          "lost": "Lost Package",
+          "damaged": "Damaged Item",
+          "late": "Late Delivery"
+        }
+      },
+      "tracking_number": {
+        "label": "Tracking Number",
+        "placeholder": "Enter tracking number (min 8 characters)"
+      },
+      "description": {
+        "label": "Description",
+        "placeholder": "Please provide as much detail as possible about your claim..."
+      }
+    },
+    "buttons": {
+      "submit_claim": "Submit Claim"
+    }
+  }
   }
 }

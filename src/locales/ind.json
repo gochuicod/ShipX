@@ -605,7 +605,8 @@
       "description": "Lengkapi bisnis Anda dengan solusi cerdas untuk mengelola, memantau, dan menguasai operasi logistik Anda.",
       "buttons": {
         "shipment_tracker": "Pelacak Pengiriman",
-        "hs_code_generator": "Generator Kode HS"
+        "hs_code_generator": "Generator Kode HS",
+        "file_a_claim": "Ajukan Klaim"
       }
     },
     "track_order_section": {
@@ -638,5 +639,78 @@
         "contact_us": "Hubungi Kami"
       }
     }
+  },
+  "file_a_claim": {
+  "header_section": {
+    "badge_text": "Perangkat Perdagangan dan Logistik",
+    "title": "Kami di sini untuk memperbaikinya.",
+    "description": "Kami mohon maaf jika Anda mengalami masalah dengan pengiriman Anda. Silakan lengkapi formulir di bawah ini untuk membantu tim dukungan kami menyelidiki situasi dan menemukan solusi untuk Anda secepat mungkin."
+  },
+  "form_section": {
+    "personal_details": {
+      "title": "Detail Pribadi",
+      "description": "Harap berikan informasi kontak Anda saat ini agar kami dapat memverifikasi identitas Anda dan memberi Anda informasi terbaru tentang status klaim."
+    },
+    "shipment_details": {
+      "title": "Detail Pengiriman",
+      "description": "Untuk membantu kami mengarahkan klaim Anda ke tim yang tepat dan memulai penyelidikan, harap berikan detail spesifik tentang paket tersebut."
+    },
+    "fields": {
+      "full_name": {
+        "label": "Nama lengkap",
+        "placeholder": "mis., Jane Doe"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "nama@contoh.com"
+      },
+      "phone_number": {
+        "label": "Nomor Telepon",
+        "placeholder": "234 567 8900"
+      },
+      "claimant_role": {
+        "label": "Peran Penggugat",
+        "options": {
+          "sender": "Pengirim",
+          "receiver": "Penerima"
+        }
+      },
+      "account_number": {
+        "label": "Nomor Akun",
+        "hint": "Harap berikan nomor akun Anda sebagai pengirim.",
+        "placeholder": "234 567 8900"
+      },
+      "country": {
+        "label": "Negara",
+        "default_option": "Pilih negara",
+        "options": {
+          "vn": "Vietnam",
+          "my": "Malaysia",
+          "th": "Thailand",
+          "ph": "Filipina"
+        }
+      },
+      "claim_type": {
+        "label": "Jenis Klaim",
+        "default_option": "Pilih jenis klaim",
+        "options": {
+          "lost": "Paket Hilang",
+          "damaged": "Barang Rusak",
+          "late": "Pengiriman Terlambat"
+        }
+      },
+      "tracking_number": {
+        "label": "Nomor Pelacakan",
+        "placeholder": "Masukkan nomor pelacakan (min 8 karakter)"
+      },
+      "description": {
+        "label": "Deskripsi",
+        "placeholder": "Harap berikan detail sebanyak mungkin tentang klaim Anda..."
+      }
+    },
+    "buttons": {
+      "submit_claim": "Ajukan Klaim"
+    }
+  }
   }
 }
