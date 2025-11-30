@@ -1,8 +1,7 @@
-import React from "react";
 import SmartNavLink from "../ui/SmartNavLink";
 import SEO from "../ui/SEO";
 import FileAClaimForm from "./FileAClaimForm";
-import ToolsHeroSection from "../ui/ToolsHeroSection"; // UPDATED IMPORT PATH
+import ToolsHeroSection from "../shipment_tracker/ToolsHeroSection";
 
 const ClaimsPage = () => {
   return (
