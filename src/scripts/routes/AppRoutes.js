@@ -15,6 +15,7 @@ const ShipmentTracker = lazy(
   () => import("../components/shipment_tracker/ShipmentTracker"),
 );
 const ClaimsPage = lazy(() => import("../components/file_a_claim/ClaimsPage"));
+const HsCodeGenerator = lazy(() => import("../components/hs_code_generator/HsCodeGenerator"));
 
 const AppRoutes = ({ margin }) => (
   <Suspense fallback={<MultiStepLoader />}>
@@ -27,6 +28,7 @@ const AppRoutes = ({ margin }) => (
         <Route path="blog" element={<BlogList />} />
         <Route path="blog/:slug" element={<Blog />} />
         <Route path="shipment-tracker" element={<ShipmentTracker />} />
+        <Route path="hs-code-generator" element={<HsCodeGenerator />} />
         <Route path="file-a-claim" element={<ClaimsPage />} />
       </Route>
 
