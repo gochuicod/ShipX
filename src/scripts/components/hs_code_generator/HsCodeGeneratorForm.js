@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { useHsCode } from "../../hooks/useHsCode";
+import ToolTipError from "./ToolTipError";
 
 const API_URL = "https://hs-code-generator.replit.app/api/classify";
 
@@ -10,6 +11,7 @@ export default function HsCodeGeneratorForm() {
     handleSubmit,
     control,
     formState: { errors },
+    reset
   } = useForm({
     defaultValues: {
       targetSystem: "USA",
@@ -87,10 +89,15 @@ export default function HsCodeGeneratorForm() {
         );
       }
 
-      console.log(responseData);
       setHsCodeResult(responseData);
+      reset();
+      setFiles([]);
     } catch (err) {
-      setHsCodeResult(err.message);
+      setHsCodeResult(
+        {
+          "error": err.message
+        }
+      );
     } finally {
       setIsLoading(false);
     }
@@ -117,6 +124,7 @@ export default function HsCodeGeneratorForm() {
                     flex flex-col
                     md:w-[35vw] w-[90vw]
                     md:mt-0 mt-[5vw]
+                    relative
                 "
       >
         <label
@@ -138,39 +146,44 @@ export default function HsCodeGeneratorForm() {
         >
           Provide a detailed description of your product
         </p>
-        <textarea
-          className={`
-                        w-full
-                        border
-                        md:mt-0 mt-[1.5vw]
-                        md:rounded-[0.7vw] rounded-[2vw]
-                        md:px-[1vw] px-[2vw]
-                        md:py-[0.5vw] py-[1.5vw]
-                        resize-none
-                        focus:outline-none
-                        italic focus:not-italic
-                        md:h-[3.5vw] h-[10vw]
-                        md:text-[0.7vw] text-[2vw]
-                        text-[#99A1AF] focus:text-[#4A5565]/80
-                        ${
-                          errors.productDescription
-                            ? "border-red-500 focus:border-red-500"
-                            : "border-[#B9AFD0]"
-                        }
-                    `}
-          placeholder={
-            errors.productDescription
-              ? errors.productDescription.message
-              : "e.g., 'Component for car engines', 'Retail kitchen appliance'."
+        <div className="relative">
+          {
+            errors.productDescription && <ToolTipError message={errors.productDescription.message} />
           }
-          {...register("productDescription", {
-            required: "Product description is required",
-            minLength: {
-              value: 10,
-              message: "Description must be at least 10 characters",
-            },
-          })}
-        />
+          <textarea
+            className={`
+                          w-full
+                          border
+                          md:mt-0 mt-[1.5vw]
+                          md:rounded-[0.7vw] rounded-[2vw]
+                          md:px-[1vw] px-[2vw]
+                          md:py-[0.5vw] py-[1.5vw]
+                          resize-none
+                          focus:outline-none
+                          italic focus:not-italic
+                          md:h-[3.5vw] h-[10vw]
+                          md:text-[0.7vw] text-[2vw]
+                          text-[#99A1AF] focus:text-[#4A5565]/80
+                          ${
+                            errors.productDescription
+                              ? "border-red-500 focus:border-red-500"
+                              : "border-[#B9AFD0]"
+                          }
+                      `}
+            placeholder={
+              errors.productDescription
+                ? errors.productDescription.message
+                : "e.g., 'Component for car engines', 'Retail kitchen appliance'."
+            }
+            {...register("productDescription", {
+              required: "Product description is required",
+              minLength: {
+                value: 15,
+                message: "Description must be at least 15 characters",
+              },
+            })}
+          />
+        </div>
       </div>
       {/* Intended Use */}
       <div
@@ -492,7 +505,7 @@ export default function HsCodeGeneratorForm() {
 
               <button
                 type="button"
-                onClick={() => field.onChange("Global")}
+                onClick={() => field.onChange("ROW")}
                 className={`
                             flex-1 flex
                             items-center justify-center
@@ -503,7 +516,7 @@ export default function HsCodeGeneratorForm() {
                             transition-all duration-500
                             cursor-pointer
                             ${
-                              field.value === "Global"
+                              field.value === "ROW"
                                 ? "bg-[#4F378A]/90 text-white"
                                 : "text-[#4F378A]/90 hover:bg-slate-200/50"
                             }`}
