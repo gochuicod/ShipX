@@ -84,7 +84,7 @@ const FAQCTASection = () => {
               flex items-center justify-center
               
               /* Background Gradient */
-              bg-gradient-to-r from-[#4F378A] to-[#FF00E5]
+              bg-linear-to-r from-[#4F378A] to-[#FF00E5]
               hover:opacity-90
               transition-all duration-300
               

@@ -10,7 +10,7 @@ import { useRef, useEffect } from "react";
 
 const ShipmentTracker = () => {
   const { t, i18n } = useTranslation();
-  const { shipmentData, trackingNumber } = useShipment();
+  const { shipmentData, trackingNumber, setShipmentData } = useShipment();
 
   const accordionRef = useRef(null);
 
@@ -24,6 +24,12 @@ const ShipmentTracker = () => {
       }, 500);
     }
   }, [shipmentData]);
+
+  const handleTrackAnotherShipment = () => {
+    setTimeout(() => {
+      setShipmentData(null);
+    }, 500);
+  };
 
   return (
     <>
@@ -127,6 +133,7 @@ const ShipmentTracker = () => {
                 <SmartNavLink to="shipment-tracker/#" end>
                   <button
                     type="button"
+                    onClick={handleTrackAnotherShipment}
                     className="
                                   bg-linear-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
                                   bg-size-[200%_100%] bg-position-[0%_0%] hover:bg-position-[100%_0%]
@@ -160,6 +167,7 @@ const ShipmentTracker = () => {
                 <SmartNavLink to="shipment-tracker/#" end>
                   <button
                     type="button"
+                    onClick={handleTrackAnotherShipment}
                     className="
                                   bg-linear-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
                                   bg-size-[200%_100%] bg-position-[0%_0%] hover:bg-position-[100%_0%]
