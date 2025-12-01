@@ -7,7 +7,6 @@ const ParallaxSection = lazy(() => import("./ParallaxSection"));
 const FAQSection = () => {
   const { t } = useTranslation();
 
-  // 1. Cleaned up data retrieval (Removed FALLBACK_DATA)
   const rawItems = t("faq_section.items", { returnObjects: true });
   const faqItems = Array.isArray(rawItems) ? rawItems : [];
 
@@ -30,27 +29,44 @@ const FAQSection = () => {
 
   return (
     <ParallaxSection>
-      <div className="w-full bg-white py-20 px-4 md:px-8 font-sans">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-8 md:mb-20">
-            <span className="inline-block py-2 px-6 rounded-full bg-fuchsia-100 text-fuchsia-600 text-xs md:text-sm font-bold tracking-wide mb-6">
+      <div
+        className="
+          w-full bg-white font-sans
+          py-[10vw] px-[5vw]           
+          md:py-[3.1vw] md:px-[17vw] 
+        "
+      >
+        <div className="w-full mx-auto">
+          {/* Header Section */}
+          <div className="text-center mb-[8vw] md:mb-[2.5vw]">
+            <span
+              className="
+                  inline-block
+                  py-[2.1vw] pl-[2.7vw] pr-[3.5vw]
+                  rounded-[2.1vw]
+                  text-[2.5vw]
+                  mb-[4vw]
+
+                  md:py-[0.42vw] md:pl-[0.52vw] md:pr-[0.68vw]
+                  md:rounded-[0.42vw]
+                  md:text-[0.7vw]
+                  md:mb-[0.5vw]
+
+                  bg-[#F3F1FF] text-[#FF00E5]
+                  font-bold tracking-wide
+                "
+            >
               ● {getSafeText("faq_section.badge", "Frequently Asked Questions")}
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-950">
+            <h2 className="text-[5vw] md:text-[2.5vw] font-bold text-slate-950">
               {getSafeText("faq_section.title", "Everything You Need to Know")}
             </h2>
           </div>
 
-          {/* Grid Gap Adjustment: 
-            - gap-4 on mobile (matches the flex-col gap below for a seamless list)
-            - md:gap-8 on desktop (separation between left and right columns)
-          */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 items-start">
-            {/* Column Item Gap Adjustment:
-              - gap-4 on mobile (uniform spacing)
-              - md:gap-6 on desktop (slightly increased breathing room between cards)
-            */}
-            <div className="flex flex-col gap-2 md:gap-4">
+          {/* Grid Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[1vw] md:gap-[1vw] items-start">
+            {/* Left Column */}
+            <div className="flex flex-col gap-[0.5vw] md:gap-[0.5vw]">
               {leftColItems.map((item) => (
                 <FaqItem
                   key={item.id}
@@ -61,7 +77,8 @@ const FAQSection = () => {
               ))}
             </div>
 
-            <div className="flex flex-col gap-2 md:gap-4">
+            {/* Right Column */}
+            <div className="flex flex-col gap-[0.5vw] md:gap-[0.5vw]">
               {rightColItems.map((item) => (
                 <FaqItem
                   key={item.id}
