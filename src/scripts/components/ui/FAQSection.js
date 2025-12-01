@@ -32,7 +32,7 @@ const FAQSection = () => {
       <div
         className="
           w-full bg-white font-sans
-          py-[10vw] px-[5vw]           
+          py-0 px-[5vw]
           md:py-[3.1vw] md:px-[17vw] 
         "
       >

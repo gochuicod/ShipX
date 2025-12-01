@@ -116,7 +116,7 @@ const FAQPage = () => {
               "
             >
               <img
-                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/faq-search-icon.svg"
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/faq_search_icon.svg"
                 alt="Search"
                 className="md:w-[2.1vw] md:h-[2.1vw] w-[6vw] h-[6vw] object-contain"
               />
@@ -143,7 +143,7 @@ const FAQPage = () => {
                 className="shrink-0 flex items-center justify-center cursor-pointer hover:opacity-80 transition-opacity"
               >
                 <img
-                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/faq-send-icon.svg"
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/faq_send_icon.svg"
                   alt="Search Button"
                   className="md:w-[2.1vw] md:h-[2.1vw] w-[6vw] h-[6vw] object-contain"
                 />

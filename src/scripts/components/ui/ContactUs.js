@@ -9,18 +9,18 @@ const ContactUs = () => {
   return (
     <div
       id="contact-us"
-      className="relative flex flex-col justify-center items-center md:pt-[10vw] pt-[1vw] overflow-hidden"
+      className="relative flex flex-col justify-center items-center md:pt-[5vw] pt-[1vw] overflow-hidden"
     >
       <img
         src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_7.svg"
         alt="ShipX Contact Us Background"
-        className="absolute md:-translate-y-[5vw] -translate-y-[35vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none -z-10"
+        className="absolute md:translate-y-0 -translate-y-[35vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none -z-10"
         aria-hidden="true"
       />
       <img
         src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_7.svg"
         alt="ShipX Contact Us Background Accent"
-        className="absolute translate-x-[30vw] md:translate-y-[10vw] -translate-y-[15vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none opacity-20 -z-10"
+        className="absolute translate-x-[30vw] md:translate-y-[15vw] -translate-y-[15vw] w-[200vw] md:h-[53vw] h-full pointer-events-none select-none opacity-20 -z-10"
         aria-hidden="true"
       />
       <ParallaxSection>

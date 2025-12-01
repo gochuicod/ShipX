@@ -2,17 +2,18 @@ import { lazy } from "react";
 import { useTranslation } from "react-i18next";
 const Carousel = lazy(() => import("./ui/CarouselNav"));
 const MessengerButton = lazy(() => import("./ui/MessengerButton"));
-const ServiceHeadline = lazy(() => import("./ui/ServiceHeadline"));
+// const ServiceHeadline = lazy(() => import("./ui/ServiceHeadline"));
 const Statistics = lazy(() => import("./ui/Statistics"));
 const Services = lazy(() => import("./ui/Services"));
 const Platform = lazy(() => import("./ui/Platform"));
 const SGAmiloCards = lazy(() => import("./ui/SGAmiloCards"));
 const FreightAndCustoms = lazy(() => import("./ui/FreightAndCustoms"));
 const Offices = lazy(() => import("./ui/Offices"));
-const AnnouncementBanner = lazy(() => import("./ui/AnnouncementBanner"));
+// const AnnouncementBanner = lazy(() => import("./ui/AnnouncementBanner"));
 const ContactUs = lazy(() => import("./ui/ContactUs"));
 const SEO = lazy(() => import("./ui/SEO"));
 const FAQSection = lazy(() => import("./ui/FAQSection"));
+const Blogs = lazy(() => import("./blogs/BlogsSection"));
 
 const Main = ({ margin }) => {
   const { t } = useTranslation();
@@ -41,6 +42,7 @@ const Main = ({ margin }) => {
           <FreightAndCustoms />
           <Offices />
           {/* <AnnouncementBanner /> */}
+          <Blogs />
           <FAQSection />
           <ContactUs />
         </div>
