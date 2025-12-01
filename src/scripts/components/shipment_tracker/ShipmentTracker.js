@@ -98,15 +98,94 @@ const ShipmentTracker = () => {
         </div>
 
         {/* Shipment Accordion */}
-        <div ref={accordionRef}>
-          {!shipmentData?.errors && shipmentData && (
-            <ShipmentTrackerAccordion
-              shipmentData={shipmentData}
-              trackingNumber={trackingNumber}
-            />
-          )}
-        </div>
+        {shipmentData &&
+          shipmentData.statuses &&
+          shipmentData.statuses.length > 0 && (
+            <div ref={accordionRef}>
+              <div
+                className="
+                  flex flex-col
+                  md:gap-y-[3vw] gap-y-[8vw]
+                  justify-center items-center
+                "
+              >
+                <ShipmentTrackerAccordion
+                  shipmentData={{
+                    statuses: [
+                      [...(shipmentData?.statuses || [])]
+                        .sort(
+                          (a, b) =>
+                            new Date(a.updatedDate) - new Date(b.updatedDate),
+                        )
+                        .pop(),
+                    ],
+                  }}
+                  trackingNumber={trackingNumber}
+                  latestStatusHidden={true}
+                />
 
+                <SmartNavLink to="shipment-tracker/#" end>
+                  <button
+                    type="button"
+                    className="
+                                  bg-linear-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
+                                  bg-size-[200%_100%] bg-position-[0%_0%] hover:bg-position-[100%_0%]
+                                  transition-[background-position] duration-1000 ease-in-out
+                                  md:py-[0.5vw] py-[1.4vw]
+                                  md:px-[1.5vw] px-[3vw]
+                                  md:rounded-[2vw] rounded-full
+                                  cursor-pointer
+                                  text-white
+                                  md:font-medium font-normal
+                                  md:text-[0.8vw] text-[2.4vw]
+                                  w-fit
+                              "
+                    style={{
+                      fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+                    }}
+                  >
+                    {t(
+                      "shipment_tracker.shipment_activity_section.track_another_shipment_button_text",
+                    )}
+                  </button>
+                </SmartNavLink>
+
+                <ShipmentTrackerAccordion
+                  shipmentData={{
+                    statuses: shipmentData?.statuses,
+                  }}
+                  trackingNumber={trackingNumber}
+                />
+
+                <SmartNavLink to="shipment-tracker/#" end>
+                  <button
+                    type="button"
+                    className="
+                                  bg-linear-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
+                                  bg-size-[200%_100%] bg-position-[0%_0%] hover:bg-position-[100%_0%]
+                                  transition-[background-position] duration-1000 ease-in-out
+                                  md:py-[0.5vw] py-[1.4vw]
+                                  md:px-[1.5vw] px-[3vw]
+                                  md:rounded-[2vw] rounded-full
+                                  cursor-pointer
+                                  text-white
+                                  md:font-medium font-normal
+                                  md:text-[0.8vw] text-[2.4vw]
+                                  w-fit
+                                  md:mb-[5vw] mb-[10vw]
+                              "
+                    style={{
+                      fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+                    }}
+                  >
+                    {t(
+                      "shipment_tracker.shipment_activity_section.track_another_shipment_button_text",
+                    )}
+                  </button>
+                </SmartNavLink>
+              </div>
+            </div>
+          )}
         {/* CTA Section */}
         <div
           className="

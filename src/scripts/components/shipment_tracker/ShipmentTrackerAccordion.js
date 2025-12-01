@@ -4,14 +4,18 @@ import {
   AccordionBody,
 } from "@material-tailwind/react";
 import { useState } from "react";
-import ProgressBar, { getShipmentProgressPercentage } from "./ProgressBar";
-import { getLastStatusLabel, mapStatuses } from "./StatusMap";
+import {
+  getLastStatusLabel,
+  mapStatuses,
+  formatShipmentDate,
+} from "./StatusMap";
 import Stepper from "./Stepper";
 import { useTranslation } from "react-i18next";
 
 export default function ShipmentTrackerAccordion({
   shipmentData = [],
-  trackingNumber = "1234567890",
+  trackingNumber = "SGL2510001808",
+  latestStatusHidden = false,
 }) {
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
   const [open, setOpen] = useState(1);
@@ -27,9 +31,8 @@ export default function ShipmentTrackerAccordion({
         className="
                     flex
                     justify-center items-center
-                    md:w-[50vw] w-[90vw]
+                    md:w-[32vw] w-[90vw]
                     mx-auto
-                    md:mb-[6vw] mb-[10vw]
                 "
         style={{
           fontFamily: "Inter, system-ui, -apple-system, sans-serif",
@@ -39,41 +42,9 @@ export default function ShipmentTrackerAccordion({
           className="
             md:rounded-[1vw] rounded-[3vw]
             shadow-[0_0_5vw_rgba(255,0,229,0.10)]
+            border border-[#C9C4D3]/90
           "
           open={open === 1}
-          icon={
-            !open ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="#CC00B7"
-                className="md:size-[2vw] size-[6vw]"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                />
-              </svg>
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="#CC00B7"
-                className="md:size-[2vw] size-[6vw]"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m4.5 15.75 7.5-7.5 7.5 7.5"
-                />
-              </svg>
-            )
-          }
         >
           <AccordionHeader
             className={`
@@ -81,136 +52,92 @@ export default function ShipmentTrackerAccordion({
               justify-between items-center
               ${open ? "md:rounded-t-[1vw] rounded-t-[3vw]" : "md:rounded-[1vw] rounded-[3vw]"}
               cursor-pointer border-0
-              md:bg-[#F7F1FF] bg-[#EDE9FE]
-              md:px-[1vw] px-[3vw]
-              md:py-[1.5vw] py-[2.5vw]
+              bg-[#F6F3FF]
+              md:px-[1.5vw] px-[4vw]
+              md:py-[1vw] py-[2.5vw]
             `}
             onClick={() => handleOpen(1)}
           >
-            {/* Desktop version for Accordion details */}
-            <img
-              className="
-                w-[2vw] h-[2vw]
-                md:block hidden
-              "
-              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_2.svg"
-              alt="ShipX - plane"
-            />
-            <div className="md:flex flex-col gap-y-0 hidden">
-              <span className="text-[#1E2939] text-[1vw] font-bold">
-                {trackingNumber || "1234567890"}
-              </span>
-              <span className="text-[#1E2939] text-[0.8vw] font-normal">
+            <div className="flex flex-col gap-y-0">
+              <span
+                className="
+                  text-[#4D4D4D] md:text-[#1A1A1A]
+                  md:text-[0.8vw] text-[2.3vw]
+                  font-bold
+                "
+              >
                 {t(
                   "shipment_tracker.shipment_activity_section.accordion_header.tracking_number_label",
                 )}
+                :
               </span>
-            </div>
-            <div className="md:flex flex-col gap-y-0 hidden">
-              <span className="text-[#1E2939] text-[1vw] font-bold">
-                {!shipmentData?.errors
-                  ? new Date(
-                      shipmentData?.statuses?.[
-                        shipmentData.statuses.length - 1
-                      ]?.updatedDate,
-                    ).toLocaleString() || "YYYY/MM/DD, 00:00:00 AM"
-                  : "Shipment date does not exist."}
-              </span>
-              <span className="text-[#1E2939] text-[0.8vw] font-normal">
-                {lastStatus || "null"}
-              </span>
-            </div>
-
-            {/* Mobile version for Accordion details */}
-            <div
-              className="
-                md:hidden flex flex-col
-              "
-            >
-              <div
-                className="
-                  flex flex-row gap-x-[1vw]
-                "
-              >
-                <img
-                  className="
-                    md:w-[2vw] w-[6vw]
-                    md:h-[2vw] h-[6vw]
-                  "
-                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_2.svg"
-                  alt="ShipX - plane"
-                />
-                <span
-                  className="
-                  md:text-[#1E2939] text-[#1A1A1A]
-                    text-[4vw]
-                    font-semibold
-                  "
-                >
-                  {trackingNumber || "1234567890"}
-                </span>
-              </div>
               <span
                 className="
-                  md:text-[#1E2939] text-[#1A1A1A]/85
-                  text-[2.7vw]
-                  font-medium
+                  text-[#FF00E5]
+                  md:text-[1.5vw] text-[4.5vw]
+                  font-semibold
                 "
               >
-                {t(
-                  "shipment_tracker.shipment_activity_section.accordion_header.last_updated_date",
-                )}
-                &nbsp;
-                {!shipmentData?.errors
-                  ? new Date(
-                      shipmentData?.statuses?.[
-                        shipmentData.statuses.length - 1
-                      ]?.updatedDate,
-                    ).toLocaleString() || "YYYY/MM/DD, 00:00:00 AM"
-                  : "Shipment date does not exist."}
+                {trackingNumber || "SGL2510001808"}
               </span>
             </div>
           </AccordionHeader>
           <AccordionBody
             className="
               flex flex-col
-              md:px-[5vw] px-[3vw]
-              md:py-[2vw] py-[5vw]
+              md:px-[1.5vw] px-[4vw]
+              md:py-[1vw] py-[5vw]
             "
           >
-            <span
-              className="
-                md:text-[#4D4D4D] text-[#1A1A1A]
-                md:text-[0.8vw] text-[3vw]
-                font-bold
-                md:mb-[0.5vw] mb-[2vw]
-              "
-              style={{
-                fontFamily: "Inter, system-ui, -apple-system, sans-serif",
-              }}
+            <div
+              className={`
+                ${latestStatusHidden === false ? "flex flex-col" : "hidden"}
+              `}
             >
-              {t(
-                "shipment_tracker.shipment_activity_section.accordion_header.shipment_progress_label",
+              <span
+                className="
+                  text-[#4D4D4D] md:text-[#1A1A1A]
+                  md:text-[0.8vw] text-[3vw]
+                  font-bold
+                "
+              >
+                {t(
+                  "shipment_tracker.shipment_activity_section.accordion_body.latest_status_text",
+                )}
+              </span>
+              <span
+                className="
+                  text-[#008236]
+                  md:text-[1vw] text-[3.5vw]
+                  font-bold
+                "
+              >
+                {lastStatus}
+              </span>
+              {shipmentData?.statuses && shipmentData.statuses.length > 0 && (
+                <span
+                  className="
+                    text-[#63666D]/90
+                    md:text-[0.65vw] text-[2.3vw]
+                    font-normal
+                  "
+                >
+                  {formatShipmentDate(shipmentData?.statuses)}
+                </span>
               )}
-            </span>
-
-            {/* Range button here for progress slider */}
-            <ProgressBar
-              progress={
-                !shipmentData?.errors
-                  ? getShipmentProgressPercentage(shipmentData?.statuses)
-                  : 0
-              }
-            />
-
+            </div>
             <span
-              className="
-              md:text-[#4D4D4D] text-[#1A1A1A]
+              className={`
+              text-[#4D4D4D] md:text-[#1A1A1A]
                 md:text-[0.8vw] text-[3vw]
                 font-bold
-                md:mb-[1.5vw] mb-[2.5vw]
-                md:mt-[1.5vw] mt-[5vw]
-              "
+                md:mb-[1.5vw] mb-[1.5vw]
+                ${
+                  latestStatusHidden === true
+                    ? "md:mt-0 mt-0"
+                    : "md:mt-[1vw] mt-[2vw]"
+                }
+              `}
               style={{
                 fontFamily: "Inter, system-ui, -apple-system, sans-serif",
               }}
@@ -221,6 +148,39 @@ export default function ShipmentTrackerAccordion({
             </span>
 
             <Stepper statuses={!shipmentData?.errors ? steps : []} />
+            {/* <Stepper statuses={!shipmentData?.errors ? steps : []} /> */}
+            <div
+              className="
+                flex flex-row
+                md:gap-x-[0.25vw] gap-x-[0.5vw]
+                justify-center items-center
+                md:mt-[1vw] mt-[3vw]
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                className="md:size-[1.2vw] size-[4vw] md:stroke-[0.1vw] stroke-[0.4vw] stroke-[#FF00E5]"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
+                />
+              </svg>
+              <p
+                className="
+                  text-[#4D4D4D]/90
+                  md:text-[0.7vw] text-[2.5vw]
+                  font-normal
+                "
+              >
+                {t(
+                  "shipment_tracker.shipment_activity_section.accordion_body.local_time_notice",
+                )}
+              </p>
+            </div>
           </AccordionBody>
         </Accordion>
       </div>
