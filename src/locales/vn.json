@@ -659,7 +659,11 @@
         "last_updated_date": "Cập nhật lần cuối:",
         "shipment_progress_label": "Tiến Trình Giao Hàng",
         "shipment_activity_log_label": "Nhật Ký Hoạt Động"
-      }
+      },
+      "accordion_body": {
+        "local_time_notice": "Thời gian hiển thị theo giờ địa phương tại điểm kiểm tra."
+      },
+      "track_another_shipment_button_text": "Theo dõi đơn hàng khác"
     },
     "shipment_cta_section": {
       "title": "Trải Nghiệm Tương Lai Của Giao Hàng",

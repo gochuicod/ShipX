@@ -659,7 +659,11 @@
         "last_updated_date": "วันที่อัปเดตล่าสุด:",
         "shipment_progress_label": "ความคืบหน้าการจัดส่ง",
         "shipment_activity_log_label": "บันทึกกิจกรรม"
-      }
+      },
+      "accordion_body": {
+        "local_time_notice": "เวลาที่แสดงเป็นเวลาท้องถิ่นของจุดตรวจสอบ"
+      },
+      "track_another_shipment_button_text": "ติดตามการจัดส่งรายการอื่น"
     },
     "shipment_cta_section": {
       "title": "สัมผัสอนาคตของการจัดส่ง",
