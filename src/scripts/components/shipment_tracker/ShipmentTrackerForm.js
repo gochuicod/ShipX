@@ -92,11 +92,11 @@ const ShipmentTrackerForm = () => {
             {t("shipment_tracker.track_order_section.form.label")}
           </label>
           <div className="relative">
-            {shipmentData?.error.length > 0 ? (
+            {shipmentData?.errors &&
+            Array.isArray(shipmentData.errors) &&
+            shipmentData.errors.length > 0 ? (
               <ToolTipError message={shipmentData.errors[0]} />
-            ) : (
-              <></>
-            )}
+            ) : null}
             <input
               aria-invalid={errors.trackingNumber ? "true" : "false"}
               id="trackingNumber"

@@ -15,7 +15,7 @@ const ShipmentTracker = () => {
   const accordionRef = useRef(null);
 
   useEffect(() => {
-    if (shipmentData && accordionRef.current) {
+    if (!shipmentData?.errors && accordionRef.current) {
       setTimeout(() => {
         accordionRef.current.scrollIntoView({
           behavior: "smooth",
@@ -99,7 +99,7 @@ const ShipmentTracker = () => {
 
         {/* Shipment Accordion */}
         <div ref={accordionRef}>
-          {!shipmentData?.error && shipmentData && (
+          {!shipmentData?.errors && shipmentData && (
             <ShipmentTrackerAccordion
               shipmentData={shipmentData}
               trackingNumber={trackingNumber}
