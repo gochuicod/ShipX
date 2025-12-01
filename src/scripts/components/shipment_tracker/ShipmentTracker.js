@@ -6,10 +6,24 @@ import { useTranslation } from "react-i18next";
 import { useShipment } from "../../hooks/useShipment";
 import SEO from "../ui/SEO";
 import ToolsHeroSection from "./ToolsHeroSection";
+import { useRef, useEffect } from "react";
 
 const ShipmentTracker = () => {
   const { t, i18n } = useTranslation();
   const { shipmentData, trackingNumber } = useShipment();
+
+  const accordionRef = useRef(null);
+
+  useEffect(() => {
+    if (!shipmentData?.errors && accordionRef.current) {
+      setTimeout(() => {
+        accordionRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "center", // Aligns the top of the element to the top of the viewport
+        });
+      }, 500);
+    }
+  }, [shipmentData]);
 
   return (
     <>
@@ -32,6 +46,7 @@ const ShipmentTracker = () => {
             justify-center items-center
             md:mt-[5vw] mt-[10vw]
             md:px-0 px-[10vw]
+            md:mb-[5vw] mb-[10vw]
           "
         >
           <div
@@ -83,10 +98,14 @@ const ShipmentTracker = () => {
         </div>
 
         {/* Shipment Accordion */}
-        <ShipmentTrackerAccordion
-          shipmentData={shipmentData}
-          trackingNumber={trackingNumber}
-        />
+        <div ref={accordionRef}>
+          {!shipmentData?.errors && shipmentData && (
+            <ShipmentTrackerAccordion
+              shipmentData={shipmentData}
+              trackingNumber={trackingNumber}
+            />
+          )}
+        </div>
 
         {/* CTA Section */}
         <div

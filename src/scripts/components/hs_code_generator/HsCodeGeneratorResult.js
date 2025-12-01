@@ -1,5 +1,5 @@
 import { useHsCode } from "../../hooks/useHsCode";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Clipboard, Check } from "lucide-react";
 import HierarchyPill from "./HierarchyPill";
 
@@ -82,8 +82,22 @@ export default function HsCodeGeneratorResult() {
     }
   };
 
+  const hsCodeResultRef = useRef(null);
+
+  useEffect(() => {
+    if (!hsCodeResult?.error && hsCodeResultRef.current) {
+      setTimeout(() => {
+        hsCodeResultRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }, 500);
+    }
+  }, [hsCodeResult]);
+
   return (
     <div
+      ref={hsCodeResultRef}
       className="
                 flex flex-col
                 md:mb-[10vw] mb-[15vw]
