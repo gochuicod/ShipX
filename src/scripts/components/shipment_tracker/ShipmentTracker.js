@@ -17,9 +17,9 @@ const ShipmentTracker = () => {
   useEffect(() => {
     if (shipmentData && accordionRef.current) {
       setTimeout(() => {
-        accordionRef.current.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'center' // Aligns the top of the element to the top of the viewport
+        accordionRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "center", // Aligns the top of the element to the top of the viewport
         });
       }, 500);
     }
@@ -99,13 +99,12 @@ const ShipmentTracker = () => {
 
         {/* Shipment Accordion */}
         <div ref={accordionRef}>
-          {
-            (!shipmentData?.error && shipmentData) &&
+          {!shipmentData?.error && shipmentData && (
             <ShipmentTrackerAccordion
               shipmentData={shipmentData}
               trackingNumber={trackingNumber}
             />
-          }
+          )}
         </div>
 
         {/* CTA Section */}

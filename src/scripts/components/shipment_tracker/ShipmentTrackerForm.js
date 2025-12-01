@@ -8,7 +8,7 @@ const ShipmentTrackerForm = () => {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-    reset
+    reset,
   } = useForm();
   const { t } = useTranslation();
 
@@ -92,9 +92,11 @@ const ShipmentTrackerForm = () => {
             {t("shipment_tracker.track_order_section.form.label")}
           </label>
           <div className="relative">
-            {
-              shipmentData?.error.length > 0 ? <ToolTipError message={shipmentData.errors[0]} /> : <></>
-            }
+            {shipmentData?.error.length > 0 ? (
+              <ToolTipError message={shipmentData.errors[0]} />
+            ) : (
+              <></>
+            )}
             <input
               aria-invalid={errors.trackingNumber ? "true" : "false"}
               id="trackingNumber"
