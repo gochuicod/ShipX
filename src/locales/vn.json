@@ -717,7 +717,9 @@
             "vn": "Việt Nam",
             "my": "Malaysia",
             "th": "Thái Lan",
-            "ph": "Philippines"
+            "ph": "Philippines",
+            "sg": "Singapore",
+            "id": "Indonesia"
           }
         },
         "claim_type": {
