@@ -659,7 +659,12 @@
         "last_updated_date": "Last Updated Date:",
         "shipment_progress_label": "Shipment Progress",
         "shipment_activity_log_label": "Activity Log"
-      }
+      },
+      "accordion_body": {
+        "local_time_notice": "Times are in local time of the checkpoint location.",
+        "latest_status_text": "Latest Status:"
+      },
+      "track_another_shipment_button_text": "Track Another Shipment"
     },
     "shipment_cta_section": {
       "title": "Experience the Future of Shipping",

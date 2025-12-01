@@ -13,7 +13,7 @@ export default function Stepper({ statuses = [] }) {
         md:mt-0 mt-[5vw]
       "
     >
-      {steps.map((step, index) => {
+      {steps.reverse().map((step, index) => {
         const isLast = index === steps.length - 1;
 
         return (
@@ -24,12 +24,12 @@ export default function Stepper({ statuses = [] }) {
                 absolute
                 md:-top-[1vw] -top-[4vw]
                 left-full
-                md:ml-[1vw] ml-[3vw]
+                md:ml-[0.5vw] ml-[2.5vw]
                 bg-[#F8F7FF]
                 md:px-[1vw] px-[3vw]
                 md:py-[0.5vw] py-[2vw]
-                md:rounded-[1vw] rounded-[3vw]
-                md:w-[37.5vw] w-[72vw]
+                md:rounded-[0.5vw] rounded-[3vw]
+                md:w-[25vw] w-[72vw]
               "
             >
               <h6
@@ -40,7 +40,7 @@ export default function Stepper({ statuses = [] }) {
                     step.state === "completed"
                       ? "text-slate-900"
                       : step.state === "active"
-                        ? "text-[#FF00E5]"
+                        ? "text-slate-900"
                         : "text-slate-400"
                   }`}
               >
@@ -64,7 +64,7 @@ export default function Stepper({ statuses = [] }) {
                 md:h-[1.2vw] h-[3.5vw]
                 shrink-0
                 mx-px
-                md:ms-0 ms-[3vw]
+                md:ms-[1vw] ms-[3vw]
                 border-2
                 flex
                 items-center justify-center
@@ -118,9 +118,9 @@ export default function Stepper({ statuses = [] }) {
             {!isLast && (
               <div
                 className={`
-                  md:w-[0.07vw] w-[0.06vw]
+                  md:w-[0.07vw] w-[0.3vw]
                   md:h-[2.5vw] h-[10vw]
-                  md:ms-0 ms-[2vw]
+                  md:ms-[1vw] ms-[2.5vw]
                   ${
                     step.state === "completed" || step.state === "active"
                       ? "bg-[#008236]"

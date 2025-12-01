@@ -26,8 +26,48 @@ export function mapStatuses(statuses, t = i18next.t) {
 export function getLastStatusLabel(statuses, t) {
   if (!Array.isArray(statuses) || statuses.length === 0 || !t) return null;
 
-  const last = statuses[statuses.length - 1];
+  // Sort by date (Newest First) just to be safe
+  const sorted = [...statuses].sort(
+    (a, b) => new Date(b.updatedDate) - new Date(a.updatedDate),
+  );
+
+  // Since we sorted Newest -> Oldest, the LATEST status is now at index 0
+  const latestStatus = sorted[0];
+
   return t(
-    `shipment_tracker.shipment_status_map.${last.statusCode.toLowerCase()}`,
+    `shipment_tracker.shipment_status_map.${latestStatus.statusCode.toLowerCase()}`,
   );
 }
+
+export const formatShipmentDate = (statuses) => {
+  if (!statuses || statuses.length === 0) return "Date not available";
+
+  // Create a shallow copy to avoid mutating the original array
+  // Sort by updatedDate in ascending order (Oldest -> Newest)
+  const sortedStatuses = [...statuses].sort(
+    (a, b) => new Date(a.updatedDate) - new Date(b.updatedDate),
+  );
+
+  // Get the last item (most recent status)
+  const latestStatus = sortedStatuses[sortedStatuses.length - 1];
+
+  if (!latestStatus?.updatedDate) return "Date not available";
+
+  const date = new Date(latestStatus.updatedDate);
+
+  // Format: "Nov 22, 2025"
+  const datePart = date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+
+  // Format: "04:45 PM"
+  const timePart = date.toLocaleTimeString("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true,
+  });
+
+  return `${datePart} · ${timePart}`;
+};
