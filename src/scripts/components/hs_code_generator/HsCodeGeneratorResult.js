@@ -83,13 +83,13 @@ export default function HsCodeGeneratorResult() {
   };
 
   const hsCodeResultRef = useRef(null);
-  
+
   useEffect(() => {
     if (!hsCodeResult?.error && hsCodeResultRef.current) {
       setTimeout(() => {
-        hsCodeResultRef.current.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'center'
+        hsCodeResultRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
         });
       }, 500);
     }

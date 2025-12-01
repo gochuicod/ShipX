@@ -11,7 +11,7 @@ export default function HsCodeGeneratorForm() {
     handleSubmit,
     control,
     formState: { errors },
-    reset
+    reset,
   } = useForm({
     defaultValues: {
       targetSystem: "USA",
@@ -93,11 +93,9 @@ export default function HsCodeGeneratorForm() {
       reset();
       setFiles([]);
     } catch (err) {
-      setHsCodeResult(
-        {
-          "error": err.message
-        }
-      );
+      setHsCodeResult({
+        error: err.message,
+      });
     } finally {
       setIsLoading(false);
     }
@@ -147,9 +145,9 @@ export default function HsCodeGeneratorForm() {
           Provide a detailed description of your product
         </p>
         <div className="relative">
-          {
-            errors.productDescription && <ToolTipError message={errors.productDescription.message} />
-          }
+          {errors.productDescription && (
+            <ToolTipError message={errors.productDescription.message} />
+          )}
           <textarea
             className={`
                           w-full
