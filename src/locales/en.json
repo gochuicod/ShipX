@@ -742,5 +742,740 @@
         "submit_claim": "Submit Claim"
       }
     }
+  },
+  "faq_page": {
+    "header_section": {
+      "badge_text": "Frequently Asked Questions",
+      "title_prefix": "Your Cargo Questions,",
+      "title_suffix": "Answered",
+      "description": "From takeoff to final delivery, we believe in total transparency. Find details below on how we handle, track, and protect your shipment every step of the way.",
+      "search_placeholder": "Start typing to find answers..."
+    },
+    "filter_section": {
+      "title": "Filter by Category",
+      "categories": [
+        { "id": "all", "label": "All Categories", "count": null },
+        { "id": "shipping_basics", "label": "Shipping Basics & Packaging", "count": 7 },
+        { "id": "customs", "label": "Customs, Duties & Documentation", "count": 5 },
+        { "id": "ecommerce", "label": "E-commerce Solutions & Fulfillment", "count": 2 },
+        { "id": "carriers", "label": "Carrier Comparisons", "count": 2 },
+        { "id": "insurance", "label": "Insurance & Claims", "count": 4 },
+        { "id": "troubleshooting", "label": "Troubleshooting", "count": 2 },
+        { "id": "tech_tools", "label": "Tech & Portal Tools", "count": 2 },
+        { "id": "legal", "label": "Legal Requirements", "count": 5 },
+        { "id": "operations", "label": "Operations", "count": 2 },
+        { "id": "shipment_mgmt", "label": "Shipment Management", "count": 5 }
+      ]
+    },
+    "accordion_section": {
+      "items": [
+        {
+          "id": "safely_ship_fragile",
+          "category_id": "shipping_basics",
+          "category_label": "Shipping Basics & Packaging",
+          "question": "How do I safely ship fragile items internationally?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "The physical integrity of a shipment is the foundation of successful e-commerce logistics. When goods travel from Southeast Asia to destinations like the U.S. or Europe, they pass through multiple touchpoints: automated sorting hubs, aircraft loading belts, customs inspections, and last-mile delivery vans. The risk of impact, compression, and vibration is significant."
+            },
+            {
+              "type": "point",
+              "title": "Operational Protocol:",
+              "text": "Amilo and ShipX advocate for a \"defense-in-depth\" approach to packaging."
+            },
+            {
+              "type": "point",
+              "title": "Box Selection:",
+              "text": "Utilizing a standard single-wall cardboard box is often insufficient for international shipping. We recommend double-walled corrugated boxes (minimum 32 ECT rating) which provide superior crush resistance. The box should be appropriately sized—too large creates voids that allow movement; too small transfers impact energy directly to the product."
+            },
+            {
+              "type": "point",
+              "title": "Internal Cushioning:",
+              "text": "Research indicates that individually wrapping fragile items with bubble wrap or heavy-grade packing paper can reduce breakage risk by up to 80%. Crucially, items should not touch the walls of the box; a minimum of 2 inches (5 cm) of void fill (air pillows, biodegradable peanuts, or crumpled kraft paper) should surround the item on all sides."
+            },
+            {
+              "type": "point",
+              "title": "Disassembly:",
+              "text": "For larger items like furniture or multi-part electronics, disassembly is critical. Securely disassembling furniture reduces the surface area exposed to potential scratching and denting by 70%."
+            },
+            {
+              "type": "point",
+              "title": "Labeling:",
+              "text": "While automated sorters do not read \"Fragile\" stickers, human handlers do. Studies suggest that clearly labeling boxes with \"Fragile\" or \"Handle with Care\" indicators reduces manual mishandling incidents by 50%."
+            },
+            {
+              "type": "point",
+              "title": "Strategic Insight:",
+              "text": "Proper packaging is also a cost-optimization strategy. By using the smallest viable box with adequate protection, you minimize volumetric weight, a primary cost driver in cross-border fulfillment."
+            }
+          ]
+        },
+        {
+          "id": "restricted_items",
+          "category_id": "shipping_basics",
+          "category_label": "Shipping Basics & Packaging",
+          "question": "What items are restricted or prohibited from shipping?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Compliance with International Air Transport Association (IATA) regulations and local customs laws is mandatory. ShipX operates a general cargo network that prioritizes speed and compliance. To maintain these standards, specific categories of goods are strictly excluded from our services."
+            },
+            {
+              "type": "point",
+              "title": "The \"No Battery\" Policy:",
+              "text": "ShipX explicitly states that it handles \"Every commodity other than dangerous goods and batteries\". This is a critical distinction for consumer electronics sellers."
+            },
+            {
+              "type": "point",
+              "title": "Prohibited:",
+              "text": "Loose Lithium-Ion batteries, power banks, wet-cell batteries, and typically devices where the battery cannot be removed or is packed with the equipment but exceeds watt-hour limits."
+            },
+            {
+              "type": "point",
+              "title": "Reasoning:",
+              "text": "Lithium batteries pose a thermal runaway fire risk in aircraft cargo holds. By excluding them, ShipX ensures that its consolidated shipments are not flagged for hazardous materials inspections, ensuring faster transit times for all other clients."
+            },
+            {
+              "type": "point",
+              "title": "General Prohibitions:",
+              "text": "In line with global standards, the following are also prohibited: Live Animals & Remains, Financial Instruments, Weapons, Illicit Goods, and Perishables."
+            },
+            {
+              "type": "point",
+              "title": "Global Expansion Advisory:",
+              "text": "Sellers must also be aware of destination-specific restrictions. Always consult the ShipX prohibited items list before listing a product for international shipping."
+            }
+          ]
+        },
+        {
+          "id": "shipping_cost_volumetric",
+          "category_id": "shipping_basics",
+          "category_label": "Shipping Basics & Packaging",
+          "question": "Why is my shipping cost higher than the actual weight of the package?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "In the aviation industry, space is as valuable as weight. A plane filled with pillows will \"weigh out\" far later than it \"cubes out\". To account for this, e-commerce logistics providers use Volumetric (or Dimensional) Weight."
+            },
+            {
+              "type": "point",
+              "title": "The Calculation:",
+              "text": "ShipX calculates the volumetric weight using a standard divisor (typically 5000). The chargeable weight is the higher of the actual dead weight or the volumetric weight."
+            },
+            {
+              "type": "point",
+              "title": "Optimization Strategy:",
+              "text": "For Southeast Asia e-commerce sellers shipping lightweight, bulky items, volumetric weight can double or triple shipping costs."
+            },
+            {
+              "type": "point",
+              "title": "Amilo’s Advice:",
+              "text": "\"Optimize Packaging: Use the smallest packaging necessary to reduce dimensional weight\"."
+            },
+            {
+              "type": "point",
+              "title": "Solution:",
+              "text": "Use vacuum sealing for textiles to reduce volume. Avoid \"over-boxing\" small items in large cartons."
+            }
+          ]
+        },
+        {
+          "id": "packaging_standards",
+          "category_id": "shipping_basics",
+          "category_label": "Shipping Basics & Packaging",
+          "question": "What are the specific packaging standards for ShipX?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Packaging serves two roles: protection and brand presentation. ShipX supports \"Creative Packaging Solutions\" that elevate small businesses, but these must never compromise structural integrity."
+            },
+            {
+              "type": "point",
+              "title": "Operational Requirements:",
+              "text": "Material Quality: Use new, rigid corrugated boxes. Reused boxes often have compromised structural integrity and old barcodes that cause misrouting."
+            },
+            {
+              "type": "point",
+              "title": "Sealing:",
+              "text": "Use pressure-sensitive plastic tape or water-activated paper tape specifically designed for shipping. Standard cellophane tape is not permitted."
+            },
+            {
+              "type": "point",
+              "title": "No Loose Items:",
+              "text": "All items must be secure. If you shake the box and hear movement, the packaging is insufficient."
+            },
+            {
+              "type": "point",
+              "title": "Branding Opportunities:",
+              "text": "ShipX encourages the use of \"Personalized Bags and Boxes\" or \"Environmentally Friendly Inserts\" to enhance the unboxing experience."
+            }
+          ]
+        },
+        {
+          "id": "labeling_packages",
+          "category_id": "shipping_basics",
+          "category_label": "Shipping Basics & Packaging",
+          "question": "How should I label my packages to ensure they don't get lost?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "The shipping label is the passport for your package. If it is unreadable, the package stops moving."
+            },
+            {
+              "type": "point",
+              "title": "Best Practices:",
+              "text": "Placement: The label must be affixed to the largest flat surface of the box."
+            },
+            {
+              "type": "point",
+              "title": "No Obstructions:",
+              "text": "Never place a label over a seam or closure. If the box is opened for inspection or the tape is cut, the label is destroyed."
+            },
+            {
+              "type": "point",
+              "title": "Print Quality:",
+              "text": "Thermal printers are recommended. Ensure the ink is not smudged and cover the label with clear tape if using standard paper."
+            },
+            {
+              "type": "point",
+              "title": "Secondary Label:",
+              "text": "Place a spare label or a packing slip inside the box. If the outer label is damaged, customs or the carrier can open the box to identify the recipient."
+            }
+          ]
+        },
+        {
+          "id": "consumer_electronics",
+          "category_id": "shipping_basics",
+          "category_label": "Shipping Basics & Packaging",
+          "question": "Can I ship consumer electronics like phones or laptops via ShipX?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "As detailed in the restricted items section, ShipX maintains a policy excluding dangerous goods and batteries. This is a binary policy for the general network."
+            },
+            {
+              "type": "point",
+              "title": "Implications for Sellers:",
+              "text": "If you are a Southeast Asia e-commerce seller dealing in electronics:"
+            },
+            {
+              "type": "point",
+              "title": "Allowed:",
+              "text": "Phone cases, USB cables (without power banks), screen protectors, computer peripherals (keyboards/mice without batteries inside)."
+            },
+            {
+              "type": "point",
+              "title": "Not Allowed:",
+              "text": "Laptops, smartphones, Bluetooth speakers with built-in batteries, loose power cells. Attempting to ship these items can result in the package being returned to the sender."
+            }
+          ]
+        },
+        {
+          "id": "liquids_and_food",
+          "category_id": "shipping_basics",
+          "category_label": "Shipping Basics & Packaging",
+          "question": "What are the rules for shipping liquids or food items?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Shipping liquids involves preventing leakage that could damage other shipments in the consolidation network."
+            },
+            {
+              "type": "point",
+              "title": "Liquids:",
+              "text": "Must be in leak-proof containers, sealed with a secondary barrier, and placed inside a sealed plastic bag with absorbent material. Flammable liquids are strictly prohibited."
+            },
+            {
+              "type": "point",
+              "title": "Perishables:",
+              "text": "ShipX’s standard networks are not temperature-controlled. Perishable goods are generally not suitable. Food items also face strict import controls (FDA in the U.S., EFSA in Europe)."
+            }
+          ]
+        },
+        {
+          "id": "duties_and_taxes",
+          "category_id": "customs",
+          "category_label": "Customs, Duties & Documentation",
+          "question": "Who pays for customs duties and taxes- me or the customer?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "This depends on the service level and Incoterms selected during shipment creation."
+            },
+            {
+              "type": "point",
+              "title": "DDU (Delivered Duty Unpaid):",
+              "text": "The standard default. The buyer is responsible for paying duties upon arrival. This can lead to \"sticker shock\" and refused packages."
+            },
+            {
+              "type": "point",
+              "title": "DDP (Delivered Duty Paid):",
+              "text": "The seller collects taxes at checkout and pays them to the carrier. Amilo supports IOSS for the EU, which is a form of DDP."
+            },
+            {
+              "type": "point",
+              "title": "Recommendation:",
+              "text": "For a superior customer experience during Global expansion, using DDP/IOSS prevents shipment delays and customer refusal."
+            }
+          ]
+        },
+        {
+          "id": "shipping_time_us",
+          "category_id": "customs",
+          "category_label": "Customs, Duties & Documentation",
+          "question": "How long will it take for my package to reach the U.S.?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "ShipX offers a tiered portfolio to balance speed and cost."
+            },
+            {
+              "type": "point",
+              "title": "Economy:",
+              "text": "Leverages postal networks. Transit times are longer (typically 10-20+ days depending on destination) but costs are minimized."
+            },
+            {
+              "type": "point",
+              "title": "Commercial:",
+              "text": "A hybrid solution (likely utilizing the Landmark Global partnership). Offers faster injection into destination networks, cutting transit times significantly."
+            },
+            {
+              "type": "point",
+              "title": "Express:",
+              "text": "The fastest option for urgent goods. While specific days vary, Amilo’s infrastructure aims for 95% same-day order fulfillment to maximize speed."
+            }
+          ]
+        },
+        {
+          "id": "gift_declaration",
+          "category_id": "customs",
+          "category_label": "Customs, Duties & Documentation",
+          "question": "Can I mark my sold items as a “Gift” to avoid taxes?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Absolutely not. Misdeclaring a commercial sale as a \"Gift\" is a violation of international trade laws and constitutes customs fraud."
+            },
+            {
+              "type": "point",
+              "title": "Risk:",
+              "text": "Customs authorities verify sender details. If a commercial entity is listed as the sender, a \"Gift\" designation is flagged as suspicious."
+            },
+            {
+              "type": "point",
+              "title": "Consequence:",
+              "text": "Seizure of goods, fines, and potential blacklisting of your business."
+            },
+            {
+              "type": "point",
+              "title": "Policy:",
+              "text": "ShipX automates the creation of Commercial Invoices based on your order data to ensure full compliance."
+            }
+          ]
+        },
+        {
+          "id": "commercial_invoice",
+          "category_id": "customs",
+          "category_label": "Customs, Duties & Documentation",
+          "question": "What is a Commercial Invoice and what information must be on it?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "The Commercial Invoice is the definitive document for customs clearance. ShipX generates this electronically, but accuracy depends on your input."
+            },
+            {
+              "type": "point",
+              "title": "Required Fields:",
+              "text": "Description (must be specific), Value, HS Code, Country of Origin."
+            },
+            {
+              "type": "point",
+              "title": "Why it matters:",
+              "text": "A vague invoice is the #1 cause of customs delays in cross-border fulfillment."
+            }
+          ]
+        },
+        {
+          "id": "hs_code",
+          "category_id": "customs",
+          "category_label": "Customs, Duties & Documentation",
+          "question": "How do I find the right HS Code?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "The Harmonized System (HS) code is a 6-to-10 digit number that classifies your product for duty purposes."
+            },
+            {
+              "type": "point",
+              "title": "Resources:",
+              "text": "You can use lookup tools provided by destination customs authorities or third-party tools integrated into the ShipX ecosystem."
+            },
+            {
+              "type": "point",
+              "title": "Precision:",
+              "text": "Using the wrong code can result in overpaying duties or underpaying, leading to fines."
+            }
+          ]
+        },
+        {
+          "id": "international_returns",
+          "category_id": "ecommerce",
+          "category_label": "E-commerce Solutions & Fulfillment",
+          "question": "How does ShipX handle international returns?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Returns are an inevitable part of retail. Amilo positions returns as a \"sales enabler\"."
+            },
+            {
+              "type": "point",
+              "title": "Capabilities:",
+              "text": "The platform supports pickup returns and can even execute a \"deliver replacement simultaneously\" workflow."
+            },
+            {
+              "type": "point",
+              "title": "Strategy:",
+              "text": "For cross-border fulfillment, shipping a cheap item back to the origin is often cost-prohibitive. Amilo’s network allows for local consolidation or inspection to minimize the need for returns."
+            }
+          ]
+        },
+        {
+          "id": "is_shipx_3pl",
+          "category_id": "ecommerce",
+          "category_label": "E-commerce Solutions & Fulfillment",
+          "question": "Is ShipX a 3PL?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Technically, ShipX functions as a 3PL (Third-Party Logistics) provider by handling warehousing and transport. However, given its integration of financial services and proprietary SaaS (OMS/WMS/DMS), it more closely resembles a 4PL provider that manages the entire supply chain ecosystem."
+            }
+          ]
+        },
+        {
+          "id": "shipx_vs_carriers",
+          "category_id": "carriers",
+          "category_label": "Carrier Comparisons",
+          "question": "Why choose ShipX over DHL or FedEx?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Major Carriers are excellent for speed but expensive. ShipX is designed for the \"ASEAN to U.S.\" mid-market."
+            },
+            {
+              "type": "point",
+              "title": "Cost:",
+              "text": "By aggregating volume and using hybrid carriers, ShipX offers \"Commercial\" rates that undercut express carriers."
+            },
+            {
+              "type": "point",
+              "title": "Tech:",
+              "text": "The bundled OMS/WMS is free or low-cost for users."
+            },
+            {
+              "type": "point",
+              "title": "Flexibility:",
+              "text": "\"Zero deposit\" and fast onboarding offer agility legacy carriers cannot match."
+            }
+          ]
+        },
+        {
+          "id": "sustainable_shipping",
+          "category_id": "carriers",
+          "category_label": "Carrier Comparisons",
+          "question": "How can I make my shipping more sustainable?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "ShipX supports sustainability through efficiency and material choice."
+            },
+            {
+              "type": "point",
+              "title": "Logistics:",
+              "text": "Using Warehousing hubs closer to the customer reduces last-mile distance and emissions."
+            },
+            {
+              "type": "point",
+              "title": "Materials:",
+              "text": "We encourage compostable or recyclable inserts."
+            },
+            {
+              "type": "point",
+              "title": "Packaging:",
+              "text": "Our \"minimal packaging\" guidelines reduce waste and fuel burn."
+            }
+          ]
+        },
+        {
+          "id": "insurance_coverage",
+          "category_id": "insurance",
+          "category_label": "Insurance & Claims",
+          "question": "Is my shipment insured?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Standard carrier liability is limited. ShipX Policy: Items are shipped at \"your own risk\" unless enhanced coverage is secured."
+            },
+            {
+              "type": "point",
+              "title": "Recommendation:",
+              "text": "We strongly recommend purchasing \"All-Risk\" marine cargo insurance for Global expansion."
+            },
+            {
+              "type": "point",
+              "title": "Claims:",
+              "text": "ShipX offers \"store credit\" for approved damage claims, not cash refunds."
+            }
+          ]
+        },
+        {
+          "id": "damage_claim_process",
+          "category_id": "insurance",
+          "category_label": "Insurance & Claims",
+          "question": "What is the process for a damage claim?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Claims must typically be filed immediately. ShipX investigates within \"ten business days\"."
+            },
+            {
+              "type": "point",
+              "title": "Evidence:",
+              "text": "You must provide photos of the damaged item, the inner packaging, and the outer box."
+            },
+            {
+              "type": "point",
+              "title": "Packaging Check:",
+              "text": "If packaging does not meet guidelines, the claim may be denied."
+            }
+          ]
+        },
+        {
+          "id": "customer_refused_damaged",
+          "category_id": "insurance",
+          "category_label": "Insurance & Claims",
+          "question": "What happens if a customer refuses a damaged package?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "If a package arrives visibly damaged, the customer should note this on the delivery receipt. The package will likely be returned to the local hub. You must then initiate the claim process."
+            }
+          ]
+        },
+        {
+          "id": "package_arrived_damaged",
+          "category_id": "insurance",
+          "category_label": "Insurance & Claims",
+          "question": "What happens if my package arrives damaged?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Report within 7 days and keep all packaging. This documentation supports claim approval and helps maintain smooth cross-border fulfillment experiences."
+            }
+          ]
+        },
+        {
+          "id": "bill_shock",
+          "category_id": "troubleshooting",
+          "category_label": "Troubleshooting",
+          "question": "Why was I charged more than the quote?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "This \"bill shock\" is usually due to Volumetric Weight differences or Surcharges (Remote area fees, Address Correction). Data accuracy is the merchant's responsibility."
+            }
+          ]
+        },
+        {
+          "id": "shipment_stuck_customs",
+          "category_id": "troubleshooting",
+          "category_label": "Troubleshooting",
+          "question": "Why is my shipment stuck in customs?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Common reasons include Undervaluation, Generic Descriptions (e.g. \"Parts\"), or Missing Paperwork."
+            }
+          ]
+        },
+        {
+          "id": "branded_tracking",
+          "category_id": "tech_tools",
+          "category_label": "Tech & Portal Tools",
+          "question": "Can I set up branded tracking pages?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Yes. ShipX provides >130 standardized track events. This data can be fed into a branded tracking page, ensuring that the customer sees your logo and marketing messages while waiting for delivery."
+            }
+          ]
+        },
+        {
+          "id": "split_shipments",
+          "category_id": "tech_tools",
+          "category_label": "Tech & Portal Tools",
+          "question": "Does ShipX support split shipments?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Yes. Amilo’s OMS supports split shipments if you have inventory in multiple locations. This results in two shipping labels and two tracking numbers."
+            }
+          ]
+        },
+        {
+          "id": "export_license",
+          "category_id": "legal",
+          "category_label": "Legal Requirements",
+          "question": "Do I need an export license to ship internationally?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Generally, you must be a registered business entity. For specific controlled goods, an export permit is required. For general e-commerce, standard business registration usually suffices."
+            }
+          ]
+        },
+        {
+          "id": "eori_number",
+          "category_id": "legal",
+          "category_label": "Legal Requirements",
+          "question": "Do I need an EORI number for Europe?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Yes. If you ship to the EU, you (or your IOSS intermediary) need an Economic Operators Registration and Identification (EORI) number. ShipX’s EU solutions are built around IOSS compliance."
+            }
+          ]
+        },
+        {
+          "id": "volume_discounts",
+          "category_id": "legal",
+          "category_label": "Legal Requirements",
+          "question": "Do you offer volume discounts?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Yes. High-volume ASEAN e-commerce sellers benefit from tiered discounts that support e-commerce growth and U.S. market entry."
+            }
+          ]
+        },
+        {
+          "id": "remote_area_surcharge",
+          "category_id": "legal",
+          "category_label": "Legal Requirements",
+          "question": "Why did I receive a Remote Area Surcharge?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Carriers charge extra to deliver to remote locations. These fees are passed through by ShipX. It is vital to validate addresses at checkout."
+            }
+          ]
+        },
+        {
+          "id": "billing_currency",
+          "category_id": "legal",
+          "category_label": "Legal Requirements",
+          "question": "What currency does ShipX bill in?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Billing typically occurs in the currency of the account's origin or a major trade currency (USD/SGD). Merchants should verify their dashboard settings."
+            }
+          ]
+        },
+        {
+          "id": "multiple_orders_one_box",
+          "category_id": "operations",
+          "category_label": "Operations",
+          "question": "Can I ship multiple orders to the same country in one box?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Yes—this consolidation method reduces costs by 20–30% and streamlines cross-border fulfillment for high-volume ASEAN to U.S. shipments."
+            }
+          ]
+        },
+        {
+          "id": "consolidate_suppliers",
+          "category_id": "operations",
+          "category_label": "Operations",
+          "question": "Can I consolidate shipments from multiple suppliers?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Yes. Origin Consolidation is a key service. You can have multiple factories deliver to Amilo’s hub to be consolidated into a single freight shipment, drastically lowering per-unit shipping costs."
+            }
+          ]
+        },
+        {
+          "id": "change_address",
+          "category_id": "shipment_mgmt",
+          "category_label": "Shipment Management",
+          "question": "Can I change the address after shipping?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Before Pickup: Yes. In Transit: Extremely difficult and expensive. Out for Delivery: Impossible."
+            }
+          ]
+        },
+        {
+          "id": "po_boxes",
+          "category_id": "shipment_mgmt",
+          "category_label": "Shipment Management",
+          "question": "Do you deliver to P.O. Boxes or military addresses?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Express Couriers: No. Postal/Economy (Landmark Global): Yes, usually. Always check the service guide for the destination country."
+            }
+          ]
+        },
+        {
+          "id": "signature_required",
+          "category_id": "shipment_mgmt",
+          "category_label": "Shipment Management",
+          "question": "Is a signature required for delivery?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Yes, \"Signature Required\" is a value-added service available for most Commercial and Express tiers. Highly recommended for high-value orders."
+            }
+          ]
+        },
+        {
+          "id": "scheduled_delivery",
+          "category_id": "shipment_mgmt",
+          "category_label": "Shipment Management",
+          "question": "Can I schedule a specific delivery time?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Standard service delivers during business hours. Time-definite options or weekend delivery may be selected for advanced fulfillment needs."
+            }
+          ]
+        },
+        {
+          "id": "cancel_shipment",
+          "category_id": "shipment_mgmt",
+          "category_label": "Shipment Management",
+          "question": "How do I cancel a shipment I’ve already booked?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "You can cancel a shipment and void the label directly in the ShipX dashboard as long as the package has not been scanned by the carrier."
+            }
+          ]
+        }
+      ],
+      "load_more_button": "Load More"
+    },
+    "cta_section": {
+      "title": "Experience the Future of Shipping",
+      "subtitle": "Don't just read about our latest tools — let us show you how they work and what they can do for your business.",
+      "buttons": {
+        "book_demo": "Book a Demo",
+        "contact_us": "Contact Us"
+      }
+    }
   }
 }
