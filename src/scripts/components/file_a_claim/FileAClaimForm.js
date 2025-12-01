@@ -396,16 +396,6 @@ const FileAClaimForm = () => {
                           "file_a_claim.form_section.fields.country.options.ph",
                         )}
                       </option>
-                      <option value="SG">
-                        {t(
-                          "file_a_claim.form_section.fields.country.options.sg",
-                        )}
-                      </option>
-                      <option value="ID">
-                        {t(
-                          "file_a_claim.form_section.fields.country.options.id",
-                        )}
-                      </option>
                     </select>
                   </div>
 
