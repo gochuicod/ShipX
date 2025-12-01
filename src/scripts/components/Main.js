@@ -33,14 +33,14 @@ const Main = ({ margin }) => {
         <div className="absolute top-1/2 left-[-30vw] size-[30vw] rounded-full shadow-[15vw_-10vw_20vw_rgba(255,0,229,0.1)] -z-10"></div>
         <div className="flex flex-col">
           <Carousel margin={margin} />
-          <ServiceHeadline />
-          <Statistics />
+          {/* <ServiceHeadline /> */}
           <Services />
+          <Statistics />
           <Platform />
           <SGAmiloCards />
           <FreightAndCustoms />
           <Offices />
-          <AnnouncementBanner />
+          {/* <AnnouncementBanner /> */}
           <FAQSection />
           <ContactUs />
         </div>
