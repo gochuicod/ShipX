@@ -661,7 +661,8 @@
         "shipment_activity_log_label": "Riwayat Aktivitas"
       },
       "accordion_body": {
-        "local_time_notice": "Waktu sesuai dengan waktu setempat di lokasi pemeriksaan."
+        "local_time_notice": "Waktu sesuai dengan waktu setempat di lokasi pemeriksaan.",
+        "latest_status_text": "Status Terbaru"
       },
       "track_another_shipment_button_text": "Lacak Pengiriman Lain"
     },

@@ -661,7 +661,8 @@
         "shipment_activity_log_label": "บันทึกกิจกรรม"
       },
       "accordion_body": {
-        "local_time_notice": "เวลาที่แสดงเป็นเวลาท้องถิ่นของจุดตรวจสอบ"
+        "local_time_notice": "เวลาที่แสดงเป็นเวลาท้องถิ่นของจุดตรวจสอบ",
+        "latest_status_text": "สถานะล่าสุด"
       },
       "track_another_shipment_button_text": "ติดตามการจัดส่งรายการอื่น"
     },
