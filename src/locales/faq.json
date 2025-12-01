@@ -1,0 +1,136 @@
+{
+  "faq_page": {
+    "header_section": {
+      "badge_text": "Frequently Asked Questions",
+      "title_prefix": "Your Cargo Questions,",
+      "title_suffix": "Answered",
+      "description": "From takeoff to final delivery, we believe in total transparency. Find details below on how we handle, track, and protect your shipment every step of the way.",
+      "search_placeholder": "Start typing to find answers..."
+    },
+    "filter_section": {
+      "title": "Filter by Category",
+      "categories": [
+        { "id": "all", "label": "All Categories", "count": null },
+        { "id": "shipping_basics", "label": "Shipping Basics & Packaging", "count": 7 },
+        { "id": "customs", "label": "Customs, Duties & Documentation", "count": 5 },
+        { "id": "ecommerce", "label": "E-commerce Solutions & Fulfillment", "count": 2 },
+        { "id": "carriers", "label": "Carrier Comparisons", "count": 2 },
+        { "id": "insurance", "label": "Insurance & Claims", "count": 4 },
+        { "id": "troubleshooting", "label": "Troubleshooting", "count": 2 },
+        { "id": "tech_tools", "label": "Tech & Portal Tools", "count": 2 },
+        { "id": "legal", "label": "Legal Requirements", "count": 2 },
+        { "id": "operations", "label": "Operations", "count": 2 },
+        { "id": "shipment_mgmt", "label": "Shipment Management", "count": 5 }
+      ]
+    },
+    "accordion_section": {
+      "items": [
+        {
+          "id": "fragile_items",
+          "category_id": "shipping_basics",
+          "category_label": "Shipping Basics & Packaging",
+          "question": "How do I safely ship fragile items internationally?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "The physical integrity of a shipment is the foundation of successful e-commerce logistics. When goods travel from Southeast Asia to destinations like the U.S. or Europe, they pass through multiple touchpoints: automated sorting hubs, aircraft loading belts, customs inspections, and last-mile delivery vans. The risk of impact, compression, and vibration is significant."
+            },
+            {
+              "type": "point",
+              "title": "Operational Protocol:",
+              "text": "Amilo and ShipX advocate for a \"defense-in-depth\" approach to packaging."
+            },
+            {
+              "type": "point",
+              "title": "Box Selection:",
+              "text": "Utilizing a standard single-wall cardboard box is often insufficient for international shipping. We recommend double-walled corrugated boxes (minimum 32 ECT rating) which provide superior crush resistance. The box should be appropriately sized—too large creates voids that allow movement; too small transfers impact energy directly to the product."
+            },
+            {
+              "type": "point",
+              "title": "Internal Cushioning:",
+              "text": "Research indicates that individually wrapping fragile items with bubble wrap or heavy-grade packing paper can reduce breakage risk by up to 80%. Crucially, items should not touch the walls of the box; a minimum of 2 inches (5 cm) of void fill (air pillows, biodegradable peanuts, or crumpled kraft paper) should surround the item on all sides."
+            },
+            {
+              "type": "point",
+              "title": "Disassembly:",
+              "text": "For larger items like furniture or multi-part electronics, disassembly is critical. Securely disassembling furniture reduces the surface area exposed to potential scratching and denting by 70%."
+            },
+            {
+              "type": "point",
+              "title": "Labeling:",
+              "text": "While automated sorters do not read \"Fragile\" stickers, human handlers do. Studies suggest that clearly labeling boxes with \"Fragile\" or \"Handle with Care\" indicators reduces manual mishandling incidents by 50%."
+            },
+            {
+              "type": "point",
+              "title": "Strategic Insight:",
+              "text": "Proper packaging is also a cost-optimization strategy. By using the smallest viable box with adequate protection, you minimize volumetric weight, a primary cost driver in cross-border fulfillment."
+            }
+          ]
+        },
+        {
+          "id": "restricted_items",
+          "category_id": "shipping_basics",
+          "category_label": "Shipping Basics & Packaging",
+          "question": "What items are restricted or prohibited from shipping?",
+          "answer_blocks": [
+            { "type": "intro", "text": "Restricted items include flammables, perishables, and specific lithium batteries..." }
+          ]
+        },
+        {
+          "id": "shipping_cost",
+          "category_id": "shipping_basics",
+          "category_label": "Shipping Basics & Packaging",
+          "question": "Why is my shipping cost higher than the actual weight of the package?",
+          "answer_blocks": [
+             { "type": "intro", "text": "Carriers charge based on the greater of actual weight or volumetric weight..." }
+          ]
+        },
+        {
+          "id": "packaging_standards",
+          "category_id": "shipping_basics",
+          "category_label": "Shipping Basics & Packaging",
+          "question": "What are the specific packaging standards for ShipX?",
+          "answer_blocks": [
+             { "type": "intro", "text": "ShipX requires double-walled boxes for international shipments over 5kg..." }
+          ]
+        },
+        {
+          "id": "label_packages",
+          "category_id": "shipping_basics",
+          "category_label": "Shipping Basics & Packaging",
+          "question": "How should I label my packages to ensure they don't get lost?",
+          "answer_blocks": [
+             { "type": "intro", "text": "Ensure labels are placed on the flattest surface and barcodes are not covered..." }
+          ]
+        },
+        {
+          "id": "electronics",
+          "category_id": "shipping_basics",
+          "category_label": "Shipping Basics & Packaging",
+          "question": "Can I ship consumer electronics like phones or laptops via ShipX?",
+          "answer_blocks": [
+             { "type": "intro", "text": "Yes, but they must adhere to lithium battery regulations (UN3481)..." }
+          ]
+        },
+        {
+          "id": "liquids_food",
+          "category_id": "shipping_basics",
+          "category_label": "Shipping Basics & Packaging",
+          "question": "What are the rules for shipping liquids or food items?",
+          "answer_blocks": [
+             { "type": "intro", "text": "Liquids must be sealed in leak-proof containers..." }
+          ]
+        }
+      ],
+      "load_more_button": "Load More"
+    },
+    "cta_section": {
+      "title": "Experience the Future of Shipping",
+      "subtitle": "Don't just read about our latest tools — let us show you how they work and what they can do for your business.",
+      "buttons": {
+        "book_demo": "Book a Demo",
+        "contact_us": "Contact Us"
+      }
+    }
+  }
+}

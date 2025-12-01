@@ -747,5 +747,740 @@
         "submit_claim": "Ajukan Klaim"
       }
     }
+  },
+  "faq_page": {
+    "header_section": {
+      "badge_text": "Pertanyaan yang Sering Diajukan",
+      "title_prefix": "Pertanyaan Kargo Anda,",
+      "title_suffix": "Terjawab",
+      "description": "Dari lepas landas hingga pengiriman akhir, kami percaya pada transparansi total. Temukan detail di bawah ini tentang cara kami menangani, melacak, dan melindungi kiriman Anda di setiap langkah.",
+      "search_placeholder": "Mulai ketik untuk mencari jawaban..."
+    },
+    "filter_section": {
+      "title": "Filter berdasarkan Kategori",
+      "categories": [
+        { "id": "all", "label": "Semua Kategori", "count": null },
+        { "id": "shipping_basics", "label": "Dasar Pengiriman & Pengemasan", "count": 7 },
+        { "id": "customs", "label": "Bea Cukai, Pajak & Dokumentasi", "count": 5 },
+        { "id": "ecommerce", "label": "Solusi E-commerce & Fulfillment", "count": 2 },
+        { "id": "carriers", "label": "Perbandingan Kurir", "count": 2 },
+        { "id": "insurance", "label": "Asuransi & Klaim", "count": 4 },
+        { "id": "troubleshooting", "label": "Pemecahan Masalah", "count": 2 },
+        { "id": "tech_tools", "label": "Alat Teknologi & Portal", "count": 2 },
+        { "id": "legal", "label": "Persyaratan Hukum", "count": 5 },
+        { "id": "operations", "label": "Operasional", "count": 2 },
+        { "id": "shipment_mgmt", "label": "Manajemen Pengiriman", "count": 5 }
+      ]
+    },
+    "accordion_section": {
+      "items": [
+        {
+          "id": "safely_ship_fragile",
+          "category_id": "shipping_basics",
+          "category_label": "Dasar Pengiriman & Pengemasan",
+          "question": "Bagaimana cara mengirim barang pecah belah ke luar negeri dengan aman?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Integritas fisik kiriman adalah fondasi logistik e-commerce yang sukses. Saat barang bepergian dari Asia Tenggara ke tujuan seperti AS atau Eropa, barang tersebut melewati banyak titik sentuh: hub penyortiran otomatis, sabuk pemuatan pesawat, pemeriksaan bea cukai, dan van pengiriman last-mile. Risiko benturan, kompresi, dan getaran cukup signifikan."
+            },
+            {
+              "type": "point",
+              "title": "Protokol Operasional:",
+              "text": "Amilo dan ShipX menganjurkan pendekatan \"pertahanan berlapis\" untuk pengemasan."
+            },
+            {
+              "type": "point",
+              "title": "Pemilihan Kotak:",
+              "text": "Menggunakan kotak kardus dinding tunggal standar seringkali tidak cukup untuk pengiriman internasional. Kami merekomendasikan kotak bergelombang dinding ganda (peringkat ECT minimum 32) yang memberikan ketahanan remuk yang unggul. Ukuran kotak harus sesuai—terlalu besar menciptakan ruang kosong yang memungkinkan pergerakan; terlalu kecil mentransfer energi benturan langsung ke produk."
+            },
+            {
+              "type": "point",
+              "title": "Bantalan Internal:",
+              "text": "Penelitian menunjukkan bahwa membungkus barang pecah belah satu per satu dengan bubble wrap atau kertas kemasan tebal dapat mengurangi risiko kerusakan hingga 80%. Yang terpenting, barang tidak boleh menyentuh dinding kotak; minimal 2 inci (5 cm) pengisi ruang kosong (bantal udara, kacang biodegradable, atau kertas kraft remuk) harus mengelilingi barang di semua sisi."
+            },
+            {
+              "type": "point",
+              "title": "Pembongkaran:",
+              "text": "Untuk barang yang lebih besar seperti furnitur atau elektronik multi-bagian, pembongkaran sangat penting. Membongkar furnitur dengan aman mengurangi luas permukaan yang terpapar potensi goresan dan penyok hingga 70%."
+            },
+            {
+              "type": "point",
+              "title": "Pelabelan:",
+              "text": "Meskipun penyortir otomatis tidak membaca stiker \"Fragile\" (Pecah Belah), penangan manusia membacanya. Studi menunjukkan bahwa melabeli kotak dengan jelas dengan indikator \"Fragile\" atau \"Handle with Care\" mengurangi insiden kesalahan penanganan manual hingga 50%."
+            },
+            {
+              "type": "point",
+              "title": "Wawasan Strategis:",
+              "text": "Pengemasan yang tepat juga merupakan strategi optimalisasi biaya. Dengan menggunakan kotak sekecil mungkin dengan perlindungan yang memadai, Anda meminimalkan berat volumetrik, pendorong biaya utama dalam fulfillment lintas batas."
+            }
+          ]
+        },
+        {
+          "id": "restricted_items",
+          "category_id": "shipping_basics",
+          "category_label": "Dasar Pengiriman & Pengemasan",
+          "question": "Barang apa saja yang dibatasi atau dilarang untuk dikirim?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Kepatuhan terhadap peraturan Asosiasi Pengangkutan Udara Internasional (IATA) dan hukum bea cukai setempat adalah wajib. ShipX mengoperasikan jaringan kargo umum yang memprioritaskan kecepatan dan kepatuhan. Untuk mempertahankan standar ini, kategori barang tertentu secara tegas dikecualikan dari layanan kami."
+            },
+            {
+              "type": "point",
+              "title": "Kebijakan \"Tanpa Baterai\":",
+              "text": "ShipX secara eksplisit menyatakan bahwa kami menangani \"Setiap komoditas selain barang berbahaya dan baterai\". Ini adalah perbedaan penting bagi penjual elektronik konsumen."
+            },
+            {
+              "type": "point",
+              "title": "Dilarang:",
+              "text": "Baterai Lithium-Ion lepas, power bank, baterai sel basah, dan biasanya perangkat di mana baterai tidak dapat dilepas atau dikemas dengan peralatan tetapi melebihi batas watt-hour."
+            },
+            {
+              "type": "point",
+              "title": "Alasan:",
+              "text": "Baterai lithium menimbulkan risiko kebakaran thermal runaway di ruang kargo pesawat. Dengan mengecualikannya, ShipX memastikan bahwa pengiriman konsolidasinya tidak ditandai untuk pemeriksaan bahan berbahaya, memastikan waktu transit yang lebih cepat untuk semua klien lainnya."
+            },
+            {
+              "type": "point",
+              "title": "Larangan Umum:",
+              "text": "Sejalan dengan standar global, hal-hal berikut juga dilarang: Hewan Hidup & Jenazah, Instrumen Keuangan, Senjata, Barang Terlarang, dan Barang Mudah Rusak."
+            },
+            {
+              "type": "point",
+              "title": "Saran Ekspansi Global:",
+              "text": "Penjual juga harus menyadari batasan khusus tujuan. Selalu konsultasikan daftar barang terlarang ShipX sebelum mendaftarkan produk untuk pengiriman internasional."
+            }
+          ]
+        },
+        {
+          "id": "shipping_cost_volumetric",
+          "category_id": "shipping_basics",
+          "category_label": "Dasar Pengiriman & Pengemasan",
+          "question": "Mengapa biaya pengiriman saya lebih tinggi dari berat aktual paket?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Dalam industri penerbangan, ruang sama berharganya dengan berat. Sebuah pesawat yang penuh dengan bantal akan \"kehabisan ruang\" jauh sebelum \"kelebihan berat\". Untuk memperhitungkan ini, penyedia logistik e-commerce menggunakan Berat Volumetrik (atau Dimensi)."
+            },
+            {
+              "type": "point",
+              "title": "Perhitungan:",
+              "text": "ShipX menghitung berat volumetrik menggunakan pembagi standar (biasanya 5000). Berat yang dapat dikenakan biaya adalah yang lebih tinggi antara berat mati aktual atau berat volumetrik."
+            },
+            {
+              "type": "point",
+              "title": "Strategi Optimalisasi:",
+              "text": "Bagi penjual e-commerce Asia Tenggara yang mengirimkan barang ringan namun besar, berat volumetrik dapat menggandakan atau melipatgandakan biaya pengiriman."
+            },
+            {
+              "type": "point",
+              "title": "Saran Amilo:",
+              "text": "\"Optimalkan Pengemasan: Gunakan kemasan sekecil mungkin untuk mengurangi berat dimensi\"."
+            },
+            {
+              "type": "point",
+              "title": "Solusi:",
+              "text": "Gunakan penyegelan vakum untuk tekstil guna mengurangi volume. Hindari \"over-boxing\" barang kecil dalam karton besar."
+            }
+          ]
+        },
+        {
+          "id": "packaging_standards",
+          "category_id": "shipping_basics",
+          "category_label": "Dasar Pengiriman & Pengemasan",
+          "question": "Apa standar pengemasan khusus untuk ShipX?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Pengemasan memiliki dua peran: perlindungan dan presentasi merek. ShipX mendukung \"Solusi Pengemasan Kreatif\" yang mengangkat bisnis kecil, tetapi ini tidak boleh mengkompromikan integritas struktural."
+            },
+            {
+              "type": "point",
+              "title": "Persyaratan Operasional:",
+              "text": "Kualitas Bahan: Gunakan kotak bergelombang kaku yang baru. Kotak bekas sering kali memiliki integritas struktural yang terganggu dan barcode lama yang menyebabkan kesalahan rute."
+            },
+            {
+              "type": "point",
+              "title": "Penyegelan:",
+              "text": "Gunakan pita plastik peka tekanan atau pita kertas yang diaktifkan air yang dirancang khusus untuk pengiriman. Selotip bening standar tidak diizinkan."
+            },
+            {
+              "type": "point",
+              "title": "Tidak Ada Barang Lepas:",
+              "text": "Semua barang harus aman. Jika Anda mengguncang kotak dan mendengar gerakan, pengemasan tidak memadai."
+            },
+            {
+              "type": "point",
+              "title": "Peluang Branding:",
+              "text": "ShipX mendorong penggunaan \"Tas dan Kotak yang Dipersonalisasi\" atau \"Sisipan Ramah Lingkungan\" untuk meningkatkan pengalaman unboxing."
+            }
+          ]
+        },
+        {
+          "id": "labeling_packages",
+          "category_id": "shipping_basics",
+          "category_label": "Dasar Pengiriman & Pengemasan",
+          "question": "Bagaimana cara melabeli paket saya agar tidak hilang?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Label pengiriman adalah paspor untuk paket Anda. Jika tidak terbaca, paket berhenti bergerak."
+            },
+            {
+              "type": "point",
+              "title": "Praktik Terbaik:",
+              "text": "Penempatan: Label harus ditempelkan pada permukaan datar terbesar dari kotak."
+            },
+            {
+              "type": "point",
+              "title": "Tanpa Penghalang:",
+              "text": "Jangan pernah menempatkan label di atas jahitan atau penutup. Jika kotak dibuka untuk pemeriksaan atau pita dipotong, label akan rusak."
+            },
+            {
+              "type": "point",
+              "title": "Kualitas Cetak:",
+              "text": "Printer termal direkomendasikan. Pastikan tinta tidak luntur dan tutupi label dengan selotip bening jika menggunakan kertas standar."
+            },
+            {
+              "type": "point",
+              "title": "Label Sekunder:",
+              "text": "Tempatkan label cadangan atau slip pengepakan di dalam kotak. Jika label luar rusak, bea cukai atau kurir dapat membuka kotak untuk mengidentifikasi penerima."
+            }
+          ]
+        },
+        {
+          "id": "consumer_electronics",
+          "category_id": "shipping_basics",
+          "category_label": "Dasar Pengiriman & Pengemasan",
+          "question": "Bisakah saya mengirim elektronik konsumen seperti ponsel atau laptop melalui ShipX?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Sebagaimana dirinci dalam bagian barang terbatas, ShipX mempertahankan kebijakan yang mengecualikan barang berbahaya dan baterai. Ini adalah kebijakan biner untuk jaringan umum."
+            },
+            {
+              "type": "point",
+              "title": "Implikasi bagi Penjual:",
+              "text": "Jika Anda adalah penjual e-commerce Asia Tenggara yang berurusan dengan elektronik:"
+            },
+            {
+              "type": "point",
+              "title": "Diperbolehkan:",
+              "text": "Casing ponsel, kabel USB (tanpa power bank), pelindung layar, periferal komputer (keyboard/mouse tanpa baterai di dalamnya)."
+            },
+            {
+              "type": "point",
+              "title": "Tidak Diperbolehkan:",
+              "text": "Laptop, smartphone, speaker Bluetooth dengan baterai built-in, sel daya lepas. Mencoba mengirim barang-barang ini dapat mengakibatkan paket dikembalikan ke pengirim."
+            }
+          ]
+        },
+        {
+          "id": "liquids_and_food",
+          "category_id": "shipping_basics",
+          "category_label": "Dasar Pengiriman & Pengemasan",
+          "question": "Apa aturan untuk mengirim cairan atau makanan?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Pengiriman cairan melibatkan pencegahan kebocoran yang dapat merusak kiriman lain dalam jaringan konsolidasi."
+            },
+            {
+              "type": "point",
+              "title": "Cairan:",
+              "text": "Harus dalam wadah anti bocor, disegel dengan penghalang sekunder, dan ditempatkan di dalam kantong plastik tertutup dengan bahan penyerap. Cairan yang mudah terbakar sangat dilarang."
+            },
+            {
+              "type": "point",
+              "title": "Barang Mudah Rusak:",
+              "text": "Jaringan standar ShipX tidak memiliki kontrol suhu. Barang yang mudah rusak umumnya tidak cocok. Barang makanan juga menghadapi kontrol impor yang ketat (FDA di AS, EFSA di Eropa)."
+            }
+          ]
+        },
+        {
+          "id": "duties_and_taxes",
+          "category_id": "customs",
+          "category_label": "Bea Cukai, Pajak & Dokumentasi",
+          "question": "Siapa yang membayar bea masuk dan pajak - saya atau pelanggan?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Ini tergantung pada tingkat layanan dan Incoterms yang dipilih selama pembuatan pengiriman."
+            },
+            {
+              "type": "point",
+              "title": "DDU (Delivered Duty Unpaid):",
+              "text": "Standar default. Pembeli bertanggung jawab untuk membayar bea saat kedatangan. Ini dapat menyebabkan \"kejutan biaya\" dan penolakan paket."
+            },
+            {
+              "type": "point",
+              "title": "DDP (Delivered Duty Paid):",
+              "text": "Penjual memungut pajak saat checkout dan membayarnya ke kurir. Amilo mendukung IOSS untuk UE, yang merupakan bentuk DDP."
+            },
+            {
+              "type": "point",
+              "title": "Rekomendasi:",
+              "text": "Untuk pengalaman pelanggan yang unggul selama ekspansi Global, menggunakan DDP/IOSS mencegah keterlambatan pengiriman dan penolakan pelanggan."
+            }
+          ]
+        },
+        {
+          "id": "shipping_time_us",
+          "category_id": "customs",
+          "category_label": "Bea Cukai, Pajak & Dokumentasi",
+          "question": "Berapa lama paket saya akan sampai di AS?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "ShipX menawarkan portofolio bertingkat untuk menyeimbangkan kecepatan dan biaya."
+            },
+            {
+              "type": "point",
+              "title": "Ekonomi:",
+              "text": "Memanfaatkan jaringan pos. Waktu transit lebih lama (biasanya 10-20+ hari tergantung tujuan) tetapi biaya diminimalkan."
+            },
+            {
+              "type": "point",
+              "title": "Komersial:",
+              "text": "Solusi hibrida (kemungkinan menggunakan kemitraan Landmark Global). Menawarkan injeksi lebih cepat ke jaringan tujuan, memotong waktu transit secara signifikan."
+            },
+            {
+              "type": "point",
+              "title": "Express:",
+              "text": "Opsi tercepat untuk barang mendesak. Meskipun hari tertentu bervariasi, infrastruktur Amilo menargetkan 95% pemenuhan pesanan di hari yang sama untuk memaksimalkan kecepatan."
+            }
+          ]
+        },
+        {
+          "id": "gift_declaration",
+          "category_id": "customs",
+          "category_label": "Bea Cukai, Pajak & Dokumentasi",
+          "question": "Bisakah saya menandai barang yang dijual sebagai \"Hadiah\" untuk menghindari pajak?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Sama sekali tidak. Salah mendeklarasikan penjualan komersial sebagai \"Hadiah\" adalah pelanggaran hukum perdagangan internasional dan merupakan penipuan bea cukai."
+            },
+            {
+              "type": "point",
+              "title": "Risiko:",
+              "text": "Otoritas bea cukai memverifikasi detail pengirim. Jika entitas komersial terdaftar sebagai pengirim, penunjukan \"Hadiah\" ditandai sebagai mencurigakan."
+            },
+            {
+              "type": "point",
+              "title": "Konsekuensi:",
+              "text": "Penyitaan barang, denda, dan potensi daftar hitam (blacklist) bisnis Anda."
+            },
+            {
+              "type": "point",
+              "title": "Kebijakan:",
+              "text": "ShipX mengotomatiskan pembuatan Faktur Komersial berdasarkan data pesanan Anda untuk memastikan kepatuhan penuh."
+            }
+          ]
+        },
+        {
+          "id": "commercial_invoice",
+          "category_id": "customs",
+          "category_label": "Bea Cukai, Pajak & Dokumentasi",
+          "question": "Apa itu Faktur Komersial dan informasi apa yang harus ada di dalamnya?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Faktur Komersial (Commercial Invoice) adalah dokumen definitif untuk izin bea cukai. ShipX menghasilkannya secara elektronik, tetapi keakuratannya tergantung pada input Anda."
+            },
+            {
+              "type": "point",
+              "title": "Bidang yang Wajib Diisi:",
+              "text": "Deskripsi (harus spesifik), Nilai, Kode HS, Negara Asal."
+            },
+            {
+              "type": "point",
+              "title": "Mengapa itu penting:",
+              "text": "Faktur yang tidak jelas adalah penyebab #1 keterlambatan bea cukai dalam fulfillment lintas batas."
+            }
+          ]
+        },
+        {
+          "id": "hs_code",
+          "category_id": "customs",
+          "category_label": "Bea Cukai, Pajak & Dokumentasi",
+          "question": "Bagaimana cara menemukan Kode HS yang tepat?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Kode Sistem Harmonisasi (HS) adalah nomor 6 hingga 10 digit yang mengklasifikasikan produk Anda untuk tujuan bea masuk."
+            },
+            {
+              "type": "point",
+              "title": "Sumber Daya:",
+              "text": "Anda dapat menggunakan alat pencarian yang disediakan oleh otoritas bea cukai tujuan atau alat pihak ketiga yang terintegrasi ke dalam ekosistem ShipX."
+            },
+            {
+              "type": "point",
+              "title": "Presisi:",
+              "text": "Menggunakan kode yang salah dapat mengakibatkan pembayaran bea yang berlebihan atau kurang bayar, yang mengarah pada denda."
+            }
+          ]
+        },
+        {
+          "id": "international_returns",
+          "category_id": "ecommerce",
+          "category_label": "Solusi E-commerce & Fulfillment",
+          "question": "Bagaimana ShipX menangani pengembalian internasional?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Pengembalian adalah bagian tak terelakkan dari ritel. Amilo memposisikan pengembalian sebagai \"pendorong penjualan\"."
+            },
+            {
+              "type": "point",
+              "title": "Kemampuan:",
+              "text": "Platform ini mendukung pengambilan pengembalian dan bahkan dapat menjalankan alur kerja \"kirim pengganti secara bersamaan\"."
+            },
+            {
+              "type": "point",
+              "title": "Strategi:",
+              "text": "Untuk fulfillment lintas batas, mengirim barang murah kembali ke asal seringkali mahal. Jaringan Amilo memungkinkan konsolidasi atau inspeksi lokal untuk meminimalkan kebutuhan pengembalian."
+            }
+          ]
+        },
+        {
+          "id": "is_shipx_3pl",
+          "category_id": "ecommerce",
+          "category_label": "Solusi E-commerce & Fulfillment",
+          "question": "Apakah ShipX sebuah 3PL?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Secara teknis, ShipX berfungsi sebagai penyedia 3PL (Logistik Pihak Ketiga) dengan menangani pergudangan dan transportasi. Namun, mengingat integrasi layanan keuangannya dan SaaS berpemilik (OMS/WMS/DMS), ini lebih menyerupai penyedia 4PL yang mengelola seluruh ekosistem rantai pasokan."
+            }
+          ]
+        },
+        {
+          "id": "shipx_vs_carriers",
+          "category_id": "carriers",
+          "category_label": "Perbandingan Kurir",
+          "question": "Mengapa memilih ShipX daripada DHL atau FedEx?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Kurir Utama sangat baik untuk kecepatan tetapi mahal. ShipX dirancang untuk pasar menengah \"ASEAN ke AS\"."
+            },
+            {
+              "type": "point",
+              "title": "Biaya:",
+              "text": "Dengan menggabungkan volume dan menggunakan kurir hibrida, ShipX menawarkan tarif \"Komersial\" yang lebih murah dari kurir ekspres."
+            },
+            {
+              "type": "point",
+              "title": "Teknologi:",
+              "text": "Bundel OMS/WMS gratis atau berbiaya rendah bagi pengguna."
+            },
+            {
+              "type": "point",
+              "title": "Fleksibilitas:",
+              "text": "\"Tanpa deposit\" dan orientasi cepat menawarkan kelincahan yang tidak dapat ditandingi oleh kurir lama."
+            }
+          ]
+        },
+        {
+          "id": "sustainable_shipping",
+          "category_id": "carriers",
+          "category_label": "Perbandingan Kurir",
+          "question": "Bagaimana cara membuat pengiriman saya lebih berkelanjutan?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "ShipX mendukung keberlanjutan melalui efisiensi dan pilihan material."
+            },
+            {
+              "type": "point",
+              "title": "Logistik:",
+              "text": "Menggunakan hub Pergudangan yang lebih dekat dengan pelanggan mengurangi jarak last-mile dan emisi."
+            },
+            {
+              "type": "point",
+              "title": "Material:",
+              "text": "Kami mendorong sisipan yang dapat dikomposkan atau didaur ulang."
+            },
+            {
+              "type": "point",
+              "title": "Pengemasan:",
+              "text": "Pedoman \"pengemasan minimal\" kami mengurangi limbah dan pembakaran bahan bakar."
+            }
+          ]
+        },
+        {
+          "id": "insurance_coverage",
+          "category_id": "insurance",
+          "category_label": "Asuransi & Klaim",
+          "question": "Apakah kiriman saya diasuransikan?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Kewajiban kurir standar terbatas. Kebijakan ShipX: Barang dikirim dengan \"risiko Anda sendiri\" kecuali perlindungan yang ditingkatkan diamankan."
+            },
+            {
+              "type": "point",
+              "title": "Rekomendasi:",
+              "text": "Kami sangat menyarankan pembelian asuransi kargo laut \"All-Risk\" untuk ekspansi Global."
+            },
+            {
+              "type": "point",
+              "title": "Klaim:",
+              "text": "ShipX menawarkan \"kredit toko\" untuk klaim kerusakan yang disetujui, bukan pengembalian uang tunai."
+            }
+          ]
+        },
+        {
+          "id": "damage_claim_process",
+          "category_id": "insurance",
+          "category_label": "Asuransi & Klaim",
+          "question": "Bagaimana proses klaim kerusakan?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Klaim biasanya harus diajukan segera. ShipX menyelidiki dalam \"sepuluh hari kerja\"."
+            },
+            {
+              "type": "point",
+              "title": "Bukti:",
+              "text": "Anda harus memberikan foto barang yang rusak, kemasan dalam, dan kotak luar."
+            },
+            {
+              "type": "point",
+              "title": "Pemeriksaan Pengemasan:",
+              "text": "Jika pengemasan tidak memenuhi pedoman, klaim dapat ditolak."
+            }
+          ]
+        },
+        {
+          "id": "customer_refused_damaged",
+          "category_id": "insurance",
+          "category_label": "Asuransi & Klaim",
+          "question": "Apa yang terjadi jika pelanggan menolak paket yang rusak?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Jika paket tiba dengan kerusakan yang terlihat, pelanggan harus mencatatnya pada tanda terima pengiriman. Paket kemungkinan akan dikembalikan ke hub lokal. Anda kemudian harus memulai proses klaim."
+            }
+          ]
+        },
+        {
+          "id": "package_arrived_damaged",
+          "category_id": "insurance",
+          "category_label": "Asuransi & Klaim",
+          "question": "Apa yang terjadi jika paket saya tiba dalam keadaan rusak?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Laporkan dalam waktu 7 hari dan simpan semua kemasan. Dokumentasi ini mendukung persetujuan klaim dan membantu menjaga pengalaman fulfillment lintas batas yang lancar."
+            }
+          ]
+        },
+        {
+          "id": "bill_shock",
+          "category_id": "troubleshooting",
+          "category_label": "Pemecahan Masalah",
+          "question": "Mengapa saya ditagih lebih dari penawaran harga?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "\"Kejutan tagihan\" ini biasanya karena perbedaan Berat Volumetrik atau Biaya Tambahan (Biaya area terpencil, Koreksi Alamat). Keakuratan data adalah tanggung jawab pedagang."
+            }
+          ]
+        },
+        {
+          "id": "shipment_stuck_customs",
+          "category_id": "troubleshooting",
+          "category_label": "Pemecahan Masalah",
+          "question": "Mengapa kiriman saya tertahan di bea cukai?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Alasan umum termasuk Undervaluation (Nilai barang dikecilkan), Deskripsi Umum (misalnya \"Suku Cadang\"), atau Dokumen yang Hilang."
+            }
+          ]
+        },
+        {
+          "id": "branded_tracking",
+          "category_id": "tech_tools",
+          "category_label": "Alat Teknologi & Portal",
+          "question": "Bisakah saya mengatur halaman pelacakan bermerek?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Ya. ShipX menyediakan >130 event pelacakan standar. Data ini dapat dimasukkan ke dalam halaman pelacakan bermerek, memastikan bahwa pelanggan melihat logo dan pesan pemasaran Anda saat menunggu pengiriman."
+            }
+          ]
+        },
+        {
+          "id": "split_shipments",
+          "category_id": "tech_tools",
+          "category_label": "Alat Teknologi & Portal",
+          "question": "Apakah ShipX mendukung pengiriman terpisah?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Ya. OMS Amilo mendukung pengiriman terpisah jika Anda memiliki inventaris di beberapa lokasi. Ini menghasilkan dua label pengiriman dan dua nomor pelacakan."
+            }
+          ]
+        },
+        {
+          "id": "export_license",
+          "category_id": "legal",
+          "category_label": "Persyaratan Hukum",
+          "question": "Apakah saya memerlukan lisensi ekspor untuk mengirim secara internasional?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Umumnya, Anda harus menjadi entitas bisnis terdaftar. Untuk barang-barang tertentu yang diawasi, izin ekspor diperlukan. Untuk e-commerce umum, pendaftaran bisnis standar biasanya sudah cukup."
+            }
+          ]
+        },
+        {
+          "id": "eori_number",
+          "category_id": "legal",
+          "category_label": "Persyaratan Hukum",
+          "question": "Apakah saya memerlukan nomor EORI untuk Eropa?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Ya. Jika Anda mengirim ke UE, Anda (atau perantara IOSS Anda) memerlukan nomor Pendaftaran dan Identifikasi Operator Ekonomi (EORI). Solusi UE ShipX dibangun di sekitar kepatuhan IOSS."
+            }
+          ]
+        },
+        {
+          "id": "volume_discounts",
+          "category_id": "legal",
+          "category_label": "Persyaratan Hukum",
+          "question": "Apakah Anda menawarkan diskon volume?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Ya. Penjual e-commerce ASEAN bervolume tinggi mendapat manfaat dari diskon bertingkat yang mendukung pertumbuhan e-commerce dan masuk ke pasar AS."
+            }
+          ]
+        },
+        {
+          "id": "remote_area_surcharge",
+          "category_id": "legal",
+          "category_label": "Persyaratan Hukum",
+          "question": "Mengapa saya menerima Biaya Tambahan Area Terpencil?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Kurir mengenakan biaya tambahan untuk pengiriman ke lokasi terpencil. Biaya ini diteruskan oleh ShipX. Sangat penting untuk memvalidasi alamat saat checkout."
+            }
+          ]
+        },
+        {
+          "id": "billing_currency",
+          "category_id": "legal",
+          "category_label": "Persyaratan Hukum",
+          "question": "Mata uang apa yang digunakan ShipX untuk penagihan?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Penagihan biasanya terjadi dalam mata uang asal akun atau mata uang perdagangan utama (USD/SGD). Pedagang harus memverifikasi pengaturan dasbor mereka."
+            }
+          ]
+        },
+        {
+          "id": "multiple_orders_one_box",
+          "category_id": "operations",
+          "category_label": "Operasional",
+          "question": "Bisakah saya mengirim beberapa pesanan ke negara yang sama dalam satu kotak?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Ya—metode konsolidasi ini mengurangi biaya sebesar 20–30% dan merampingkan fulfillment lintas batas untuk pengiriman volume tinggi dari ASEAN ke AS."
+            }
+          ]
+        },
+        {
+          "id": "consolidate_suppliers",
+          "category_id": "operations",
+          "category_label": "Operasional",
+          "question": "Bisakah saya menggabungkan pengiriman dari beberapa pemasok?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Ya. Konsolidasi Asal adalah layanan utama. Anda dapat meminta beberapa pabrik mengirim ke hub Amilo untuk dikonsolidasikan menjadi satu pengiriman kargo, yang secara drastis menurunkan biaya pengiriman per unit."
+            }
+          ]
+        },
+        {
+          "id": "change_address",
+          "category_id": "shipment_mgmt",
+          "category_label": "Manajemen Pengiriman",
+          "question": "Bisakah saya mengubah alamat setelah pengiriman?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Sebelum Penjemputan: Ya. Dalam Perjalanan: Sangat sulit dan mahal. Sedang Dikirim ke Penerima: Tidak mungkin."
+            }
+          ]
+        },
+        {
+          "id": "po_boxes",
+          "category_id": "shipment_mgmt",
+          "category_label": "Manajemen Pengiriman",
+          "question": "Apakah Anda mengirim ke Kotak Pos (P.O. Boxes) atau alamat militer?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Kurir Ekspres: Tidak. Pos/Ekonomi (Landmark Global): Ya, biasanya. Selalu periksa panduan layanan untuk negara tujuan."
+            }
+          ]
+        },
+        {
+          "id": "signature_required",
+          "category_id": "shipment_mgmt",
+          "category_label": "Manajemen Pengiriman",
+          "question": "Apakah tanda tangan diperlukan untuk pengiriman?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Ya, \"Tanda Tangan Diperlukan\" adalah layanan bernilai tambah yang tersedia untuk sebagian besar tingkatan Komersial dan Ekspres. Sangat disarankan untuk pesanan bernilai tinggi."
+            }
+          ]
+        },
+        {
+          "id": "scheduled_delivery",
+          "category_id": "shipment_mgmt",
+          "category_label": "Manajemen Pengiriman",
+          "question": "Bisakah saya menjadwalkan waktu pengiriman tertentu?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Layanan standar mengirimkan selama jam kerja. Opsi waktu pasti atau pengiriman akhir pekan dapat dipilih untuk kebutuhan fulfillment tingkat lanjut."
+            }
+          ]
+        },
+        {
+          "id": "cancel_shipment",
+          "category_id": "shipment_mgmt",
+          "category_label": "Manajemen Pengiriman",
+          "question": "Bagaimana cara membatalkan pengiriman yang sudah saya pesan?",
+          "answer_blocks": [
+            {
+              "type": "intro",
+              "text": "Anda dapat membatalkan pengiriman dan membatalkan label langsung di dasbor ShipX selama paket belum dipindai oleh kurir."
+            }
+          ]
+        }
+      ],
+      "load_more_button": "Muat Lebih Banyak"
+    },
+    "cta_section": {
+      "title": "Rasakan Masa Depan Pengiriman",
+      "subtitle": "Jangan hanya membaca tentang alat terbaru kami — biarkan kami menunjukkan cara kerjanya dan apa yang dapat dilakukannya untuk bisnis Anda.",
+      "buttons": {
+        "book_demo": "Pesan Demo",
+        "contact_us": "Hubungi Kami"
+      }
+    }
   }
 }
