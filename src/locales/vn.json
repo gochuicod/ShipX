@@ -547,7 +547,13 @@
       "title": "Theo Dõi ShipX – Giám sát Gói Hàng Theo Thời Gian Thực",
       "description": "Theo dõi ShipX của bạn theo thời gian thực, xem các cập nhật trạng thái mới nhất, tiến trình giao hàng và nhật ký hoạt động chi tiết để trải nghiệm vận chuyển dễ dàng.",
       "canonical": "https://shipx.asia/shipment-tracker",
-      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/shipment-tracker-og.webp"
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "hs_code_generator_page": {
+      "title": "Công cụ tìm Mã HS ShipX - Tra cứu Mã HS Xuất Nhập Khẩu Chính Xác",
+      "description": "Tra cứu mã HS chính xác cho hàng hóa xuất nhập khẩu của bạn với ShipX. Công cụ phân loại mã số hàng hóa tự động, nhanh chóng và tin cậy.",
+      "canonical": "https://shipx.asia/hs-code-generator",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
     }
   },
   "faq_section": {
@@ -1493,6 +1499,61 @@
         "book_demo": "Đặt lịch Demo",
         "contact_us": "Liên hệ Chúng tôi"
       }
+    }
+  },
+  "hs_code_generator_page": {
+    "title_section": {
+      "title_1": "Công Cụ AI",
+      "title_2": "Tìm Mã HS Của Bạn",
+      "description": "Nhập chi tiết sản phẩm của bạn và để hệ thống của chúng tôi xử lý ngay lập tức sự phức tạp của việc chọn mã HTSUS (Mỹ) và HS (Quốc tế), mang lại cho bạn sự chắc chắn cần thiết để vận chuyển đến bất kỳ đâu."
+    },
+    "form_section": {
+      "input_1": {
+        "label": "Mô tả sản phẩm",
+        "note": "Cung cấp mô tả chi tiết về sản phẩm của bạn",
+        "placeholder": "ví dụ: 'Giày tây nam bằng da đế cao su'."
+      },
+      "input_2": {
+        "label": "Mục đích sử dụng / Chức năng",
+        "note": "Mô tả mục đích chính hoặc ứng dụng của sản phẩm",
+        "placeholder": "ví dụ: 'Linh kiện cho động cơ ô tô', 'Thiết bị nhà bếp bán lẻ'."
+      },
+      "input_3": {
+        "label": "Chất liệu / Vật liệu chính",
+        "note": "Chỉ rõ các vật liệu chính được sử dụng trong sản phẩm",
+        "placeholder": "ví dụ: 'Thép không gỉ', '80% cotton / 20% polyester'"
+      },
+      "important_note": {
+        "label_1": "Các trường được đánh dấu",
+        "label_2": "là bắt buộc",
+        "note": "Khuyên dùng nhập đầy đủ thông tin để tối đa hóa độ chính xác phân loại của AI."
+      },
+      "input_4": {
+        "label": "Hệ thống biểu thuế",
+        "note": "Chọn hệ thống biểu thuế áp dụng",
+        "option_1": "Hoa Kỳ (HTSUS - 10 chữ số)",
+        "option_2": "Quốc tế / Phần còn lại của thế giới (HS - 6 chữ số)"
+      },
+      "find_hs_code_button": "Tìm Mã HS"
+    },
+    "result_section": {
+      "output_1": {
+        "label": "Mã HS được đề xuất",
+        "note": "Mã hải quan 6 chữ số (Quốc tế) hoặc 10 chữ số (Mỹ) được gợi ý cho sản phẩm của bạn"
+      },
+      "output_2": {
+        "label": "Giải thích của AI",
+        "note": "Giải thích lý do đằng sau việc phân loại để đảm bảo tính minh bạch"
+      },
+      "output_3": {
+        "label": "Mức độ tin cậy",
+        "note": "Điểm phần trăm cho biết mức độ chắc chắn của AI về mã được đề xuất, giúp bạn đánh giá rủi ro"
+      },
+      "output_4": {
+        "label": "Phân cấp biểu thuế",
+        "note": "Trực quan hóa đường dẫn cấu trúc từ Chương xuống Phân nhóm cụ thể."
+      },
+      "generate_another_hs_code_button": "Tạo Mã HS Khác"
     }
   }
 }

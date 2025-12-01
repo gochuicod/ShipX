@@ -547,7 +547,13 @@
       "title": "Penjejak Penghantaran ShipX – Jejak Pakej Masa Sebenar",
       "description": "Jejaki penghantaran ShipX anda secara masa sebenar, lihat kemas kini status terkini, anggaran progres penghantaran, dan log aktiviti terperinci untuk pengalaman penghantaran yang mudah.",
       "canonical": "https://shipx.asia/shipment-tracker",
-      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/shipment-tracker-og.webp"
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "hs_code_generator_page": {
+      "title": "Penjana Kod HS ShipX - Cari Kod Tarif Kastam dengan Pantas",
+      "description": "Dapatkan kod HS yang tepat untuk urusan import dan eksport anda. Gunakan alat pencarian kod tarif ShipX untuk klasifikasi barang yang pantas dan tepat.",
+      "canonical": "https://shipx.asia/hs-code-generator",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
     }
   },
   "faq_section": {
@@ -1497,6 +1503,61 @@
         "book_demo": "Tempah Demo",
         "contact_us": "Hubungi Kami"
       }
+    }
+  },
+  "hs_code_generator_page": {
+    "title_section": {
+      "title_1": "Pencari AI",
+      "title_2": "Kod HS Anda",
+      "description": "Masukkan butiran produk anda, dan biarkan sistem kami menangani kerumitan pemilihan kod HTSUS (AS) dan HS (Seluruh Dunia) dengan segera, memberikan kepastian yang anda perlukan untuk penghantaran ke mana-mana sahaja."
+    },
+    "form_section": {
+      "input_1": {
+        "label": "Deskripsi Produk",
+        "note": "Berikan deskripsi terperinci mengenai produk anda",
+        "placeholder": "cth., 'Kasut kulit lelaki dengan tapak getah'."
+      },
+      "input_2": {
+        "label": "Kegunaan / Fungsi",
+        "note": "Jelaskan tujuan utama atau aplikasi penggunaan",
+        "placeholder": "cth., 'Komponen untuk enjin kereta', 'Peralatan dapur runcit'."
+      },
+      "input_3": {
+        "label": "Bahan Utama",
+        "note": "Nyatakan bahan utama yang digunakan dalam produk",
+        "placeholder": "cth., 'Keluli tahan karat', '80% kapas / 20% poliester'"
+      },
+      "important_note": {
+        "label_1": "Ruangan bertanda",
+        "label_2": "adalah wajib",
+        "note": "Disyorkan untuk mengisi semua input bagi memaksimumkan ketepatan klasifikasi AI."
+      },
+      "input_4": {
+        "label": "Sistem Tarif",
+        "note": "Pilih sistem tarif yang berkenaan",
+        "option_1": "AS (HTSUS - 10 digit)",
+        "option_2": "Seluruh Dunia (HS - 6 digit)"
+      },
+      "find_hs_code_button": "Cari Kod HS"
+    },
+    "result_section": {
+      "output_1": {
+        "label": "Kod HS Disyorkan",
+        "note": "Kod kastam 6 digit (Seluruh Dunia) atau 10 digit (AS) yang dicadangkan untuk produk anda"
+      },
+      "output_2": {
+        "label": "Justifikasi AI",
+        "note": "Menjelaskan alasan di sebalik klasifikasi untuk memastikan ketelusan"
+      },
+      "output_3": {
+        "label": "Tahap Keyakinan",
+        "note": "Skor peratusan yang menunjukkan sejauh mana AI yakin bahawa kod yang disyorkan adalah betul, membantu anda menilai risiko"
+      },
+      "output_4": {
+        "label": "Hierarki Tarif",
+        "note": "Memvisualisasikan laluan struktur dari Bab hingga ke Sub-tajuk tertentu."
+      },
+      "generate_another_hs_code_button": "Jana Kod HS Lain"
     }
   }
 }

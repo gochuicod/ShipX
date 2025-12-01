@@ -547,7 +547,13 @@
       "title": "Pelacak Pengiriman ShipX – Pelacakan Paket Secara Real-Time",
       "description": "Lacak pengiriman ShipX Anda secara real-time, lihat pembaruan status terbaru, estimasi progres pengiriman, dan log aktivitas secara detail untuk pengalaman pengiriman yang mudah.",
       "canonical": "https://shipx.asia/shipment-tracker",
-      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/shipment-tracker-og.webp"
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "hs_code_generator_page": {
+      "title": "Generator Kode HS ShipX - Cari Kode Tarif Bea Cukai Akurat",
+      "description": "Temukan kode HS yang tepat untuk impor dan ekspor Anda dengan ShipX. Alat pencari kode tarif bea cukai otomatis dan akurat untuk pengiriman internasional.",
+      "canonical": "https://shipx.asia/hs-code-generator",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
     }
   },
   "faq_section": {
@@ -1493,6 +1499,61 @@
         "book_demo": "Pesan Demo",
         "contact_us": "Hubungi Kami"
       }
+    }
+  },
+  "hs_code_generator_page": {
+    "title_section": {
+      "title_1": "Pencari AI",
+      "title_2": "Kode HS Anda",
+      "description": "Masukkan detail produk Anda, dan biarkan sistem kami menangani kerumitan pemilihan kode HTSUS (AS) dan HS (Seluruh Dunia) secara instan, memberikan kepastian yang Anda butuhkan untuk mengirim ke mana saja."
+    },
+    "form_section": {
+      "input_1": {
+        "label": "Deskripsi Produk",
+        "note": "Berikan deskripsi mendetail tentang produk Anda",
+        "placeholder": "misal, 'Sepatu pantofel kulit pria dengan sol karet'."
+      },
+      "input_2": {
+        "label": "Tujuan Penggunaan / Fungsi",
+        "note": "Jelaskan tujuan utama atau aplikasi penggunaan",
+        "placeholder": "misal, 'Komponen untuk mesin mobil', 'Peralatan dapur ritel'."
+      },
+      "input_3": {
+        "label": "Bahan / Material Utama",
+        "note": "Sebutkan bahan utama yang digunakan dalam produk",
+        "placeholder": "misal, 'Baja tahan karat', '80% katun / 20% poliester'"
+      },
+      "important_note": {
+        "label_1": "Kolom dengan tanda",
+        "label_2": "wajib diisi",
+        "note": "Disarankan untuk mengisi semua kolom guna memaksimalkan akurasi klasifikasi AI."
+      },
+      "input_4": {
+        "label": "Sistem Tarif",
+        "note": "Pilih sistem tarif yang berlaku",
+        "option_1": "AS (HTSUS - 10 digit)",
+        "option_2": "Seluruh Dunia (HS - 6 digit)"
+      },
+      "find_hs_code_button": "Cari Kode HS"
+    },
+    "result_section": {
+      "output_1": {
+        "label": "Kode HS yang Direkomendasikan",
+        "note": "Kode bea cukai 6 digit (Seluruh Dunia) atau 10 digit (AS) yang disarankan untuk produk Anda"
+      },
+      "output_2": {
+        "label": "Penjelasan AI",
+        "note": "Menjelaskan alasan di balik klasifikasi untuk memastikan transparansi"
+      },
+      "output_3": {
+        "label": "Tingkat Keyakinan",
+        "note": "Skor persentase yang menunjukkan seberapa yakin AI bahwa kode yang direkomendasikan sudah benar, membantu Anda menilai risiko"
+      },
+      "output_4": {
+        "label": "Hierarki Tarif",
+        "note": "Memvisualisasikan jalur struktural dari Bab hingga Sub-bab tertentu."
+      },
+      "generate_another_hs_code_button": "Buat Kode HS Lain"
     }
   }
 }

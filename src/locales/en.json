@@ -547,7 +547,13 @@
       "title": "ShipX Shipment Tracker – Real-Time Package Tracking for Your Shipments",
       "description": "Track your ShipX shipments in real-time, view the latest status updates, estimated delivery progress, and detailed activity logs for hassle-free shipping experience.",
       "canonical": "https://shipx.asia/shipment-tracker",
-      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb97ec7f0/src/assets/shipment-tracker-og.webp"
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+    },
+    "hs_code_generator_page": {
+      "title": "ShipX HS Code Generator - Find Accurate Customs Tariff Codes",
+      "description": "Find the correct HS code for your import and export shipments with ShipX. Our automated tool helps you identify accurate customs tariff codes for international trade.",
+      "canonical": "https://shipx.asia/hs-code-generator",
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
     }
   },
   "faq_section": {
@@ -1493,6 +1499,61 @@
         "book_demo": "Book a Demo",
         "contact_us": "Contact Us"
       }
+    }
+  },
+  "hs_code_generator_page": {
+    "title_section": {
+      "title_1": "Your",
+      "title_2": "HS Code AI Finder",
+      "description": "Input your product details, and let our system instantly handle the complexity of HTSUS (US) and HS (ROW) code selection, giving you the certainty required to ship anywhere."
+    },
+    "form_section": {
+      "input_1": {
+        "label": "Product Description",
+        "note": "Provide a detailed description of your product",
+        "placeholder": "e.g., 'Men's leather dress shoes with rubber soles'."
+      },
+      "input_2": {
+        "label": "Intended Use / Function",
+        "note": "Describe the primary purpose or application",
+        "placeholder": "e.g., 'Component for car engines', 'Retail kitchen appliance'."
+      },
+      "input_3": {
+        "label": "Primary Material(s)",
+        "note": "Specify the main materials used in the product",
+        "placeholder": "e.g., 'Stainless steel', '80% cotton / 20% polyester'"
+      },
+      "important_note": {
+        "label_1": "Fields marked with",
+        "label_2": "are required",
+        "note": "It's recommended to fill all inputs to maximize the AI's classification accuracy."
+      },
+      "input_4": {
+        "label": "Tariff System",
+        "note": "Select the applicable tariff system",
+        "option_1": "USA (HTSUS - 10 digits)",
+        "option_2": "Rest of World (HS - 6 digits)"
+      },
+      "find_hs_code_button": "Find HS Code"
+    },
+    "result_section": {
+      "output_1": {
+        "label": "Recommended HS Code",
+        "note": "The 6-digit (ROW) or 10-digit (USA) customs code suggested for your product"
+      },
+      "output_2": {
+        "label": "AI Justification",
+        "note": "Explains the reasoning behind the classification to ensure transparency"
+      },
+      "output_3": {
+        "label": "Confidence Level",
+        "note": "A percentage score indicating how certain the AI is that the recommended code is correct, helping you assess risk"
+      },
+      "output_4": {
+        "label": "Tariff Hierarchy",
+        "note": "Visualizes the structural path from Chapter down to the specific Subheading."
+      },
+      "generate_another_hs_code_button": "Generate Another HS Code"
     }
   }
 }
