@@ -1534,9 +1534,15 @@
         "option_1": "USA (HTSUS - 10 digits)",
         "option_2": "Rest of World (HS - 6 digits)"
       },
-      "find_hs_code_button": "Find HS Code"
+      "find_hs_code_button": "Find HS Code",
+      "find_hs_code_button_submitting": "Analyzing...",
+      "input_images": {
+        "label": "Upload Images or Files/s for more context",
+        "note": "Supported files: JPG, PNG, PDF (5MB max each)."
+      }
     },
     "result_section": {
+      "title": "HS Code Result",
       "output_1": {
         "label": "Recommended HS Code",
         "note": "The 6-digit (ROW) or 10-digit (USA) customs code suggested for your product"

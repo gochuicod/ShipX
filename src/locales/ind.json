@@ -1534,9 +1534,15 @@
         "option_1": "AS (HTSUS - 10 digit)",
         "option_2": "Seluruh Dunia (HS - 6 digit)"
       },
-      "find_hs_code_button": "Cari Kode HS"
+      "find_hs_code_button": "Cari Kode HS",
+      "find_hs_code_button_submitting": "Sedang Menganalisis...",
+      "input_images": {
+        "label": "Unggah Gambar atau File untuk konteks lebih lanjut",
+        "note": "File yang didukung: JPG, PNG, PDF (maks 5MB per file)."
+      }
     },
     "result_section": {
+      "title": "Hasil Kode HS",
       "output_1": {
         "label": "Kode HS yang Direkomendasikan",
         "note": "Kode bea cukai 6 digit (Seluruh Dunia) atau 10 digit (AS) yang disarankan untuk produk Anda"

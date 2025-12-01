@@ -1538,9 +1538,15 @@
         "option_1": "สหรัฐอเมริกา (HTSUS - 10 หลัก)",
         "option_2": "ทั่วโลก (HS - 6 หลัก)"
       },
-      "find_hs_code_button": "ค้นหา HS Code"
+      "find_hs_code_button": "ค้นหา HS Code",
+      "find_hs_code_button_submitting": "กำลังวิเคราะห์...",
+      "input_images": {
+        "label": "อัปโหลดรูปภาพหรือไฟล์เพื่อบริบทเพิ่มเติม",
+        "note": "ไฟล์ที่รองรับ: JPG, PNG, PDF (สูงสุดไฟล์ละ 5MB)"
+      }
     },
     "result_section": {
+      "title": "ผลลัพธ์ HS Code",
       "output_1": {
         "label": "HS Code ที่แนะนำ",
         "note": "รหัสศุลกากร 6 หลัก (ทั่วโลก) หรือ 10 หลัก (สหรัฐฯ) ที่แนะนำสำหรับสินค้าของคุณ"

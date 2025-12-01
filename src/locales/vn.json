@@ -1534,9 +1534,15 @@
         "option_1": "Hoa Kỳ (HTSUS - 10 chữ số)",
         "option_2": "Quốc tế / Phần còn lại của thế giới (HS - 6 chữ số)"
       },
-      "find_hs_code_button": "Tìm Mã HS"
+      "find_hs_code_button": "Tìm Mã HS",
+      "find_hs_code_button_submitting": "Đang phân tích...",
+      "input_images": {
+        "label": "Tải lên Hình ảnh hoặc Tệp để có thêm ngữ cảnh",
+        "note": "Các tệp được hỗ trợ: JPG, PNG, PDF (tối đa 5MB mỗi tệp)."
+      }
     },
     "result_section": {
+      "title": "Kết quả Mã HS",
       "output_1": {
         "label": "Mã HS được đề xuất",
         "note": "Mã hải quan 6 chữ số (Quốc tế) hoặc 10 chữ số (Mỹ) được gợi ý cho sản phẩm của bạn"

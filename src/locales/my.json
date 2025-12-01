@@ -1538,9 +1538,15 @@
         "option_1": "AS (HTSUS - 10 digit)",
         "option_2": "Seluruh Dunia (HS - 6 digit)"
       },
-      "find_hs_code_button": "Cari Kod HS"
+      "find_hs_code_button": "Cari Kod HS",
+      "find_hs_code_button_submitting": "Sedang Menganalisis...",
+      "input_images": {
+        "label": "Muat Naik Imej atau Fail untuk konteks tambahan",
+        "note": "Fail disokong: JPG, PNG, PDF (maks 5MB setiap satu)."
+      }
     },
     "result_section": {
+      "title": "Keputusan Kod HS",
       "output_1": {
         "label": "Kod HS Disyorkan",
         "note": "Kod kastam 6 digit (Seluruh Dunia) atau 10 digit (AS) yang dicadangkan untuk produk anda"
