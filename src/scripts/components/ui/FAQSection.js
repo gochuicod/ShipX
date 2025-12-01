@@ -1,4 +1,4 @@
-import React, { useState, lazy } from "react";
+import { useState, lazy } from "react";
 import { useTranslation } from "react-i18next";
 import FaqItem from "./FAQItem";
 

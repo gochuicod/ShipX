@@ -1,6 +1,5 @@
-import React from "react";
-import faqCtaBg from "../../../assets/faq_cta_bg.webp";
-import faqCtaBgMobile from "../../../assets/faq_cta_bg_mobile.webp";
+import faqCtaBg from "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/faq_cta_bg.webp";
+import faqCtaBgMobile from "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/faq_cta_bg_mobile.webp";
 
 const FAQCTASection = () => {
   return (
@@ -15,7 +14,7 @@ const FAQCTASection = () => {
         md:mb-[4vw] mb-0
         
         bg-contain bg-center bg-no-repeat
-        bg-[image:var(--bg-mobile)] md:bg-[image:var(--bg-desktop)]
+        bg-(image:--bg-mobile) md:bg-(image:--bg-desktop)
         
         rounded-[20px] md:rounded-[1.4vw]
         

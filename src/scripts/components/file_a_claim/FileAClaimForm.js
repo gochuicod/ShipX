@@ -1,10 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Badge from "../shipment_tracker/Badge";
-import personLaptopIcon from "../../../assets/person-laptop.svg";
-import airplaneIcon from "../../../assets/airplane.svg";
-import boxReturnIcon from "../../../assets/file_a_claim_box-return.svg";
-import parachuteIcon from "../../../assets/file_a_claim_parachute.svg";
 import ClaimSubmissionModal from "./ClaimSubmissionModal";
 
 const FileAClaimForm = () => {
@@ -191,7 +187,7 @@ const FileAClaimForm = () => {
               <div className="p-[4vw] md:p-[1.5vw]">
                 <div className="flex items-center gap-x-[2vw] md:gap-x-[0.8vw] mb-[1vw] md:mb-[0.5vw]">
                   <img
-                    src={personLaptopIcon}
+                    src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/person-laptop.svg"
                     alt="Personal Details"
                     className="w-[6vw] h-[6vw] md:w-[1.5vw] md:h-[1.5vw]"
                   />
@@ -282,7 +278,7 @@ const FileAClaimForm = () => {
                       }`}
                     >
                       <img
-                        src={boxReturnIcon}
+                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/file_a_claim_box-return.svg"
                         alt="Sender"
                         className="w-[5vw] h-[5vw] md:w-[1.2vw] md:h-[1.2vw]"
                       />
@@ -300,7 +296,7 @@ const FileAClaimForm = () => {
                       }`}
                     >
                       <img
-                        src={parachuteIcon}
+                        src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/file_a_claim_parachute.svg"
                         alt="Receiver"
                         className="w-[5vw] h-[5vw] md:w-[1.2vw] md:h-[1.2vw]"
                       />
@@ -344,7 +340,7 @@ const FileAClaimForm = () => {
               <div className="p-[4vw] md:p-[1.5vw]">
                 <div className="flex items-center gap-x-[2vw] md:gap-x-[0.8vw] mb-[1vw] md:mb-[0.5vw]">
                   <img
-                    src={airplaneIcon}
+                    src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/airplane.svg"
                     alt="Shipment Details"
                     className="w-[6vw] h-[6vw] md:w-[1.5vw] md:h-[1.5vw]"
                   />
