@@ -72,7 +72,7 @@ export default function HsCodeGenerator() {
 
       <HsCodeGeneratorForm />
 
-      {hsCodeResult && <HsCodeGeneratorResult />}
+      {(!hsCodeResult?.error && hsCodeResult) && <HsCodeGeneratorResult />}
 
       {/* CTA Section */}
       <div
