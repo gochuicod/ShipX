@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { X, CheckCircle, Copy, Check, AlertCircle } from "lucide-react";
 
 const ClaimSubmissionModal = ({

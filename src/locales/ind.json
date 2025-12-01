@@ -760,9 +760,21 @@
       "title": "Filter berdasarkan Kategori",
       "categories": [
         { "id": "all", "label": "Semua Kategori", "count": null },
-        { "id": "shipping_basics", "label": "Dasar Pengiriman & Pengemasan", "count": 7 },
-        { "id": "customs", "label": "Bea Cukai, Pajak & Dokumentasi", "count": 5 },
-        { "id": "ecommerce", "label": "Solusi E-commerce & Fulfillment", "count": 2 },
+        {
+          "id": "shipping_basics",
+          "label": "Dasar Pengiriman & Pengemasan",
+          "count": 7
+        },
+        {
+          "id": "customs",
+          "label": "Bea Cukai, Pajak & Dokumentasi",
+          "count": 5
+        },
+        {
+          "id": "ecommerce",
+          "label": "Solusi E-commerce & Fulfillment",
+          "count": 2
+        },
         { "id": "carriers", "label": "Perbandingan Kurir", "count": 2 },
         { "id": "insurance", "label": "Asuransi & Klaim", "count": 4 },
         { "id": "troubleshooting", "label": "Pemecahan Masalah", "count": 2 },

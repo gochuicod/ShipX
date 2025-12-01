@@ -760,9 +760,21 @@
       "title": "Filter by Category",
       "categories": [
         { "id": "all", "label": "All Categories", "count": null },
-        { "id": "shipping_basics", "label": "Shipping Basics & Packaging", "count": 7 },
-        { "id": "customs", "label": "Customs, Duties & Documentation", "count": 5 },
-        { "id": "ecommerce", "label": "E-commerce Solutions & Fulfillment", "count": 2 },
+        {
+          "id": "shipping_basics",
+          "label": "Shipping Basics & Packaging",
+          "count": 7
+        },
+        {
+          "id": "customs",
+          "label": "Customs, Duties & Documentation",
+          "count": 5
+        },
+        {
+          "id": "ecommerce",
+          "label": "E-commerce Solutions & Fulfillment",
+          "count": 2
+        },
         { "id": "carriers", "label": "Carrier Comparisons", "count": 2 },
         { "id": "insurance", "label": "Insurance & Claims", "count": 4 },
         { "id": "troubleshooting", "label": "Troubleshooting", "count": 2 },

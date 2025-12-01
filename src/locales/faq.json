@@ -11,9 +11,21 @@
       "title": "Filter by Category",
       "categories": [
         { "id": "all", "label": "All Categories", "count": null },
-        { "id": "shipping_basics", "label": "Shipping Basics & Packaging", "count": 7 },
-        { "id": "customs", "label": "Customs, Duties & Documentation", "count": 5 },
-        { "id": "ecommerce", "label": "E-commerce Solutions & Fulfillment", "count": 2 },
+        {
+          "id": "shipping_basics",
+          "label": "Shipping Basics & Packaging",
+          "count": 7
+        },
+        {
+          "id": "customs",
+          "label": "Customs, Duties & Documentation",
+          "count": 5
+        },
+        {
+          "id": "ecommerce",
+          "label": "E-commerce Solutions & Fulfillment",
+          "count": 2
+        },
         { "id": "carriers", "label": "Carrier Comparisons", "count": 2 },
         { "id": "insurance", "label": "Insurance & Claims", "count": 4 },
         { "id": "troubleshooting", "label": "Troubleshooting", "count": 2 },
@@ -73,7 +85,10 @@
           "category_label": "Shipping Basics & Packaging",
           "question": "What items are restricted or prohibited from shipping?",
           "answer_blocks": [
-            { "type": "intro", "text": "Restricted items include flammables, perishables, and specific lithium batteries..." }
+            {
+              "type": "intro",
+              "text": "Restricted items include flammables, perishables, and specific lithium batteries..."
+            }
           ]
         },
         {
@@ -82,7 +97,10 @@
           "category_label": "Shipping Basics & Packaging",
           "question": "Why is my shipping cost higher than the actual weight of the package?",
           "answer_blocks": [
-             { "type": "intro", "text": "Carriers charge based on the greater of actual weight or volumetric weight..." }
+            {
+              "type": "intro",
+              "text": "Carriers charge based on the greater of actual weight or volumetric weight..."
+            }
           ]
         },
         {
@@ -91,7 +109,10 @@
           "category_label": "Shipping Basics & Packaging",
           "question": "What are the specific packaging standards for ShipX?",
           "answer_blocks": [
-             { "type": "intro", "text": "ShipX requires double-walled boxes for international shipments over 5kg..." }
+            {
+              "type": "intro",
+              "text": "ShipX requires double-walled boxes for international shipments over 5kg..."
+            }
           ]
         },
         {
@@ -100,7 +121,10 @@
           "category_label": "Shipping Basics & Packaging",
           "question": "How should I label my packages to ensure they don't get lost?",
           "answer_blocks": [
-             { "type": "intro", "text": "Ensure labels are placed on the flattest surface and barcodes are not covered..." }
+            {
+              "type": "intro",
+              "text": "Ensure labels are placed on the flattest surface and barcodes are not covered..."
+            }
           ]
         },
         {
@@ -109,7 +133,10 @@
           "category_label": "Shipping Basics & Packaging",
           "question": "Can I ship consumer electronics like phones or laptops via ShipX?",
           "answer_blocks": [
-             { "type": "intro", "text": "Yes, but they must adhere to lithium battery regulations (UN3481)..." }
+            {
+              "type": "intro",
+              "text": "Yes, but they must adhere to lithium battery regulations (UN3481)..."
+            }
           ]
         },
         {
@@ -118,7 +145,10 @@
           "category_label": "Shipping Basics & Packaging",
           "question": "What are the rules for shipping liquids or food items?",
           "answer_blocks": [
-             { "type": "intro", "text": "Liquids must be sealed in leak-proof containers..." }
+            {
+              "type": "intro",
+              "text": "Liquids must be sealed in leak-proof containers..."
+            }
           ]
         }
       ],

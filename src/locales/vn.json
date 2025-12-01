@@ -760,13 +760,25 @@
       "title": "Lọc theo Danh mục",
       "categories": [
         { "id": "all", "label": "Tất cả Danh mục", "count": null },
-        { "id": "shipping_basics", "label": "Cơ bản về Vận chuyển & Đóng gói", "count": 7 },
+        {
+          "id": "shipping_basics",
+          "label": "Cơ bản về Vận chuyển & Đóng gói",
+          "count": 7
+        },
         { "id": "customs", "label": "Hải quan, Thuế & Chứng từ", "count": 5 },
-        { "id": "ecommerce", "label": "Giải pháp TMĐT & Hoàn tất đơn hàng", "count": 2 },
+        {
+          "id": "ecommerce",
+          "label": "Giải pháp TMĐT & Hoàn tất đơn hàng",
+          "count": 2
+        },
         { "id": "carriers", "label": "So sánh Nhà vận chuyển", "count": 2 },
         { "id": "insurance", "label": "Bảo hiểm & Khiếu nại", "count": 4 },
         { "id": "troubleshooting", "label": "Xử lý sự cố", "count": 2 },
-        { "id": "tech_tools", "label": "Công nghệ & Công cụ Cổng thông tin", "count": 2 },
+        {
+          "id": "tech_tools",
+          "label": "Công nghệ & Công cụ Cổng thông tin",
+          "count": 2
+        },
         { "id": "legal", "label": "Yêu cầu Pháp lý", "count": 5 },
         { "id": "operations", "label": "Vận hành", "count": 2 },
         { "id": "shipment_mgmt", "label": "Quản lý Lô hàng", "count": 5 }

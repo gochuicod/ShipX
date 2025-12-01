@@ -1,16 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 import ResponsiveFilterBar from "./ResponsiveFilterBar";
 import AccordionItem from "./AccordionItem";
 import FAQCTASection from "../ui/FAQCTASection";
-import faqBanner from "../../../assets/shipx-faq-banner.webp";
-import faqBannerMobile from "../../../assets/shipx-faq-banner-mobile.webp";
-import faqSearchIcon from "../../../assets/faq_search_icon.svg";
-import faqSendIcon from "../../../assets/faq_send_icon.svg";
 
 const FAQPage = () => {
-  // --- Initialization ---
   const { t } = useTranslation();
 
   const rawData = t("faq_page", { returnObjects: true });
@@ -65,14 +60,14 @@ const FAQPage = () => {
       <div className="w-full">
         {/* Desktop Image: Hidden on mobile, block on md+ */}
         <img
-          src={faqBanner}
+          src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx-faq-banner.webp"
           alt="ShipX FAQ Banner"
           className="hidden md:block w-full h-[18vw] object-cover"
         />
 
         {/* Mobile Image: Block on mobile, hidden on md+ */}
         <img
-          src={faqBannerMobile}
+          src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx-faq-banner-mobile.webp"
           alt="ShipX FAQ Banner"
           className="block md:hidden w-full h-auto object-cover"
         />
@@ -121,7 +116,7 @@ const FAQPage = () => {
               "
             >
               <img
-                src={faqSearchIcon}
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/faq-search-icon.svg"
                 alt="Search"
                 className="md:w-[2.1vw] md:h-[2.1vw] w-[6vw] h-[6vw] object-contain"
               />
@@ -130,7 +125,7 @@ const FAQPage = () => {
                 type="text"
                 placeholder={header_section.search_placeholder}
                 className="
-                  flex-grow
+                  grow
                   w-full
                   bg-transparent
                   focus:outline-none
@@ -148,7 +143,7 @@ const FAQPage = () => {
                 className="shrink-0 flex items-center justify-center cursor-pointer hover:opacity-80 transition-opacity"
               >
                 <img
-                  src={faqSendIcon}
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/faq-send-icon.svg"
                   alt="Search Button"
                   className="md:w-[2.1vw] md:h-[2.1vw] w-[6vw] h-[6vw] object-contain"
                 />
@@ -199,9 +194,9 @@ const FAQPage = () => {
                 group
                 relative
                 inline-flex items-center justify-center
-                p-[1px] 
+                p-px
                 rounded-full
-                bg-gradient-to-b from-[#FF00E5] to-[#4F378A]
+                bg-linear-to-b from-[#FF00E5] to-[#4F378A]
                 transition-transform active:scale-95
               "
             >
@@ -228,7 +223,6 @@ const FAQPage = () => {
         )}
       </main>
 
-      {/* --- CTA Section --- */}
       <FAQCTASection ctaData={cta_section} />
     </div>
   );

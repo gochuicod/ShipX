@@ -760,13 +760,29 @@
       "title": "กรองตามหมวดหมู่",
       "categories": [
         { "id": "all", "label": "ทุกหมวดหมู่", "count": null },
-        { "id": "shipping_basics", "label": "พื้นฐานการจัดส่ง & การบรรจุภัณฑ์", "count": 7 },
+        {
+          "id": "shipping_basics",
+          "label": "พื้นฐานการจัดส่ง & การบรรจุภัณฑ์",
+          "count": 7
+        },
         { "id": "customs", "label": "ศุลกากร ภาษี & เอกสาร", "count": 5 },
-        { "id": "ecommerce", "label": "โซลูชั่น E-commerce & Fulfillment", "count": 2 },
-        { "id": "carriers", "label": "เปรียบเทียบผู้ให้บริการขนส่ง", "count": 2 },
+        {
+          "id": "ecommerce",
+          "label": "โซลูชั่น E-commerce & Fulfillment",
+          "count": 2
+        },
+        {
+          "id": "carriers",
+          "label": "เปรียบเทียบผู้ให้บริการขนส่ง",
+          "count": 2
+        },
         { "id": "insurance", "label": "ประกันภัย & การเคลม", "count": 4 },
         { "id": "troubleshooting", "label": "การแก้ไขปัญหา", "count": 2 },
-        { "id": "tech_tools", "label": "เครื่องมือเทคโนโลยี & พอร์ทัล", "count": 2 },
+        {
+          "id": "tech_tools",
+          "label": "เครื่องมือเทคโนโลยี & พอร์ทัล",
+          "count": 2
+        },
         { "id": "legal", "label": "ข้อกำหนดทางกฎหมาย", "count": 5 },
         { "id": "operations", "label": "การดำเนินงาน", "count": 2 },
         { "id": "shipment_mgmt", "label": "การจัดการการจัดส่ง", "count": 5 }

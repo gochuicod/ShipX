@@ -760,16 +760,32 @@
       "title": "Tapis mengikut Kategori",
       "categories": [
         { "id": "all", "label": "Semua Kategori", "count": null },
-        { "id": "shipping_basics", "label": "Asas Penghantaran & Pembungkusan", "count": 7 },
+        {
+          "id": "shipping_basics",
+          "label": "Asas Penghantaran & Pembungkusan",
+          "count": 7
+        },
         { "id": "customs", "label": "Kastam, Duti & Dokumentasi", "count": 5 },
-        { "id": "ecommerce", "label": "Penyelesaian E-dagang & Fulfillment", "count": 2 },
+        {
+          "id": "ecommerce",
+          "label": "Penyelesaian E-dagang & Fulfillment",
+          "count": 2
+        },
         { "id": "carriers", "label": "Perbandingan Pembawa", "count": 2 },
         { "id": "insurance", "label": "Insurans & Tuntutan", "count": 4 },
-        { "id": "troubleshooting", "label": "Penyelesaian Masalah", "count": 2 },
+        {
+          "id": "troubleshooting",
+          "label": "Penyelesaian Masalah",
+          "count": 2
+        },
         { "id": "tech_tools", "label": "Alat Teknologi & Portal", "count": 2 },
         { "id": "legal", "label": "Keperluan Perundangan", "count": 5 },
         { "id": "operations", "label": "Operasi", "count": 2 },
-        { "id": "shipment_mgmt", "label": "Pengurusan Penghantaran", "count": 5 }
+        {
+          "id": "shipment_mgmt",
+          "label": "Pengurusan Penghantaran",
+          "count": 5
+        }
       ]
     },
     "accordion_section": {
