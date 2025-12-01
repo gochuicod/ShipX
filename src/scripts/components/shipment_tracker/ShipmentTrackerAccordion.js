@@ -28,7 +28,8 @@ export default function ShipmentTrackerAccordion({
                     flex
                     justify-center items-center
                     md:w-[50vw] w-[90vw]
-                    mx-auto mb-[6vw] mt-[7vw]
+                    mx-auto
+                    md:mb-[6vw] mb-[10vw]
                 "
         style={{
           fontFamily: "Inter, system-ui, -apple-system, sans-serif",

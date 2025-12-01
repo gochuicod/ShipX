@@ -1,16 +1,18 @@
 import { useForm } from "react-hook-form";
 import { useShipment } from "../../hooks/useShipment";
 import { useTranslation } from "react-i18next";
+import ToolTipError from "../hs_code_generator/ToolTipError";
 
 const ShipmentTrackerForm = () => {
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
+    reset
   } = useForm();
   const { t } = useTranslation();
 
-  const { setShipmentData, setTrackingNumber } = useShipment();
+  const { shipmentData, setShipmentData, setTrackingNumber } = useShipment();
 
   const onSubmit = async (data) => {
     const trackingNumber = data.trackingNumber;
@@ -35,6 +37,8 @@ const ShipmentTrackerForm = () => {
 
       const result = await response.json();
       setShipmentData(result);
+
+      reset();
     } catch (error) {
       console.error("Fetch error:", error);
     }
@@ -87,27 +91,32 @@ const ShipmentTrackerForm = () => {
             />
             {t("shipment_tracker.track_order_section.form.label")}
           </label>
-          <input
-            aria-invalid={errors.trackingNumber ? "true" : "false"}
-            id="trackingNumber"
-            className={`
-                            bg-[#F9FAFB]
-                            border border-[#B9AFD0]
-                            md:w-full w-full
-                            md:h-[2.2vw] h-[6.5vw]
-                            md:rounded-[0.5vw] rounded-[2vw]
-                            p-2
-                            focus:outline-none
-                            ${errors.trackingNumber ? "placeholder-red-500" : "placeholder-black/50"}
-                        `}
-            {...register("trackingNumber", {
-              required: "Tracking number is required",
-            })}
-            placeholder={
-              errors.trackingNumber ? errors.trackingNumber.message : ""
+          <div className="relative">
+            {
+              shipmentData?.error.length > 0 ? <ToolTipError message={shipmentData.errors[0]} /> : <></>
             }
-            autoComplete="number"
-          />
+            <input
+              aria-invalid={errors.trackingNumber ? "true" : "false"}
+              id="trackingNumber"
+              className={`
+                              bg-[#F9FAFB]
+                              border border-[#B9AFD0]
+                              md:w-full w-full
+                              md:h-[2.2vw] h-[6.5vw]
+                              md:rounded-[0.5vw] rounded-[2vw]
+                              p-2
+                              focus:outline-none
+                              ${errors.trackingNumber ? "placeholder-red-500" : "placeholder-black/50"}
+                          `}
+              {...register("trackingNumber", {
+                required: "Tracking number is required",
+              })}
+              placeholder={
+                errors.trackingNumber ? errors.trackingNumber.message : ""
+              }
+              autoComplete="number"
+            />
+          </div>
         </div>
         <button
           type="submit"
