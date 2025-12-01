@@ -2,12 +2,11 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import HttpBackend from "i18next-http-backend";
 
-// Supported languages
 const languages = ["en", "vn", "my", "ind", "thai"];
 
 i18n
-  .use(HttpBackend) // Load translations via HTTP
-  .use(initReactI18next) // Pass i18n instance to react-i18next
+  .use(HttpBackend)
+  .use(initReactI18next)
   .init({
     lng: localStorage.getItem("lang") || "en",
     fallbackLng: "en",
@@ -15,10 +14,10 @@ i18n
     interpolation: { escapeValue: false },
     backend: {
       loadPath:
-        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@cf0e461fc8d9a21d2a5a233a414690c3d48000f2/src/locales/{{lng}}.json",
+        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@9f4e92c7fdcf8b9f46dbdf77ff12eff15e187393/src/locales/{{lng}}.json",
     },
     react: {
-      useSuspense: true, // you already use Suspense in your app
+      useSuspense: true,
     },
   });
 

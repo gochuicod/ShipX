@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { useHsCode } from "../../hooks/useHsCode";
 import ToolTipError from "./ToolTipError";
+import { useTranslation } from "react-i18next";
 
 const API_URL = "https://hs-code-generator.replit.app/api/classify";
 
@@ -24,6 +25,7 @@ export default function HsCodeGeneratorForm() {
   const [files, setFiles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const { setHsCodeResult } = useHsCode();
+  const { t } = useTranslation();
 
   const handleFileChange = (e) => {
     const selectedFiles = Array.from(e.target.files);
@@ -127,22 +129,23 @@ export default function HsCodeGeneratorForm() {
       >
         <label
           className="
-                        md:text-[1vw] text-[2.5vw]
+                        md:text-[1vw] text-[3vw]
                         text-[#1E2939]
                         font-semibold
-                        md:leading-[1.2vw] leading-[2.7vw]
+                        md:leading-[1.2vw] leading-[3.2vw]
                     "
         >
-          Product Description&nbsp;<span className="text-red-500">*</span>
+          {t("hs_code_generator_page.form_section.input_1.label")}&nbsp;
+          <span className="text-red-500">*</span>
         </label>
         <p
           className="
                         text-[#4A5565]/80
-                        md:text-[0.8vw] text-[2.3vw]
+                        md:text-[0.8vw] text-[2.5vw]
                         md:leading-[1.5vw] leading-[3vw]
                     "
         >
-          Provide a detailed description of your product
+          {t("hs_code_generator_page.form_section.input_1.note")}
         </p>
         <div className="relative">
           {errors.productDescription && (
@@ -171,7 +174,7 @@ export default function HsCodeGeneratorForm() {
             placeholder={
               errors.productDescription
                 ? errors.productDescription.message
-                : "e.g., 'Component for car engines', 'Retail kitchen appliance'."
+                : t("hs_code_generator_page.form_section.input_1.placeholder")
             }
             {...register("productDescription", {
               required: "Product description is required",
@@ -193,22 +196,22 @@ export default function HsCodeGeneratorForm() {
       >
         <label
           className="
-                        md:text-[1vw] text-[2.5vw]
+                        md:text-[1vw] text-[3vw]
                         text-[#1E2939]
                         font-semibold
-                        md:leading-[1.2vw] leading-[2.7vw]
+                        md:leading-[1.2vw] leading-[3.2vw]
                     "
         >
-          Intended Use / Function
+          {t("hs_code_generator_page.form_section.input_2.label")}
         </label>
         <p
           className="
                     text-[#4A5565]/80
-                    md:text-[0.8vw] text-[2.3vw]
+                    md:text-[0.8vw] text-[2.5vw]
                     md:leading-[1.5vw] leading-[3vw]
                     "
         >
-          Describe the primary purpose or application
+          {t("hs_code_generator_page.form_section.input_2.note")}
         </p>
         <textarea
           className={`
@@ -233,7 +236,7 @@ export default function HsCodeGeneratorForm() {
           placeholder={
             errors.intendedUse
               ? errors.intendedUse.message
-              : "e.g., 'Component for car engines', 'Retail kitchen appliance'."
+              : t("hs_code_generator_page.form_section.input_2.placeholder")
           }
           {...register("intendedUse")}
         />
@@ -248,22 +251,22 @@ export default function HsCodeGeneratorForm() {
       >
         <label
           className="
-                        md:text-[1vw] text-[2.5vw]
+                        md:text-[1vw] text-[3vw]
                         text-[#1E2939]
                         font-semibold
-                        md:leading-[1.2vw] leading-[2.7vw]
+                        md:leading-[1.2vw] leading-[3.2vw]
                     "
         >
-          Primary Material(s)
+          {t("hs_code_generator_page.form_section.input_3.label")}
         </label>
         <p
           className="
                         text-[#4A5565]/80
-                        md:text-[0.8vw] text-[2.3vw]
+                        md:text-[0.8vw] text-[2.5vw]
                         md:leading-[1.5vw] leading-[3vw]
                     "
         >
-          Specify the main materials used in the product
+          {t("hs_code_generator_page.form_section.input_3.note")}
         </p>
         <textarea
           className={`
@@ -288,7 +291,7 @@ export default function HsCodeGeneratorForm() {
           placeholder={
             errors.primaryMaterials
               ? errors.primaryMaterials.message
-              : "e.g., 'e.g., 'Stainless steel', '80% cotton / 20% polyester'."
+              : t("hs_code_generator_page.form_section.input_3.placeholder")
           }
           {...register("primaryMaterials")}
         />
@@ -303,22 +306,22 @@ export default function HsCodeGeneratorForm() {
       >
         <label
           className="
-                        md:text-[1vw] text-[2.5vw]
+                        md:text-[1vw] text-[3vw]
                         text-[#1E2939]
                         font-semibold
-                        md:leading-[1.2vw] leading-[2.7vw]
+                        md:leading-[1.2vw] leading-[3.2vw]
                     "
         >
-          Upload Images or Files/s for more context
+          {t("hs_code_generator_page.form_section.input_images.label")}
         </label>
         <p
           className="
                         text-[#4A5565]/80
-                        md:text-[0.8vw] text-[2.3vw]
+                        md:text-[0.8vw] text-[2.5vw]
                         md:leading-[1.5vw] leading-[3vw]
                     "
         >
-          Supported files: JPG, PNG, PDF (5MB max each).
+          {t("hs_code_generator_page.form_section.input_images.note")}
         </p>
         <div
           className="
@@ -424,8 +427,11 @@ export default function HsCodeGeneratorForm() {
                         font-semibold
                     "
         >
-          Fields marked with&nbsp;<span className="text-red-500">*</span>
-          &nbsp;are required.
+          {t("hs_code_generator_page.form_section.important_note.label_1")}
+          &nbsp;
+          <span className="text-red-500">*</span>
+          &nbsp;
+          {t("hs_code_generator_page.form_section.important_note.label_2")}
         </p>
         <p
           className="
@@ -435,8 +441,7 @@ export default function HsCodeGeneratorForm() {
                         font-normal
                     "
         >
-          Its recommended to fill all inputs to maximize the AI's classification
-          accuracy.
+          {t("hs_code_generator_page.form_section.important_note.note")}
         </p>
       </div>
       {/* Target System */}
@@ -449,22 +454,23 @@ export default function HsCodeGeneratorForm() {
       >
         <label
           className="
-                        md:text-[1vw] text-[2.5vw]
+                        md:text-[1vw] text-[3vw]
                         text-[#1E2939]
                         font-semibold
-                        md:leading-[1.2vw] leading-[2.7vw]
+                        md:leading-[1.2vw] leading-[3.2vw]
                     "
         >
-          Tariff System&nbsp;<span className="text-red-500">*</span>
+          {t("hs_code_generator_page.form_section.input_4.label")}&nbsp;
+          <span className="text-red-500">*</span>
         </label>
         <p
           className="
                         text-[#4A5565]/80
-                        md:text-[0.8vw] text-[2.3vw]
+                        md:text-[0.8vw] text-[2.5vw]
                         md:leading-[1.5vw] leading-[3vw]
                     "
         >
-          Select the applicable tariff system
+          {t("hs_code_generator_page.form_section.input_4.note")}
         </p>
         <Controller
           name="targetSystem"
@@ -487,7 +493,7 @@ export default function HsCodeGeneratorForm() {
                             flex-1 flex
                             items-center justify-center
                             md:py-[0.5vw] py-[1.5vw]
-                            md:text-[0.8vw] text-[2vw]
+                            md:text-[0.8vw] text-[2.5vw]
                             font-normal
                             md:rounded-[0.55vw] rounded-[1.35vw]
                             transition-all duration-500
@@ -498,7 +504,7 @@ export default function HsCodeGeneratorForm() {
                                 : "text-[#4F378A]/90 hover:bg-slate-200/50"
                             }`}
               >
-                USA (HTSUS - 10 digits)
+                {t("hs_code_generator_page.form_section.input_4.option_1")}
               </button>
 
               <button
@@ -508,7 +514,7 @@ export default function HsCodeGeneratorForm() {
                             flex-1 flex
                             items-center justify-center
                             md:py-[0.5vw] py-[1.5vw]
-                            md:text-[0.8vw] text-[2vw]
+                            md:text-[0.8vw] text-[2.5vw]
                             font-normal
                             md:rounded-[0.55vw] rounded-[1.35vw]
                             transition-all duration-500
@@ -519,7 +525,7 @@ export default function HsCodeGeneratorForm() {
                                 : "text-[#4F378A]/90 hover:bg-slate-200/50"
                             }`}
               >
-                International (HS)
+                {t("hs_code_generator_page.form_section.input_4.option_2")}
               </button>
             </div>
           )}
@@ -549,8 +555,8 @@ export default function HsCodeGeneratorForm() {
                         hover:bg-position-[100%_0%]
                         transition-[background-position] duration-1000 ease-in-out
                         w-fit 
-                        md:py-[0.45vw] py-[1.5vw]
-                        md:px-[1.5vw] px-[3.5vw]
+                        md:py-[0.35vw] py-[1vw]
+                        md:px-[1.5vw] px-[4.5vw]
                         md:rounded-[2vw] rounded-full
                         text-white
                         md:text-[0.8vw] text-[2.5vw]
@@ -558,7 +564,11 @@ export default function HsCodeGeneratorForm() {
                         cursor-pointer
                     `}
         >
-          {isLoading ? "Analyzing..." : "Find HS Code"}
+          {isLoading
+            ? t(
+                "hs_code_generator_page.form_section.find_hs_code_button_submitting",
+              )
+            : t("hs_code_generator_page.form_section.find_hs_code_button")}
         </button>
       </div>
     </form>

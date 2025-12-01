@@ -2,15 +2,17 @@ import { useHsCode } from "../../hooks/useHsCode";
 import { useState, useRef, useEffect } from "react";
 import { Clipboard, Check } from "lucide-react";
 import HierarchyPill from "./HierarchyPill";
+import SmartNavLink from "../ui/SmartNavLink";
+import { useTranslation } from "react-i18next";
 
 export default function HsCodeGeneratorResult() {
-  const { hsCodeResult } = useHsCode();
+  const { hsCodeResult, setHsCodeResult } = useHsCode();
   const [isCopied, setIsCopied] = useState(false);
+  const { t } = useTranslation();
 
   const handleCopy = (text) => {
     if (!text) return;
 
-    // 1. Try modern API
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard
         .writeText(text)
@@ -95,6 +97,12 @@ export default function HsCodeGeneratorResult() {
     }
   }, [hsCodeResult]);
 
+  const handleGenerateAnotherHSCode = () => {
+    setTimeout(() => {
+      setHsCodeResult(null);
+    }, 500);
+  };
+
   return (
     <div
       ref={hsCodeResultRef}
@@ -102,6 +110,7 @@ export default function HsCodeGeneratorResult() {
                 flex flex-col
                 md:mb-[10vw] mb-[15vw]
                 md:mt-0 mt-[10vw]
+                justify-center items-center
             "
       style={{
         fontFamily: "Inter, system-ui, -apple-system, sans-serif",
@@ -116,7 +125,7 @@ export default function HsCodeGeneratorResult() {
                     md:mb-[3vw] mb-[5vw]
                 "
       >
-        HS Code Result
+        {t("hs_code_generator_page.result_section.title")}
       </span>
       <div
         className="
@@ -148,7 +157,7 @@ export default function HsCodeGeneratorResult() {
                                 md:leading-0 leading-[2.7vw]
                             "
             >
-              Recommended HS Code
+              {t("hs_code_generator_page.result_section.output_1.label")}
             </span>
             <p
               className="
@@ -157,8 +166,7 @@ export default function HsCodeGeneratorResult() {
                                 md:leading-[2vw] leading-[3vw]
                             "
             >
-              The 6-digit (ROW) or 10-digit (USA) customs code suggested for
-              your product
+              {t("hs_code_generator_page.result_section.output_1.note")}
             </p>
             <div
               className="
@@ -223,7 +231,7 @@ export default function HsCodeGeneratorResult() {
                                 md:mt-0 mt-[3vw]
                             "
             >
-              Confidence Level
+              {t("hs_code_generator_page.result_section.output_3.label")}
             </span>
             <p
               className="
@@ -233,8 +241,7 @@ export default function HsCodeGeneratorResult() {
                                 md:mb-[0.5vw] mb-[2vw]
                             "
             >
-              A percentage score indicating how certain the AI is that the
-              recommended code is correct, helping you assess risk
+              {t("hs_code_generator_page.result_section.output_3.note")}
             </p>
             {hsCodeResult?.confidence &&
               (() => {
@@ -293,7 +300,7 @@ export default function HsCodeGeneratorResult() {
                                 md:leading-0 leading-[2.7vw]
                             "
             >
-              AI Justification
+              {t("hs_code_generator_page.result_section.output_2.label")}
             </span>
             <p
               className="
@@ -302,8 +309,7 @@ export default function HsCodeGeneratorResult() {
                                 md:leading-[2vw] leading-[3vw]
                             "
             >
-              Explains the reasoning behind the classification to ensure
-              transparency
+              {t("hs_code_generator_page.result_section.output_2.note")}
             </p>
             <p
               className="
@@ -337,7 +343,7 @@ export default function HsCodeGeneratorResult() {
                                 md:leading-[1vw] leading-[2.7vw]
                             "
             >
-              Tariff Heirarchy
+              {t("hs_code_generator_page.result_section.output_4.label")}
             </span>
             <p
               className="
@@ -347,8 +353,7 @@ export default function HsCodeGeneratorResult() {
                                 md:mb-[0.5vw] mb-[2vw]
                             "
             >
-              Visualizes the structural path from Chapter down to the specific
-              Subheading.
+              {t("hs_code_generator_page.result_section.output_4.note")}
             </p>
             <div
               className="
@@ -368,6 +373,37 @@ export default function HsCodeGeneratorResult() {
           </div>
         </div>
       </div>
+      <SmartNavLink
+        className="md:mt-[3vw] mt-[8vw]"
+        to="hs-code-generator/#"
+        end
+      >
+        <button
+          type="button"
+          onClick={handleGenerateAnotherHSCode}
+          className="
+                        bg-linear-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
+                        bg-size-[200%_100%] bg-position-[0%_0%] hover:bg-position-[100%_0%]
+                        transition-[background-position] duration-1000 ease-in-out
+                        md:py-[0.5vw] py-[1.4vw]
+                        md:px-[1.5vw] px-[3vw]
+                        md:rounded-[2vw] rounded-full
+                        cursor-pointer
+                        text-white
+                        md:font-medium font-normal
+                        md:text-[0.8vw] text-[2.4vw]
+                        w-fit
+                        md:mb-[2vw] mb-[7vw]
+                    "
+          style={{
+            fontFamily: "Karla, system-ui, -apple-system, sans-serif",
+          }}
+        >
+          {t(
+            "hs_code_generator_page.result_section.generate_another_hs_code_button",
+          )}
+        </button>
+      </SmartNavLink>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import SmartNavLink from "../ui/SmartNavLink";
 
 const ToolsHeroSection = ({ activePage = "file-a-claim" }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const activeButtonStyle =
     "bg-[#99008A] text-white font-bold rounded-full md:px-[1.5vw] px-[2.5vw] md:py-[0.45vw] py-[1vw] text-center cursor-pointer md:text-[0.8vw] text-[3vw] whitespace-nowrap";
@@ -34,8 +34,12 @@ const ToolsHeroSection = ({ activePage = "file-a-claim" }) => {
       }}
     >
       <div
-        className="
-              md:w-[40vw] w-screen
+        className={`
+              ${
+                i18n.language === "vn"
+                  ? "md:w-[50vw] w-screen"
+                  : "md:w-[40vw] w-screen"
+              }
               md:ps-[10vw] ps-[12vw]
               md:pe-0 pe-[12vw]
               md:pt-[5vw] pt-[15vw]
@@ -44,7 +48,7 @@ const ToolsHeroSection = ({ activePage = "file-a-claim" }) => {
               md:justify-start justify-center md:items-start items-center
               md:gap-y-[1vw] gap-y-[3vw]
               z-2
-          "
+          `}
       >
         <span
           className="
@@ -56,10 +60,11 @@ const ToolsHeroSection = ({ activePage = "file-a-claim" }) => {
         </span>
 
         <span
-          className="
+          className={`
               md:text-[1vw] text-[2.8vw] md:font-semibold
               md:text-start text-center max-w-full leading-[1.2]
-          "
+              ${i18n.language === "vn" && "md:w-[30vw] w-full"}
+          `}
         >
           {t("shipment_tracker.hero_section.description")}
         </span>
