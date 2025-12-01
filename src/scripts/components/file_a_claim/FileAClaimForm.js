@@ -52,13 +52,31 @@ const FileAClaimForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // --- VALIDATION START ---
+    // Check if description is at least 25 characters
+    if (formData.description.length < 25) {
+      setModalConfig({
+        status: "error",
+        claimId: "",
+        message: `Description is too short. Please add ${25 - formData.description.length} more characters.`,
+      });
+      setShowModal(true);
+      return; // Stop execution here
+    }
+    // --- VALIDATION END ---
+
     setIsSubmitting(true);
 
     const payload = {
       customerName: formData.fullName,
       customerEmail: formData.email,
       customerPhone: formData.phone,
-      accountNumber: formData.accountNumber || "N/A",
+      // Only send account number if role is Sender, otherwise N/A
+      accountNumber:
+        formData.role === "Sender" && formData.accountNumber
+          ? formData.accountNumber
+          : "N/A",
       claimantType: formData.role === "Sender" ? "shipper" : "receiver",
       country: formData.country,
       claimType: mapClaimType(formData.claimType),
@@ -293,24 +311,31 @@ const FileAClaimForm = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-[1vw] md:gap-[0.3vw]">
-                  <label className={labelClass}>
-                    {t("file_a_claim.form_section.fields.account_number.label")}
-                  </label>
-                  <p className="text-[2.8vw] md:text-[0.75vw] text-gray-400">
-                    {t("file_a_claim.form_section.fields.account_number.hint")}
-                  </p>
-                  <input
-                    type="text"
-                    name="accountNumber"
-                    placeholder={t(
-                      "file_a_claim.form_section.fields.account_number.placeholder",
-                    )}
-                    className={inputClass}
-                    value={formData.accountNumber}
-                    onChange={handleChange}
-                  />
-                </div>
+                {/* Account Number - Only visible when role is 'Sender' */}
+                {formData.role === "Sender" && (
+                  <div className="flex flex-col gap-[1vw] md:gap-[0.3vw]">
+                    <label className={labelClass}>
+                      {t(
+                        "file_a_claim.form_section.fields.account_number.label",
+                      )}
+                    </label>
+                    <p className="text-[2.8vw] md:text-[0.75vw] text-gray-400">
+                      {t(
+                        "file_a_claim.form_section.fields.account_number.hint",
+                      )}
+                    </p>
+                    <input
+                      type="text"
+                      name="accountNumber"
+                      placeholder={t(
+                        "file_a_claim.form_section.fields.account_number.placeholder",
+                      )}
+                      className={inputClass}
+                      value={formData.accountNumber}
+                      onChange={handleChange}
+                    />
+                  </div>
+                )}
               </div>
             </div>
 
