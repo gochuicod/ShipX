@@ -491,7 +491,7 @@ const FileAClaimForm = () => {
                     type="submit"
                     disabled={isSubmitting}
                     className={`
-                      bg-gradient-to-r from-[#80358E] to-[#E6007E]
+                      bg-linear-to-r from-[#80358E] to-[#E6007E]
                       text-white font-bold
                       py-[2.5vw] px-[8vw] md:py-[0.8vw] md:px-[3vw]
                       rounded-full
