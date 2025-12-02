@@ -1,6 +1,8 @@
 import { useState, lazy } from "react";
 import { useTranslation } from "react-i18next";
+import { ArrowRight } from "lucide-react";
 import FaqItem from "./FAQItem";
+import SmartNavLink from "./SmartNavLink";
 
 const ParallaxSection = lazy(() => import("./ParallaxSection"));
 
@@ -90,6 +92,42 @@ const FAQSection = () => {
             </div>
           </div>
         </div>
+      </div>
+      {/* Read More - FAQ Page redirect Button */}
+      <div className="text-center md:mt-0 mt-[2vw]">
+        <SmartNavLink
+          to="/frequently-asked-questions"
+          className="
+                group
+                relative
+                inline-flex items-center justify-center
+                p-px
+                rounded-full
+                bg-linear-to-b from-[#FF00E5] to-[#4F378A]
+                transition-transform active:scale-95
+                hover:cursor-pointer
+              "
+        >
+          <span
+            className="
+                  w-full h-full
+                  rounded-full
+                  md:px-[1.56vw] px-[8vw]
+                  md:py-[0.36vw] py-[2.5vw]
+                  md:text-[0.9vw] text-[3.5vw]
+                  font-medium
+                  bg-white
+                  text-[#1A1A1A]
+                  transition-all duration-300 ease-in-out
+                  group-hover:bg-transparent
+                  group-hover:text-white
+                  flex items-center justify-center gap-[0.52vw]
+                "
+          >
+            Read More
+            <ArrowRight className="hidden md:inline-block md:w-[0.9vw] md:h-[0.9vw] transition-transform group-hover:translate-x-1 text-[#FF00E5] md:group-hover:text-white" />
+          </span>
+        </SmartNavLink>
       </div>
     </ParallaxSection>
   );

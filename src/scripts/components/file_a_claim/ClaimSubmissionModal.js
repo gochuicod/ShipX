@@ -69,7 +69,7 @@ const ClaimSubmissionModal = ({
           onClick={onClose}
           className="absolute top-[4vw] right-[4vw] md:top-[1.5vw] md:right-[1.5vw] text-gray-400 hover:text-gray-600 transition-colors"
         >
-          <X className="w-[6vw] h-[6vw] md:w-[1.5vw] md:h-[1.5vw]" />
+          <X className="w-[6vw] h-[6vw] md:w-[1.5vw] md:h-[1.5vw] hover:cursor-pointer" />
         </button>
 
         {/* Icon (Dynamic based on status) */}
