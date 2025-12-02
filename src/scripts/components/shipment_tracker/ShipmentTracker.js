@@ -120,7 +120,7 @@ const ShipmentTracker = () => {
                     statuses: shipmentData?.statuses,
                   }}
                   trackingNumber={trackingNumber}
-                  latestStatusHidden={shipmentData.statuses.length <= 1}
+                  latestStatusHidden={shipmentData.statuses.length >= 3}
                 />
 
                 <SmartNavLink to="shipment-tracker/#" end>
