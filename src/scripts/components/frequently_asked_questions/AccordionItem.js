@@ -1,3 +1,4 @@
+import React from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 const AccordionItem = ({ item, isOpen, onClick }) => {
@@ -14,34 +15,53 @@ const AccordionItem = ({ item, isOpen, onClick }) => {
   `}
     >
       {/* Header / Trigger */}
-      {/* Padding compressed to ~24px (1.25vw) */}
       <div
         onClick={onClick}
-        className="flex items-center justify-between md:p-[1.25vw] p-[5vw] cursor-pointer"
+        className="flex items-start md:items-center justify-between md:p-[1.25vw] p-[5vw] cursor-pointer"
       >
-        {/* Header Font: 20px (1.04vw) */}
-        <h3
-          className={`font-semibold md:text-[1.04vw] text-[3.5vw] pr-[2vw] ${
-            isOpen ? "text-[#99008A]" : "text-[#1A1A1A]"
-          }`}
-        >
-          {item.question}
-        </h3>
+        {/* Left Side: Question + Mobile Category */}
+        <div className="flex flex-col pr-[3vw]">
+          <h3
+            className={`font-semibold md:text-[1.04vw] text-[3.5vw] leading-tight ${
+              isOpen ? "text-[#99008A]" : "text-[#1A1A1A]"
+            }`}
+          >
+            {item.question}
+          </h3>
 
-        <div className="flex items-center md:gap-[0.8vw] gap-[3vw] shrink-0">
-          {/* Category Font: 16px (0.83vw) */}
-          <span className="hidden sm:block md:px-[0.8vw] px-[3vw] md:py-[0.2vw] py-[1vw] bg-[#EDE9FE] text-[#1A1A1A] md:text-[0.83vw] text-[2.5vw] font-semibold md:rounded-[0.42vw] rounded-[4vw]">
+          {/* MOBILE ONLY: Category Label 
+              Padding: ~4px top/bottom (1.1vw), ~8px left/right (2.1vw)
+          */}
+          <span className="md:hidden mt-[2.5vw] px-[2.1vw] py-[1.1vw] bg-[#EDE9FE] text-[#1A1A1A] text-[3vw] font-semibold rounded-[1vw] w-fit">
             {item.category_label}
           </span>
+        </div>
+
+        {/* Right Side: Desktop Category + Chevron */}
+        <div className="flex items-center md:gap-[0.8vw] gap-[3vw] shrink-0">
+          {/* DESKTOP ONLY: Category Label 
+              Padding: 4px (0.21vw) top/bottom, 8px (0.42vw) left/right
+          */}
+          <span className="hidden md:block md:px-[0.42vw] md:py-[0.21vw] bg-[#EDE9FE] text-[#1A1A1A] md:text-[0.83vw] text-[2.5vw] font-semibold md:rounded-[0.42vw] rounded-[4vw]">
+            {item.category_label}
+          </span>
+
+          {/* Chevron Circle */}
           <div
             className={`md:p-[0.5vw] p-[2vw] rounded-full transition-colors ${
               isOpen ? "bg-[#99008A] text-white" : "bg-[#D1D5DC] text-[#1E2939]"
             }`}
           >
             {isOpen ? (
-              <ChevronUp className="md:w-[0.8vw] md:h-[0.8vw] w-[2.5vw] h-[2.5vw]" />
+              <ChevronUp
+                strokeWidth={3}
+                className="md:w-[0.8vw] md:h-[0.8vw] w-[2.5vw] h-[2.5vw]"
+              />
             ) : (
-              <ChevronDown className="md:w-[0.8vw] md:h-[0.8vw] w-[2.5vw] h-[2.5vw]" />
+              <ChevronDown
+                strokeWidth={3}
+                className="md:w-[0.8vw] md:h-[0.8vw] w-[2.5vw] h-[2.5vw]"
+              />
             )}
           </div>
         </div>
@@ -56,7 +76,7 @@ const AccordionItem = ({ item, isOpen, onClick }) => {
             text-[#1E2939] 
             md:text-[0.83vw] text-[3.5vw] 
             leading-normal
-            md:mt-[0.5vw] mt-[0.5vw]
+            md:mt-[0.5vw] mt-[2vw] 
           "
         >
           <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-[2.08vw] md:gap-y-[1vw] gap-y-[4vw]">

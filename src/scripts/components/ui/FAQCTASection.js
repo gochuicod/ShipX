@@ -1,33 +1,40 @@
-import faqCtaBg from "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/faq_cta_bg.webp";
-import faqCtaBgMobile from "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/faq_cta_bg_mobile.webp";
+import React from "react";
 
-const FAQCTASection = () => {
+const FAQCTASection = ({ ctaData }) => {
+  // Use CDN URLs directly instead of importing
+  const bgDesktop =
+    "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/faq_cta_bg.webp";
+  const bgMobile =
+    "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/faq_cta_bg_mobile.webp";
+
   return (
     <div
       className="
         flex flex-col md:flex-row
         items-center justify-between
         mx-auto
-        px-[4vw]
-        w-full md:w-[55vw]
+        
+        w-full md:w-[50vw]
         
         md:mb-[4vw] mb-0
         
+        /* bg-contain ensures the whole image is visible */
         bg-contain bg-center bg-no-repeat
-        bg-(image:--bg-mobile) md:bg-(image:--bg-desktop)
+        bg-[image:var(--bg-mobile)] md:bg-[image:var(--bg-desktop)]
         
+        /* Apply rounded corners on all devices */
         rounded-[20px] md:rounded-[1.4vw]
         
         overflow-hidden
         relative
         
-        /* Top & Bottom Padding: 30px -> 2.1vw */
-        py-8 md:py-[4.5vw]
+        /* Top & Bottom Padding */
+        py-8 md:py-[2.1vw]
       "
       style={{
         fontFamily: "Inter, system-ui, -apple-system, sans-serif",
-        "--bg-mobile": `url(${faqCtaBgMobile})`,
-        "--bg-desktop": `url(${faqCtaBg})`,
+        "--bg-mobile": `url(${bgMobile})`,
+        "--bg-desktop": `url(${bgDesktop})`,
       }}
     >
       {/* --- Center Content --- */}
@@ -42,7 +49,7 @@ const FAQCTASection = () => {
           /* Mobile Padding */
           px-6 
           
-          /* Desktop Left/Right Padding: 60px -> 4.2vw */
+          /* Desktop Left/Right Padding */
           md:px-[4.2vw]
         "
       >
@@ -53,28 +60,27 @@ const FAQCTASection = () => {
             leading-tight
             mb-3
             
-            /* Text Size: 30px -> 2.1vw */
-            text-xl md:text-[1.6vw]
+            /* Text Size */
+            text-2xl md:text-[1.6vw]
           "
         >
-          Didn’t find what you were looking for?
+          {ctaData?.title || "Didn’t find what you were looking for?"}
         </span>
 
         <span
           className="
             text-[#555555]
-            font-normal
+            font-semibold
             leading-relaxed
             max-w-xl
             mb-6
             
-            /* Text Size: 16px -> 1.1vw */
+            /* Text Size */
             text-sm md:text-[0.75vw]
           "
         >
-          Don't let a question slow down your supply chain. Reach out to our
-          support team directly and we'll get your goods moving in the right
-          direction.
+          {ctaData?.subtitle ||
+            "Don't let a question slow down your supply chain. Reach out to our support team directly and we'll get your goods moving in the right direction."}
         </span>
 
         <a href="/#contact-us">
@@ -84,7 +90,7 @@ const FAQCTASection = () => {
               flex items-center justify-center
               
               /* Background Gradient */
-              bg-linear-to-r from-[#4F378A] to-[#FF00E5]
+              bg-gradient-to-r from-[#4F378A] to-[#FF00E5]
               hover:opacity-90
               transition-all duration-300
               
@@ -97,16 +103,12 @@ const FAQCTASection = () => {
               /* Mobile Styles */
               px-6 py-2 text-sm
 
-              /* Desktop VW Conversions */
-              /* Padding L/R: 20px -> 1.4vw */
-              /* Padding T/B: 7px -> 0.5vw */
+              /* Desktop VW Styles */
               md:px-[1.4vw] md:py-[0.5vw]
-              
-              /* Font Size: 12px -> 0.85vw */
-              md:text-[0.85vw]
+              md:text-[0.75vw]
             "
           >
-            Contact Us
+            {ctaData?.buttons?.contact_us || "Contact Us"}
           </button>
         </a>
       </div>
