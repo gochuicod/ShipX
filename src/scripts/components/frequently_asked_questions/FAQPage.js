@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 import ResponsiveFilterBar from "./ResponsiveFilterBar";
@@ -6,6 +6,7 @@ import AccordionItem from "./AccordionItem";
 import FAQCTASection from "../ui/FAQCTASection";
 
 const FAQPage = () => {
+  // --- Initialization ---
   const { t } = useTranslation();
 
   const rawData = t("faq_page", { returnObjects: true });
@@ -222,8 +223,6 @@ const FAQPage = () => {
           </div>
         )}
       </main>
-
-      <FAQCTASection ctaData={cta_section} />
     </div>
   );
 };
