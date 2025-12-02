@@ -184,7 +184,6 @@ export default function ShipmentTrackerAccordion({
             </span>
 
             <Stepper statuses={!shipmentData?.errors ? steps : []} />
-            {/* <Stepper statuses={!shipmentData?.errors ? steps : []} /> */}
             <div
               className="
                 flex flex-row
@@ -197,7 +196,7 @@ export default function ShipmentTrackerAccordion({
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                className="md:size-[1.2vw] size-[4vw] md:stroke-[0.1vw] stroke-[0.4vw] stroke-[#FF00E5]"
+                className="md:size-[1.2vw] size-[4vw] stroke-[2px] stroke-[#FF00E5]"
               >
                 <path
                   stroke-linecap="round"
