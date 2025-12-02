@@ -78,13 +78,15 @@ const AccordionItem = ({ item, isOpen, onClick }) => {
             md:mt-[0.5vw] mt-[2vw] 
           "
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-[2.08vw] md:gap-y-[1vw] gap-y-[4vw]">
+          <div className="flex flex-col md:flex-wrap md:flex-row gap-y-[4vw] md:gap-x-[2.08vw] md:gap-y-[1vw]">
             {(item.answer_blocks || []).map((block, index) => {
               const isFullWidth = block.type === "intro";
               return (
                 <div
                   key={index}
-                  className={isFullWidth ? "col-span-full" : "col-span-1"}
+                  className={
+                    isFullWidth ? "w-full" : "w-full md:w-[calc(50%-1.04vw)]"
+                  }
                 >
                   <p>
                     {block.title && (
