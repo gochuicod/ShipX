@@ -1,8 +1,9 @@
-import { useState, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import SEO from "../ui/SEO";
 import BlogResponsiveFilterBar from "./BlogResponsiveFilterBar"; // Import the new component
 import FeaturedBlog from "./FeaturedBlog";
+import BlogsGrid from "./BlogsGrid";
 import BlogsGrid from "./BlogsGrid";
 
 const BlogList = () => {
@@ -86,7 +87,9 @@ const BlogList = () => {
           <div className="w-full h-[50vw] md:hidden relative overflow-hidden">
             <img
               src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx-all-blogs-banner-mobile.webp"
+              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx-all-blogs-banner-mobile.webp"
               alt="Blog Banner"
+              className="w-full h-full object-cover"
               className="w-full h-full object-cover"
             />
           </div>
