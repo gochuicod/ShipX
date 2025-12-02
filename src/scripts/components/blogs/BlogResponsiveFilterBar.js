@@ -41,6 +41,30 @@ const BlogResponsiveFilterBar = ({
   activeFilterId,
   onFilterChange,
 }) => {
+  // Helper function to create rows with pattern: 4, 5, 4, 5...
+  const createRows = (items) => {
+    const rows = [];
+    let index = 0;
+
+    // First row: 4 items
+    if (items.length > 0) {
+      rows.push(items.slice(0, 4));
+      index = 4;
+    }
+
+    // Subsequent rows: 5, 4, 5, 4...
+    let itemsPerRow = 5;
+    while (index < items.length) {
+      rows.push(items.slice(index, index + itemsPerRow));
+      index += itemsPerRow;
+      itemsPerRow = itemsPerRow === 5 ? 4 : 5;
+    }
+
+    return rows;
+  };
+
+  const rows = createRows(filters);
+
   return (
     <div className="w-full flex justify-center">
       {/* MOBILE: Show Dropdown */}
@@ -52,16 +76,23 @@ const BlogResponsiveFilterBar = ({
         />
       </div>
 
-      {/* DESKTOP: Show Pills with Natural Wrapping */}
-      <div className="hidden md:flex flex-wrap justify-center gap-[0.5vw]">
-        {filters.map((filter) => (
-          <BlogFilterPill
-            key={filter.id}
-            label={filter.label}
-            count={filter.count}
-            isActive={activeFilterId === filter.id}
-            onClick={() => onFilterChange(filter.id)}
-          />
+      {/* DESKTOP: Show Pills with Custom Row Layout (4, 5, 4, 5...) */}
+      <div className="hidden md:flex flex-col items-center gap-[0.5vw]">
+        {rows.map((row, rowIndex) => (
+          <div
+            key={`row-${rowIndex}`}
+            className="flex justify-center gap-[0.5vw]"
+          >
+            {row.map((filter) => (
+              <BlogFilterPill
+                key={filter.id}
+                label={filter.label}
+                count={filter.count}
+                isActive={activeFilterId === filter.id}
+                onClick={() => onFilterChange(filter.id)}
+              />
+            ))}
+          </div>
         ))}
       </div>
     </div>

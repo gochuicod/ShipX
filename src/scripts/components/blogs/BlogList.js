@@ -170,7 +170,7 @@ const BlogList = () => {
           </div>
 
           {/* Filter Bar (Using New Component) */}
-          <div className="w-[75%] md:w-full md:mb-[0.5vw] mb-[2vw] mx-auto md:mx-0">
+          <div className="w-[75%] md:w-[60%] md:mb-[0.5vw] mb-[2vw] mx-auto md:mx-0">
             {/* Filter by Category Label */}
             <h3 className="md:text-[1.1vw] text-[3.5vw] font-semibold text-[#1A1A1A] mb-[1.5vw] md:mb-[0.8vw] text-center">
               <span className="md:hidden">Filter by:</span>
