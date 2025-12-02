@@ -12,6 +12,7 @@ export default function HsCodeGeneratorForm() {
     handleSubmit,
     control,
     formState: { errors },
+    watch,
     reset,
   } = useForm({
     defaultValues: {
@@ -26,6 +27,10 @@ export default function HsCodeGeneratorForm() {
   const [isLoading, setIsLoading] = useState(false);
   const { setHsCodeResult } = useHsCode();
   const { t } = useTranslation();
+
+  const productDescriptionValue = watch("productDescription");
+  const minLength = 15;
+  const currentLength = productDescriptionValue?.length || 0;
 
   const handleFileChange = (e) => {
     const selectedFiles = Array.from(e.target.files);
@@ -127,26 +132,37 @@ export default function HsCodeGeneratorForm() {
                     relative
                 "
       >
-        <label
-          className="
+        <div className="flex justify-between items-end mb-[0.5vw] md:mb-[0.3vw]">
+          <div>
+            <label
+              className="
                         md:text-[1vw] text-[3vw]
                         text-[#1E2939]
                         font-semibold
                         md:leading-[1.2vw] leading-[3.2vw]
                     "
-        >
-          {t("hs_code_generator_page.form_section.input_1.label")}&nbsp;
-          <span className="text-red-500">*</span>
-        </label>
-        <p
-          className="
+            >
+              {t("hs_code_generator_page.form_section.input_1.label")}&nbsp;
+              <span className="text-red-500">*</span>
+            </label>
+            <p
+              className="
                         text-[#4A5565]/80
                         md:text-[0.8vw] text-[2.5vw]
                         md:leading-[1.5vw] leading-[3vw]
                     "
-        >
-          {t("hs_code_generator_page.form_section.input_1.note")}
-        </p>
+            >
+              {t("hs_code_generator_page.form_section.input_1.note")}
+            </p>
+          </div>
+          <span
+            className={`md:text-[0.7vw] text-[2.2vw] font-medium md:leading-[1.5vw] leading-[3vw] ${
+              currentLength < minLength ? "text-red-500" : "text-green-600"
+            }`}
+          >
+            {currentLength}/{minLength}
+          </span>
+        </div>
         <div className="relative">
           {errors.productDescription && (
             <ToolTipError message={errors.productDescription.message} />
@@ -209,6 +225,7 @@ export default function HsCodeGeneratorForm() {
                     text-[#4A5565]/80
                     md:text-[0.8vw] text-[2.5vw]
                     md:leading-[1.5vw] leading-[3vw]
+                    mb-[0.5vw] md:mb-[0.3vw]
                     "
         >
           {t("hs_code_generator_page.form_section.input_2.note")}
@@ -264,6 +281,7 @@ export default function HsCodeGeneratorForm() {
                         text-[#4A5565]/80
                         md:text-[0.8vw] text-[2.5vw]
                         md:leading-[1.5vw] leading-[3vw]
+                        mb-[0.5vw] md:mb-[0.3vw]
                     "
         >
           {t("hs_code_generator_page.form_section.input_3.note")}
@@ -319,6 +337,7 @@ export default function HsCodeGeneratorForm() {
                         text-[#4A5565]/80
                         md:text-[0.8vw] text-[2.5vw]
                         md:leading-[1.5vw] leading-[3vw]
+                        mb-[0.5vw] md:mb-[0.3vw]
                     "
         >
           {t("hs_code_generator_page.form_section.input_images.note")}
@@ -468,6 +487,7 @@ export default function HsCodeGeneratorForm() {
                         text-[#4A5565]/80
                         md:text-[0.8vw] text-[2.5vw]
                         md:leading-[1.5vw] leading-[3vw]
+                        mb-[0.5vw] md:mb-[0.3vw]
                     "
         >
           {t("hs_code_generator_page.form_section.input_4.note")}
@@ -550,19 +570,17 @@ export default function HsCodeGeneratorForm() {
           type="submit"
           disabled={isLoading}
           className={`
-                        bg-linear-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
-                        bg-size-[200%_100%] bg-position-[0%_0%]
-                        hover:bg-position-[100%_0%]
-                        transition-[background-position] duration-1000 ease-in-out
-                        w-fit 
-                        md:py-[0.35vw] py-[1vw]
-                        md:px-[1.5vw] px-[4.5vw]
-                        md:rounded-[2vw] rounded-full
-                        text-white
-                        md:text-[0.8vw] text-[2.5vw]
-                        font-medium
-                        cursor-pointer
-                    `}
+              bg-linear-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
+              bg-size-[200%_100%] bg-position-[0%_0%]
+              hover:bg-position-[100%_0%]
+              transition-[background-position] duration-1000 ease-in-out
+              md:py-[0.6vw] py-[2vw]
+              md:px-[1.5vw] px-[5vw]
+              md:rounded-[2vw] rounded-full
+              md:text-[0.8vw] text-[2.5vw]
+              text-white font-medium
+              cursor-pointer
+          `}
         >
           {isLoading
             ? t(

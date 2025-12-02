@@ -77,7 +77,7 @@ export default function HsCodeGenerator() {
                           md:text-[1vw] text-[3vw]
                           font-medium
                           md:text-start text-center
-                          md:leading-[1.2vw] leading-[4vw]
+                          leading-[1.4]
                           md:w-[30vw]
                       "
           >
