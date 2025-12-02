@@ -1587,5 +1587,13 @@
       },
       "generate_another_hs_code_button": "Jana Kod HS Lain"
     }
+  },
+  "all_blog_posts_page": {
+    "badge_title": "Blog dan Artikel",
+    "title_section": {
+      "title_prefix": "Hab Logistik",
+      "title_suffix": "Rentas Sempadan",
+      "subtitle": "Wawasan pakar, panduan strategik, dan trend terkini untuk membantu penjual ASEAN melayari perdagangan global."
+    }
   }
 }

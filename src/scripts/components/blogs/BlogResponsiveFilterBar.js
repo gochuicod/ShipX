@@ -52,7 +52,7 @@ const BlogResponsiveFilterBar = ({
         />
       </div>
 
-      {/* DESKTOP: Show Pills */}
+      {/* DESKTOP: Show Pills with Natural Wrapping */}
       <div className="hidden md:flex flex-wrap justify-center gap-[0.5vw]">
         {filters.map((filter) => (
           <BlogFilterPill

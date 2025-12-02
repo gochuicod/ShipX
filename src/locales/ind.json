@@ -1583,5 +1583,13 @@
       },
       "generate_another_hs_code_button": "Buat Kode HS Lain"
     }
+  },
+  "all_blog_posts_page": {
+      "badge_title": "Blog dan Artikel",
+      "title_section": {
+        "title_prefix": "Pusat Logistik",
+        "title_suffix": "Lintas Batas",
+        "subtitle": "Wawasan ahli, panduan strategis, dan tren terbaru untuk membantu penjual ASEAN menavigasi perdagangan global."
+    }
   }
 }

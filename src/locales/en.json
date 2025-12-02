@@ -1583,5 +1583,13 @@
       },
       "generate_another_hs_code_button": "Generate Another HS Code"
     }
+  },
+  "all_blog_posts_page": {
+    "badge_title": "Blogs and Articles",
+    "title_section": {
+      "title_prefix": "The Cross-Border",
+      "title_suffix": "Logistics Hub",
+      "subtitle": "Expert insights, strategic guides, and the latest trends to help ASEAN sellers navigate global trade."
+    }
   }
 }
