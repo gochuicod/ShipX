@@ -36,7 +36,11 @@ const MobileFilterDropdown = ({ options, activeId, onChange }) => {
 };
 
 // --- Main Responsive Wrapper ---
-const BlogResponsiveFilterBar = ({ filters, activeFilterId, onFilterChange }) => {
+const BlogResponsiveFilterBar = ({
+  filters,
+  activeFilterId,
+  onFilterChange,
+}) => {
   return (
     <div className="w-full flex justify-center">
       {/* MOBILE: Show Dropdown */}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { useHsCode } from "../../hooks/useHsCode";
 import ToolTipError from "./ToolTipError";
@@ -14,7 +14,7 @@ export default function HsCodeGeneratorForm() {
     formState: { errors, isSubmitted },
     watch,
     reset,
-    clearErrors
+    clearErrors,
   } = useForm({
     defaultValues: {
       targetSystem: "USA",
@@ -28,7 +28,8 @@ export default function HsCodeGeneratorForm() {
   const [isLoading, setIsLoading] = useState(false);
   const { setHsCodeResult } = useHsCode();
   const { t } = useTranslation();
-  const [touchedProductDescription, setTouchedProductDescription] = useState(false);
+  const [touchedProductDescription, setTouchedProductDescription] =
+    useState(false);
 
   const productDescriptionValue = watch("productDescription");
   const minLength = 15;
@@ -110,6 +111,12 @@ export default function HsCodeGeneratorForm() {
     }
   };
 
+  const fileInputRef = useRef(null);
+
+  const handleUploadButtonClick = () => {
+    fileInputRef.current?.click();
+  };
+
   return (
     <form
       className="
@@ -167,9 +174,11 @@ export default function HsCodeGeneratorForm() {
         </div>
         <div className="relative">
           {/* Tooltip Error */}
-          {isSubmitted && !touchedProductDescription && errors.productDescription && (
-            <ToolTipError message={errors.productDescription.message} />
-          )}
+          {isSubmitted &&
+            !touchedProductDescription &&
+            errors.productDescription && (
+              <ToolTipError message={errors.productDescription.message} />
+            )}
 
           <textarea
             id="productDescription"
@@ -196,10 +205,14 @@ export default function HsCodeGeneratorForm() {
             }
             {...register("productDescription", {
               required: "Product description is required",
-              minLength: { value: 15, message: "Description must be at least 15 characters" },
+              minLength: {
+                value: 15,
+                message: "Description must be at least 15 characters",
+              },
               onChange: (e) => {
                 clearErrors("productDescription");
-                if (!touchedProductDescription) setTouchedProductDescription(true);
+                if (!touchedProductDescription)
+                  setTouchedProductDescription(true);
               },
             })}
           />
@@ -325,26 +338,56 @@ export default function HsCodeGeneratorForm() {
                     md:mt-0 mt-[2vw]
                 "
       >
-        <label
-          className="
-                        md:text-[1vw] text-[3vw]
-                        text-[#1E2939]
-                        font-semibold
-                        md:leading-[1.2vw] leading-[3.2vw]
-                    "
-        >
-          {t("hs_code_generator_page.form_section.input_images.label")}
-        </label>
-        <p
-          className="
-                        text-[#4A5565]/80
-                        md:text-[0.8vw] text-[2.5vw]
-                        md:leading-[1.5vw] leading-[3vw]
-                        mb-[0.5vw] md:mb-[0.3vw]
-                    "
-        >
-          {t("hs_code_generator_page.form_section.input_images.note")}
-        </p>
+        <div className="flex justify-between items-end mb-[0.5vw] md:mb-[0.3vw]">
+          <div>
+            <label
+              className="
+                            md:text-[1vw] text-[3vw]
+                            text-[#1E2939]
+                            font-semibold
+                            md:leading-[1.2vw] leading-[3.2vw]
+                        "
+            >
+              {t("hs_code_generator_page.form_section.input_images.label")}
+            </label>
+            <p
+              className="
+                            text-[#4A5565]/80
+                            md:text-[0.8vw] text-[2.5vw]
+                            md:leading-[1.5vw] leading-[3vw]
+                        "
+            >
+              {t("hs_code_generator_page.form_section.input_images.note")}
+            </p>
+          </div>
+          <button
+            type="button"
+            className="md:p-[0.16vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
+            onClick={handleUploadButtonClick}
+          >
+            {/* Gradient border */}
+            <div className="absolute inset-0 bg-linear-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+
+            {/* Inner white area */}
+            <div
+              className="
+                relative
+                flex flex-row
+                items-center
+                gap-x-[1vw]
+                md:px-[2vw] px-[5vw]
+                md:py-[0.5vw] py-[1vw]
+                bg-white
+                rounded-full
+                md:text-[0.8vw] text-[2.5vw]
+              "
+            >
+              {t(
+                "hs_code_generator_page.form_section.input_images.upload_files_button",
+              )}
+            </div>
+          </button>
+        </div>
         <div
           className="
                         border border-[#B9AFD0]
@@ -357,6 +400,7 @@ export default function HsCodeGeneratorForm() {
         >
           {/* Invisible Input for Drag & Drop / Click */}
           <input
+            ref={fileInputRef}
             type="file"
             multiple
             accept="image/png, image/jpeg, application/pdf"
