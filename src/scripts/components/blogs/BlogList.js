@@ -1,9 +1,8 @@
 import React, { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import SEO from "../ui/SEO";
-import BlogResponsiveFilterBar from "./BlogResponsiveFilterBar"; // Import the new component
+import BlogResponsiveFilterBar from "./BlogResponsiveFilterBar";
 import FeaturedBlog from "./FeaturedBlog";
-import BlogsGrid from "./BlogsGrid";
 import BlogsGrid from "./BlogsGrid";
 
 const BlogList = () => {
