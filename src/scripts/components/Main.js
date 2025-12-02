@@ -28,7 +28,7 @@ const Main = ({ margin }) => {
         ogImage={t("seo.home_page.ogImage")}
       />
 
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden min-h-screen">
         <MessengerButton />
         <div className="absolute top-[-5vw] left-[-10vw] size-[10vw] rounded-full shadow-[5vw_0.5vw_15vw_rgba(79,55,138,1)] z-40"></div>
         <div className="absolute top-[8vw] right-[-15vw] size-[15vw] rounded-full shadow-[-5vw_0.5vw_20vw_rgba(255,0,229,0.2)] z-40"></div>

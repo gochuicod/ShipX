@@ -1,21 +1,30 @@
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useShipment } from "../../hooks/useShipment";
 import { useTranslation } from "react-i18next";
 import ToolTipError from "../hs_code_generator/ToolTipError";
 
-const ShipmentTrackerForm = () => {
+const ShipmentTrackerForm = ({ initialTrackingNumber, autoSubmit = false }) => {
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting, isSubmitted },
     reset,
-    watch,
     clearErrors,
+    setValue,
   } = useForm();
   const { t } = useTranslation();
 
   const { shipmentData, setShipmentData, setTrackingNumber } = useShipment();
-  const trackingValue = watch("trackingNumber");
+
+  // Effect to handle auto-submission when redirected
+  useEffect(() => {
+    if (initialTrackingNumber && autoSubmit) {
+      setValue("trackingNumber", initialTrackingNumber);
+      // Trigger the form submission programmatically
+      handleSubmit(onSubmit)();
+    }
+  }, [initialTrackingNumber, autoSubmit, setValue, handleSubmit]);
 
   const onSubmit = async (data) => {
     const trackingNumber = data.trackingNumber;
