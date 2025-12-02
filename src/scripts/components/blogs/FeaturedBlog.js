@@ -52,15 +52,9 @@ const FeaturedBlog = ({ post }) => {
       )}
 
       {/* 2. Floating Content Card */}
-<<<<<<< HEAD
       <div className="group absolute bottom-[3vw] left-[3vw] right-[3vw] md:bottom-[2vw] md:left-[2vw] md:w-[45%] bg-white rounded-[2.5vw] md:rounded-[1vw] p-[4vw] md:p-[1.5vw] shadow-lg backdrop-blur-sm">
         {/* Title */}
         <h2 className="text-[4.5vw] md:text-[1.5vw] font-bold text-[#1A1A1A] leading-tight mb-[2vw] md:mb-[0.8vw] line-clamp-2 group-hover:text-[#CC00B7] transition-colors">
-=======
-      <div className="absolute bottom-[3vw] left-[3vw] right-[3vw] md:bottom-[2vw] md:left-[2vw] md:w-[45%] bg-white rounded-[2.5vw] md:rounded-[1vw] p-[4vw] md:p-[1vw] shadow-lg backdrop-blur-sm">
-        {/* Title */}
-        <h2 className="text-[4.5vw] md:text-[1.5vw] font-bold text-[#1A1A1A] leading-tight mb-[2vw] md:mb-[0.8vw] line-clamp-2">
->>>>>>> upstream/main
           {post.title}
         </h2>
 
@@ -70,11 +64,7 @@ const FeaturedBlog = ({ post }) => {
             {tags.map((tag, index) => (
               <span
                 key={index}
-<<<<<<< HEAD
                 className="bg-[#F8E3F5] text-[#99008A] px-[2.5vw] py-[1vw] md:px-[0.8vw] md:py-[0.3vw] md:rounded-[0.42vw] rounded-md text-[2.5vw] md:text-[0.7vw] font-semibold"
-=======
-                className="bg-[#F8E3F5] text-[#99008A] px-[2.5vw] py-[1vw] md:px-[0.8vw] md:py-[0.3vw] md:rounded-[0.42vw] rounded-[1.1vw]  text-[2.5vw] md:text-[0.7vw] font-semibold"
->>>>>>> upstream/main
               >
                 {tag}
               </span>
