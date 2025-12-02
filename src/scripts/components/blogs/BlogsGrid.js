@@ -21,6 +21,7 @@ const BlogsGrid = ({ posts }) => {
   const getTruncatedContent = (content, limit = 100) => {
     if (!content) return "";
     const plainText = content.replace(/<[^>]*>?/gm, "");
+    const plainText = content.replace(/<[^>]*>?/gm, "");
     if (plainText.length <= limit) return plainText;
     return plainText.substring(0, limit) + "...";
   };
@@ -31,6 +32,7 @@ const BlogsGrid = ({ posts }) => {
       {tags.map((tag, index) => (
         <span
           key={index}
+          className="inline-block bg-[#F8E3F5] text-[#99008A] px-2 py-1 md:px-[0.8vw] md:py-[0.3vw] md:rounded-[0.42vw] rounded-md text-[10px] md:text-[0.7vw] font-semibold"
           className="inline-block bg-[#F8E3F5] text-[#99008A] px-2 py-1 md:px-[0.8vw] md:py-[0.3vw] md:rounded-[0.42vw] rounded-md text-[10px] md:text-[0.7vw] font-semibold"
         >
           {tag}
