@@ -314,7 +314,7 @@ export default function HsCodeGeneratorResult() {
             <p
               className="
                                 overflow-auto
-                                md:h-[7vw] h-[24vw]
+                                md:h-[6vw] h-[23vw]
                                 bg-[#F8F7FF]
                                 md:rounded-[1vw] rounded-[3vw]
                                 md:px-[1vw] px-[3vw]
@@ -362,7 +362,7 @@ export default function HsCodeGeneratorResult() {
                                 bg-[#F8F7FF]
                                 md:rounded-[1vw] rounded-[2vw]
                                 md:px-[0.5vw] px-[3vw]
-                                md:py-[0.85vw] py-[2vw]
+                                md:py-[1.5vw] py-[2.5vw]
                             "
             >
               {hsCodeResult?.tariffHierarchy &&
