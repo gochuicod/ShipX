@@ -1563,7 +1563,8 @@
       "find_hs_code_button_submitting": "Sedang Menganalisis...",
       "input_images": {
         "label": "Muat Naik Imej atau Fail untuk konteks tambahan",
-        "note": "Fail disokong: JPG, PNG, PDF (maks 5MB setiap satu)."
+        "note": "Fail disokong: JPG, PNG, PDF (maks 5MB setiap satu).",
+        "upload_files_button": "Muat Naik Fail"
       }
     },
     "result_section": {

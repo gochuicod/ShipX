@@ -1563,7 +1563,8 @@
       "find_hs_code_button_submitting": "กำลังวิเคราะห์...",
       "input_images": {
         "label": "อัปโหลดรูปภาพหรือไฟล์เพื่อบริบทเพิ่มเติม",
-        "note": "ไฟล์ที่รองรับ: JPG, PNG, PDF (สูงสุดไฟล์ละ 5MB)"
+        "note": "ไฟล์ที่รองรับ: JPG, PNG, PDF (สูงสุดไฟล์ละ 5MB)",
+        "upload_files_button": "อัปโหลดไฟล์"
       }
     },
     "result_section": {

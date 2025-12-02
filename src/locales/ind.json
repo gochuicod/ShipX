@@ -1559,7 +1559,8 @@
       "find_hs_code_button_submitting": "Sedang Menganalisis...",
       "input_images": {
         "label": "Unggah Gambar atau File untuk konteks lebih lanjut",
-        "note": "File yang didukung: JPG, PNG, PDF (maks 5MB per file)."
+        "note": "File yang didukung: JPG, PNG, PDF (maks 5MB per file).",
+        "upload_files_button": "Unggah File"
       }
     },
     "result_section": {

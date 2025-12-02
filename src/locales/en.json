@@ -1559,7 +1559,8 @@
       "find_hs_code_button_submitting": "Analyzing...",
       "input_images": {
         "label": "Upload Images or Files/s for more context",
-        "note": "Supported files: JPG, PNG, PDF (5MB max each)."
+        "note": "Supported files: JPG, PNG, PDF (5MB max each).",
+        "upload_files_button": "Upload Files"
       }
     },
     "result_section": {

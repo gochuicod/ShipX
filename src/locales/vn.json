@@ -1559,7 +1559,8 @@
       "find_hs_code_button_submitting": "Đang phân tích...",
       "input_images": {
         "label": "Tải lên Hình ảnh hoặc Tệp để có thêm ngữ cảnh",
-        "note": "Các tệp được hỗ trợ: JPG, PNG, PDF (tối đa 5MB mỗi tệp)."
+        "note": "Các tệp được hỗ trợ: JPG, PNG, PDF (tối đa 5MB mỗi tệp).",
+        "upload_files_button": "Tải lên Tệp"
       }
     },
     "result_section": {
