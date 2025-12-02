@@ -1,13 +1,11 @@
 import { useState, useMemo } from "react";
 import { STYLES } from "./styles";
 import { useTranslation } from "../../hooks/useTranslation";
-import Badge from "./Badge";
 import TabSwitcher from "./TabSwitcher";
 import ShipmentTrackerForm from "./ShipmentTrackerForm";
 import HSCodeForm from "./HSCodeForm";
 import FileClaimForm from "./FileClaimForm";
-
-// --- MAIN LAYOUT ---
+import Badge from "../shipment_tracker/Badge";
 
 const ToolkitLayout = () => {
   const [activeTab, setActiveTab] = useState("tracker");
@@ -40,23 +38,72 @@ const ToolkitLayout = () => {
   const { prefix, highlight, desc, Component } = tabsContent[activeTab];
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4 md:p-8 font-sans">
-      <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-        <div className="flex flex-col items-start pt-10 lg:pl-10 space-y-6 animate-fade-in-up">
-          <Badge />
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-            {prefix} <span className="text-[#FF00E5]">{highlight}</span>
-          </h1>
-          <p className="text-gray-500 text-lg md:text-xl leading-relaxed max-w-lg">
-            {desc}
-          </p>
+    <div
+      className="
+        flex
+        items-start justify-center
+        bg-white
+      "
+      style={{
+        fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+      }}
+    >
+      <div
+        className="
+          md:w-[80vw] w-[90vw]
+          flex md:flex-row flex-col
+          justify-center items-start
+          gap-x-[2vw]
+          md:pr-[10vw]
+        "
+      >
+        <div
+          className="
+            flex flex-col
+            md:items-end items-center
+            md:justify-start justify-center
+            md:w-[40vw] w-full
+            md:gap-y-0 gap-y-[3vw]
+          "
+        >
+          <Badge
+            badge_text="Trade and Logistics Toolkit"
+            text_color="#FF00E5"
+            bg_color="#F3F1FF"
+            className="md:text-[0.8vw] text-[2.5vw]"
+          />
+          <div>
+            <h1
+              className="
+                md:text-end text-center
+                font-semibold
+                md:text-[2.5vw] text-[4vw]
+                text-[#1E2939]
+                leading-[1.4]
+              "
+            >
+              {prefix} <span className="text-[#FF00E5]">{highlight}</span>
+            </h1>
+            <p
+              className="
+                md:text-[1vw] text-[3vw]
+                font-medium
+                md:text-end text-center
+                md:leading-[1.5vw] leading-[4vw]
+                text-[#63666D]
+                md:w-[31vw] w-full
+              "
+            >
+              {desc}
+            </p>
+          </div>
         </div>
 
-        <div className="flex flex-col items-end w-full">
+        <div className="flex flex-col items-end md:w-[30vw] w-full md:mt-0 mt-[5vw]">
           <TabSwitcher activeTab={activeTab} setActiveTab={setActiveTab} />
 
           <div className={STYLES.card}>
-            <div key={activeTab} className="w-full animate-fade-in">
+            <div key={activeTab} className="w-full">
               <Component />
             </div>
           </div>
