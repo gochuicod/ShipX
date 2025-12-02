@@ -1,7 +1,7 @@
-import React, { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import SEO from "../ui/SEO";
-import BlogFilterPill from "./BlogFilterPill";
+import BlogResponsiveFilterBar from "./BlogResponsiveFilterBar"; // Import the new component
 import FeaturedBlog from "./FeaturedBlog";
 import BlogsGrid from "./BlogsGrid";
 
@@ -19,23 +19,36 @@ const BlogList = () => {
 
   // --- 3. Derived Data (Categories & Filtering) ---
   const categories = useMemo(() => {
-    const allCats = blogs.map((b) => b.category || "Uncategorized");
-    const uniqueCats = [...new Set(allCats)];
+    // Helper to get count locally within useMemo
+    const getCount = (tagId) => {
+      if (tagId === "all") return blogs.length;
+      return blogs.filter((b) => (b.tags || []).includes(tagId)).length;
+    };
+
+    // Flatten all tags from all blogs
+    const allTags = blogs.flatMap((b) => b.tags || []);
+    const uniqueTags = [...new Set(allTags)].sort();
+
     return [
-      { id: "all", label: "All Categories" },
-      ...uniqueCats.map((cat) => ({ id: cat, label: cat })),
+      { id: "all", label: "All Categories", count: getCount("all") },
+      ...uniqueTags.map((tag) => ({
+        id: tag,
+        label: tag,
+        count: getCount(tag),
+      })),
     ];
   }, [blogs]);
 
   const filteredBlogs = useMemo(() => {
     const sorted = [...blogs].reverse();
     return sorted.filter((post) => {
-      const matchesCategory =
-        activeCategoryId === "all" || post.category === activeCategoryId;
+      const matchesTag =
+        activeCategoryId === "all" ||
+        (post.tags || []).includes(activeCategoryId);
       const matchesSearch =
         (post.title || "").toLowerCase().includes(searchQuery.toLowerCase()) ||
         (post.content || "").toLowerCase().includes(searchQuery.toLowerCase());
-      return matchesCategory && matchesSearch;
+      return matchesTag && matchesSearch;
     });
   }, [blogs, activeCategoryId, searchQuery]);
 
@@ -47,11 +60,6 @@ const BlogList = () => {
   const featuredPost = filteredBlogs.length > 0 ? filteredBlogs[0] : null;
   const gridPosts =
     filteredBlogs.length > 1 ? filteredBlogs.slice(1, visibleCount) : [];
-
-  const getCategoryCount = (catId) => {
-    if (catId === "all") return blogs.length;
-    return blogs.filter((b) => b.category === catId).length;
-  };
 
   return (
     <>
@@ -65,7 +73,7 @@ const BlogList = () => {
       <div className="w-full bg-white font-sans flex flex-col items-center">
         {/* --- Hero Banner --- */}
         <div className="w-full">
-          {/* Desktop Image: Hidden on mobile, block on md+ */}
+          {/* Desktop Image */}
           <div className="w-full h-[18vw] hidden md:block relative overflow-hidden">
             <img
               src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx-all-blogs-banner.webp"
@@ -74,7 +82,7 @@ const BlogList = () => {
             />
           </div>
 
-          {/* Mobile Image: Block on mobile, hidden on md+ */}
+          {/* Mobile Image */}
           <div className="w-full h-[50vw] md:hidden relative overflow-hidden">
             <img
               src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx-all-blogs-banner-mobile.webp"
@@ -86,67 +94,102 @@ const BlogList = () => {
 
         {/* --- Main Content --- */}
         <main className="flex flex-col items-center w-full max-w-[100vw] px-[5vw] py-[8vw] md:px-[8vw] md:py-[4vw] gap-y-[6vw] md:gap-y-[3vw]">
-          {/* Header & Search */}
-          <div className="text-center w-full flex flex-col items-center">
-            <span className="inline-block py-[2vw] px-[4vw] md:py-[0.5vw] md:px-[1vw] rounded-full bg-[#F3F1FF] text-[#FF00E5] text-[3vw] md:text-[0.8vw] font-bold mb-[3vw] md:mb-[1vw]">
+          {/* Header Block & Search */}
+          <div className="w-full bg-white md:p-[2vw] p-[2vw] text-center">
+            {/* Badge */}
+            <span
+              className="
+                inline-block
+                py-[2.1vw] pl-[2.7vw] pr-[3.5vw] rounded-[2.1vw] text-[2.5vw] mb-[4vw]
+                md:py-[0.42vw] md:pl-[0.52vw] md:pr-[0.68vw] md:rounded-[0.42vw] md:text-[0.7vw] md:mb-[1vw]
+                bg-[#F3F1FF] text-[#FF00E5] font-bold tracking-wide
+              "
+            >
               ● Blogs and Articles
             </span>
-            <h1 className="text-[7vw] md:text-[2.5vw] font-bold leading-tight mb-[2vw] text-[#1A1A1A]">
+
+            {/* Title */}
+            <h1 className="md:text-[3vw] text-[7vw] font-bold text-[#1A1A1A] md:leading-[3.5vw] leading-[8vw] md:mb-[1vw] mb-[3vw]">
               The Cross-Border{" "}
               <span className="text-[#FF00E5]">Logistics Hub</span>
             </h1>
-            <p className="text-[#1A1A1A]/70 text-[3.5vw] md:text-[1.1vw] max-w-[90%] md:max-w-[40%] mb-[6vw] md:mb-[2.5vw]">
+
+            {/* Description */}
+            <p className="text-[#0E0E0E]/70 md:text-[1.1vw] text-[3.5vw] md:leading-[1.6vw] leading-[5vw] md:max-w-[40vw] w-full mx-auto md:mb-[2vw] mb-[6vw]">
               Expert insights, strategic guides, and the latest trends to help
               ASEAN sellers navigate global trade.
             </p>
 
-            {/* Search Input */}
-            <div className="w-full md:w-[60%] relative">
-              <div className="flex flex-row items-center bg-white shadow-[0px_0px_20px_0px_#FF00E533] rounded-[2vw] md:rounded-[1vw] p-[2vw] md:p-[0.7vw] gap-[2vw] md:gap-[0.7vw]">
-                <img
-                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/faq_search_icon.svg"
-                  alt="Search"
-                  className="w-[5vw] h-[5vw] md:w-[1.5vw] md:h-[1.5vw] object-contain opacity-50"
-                />
+            {/* --- SEARCH BAR --- */}
+            <div className="w-full md:w-[58%] mx-auto">
+              <div
+                className="
+                  flex flex-row items-center
+                  bg-white
+                  shadow-[0px_0px_20px_0px_#FF00E533]
+                  md:rounded-[1vw] rounded-[3vw]
+                  md:p-[0.7vw] p-[2.7vw]
+                  md:gap-[0.7vw] gap-[2.7vw]
+                "
+              >
                 <input
                   type="text"
                   placeholder="Start typing to find blogs and articles..."
-                  className="grow w-full bg-transparent focus:outline-none text-[#1A1A1A] placeholder-[#99A1AF] italic text-[3.5vw] md:text-[1vw]"
+                  className="
+                    grow
+                    w-full
+                    bg-transparent
+                    focus:outline-none
+                    text-[#1A1A1A]
+                    placeholder-[#99A1AF]
+                    italic
+                    md:text-[1vw] text-[3.5vw]
+                  "
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
+
+                <button
+                  type="button"
+                  className="shrink-0 flex items-center justify-center cursor-pointer hover:opacity-80 transition-opacity"
+                >
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/faq_send_icon.svg"
+                    alt="Search Button"
+                    className="md:w-[2.1vw] md:h-[2.1vw] w-[6vw] h-[6vw] object-contain"
+                  />
+                </button>
               </div>
             </div>
           </div>
 
-          {/* Filter Bar */}
-          <div className="w-full overflow-x-auto no-scrollbar py-2">
-            <div className="flex flex-row justify-start md:justify-center gap-[2vw] md:gap-[0.8vw] min-w-max px-2">
-              {categories.map((cat) => (
-                <BlogFilterPill
-                  key={cat.id}
-                  label={cat.label}
-                  count={getCategoryCount(cat.id)}
-                  isActive={activeCategoryId === cat.id}
-                  onClick={() => setActiveCategoryId(cat.id)}
-                />
-              ))}
-            </div>
+          {/* Filter Bar (Using New Component) */}
+          <div className="w-[75%] md:w-full md:mb-[0.5vw] mb-[2vw] mx-auto md:mx-0">
+            {/* Filter by Category Label */}
+            <h3 className="md:text-[1.1vw] text-[3.5vw] font-semibold text-[#1A1A1A] mb-[1.5vw] md:mb-[0.8vw] text-center">
+              <span className="md:hidden">Filter by:</span>
+              <span className="hidden md:inline">Filter by Category</span>
+            </h3>
+            <BlogResponsiveFilterBar
+              filters={categories}
+              activeFilterId={activeCategoryId}
+              onFilterChange={setActiveCategoryId}
+            />
           </div>
 
           {/* Blogs Display */}
-          <div className="w-full flex flex-col gap-[6vw] md:gap-[3vw] mt-[2vw]">
+          <div className="w-full flex flex-col gap-[6vw] md:gap-[3vw]">
             {filteredBlogs.length === 0 ? (
               <div className="text-center py-[10vw] text-gray-400">
                 No articles found matching your criteria.
               </div>
             ) : (
               <>
-                {/* Featured Blog Component */}
-                <FeaturedBlog post={featuredPost} />
+                {/* Featured Blog Component - Only show when NO search query */}
+                {!searchQuery && <FeaturedBlog post={featuredPost} />}
 
-                {/* Grid Component */}
-                <BlogsGrid posts={gridPosts} />
+                {/* Grid Component - Show all filtered posts when searching, else skip first */}
+                <BlogsGrid posts={searchQuery ? filteredBlogs : gridPosts} />
               </>
             )}
 

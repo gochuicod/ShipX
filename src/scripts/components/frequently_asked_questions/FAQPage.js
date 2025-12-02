@@ -32,12 +32,25 @@ const FAQPage = () => {
     ? accordion_section.items
     : [];
 
+  // Helper to extract text from answer blocks
+  const getAnswerText = (answerBlocks) => {
+    if (!Array.isArray(answerBlocks)) return "";
+    return answerBlocks
+      .map((block) => (block.title || "") + " " + (block.text || ""))
+      .join(" ");
+  };
+
   const filteredItems = rawItems.filter((item) => {
     const matchesCategory =
       activeCategoryId === "all" || item.category_id === activeCategoryId;
-    const matchesSearch = (item.question || "")
-      .toLowerCase()
-      .includes(searchQuery.toLowerCase());
+    const matchesSearch =
+      (item.question || "").toLowerCase().includes(searchQuery.toLowerCase()) ||
+      getAnswerText(item.answer_blocks)
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase()) ||
+      (item.category_label || "")
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
@@ -117,12 +130,6 @@ const FAQPage = () => {
                 md:gap-[0.7vw] gap-[2.7vw]
               "
             >
-              <img
-                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/faq_search_icon.svg"
-                alt="Search"
-                className="md:w-[2.1vw] md:h-[2.1vw] w-[6vw] h-[6vw] object-contain"
-              />
-
               <input
                 type="text"
                 placeholder={header_section.search_placeholder}
@@ -137,7 +144,13 @@ const FAQPage = () => {
                   md:text-[1vw] text-[3.5vw]
                 "
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={(e) => {
+                  setSearchQuery(e.target.value);
+                  // Set to "all" categories when user types
+                  if (e.target.value.trim()) {
+                    setActiveCategoryId("all");
+                  }
+                }}
               />
 
               <button

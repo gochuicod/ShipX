@@ -6,7 +6,8 @@ import ClaimSubmissionModal from "./ClaimSubmissionModal";
 const FileAClaimForm = () => {
   const { t } = useTranslation();
 
-  const [formData, setFormData] = useState({
+  // Define the initial state in a constant so we can reuse it for resetting
+  const initialFormState = {
     fullName: "",
     email: "",
     phone: "",
@@ -16,7 +17,9 @@ const FileAClaimForm = () => {
     claimType: "",
     trackingNumber: "",
     description: "",
-  });
+  };
+
+  const [formData, setFormData] = useState(initialFormState);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -110,11 +113,9 @@ const FileAClaimForm = () => {
         });
         setShowModal(true);
 
-        setFormData((prev) => ({
-          ...prev,
-          description: "",
-          trackingNumber: "",
-        }));
+        // CLEAR FORM DATA HERE
+        // We reset the state back to the initialFormState defined at the top
+        setFormData(initialFormState);
       } else {
         let errorMessage;
 
@@ -482,15 +483,15 @@ const FileAClaimForm = () => {
                   ></textarea>
                 </div>
 
-                <div className="flex flex-col items-end mt-[2vw] md:mt-[1vw]">
+                <div className="flex flex-col items-center md:items-end mt-[2vw] md:mt-[1vw]">
                   <button
                     type="submit"
                     disabled={isSubmitting}
                     className={`
-                      bg-linear-to-r from-[#80358E] to-[#E6007E]
+                      bg-[linear-gradient(267.42deg,#FF00E5_0.34%,#4F378A_98.35%)]
                       text-white font-bold
-                      py-[2.5vw] px-[8vw] md:py-[0.8vw] md:px-[3vw]
-                      rounded-full
+                      py-[1.9vw] px-[8vw] md:py-[0.5vw] md:px-[2.1vw]
+                      rounded-[5.1vw] md:rounded-[1.3vw]
                       shadow-lg hover:shadow-xl
                       transition-transform transform hover:-translate-y-1
                       text-[4vw] md:text-[1vw] hover:cursor-pointer
