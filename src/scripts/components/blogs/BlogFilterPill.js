@@ -1,4 +1,3 @@
-import React from "react";
 
 const BlogFilterPill = ({ label, count, isActive, onClick }) => {
   return (
