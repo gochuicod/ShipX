@@ -33,7 +33,7 @@ const FeaturedBlog = ({ post }) => {
       <div className="absolute inset-0 bg-black/10"></div>
 
       {/* 2. Floating Content Card */}
-      <div className="absolute bottom-[3vw] left-[3vw] right-[3vw] md:bottom-[2vw] md:left-[2vw] md:w-[45%] bg-white rounded-[2.5vw] md:rounded-[1vw] p-[4vw] md:p-[1.5vw] shadow-lg backdrop-blur-sm bg-white/95">
+      <div className="absolute bottom-[3vw] left-[3vw] right-[3vw] md:bottom-[2vw] md:left-[2vw] md:w-[45%] bg-white rounded-[2.5vw] md:rounded-[1vw] p-[4vw] md:p-[1.5vw] shadow-lg backdrop-blur-sm">
         {/* Tags & Date Row */}
         <div className="flex flex-wrap items-center justify-between gap-y-2 mb-[2vw] md:mb-[1vw]">
           <div className="flex flex-wrap gap-2">

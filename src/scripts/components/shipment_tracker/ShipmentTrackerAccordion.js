@@ -24,6 +24,42 @@ export default function ShipmentTrackerAccordion({
   const steps = mapStatuses(shipmentData?.statuses, t);
   const lastStatus = getLastStatusLabel(shipmentData?.statuses, t);
 
+  const getStatusColor = () => {
+    if (!shipmentData?.statuses || shipmentData.statuses.length === 0) {
+      return "text-[#1A1A1A]";
+    }
+
+    // Sort statuses by date to ensure we get the most recent one.
+    const sortedStatuses = [...shipmentData.statuses].sort(
+      (a, b) => new Date(a.updatedDate) - new Date(b.updatedDate),
+    );
+    const latestStatus = sortedStatuses[sortedStatuses.length - 1];
+    const latestStatusCode = latestStatus?.statusCode;
+
+    switch (latestStatusCode) {
+      // Green for successful delivery
+      case "SHIPMENT_DELIVERED": // 6034
+        return "text-[#008236]";
+
+      // Amber for unsuccessful, hold, or error statuses
+      case "CREATING_FAILED": // 3004
+      case "SHIPMENT_DELIVERY_UNSUCCESSFUL": // 6008
+      case "SHIPMENT_RETUNRED_FROM_OVERSEAS": // 7011 (as per your doc)
+      case "SHIPMERNT_RETURNED_TO_SENDER": // 7002 (as per your doc)
+      case "SHIPMENT_DAMAGED": // 2009
+      case "SHIPMENT_LOST": // 2007
+      case "SHIPMENT_FAILED_ATTEMPT": // 2004
+      case "SHIPMENT_HOLD_BY_CUSTOMS_AT_DESTINATION": // 4005
+      case "SHIPMENT_HOLD_AT_POINT_OF_DELIVERY": // 6040
+      case "HOLD_FOR_PAYMENT": // 2043
+        return "text-[#D08700]";
+
+      // Dark gray for all other in-transit statuses
+      default:
+        return "text-[#1A1A1A]";
+    }
+  };
+
   return (
     <>
       {/* Shipment information section */}
@@ -106,11 +142,11 @@ export default function ShipmentTrackerAccordion({
                 )}
               </span>
               <span
-                className="
-                  text-[#008236]
+                className={`
+                  ${getStatusColor()}
                   md:text-[1vw] text-[3.5vw]
                   font-bold
-                "
+                `}
               >
                 {lastStatus}
               </span>
