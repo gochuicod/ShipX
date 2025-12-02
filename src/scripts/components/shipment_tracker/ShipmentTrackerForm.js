@@ -7,12 +7,15 @@ const ShipmentTrackerForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isSubmitted },
     reset,
+    watch,
+    clearErrors,
   } = useForm();
   const { t } = useTranslation();
 
   const { shipmentData, setShipmentData, setTrackingNumber } = useShipment();
+  const trackingValue = watch("trackingNumber");
 
   const onSubmit = async (data) => {
     const trackingNumber = data.trackingNumber;
@@ -92,11 +95,14 @@ const ShipmentTrackerForm = () => {
             {t("shipment_tracker.track_order_section.form.label")}
           </label>
           <div className="relative">
-            {shipmentData?.errors &&
-            Array.isArray(shipmentData.errors) &&
-            shipmentData.errors.length > 0 ? (
-              <ToolTipError message={shipmentData.errors[0]} />
-            ) : null}
+            {isSubmitted &&
+              (errors.trackingNumber || shipmentData?.errors?.length > 0) && (
+                <ToolTipError
+                  message={
+                    errors.trackingNumber?.message || shipmentData?.errors?.[0]
+                  }
+                />
+              )}
             <input
               aria-invalid={errors.trackingNumber ? "true" : "false"}
               id="trackingNumber"
@@ -112,10 +118,20 @@ const ShipmentTrackerForm = () => {
                           `}
               {...register("trackingNumber", {
                 required: "Tracking number is required",
+                pattern: {
+                  value: /^[A-Za-z0-9]{2,20}$/,
+                  message: "Please enter a valid tracking number",
+                },
+                validate: (value) => {
+                  if (/\s/.test(value))
+                    return "Tracking number cannot contain spaces";
+                  return true;
+                },
+                onChange: () => {
+                  clearErrors("trackingNumber");
+                  if (shipmentData?.errors) setShipmentData(null);
+                },
               })}
-              placeholder={
-                errors.trackingNumber ? errors.trackingNumber.message : ""
-              }
               autoComplete="number"
             />
           </div>
