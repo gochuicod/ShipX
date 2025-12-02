@@ -8,8 +8,8 @@ const TermsAndConditions = lazy(
   () => import("../components/TermsAndConditions"),
 );
 const BookADemo = lazy(() => import("../components/BookADemo"));
-const BlogList = lazy(() => import("../components/BlogList"));
-const Blog = lazy(() => import("../components/Blog"));
+const BlogList = lazy(() => import("../components/blogs/BlogList"));
+const Blog = lazy(() => import("../components/blogs/Blog"));
 const NotFound = lazy(() => import("../components/ui/NotFound"));
 const ShipmentTracker = lazy(
   () => import("../components/shipment_tracker/ShipmentTracker"),
