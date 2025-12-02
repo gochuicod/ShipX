@@ -86,9 +86,7 @@ const BlogList = () => {
           <div className="w-full h-[50vw] md:hidden relative overflow-hidden">
             <img
               src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx-all-blogs-banner-mobile.webp"
-              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx-all-blogs-banner-mobile.webp"
               alt="Blog Banner"
-              className="w-full h-full object-cover"
               className="w-full h-full object-cover"
             />
           </div>
