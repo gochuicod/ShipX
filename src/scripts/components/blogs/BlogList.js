@@ -137,7 +137,10 @@ const BlogList = () => {
               >
                 <input
                   type="text"
-                  placeholder="Start typing to find blogs and articles..."
+                  placeholder={
+                    pageData.placeholder ||
+                    "Start typing to find blogs and articles..."
+                  }
                   className="
                     grow
                     w-full
