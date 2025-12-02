@@ -1,5 +1,3 @@
-import React from "react";
-
 const FAQCTASection = ({ ctaData }) => {
   // Use CDN URLs directly instead of importing
   const bgDesktop =
@@ -18,11 +16,10 @@ const FAQCTASection = ({ ctaData }) => {
         
         md:mb-[4vw] mb-0
         
-        /* bg-contain ensures the whole image is visible */
-        bg-contain bg-center bg-no-repeat
-        bg-[image:var(--bg-mobile)] md:bg-[image:var(--bg-desktop)]
+        /* bg-contain ensures the whole image is visible */ bg-center bg-no-repeat
+        bg-(image:--bg-mobile) md:bg-(image:--bg-desktop)
         
-        /* Apply rounded corners on all devices */
+        /* Apply corners on all devices */
         rounded-[20px] md:rounded-[1.4vw]
         
         overflow-hidden
@@ -90,7 +87,7 @@ const FAQCTASection = ({ ctaData }) => {
               flex items-center justify-center
               
               /* Background Gradient */
-              bg-gradient-to-r from-[#4F378A] to-[#FF00E5]
+              bg-linear-to-r from-[#4F378A] to-[#FF00E5]
               hover:opacity-90
               transition-all duration-300
               
