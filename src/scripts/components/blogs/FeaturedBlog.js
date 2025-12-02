@@ -3,6 +3,18 @@ import SmartNavLink from "../ui/SmartNavLink";
 const FeaturedBlog = ({ post }) => {
   if (!post) return null;
 
+  // Helper to check if blog is recently published
+  const isRecent = (dateString) => {
+    try {
+      const postDate = new Date(dateString);
+      const diffTime = Math.abs(new Date() - postDate);
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      return diffDays <= 7;
+    } catch (e) {
+      return false;
+    }
+  };
+
   // Helper to strip HTML and limit characters
   const getTruncatedContent = (content, limit = 180) => {
     if (!content) return "";
@@ -32,6 +44,13 @@ const FeaturedBlog = ({ post }) => {
       {/* Optional overlay for better text contrast if needed */}
       <div className="absolute inset-0 bg-black/10"></div>
 
+      {/* NEW Badge */}
+      {isRecent(post.date) && (
+        <div className="absolute top-[3vw] right-[3vw] md:top-[1.5vw] md:right-[1.5vw] bg-[#FF00E5] text-white font-bold px-[2.5vw] py-[1vw] md:px-[0.8vw] md:py-[0.3vw] rounded-full text-[2.5vw] md:text-[0.7vw] shadow-md z-10">
+          NEW
+        </div>
+      )}
+
       {/* 2. Floating Content Card */}
       <div className="absolute bottom-[3vw] left-[3vw] right-[3vw] md:bottom-[2vw] md:left-[2vw] md:w-[45%] bg-white rounded-[2.5vw] md:rounded-[1vw] p-[4vw] md:p-[1.5vw] shadow-lg backdrop-blur-sm">
         {/* Tags & Date Row */}
@@ -40,7 +59,7 @@ const FeaturedBlog = ({ post }) => {
             {tags.map((tag, index) => (
               <span
                 key={index}
-                className="bg-[#F3F1FF] text-[#8B1599] px-[2.5vw] py-[1vw] md:px-[0.8vw] md:py-[0.3vw] rounded-full text-[2.5vw] md:text-[0.7vw] font-semibold"
+                className="bg-[#F8E3F5] text-[#99008A] px-[2.5vw] py-[1vw] md:px-[0.8vw] md:py-[0.3vw] rounded-full text-[2.5vw] md:text-[0.7vw] font-semibold"
               >
                 {tag}
               </span>
@@ -65,7 +84,7 @@ const FeaturedBlog = ({ post }) => {
 
         {/* Footer: Read More & Share Icon */}
         <div className="flex items-center justify-between">
-          <span className="text-[#FF00E5] text-[3.5vw] md:text-[0.9vw] font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
+          <span className="text-[#CC00B7] text-[3.5vw] md:text-[0.9vw] font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
             Read More <span className="text-xl">→</span>
           </span>
 
