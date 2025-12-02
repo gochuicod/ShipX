@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-
 import ResponsiveFilterBar from "./ResponsiveFilterBar";
 import AccordionItem from "./AccordionItem";
 import FAQCTASection from "../ui/FAQCTASection";
 import BlogSection from "../blogs/BlogsSection";
 
 const FAQPage = () => {
-  // --- Initialization ---
   const { t } = useTranslation();
 
   const rawData = t("faq_page", { returnObjects: true });
@@ -21,18 +19,15 @@ const FAQPage = () => {
     cta_section = {},
   } = pageData;
 
-  // --- State ---
   const [activeCategoryId, setActiveCategoryId] = useState("shipping_basics");
   const [searchQuery, setSearchQuery] = useState("");
   const [openItemId, setOpenItemId] = useState("safely_ship_fragile");
   const [visibleCount, setVisibleCount] = useState(10);
 
-  // --- Logic ---
   const rawItems = Array.isArray(accordion_section?.items)
     ? accordion_section.items
     : [];
 
-  // Helper to extract text from answer blocks
   const getAnswerText = (answerBlocks) => {
     if (!Array.isArray(answerBlocks)) return "";
     return answerBlocks
@@ -202,7 +197,7 @@ const FAQPage = () => {
 
         {/* Load More Button */}
         {hasMoreItems && (
-          <div className="text-center md:mt-[2vw] mt-[5vw]">
+          <div className="text-center mt-[5vw]">
             <button
               onClick={handleLoadMore}
               className="
@@ -213,6 +208,7 @@ const FAQPage = () => {
                 rounded-full
                 bg-linear-to-b from-[#FF00E5] to-[#4F378A]
                 transition-transform active:scale-95
+                hover:cursor-pointer
               "
             >
               <span

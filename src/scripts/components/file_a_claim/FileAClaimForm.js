@@ -176,7 +176,7 @@ const FileAClaimForm = () => {
           <h2 className="font-bold text-[#1E2939] text-center text-[6vw] md:text-[2.5vw]">
             {t("file_a_claim.header_section.title")}
           </h2>
-          <p className="text-[#63666D] text-center w-full md:max-w-[40vw] leading-[1.4] text-[3.5vw] md:text-[0.9vw]">
+          <p className="text-[#63666D]/75 font-medium md:text-[1vw] text-[3vw] text-center w-full md:max-w-[40vw] leading-[1.4]">
             {t("file_a_claim.header_section.description")}
           </p>
         </div>

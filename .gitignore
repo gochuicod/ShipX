@@ -2,3 +2,4 @@
 node_modules/
 src/assets/fonts/woff2
 .env
+build/

@@ -3,6 +3,7 @@ import ShipmentTrackerForm from "./ShipmentTrackerForm";
 import ShipmentTrackerAccordion from "./ShipmentTrackerAccordion";
 import SmartNavLink from "../ui/SmartNavLink";
 import { useTranslation } from "react-i18next";
+import { useSearchParams } from "react-router-dom";
 import { useShipment } from "../../hooks/useShipment";
 import SEO from "../ui/SEO";
 import ToolsHeroSection from "./ToolsHeroSection";
@@ -11,6 +12,10 @@ import { useRef, useEffect } from "react";
 const ShipmentTracker = () => {
   const { t, i18n } = useTranslation();
   const { shipmentData, trackingNumber, setShipmentData } = useShipment();
+  const [searchParams] = useSearchParams();
+
+  const urlTrackingNumber = searchParams.get("trackingNumber");
+  const autoSubmit = searchParams.get("autosubmit") === "true";
 
   const accordionRef = useRef(null);
 
@@ -100,7 +105,10 @@ const ShipmentTracker = () => {
           </div>
 
           {/* Shipment Form */}
-          <ShipmentTrackerForm />
+          <ShipmentTrackerForm
+            initialTrackingNumber={urlTrackingNumber}
+            autoSubmit={autoSubmit}
+          />
         </div>
 
         {/* Shipment Accordion */}

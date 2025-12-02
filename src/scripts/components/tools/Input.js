@@ -1,7 +1,7 @@
-import React from "react";
+import { forwardRef } from "react";
 import { STYLES } from "./styles";
 
-const Input = React.forwardRef(
+const Input = forwardRef(
   (
     { label, error, required, className = "", containerClass = "", ...props },
     ref,
@@ -23,14 +23,14 @@ const Input = React.forwardRef(
           aria-invalid={error ? "true" : "false"}
           {...props}
         />
-        {error && (
+        {/* {error && (
           <span
             role="alert"
             className="text-red-500 text-xs absolute -bottom-5 left-0"
           >
             {error.message}
           </span>
-        )}
+        )} */}
       </div>
     </div>
   ),
