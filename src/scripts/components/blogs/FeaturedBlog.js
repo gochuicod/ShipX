@@ -1,10 +1,17 @@
-import React from "react";
 import SmartNavLink from "../ui/SmartNavLink";
 
 const FeaturedBlog = ({ post }) => {
   if (!post) return null;
 
-  // Mock tags/categories for the design - in a real app, these would come from post.tags
+  // Helper to strip HTML and limit characters
+  const getTruncatedContent = (content, limit = 180) => {
+    if (!content) return "";
+    const plainText = content.replace(/<[^>]*>?/gm, ""); // Strip HTML tags
+    if (plainText.length <= limit) return plainText;
+    return plainText.substring(0, limit) + "...";
+  };
+
+  // Mock tags/categories for the design
   const tags = [
     post.category || "Shipping Basics & Packaging",
     "Logistics",
@@ -49,10 +56,10 @@ const FeaturedBlog = ({ post }) => {
           {post.title}
         </h2>
 
-        {/* Description */}
+        {/* Description (Stripped & Truncated) */}
         {post.content && (
           <p className="text-[#1A1A1A]/70 text-[3.5vw] md:text-[0.9vw] line-clamp-2 mb-[3vw] md:mb-[1.5vw]">
-            {post.content}
+            {getTruncatedContent(post.content, 180)}
           </p>
         )}
 
@@ -62,7 +69,6 @@ const FeaturedBlog = ({ post }) => {
             Read More <span className="text-xl">→</span>
           </span>
 
-          {/* Share Icon (You can replace this with an actual button/functionality) */}
           <button className="text-[#8B1599] hover:text-[#FF00E5] transition-colors">
             <svg
               xmlns="http://www.w3.org/2000/svg"
