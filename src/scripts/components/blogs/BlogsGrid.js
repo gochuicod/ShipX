@@ -19,7 +19,7 @@ const BlogsGrid = ({ posts }) => {
   // Helper to strip HTML and limit characters
   const getTruncatedContent = (content, limit = 100) => {
     if (!content) return "";
-    const plainText = content.replace(/<[^>]*>?/gm, ""); // Strip HTML tags
+    const plainText = content.replace(/<[^>]*>?/gm, "");
     if (plainText.length <= limit) return plainText;
     return plainText.substring(0, limit) + "...";
   };
@@ -30,7 +30,7 @@ const BlogsGrid = ({ posts }) => {
       {tags.map((tag, index) => (
         <span
           key={index}
-          className="inline-block bg-[#F8E3F5] text-[#99008A] px-2 py-1 md:px-[0.8vw] md:py-[0.3vw] rounded-full text-[10px] md:text-[0.7vw] font-semibold"
+          className="inline-block bg-[#F8E3F5] text-[#99008A] px-2 py-1 md:px-[0.8vw] md:py-[0.3vw] md:rounded-[0.42vw] rounded-md text-[10px] md:text-[0.7vw] font-semibold"
         >
           {tag}
         </span>
@@ -44,22 +44,18 @@ const BlogsGrid = ({ posts }) => {
         <SmartNavLink
           key={post.slug}
           to={`/blog/${post.slug}`}
-          // Layout: Flex Row on Mobile, Flex Column on Desktop
-          className="group flex flex-row md:flex-col bg-white rounded-xl md:rounded-[1vw] overflow-hidden shadow-sm md:shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_0vw_1vw_rgba(79,55,138,0.25)] transition-all duration-300 p-2 md:p-0 gap-3 md:gap-0 items-stretch"
+          // Container: Flex Row on Mobile (Image Left / Text Right), Column on Desktop
+          className="group flex flex-row md:flex-col bg-[#F3F4F6] rounded-xl md:rounded-[1vw] overflow-hidden shadow-[2px_2px_5px_0px_#60617040] md:shadow-[0px_2.84px_5.68px_0px_#60617029,0px_0px_1.42px_0px_#28293D0A] hover:shadow-[0_0vw_1vw_rgba(79,55,138,0.25)] transition-all duration-300 p-2 md:p-0 gap-4 md:gap-0 items-stretch"
         >
           {/* --- Image Container --- */}
-          <div className="relative w-[35%] md:w-full md:h-[14vw] shrink-0 overflow-hidden rounded-lg md:rounded-none">
+          {/* Mobile: 50% width with aspect ratio. Desktop: Full width with aspect ratio */}
+          <div className="relative w-1/2 md:w-full aspect-video shrink-0 overflow-hidden rounded-xl md:rounded-none">
             <img
               src={post.cover}
               alt={post.title}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            {/* Mobile-Only Category Pills (Overlay) */}
-            {post.tags && post.tags.length > 0 && (
-              <div className="absolute top-2 right-2 md:hidden">
-                <CategoryPills tags={post.tags} />
-              </div>
-            )}
+
             {/* Desktop NEW Badge */}
             {isRecent(post.date) && (
               <div className="hidden md:block absolute top-[1vw] right-[1vw] bg-[#FF00E5] text-white text-[0.7vw] font-bold px-[0.8vw] py-[0.3vw] rounded-full shadow-md z-10">
@@ -69,37 +65,41 @@ const BlogsGrid = ({ posts }) => {
           </div>
 
           {/* --- Content Body --- */}
-          <div className="flex flex-col grow w-[65%] md:w-full justify-between md:justify-start md:p-[1.5vw]">
-            <div>
+          <div className="flex flex-col grow w-1/2 md:w-full justify-between md:p-[1.5vw] gap-[0.533vw] md:gap-0">
+            {/* Top Section: Title, Tags, Date */}
+            <div className="flex flex-col gap-2 md:gap-0">
               {/* Title */}
-              <h3 className="text-sm md:text-[1.2vw] font-bold text-[#1A1A1A] leading-tight mb-2 md:mb-[0.8vw] line-clamp-2">
+              <h3 className="text-sm md:text-[1.2vw] font-bold text-[#1A1A1A] leading-tight md:mb-[0.8vw] line-clamp-2 md:line-clamp-2">
                 {post.title}
               </h3>
 
-              {/* Top Row: Category Pills & Date */}
-              <div className="hidden md:flex items-center justify-between mb-[1vw]">
-                {/* Category Pills on Left */}
+              {/* Tags & Date Container */}
+              {/* Mobile: Stacked vertically. Desktop: Flex row */}
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between md:mb-[1vw] gap-1 md:gap-0">
+                {/* Category Pills */}
                 {post.tags && post.tags.length > 0 && (
-                  <CategoryPills tags={post.tags} />
+                  <CategoryPills tags={post.tags} className="mb-1 md:mb-0" />
                 )}
-                {/* Date on Right */}
-                <span className="text-[#1A1A1A]/40 text-[0.75vw] ml-auto">
+
+                {/* Date */}
+                <span className="text-[#1A1A1A]/50 text-[11px] md:text-[0.75vw] md:ml-auto">
                   {post.date}
                 </span>
               </div>
 
-              {/* Description: Hidden on Mobile, Visible on Desktop */}
+              {/* Description: Hidden on Mobile as per design image, Visible on Desktop */}
               {post.content && (
                 <p className="hidden md:block text-[#1A1A1A]/60 text-[3.2vw] md:text-[0.9vw] line-clamp-3 mb-[3vw] md:mb-[1vw]">
-                  {getTruncatedContent(post.content, 120)}
+                  {getTruncatedContent(post.content, 200)}
                 </p>
               )}
             </div>
 
             {/* Footer: Read More & Share Icon */}
-            <div className="mt-auto flex items-center justify-between md:pt-[1vw] md:border-t border-gray-100">
-              {/* Read More: Visible on Mobile and Desktop */}
-              <span className="text-[#CC00B7] text-[10px] md:text-[0.8vw] font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+            {/* Pushed to bottom via mt-auto */}
+            <div className="mt-auto flex items-center justify-between pt-2 md:pt-[1vw] md:border-t border-gray-100">
+              {/* Read More Link */}
+              <span className="text-[#D500B3] text-[12px] md:text-[0.8vw] font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                 Read More
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -117,8 +117,8 @@ const BlogsGrid = ({ posts }) => {
                 </svg>
               </span>
 
-              {/* Share Icon on Right */}
-              <button className="text-[#8B1599] hover:text-[#FF00E5] transition-colors ml-auto md:ml-auto">
+              {/* Share Icon */}
+              <button className="text-[#D500B3] hover:text-[#FF00E5] transition-colors">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"

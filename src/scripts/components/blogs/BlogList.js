@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import SEO from "../ui/SEO";
 import BlogResponsiveFilterBar from "./BlogResponsiveFilterBar";
@@ -11,6 +11,8 @@ const BlogList = () => {
   // --- 1. Data Retrieval ---
   const blogs =
     t("service_headline_section.blogs", { returnObjects: true }) || [];
+
+  const pageData = t("all_blog_posts_page", { returnObjects: true }) || {};
 
   // --- 2. State ---
   const [activeCategoryId, setActiveCategoryId] = useState("all");
@@ -105,19 +107,20 @@ const BlogList = () => {
                 bg-[#F3F1FF] text-[#FF00E5] font-bold tracking-wide
               "
             >
-              ● Blogs and Articles
+              ● {pageData.badge_title || "Blogs and Articles"}
             </span>
 
             {/* Title */}
             <h1 className="md:text-[3vw] text-[7vw] font-bold text-[#1A1A1A] md:leading-[3.5vw] leading-[8vw] md:mb-[1vw] mb-[3vw]">
-              The Cross-Border{" "}
-              <span className="text-[#FF00E5]">Logistics Hub</span>
+              {pageData.title_section?.title_prefix}{" "}
+              <span className="text-[#FF00E5]">
+                {pageData.title_section?.title_suffix}
+              </span>
             </h1>
 
             {/* Description */}
             <p className="text-[#0E0E0E]/70 md:text-[1.1vw] text-[3.5vw] md:leading-[1.6vw] leading-[5vw] md:max-w-[40vw] w-full mx-auto md:mb-[2vw] mb-[6vw]">
-              Expert insights, strategic guides, and the latest trends to help
-              ASEAN sellers navigate global trade.
+              {pageData.title_section?.subtitle}
             </p>
 
             {/* --- SEARCH BAR --- */}
@@ -134,7 +137,10 @@ const BlogList = () => {
               >
                 <input
                   type="text"
-                  placeholder="Start typing to find blogs and articles..."
+                  placeholder={
+                    pageData.placeholder ||
+                    "Start typing to find blogs and articles..."
+                  }
                   className="
                     grow
                     w-full
@@ -164,7 +170,7 @@ const BlogList = () => {
           </div>
 
           {/* Filter Bar (Using New Component) */}
-          <div className="w-[75%] md:w-full md:mb-[0.5vw] mb-[2vw] mx-auto md:mx-0">
+          <div className="w-[75%] md:w-[60%] md:mb-[0.5vw] mb-[2vw] mx-auto md:mx-0">
             {/* Filter by Category Label */}
             <h3 className="md:text-[1.1vw] text-[3.5vw] font-semibold text-[#1A1A1A] mb-[1.5vw] md:mb-[0.8vw] text-center">
               <span className="md:hidden">Filter by:</span>
@@ -198,7 +204,7 @@ const BlogList = () => {
               <div className="text-center mt-[4vw] md:mt-[2vw]">
                 <button
                   onClick={handleLoadMore}
-                  className="group relative inline-flex items-center justify-center p-px rounded-full bg-gradient-to-b from-[#FF00E5] to-[#4F378A] transition-transform active:scale-95"
+                  className="group relative inline-flex items-center justify-center p-px rounded-full bg-linear-to-b from-[#FF00E5] to-[#4F378A] transition-transform active:scale-95"
                 >
                   <span className="block w-full h-full rounded-full bg-white text-[#1A1A1A] px-[8vw] py-[2.5vw] md:px-[2vw] md:py-[0.5vw] text-[3.5vw] md:text-[0.9vw] font-medium transition-all duration-300 group-hover:bg-transparent group-hover:text-white">
                     Load More Articles
