@@ -1,11 +1,9 @@
-import { useState, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import SEO from "../ui/SEO";
-
-// Sub-components
 import BlogFilterPill from "./BlogFilterPill";
 import FeaturedBlog from "./FeaturedBlog";
-import BlogsGrid from "./BlogsGrid"; // Import the new component
+import BlogsGrid from "./BlogsGrid";
 
 const BlogList = () => {
   const { t } = useTranslation();
@@ -67,14 +65,23 @@ const BlogList = () => {
       <div className="w-full bg-white font-sans flex flex-col items-center">
         {/* --- Hero Banner --- */}
         <div className="w-full">
-          <div className="w-full h-[18vw] hidden md:block bg-gradient-to-r from-[#4F378A] to-[#2a1b52] relative overflow-hidden">
+          {/* Desktop Image: Hidden on mobile, block on md+ */}
+          <div className="w-full h-[18vw] hidden md:block relative overflow-hidden">
             <img
-              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx-faq-banner.webp"
+              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx-all-blogs-banner.webp"
               alt="Blog Banner"
-              className="w-full h-full object-cover opacity-60 mix-blend-overlay"
+              className="w-full h-full object-cover"
             />
           </div>
-          <div className="w-full h-[30vw] md:hidden bg-gradient-to-r from-[#4F378A] to-[#2a1b52]" />
+
+          {/* Mobile Image: Block on mobile, hidden on md+ */}
+          <div className="w-full h-[50vw] md:hidden relative overflow-hidden">
+            <img
+              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx-all-blogs-banner-mobile.webp"
+              alt="Blog Banner"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
 
         {/* --- Main Content --- */}
