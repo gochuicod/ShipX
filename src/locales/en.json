@@ -1599,5 +1599,11 @@
       "subtitle": "Expert insights, strategic guides, and the latest trends to help ASEAN sellers navigate global trade."
     },
     "placeholder": "Start typing to find blogs and articles..."
+  },
+  "share_section": {
+    "title_prefix": "Found this helpful?",
+    "title_suffix": "Pass it on",
+    "share": "Share Blog Post",
+    "bookmark": "Book Mark Page"
   }
 }
