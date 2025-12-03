@@ -2,7 +2,6 @@ import { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import SEO from "../ui/SEO";
 import BlogResponsiveFilterBar from "./BlogResponsiveFilterBar";
-import FeaturedBlog from "./FeaturedBlog";
 import BlogsGrid from "./BlogsGrid";
 
 const BlogList = () => {
@@ -47,6 +46,13 @@ const BlogList = () => {
       const matchesTag =
         activeCategoryId === "all" ||
         (post.tags || []).includes(activeCategoryId);
+
+      // If no search query, show all posts matching category
+      if (!searchQuery.trim()) {
+        return matchesTag;
+      }
+
+      // If search query exists, filter by both tag and search
       const matchesSearch =
         (post.title || "").toLowerCase().includes(searchQuery.toLowerCase()) ||
         (post.content || "").toLowerCase().includes(searchQuery.toLowerCase());
@@ -58,10 +64,8 @@ const BlogList = () => {
   const handleLoadMore = () => setVisibleCount((prev) => prev + 6);
   const hasMoreItems = visibleCount < filteredBlogs.length;
 
-  // Split Data for Layout
-  const featuredPost = filteredBlogs.length > 0 ? filteredBlogs[0] : null;
-  const gridPosts =
-    filteredBlogs.length > 1 ? filteredBlogs.slice(1, visibleCount) : [];
+  // Paginated blogs for grid display
+  const paginatedBlogs = filteredBlogs.slice(0, visibleCount);
 
   return (
     <>
@@ -152,8 +156,36 @@ const BlogList = () => {
                     md:text-[1vw] text-[3.5vw]
                   "
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    // Reset to "all" categories when user types
+                    if (e.target.value.trim() && activeCategoryId !== "all") {
+                      setActiveCategoryId("all");
+                    }
+                  }}
                 />
+
+                {/* Clear Search Button */}
+                {searchQuery && (
+                  <button
+                    type="button"
+                    onClick={() => setSearchQuery("")}
+                    className="shrink-0 flex items-center justify-center cursor-pointer hover:opacity-60 transition-opacity text-[#99A1AF]"
+                    title="Clear search"
+                  >
+                    <svg
+                      className="md:w-[2.1vw] md:h-[2.1vw] w-[6vw] h-[6vw]"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                )}
 
                 <button
                   type="button"
@@ -190,13 +222,7 @@ const BlogList = () => {
                 No articles found matching your criteria.
               </div>
             ) : (
-              <>
-                {/* Featured Blog Component - Only show when NO search query */}
-                {!searchQuery && <FeaturedBlog post={featuredPost} />}
-
-                {/* Grid Component - Show all filtered posts when searching, else skip first */}
-                <BlogsGrid posts={searchQuery ? filteredBlogs : gridPosts} />
-              </>
+              <BlogsGrid posts={paginatedBlogs} />
             )}
 
             {/* Load More */}
