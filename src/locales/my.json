@@ -1596,5 +1596,11 @@
       "subtitle": "Wawasan pakar, panduan strategik, dan trend terkini untuk membantu penjual ASEAN melayari perdagangan global."
     },
     "placeholder": "Mula menaip untuk mencari blog dan artikel..."
+  },
+  "share_section": {
+    "title_prefix": "Adakah ini membantu?",
+    "title_suffix": "Kongsikan bersama",
+    "share": "Kongsi Artikel",
+    "bookmark": "Tanda Halaman"
   }
 }
