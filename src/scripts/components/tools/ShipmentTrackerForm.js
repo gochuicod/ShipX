@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import Input from "./Input";
 import Button from "./Button";
-import ToolTipError from "./ToolTipError";
+import ToolTipError from "../hs_code_generator/ToolTipError";
 
 const ShipmentTrackerForm = () => {
   const {

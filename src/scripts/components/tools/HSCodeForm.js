@@ -58,7 +58,7 @@ const HSCodeForm = () => {
         error={errors.productDescription}
         isSubmitted={isSubmitted}
       />
-      <div className="flex justify-end md:mt-[0.5vw] mt-[1vw]">
+      <div className="flex justify-end md:mt-0 mt-[1vw]">
         <Button type="submit">Continue adding details</Button>
       </div>
     </form>
