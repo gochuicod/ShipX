@@ -73,9 +73,10 @@ export default function HsCodeGenerator() {
           </div>
           <p
             className="
-                          text-[#63666D]
+                          text-[#63666D]/75
                           md:text-[0.9vw] text-[3.5vw]
                           md:text-start text-center
+                          font-medium
                           leading-[1.4]
                           md:w-[30vw]
                       "

@@ -48,10 +48,19 @@ const ShipmentTrackerForm = () => {
 
           <Input
             {...register("trackingNumber", {
-              required: t("toolkit.shipment_tracker.form.validation.required"),
+              required: "Tracking number is required",
               pattern: {
-                value: /^[A-Za-z0-9]{8,20}$/,
-                message: t("toolkit.shipment_tracker.form.validation.invalid"),
+                value: /^[A-Za-z0-9]{2,20}$/,
+                message: "Please enter a valid tracking number",
+              },
+              validate: (value) => {
+                if (/\s/.test(value))
+                  return "Tracking number cannot contain spaces";
+                return true;
+              },
+              onChange: () => {
+                clearErrors("trackingNumber");
+                if (shipmentData?.errors) setShipmentData(null);
               },
             })}
             id="trackingNumber"

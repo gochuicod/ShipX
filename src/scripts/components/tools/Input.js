@@ -8,7 +8,10 @@ const Input = forwardRef(
   ) => (
     <div className={`w-full ${containerClass}`}>
       {label && (
-        <label className={STYLES.label} htmlFor={props.id}>
+        <label
+          className={`${STYLES.label} md:text-[0.8vw] text-[2.5vw]`}
+          htmlFor={props.id}
+        >
           {label} {required && <span className="text-red-500">*</span>}
         </label>
       )}

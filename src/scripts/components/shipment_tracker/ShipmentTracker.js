@@ -24,7 +24,7 @@ const ShipmentTracker = () => {
       setTimeout(() => {
         accordionRef.current.scrollIntoView({
           behavior: "smooth",
-          block: "center", // Aligns the top of the element to the top of the viewport
+          block: "start", // Aligns the top of the element to the top of the viewport
         });
       }, 500);
     }
@@ -93,9 +93,10 @@ const ShipmentTracker = () => {
             </h2>
             <p
               className="
-                text-[#63666D]
+                text-[#63666D]/75
                 md:text-[0.9vw] text-[3.5vw]
                 md:text-end text-center
+                font-medium
                 md:leading-[1.5vw] leading-[4vw]
               "
             >
