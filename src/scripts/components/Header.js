@@ -15,6 +15,7 @@ import {
   ListboxButton,
   ListboxOption,
   ListboxOptions,
+  Popover,
   Portal,
 } from "@headlessui/react";
 
@@ -26,21 +27,133 @@ const Header = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
+  // Dropdown Component for Navigation
+  const Dropdown = ({ title, items }) => (
+    <Popover className="relative">
+      {({ open }) => (
+        <>
+          <Popover.Button
+            className={`
+              group ${linkClass} flex items-center gap-x-1 focus:outline-none cursor-pointer
+              ${open ? "text-[#FF00E5]" : ""}
+            `}
+          >
+            {title}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2.5}
+              className={`w-3 h-3 transition-all duration-300 group-hover:stroke-[#FF00E5] ${
+                open ? "rotate-180 stroke-[#FF00E5]" : "stroke-[#1A1A1A]"
+              }`}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              />
+            </svg>
+          </Popover.Button>
+          <Popover.Panel className="absolute z-10 mt-3 md:w-[12vw] -translate-x-1/4 transform bg-white md:rounded-[0.5vw] rounded-[2vw] border border-[#4D4D4D]">
+            <div className="p-1">
+              {items.map((item) => (
+                <SmartNavLink key={item.to} to={item.to} className="group">
+                  <div className="flex items-center gap-x-3 px-4 py-2 md:text-[0.8vw] text-[2.2vw] text-gray-700 rounded-md transition-colors duration-300 group-hover:text-[#FF00E5] group-hover:underline group-hover:decoration-2 group-hover:underline-offset-4">
+                    {/* Render the icon directly if it exists */}
+                    {item.icon}
+                    <span>{item.label}</span>
+                  </div>
+                </SmartNavLink>
+              ))}
+            </div>
+          </Popover.Panel>
+        </>
+      )}
+    </Popover>
+  );
+
   const navLinks = [
     { to: "/", label: t("header.home") },
     { to: "/#services", label: t("header.services") },
+    {
+      label: t("header.toolkit"),
+      items: [
+        {
+          to: "/shipment-tracker",
+          label: t("header.shipment_tracker"),
+          icon: (
+            <img
+              className="md:w-[1.5vw] w-[3vw] md:h-[1.5vw] h-[3vw]"
+              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_2.svg"
+              alt="ShipX - plane"
+            />
+          ),
+        },
+        {
+          to: "/hs-code-generator",
+          label: t("header.hs_code_generator"),
+          icon: (
+            <img
+              className="md:w-[1.5vw] w-[3vw] md:h-[1.5vw] h-[3vw]"
+              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_24.svg"
+              alt="ShipX - Calculator"
+            />
+          ),
+        },
+        {
+          to: "/file-a-claim",
+          label: t("header.file_a_claim"),
+          icon: (
+            <img
+              className="md:w-[1.5vw] w-[3vw] md:h-[1.5vw] h-[3vw]"
+              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_13.svg"
+              alt="ShipX - Messaging"
+            />
+          ),
+        },
+      ],
+    },
     { to: "/#platform", label: t("header.platform") },
+    {
+      label: t("header.resources"),
+      items: [
+        {
+          to: "/blog",
+          label: t("header.blogs"),
+          icon: (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-5 h-5"
+            >
+              <path d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18c-2.305 0-4.408.867-6 2.292m0-14.25v14.25" />
+            </svg>
+          ),
+        },
+        {
+          to: "/frequently-asked-questions",
+          label: t("header.faqs"),
+          icon: (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                fillRule="evenodd"
+                d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z"
+                clipRule="evenodd"
+              />
+            </svg>
+          ),
+        },
+      ],
+    },
     { to: "/#network", label: t("header.network") },
   ];
-
-  const pathToLocaleKey = {
-    "/": "home",
-    "/#services": "services",
-    "/#platform": "platform",
-    "/#network": "network",
-    "/book-a-demo": "book_a_demo",
-    "/#contact-us": "contact_us",
-  };
 
   const [selected, setSelected] = useState(() => {
     const current = i18n.language || localStorage.getItem("lang") || "en";
@@ -63,7 +176,7 @@ const Header = memo(() => {
         className="
           sticky top-0 z-50 select-none
           flex flex-row bg-white text-[#1A1A1A] justify-between items-center 
-          md:py-[1vw] md:px-[8vw] py-[5vw] px-[10vw] md:shadow-[0_0.5vw_0.5vw_rgba(255,0,229,0.15)]
+          md:py-[1vw] md:px-[5vw] py-[5vw] px-[10vw] md:shadow-[0_0.5vw_0.5vw_rgba(255,0,229,0.15)]
           shadow-[0_3vw_5vw_rgba(255,0,229,0.15)]
         "
         style={{ fontFamily: "Karla, system-ui, -apple-system, sans-serif" }}
@@ -190,11 +303,19 @@ const Header = memo(() => {
 
         {/* Right: Nav + Buttons (hidden on mobile) */}
         <nav className="hidden md:flex flex-row gap-x-[2.5vw] font-medium text-[0.8vw]">
-          {navLinks.map((link) => (
-            <SmartNavLink key={link.to} to={link.to} className={linkClass}>
-              {link.label}
-            </SmartNavLink>
-          ))}
+          {navLinks.map((link) =>
+            link.items ? (
+              <Dropdown
+                key={link.label}
+                title={link.label}
+                items={link.items}
+              />
+            ) : (
+              <SmartNavLink key={link.to} to={link.to} className={linkClass}>
+                {link.label}
+              </SmartNavLink>
+            ),
+          )}
         </nav>
 
         <div className="hidden md:flex flex-row justify-center items-center gap-x-[1vw] text-[0.8vw] font-normal">
@@ -286,24 +407,34 @@ const Header = memo(() => {
               transition={{ duration: 0.5, ease: "easeInOut" }}
               className="absolute top-full right-0 w-full bg-white shadow-[0_7vw_10vw_rgba(255,0,229,0.10)] 
                         flex flex-col items-start p-[5vw] gap-y-[3vw] md:hidden 
-                        text-[#1A1A1A] text-[3.5vw] font-medium"
+                        text-[#1A1A1A] text-[3.5vw] font-medium divide-y divide-gray-100"
             >
-              {[
-                "/",
-                "/#services",
-                "/#platform",
-                "/#network",
-                "/book-a-demo",
-                "/#contact-us",
-              ].map((path) => (
-                <SmartNavLink
-                  key={path}
-                  to={path}
-                  className={`${linkClass} w-full text-left px-[5vw]`}
-                >
-                  {t(`header.${pathToLocaleKey[path]}`)}
-                </SmartNavLink>
-              ))}
+              {navLinks.map((link) =>
+                link.items ? (
+                  <div key={link.label} className="w-full pt-3">
+                    <span className="px-[5vw] font-bold text-gray-400 text-sm">
+                      {link.label}
+                    </span>
+                    {link.items.map((item) => (
+                      <SmartNavLink
+                        key={item.to}
+                        to={item.to}
+                        className={`${linkClass} block w-full text-left px-[5vw] py-2`}
+                      >
+                        {item.label}
+                      </SmartNavLink>
+                    ))}
+                  </div>
+                ) : (
+                  <SmartNavLink
+                    key={link.to}
+                    to={link.to}
+                    className={`${linkClass} w-full text-left px-[5vw] pt-3`}
+                  >
+                    {link.label}
+                  </SmartNavLink>
+                ),
+              )}
 
               <Listbox
                 className={`${linkClass} w-full text-left px-[5vw]`}
