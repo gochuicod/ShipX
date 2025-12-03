@@ -152,7 +152,12 @@ const Header = memo(() => {
         },
       ],
     },
-    // { to: "/#network", label: t("header.network") },
+  ];
+
+  const mobileNavLinks = [
+    ...navLinks,
+    { to: "/#contact-us", label: t("header.contact_us") },
+    { to: "/book-a-demo", label: t("header.book_a_demo") },
   ];
 
   const [selected, setSelected] = useState(() => {
@@ -407,9 +412,9 @@ const Header = memo(() => {
               transition={{ duration: 0.5, ease: "easeInOut" }}
               className="absolute top-full right-0 w-full bg-white shadow-[0_7vw_10vw_rgba(255,0,229,0.10)] 
                         flex flex-col items-start p-[5vw] gap-y-[3vw] md:hidden 
-                        text-[#1A1A1A] text-[3.5vw] font-medium divide-y divide-gray-100"
+                        text-[#1A1A1A] text-[3.5vw] font-medium divide-y divide-gray-200"
             >
-              {navLinks.map((link) =>
+              {mobileNavLinks.map((link) =>
                 link.items ? (
                   <div key={link.label} className="w-full pt-3">
                     <span className="px-[5vw] font-bold text-gray-400 text-sm">
