@@ -23,16 +23,16 @@ const FeaturedBlog = ({ post }) => {
     return plainText.substring(0, limit) + "...";
   };
 
-  // Mock tags/categories for the design
-  const tags = [
-    post.category || "Shipping Basics & Packaging",
-    "Logistics",
-  ].slice(0, 2);
+  // Resolve tags from dynamic blog data (service_headline_section.blogs[].tags)
+  const tags =
+    Array.isArray(post.tags) && post.tags.length > 0
+      ? post.tags.slice(0, 2)
+      : [post.category || "General", "Logistics"].slice(0, 2);
 
   return (
     <SmartNavLink
       to={`/blog/${post.slug}`}
-      className="group relative w-full h-[80vw] md:h-[32vw] rounded-[3vw] md:rounded-[1.5vw] overflow-hidden shadow-sm transition-all duration-300 block"
+      className="group relative w-full h-[80vw] md:h-[32vw] rounded-[3vw] md:rounded-[1.5vw] overflow-hidden shadow-sm transition-all duration-300 block hover:shadow-[0px_4px_25px_0px_#FF00E54D]"
     >
       {/* 1. Background Image */}
       <img
@@ -52,9 +52,9 @@ const FeaturedBlog = ({ post }) => {
       )}
 
       {/* 2. Floating Content Card */}
-      <div className="absolute bottom-[3vw] left-[3vw] right-[3vw] md:bottom-[2vw] md:left-[2vw] md:w-[45%] bg-white rounded-[2.5vw] md:rounded-[1vw] p-[4vw] md:p-[1vw] shadow-lg backdrop-blur-sm">
+      <div className="group absolute bottom-[3vw] left-[3vw] right-[3vw] md:bottom-[2vw] md:left-[2vw] md:w-[45%] bg-white rounded-[2.5vw] md:rounded-[1vw] p-[4vw] md:p-[1.5vw] shadow-lg backdrop-blur-sm">
         {/* Title */}
-        <h2 className="text-[4.5vw] md:text-[1.5vw] font-bold text-[#1A1A1A] leading-tight mb-[2vw] md:mb-[0.8vw] line-clamp-2">
+        <h2 className="text-[4.5vw] md:text-[1.5vw] font-bold text-[#1A1A1A] leading-tight mb-[2vw] md:mb-[0.8vw] line-clamp-2 group-hover:text-[#CC00B7] transition-colors">
           {post.title}
         </h2>
 
@@ -64,7 +64,7 @@ const FeaturedBlog = ({ post }) => {
             {tags.map((tag, index) => (
               <span
                 key={index}
-                className="bg-[#F8E3F5] text-[#99008A] px-[2.5vw] py-[1vw] md:px-[0.8vw] md:py-[0.3vw] md:rounded-[0.42vw] rounded-[1.1vw]  text-[2.5vw] md:text-[0.7vw] font-semibold"
+                className="bg-[#F8E3F5] text-[#99008A] px-[2.5vw] py-[1vw] md:px-[0.8vw] md:py-[0.3vw] md:rounded-[0.42vw] rounded-md text-[2.5vw] md:text-[0.7vw] font-semibold"
               >
                 {tag}
               </span>
@@ -85,22 +85,20 @@ const FeaturedBlog = ({ post }) => {
         {/* Footer: Read More & Share Icon */}
         <div className="flex items-center justify-between">
           <span className="text-[#CC00B7] text-[3.5vw] md:text-[0.9vw] font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
-            Read More <span className="text-xl">→</span>
+            Read More
+            <img
+              src="https://cdn.jsdelivr.net/gh/hezekiahdane/ShipX-Copy@main/src/assets/blogs-arrow-right-icon.svg"
+              alt="Arrow Right"
+              className="w-[5vw] h-[5vw] md:w-[1.2vw] md:h-[1.2vw]"
+            />
           </span>
 
-          <button className="text-[#8B1599] hover:text-[#FF00E5] transition-colors">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
+          <button className="text-[#CC00B7] group-hover:text-[#CC00B7]/80 group-hover:bg-fuchsia-50 p-1 md:p-2 rounded-full transition-all">
+            <img
+              src="https://cdn.jsdelivr.net/gh/hezekiahdane/ShipX-Copy@main/src/assets/blogs-share-icon.svg"
+              alt="Share"
               className="w-[5vw] h-[5vw] md:w-[1.2vw] md:h-[1.2vw]"
-            >
-              <path
-                fillRule="evenodd"
-                d="M15.75 4.5a3 3 0 11.159 5.94L9.53 12.25a3 3 0 110 2.5l6.38 1.81a3 3 0 11-.159 5.94l-8.25-2.34A3 3 0 017.5 21a3 3 0 11.159-5.94l6.38-1.81a3 3 0 010-2.5l-6.38-1.81a3 3 0 11.159-5.94l8.25 2.34A3 3 0 0116.5 3a3 3 0 01-.75 1.5z"
-                clipRule="evenodd"
-              />
-            </svg>
+            />
           </button>
         </div>
       </div>

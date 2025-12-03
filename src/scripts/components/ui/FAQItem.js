@@ -14,7 +14,7 @@ const FaqItem = ({ item, isOpen, onClick }) => {
         ${
           isOpen
             ? "bg-white shadow-[0_0_40px_-10px_rgba(236,72,153,0.3)] border border-pink-100 z-10 scale-[1.01]"
-            : "bg-slate-50 hover:bg-slate-100 border border-transparent"
+            : "bg-slate-50 hover:shadow-[0_0_40px_-10px_rgba(236,72,153,0.3)] border border-transparent"
         }
       `}
     >
