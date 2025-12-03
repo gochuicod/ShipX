@@ -11,7 +11,7 @@ const SGAmiloCards = () => {
   return (
     <ParallaxSection>
       <div
-        className={`relative w-screen ${margin} flex md:flex-row flex-col justify-center items-center md:gap-x-[3vw] gap-x-0 md:gap-y-0 gap-y-[10vw] md:pb-[10vw] pb-[25vw]`}
+        className={`relative w-screen ${margin} flex md:flex-row flex-col justify-center items-center md:gap-x-[3vw] gap-x-0 md:gap-y-0 gap-y-[10vw] md:pb-[5vw] pb-[25vw]`}
       >
         <div className="absolute top-[15vw] left-[-15vw] size-[15vw] rounded-full shadow-[15vw_0vw_25vw_rgba(74,58,255,0.3)] -z-10"></div>
         <div className="absolute top-[15vw] left-[-15vw] size-[15vw] rounded-full shadow-[20vw_10vw_15vw_rgba(255,0,229,0.3)] -z-30"></div>
