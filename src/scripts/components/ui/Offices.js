@@ -12,12 +12,12 @@ const Offices = () => {
   return (
     <div
       id="network"
-      className={`lg:min-h-screen md:h-fit h-auto relative flex flex-col justify-center items-center pt-[16vw] overflow-hidden select-none md:px-[8vw] px-[5vw]`}
+      className={`lg:min-h-screen md:h-fit h-auto relative flex flex-col justify-center items-center md:pt-[5vw] pt-[16vw] overflow-hidden select-none md:px-[8vw] px-[5vw]`}
     >
       <img
         src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_10.svg"
         alt="ShipX Decorative Background"
-        className="absolute translate-x-[36vw] -translate-y-[18vw] w-[200vw] md:h-[43vw] h-[83vw] pointer-events-none select-none -z-10"
+        className="absolute translate-x-[36vw] -translate-y-[5vw] w-[200vw] md:h-[43vw] h-[83vw] pointer-events-none select-none -z-10"
         aria-hidden="true"
       />
       <ParallaxSection>

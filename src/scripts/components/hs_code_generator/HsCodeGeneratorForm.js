@@ -1,8 +1,9 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { useHsCode } from "../../hooks/useHsCode";
 import ToolTipError from "./ToolTipError";
 import { useTranslation } from "react-i18next";
+import { useSearchParams } from "react-router-dom";
 
 const API_URL = "https://hs-code-generator.replit.app/api/classify";
 
@@ -15,6 +16,7 @@ export default function HsCodeGeneratorForm() {
     watch,
     reset,
     clearErrors,
+    setValue,
   } = useForm({
     defaultValues: {
       targetSystem: "USA",
@@ -117,6 +119,22 @@ export default function HsCodeGeneratorForm() {
     fileInputRef.current?.click();
   };
 
+  const [searchParams] = useSearchParams();
+  const productDescriptionRef = useRef();
+  const initialProductDescription = searchParams.get("productDescription");
+
+  useEffect(() => {
+    if (initialProductDescription) {
+      setValue("productDescription", initialProductDescription);
+      setTimeout(() => {
+        productDescriptionRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }, 500);
+    }
+  }, [initialProductDescription, setValue]);
+
   return (
     <form
       className="
@@ -144,6 +162,7 @@ export default function HsCodeGeneratorForm() {
         <div className="flex justify-between items-end mb-[0.5vw] md:mb-[0.3vw]">
           <div>
             <label
+              ref={productDescriptionRef}
               className="
                         md:text-[1vw] text-[3vw]
                         text-[#1E2939]
