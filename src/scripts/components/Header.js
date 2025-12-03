@@ -152,7 +152,7 @@ const Header = memo(() => {
         },
       ],
     },
-    { to: "/#network", label: t("header.network") },
+    // { to: "/#network", label: t("header.network") },
   ];
 
   const [selected, setSelected] = useState(() => {
