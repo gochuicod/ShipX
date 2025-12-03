@@ -303,11 +303,11 @@ const Footer = memo(() => {
         <div className="mt-[4vw] md:mt-[0.5vw] flex flex-col md:flex-row justify-between items-center text-[#1A1A1A] text-[3vw] md:text-[0.8vw] pt-[4vw] md:pt-[1.5vw]">
           <div className="flex flex-row gap-x-[1vw]">
             <SmartNavLink to="terms-and-conditions" end>
-              <span>Terms and Conditions</span>
+              <span>{t("footer.terms_and_conditions")}</span>
             </SmartNavLink>
             <span>•</span>
             <SmartNavLink to="privacy-policy" end>
-              <span>Privacy Policy</span>
+              <span>{t("footer.privacy_policy")}</span>
             </SmartNavLink>
           </div>
           <div className="text-center md:text-left">
