@@ -81,9 +81,9 @@ const ShipmentTracker = () => {
             />
             <h2
               className="
-                md:text-[2.5vw] text-[4vw]
+                md:text-[2.5vw] text-[6vw]
                 text-[#1E2939]
-                font-semibold
+                font-bold
               "
             >
               {t("shipment_tracker.track_order_section.title.regular")}&nbsp;
@@ -93,9 +93,8 @@ const ShipmentTracker = () => {
             </h2>
             <p
               className="
-                text-[#63666D]/95
-                md:text-[1vw] text-[3vw]
-                font-medium
+                text-[#63666D]
+                md:text-[0.9vw] text-[3.5vw]
                 md:text-end text-center
                 md:leading-[1.5vw] leading-[4vw]
               "
