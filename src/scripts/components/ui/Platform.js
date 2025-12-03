@@ -10,7 +10,7 @@ const Platform = () => {
   return (
     <div
       id="platform"
-      className={`lg:min-h-screen md:min-h-fit min-h-screen relative flex flex-col justify-center items-center pt-[3vw] pb-[5vw] overflow-hidden select-none`}
+      className={`lg:min-h-screen md:min-h-fit min-h-screen relative flex flex-col justify-center items-center pt-[3vw] md:pb-0 pb-[5vw] overflow-hidden select-none`}
     >
       <img
         className="absolute md:w-[50vw] w-[80vw] md:h-[45vw] h-[80vw] md:translate-x-[17vw] translate-x-[10vw] md:-translate-y-[1vw] translate-y-[1vw] -z-10"

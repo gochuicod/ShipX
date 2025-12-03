@@ -10,7 +10,7 @@ const Statistics = () => {
   return (
     <div
       id="statistics"
-      className={`relative flex md:flex-row flex-col-reverse justify-center items-center gap-x-[3vw] md:gap-y-0 gap-y-[10vw] md:pt-[15vw] pt-[40vw] lg:pb-[5vw] md:pb-[5vw] pb-[30vw] overflow-hidden select-none ${margin}`}
+      className={`relative flex md:flex-row flex-col-reverse justify-center items-center gap-x-[3vw] md:gap-y-0 gap-y-[10vw] md:pt-[15vw] pt-[40vw] lg:pb-0 md:pb-0 pb-[30vw] overflow-hidden select-none ${margin}`}
     >
       <img
         src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_2.svg"
