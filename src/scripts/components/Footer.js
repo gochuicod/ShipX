@@ -181,7 +181,7 @@ const Footer = memo(() => {
             {/* Column 1: Quick Links */}
             <div className="bg-white rounded-xl p-[5vw] md:p-[1.5vw] h-fit">
               <h3 className="text-[#FF4FF0] font-bold text-[4vw] md:text-[1.1vw] mb-[3vw] md:mb-[0.5vw]">
-                {t("footer.home")}
+                {t("footer.quick_links")}
               </h3>
               <ul className="space-y-[2vw] md:space-y-[0.3vw]">
                 {linkColumns.quickLinks.map((item) => (
