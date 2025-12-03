@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { MoveRight, Share2, Calendar } from "lucide-react";
+import { Calendar, ArrowRight } from "lucide-react";
 import SmartNavLink from "../ui/SmartNavLink";
 import SEO from "../ui/SEO";
 import Badge from "../shipment_tracker/Badge";
@@ -71,16 +71,13 @@ const BlogSection = () => {
                   const tags = post.tags || ["E-commerce", "Logistics"];
 
                   return (
-                    <article
+                    <SmartNavLink
                       key={post.slug}
-                      // LAYOUT: Horizontal (row) on Mobile, Vertical (col) on Desktop
-                      className="flex flex-row md:flex-col bg-white rounded-xl md:rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 p-2.5 md:p-0 gap-3 md:gap-0 items-stretch"
+                      to={`/blog/${post.slug}`}
+                      className="group flex flex-row md:flex-col bg-white rounded-xl md:rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-[0px_4px_25px_0px_#FF00E54D] transition-shadow duration-300 p-2.5 md:p-0 gap-3 md:gap-0 items-stretch hover:cursor-pointer"
                     >
                       {/* Image Container */}
-                      <SmartNavLink
-                        to={`/blog/${post.slug}`}
-                        className="relative w-[35%] md:w-full md:h-[13vw] shrink-0 block group"
-                      >
+                      <div className="relative w-[35%] md:w-full md:h-[13vw] shrink-0 block">
                         <img
                           src={post.cover}
                           alt={post.title}
@@ -94,28 +91,23 @@ const BlogSection = () => {
                             NEW
                           </span>
                         )}
-                      </SmartNavLink>
+                      </div>
 
                       {/* Content Body */}
                       <div className="flex flex-col grow w-[65%] md:w-full md:p-6 bg-white md:bg-[#F9FAFB] justify-between md:justify-start">
                         <div>
                           {/* Title */}
-                          <SmartNavLink
-                            to={`/blog/${post.slug}`}
-                            className="block mb-2"
-                          >
-                            <h3 className="text-sm md:text-[1.1vw] font-bold text-[#121212] leading-tight md:leading-normal line-clamp-3 md:line-clamp-2 hover:text-[#CC00B7] transition-colors">
-                              {/* MOBILE: Truncated Title (Limit 50 chars) */}
-                              <span className="md:hidden">
-                                {getTruncatedContent(post.title, 50)}
-                              </span>
+                          <h3 className="text-sm md:text-[1.1vw] font-bold text-[#121212] leading-tight md:leading-normal line-clamp-3 md:line-clamp-2 group-hover:text-[#CC00B7] transition-colors">
+                            {/* MOBILE: Truncated Title (Limit 50 chars) */}
+                            <span className="md:hidden">
+                              {getTruncatedContent(post.title, 50)}
+                            </span>
 
-                              {/* DESKTOP: Full Title */}
-                              <span className="hidden md:block">
-                                {post.title}
-                              </span>
-                            </h3>
-                          </SmartNavLink>
+                            {/* DESKTOP: Full Title */}
+                            <span className="hidden md:block">
+                              {post.title}
+                            </span>
+                          </h3>
 
                           {/* Tags */}
                           <div className="flex flex-wrap items-center gap-2 mb-2 md:mb-4">
@@ -144,27 +136,36 @@ const BlogSection = () => {
                         )}
 
                         {/* Footer Actions */}
-                        <div className="flex items-center justify-between mt-1 md:mt-auto md:pt-4 md:border-t border-gray-100">
-                          <SmartNavLink
-                            to={`/blog/${post.slug}`}
-                            className="group flex items-center text-[#CC00B7] font-semibold text-xs md:text-sm hover:text-[#CC00B7]/80 transition-colors"
-                          >
+                        <div
+                          className="flex items-center justify-between mt-1 md:mt-auto md:pt-4 md:border-t border-gray-100"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <span className="flex items-center text-[#CC00B7] font-semibold text-xs md:text-sm group-hover:text-[#CC00B7]/80 transition-colors">
                             Read More
-                            <MoveRight className="w-3 h-3 md:w-4 md:h-4 ml-1 md:ml-2 transition-transform group-hover:translate-x-1" />
-                          </SmartNavLink>
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/hezekiahdane/ShipX-Copy@main/src/assets/blogs-arrow-right-icon.svg"
+                              alt="Arrow Right"
+                              className="w-3 h-3 md:w-4 md:h-4 ml-1 md:ml-2 transition-transform group-hover:translate-x-1"
+                            />
+                          </span>
 
                           <button
-                            className="text-[#CC00B7] hover:text-[#CC00B7]/80 hover:bg-fuchsia-50 p-1 md:p-2 rounded-full transition-all"
+                            className="text-[#CC00B7] group-hover:text-[#CC00B7]/80 group-hover:bg-fuchsia-50 p-1 md:p-2 rounded-full transition-all"
                             onClick={(e) => {
                               e.preventDefault();
+                              e.stopPropagation();
                               // navigator.share logic
                             }}
                           >
-                            <Share2 className="w-3 h-3 md:w-4 md:h-4" />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/hezekiahdane/ShipX-Copy@main/src/assets/blogs-share-icon.svg"
+                              alt="Share"
+                              className="w-3 h-3 md:w-4 md:h-4"
+                            />
                           </button>
                         </div>
                       </div>
-                    </article>
+                    </SmartNavLink>
                   );
                 })}
             </div>
@@ -173,6 +174,43 @@ const BlogSection = () => {
               <p className="text-gray-500 text-lg">No blog posts found.</p>
             </div>
           )}
+
+          {/* Read More - All Blogs Button */}
+          <div className="text-center md:mt-[2vw] mt-[5vw]">
+            <SmartNavLink
+              to="/blog"
+              className="
+                group
+                relative
+                inline-flex items-center justify-center
+                p-px
+                rounded-full
+                bg-linear-to-b from-[#FF00E5] to-[#4F378A]
+                transition-transform active:scale-95
+                hover:cursor-pointer
+              "
+            >
+              <span
+                className="
+                  w-full h-full
+                  rounded-full
+                  md:px-[1.56vw] px-[8vw]
+                  md:py-[0.36vw] py-[2.5vw]
+                  md:text-[0.9vw] text-[3.5vw]
+                  font-medium
+                  bg-white
+                  text-[#1A1A1A]
+                  transition-all duration-300 ease-in-out
+                  group-hover:bg-transparent
+                  group-hover:text-white
+                  flex items-center justify-center gap-[0.52vw]
+                "
+              >
+                Read More
+                <ArrowRight className="hidden md:inline-block md:w-[0.9vw] md:h-[0.9vw] transition-transform group-hover:translate-x-1 text-[#FF00E5] md:group-hover:text-white" />
+              </span>
+            </SmartNavLink>
+          </div>
         </div>
       </section>
     </>
