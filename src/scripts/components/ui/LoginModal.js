@@ -68,11 +68,10 @@ const LoginModal = () => {
         <div
           className="
             absolute top-full md:mt-[1vw] mt-[3vw]
-            left-1/2 -translate-x-1/2
+            left-0 -translate-x-1/2
             md:w-auto w-[90vw]
             bg-white md:rounded-[1vw] rounded-[3vw]
-            md:shadow-[0_0_0.5vw_rgba(255,0,229,0.2)]
-            shadow-[0_0_1.5vw_rgba(255,0,229,0.3)]
+            border border-[#FF00E5]
             z-1000 md:p-[2vw] p-[5vw]
             flex md:flex-row flex-col md:gap-[2vw] gap-[5vw]
           "

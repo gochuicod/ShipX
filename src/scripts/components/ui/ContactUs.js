@@ -9,7 +9,7 @@ const ContactUs = () => {
   return (
     <div
       id="contact-us"
-      className="relative flex flex-col justify-center items-center md:pt-[5vw] pt-[1vw] overflow-hidden md:mb-[5vw] md:pb-[5vw] pb-0 mb-[70vw]"
+      className="relative flex flex-col justify-center items-center md:pt-[5vw] pt-[1vw] overflow-hidden md:mb-[5vw] md:pb-[5vw] pb-0 mb-0"
     >
       {/* <img
         src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_7.svg"

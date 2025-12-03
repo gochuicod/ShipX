@@ -55,7 +55,7 @@ const Header = memo(() => {
               />
             </svg>
           </Popover.Button>
-          <Popover.Panel className="absolute z-10 mt-3 md:w-[12vw] -translate-x-1/4 transform bg-white md:rounded-[0.5vw] rounded-[2vw] border border-[#4D4D4D]">
+          <Popover.Panel className="absolute z-10 mt-3 md:w-[12vw] -translate-x-1/4 transform bg-white md:rounded-[0.5vw] rounded-[2vw] border border-[#FF00E5]">
             <div className="p-1">
               {items.map((item) => (
                 <SmartNavLink key={item.to} to={item.to} className="group">
@@ -159,6 +159,10 @@ const Header = memo(() => {
     { to: "/#contact-us", label: t("header.contact_us") },
     { to: "/book-a-demo", label: t("header.book_a_demo") },
   ];
+
+  const handleMobileLinkClick = () => {
+    setIsOpen(false);
+  };
 
   const [selected, setSelected] = useState(() => {
     const current = i18n.language || localStorage.getItem("lang") || "en";
@@ -424,6 +428,7 @@ const Header = memo(() => {
                       <SmartNavLink
                         key={item.to}
                         to={item.to}
+                        onClick={handleMobileLinkClick}
                         className={`${linkClass} block w-full text-left px-[5vw] py-2`}
                       >
                         {item.label}
@@ -434,6 +439,7 @@ const Header = memo(() => {
                   <SmartNavLink
                     key={link.to}
                     to={link.to}
+                    onClick={handleMobileLinkClick}
                     className={`${linkClass} w-full text-left px-[5vw] pt-3`}
                   >
                     {link.label}

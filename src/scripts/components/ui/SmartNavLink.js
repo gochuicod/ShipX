@@ -7,6 +7,7 @@ const SmartNavLink = ({
   className,
   children,
   delay = 1000,
+  onClick,
 }) => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -23,6 +24,11 @@ const SmartNavLink = ({
   const handleClick = (e) => {
     const [pathname, hash] = fullPath.split("#");
     const isSamePath = location.pathname === pathname;
+
+    // If an external onClick handler is provided, execute it.
+    if (onClick) {
+      onClick(e);
+    }
 
     if (hash) {
       e.preventDefault();

@@ -28,12 +28,12 @@ const Footer = memo(() => {
   };
 
   return (
-    <div className="md:pt-[15vw] relative">
+    <div className="md:pt-[15vw] pt-[60vw] relative">
       {/* CTA Section */}
       <div
         className="
                 absolute
-                md:top-[2vw] top-[-60vw] left-0 right-0
+                md:top-[2vw] top-0 left-0 right-0
                 flex flex-col
                 md:w-[85vw] w-[90vw]
                 md:h-auto h-[80vw]
