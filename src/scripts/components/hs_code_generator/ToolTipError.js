@@ -9,7 +9,6 @@ export default function TooltipError({ message }) {
         absolute
         left-0
         md:-top-[2vw] -top-[7vw]
-        z-50
         animate-in fade-in slide-in-from-bottom-[1vw] duration-500
       "
     >

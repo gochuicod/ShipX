@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Badge from "../shipment_tracker/Badge";
 import ClaimSubmissionModal from "./ClaimSubmissionModal";
@@ -154,6 +155,27 @@ const FileAClaimForm = () => {
   const inputClass =
     "border border-[#B9AFD0] rounded-lg p-[3vw] md:p-[0.7vw] focus:outline-none focus:border-[#99008A] w-full bg-white text-[3.5vw] md:text-[0.9vw]";
 
+  const [searchParams] = useSearchParams();
+  const trackingNumberRef = useRef();
+  const initialTrackingNumber = searchParams.get("trackingNumber");
+  const initialDescription = searchParams.get("description");
+
+  useEffect(() => {
+    if (initialTrackingNumber) {
+      setFormData((prev) => ({
+        ...prev,
+        trackingNumber: initialTrackingNumber,
+        description: initialDescription || prev.description,
+      }));
+      setTimeout(() => {
+        trackingNumberRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }, 500);
+    }
+  }, [initialTrackingNumber, initialDescription]);
+
   return (
     <>
       <ClaimSubmissionModal
@@ -176,7 +198,7 @@ const FileAClaimForm = () => {
           <h2 className="font-bold text-[#1E2939] text-center text-[6vw] md:text-[2.5vw]">
             {t("file_a_claim.header_section.title")}
           </h2>
-          <p className="text-[#63666D]/75 font-medium md:text-[1vw] text-[3vw] text-center w-full md:max-w-[40vw] leading-[1.4]">
+          <p className="text-[#63666D]/75 font-medium md:text-[0.9vw] text-[3.5vw] text-center w-full md:max-w-[40vw] leading-[1.4]">
             {t("file_a_claim.header_section.description")}
           </p>
         </div>
@@ -433,7 +455,7 @@ const FileAClaimForm = () => {
                 </div>
 
                 <div className="flex flex-col gap-[1vw] md:gap-[0.3vw]">
-                  <label className={labelClass}>
+                  <label ref={trackingNumberRef} className={labelClass}>
                     {t(
                       "file_a_claim.form_section.fields.tracking_number.label",
                     )}{" "}

@@ -3,6 +3,13 @@
     "tagline": "Nền tảng Thế hệ mới của ASEAN",
     "home": "Trang chủ",
     "services": "Dịch vụ",
+    "toolkit": "Bộ công cụ",
+    "shipment_tracker": "Theo dõi đơn hàng",
+    "hs_code_generator": "Công cụ tạo mã HS",
+    "file_a_claim": "Gửi yêu cầu bồi thường",
+    "resources": "Tài nguyên",
+    "blogs": "Blog",
+    "faqs": "Câu hỏi thường gặp",
     "platform": "Nền tảng",
     "network": "Mạng lưới toàn cầu",
     "book_a_demo": "Đặt lịch trải nghiệm",
@@ -1584,12 +1591,12 @@
       "generate_another_hs_code_button": "Tạo Mã HS Khác"
     }
   },
-    "all_blog_posts_page": {
-      "badge_title": "Blog và Bài viết",
-      "title_section": {
-        "title_prefix": "Trung Tâm Logistics",
-        "title_suffix": "Xuyên Biên Giới",
-        "subtitle": "Thông tin chuyên sâu, hướng dẫn chiến lược và các xu hướng mới nhất giúp nhà bán hàng ASEAN điều hướng thương mại toàn cầu."
+  "all_blog_posts_page": {
+    "badge_title": "Blog và Bài viết",
+    "title_section": {
+      "title_prefix": "Trung Tâm Logistics",
+      "title_suffix": "Xuyên Biên Giới",
+      "subtitle": "Thông tin chuyên sâu, hướng dẫn chiến lược và các xu hướng mới nhất giúp nhà bán hàng ASEAN điều hướng thương mại toàn cầu."
     },
       "placeholder": "Bắt đầu nhập để tìm blog và bài viết..."
   },

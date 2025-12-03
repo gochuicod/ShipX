@@ -12,7 +12,7 @@ const ContactUs = lazy(() => import("./ui/ContactUs"));
 const SEO = lazy(() => import("./ui/SEO"));
 const FAQSection = lazy(() => import("./ui/FAQSection"));
 const Blogs = lazy(() => import("./blogs/BlogsSection"));
-// const Toolkit = lazy(() => import("./tools/ToolKitLayout"));
+const Toolkit = lazy(() => import("./tools/ToolKitLayout"));
 // const ServiceHeadline = lazy(() => import("./ui/ServiceHeadline"));
 // const AnnouncementBanner = lazy(() => import("./ui/AnnouncementBanner"));
 
@@ -36,6 +36,7 @@ const Main = ({ margin }) => {
         <div className="flex flex-col">
           <Carousel margin={margin} />
           <Services />
+          <Toolkit />
           <Statistics />
           <Platform />
           <SGAmiloCards />
@@ -45,7 +46,6 @@ const Main = ({ margin }) => {
           <FAQSection />
           <ContactUs />
           {/* Disabled sections below for now */}
-          {/* <Toolkit /> */}
           {/* <ServiceHeadline /> */}
           {/* <AnnouncementBanner /> */}
         </div>
