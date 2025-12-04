@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useShipment } from "../../hooks/useShipment";
 import { useTranslation } from "react-i18next";
 import ToolTipError from "../hs_code_generator/ToolTipError";
+import Button from "../ui/Button";
 
 const ShipmentTrackerForm = ({ initialTrackingNumber, autoSubmit = false }) => {
   const {
@@ -15,7 +16,13 @@ const ShipmentTrackerForm = ({ initialTrackingNumber, autoSubmit = false }) => {
   } = useForm();
   const { t } = useTranslation();
 
-  const { shipmentData, setShipmentData, setTrackingNumber } = useShipment();
+  // This assumes useShipment is refactored to expose a `trackShipment` function
+  // and an `error` state.
+  const { setShipmentData, setTrackingNumber, error: apiError } =
+    useShipment();
+
+  // Combine form errors and API errors for a single source of truth.
+  const displayError = errors.trackingNumber?.message || apiError;
 
   // Effect to handle auto-submission when redirected
   useEffect(() => {
@@ -104,14 +111,9 @@ const ShipmentTrackerForm = ({ initialTrackingNumber, autoSubmit = false }) => {
             {t("shipment_tracker.track_order_section.form.label")}
           </label>
           <div className="relative">
-            {isSubmitted &&
-              (errors.trackingNumber || shipmentData?.errors?.length > 0) && (
-                <ToolTipError
-                  message={
-                    errors.trackingNumber?.message || shipmentData?.errors?.[0]
-                  }
-                />
-              )}
+            {isSubmitted && displayError && (
+              <ToolTipError message={displayError} />
+            )}
             <input
               aria-invalid={errors.trackingNumber ? "true" : "false"}
               id="trackingNumber"
@@ -138,7 +140,8 @@ const ShipmentTrackerForm = ({ initialTrackingNumber, autoSubmit = false }) => {
                 },
                 onChange: () => {
                   clearErrors("trackingNumber");
-                  if (shipmentData?.errors) setShipmentData(null);
+                  // Also clear API error from useShipment if it exists
+                  if (apiError) setShipmentData(null);
                 },
               })}
               autoComplete="number"
@@ -146,29 +149,11 @@ const ShipmentTrackerForm = ({ initialTrackingNumber, autoSubmit = false }) => {
             />
           </div>
         </div>
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="
-                        bg-linear-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
-                        bg-size-[200%_100%] bg-position-[0%_0%] hover:bg-position-[100%_0%]
-                        transition-[background-position] duration-1000 ease-in-out
-                        md:py-[0.5vw] py-[1.4vw]
-                        md:px-[1.5vw] px-[3vw]
-                        md:rounded-[2vw] rounded-full
-                        cursor-pointer
-                        text-white
-                        md:font-medium font-normal
-                        md:text-[0.8vw] text-[2.4vw]
-                    "
-          style={{
-            fontFamily: "Karla, system-ui, -apple-system, sans-serif",
-          }}
-        >
+        <Button type="submit" disabled={isSubmitting}>
           {isSubmitting
             ? t("shipment_tracker.track_order_section.form.submitting")
             : t("shipment_tracker.track_order_section.form.submit_button")}
-        </button>
+        </Button>
       </form>
     </div>
   );

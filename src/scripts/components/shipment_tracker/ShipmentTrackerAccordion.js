@@ -3,7 +3,7 @@ import {
   AccordionHeader,
   AccordionBody,
 } from "@material-tailwind/react";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import {
   getLastStatusLabel,
   mapStatuses,
@@ -11,6 +11,58 @@ import {
 } from "./StatusMap";
 import Stepper from "./Stepper";
 import { useTranslation } from "react-i18next";
+
+const STATUS_COLORS = {
+  SUCCESS: "text-[#008236]",
+  WARNING: "text-[#D08700]",
+  DEFAULT: "text-[#1A1A1A]",
+};
+
+const WARNING_STATUSES = new Set([
+  "CREATING_FAILED",
+  "SHIPMENT_DELIVERY_UNSUCCESSFUL",
+  "SHIPMENT_RETUNRED_FROM_OVERSEAS",
+  "SHIPMERNT_RETURNED_TO_SENDER",
+  "SHIPMENT_DAMAGED",
+  "SHIPMENT_LOST",
+  "SHIPMENT_FAILED_ATTEMPT",
+  "SHIPMENT_HOLD_BY_CUSTOMS_AT_DESTINATION",
+  "SHIPMENT_HOLD_AT_POINT_OF_DELIVERY",
+  "HOLD_FOR_PAYMENT",
+]);
+
+const LatestStatusInfo = ({
+  isHidden,
+  statusLabel,
+  statusColor,
+  formattedDate,
+}) => {
+  const { t } = useTranslation();
+
+  if (isHidden) {
+    return null;
+  }
+
+  return (
+    <div className="flex flex-col">
+      <span className="text-[#4D4D4D] md:text-[#1A1A1A] md:text-[0.8vw] text-[3vw] font-bold">
+        {t(
+          "shipment_tracker.shipment_activity_section.accordion_body.latest_status_text",
+        )}
+      </span>
+      <span
+        className={`${statusColor} md:text-[1vw] text-[3.5vw] font-bold`}
+      >
+        {statusLabel}
+      </span>
+      {formattedDate && (
+        <span className="text-[#63666D]/90 md:text-[0.65vw] text-[2.3vw] font-normal">
+          {formattedDate}
+        </span>
+      )}
+    </div>
+  );
+};
 
 export default function ShipmentTrackerAccordion({
   shipmentData = [],
@@ -20,45 +72,36 @@ export default function ShipmentTrackerAccordion({
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
   const [open, setOpen] = useState(1);
   const { t } = useTranslation();
+  const { statuses } = shipmentData;
 
-  const steps = mapStatuses(shipmentData?.statuses, t);
-  const lastStatus = getLastStatusLabel(shipmentData?.statuses, t);
-
-  const getStatusColor = () => {
-    if (!shipmentData?.statuses || shipmentData.statuses.length === 0) {
-      return "text-[#1A1A1A]";
+  const {
+    steps,
+    lastStatusLabel,
+    statusColor,
+    formattedDate,
+  } = useMemo(() => {
+    if (!statuses || statuses.length === 0) {
+      return { steps: [], lastStatusLabel: null, statusColor: STATUS_COLORS.DEFAULT, formattedDate: null };
     }
 
-    // Sort statuses by date to ensure we get the most recent one.
-    const sortedStatuses = [...shipmentData.statuses].sort(
-      (a, b) => new Date(a.updatedDate) - new Date(b.updatedDate),
-    );
-    const latestStatus = sortedStatuses[sortedStatuses.length - 1];
+    const sorted = [...statuses].sort((a, b) => new Date(b.updatedDate) - new Date(a.updatedDate));
+    const latestStatus = sorted[0];
     const latestStatusCode = latestStatus?.statusCode;
 
-    switch (latestStatusCode) {
-      // Green for successful delivery
-      case "SHIPMENT_DELIVERED": // 6034
-        return "text-[#008236]";
-
-      // Amber for unsuccessful, hold, or error statuses
-      case "CREATING_FAILED": // 3004
-      case "SHIPMENT_DELIVERY_UNSUCCESSFUL": // 6008
-      case "SHIPMENT_RETUNRED_FROM_OVERSEAS": // 7011 (as per your doc)
-      case "SHIPMERNT_RETURNED_TO_SENDER": // 7002 (as per your doc)
-      case "SHIPMENT_DAMAGED": // 2009
-      case "SHIPMENT_LOST": // 2007
-      case "SHIPMENT_FAILED_ATTEMPT": // 2004
-      case "SHIPMENT_HOLD_BY_CUSTOMS_AT_DESTINATION": // 4005
-      case "SHIPMENT_HOLD_AT_POINT_OF_DELIVERY": // 6040
-      case "HOLD_FOR_PAYMENT": // 2043
-        return "text-[#D08700]";
-
-      // Dark gray for all other in-transit statuses
-      default:
-        return "text-[#1A1A1A]";
+    let color = STATUS_COLORS.DEFAULT;
+    if (latestStatusCode === "SHIPMENT_DELIVERED") {
+      color = STATUS_COLORS.SUCCESS;
+    } else if (WARNING_STATUSES.has(latestStatusCode)) {
+      color = STATUS_COLORS.WARNING;
     }
-  };
+
+    return {
+      steps: mapStatuses(statuses, t),
+      lastStatusLabel: getLastStatusLabel(statuses, t),
+      statusColor: color,
+      formattedDate: formatShipmentDate(statuses),
+    };
+  }, [statuses, t]);
 
   return (
     <>
@@ -125,43 +168,12 @@ export default function ShipmentTrackerAccordion({
               md:py-[1vw] py-[5vw]
             "
           >
-            <div
-              className={`
-                ${latestStatusHidden === false ? "flex flex-col" : "hidden"}
-              `}
-            >
-              <span
-                className="
-                  text-[#4D4D4D] md:text-[#1A1A1A]
-                  md:text-[0.8vw] text-[3vw]
-                  font-bold
-                "
-              >
-                {t(
-                  "shipment_tracker.shipment_activity_section.accordion_body.latest_status_text",
-                )}
-              </span>
-              <span
-                className={`
-                  ${getStatusColor()}
-                  md:text-[1vw] text-[3.5vw]
-                  font-bold
-                `}
-              >
-                {lastStatus}
-              </span>
-              {shipmentData?.statuses && shipmentData.statuses.length > 0 && (
-                <span
-                  className="
-                    text-[#63666D]/90
-                    md:text-[0.65vw] text-[2.3vw]
-                    font-normal
-                  "
-                >
-                  {formatShipmentDate(shipmentData?.statuses)}
-                </span>
-              )}
-            </div>
+            <LatestStatusInfo
+              isHidden={latestStatusHidden}
+              statusLabel={lastStatusLabel}
+              statusColor={statusColor}
+              formattedDate={formattedDate}
+            />
             <span
               className={`
               text-[#4D4D4D] md:text-[#1A1A1A]
