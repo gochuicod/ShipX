@@ -1,18 +1,15 @@
-import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import Input from "./Input";
 import Button from "./Button";
-import ToolTipError from "../hs_code_generator/ToolTipError";
+import ToolTipError from "./ToolTipError";
 
 const ShipmentTrackerForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting, isSubmitted },
-    watch,
-    clearErrors,
+    formState: { errors, isSubmitting, isSubmitted }
   } = useForm();
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -22,14 +19,6 @@ const ShipmentTrackerForm = () => {
       `/shipment-tracker?trackingNumber=${data.trackingNumber}&autosubmit=true`,
     );
   };
-
-  const trackingNumberValue = watch("trackingNumber");
-
-  useEffect(() => {
-    if (errors.trackingNumber) {
-      clearErrors("trackingNumber");
-    }
-  }, [trackingNumberValue, clearErrors]);
 
   return (
     <form
@@ -57,10 +46,6 @@ const ShipmentTrackerForm = () => {
                 if (/\s/.test(value))
                   return "Tracking number cannot contain spaces";
                 return true;
-              },
-              onChange: () => {
-                clearErrors("trackingNumber");
-                if (shipmentData?.errors) setShipmentData(null);
               },
             })}
             id="trackingNumber"
