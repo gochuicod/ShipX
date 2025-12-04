@@ -385,11 +385,11 @@ export default function HsCodeGeneratorForm() {
                                 w-full
                                 z-20
                                 relative
-                                md:gap-x-[0.35vw] gap-x-[1vw]
+                                md:gap-[0.35vw] gap-[1vw]
                                 justify-start items-center
                                 md:h-[3.5vw] h-[10vw]
-                                md:pl-[0.35vw] pl-[1vw]
-                                overflow-hidden
+                                md:p-[0.35vw] p-[1vw]
+                                overflow-x-auto
                             "
             >
               {files.map((file, index) => (
