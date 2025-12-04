@@ -190,7 +190,9 @@ export default function HsCodeGeneratorForm() {
           </div>
           <span
             className={`md:text-[0.7vw] text-[2.2vw] font-medium md:leading-[1.5vw] leading-[3vw] ${
-              currentLength < MIN_DESC_LENGTH ? "text-red-500" : "text-green-600"
+              currentLength < MIN_DESC_LENGTH
+                ? "text-red-500"
+                : "text-green-600"
             }`}
           >
             {currentLength}/{MIN_DESC_LENGTH}

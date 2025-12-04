@@ -9,7 +9,7 @@ const ShipmentTrackerForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting, isSubmitted }
+    formState: { errors, isSubmitting, isSubmitted },
   } = useForm();
   const { t } = useTranslation();
   const navigate = useNavigate();

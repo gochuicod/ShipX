@@ -30,7 +30,10 @@ export const useClipboard = (timeout = 2000) => {
       };
 
       if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(text).then(triggerCopiedState).catch(fallbackCopy);
+        navigator.clipboard
+          .writeText(text)
+          .then(triggerCopiedState)
+          .catch(fallbackCopy);
       } else {
         fallbackCopy(text);
       }

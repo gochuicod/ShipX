@@ -18,8 +18,7 @@ const ShipmentTrackerForm = ({ initialTrackingNumber, autoSubmit = false }) => {
 
   // This assumes useShipment is refactored to expose a `trackShipment` function
   // and an `error` state.
-  const { setShipmentData, setTrackingNumber, error: apiError } =
-    useShipment();
+  const { setShipmentData, setTrackingNumber, error: apiError } = useShipment();
 
   // Combine form errors and API errors for a single source of truth.
   const displayError = errors.trackingNumber?.message || apiError;

@@ -50,9 +50,7 @@ const LatestStatusInfo = ({
           "shipment_tracker.shipment_activity_section.accordion_body.latest_status_text",
         )}
       </span>
-      <span
-        className={`${statusColor} md:text-[1vw] text-[3.5vw] font-bold`}
-      >
+      <span className={`${statusColor} md:text-[1vw] text-[3.5vw] font-bold`}>
         {statusLabel}
       </span>
       {formattedDate && (
@@ -74,17 +72,19 @@ export default function ShipmentTrackerAccordion({
   const { t } = useTranslation();
   const { statuses } = shipmentData;
 
-  const {
-    steps,
-    lastStatusLabel,
-    statusColor,
-    formattedDate,
-  } = useMemo(() => {
+  const { steps, lastStatusLabel, statusColor, formattedDate } = useMemo(() => {
     if (!statuses || statuses.length === 0) {
-      return { steps: [], lastStatusLabel: null, statusColor: STATUS_COLORS.DEFAULT, formattedDate: null };
+      return {
+        steps: [],
+        lastStatusLabel: null,
+        statusColor: STATUS_COLORS.DEFAULT,
+        formattedDate: null,
+      };
     }
 
-    const sorted = [...statuses].sort((a, b) => new Date(b.updatedDate) - new Date(a.updatedDate));
+    const sorted = [...statuses].sort(
+      (a, b) => new Date(b.updatedDate) - new Date(a.updatedDate),
+    );
     const latestStatus = sorted[0];
     const latestStatusCode = latestStatus?.statusCode;
 

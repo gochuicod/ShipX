@@ -1,9 +1,6 @@
 import { cn } from "../../utils";
 
-const Textarea = (
-  { id, placeholder, error, className, ...props },
-  ref,
-) => {
+const Textarea = ({ id, placeholder, error, className, ...props }, ref) => {
   return (
     <textarea
       id={id}
