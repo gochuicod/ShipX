@@ -1,48 +1,14 @@
 import { useState } from "react";
+import { useClipboard } from "../../hooks/useClipboard";
 
 export default function HierarchyPill({ item }) {
-  const [copied, setCopied] = useState(false);
   const [isActive, setIsActive] = useState(false);
+  const { isCopied, copy } = useClipboard();
 
   const handleCopyDescription = (e) => {
     e.preventDefault();
     e.stopPropagation(); // Stop propagation so we don't trigger wrapper clicks
-
-    const textToCopy = item.description;
-
-    // Robust Copy Logic inside the Pill
-    if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard
-        .writeText(textToCopy)
-        .then(() => {
-          setCopied(true);
-          setTimeout(() => setCopied(false), 2000);
-        })
-        .catch((err) => {
-          console.warn("Clipboard API failed in Pill, using fallback", err);
-          fallbackCopy(textToCopy);
-        });
-    } else {
-      fallbackCopy(textToCopy);
-    }
-  };
-
-  const fallbackCopy = (text) => {
-    const textArea = document.createElement("textarea");
-    textArea.value = text;
-    textArea.style.position = "fixed";
-    textArea.style.left = "-9999px";
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-    try {
-      document.execCommand("copy");
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error("Fallback copy failed", err);
-    }
-    document.body.removeChild(textArea);
+    copy(item.description);
   };
 
   const handleBlur = (e) => {
@@ -149,7 +115,7 @@ export default function HierarchyPill({ item }) {
             cursor-pointer
           "
         >
-          {copied ? (
+          {isCopied ? (
             <span className="font-bold">Copied</span>
           ) : (
             <span>Copy Description</span>

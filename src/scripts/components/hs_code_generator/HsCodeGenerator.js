@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import SmartNavLink from "../ui/SmartNavLink";
 import Badge from "../shipment_tracker/Badge";
 import HsCodeGeneratorForm from "./HsCodeGeneratorForm";
 import HsCodeGeneratorResult from "./HsCodeGeneratorResult";

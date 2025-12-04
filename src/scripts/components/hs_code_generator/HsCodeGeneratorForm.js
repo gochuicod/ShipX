@@ -4,8 +4,13 @@ import { useHsCode } from "../../hooks/useHsCode";
 import ToolTipError from "./ToolTipError";
 import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
+import Textarea from "./Textarea";
+import Button from "../ui/Button";
 
 const API_URL = "https://hs-code-generator.replit.app/api/classify";
+const MIN_DESC_LENGTH = 15;
+const MAX_FILES = 5;
+const MAX_FILE_SIZE_MB = 5;
 
 export default function HsCodeGeneratorForm() {
   const {
@@ -34,7 +39,7 @@ export default function HsCodeGeneratorForm() {
     useState(false);
 
   const productDescriptionValue = watch("productDescription");
-  const minLength = 15;
+
   const currentLength = productDescriptionValue?.length || 0;
 
   const handleFileChange = (e) => {
@@ -47,11 +52,11 @@ export default function HsCodeGeneratorForm() {
     const validFiles = [];
     let errorMessage = "";
 
-    if (files.length + newFiles.length > 5) {
-      errorMessage = "Maximum 5 files allowed.";
+    if (files.length + newFiles.length > MAX_FILES) {
+      errorMessage = `Maximum ${MAX_FILES} files allowed.`;
     } else {
       newFiles.forEach((file) => {
-        if (file.size > 5 * 1024 * 1024) {
+        if (file.size > MAX_FILE_SIZE_MB * 1024 * 1024) {
           errorMessage = `File ${file.name} is too large (Max 5MB).`;
         } else if (
           !["image/jpeg", "image/png", "application/pdf"].includes(file.type)
@@ -185,10 +190,10 @@ export default function HsCodeGeneratorForm() {
           </div>
           <span
             className={`md:text-[0.7vw] text-[2.2vw] font-medium md:leading-[1.5vw] leading-[3vw] ${
-              currentLength < minLength ? "text-red-500" : "text-green-600"
+              currentLength < MIN_DESC_LENGTH ? "text-red-500" : "text-green-600"
             }`}
           >
-            {currentLength}/{minLength}
+            {currentLength}/{MIN_DESC_LENGTH}
           </span>
         </div>
         <div className="relative">
@@ -199,33 +204,17 @@ export default function HsCodeGeneratorForm() {
               <ToolTipError message={errors.productDescription.message} />
             )}
 
-          <textarea
+          <Textarea
             id="productDescription"
             aria-invalid={errors.productDescription ? "true" : "false"}
-            className={`
-              w-full
-              border
-              md:mt-0 mt-[1.5vw]
-              md:rounded-[0.7vw] rounded-[2vw]
-              md:px-[1vw] px-[2vw]
-              md:py-[0.5vw] py-[1.5vw]
-              resize-none
-              focus:outline-none
-              italic focus:not-italic
-              md:h-[3.5vw] h-[10vw]
-              md:text-[0.7vw] text-[2vw]
-              text-[#99A1AF] focus:text-[#4A5565]/80
-              ${errors.productDescription ? "border-red-500 focus:border-red-500" : "border-[#B9AFD0]"}
-            `}
-            placeholder={
-              errors.productDescription
-                ? errors.productDescription.message
-                : t("hs_code_generator_page.form_section.input_1.placeholder")
-            }
+            placeholder={t(
+              "hs_code_generator_page.form_section.input_1.placeholder",
+            )}
+            error={errors.productDescription}
             {...register("productDescription", {
               required: "Product description is required",
               minLength: {
-                value: 15,
+                value: MIN_DESC_LENGTH,
                 message: "Description must be at least 15 characters",
               },
               onChange: (e) => {
@@ -265,31 +254,11 @@ export default function HsCodeGeneratorForm() {
         >
           {t("hs_code_generator_page.form_section.input_2.note")}
         </p>
-        <textarea
-          className={`
-                        w-full
-                        border
-                        md:mt-0 mt-[1.5vw]
-                        md:rounded-[0.7vw] rounded-[2vw]
-                        md:px-[1vw] px-[2vw]
-                        md:py-[0.5vw] py-[1.5vw]
-                        resize-none
-                        focus:outline-none
-                        italic focus:not-italic
-                        md:h-[3.5vw] h-[10vw]
-                        md:text-[0.7vw] text-[2vw]
-                        text-[#99A1AF] focus:text-[#4A5565]/80
-                        ${
-                          errors.intendedUse
-                            ? "border-red-500 focus:border-red-500"
-                            : "border-[#B9AFD0]"
-                        }
-                    `}
-          placeholder={
-            errors.intendedUse
-              ? errors.intendedUse.message
-              : t("hs_code_generator_page.form_section.input_2.placeholder")
-          }
+        <Textarea
+          placeholder={t(
+            "hs_code_generator_page.form_section.input_2.placeholder",
+          )}
+          error={errors.intendedUse}
           {...register("intendedUse")}
         />
       </div>
@@ -321,31 +290,11 @@ export default function HsCodeGeneratorForm() {
         >
           {t("hs_code_generator_page.form_section.input_3.note")}
         </p>
-        <textarea
-          className={`
-                        w-full
-                        border
-                        md:mt-0 mt-[1.5vw]
-                        md:rounded-[0.7vw] rounded-[2vw]
-                        md:px-[1vw] px-[2vw]
-                        md:py-[0.5vw] py-[1.5vw]
-                        resize-none
-                        focus:outline-none
-                        italic focus:not-italic
-                        md:h-[3.5vw] h-[10vw]
-                        md:text-[0.7vw] text-[2vw]
-                        text-[#99A1AF] focus:text-[#4A5565]/80
-                        ${
-                          errors.primaryMaterials
-                            ? "border-red-500 focus:border-red-500"
-                            : "border-[#B9AFD0]"
-                        }
-                    `}
-          placeholder={
-            errors.primaryMaterials
-              ? errors.primaryMaterials.message
-              : t("hs_code_generator_page.form_section.input_3.placeholder")
-          }
+        <Textarea
+          placeholder={t(
+            "hs_code_generator_page.form_section.input_3.placeholder",
+          )}
+          error={errors.primaryMaterials}
           {...register("primaryMaterials")}
         />
       </div>
@@ -425,7 +374,7 @@ export default function HsCodeGeneratorForm() {
             accept="image/png, image/jpeg, application/pdf"
             onChange={handleFileChange}
             className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
-            disabled={files.length >= 5}
+            disabled={files.length >= MAX_FILES}
           />
 
           {/* File List (Inside the Box) */}
@@ -632,28 +581,17 @@ export default function HsCodeGeneratorForm() {
                   md:mt-0 mt-[2vw]
                 "
       >
-        <button
+        <Button
           type="submit"
           disabled={isLoading}
-          className={`
-              bg-linear-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
-              bg-size-[200%_100%] bg-position-[0%_0%]
-              hover:bg-position-[100%_0%]
-              transition-[background-position] duration-1000 ease-in-out
-              md:py-[0.6vw] py-[2vw]
-              md:px-[1.5vw] px-[5vw]
-              md:rounded-[2vw] rounded-full
-              md:text-[0.8vw] text-[2.5vw]
-              text-white font-medium
-              cursor-pointer
-          `}
+          className="md:py-[0.6vw] py-[2vw] md:px-[1.5vw] px-[5vw] md:text-[0.8vw] text-[2.5vw] font-medium"
         >
           {isLoading
             ? t(
                 "hs_code_generator_page.form_section.find_hs_code_button_submitting",
               )
             : t("hs_code_generator_page.form_section.find_hs_code_button")}
-        </button>
+        </Button>
       </div>
     </form>
   );
