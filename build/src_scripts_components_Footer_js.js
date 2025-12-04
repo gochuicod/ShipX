@@ -1,0 +1,399 @@
+"use strict";
+(globalThis["webpackChunkshipx_theme"] = globalThis["webpackChunkshipx_theme"] || []).push([["src_scripts_components_Footer_js"],{
+
+/***/ "./src/scripts/components/Footer.js":
+/*!******************************************!*\
+  !*** ./src/scripts/components/Footer.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ui_SmartNavLink__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ui/SmartNavLink */ "./src/scripts/components/ui/SmartNavLink.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+const Footer = (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(() => {
+  const {
+    t,
+    i18n
+  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_0__.useTranslation)();
+  const linkColumns = {
+    quickLinks: [{
+      to: "/",
+      label: t("footer.home")
+    }, {
+      to: "/#statistics",
+      label: t("footer.statistics")
+    }, {
+      to: "/#services",
+      label: t("footer.services")
+    }, {
+      to: "/#platform",
+      label: t("footer.platform")
+    }],
+    toolkit: [{
+      to: "/shipment-tracker",
+      label: t("header.shipment_tracker")
+    }, {
+      to: "/hs-code-generator",
+      label: t("header.hs_code_generator")
+    }, {
+      to: "/file-a-claim",
+      label: t("header.file_a_claim")
+    }],
+    resources: [{
+      to: "/blog",
+      label: t("header.blogs")
+    }, {
+      to: "/frequently-asked-questions",
+      label: t("header.faqs")
+    }],
+    legal: [{
+      to: "/privacy-policy",
+      label: t("footer.privacy_policy")
+    }, {
+      to: "/terms-and-conditions",
+      label: t("footer.terms_and_conditions")
+    }]
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    className: "md:pt-[15vw] pt-[60vw] relative",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: " absolute md:top-[2vw] top-0 left-0 right-0 flex flex-col md:w-[85vw] w-[90vw] md:h-auto h-[80vw] bg-cover bg-center bg-no-repeat mx-auto md:mb-[4vw] mb-0 text-white text-[0.8vw] font-normal md:rounded-[1vw] rounded-[2vw] overflow-hidden md:bg-[url('https://cdn.jsdelivr.net/gh/gochuicod/ShipX@ffab8ad2ad6bf54f2ed5c615722bff70ee96f7ef/src/assets/shipment_tracker_cta_image.webp')] bg-[url('https://cdn.jsdelivr.net/gh/gochuicod/ShipX@281b9212a310690d195ec2f7ac6057b96436d583/src/assets/shipment_tracker_cta_image_mobile.svg')] md:shadow-[0.2vw_0.2vw_0.2vw_rgba(0,0,0,0.3)] shadow-[0_0_1vw_rgba(0,0,0,0.8)] ",
+      style: {
+        fontFamily: "Inter, system-ui, -apple-system, sans-serif"
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: `
+            flex flex-col
+            md:gap-y-0 gap-y-[3vw]
+            ${i18n.language === "vn" ? "md:w-[45vw] w-full" : "md:w-[40vw] w-full"}
+            md:ps-[8vw] ps-[10vw]
+            md:pe-0 pe-[10vw]
+            md:py-[5vw] py-[10vw]
+          `,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+          className: " md:px-0 px-[5vw] md:text-[2vw] text-[7vw] md:text-start text-center md:leading-[3vw] leading-[8vw] font-semibold ",
+          children: t("shipment_tracker.shipment_cta_section.title")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+          className: " font-normal opacity-95 pb-[1vw] md:text-[0.8vw] text-[2.5vw] md:text-start text-center md:leading-[1.5vw] leading-[3vw] md:px-0 px-[3vw] ",
+          children: t("shipment_tracker.shipment_cta_section.description")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: " flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.6vw] md:justify-start justify-center md:items-center items-center ",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "flex flex-col relative overflow-hidden md:p-[0.10vw] p-[0.5vw]",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ui_SmartNavLink__WEBPACK_IMPORTED_MODULE_2__["default"], {
+              to: "/book-a-demo",
+              end: true,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                type: "button",
+                className: `
+                      flex flex-row
+                      items-center justify-center
+                      gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw]
+                      bg-white/15 text-white
+                      border border-white/95
+                      rounded-full
+                      transition-all duration-300 focus:outline-none
+                      cursor-pointer
+                  `,
+                children: t("footer.book_a_demo")
+              })
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ui_SmartNavLink__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            to: "/#contact-us",
+            end: true,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+              type: "button",
+              className: `
+                  flex flex-row
+                  items-center justify-center
+                  gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw]
+                  bg-white/15 text-white
+                  border border-white/95
+                  rounded-full
+                  transition-all duration-300 focus:outline-none
+                  cursor-pointer
+                `,
+              children: t("footer.contact_us")
+            })
+          })]
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("footer", {
+      className: "bg-[#F3F4F6] w-full pt-[30vw] pb-[4vw] px-[5vw] md:pt-[10vw] md:pb-[2vw] md:px-[7.5vw]",
+      style: {
+        fontFamily: "Inter, system-ui, -apple-system, sans-serif"
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "flex flex-col md:flex-row justify-between items-start gap-[5vw] md:gap-[4vw]",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "flex flex-col w-full md:w-[30%] md:mb-[0.5vw] mb-[3.5vw]",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "flex md:justify-start justify-center items-center gap-[3vw] md:gap-[1vw] md:mb-0 mb-[2vw]",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+              src: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/shipx_logo.svg",
+              alt: "ShipX Logo",
+              className: "h-[12vw] md:h-[3vw] w-auto object-contain"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+              src: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo_sglink_amilo.svg",
+              alt: "Powered by SGLink & Amilo",
+              className: "h-[8vw] md:h-[2vw] w-auto object-contain"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+            className: "text-[#1A1A1A] font-bold text-[4.5vw] md:text-[1vw] leading-tight md:mb-[1vw] mb-[4vw] md:text-start text-center",
+            style: {
+              fontFamily: "Karla, system-ui, -apple-system, sans-serif"
+            },
+            children: t("footer.tagline")
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
+            className: "text-[#1A1A1A] font-normal text-[3.3vw] md:text-[0.8vw] md:text-start text-center md:leading-relaxed leading-[3.6vw] max-w-fit",
+            children: [t("footer.description_1"), " ", t("footer.description_2")]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "w-full lg:w-[70%] grid grid-cols-1 md:grid-cols-4 gap-[4vw] md:gap-[1.5vw]",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "bg-white rounded-xl p-[5vw] md:p-[1.5vw] h-fit",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+              className: "text-[#FF4FF0] font-bold text-[4vw] md:text-[1.1vw] mb-[3vw] md:mb-[0.5vw]",
+              children: t("footer.quick_links")
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("ul", {
+              className: "space-y-[2vw] md:space-y-[0.3vw]",
+              children: linkColumns.quickLinks.map(item => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ui_SmartNavLink__WEBPACK_IMPORTED_MODULE_2__["default"], {
+                  to: item.to,
+                  className: "text-gray-600 hover:text-gray-900 text-[3.5vw] md:text-[0.8vw] transition-colors block",
+                  children: item.label
+                })
+              }, item.to))
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "md:flex hidden flex-col gap-[4vw] md:gap-[1.5vw]",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              className: "bg-white rounded-xl p-[5vw] md:p-[1.5vw] h-fit",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+                className: "text-[#FF4FF0] font-bold text-[4vw] md:text-[1.1vw] mb-[3vw] md:mb-[0.5vw]",
+                children: t("header.toolkit")
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("ul", {
+                className: "space-y-[2vw] md:space-y-[0.3vw]",
+                children: linkColumns.toolkit.map(item => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ui_SmartNavLink__WEBPACK_IMPORTED_MODULE_2__["default"], {
+                    to: item.to,
+                    className: "text-gray-600 hover:text-gray-900 text-[3.5vw] md:text-[0.8vw] transition-colors block",
+                    children: item.label
+                  })
+                }, item.to))
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              className: "bg-white rounded-xl p-[5vw] md:p-[1.5vw] h-fit",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+                className: "text-[#FF4FF0] font-bold text-[4vw] md:text-[1.1vw] mb-[3vw] md:mb-[0.5vw]",
+                children: t("header.resources")
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("ul", {
+                className: "space-y-[2vw] md:space-y-[0.3vw]",
+                children: linkColumns.resources.map(item => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ui_SmartNavLink__WEBPACK_IMPORTED_MODULE_2__["default"], {
+                    to: item.to,
+                    className: "text-gray-600 hover:text-gray-900 text-[3.5vw] md:text-[0.8vw] transition-colors block",
+                    children: item.label
+                  })
+                }, item.to))
+              })]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "bg-white rounded-xl p-[5vw] md:p-[1.5vw] h-fit",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+              className: "text-[#FF4FF0] font-bold text-[4vw] md:text-[1.1vw] mb-[3vw] md:mb-[0.5vw]",
+              children: "Legal"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("ul", {
+              className: "space-y-[2vw] md:space-y-[0.3vw]",
+              children: linkColumns.legal.map(item => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ui_SmartNavLink__WEBPACK_IMPORTED_MODULE_2__["default"], {
+                  to: item.to,
+                  className: "text-gray-600 hover:text-gray-900 text-[3.5vw] md:text-[0.8vw] transition-colors block",
+                  children: item.label
+                })
+              }, item.to))
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "bg-white rounded-xl p-[5vw] md:p-[1.5vw] h-fit",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+              className: "text-[#FF4FF0] font-bold text-[4vw] md:text-[1.1vw] mb-[3vw] md:mb-[0.5vw]",
+              children: t("footer.reach_us_1")
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
+              className: "space-y-[3vw] md:space-y-[1vw]",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+                className: "flex items-center gap-[2vw] md:gap-[0.6vw] text-gray-600",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("svg", {
+                  xmlns: "http://www.w3.org/2000/svg",
+                  viewBox: "0 0 24 24",
+                  fill: "currentColor",
+                  className: "w-[4vw] h-[4vw] md:w-[1.1vw] md:h-[1.1vw] shrink-0",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+                    d: "M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+                    d: "M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+                  href: `mailto:${t("footer.reach_us_3")}`,
+                  className: "text-[3.5vw] md:text-[0.8vw]",
+                  children: t("footer.reach_us_3")
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+                className: "flex items-start gap-[2vw] md:gap-[0.6vw] text-gray-600",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("svg", {
+                  xmlns: "http://www.w3.org/2000/svg",
+                  viewBox: "0 0 24 24",
+                  fill: "currentColor",
+                  className: "w-[4vw] h-[4vw] md:w-[1.1vw] md:h-[1.1vw] mt-[0.5vw] shrink-0",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+                    fillRule: "evenodd",
+                    d: "m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z",
+                    clipRule: "evenodd"
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                  className: "text-[3.5vw] md:text-[0.8vw] leading-snug",
+                  children: t("footer.reach_us_4")
+                })]
+              })]
+            })]
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "mt-[4vw] md:mt-[0.5vw] flex flex-col md:flex-row justify-between items-center text-[#1A1A1A] text-[3vw] md:text-[0.8vw] pt-[4vw] md:pt-[1.5vw]",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "flex flex-row gap-x-[1vw]",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ui_SmartNavLink__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            to: "terms-and-conditions",
+            end: true,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+              children: t("footer.terms_and_conditions")
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            children: "\u2022"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ui_SmartNavLink__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            to: "privacy-policy",
+            end: true,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+              children: t("footer.privacy_policy")
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "text-center md:text-left",
+          children: ["\xA9 ", new Date().getFullYear(), " ", t("footer.copyright")]
+        })]
+      })]
+    })]
+  });
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Footer);
+
+/***/ }),
+
+/***/ "./src/scripts/components/ui/SmartNavLink.js":
+/*!***************************************************!*\
+  !*** ./src/scripts/components/ui/SmartNavLink.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/development/chunk-OIYGIGL5.mjs");
+/* harmony import */ var _i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../i18n */ "./src/i18n.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+const SmartNavLink = ({
+  to = "/",
+  end = false,
+  className,
+  children,
+  delay = 1000,
+  onClick
+}) => {
+  const location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_0__.useLocation)();
+  const navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_0__.useNavigate)();
+
+  // Prepend language prefix if not default
+  const langPrefix = _i18n__WEBPACK_IMPORTED_MODULE_1__["default"].language !== "en" ? `/${_i18n__WEBPACK_IMPORTED_MODULE_1__["default"].language}` : "";
+  let fullPath = to.startsWith("/") ? `${langPrefix}${to}` : `${langPrefix}/${to}`;
+
+  // Remove double slashes if any
+  fullPath = fullPath.replace(/\/+/g, "/");
+  const handleClick = e => {
+    const [pathname, hash] = fullPath.split("#");
+    const isSamePath = location.pathname === pathname;
+
+    // If an external onClick handler is provided, execute it.
+    if (onClick) {
+      onClick(e);
+    }
+    if (hash) {
+      e.preventDefault();
+      if (!isSamePath) {
+        navigate(pathname);
+        setTimeout(() => {
+          const target = document.getElementById(hash);
+          if (target) target.scrollIntoView({
+            behavior: "smooth"
+          });
+        }, 300);
+      } else {
+        const target = document.getElementById(hash);
+        if (target) target.scrollIntoView({
+          behavior: "smooth"
+        });
+      }
+      setTimeout(() => {
+        window.history.replaceState(null, "", pathname);
+      }, delay);
+    } else {
+      if (isSamePath) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+        setTimeout(() => {
+          window.history.replaceState(null, "", location.pathname);
+        }, delay);
+      } else {
+        e.preventDefault();
+        navigate(pathname);
+        setTimeout(() => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+          window.history.replaceState(null, "", pathname);
+        }, 300);
+      }
+    }
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_0__.NavLink, {
+    to: fullPath,
+    end: end,
+    className: className,
+    onClick: handleClick,
+    children: children
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SmartNavLink);
+
+/***/ })
+
+}]);
+//# sourceMappingURL=src_scripts_components_Footer_js.js.map?ver=0fe1b300afa6236e54b0
