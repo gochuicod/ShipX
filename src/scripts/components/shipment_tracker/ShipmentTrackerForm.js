@@ -142,6 +142,7 @@ const ShipmentTrackerForm = ({ initialTrackingNumber, autoSubmit = false }) => {
                 },
               })}
               autoComplete="number"
+              placeholder="e.g., SGL2510001808"
             />
           </div>
         </div>

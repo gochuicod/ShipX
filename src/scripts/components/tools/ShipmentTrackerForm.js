@@ -64,9 +64,7 @@ const ShipmentTrackerForm = () => {
               },
             })}
             id="trackingNumber"
-            placeholder={t(
-              "shipment_tracker.track_order_section.form.placeholder",
-            )}
+            placeholder={"e.g., SGL2510001808"}
             error={errors.trackingNumber}
           />
         </div>
