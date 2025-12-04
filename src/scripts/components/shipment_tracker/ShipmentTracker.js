@@ -10,7 +10,7 @@ import ToolsHeroSection from "./ToolsHeroSection";
 import { useRef, useEffect } from "react";
 
 const ShipmentTracker = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { shipmentData, trackingNumber, setShipmentData } = useShipment();
   const [searchParams] = useSearchParams();
 
