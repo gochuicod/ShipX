@@ -80,8 +80,8 @@ const ClaimSubmissionModal = ({
   const isSuccess = status === "success";
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-[4vw] md:p-[1vw] animate-in fade-in duration-200">
-      <div className="bg-white rounded-[6vw] md:rounded-[1.5vw] shadow-2xl w-[90vw] md:w-[35vw] p-[8vw] md:p-[2vw] relative flex flex-col items-center text-center transform transition-all scale-100">
+    <div className="fixed inset-0 z-50 flex items-center bg-[#4F378A]/20 justify-center backdrop-blur-xs p-[4vw] md:p-[1vw] animate-in fade-in duration-200">
+      <div className="bg-white rounded-[6vw] md:rounded-[1.5vw] shadow-[0px_4px_25px_0px_#FF00E54D] w-[90vw] md:w-[35vw] p-[8vw] md:p-[2vw] relative flex flex-col items-center text-center transform transition-all scale-100">
         {/* Close Button */}
         <button
           onClick={onClose}
