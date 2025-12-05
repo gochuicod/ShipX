@@ -138,7 +138,7 @@ const ClaimSubmissionModal = ({
               )}
             </div>
             <p className="text-gray-400 italic mt-[4vw] md:mt-[1vw] mb-[2vw] md:mb-[0.5vw] leading-relaxed max-w-xs mx-auto text-[3vw] md:text-[0.75vw]">
-              Please keep this number for your records.
+              Please keep this reference ID for your records.
             </p>
           </div>
         )}

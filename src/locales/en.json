@@ -781,6 +781,28 @@
       "buttons": {
         "submit_claim": "Submit Claim"
       }
+    },
+    "submission_modal": {
+      "success": {
+        "title": "Thank you.",
+        "subtitle": "Your claim has been submitted.",
+        "description": "A Customer Support agent will respond within 24 business hours.",
+        "referenceId": {
+          "label": "Your reference ID is:",
+          "accessibility": {
+            "copyTitle": "Click to copy"
+          },
+          "feedback": {
+            "copied": "Copied!"
+          },
+          "footerNote": "Please keep this reference ID for your records."
+        }
+      },
+      "error": {
+        "title": "Submission Failed",
+        "defaultSubtitle": "An error occurred.",
+        "description": "Please check your details and try again. If the issue persists, contact support."
+      }
     }
   },
   "faq_page": {

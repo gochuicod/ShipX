@@ -781,6 +781,28 @@
       "buttons": {
         "submit_claim": "Gửi khiếu nại"
       }
+    },
+    "submission_modal": {
+      "success": {
+        "title": "Cảm ơn bạn.",
+        "subtitle": "Yêu cầu của bạn đã được gửi đi.",
+        "description": "Nhân viên Hỗ trợ Khách hàng sẽ phản hồi trong vòng 24 giờ làm việc.",
+        "referenceId": {
+          "label": "Mã tham chiếu của bạn là:",
+          "accessibility": {
+            "copyTitle": "Nhấn để sao chép"
+          },
+          "feedback": {
+            "copied": "Đã sao chép!"
+          },
+          "footerNote": "Vui lòng lưu giữ mã tham chiếu này để làm hồ sơ."
+        }
+      },
+      "error": {
+        "title": "Gửi thất bại",
+        "defaultSubtitle": "Đã xảy ra lỗi.",
+        "description": "Vui lòng kiểm tra lại thông tin và thử lại. Nếu vấn đề vẫn tiếp diễn, hãy liên hệ hỗ trợ."
+      }
     }
   },
   "faq_page": {
