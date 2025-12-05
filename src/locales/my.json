@@ -781,7 +781,29 @@
       "buttons": {
         "submit_claim": "Hantar Tuntutan"
       }
-    }
+    },
+    "submission_modal": {
+      "success": {
+        "title": "Terima kasih.",
+        "subtitle": "Tuntutan anda telah dihantar.",
+        "description": "Ejen Sokongan Pelanggan akan bertindak balas dalam masa 24 jam bekerja.",
+        "referenceId": {
+        "label": "ID rujukan anda ialah:",
+            "accessibility": {
+            "copyTitle": "Klik untuk salin"
+            },
+            "feedback": {
+            "copied": "Disalin!"
+            },
+            "footerNote": "Sila simpan ID rujukan ini untuk rekod anda."
+            }
+          },
+      "error": {
+        "title": "Penyerahan Gagal",
+        "defaultSubtitle": "Ralat berlaku.",
+        "description": "Sila semak butiran anda dan cuba lagi. Jika masalah berlanjut, hubungi sokongan."
+      }
+    }   
   },
   "faq_page": {
     "header_section": {

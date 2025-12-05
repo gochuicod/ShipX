@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X, CheckCircle, Copy, Check, AlertCircle } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ClaimSubmissionModal = ({
   isOpen,
@@ -8,7 +9,24 @@ const ClaimSubmissionModal = ({
   claimId,
   message,
 }) => {
+  const { t } = useTranslation();
   const [isCopied, setIsCopied] = useState(false);
+
+  // Handle ESC key to close modal
+  useEffect(() => {
+    const handleEscKey = (e) => {
+      if (e.key === "Escape" && isOpen) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("keydown", handleEscKey);
+      return () => {
+        document.removeEventListener("keydown", handleEscKey);
+      };
+    }
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -62,8 +80,8 @@ const ClaimSubmissionModal = ({
   const isSuccess = status === "success";
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-[4vw] md:p-[1vw] animate-in fade-in duration-200">
-      <div className="bg-white rounded-[6vw] md:rounded-[1.5vw] shadow-2xl w-[90vw] md:w-[35vw] p-[8vw] md:p-[2vw] relative flex flex-col items-center text-center transform transition-all scale-100">
+    <div className="fixed inset-0 z-50 flex items-center bg-[#4F378A]/20 justify-center backdrop-blur-xs p-[4vw] md:p-[1vw] animate-in fade-in duration-200">
+      <div className="bg-white rounded-[6vw] md:rounded-[1.5vw] shadow-[0px_4px_25px_0px_#FF00E54D] w-[90vw] md:w-[35vw] p-[8vw] md:p-[2vw] relative flex flex-col items-center text-center transform transition-all scale-100">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -87,31 +105,36 @@ const ClaimSubmissionModal = ({
 
         {/* Headings */}
         <h2 className="font-bold text-gray-800 mb-[2vw] md:mb-[0.5vw] text-[6vw] md:text-[1.5vw]">
-          {isSuccess ? "Thank you." : "Submission Failed"}
+          {isSuccess
+            ? t("file_a_claim.submission_modal.success.title")
+            : t("file_a_claim.submission_modal.error.title")}
         </h2>
         <h3 className="font-bold text-gray-800 mb-[4vw] md:mb-[1vw] text-[5vw] md:text-[1.2vw]">
           {isSuccess
-            ? "Your claim has been submitted."
-            : message || "An error occurred."}
+            ? t("file_a_claim.submission_modal.success.subtitle")
+            : message ||
+              t("file_a_claim.submission_modal.error.defaultSubtitle")}
         </h3>
 
         {/* Description Text */}
         <p className="text-gray-500 mb-[8vw] md:mb-[2vw] px-[4vw] md:px-[1vw] leading-relaxed text-[3.5vw] md:text-[0.9vw]">
           {isSuccess
-            ? "A Customer Support agent will respond within 24 business hours."
-            : "Please check your details and try again. If the issue persists, contact support."}
+            ? t("file_a_claim.submission_modal.success.description")
+            : t("file_a_claim.submission_modal.error.description")}
         </p>
 
         {/* Reference ID Box (Only show on Success) */}
         {isSuccess && claimId && (
           <div className="w-full mb-[6vw] md:mb-[1.5vw]">
             <p className="font-bold text-gray-700 mb-[2vw] md:mb-[0.5vw] text-[3.5vw] md:text-[0.9vw]">
-              Your reference ID is:
+              {t("file_a_claim.submission_modal.success.referenceId.label")}
             </p>
             <div
               className="bg-[#F3F1FF] border border-[#E0D4FC] rounded-[3vw] md:rounded-[0.8vw] p-[4vw] md:p-[1vw] flex items-center justify-center gap-[3vw] md:gap-[0.8vw] group relative cursor-pointer hover:bg-[#ECE5FF] transition-colors"
               onClick={copyToClipboard}
-              title="Click to copy"
+              title={t(
+                "file_a_claim.submission_modal.success.referenceId.accessibility.copyTitle",
+              )}
             >
               <span className="font-extrabold text-[#99008A] tracking-wider break-all text-[4vw] md:text-[1.5vw]">
                 {claimId}
@@ -133,12 +156,16 @@ const ClaimSubmissionModal = ({
               {/* Optional: "Copied" Tooltip */}
               {isCopied && (
                 <span className="absolute -top-[8vw] md:-top-[2vw] bg-black text-white py-[1vw] px-[2vw] md:py-[0.3vw] md:px-[0.6vw] rounded opacity-100 transition-opacity text-[3vw] md:text-[0.75vw]">
-                  Copied!
+                  {t(
+                    "file_a_claim.submission_modal.success.referenceId.feedback.copied",
+                  )}
                 </span>
               )}
             </div>
             <p className="text-gray-400 italic mt-[4vw] md:mt-[1vw] mb-[2vw] md:mb-[0.5vw] leading-relaxed max-w-xs mx-auto text-[3vw] md:text-[0.75vw]">
-              Please keep this number for your records.
+              {t(
+                "file_a_claim.submission_modal.success.referenceId.footerNote",
+              )}
             </p>
           </div>
         )}

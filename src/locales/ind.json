@@ -781,6 +781,28 @@
       "buttons": {
         "submit_claim": "Ajukan Klaim"
       }
+    },
+    "submission_modal": {
+      "success": {
+        "title": "Terima kasih.",
+        "subtitle": "Klaim Anda telah dikirim.",
+        "description": "Agen Dukungan Pelanggan akan merespons dalam waktu 24 jam kerja.",
+        "referenceId": {
+          "label": "ID referensi Anda adalah:",
+          "accessibility": {
+            "copyTitle": "Klik untuk menyalin"
+          },
+          "feedback": {
+            "copied": "Disalin!"
+          },
+          "footerNote": "Harap simpan ID referensi ini untuk catatan Anda."
+        }
+      },
+      "error": {
+        "title": "Pengiriman Gagal",
+        "defaultSubtitle": "Terjadi kesalahan.",
+        "description": "Silakan periksa detail Anda dan coba lagi. Jika masalah berlanjut, hubungi dukungan."
+      }
     }
   },
   "faq_page": {

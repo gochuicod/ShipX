@@ -3,6 +3,8 @@ import { useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Badge from "../shipment_tracker/Badge";
 import ClaimSubmissionModal from "./ClaimSubmissionModal";
+import FileAClaimToolTipError from "./FileAClaimToolTipError";
+import Button from "../ui/Button";
 
 const FileAClaimForm = () => {
   const { t } = useTranslation();
@@ -23,6 +25,16 @@ const FileAClaimForm = () => {
   const [formData, setFormData] = useState(initialFormState);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [descriptionError, setDescriptionError] = useState("");
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [fieldErrors, setFieldErrors] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    country: "",
+    claimType: "",
+    trackingNumber: "",
+  });
 
   const [showModal, setShowModal] = useState(false);
   const [modalConfig, setModalConfig] = useState({
@@ -34,10 +46,15 @@ const FileAClaimForm = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    // Clear error for this field when user starts typing
+    if (fieldErrors[name]) {
+      setFieldErrors((prev) => ({ ...prev, [name]: "" }));
+    }
   };
 
   const handleRoleChange = (role) => {
     setFormData((prev) => ({ ...prev, role }));
+    // Role doesn't need error handling as it has a default
   };
 
   const mapClaimType = (type) => {
@@ -52,18 +69,51 @@ const FileAClaimForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsFormSubmitted(true);
 
     // --- VALIDATION START ---
-    // Check if description is at least 25 characters
-    if (formData.description.length < 25) {
-      setModalConfig({
-        status: "error",
-        claimId: "",
-        message: `Description is too short. Please add ${25 - formData.description.length} more characters.`,
-      });
-      setShowModal(true);
-      return; // Stop execution here
+    const newErrors = {};
+
+    // Validate required fields
+    if (!formData.fullName.trim()) {
+      newErrors.fullName = "Full name is required";
     }
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email";
+    }
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    }
+    if (!formData.country) {
+      newErrors.country = "Country is required";
+    }
+    if (!formData.claimType) {
+      newErrors.claimType = "Claim type is required";
+    }
+    if (!formData.trackingNumber.trim()) {
+      newErrors.trackingNumber = "Tracking number is required";
+    } else if (formData.trackingNumber.trim().length < 8) {
+      newErrors.trackingNumber =
+        "Tracking number must be at least 8 characters";
+    }
+    if (formData.description.length < 25) {
+      setDescriptionError(
+        `Description is too short. Please add ${25 - formData.description.length} more characters.`,
+      );
+    } else {
+      setDescriptionError("");
+    }
+
+    // If there are errors, set them and stop
+    if (Object.keys(newErrors).length > 0 || formData.description.length < 25) {
+      setFieldErrors(newErrors);
+      return;
+    }
+
+    // Clear all errors if validation passes
+    setFieldErrors({});
     // --- VALIDATION END ---
 
     setIsSubmitting(true);
@@ -229,17 +279,21 @@ const FileAClaimForm = () => {
                     {t("file_a_claim.form_section.fields.full_name.label")}{" "}
                     <span className="text-red-500">*</span>
                   </label>
-                  <input
-                    type="text"
-                    name="fullName"
-                    placeholder={t(
-                      "file_a_claim.form_section.fields.full_name.placeholder",
+                  <div className="relative">
+                    {isFormSubmitted && fieldErrors.fullName && (
+                      <FileAClaimToolTipError message={fieldErrors.fullName} />
                     )}
-                    className={inputClass}
-                    value={formData.fullName}
-                    onChange={handleChange}
-                    required
-                  />
+                    <input
+                      type="text"
+                      name="fullName"
+                      placeholder={t(
+                        "file_a_claim.form_section.fields.full_name.placeholder",
+                      )}
+                      className={inputClass}
+                      value={formData.fullName}
+                      onChange={handleChange}
+                    />
+                  </div>
                 </div>
 
                 <div className="flex flex-col gap-[1vw] md:gap-[0.3vw]">
@@ -247,17 +301,21 @@ const FileAClaimForm = () => {
                     {t("file_a_claim.form_section.fields.email.label")}{" "}
                     <span className="text-red-500">*</span>
                   </label>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder={t(
-                      "file_a_claim.form_section.fields.email.placeholder",
+                  <div className="relative">
+                    {isFormSubmitted && fieldErrors.email && (
+                      <FileAClaimToolTipError message={fieldErrors.email} />
                     )}
-                    className={inputClass}
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                  />
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder={t(
+                        "file_a_claim.form_section.fields.email.placeholder",
+                      )}
+                      className={inputClass}
+                      value={formData.email}
+                      onChange={handleChange}
+                    />
+                  </div>
                 </div>
 
                 <div className="flex flex-col gap-[1vw] md:gap-[0.3vw]">
@@ -265,45 +323,60 @@ const FileAClaimForm = () => {
                     {t("file_a_claim.form_section.fields.phone_number.label")}{" "}
                     <span className="text-red-500">*</span>
                   </label>
-                  <div className="flex gap-[2vw] md:gap-[0.5vw]">
-                    <input
-                      type="text"
-                      placeholder="+123"
-                      className={`${inputClass} w-[25%] bg-gray-50`}
-                    />
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder={t(
-                        "file_a_claim.form_section.fields.phone_number.placeholder",
-                      )}
-                      className={inputClass}
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                    />
+                  <div className="relative">
+                    {isFormSubmitted && fieldErrors.phone && (
+                      <FileAClaimToolTipError message={fieldErrors.phone} />
+                    )}
+                    <div className="flex gap-[2vw] md:gap-[0.5vw]">
+                      <input
+                        type="text"
+                        placeholder="+123"
+                        className={`${inputClass} w-[25%] bg-gray-50`}
+                      />
+                      <input
+                        type="tel"
+                        name="phone"
+                        placeholder={t(
+                          "file_a_claim.form_section.fields.phone_number.placeholder",
+                        )}
+                        className={inputClass}
+                        value={formData.phone}
+                        onChange={handleChange}
+                      />
+                    </div>
                   </div>
                 </div>
 
+                {/* Claimant Type */}
                 <div className="flex flex-col gap-[1vw] md:gap-[0.3vw]">
                   <label className={labelClass}>
                     {t("file_a_claim.form_section.fields.claimant_role.label")}{" "}
                     <span className="text-red-500">*</span>
                   </label>
-                  <div className="flex w-full border border-[#B9AFD0] rounded-lg overflow-hidden bg-white">
+                  <div className="flex bg-white md:p-[0.2vw] p-[0.5vw] md:rounded-[0.7vw] rounded-[2vw] border border-[#B9AFD0] w-full">
                     <button
                       type="button"
                       onClick={() => handleRoleChange("Sender")}
-                      className={`w-1/2 p-[3vw] md:p-[0.7vw] flex items-center justify-center gap-[2vw] md:gap-[0.5vw] transition-colors font-medium text-[3.5vw] md:text-[0.9vw] hover:cursor-pointer ${
-                        formData.role === "Sender"
-                          ? "bg-[#4F378A] text-white"
-                          : "bg-white text-gray-600 hover:bg-gray-50"
-                      }`}
+                      className={`
+                        flex-1 flex items-center justify-center
+                        md:py-[0.5vw] py-[1.5vw]
+                        md:text-[0.8vw] text-[2.5vw]
+                        font-normal
+                        md:rounded-[0.55vw] rounded-[1.35vw]
+                        transition-all duration-500
+                        cursor-pointer
+                        gap-[0.5vw] md:gap-[0.25vw]
+                        ${
+                          formData.role === "Sender"
+                            ? "bg-[#4F378A]/90 text-white"
+                            : "text-[#4F378A]/90 hover:bg-slate-200/50"
+                        }
+                      `}
                     >
                       <img
                         src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/file_a_claim_box-return.svg"
                         alt="Sender"
-                        className="w-[5vw] h-[5vw] md:w-[1.2vw] md:h-[1.2vw]"
+                        className="w-[4vw] h-[4vw] md:w-[1vw] md:h-[1vw]"
                       />
                       {t(
                         "file_a_claim.form_section.fields.claimant_role.options.sender",
@@ -312,16 +385,26 @@ const FileAClaimForm = () => {
                     <button
                       type="button"
                       onClick={() => handleRoleChange("Receiver")}
-                      className={`w-1/2 p-[3vw] md:p-[0.7vw] flex items-center justify-center gap-[2vw] md:gap-[0.5vw] transition-colors font-medium text-[3.5vw] md:text-[0.9vw] hover:cursor-pointer ${
-                        formData.role === "Receiver"
-                          ? "bg-[#4F378A] text-white"
-                          : "bg-white text-gray-600 hover:bg-gray-50"
-                      }`}
+                      className={`
+                        flex-1 flex items-center justify-center
+                        md:py-[0.5vw] py-[1.5vw]
+                        md:text-[0.8vw] text-[2.5vw]
+                        font-normal
+                        md:rounded-[0.55vw] rounded-[1.35vw]
+                        transition-all duration-500
+                        cursor-pointer
+                        gap-[0.5vw] md:gap-[0.25vw]
+                        ${
+                          formData.role === "Receiver"
+                            ? "bg-[#4F378A]/90 text-white"
+                            : "text-[#4F378A]/90 hover:bg-slate-200/50"
+                        }
+                      `}
                     >
                       <img
                         src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/file_a_claim_parachute.svg"
                         alt="Receiver"
-                        className="w-[5vw] h-[5vw] md:w-[1.2vw] md:h-[1.2vw]"
+                        className="w-[4vw] h-[4vw] md:w-[1vw] md:h-[1vw]"
                       />
                       {t(
                         "file_a_claim.form_section.fields.claimant_role.options.receiver",
@@ -383,39 +466,43 @@ const FileAClaimForm = () => {
                       {t("file_a_claim.form_section.fields.country.label")}{" "}
                       <span className="text-red-500">*</span>
                     </label>
-                    <select
-                      name="country"
-                      className={`${inputClass} hover:cursor-pointer`}
-                      value={formData.country}
-                      onChange={handleChange}
-                      required
-                    >
-                      <option value="">
-                        {t(
-                          "file_a_claim.form_section.fields.country.default_option",
-                        )}
-                      </option>
-                      <option value="VN">
-                        {t(
-                          "file_a_claim.form_section.fields.country.options.vn",
-                        )}
-                      </option>
-                      <option value="MY">
-                        {t(
-                          "file_a_claim.form_section.fields.country.options.my",
-                        )}
-                      </option>
-                      <option value="TH">
-                        {t(
-                          "file_a_claim.form_section.fields.country.options.th",
-                        )}
-                      </option>
-                      <option value="PH">
-                        {t(
-                          "file_a_claim.form_section.fields.country.options.ph",
-                        )}
-                      </option>
-                    </select>
+                    <div className="relative">
+                      {isFormSubmitted && fieldErrors.country && (
+                        <FileAClaimToolTipError message={fieldErrors.country} />
+                      )}
+                      <select
+                        name="country"
+                        className={`${inputClass} hover:cursor-pointer`}
+                        value={formData.country}
+                        onChange={handleChange}
+                      >
+                        <option value="">
+                          {t(
+                            "file_a_claim.form_section.fields.country.default_option",
+                          )}
+                        </option>
+                        <option value="VN">
+                          {t(
+                            "file_a_claim.form_section.fields.country.options.vn",
+                          )}
+                        </option>
+                        <option value="MY">
+                          {t(
+                            "file_a_claim.form_section.fields.country.options.my",
+                          )}
+                        </option>
+                        <option value="TH">
+                          {t(
+                            "file_a_claim.form_section.fields.country.options.th",
+                          )}
+                        </option>
+                        <option value="PH">
+                          {t(
+                            "file_a_claim.form_section.fields.country.options.ph",
+                          )}
+                        </option>
+                      </select>
+                    </div>
                   </div>
 
                   <div className="flex flex-col gap-[1vw] md:gap-[0.3vw] w-1/2">
@@ -423,34 +510,40 @@ const FileAClaimForm = () => {
                       {t("file_a_claim.form_section.fields.claim_type.label")}{" "}
                       <span className="text-red-500">*</span>
                     </label>
-                    <select
-                      name="claimType"
-                      className={`${inputClass} hover:cursor-pointer`}
-                      value={formData.claimType}
-                      onChange={handleChange}
-                      required
-                    >
-                      <option value="">
-                        {t(
-                          "file_a_claim.form_section.fields.claim_type.default_option",
-                        )}
-                      </option>
-                      <option value="lost">
-                        {t(
-                          "file_a_claim.form_section.fields.claim_type.options.lost",
-                        )}
-                      </option>
-                      <option value="damaged">
-                        {t(
-                          "file_a_claim.form_section.fields.claim_type.options.damaged",
-                        )}
-                      </option>
-                      <option value="late">
-                        {t(
-                          "file_a_claim.form_section.fields.claim_type.options.late",
-                        )}
-                      </option>
-                    </select>
+                    <div className="relative">
+                      {isFormSubmitted && fieldErrors.claimType && (
+                        <FileAClaimToolTipError
+                          message={fieldErrors.claimType}
+                        />
+                      )}
+                      <select
+                        name="claimType"
+                        className={`${inputClass} hover:cursor-pointer`}
+                        value={formData.claimType}
+                        onChange={handleChange}
+                      >
+                        <option value="">
+                          {t(
+                            "file_a_claim.form_section.fields.claim_type.default_option",
+                          )}
+                        </option>
+                        <option value="lost">
+                          {t(
+                            "file_a_claim.form_section.fields.claim_type.options.lost",
+                          )}
+                        </option>
+                        <option value="damaged">
+                          {t(
+                            "file_a_claim.form_section.fields.claim_type.options.damaged",
+                          )}
+                        </option>
+                        <option value="late">
+                          {t(
+                            "file_a_claim.form_section.fields.claim_type.options.late",
+                          )}
+                        </option>
+                      </select>
+                    </div>
                   </div>
                 </div>
 
@@ -461,18 +554,23 @@ const FileAClaimForm = () => {
                     )}{" "}
                     <span className="text-red-500">*</span>
                   </label>
-                  <input
-                    type="text"
-                    name="trackingNumber"
-                    placeholder={t(
-                      "file_a_claim.form_section.fields.tracking_number.placeholder",
+                  <div className="relative">
+                    {isFormSubmitted && fieldErrors.trackingNumber && (
+                      <FileAClaimToolTipError
+                        message={fieldErrors.trackingNumber}
+                      />
                     )}
-                    className={inputClass}
-                    value={formData.trackingNumber}
-                    onChange={handleChange}
-                    minLength={8}
-                    required
-                  />
+                    <input
+                      type="text"
+                      name="trackingNumber"
+                      placeholder={t(
+                        "file_a_claim.form_section.fields.tracking_number.placeholder",
+                      )}
+                      className={inputClass}
+                      value={formData.trackingNumber}
+                      onChange={handleChange}
+                    />
+                  </div>
                 </div>
 
                 <div className="flex flex-col gap-[1vw] md:gap-[0.3vw] grow">
@@ -484,46 +582,45 @@ const FileAClaimForm = () => {
                     <span
                       className={`text-[3vw] md:text-[0.75vw] ${
                         formData.description.length < 25
-                          ? "text-red-400"
-                          : "text-green-500"
+                          ? "text-red-500"
+                          : "text-green-600"
                       }`}
                     >
                       {formData.description.length}/25
                     </span>
                   </div>
 
-                  <textarea
-                    name="description"
-                    placeholder={t(
-                      "file_a_claim.form_section.fields.description.placeholder",
+                  <div className="relative">
+                    {/* Tooltip Error */}
+                    {isFormSubmitted && descriptionError && (
+                      <FileAClaimToolTipError message={descriptionError} />
                     )}
-                    className={`${inputClass} h-[35vw] md:h-full resize-none`}
-                    value={formData.description}
-                    onChange={handleChange}
-                    required
-                    minLength={25}
-                  ></textarea>
+                    <textarea
+                      name="description"
+                      placeholder={t(
+                        "file_a_claim.form_section.fields.description.placeholder",
+                      )}
+                      className={`${inputClass} h-[35vw] md:h-full resize-none`}
+                      value={formData.description}
+                      onChange={(e) => {
+                        handleChange(e);
+                        // Clear error when user starts typing
+                        if (descriptionError) setDescriptionError("");
+                      }}
+                    ></textarea>
+                  </div>
                 </div>
 
-                <div className="flex flex-col items-center md:items-end mt-[2vw] md:mt-[1vw]">
-                  <button
+                <div className="flex flex-col items-center md:items-end w-full md:mt-0 mt-[2vw]">
+                  <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`
-                      bg-[linear-gradient(267.42deg,#FF00E5_0.34%,#4F378A_98.35%)]
-                      text-white font-bold
-                      py-[1.9vw] px-[8vw] md:py-[0.5vw] md:px-[2.1vw]
-                      rounded-[5.1vw] md:rounded-[1.3vw]
-                      shadow-lg hover:shadow-xl
-                      transition-transform transform hover:-translate-y-1
-                      text-[4vw] md:text-[1vw] hover:cursor-pointer
-                      ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}
-                    `}
+                    className="md:py-[0.6vw] py-[2vw] md:px-[1.5vw] px-[5vw] md:text-[0.8vw] text-[2.5vw] font-medium"
                   >
                     {isSubmitting
                       ? "Sending..."
                       : t("file_a_claim.form_section.buttons.submit_claim")}
-                  </button>
+                  </Button>
                 </div>
               </div>
             </div>
