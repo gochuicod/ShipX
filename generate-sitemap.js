@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const DOMAIN = "https://shipx.asia";
-const SPA_ROUTES = ["/", "/book-a-demo", "/privacy-policy", "/terms-and-conditions", "/blog", "/blog/shipx-goes-live-smarter-future-asean-cross-border-logistics"];
+const SPA_ROUTES = ["/", "/book-a-demo", "/privacy-policy", "/terms-and-conditions", "/blog", "/frequently-asked-questions", "/shipment-tracker", "/hs-code-generator", "/file-a-claim", "/blog/shipx-goes-live-smarter-future-asean-cross-border-logistics"];
 
 function generateSitemap() {
   const urls = SPA_ROUTES.map((route) => ({

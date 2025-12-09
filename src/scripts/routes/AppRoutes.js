@@ -2,24 +2,30 @@ import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import MultiStepLoader from "../components/ui/MultiStepLoader";
 
-const Main = lazy(() => import("../components/Main"));
-const PrivacyPolicy = lazy(() => import("../components/PrivacyPolicy"));
+const Main = lazy(() => import("../components/pages/homepage/Main"));
+const PrivacyPolicy = lazy(
+  () => import("../components/pages/privacy_policy/PrivacyPolicy"),
+);
 const TermsAndConditions = lazy(
-  () => import("../components/TermsAndConditions"),
+  () => import("../components/pages/terms_and_conditions/TermsAndConditions"),
 );
-const BookADemo = lazy(() => import("../components/BookADemo"));
-const BlogList = lazy(() => import("../components/blogs/BlogList"));
-const Blog = lazy(() => import("../components/blogs/Blog"));
-const NotFound = lazy(() => import("../components/ui/NotFound"));
+const BookADemo = lazy(
+  () => import("../components/pages/book_a_demo/BookADemo"),
+);
+const BlogList = lazy(() => import("../components/pages/blogs/BlogList"));
+const Blog = lazy(() => import("../components/pages/blogs/Blog"));
+const NotFound = lazy(() => import("../components/pages/not_found/NotFound"));
 const ShipmentTracker = lazy(
-  () => import("../components/shipment_tracker/ShipmentTracker"),
+  () => import("../components/pages/toolkit/shipment_tracker/ShipmentTracker"),
 );
-const ClaimsPage = lazy(() => import("../components/file_a_claim/ClaimsPage"));
+const ClaimsPage = lazy(
+  () => import("../components/pages/toolkit/file_a_claim/ClaimsPage"),
+);
 const HsCodeGenerator = lazy(
-  () => import("../components/hs_code_generator/HsCodeGenerator"),
+  () => import("../components/pages/toolkit/hs_code_generator/HsCodeGenerator"),
 );
 const FAQPage = lazy(
-  () => import("../components/frequently_asked_questions/FAQPage"),
+  () => import("../components/pages/frequently_asked_questions/FAQPage"),
 );
 
 const AppRoutes = ({ margin }) => (
