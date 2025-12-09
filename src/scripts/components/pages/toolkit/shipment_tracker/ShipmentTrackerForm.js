@@ -18,10 +18,11 @@ const ShipmentTrackerForm = ({ initialTrackingNumber, autoSubmit = false }) => {
 
   // This assumes useShipment is refactored to expose a `trackShipment` function
   // and an `error` state.
-  const { setShipmentData, setTrackingNumber, error: apiError } = useShipment();
+  const { shipmentData, setShipmentData, setTrackingNumber } = useShipment();
 
   // Combine form errors and API errors for a single source of truth.
-  const displayError = errors.trackingNumber?.message || apiError;
+  const displayError =
+    errors.trackingNumber?.message || shipmentData?.errors?.[0];
 
   // Effect to handle auto-submission when redirected
   useEffect(() => {
@@ -50,7 +51,12 @@ const ShipmentTrackerForm = ({ initialTrackingNumber, autoSubmit = false }) => {
       );
 
       if (!response.ok) {
-        throw new Error("Something went wrong with the tracking request.");
+        const errorData = await response.json();
+        // The API returns a JSON with an `errors` array upon failure.
+        // We set this error object in our state. The `useShipment` hook
+        // is expected to correctly parse this and provide the error message.
+        setShipmentData(errorData);
+        return;
       }
 
       const result = await response.json();
@@ -59,6 +65,8 @@ const ShipmentTrackerForm = ({ initialTrackingNumber, autoSubmit = false }) => {
       reset();
     } catch (error) {
       console.error("Fetch error:", error);
+      // This will catch network errors or if response.json() fails on an error response.
+      setShipmentData({ errors: ["An error occurred. Please try again."] });
     }
   };
 
@@ -140,7 +148,7 @@ const ShipmentTrackerForm = ({ initialTrackingNumber, autoSubmit = false }) => {
                 onChange: () => {
                   clearErrors("trackingNumber");
                   // Also clear API error from useShipment if it exists
-                  if (apiError) setShipmentData(null);
+                  if (shipmentData?.errors) setShipmentData(null);
                 },
               })}
               autoComplete="number"
