@@ -1,5 +1,3 @@
-// import ParallaxSection from "../ui/ParallaxSection";
-// import SmartNavLink from "../ui/SmartNavLink";
 import SEO from "../../../ui/SEO";
 import FileAClaimForm from "./FileAClaimForm";
 import ToolsHeroSection from "../shipment_tracker/ToolsHeroSection";

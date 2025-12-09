@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
 const ShareSection = () => {
@@ -140,7 +140,7 @@ const ShareSection = () => {
 
           {/* Social Dropdown Menu */}
           {showShareMenu && (
-            <div className="absolute top-12 left-0 bg-white shadow-xl border border-gray-100 rounded-xl p-2 flex flex-col gap-1 min-w-[160px] z-50 text-left">
+            <div className="absolute top-12 left-0 bg-white shadow-xl border border-gray-100 rounded-xl p-2 flex flex-col gap-1 min-w-40 z-50 text-left">
               <button
                 onClick={() => handleSocialShare("facebook")}
                 className="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg text-sm text-gray-700 w-full text-left"
@@ -201,7 +201,7 @@ const ShareSection = () => {
 
       {/* --- TOAST COMPONENT (FIXED BOTTOM) --- */}
       <div
-        className={`fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] flex items-center gap-3 px-6 py-3 rounded-xl shadow-2xl transition-all duration-300 ease-in-out ${
+        className={`fixed bottom-8 left-1/2 -translate-x-1/2 z-100 flex items-center gap-3 px-6 py-3 rounded-xl shadow-2xl transition-all duration-300 ease-in-out ${
           toast.show
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-4 pointer-events-none"
