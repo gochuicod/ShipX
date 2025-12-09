@@ -1,4 +1,4 @@
-import i18n from "../i18n";
+import i18n from "../../i18n";
 
 const changeLanguage = async (lang) => {
   if (!["en", "vn", "my", "ind", "thai"].includes(lang)) return;
