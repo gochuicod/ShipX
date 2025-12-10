@@ -127,9 +127,9 @@ const Footer = memo(() => {
       <div
         className="
                 absolute
-                md:top-[6vw] top-0 left-0 right-0
+                md:top-[4vw] top-0 left-0 right-0
                 flex flex-col
-                md:w-[85vw] w-[90vw]
+                md:w-[80vw] w-[90vw]
                 md:h-auto h-[80vw]
                 bg-cover bg-center bg-no-repeat
                 mx-auto
@@ -166,7 +166,7 @@ const Footer = memo(() => {
           <span
             className={cn(
               themeGuide.ctaDescription,
-              "shadow-[#0000001A] w-[90%]",
+              "shadow-[#0000001A] w-full md:mt-2.5 md: mb-[30px]",
             )}
           >
             {t("shipment_tracker.shipment_cta_section.description")}
@@ -182,37 +182,13 @@ const Footer = memo(() => {
           >
             <div className="flex flex-col relative overflow-hidden md:p-[0.10vw] p-[0.5vw]">
               <SmartNavLink to="/book-a-demo" end>
-                <button
-                  type="button"
-                  className={`
-                      flex flex-row
-                      items-center justify-center
-                      gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw]
-                      bg-white/15 text-white
-                      border border-white/95
-                      rounded-full
-                      transition-all duration-300 focus:outline-none
-                      cursor-pointer
-                  `}
-                >
+                <button type="button" className={themeGuide.buttonFooterCTA}>
                   {t("footer.book_a_demo")}
                 </button>
               </SmartNavLink>
             </div>
             <SmartNavLink to="/#contact-us" end>
-              <button
-                type="button"
-                className={`
-                  flex flex-row
-                  items-center justify-center
-                  gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw]
-                  bg-white/15 text-white
-                  border border-white/95
-                  rounded-full
-                  transition-all duration-300 focus:outline-none
-                  cursor-pointer
-                `}
-              >
+              <button type="button" className={themeGuide.buttonFooterCTA}>
                 {t("footer.contact_us")}
               </button>
             </SmartNavLink>
@@ -220,13 +196,13 @@ const Footer = memo(() => {
         </div>
       </div>
       <footer
-        className="bg-[#F3F4F6] w-full pt-[30vw] pb-[4vw] px-[5vw] md:pt-[10vw] md:pb-[2vw] md:px-[7.5vw]"
+        className="bg-[#F3F4F6] w-full pt-[30vw] pb-[4vw] px-[5vw] md:pt-[10vw] md:pb-[2vw] md:px-[10vw]"
         style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
       >
         {/* --- TOP SECTION --- */}
-        <div className="flex flex-col md:flex-row justify-between items-start gap-[3vw] md:gap-auto">
+        <div className="flex flex-col md:flex-row justify-normal items-start gap-[3vw] md:gap-0">
           {/* LEFT COLUMN: Brand Identity */}
-          <div className="flex flex-col w-full md:w-[35%] md:mb-[0.5vw] mb-[3.5vw]">
+          <div className="flex flex-col w-full md:w-[40%] md:mb-[0.5vw] mb-[3.5vw]">
             {/* Logos */}
             <div className="flex md:justify-start justify-center items-center gap-[3vw] md:gap-[1vw] md:mb-0 mb-[2vw]">
               <img

@@ -77,7 +77,7 @@ const ShipmentTracker = () => {
         ogImage="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
       />
 
-      <div className="w-screen min-h-screen flex flex-col">
+      <div className="w-screen flex flex-col">
         {/* Reusable Hero Section */}
         <ToolsHeroSection activePage="shipment-tracker" />
 

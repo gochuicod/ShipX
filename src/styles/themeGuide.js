@@ -18,7 +18,7 @@ export const themeGuide = {
 
   // Call to Action (CTA)
   ctaHeading: "text-[40px] font-semibold tracking-tight leading-none",
-  ctaDescription: "text-base leading-tight",
+  ctaDescription: "text-lg leading-tight",
 
   // Footer
   footerTagline: "text-lg font-bold leading-tight text-dark-neutral",
@@ -33,6 +33,8 @@ export const themeGuide = {
     "rounded-md text-sm font-medium mainButton inline-flex items-center justify-center gap-2 whitespace-nowrap shrink-0 min-h-12 px-4 py-2 has-[>svg]:px-3",
   buttonNormal:
     "bg-gray-200 text-foreground hover:bg-violet-300/70 h-9 px-4 py-2 rounded-md",
+  buttonFooterCTA:
+    "bg-white/15 text-white text-base font-normal border border-white/95 rounded-[19px] md:py-[7px] md:px-[30px] cursor-pointer",
 
   badge:
     "text-secondary flex items-center gap-1 rounded-md bg-violet-100 px-4 py-2 text-sm font-bold",
