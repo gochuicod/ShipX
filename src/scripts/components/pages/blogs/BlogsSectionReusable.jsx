@@ -1,8 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Calendar, ArrowRight } from "lucide-react";
 import SmartNavLink from "../../ui/SmartNavLink";
-import SEO from "../../ui/SEO";
-// import Badge from "../toolkit/shipment_tracker/Badge";
 
 const BlogSection = () => {
   const { t } = useTranslation();
@@ -31,13 +29,6 @@ const BlogSection = () => {
 
   return (
     <>
-      <SEO
-        title={t("seo.blog_page.title")}
-        description={t("seo.blog_page.description")}
-        canonical={t("seo.blog_page.canonical")}
-        ogImage={t("seo.blog_page.ogImage")}
-      />
-
       <section
         className="py-12 bg-none"
         style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
