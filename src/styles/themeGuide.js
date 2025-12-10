@@ -17,13 +17,15 @@ export const themeGuide = {
     "placeholder:text-placeholder text-placeholder italic text-base placeholder:italic md:text-sm",
 
   // Call to Action (CTA)
-  ctaHeading: "text-2xl font-semibold tracking-tight leading-none",
+  ctaHeading: "text-[40px] font-semibold tracking-tight leading-none",
   ctaDescription: "text-base leading-tight",
 
   // Footer
-  footerBody: "text-sm leading-none",
+  footerTagline: "text-lg font-bold leading-tight text-dark-neutral",
+  footerBody: "text-sm leading-none font-normal text-dark-neutral",
   footerHeading: "text-base font-bold text-secondary",
-  footerItem: "text-sm text-foreground",
+  footerItem: "text-sm text-medium-neutral hover:text-foreground leading-none",
+  footerIcon: "w-5 h-5",
 
   // Buttons & UI
   // Note: These often need base button classes + variant classes
