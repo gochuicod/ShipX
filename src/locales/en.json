@@ -770,10 +770,12 @@
           "label": "Country",
           "default_option": "Select a country",
           "options": {
+            "ph": "Philippines",
             "vn": "Vietnam",
             "my": "Malaysia",
             "th": "Thailand",
-            "ph": "Philippines"
+            "id": "Indonesia",
+            "sg": "Singapore"
           }
         },
         "claim_type": {
