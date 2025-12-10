@@ -770,10 +770,12 @@
           "label": "Quốc gia",
           "default_option": "Chọn quốc gia",
           "options": {
+            "ph": "Philippines",
             "vn": "Việt Nam",
             "my": "Malaysia",
             "th": "Thái Lan",
-            "ph": "Philippines"
+            "id": "Indonesia",
+            "sg": "Singapore"          
           }
         },
         "claim_type": {
