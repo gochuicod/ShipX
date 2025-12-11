@@ -203,7 +203,7 @@ export default function CarouselNav() {
 
               {/* CTA Buttons */}
               <div
-                className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.7vw] text-[2.5vw] font-normal md:my-[2.5vw] my-[5vw]"
+                className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-base text-[2.5vw] font-normal md:my-[2.5vw] my-[5vw]"
                 style={{
                   fontFamily: "Karla, system-ui, -apple-system, sans-serif",
                 }}
@@ -214,16 +214,16 @@ export default function CarouselNav() {
                     bg-size-[200%_100%] bg-position-[0%_0%]
                     hover:bg-position-[100%_0%]
                     transition-[background-position] duration-1000 ease-in-out
-                    md:py-[0.6vw] py-[1.5vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
+                    md:py-[7.5px] py-[1.5vw] md:px-[30px] px-[3vw] md:rounded-[2vw] rounded-[19px]
                     text-white font-medium cursor-pointer
                   "
                   to="/book-a-demo"
                 >
-                  {t("hero_section.slide_1.book_a_demo")}
+                  {t("hero_section.slide_2.book_a_demo")}
                 </SmartNavLink>
                 <SmartNavLink to="/#services" end>
                   <MotionButton
-                    className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
+                    className="p-px rounded-[19px] relative overflow-hidden cursor-pointer"
                     whileHover={{
                       y: -5,
                       transition: {
@@ -245,17 +245,17 @@ export default function CarouselNav() {
                     <div className="absolute inset-0 bg-linear-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
                     {/* Inner white area */}
-                    <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
+                    <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[30px] px-[5vw] md:py-[7.5px] py-[1vw] bg-white rounded-full">
                       <span className="text-[#4F378A] font-semibold">
-                        {t("hero_section.slide_1.learn_more")}
+                        {t("hero_section.slide_2.learn_more")}
                       </span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
-                        strokeWidth={3.5}
+                        strokeWidth={2}
                         stroke="#FF00E5"
-                        className="md:size-[0.7vw] size-[2.5vw]"
+                        className="md:size-[15px] size-[2.5vw]"
                       >
                         <path
                           strokeLinecap="round"
@@ -440,7 +440,7 @@ export default function CarouselNav() {
 
               {/* CTA Buttons */}
               <div
-                className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.7vw] text-[2.5vw] font-normal md:my-[2.5vw] my-[5vw]"
+                className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-base text-[2.5vw] font-normal md:my-[2.5vw] my-[5vw]"
                 style={{
                   fontFamily: "Karla, system-ui, -apple-system, sans-serif",
                 }}
@@ -451,7 +451,7 @@ export default function CarouselNav() {
                     bg-size-[200%_100%] bg-position-[0%_0%]
                     hover:bg-position-[100%_0%]
                     transition-[background-position] duration-1000 ease-in-out
-                    md:py-[0.6vw] py-[1.5vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
+                    md:py-[7.5px] py-[1.5vw] md:px-[30px] px-[3vw] md:rounded-[2vw] rounded-[19px]
                     text-white font-medium cursor-pointer
                   "
                   to="/book-a-demo"
@@ -460,7 +460,7 @@ export default function CarouselNav() {
                 </SmartNavLink>
                 <SmartNavLink to="/#services" end>
                   <MotionButton
-                    className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
+                    className="p-px rounded-[19px] relative overflow-hidden cursor-pointer"
                     whileHover={{
                       y: -5,
                       transition: {
@@ -482,7 +482,7 @@ export default function CarouselNav() {
                     <div className="absolute inset-0 bg-linear-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
                     {/* Inner white area */}
-                    <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
+                    <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[30px] px-[5vw] md:py-[7.5px] py-[1vw] bg-white rounded-full">
                       <span className="text-[#4F378A] font-semibold">
                         {t("hero_section.slide_2.learn_more")}
                       </span>
@@ -490,9 +490,9 @@ export default function CarouselNav() {
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
-                        strokeWidth={3.5}
+                        strokeWidth={2}
                         stroke="#FF00E5"
-                        className="md:size-[0.7vw] size-[2.5vw]"
+                        className="md:size-[15px] size-[2.5vw]"
                       >
                         <path
                           strokeLinecap="round"
@@ -679,7 +679,7 @@ export default function CarouselNav() {
 
               {/* CTA Buttons */}
               <div
-                className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.7vw] text-[2.5vw] font-normal md:my-[2.5vw] my-[5vw]"
+                className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-base text-[2.5vw] font-normal md:my-[2.5vw] my-[5vw]"
                 style={{
                   fontFamily: "Karla, system-ui, -apple-system, sans-serif",
                 }}
@@ -690,16 +690,16 @@ export default function CarouselNav() {
                     bg-size-[200%_100%] bg-position-[0%_0%]
                     hover:bg-position-[100%_0%]
                     transition-[background-position] duration-1000 ease-in-out
-                    md:py-[0.6vw] py-[1.5vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
+                    md:py-[7.5px] py-[1.5vw] md:px-[30px] px-[3vw] md:rounded-[2vw] rounded-[19px]
                     text-white font-medium cursor-pointer
                   "
                   to="/book-a-demo"
                 >
-                  {t("hero_section.slide_3.book_a_demo")}
+                  {t("hero_section.slide_2.book_a_demo")}
                 </SmartNavLink>
                 <SmartNavLink to="/#services" end>
                   <MotionButton
-                    className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
+                    className="p-px rounded-[19px] relative overflow-hidden cursor-pointer"
                     whileHover={{
                       y: -5,
                       transition: {
@@ -721,17 +721,17 @@ export default function CarouselNav() {
                     <div className="absolute inset-0 bg-linear-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
                     {/* Inner white area */}
-                    <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
+                    <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[30px] px-[5vw] md:py-[7.5px] py-[1vw] bg-white rounded-full">
                       <span className="text-[#4F378A] font-semibold">
-                        {t("hero_section.slide_3.learn_more")}
+                        {t("hero_section.slide_2.learn_more")}
                       </span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
-                        strokeWidth={3.5}
+                        strokeWidth={2}
                         stroke="#FF00E5"
-                        className="md:size-[0.7vw] size-[2.5vw]"
+                        className="md:size-[15px] size-[2.5vw]"
                       >
                         <path
                           strokeLinecap="round"

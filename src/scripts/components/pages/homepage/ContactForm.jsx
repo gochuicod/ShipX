@@ -173,7 +173,7 @@ const ContactForm = () => {
         />
       </div>
 
-      <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-[0.8vw] text-[2.5vw] font-normal justify-start items-center md:mt-[1vw] mt-0 md:pt-0 pt-[5vw]">
+      <div className="flex flex-row md:gap-x-[1vw] gap-x-[3vw] md:text-base text-[2.5vw] font-normal justify-start items-center md:mt-[1vw] mt-0 md:pt-0 pt-[5vw]">
         <button
           type="submit"
           disabled={isSubmitting}
@@ -182,7 +182,7 @@ const ContactForm = () => {
             bg-size-[200%_100%] bg-position-[0%_0%]
             hover:bg-position-[100%_0%]
             transition-[background-position] duration-1000 ease-in-out
-            md:py-[0.6vw] py-[1vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full cursor-pointer
+            md:py-[7.5px] py-[1vw] md:px-[30px] px-[3vw] md:rounded-[19px] rounded-full cursor-pointer
             text-white font-medium shadow-[0_0.5vw_1vw_rgba(255,0,229,0.25)]
           "
         >
@@ -199,7 +199,7 @@ const ContactForm = () => {
         >
           <MotionButton
             type="button"
-            className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
+            className="p-px rounded-[19px] relative overflow-hidden cursor-pointer"
             whileHover={{
               y: -5,
               transition: { type: "spring", stiffness: 300, damping: 15 },
@@ -213,7 +213,7 @@ const ContactForm = () => {
             <div className="absolute inset-0 bg-linear-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
 
             {/* Inner white area */}
-            <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
+            <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[30px] px-[5vw] md:py-[6.5px] py-[1vw] bg-white rounded-[19px]">
               {t("contact_us_section.form.book_a_demo")}
             </div>
           </MotionButton>

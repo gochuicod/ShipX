@@ -28,15 +28,15 @@ const SGAmiloCards = () => {
                       bg-size-[200%_100%] bg-position-[0%_0%]
                       hover:bg-position-[100%_0%]
                       transition-[background-position] duration-1000 ease-in-out
-                      md:py-[0.6vw] py-[1.5vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
+                      md:py-[7.5px] py-[1.5vw] md:px-[30px] px-[3vw] md:rounded-[2vw] rounded-[19px]
                       text-white font-medium absolute md:bottom-[-1vw] bottom-[-3vw] left-1/2 transform -translate-x-1/2 cursor-pointer
                       flex flex-row md:gap-x-[1vw] gap-x-[3vw] justify-center items-center z-10 lg:w-[20vw] md:w-auto w-[60vw]
                     "
             >
-              <span className="md:text-[0.8vw] text-[2.5vw] font-normal">
+              <span className="md:text-base text-[2.5vw] font-normal">
                 {t("systems_section.signup_button.question")}
               </span>
-              <span className="flex flex-row md:text-[0.8vw] text-[2.5vw] md:gap-x-[0.1vw] gap-x-[0.5vw] justify-center items-center text-white font-bold">
+              <span className="flex flex-row md:text-base text-[2.5vw] md:gap-x-[0.1vw] gap-x-[0.5vw] justify-center items-center text-white font-bold">
                 {t("systems_section.signup_button.button")}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +79,7 @@ const SGAmiloCards = () => {
             </p>
             <MotionButton
               type="button"
-              className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer w-fit z-10"
+              className="p-px rounded-[19px] relative overflow-hidden cursor-pointer w-fit z-10"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.8 }}
               onClick={() =>
@@ -87,11 +87,11 @@ const SGAmiloCards = () => {
               }
             >
               {/* Gradient border */}
-              <div className="absolute inset-0 bg-linear-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+              <div className="absolute inset-0 bg-linear-to-r from-[#4F378A] to-[#FF00E5] rounded-[19px]" />
 
               {/* Inner white area */}
-              <div className="relative flex flex-row items-center gap-x-[1vw] px-[2vw] py-[0.5vw] bg-white rounded-full">
-                <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2.5vw]">
+              <div className="relative flex flex-row items-center gap-x-[1vw] px-[2vw] py-[0.5vw] bg-white rounded-[19px]">
+                <span className="text-[#4F378A] font-semibold md:text-base text-[2.5vw]">
                   {t("systems_section.sglink_card.button")}
                 </span>
                 <img
@@ -159,15 +159,15 @@ const SGAmiloCards = () => {
                       bg-size-[200%_100%] bg-position-[0%_0%]
                       hover:bg-position-[100%_0%]
                       transition-[background-position] duration-1000 ease-in-out
-                      md:py-[0.6vw] py-[1.5vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full
+                      md:py-[7.5px] py-[1.5vw] md:px-[30px] px-[3vw] md:rounded-[2vw] rounded-[19px]
                       text-white font-medium absolute md:bottom-[-1vw] bottom-[-3vw] left-1/2 transform -translate-x-1/2 cursor-pointer
                       flex flex-row md:gap-x-[1vw] gap-x-[3vw] justify-center items-center z-10 lg:w-[20vw] md:w-auto w-[60vw]
                     "
             >
-              <span className="md:text-[0.8vw] text-[2.5vw] font-normal">
+              <span className="md:text-base text-[2.5vw] font-normal">
                 {t("systems_section.signup_button.question")}
               </span>
-              <span className="flex flex-row md:text-[0.8vw] text-[2.5vw] md:gap-x-[0.1vw] gap-x-[0.5vw] justify-center items-center text-white font-bold">
+              <span className="flex flex-row md:text-base text-[2.5vw] md:gap-x-[0.1vw] gap-x-[0.5vw] justify-center items-center text-white font-bold">
                 {t("systems_section.signup_button.button")}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -210,17 +210,17 @@ const SGAmiloCards = () => {
             </p>
             <MotionButton
               type="button"
-              className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer w-fit z-10"
+              className="p-px rounded-[19px] relative overflow-hidden cursor-pointer w-fit z-10"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.8 }}
               onClick={() => (window.location.href = "https://vip.amilo.co/")}
             >
               {/* Gradient border */}
-              <div className="absolute inset-0 bg-linear-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+              <div className="absolute inset-0 bg-linear-to-r from-[#4F378A] to-[#FF00E5] rounded-[19px]" />
 
               {/* Inner white area */}
-              <div className="relative flex flex-row items-center gap-x-[1vw] px-[2vw] py-[0.5vw] bg-white rounded-full">
-                <span className="text-[#4F378A] font-semibold md:text-[0.8vw] text-[2.5vw]">
+              <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[30px] px-[2vw] md:py-[7.5px] py-[0.5vw] bg-white rounded-[19px]">
+                <span className="text-[#4F378A] font-semibold md:text-base text-[2.5vw]">
                   {t("systems_section.amilo_card.button")}
                 </span>
                 <img

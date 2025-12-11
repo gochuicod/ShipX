@@ -87,7 +87,7 @@ const Offices = () => {
                 >
                   <MotionButton
                     type="button"
-                    className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
+                    className="p-px rounded-full relative overflow-hidden cursor-pointer"
                     whileHover={{
                       y: -5,
                       transition: {
@@ -106,27 +106,26 @@ const Offices = () => {
                     }}
                   >
                     {/* Gradient border */}
-                    <div className="absolute inset-0 bg-linear-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+                    <div className="absolute inset-0 bg-linear-to-r from-[#4F378A] to-[#FF00E5] rounded-[19px]" />
 
                     {/* Inner white area */}
-                    <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
-                      {t("offices_section.book_a_demo")}
+                    <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[30px] px-[5vw] md:py-[6.5px] py-[1vw] bg-white rounded-[19px]">
+                      {t("services_section.book_a_demo")}
                     </div>
                   </MotionButton>
                 </SmartNavLink>
                 <SmartNavLink
                   to="/#contact-us"
-                  end
                   className="
-                          bg-linear-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
-                          bg-size-[200%_100%] bg-position-[0%_0%]
-                          hover:bg-position-[100%_0%]
-                          transition-[background-position] duration-1000 ease-in-out
-                          md:py-[0.6vw] py-[1.3vw] md:px-[1.5vw] px-[3vw] md:rounded-[2vw] rounded-full cursor-pointer
-                          text-white font-medium shadow-[0_0.5vw_1vw_rgba(255,0,229,0.25)]
-                        "
+                    bg-linear-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
+                    bg-size-[200%_100%] bg-position-[0%_0%]
+                    hover:bg-position-[100%_0%]
+                    transition-[background-position] duration-1000 ease-in-out
+                    md:py-[7.5px] py-[0.5vw] md:px-[1.5vw] px-[30px] rounded-[19px]
+                    text-white font-medium
+                  "
                 >
-                  {t("offices_section.contact_us")}
+                  {t("header.contact_us")}
                 </SmartNavLink>
               </div>
             </div>

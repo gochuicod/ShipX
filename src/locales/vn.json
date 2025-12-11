@@ -6,7 +6,7 @@
     "toolkit": "Bộ công cụ",
     "shipment_tracker": "Theo dõi đơn hàng",
     "hs_code_generator": "Công cụ tạo mã HS",
-    "file_a_claim": "Gửi yêu cầu bồi thường",
+    "file_a_claim": "Giải quyết khiếu nại",
     "resources": "Tài nguyên",
     "blogs": "Blog",
     "faqs": "Câu hỏi thường gặp",
@@ -687,7 +687,7 @@
       "buttons": {
         "shipment_tracker": "Theo Dõi Đơn Hàng",
         "hs_code_generator": "Tạo Mã HS",
-        "file_a_claim": "Yêu cầu bồi thường"
+        "file_a_claim": "Giải quyết khiếu nại"
       }
     },
     "track_order_section": {
@@ -729,7 +729,7 @@
   "file_a_claim": {
     "header_section": {
       "badge_text": "Bộ Công cụ Thương mại và Logistics",
-      "title": "Chúng tôi ở đây để giải quyết vấn đề.",
+      "title": "Bạn cần hỗ trợ? Hãy cho chúng tôi biết.",
       "description": "Chúng tôi xin lỗi nếu bạn gặp sự cố với việc giao hàng. Vui lòng hoàn thành biểu mẫu dưới đây để giúp đội ngũ hỗ trợ của chúng tôi điều tra tình hình và tìm ra giải pháp cho bạn nhanh nhất có thể."
     },
     "form_section": {

@@ -18,6 +18,8 @@ import {
   Popover,
   Portal,
 } from "@headlessui/react";
+import { themeGuide } from "../../styles/themeGuide";
+import { cn } from "../../lib/util";
 
 const linkClass =
   "transition-colors duration-500 hover:text-[#FF00E5] hover:underline hover:decoration-2 hover:underline-offset-5";
@@ -224,12 +226,12 @@ const Header = memo(() => {
             src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_img_14.webp"
             alt="Separator"
           />
-          <span className="hidden md:inline text-[0.8vw] font-normal">
+          <span className={cn(themeGuide.headerTagline, "hidden md:inline")}>
             {/* ASEAN's Next Generation Platform */}
             {t("header.tagline")}
           </span>
           <Listbox
-            className="md:block hidden"
+            className={cn(themeGuide.headerLanguageItem, "md:block hidden")}
             value={selected}
             onChange={async (language) => {
               setSelected(language);
@@ -261,7 +263,12 @@ const Header = memo(() => {
                 className="relative flex flex-row w-full justify-center items-center gap-x-[0.5vw] px-[0.6vw] py-[0.3vw] cursor-pointer md:rounded-[0.5vw] rounded-[2vw] text-center focus-visible:outline-0 shadow-[0_0.1vw_0.5vw_rgba(255,0,229,0.15)]"
               >
                 <span className="flex items-center">
-                  <span className="block text-[#1A1A1A] md:text-[0.8vw] text-[2.2vw] font-semibold">
+                  <span
+                    className={cn(
+                      themeGuide.headerLanguageItem,
+                      "block font-semibold!",
+                    )}
+                  >
                     {selected.name}
                   </span>
                 </span>
@@ -296,7 +303,10 @@ const Header = memo(() => {
                     >
                       <div className="flex items-center">
                         <span
-                          className="ml-3 block truncate font-normal group-data-focus:font-semibold group-data-focus:text-white text-[#1A1A1A] md:text-[0.8vw] text-[2.2vw]"
+                          className={cn(
+                            themeGuide.headerLanguageItem,
+                            "ml-3 block truncate group-data-focus:text-white group-data-focus:font-semibold",
+                          )}
                           onClick={() => i18n.changeLanguage(language.key)}
                         >
                           {language.name}
@@ -327,7 +337,7 @@ const Header = memo(() => {
           )}
         </nav>
 
-        <div className="hidden md:flex flex-row justify-center items-center gap-x-[1vw] text-[0.8vw] font-normal">
+        <div className="hidden md:flex flex-row justify-center items-center gap-x-[1vw] md:text-base text-[0.8vw] font-normal">
           <LoginModal />
           <SmartNavLink
             to="/book-a-demo"
@@ -335,7 +345,7 @@ const Header = memo(() => {
           >
             <MotionButton
               type="button"
-              className="md:p-[0.15vw] p-[0.5vw] rounded-full relative overflow-hidden cursor-pointer"
+              className="p-px rounded-full relative overflow-hidden cursor-pointer"
               whileHover={{
                 y: -5,
                 transition: {
@@ -354,10 +364,10 @@ const Header = memo(() => {
               }}
             >
               {/* Gradient border */}
-              <div className="absolute inset-0 bg-linear-to-r from-[#4F378A] to-[#FF00E5] rounded-full" />
+              <div className="absolute inset-0 bg-linear-to-r from-[#4F378A] to-[#FF00E5] rounded-[19px]" />
 
               {/* Inner white area */}
-              <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[2vw] px-[5vw] md:py-[0.5vw] py-[1vw] bg-white rounded-full">
+              <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[30px] px-[5vw] md:py-[6.5px] py-[1vw] bg-white rounded-[19px]">
                 {t("services_section.book_a_demo")}
               </div>
             </MotionButton>
@@ -369,7 +379,7 @@ const Header = memo(() => {
               bg-size-[200%_100%] bg-position-[0%_0%]
               hover:bg-position-[100%_0%]
               transition-[background-position] duration-1000 ease-in-out
-              md:py-[0.6vw] py-[0.5vw] px-[1.5vw] rounded-[2vw]
+              md:py-[7.5px] py-[0.5vw] md:px-[1.5vw] px-[30px] rounded-[19px]
               text-white font-medium
             "
           >

@@ -111,10 +111,10 @@ const FAQSection = () => {
           <span
             className="
                   w-full h-full
-                  rounded-full
-                  md:px-[1.56vw] px-[8vw]
-                  md:py-[0.36vw] py-[2.5vw]
-                  md:text-[0.9vw] text-[3.5vw]
+                  rounded-[19px]
+                  md:px-[30px] px-[8vw]
+                  md:py-[7.5px] py-[2.5vw]
+                  md:text-base text-[3.5vw]
                   font-medium
                   bg-white
                   text-[#1A1A1A]

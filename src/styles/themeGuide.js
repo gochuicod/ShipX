@@ -20,6 +20,11 @@ export const themeGuide = {
   ctaHeading: "text-[40px] font-semibold tracking-tight leading-none",
   ctaDescription: "text-lg leading-tight",
 
+  // Header
+  headerTagline: "text-base text-dark-neutral font-normal",
+  headerLinks: "text-base text-dark-neutral font-medium",
+  headerLanguageItem: "text-md text-dark-neutral font-normal",
+
   // Footer
   footerTagline: "text-lg font-bold leading-tight text-dark-neutral",
   footerBody: "text-sm leading-none font-normal text-dark-neutral",
