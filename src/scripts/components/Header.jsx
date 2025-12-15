@@ -1,15 +1,11 @@
 import { memo, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import SmartNavLink from "./ui/SmartNavLink";
-import {
-  div as MotionDiv,
-  button as MotionButton,
-  span as MotionSpan,
-} from "motion/react-client";
+import { div as MotionDiv, span as MotionSpan } from "motion/react-client";
 import { AnimatePresence } from "motion/react";
 import { useTranslation } from "react-i18next";
 import { languages } from "../utils/constants";
-import LoginModal from "./ui/LoginModal";
+import LoginModal from "./library/LoginModal";
 import {
   Listbox,
   ListboxButton,
@@ -22,6 +18,7 @@ import { themeGuide } from "../../styles/themeGuide";
 import { cn } from "../../lib/util";
 
 import Logo from "./library/Logo";
+import AppButton from "./library/AppButton";
 
 const linkClass =
   "transition-colors duration-500 hover:text-[#FF00E5] hover:underline hover:decoration-2 hover:underline-offset-5";
@@ -226,7 +223,7 @@ const Header = memo(() => {
             flex-row
             gap-x-[2.5vw]
             font-normal
-            2xl:text-4
+            2xl:text-base
             text-[0.8vw]
             text-nav
           "
@@ -252,7 +249,7 @@ const Header = memo(() => {
             flex-row
             justify-center items-center
             gap-x-[1vw]
-            2xl:text-4
+            2xl:text-base
             md:text-base
             text-[0.8vw]
             font-normal
@@ -358,39 +355,23 @@ const Header = memo(() => {
           {/* Login Modal */}
           <LoginModal />
           {/* Book a Demo and Contact Us Buttons */}
-          <SmartNavLink
-            to="/book-a-demo"
-            className="text-[#4F378A] font-semibold"
-          >
-            <MotionButton
-              type="button"
-              className="p-px rounded-full relative overflow-hidden cursor-pointer"
-              whileHover={{
-                y: -5,
-                transition: {
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 15,
-                },
-              }}
-              whileTap={{
-                scale: 0.9,
-                transition: {
-                  type: "spring",
-                  stiffness: 500,
-                  damping: 10,
-                },
-              }}
+          <AppButton to="/book-a-demo">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="size-5"
             >
-              {/* Gradient border */}
-              <div className="absolute inset-0 bg-linear-to-r from-[#4F378A] to-[#FF00E5] rounded-[19px]" />
-
-              {/* Inner white area */}
-              <div className="relative flex flex-row items-center gap-x-[1vw] md:px-[30px] px-[5vw] md:py-[6.5px] py-[1vw] bg-white rounded-[19px]">
-                {t("services_section.book_a_demo")}
-              </div>
-            </MotionButton>
-          </SmartNavLink>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+              />
+            </svg>
+            {t("header.book_a_demo")}
+          </AppButton>
         </div>
 
         {/* Mobile Hamburger */}

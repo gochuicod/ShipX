@@ -1,4 +1,4 @@
-import BookADemoButton from "./BookADemoButton";
+import AppButton from "./AppButton";
 import Logo from "./Logo";
 import Badge from "./Badge";
 import { useState } from "react";
@@ -25,7 +25,11 @@ export default function ComponentShowcase() {
       </ComponentWrapper>
 
       <ComponentWrapper title="Book A Demo Button">
-        <BookADemoButton>Book a Demo</BookADemoButton>
+        <AppButton variant="main">Book a Demo</AppButton>
+      </ComponentWrapper>
+
+      <ComponentWrapper title="Learn More Button">
+        <AppButton variant="secondary">Learn More</AppButton>
       </ComponentWrapper>
 
       <ComponentWrapper title="Badge">

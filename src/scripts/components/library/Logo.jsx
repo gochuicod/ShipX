@@ -2,7 +2,7 @@ import SmartNavLink from "../ui/SmartNavLink";
 
 export default function Logo() {
   return (
-    <div className="flex flex-row gap-x-[0.5vw] justify-center items-center">
+    <div className="flex flex-row gap-x-[0.5vw]">
       <SmartNavLink
         to="/"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
