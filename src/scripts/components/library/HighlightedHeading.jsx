@@ -8,7 +8,7 @@ export default function HighlightedHeading({
 }) {
   if (!highlight) {
     return (
-      <h1 className={cn("text-4xl font-bold text-gray-900", className)}>
+      <h1 className={cn("text-4xl font-bold text-dark-neutral", className)}>
         {text}
       </h1>
     );
@@ -18,7 +18,7 @@ export default function HighlightedHeading({
   const parts = text.split(new RegExp(`(${highlight})`, "gi"));
 
   return (
-    <h1 className={cn("text-4xl font-bold text-gray-900", className)}>
+    <h1 className={cn("text-4xl font-bold text-dark-neutral", className)}>
       {parts.map((part, i) => (
         <span
           key={i}
