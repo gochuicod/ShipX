@@ -1,5 +1,7 @@
 import AppButton from "./AppButton";
 import Logo from "./Logo";
+import Badge from "./Badge";
+import { useState } from "react";
 
 // A wrapper to provide some styling for each component showcase
 const ComponentWrapper = ({ title, children }) => (
@@ -10,6 +12,8 @@ const ComponentWrapper = ({ title, children }) => (
 );
 
 export default function ComponentShowcase() {
+  const [openIndex, setOpenIndex] = useState(null);
+
   return (
     <div className="p-10 bg-gray-50 font-sans">
       <h1 className="text-4xl font-bold text-center mb-10 text-gray-900">
@@ -26,6 +30,10 @@ export default function ComponentShowcase() {
 
       <ComponentWrapper title="Learn More Button">
         <AppButton variant="secondary">Learn More</AppButton>
+      </ComponentWrapper>
+
+      <ComponentWrapper title="Badge">
+        <Badge badge_text="Trusted Network" />
       </ComponentWrapper>
     </div>
   );
