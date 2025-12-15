@@ -58,7 +58,7 @@ const LoginModal = () => {
       {/* Trigger */}
       <span
         onClick={handleClick}
-        className="text-[#FF00E5] hover:text-shadow-[0_0_0.5vw_rgba(255,0,229,0.5)] transition-text-shadow duration-500 ease-in-out cursor-pointer font-bold"
+        className="text-nav cursor-pointer font-normal text-[16px]"
       >
         {t("header.login_signup")}
       </span>

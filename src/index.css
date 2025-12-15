@@ -47,6 +47,7 @@
   --color-placeholder: var(--placeholder);
   --color-dark-neutral: var(--dark-neutral);
   --color-medium-neutral: var(--medium-neutral);
+  --color-nav: var(--nav);
 }
 
 :root {
@@ -89,6 +90,9 @@
   /* Dark Neutral */
   --dark-neutral: oklch(0.2178 0 0);
   --medium-neutral: oklch(0.4202 0 0);
+
+  /* Navigation Items in Header */
+  --nav: oklch(0.2784 0.0335 257.67);
 }
 
 .dark {

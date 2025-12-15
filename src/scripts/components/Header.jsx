@@ -21,6 +21,8 @@ import {
 import { themeGuide } from "../../styles/themeGuide";
 import { cn } from "../../lib/util";
 
+import Logo from "./library/Logo";
+
 const linkClass =
   "transition-colors duration-500 hover:text-[#FF00E5] hover:underline hover:decoration-2 hover:underline-offset-5";
 
@@ -166,6 +168,28 @@ const Header = memo(() => {
     setIsOpen(false);
   };
 
+  const handleLanguageChange = async (language) => {
+    setSelected(language);
+    try {
+      await i18n.changeLanguage(language.key); // loads from CDN
+      localStorage.setItem("lang", language.key);
+
+      const segments = window.location.pathname.split("/").filter(Boolean);
+
+      if (languages.some((l) => l.key === segments[0])) {
+        segments.shift();
+      }
+
+      const newPath =
+        language.key === "en"
+          ? `/${segments.join("/")}`
+          : `/${language.key}${segments.length ? "/" + segments.join("/") : ""}`;
+      navigate(newPath, { replace: true });
+    } catch (err) {
+      console.error("Failed to load language:", err);
+    }
+  };
+
   const [selected, setSelected] = useState(() => {
     const current = i18n.language || localStorage.getItem("lang") || "en";
     return (
@@ -187,141 +211,26 @@ const Header = memo(() => {
         className="
           sticky top-0 z-50 select-none
           flex flex-row bg-white text-[#1A1A1A] justify-between items-center 
-          md:py-[1vw] md:px-[5vw] py-[5vw] px-[10vw] md:shadow-[0_0.5vw_0.5vw_rgba(255,0,229,0.15)]
-          shadow-[0_3vw_5vw_rgba(255,0,229,0.15)]
+          2xl:py-5 2xl:px-24
+          md:py-[1vw]
+          py-[5vw] px-[10vw]
         "
-        style={{ fontFamily: "Karla, system-ui, -apple-system, sans-serif" }}
+        style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
       >
-        {/* Left: Logo */}
-        <div className="flex flex-row gap-x-[1vw] justify-center items-center">
-          <div className="flex flex-row gap-x-[0.5vw] justify-center items-center">
-            <SmartNavLink
-              to="/"
-              className={linkClass}
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            >
-              <img
-                loading="lazy"
-                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/shipx_logo.svg"
-                alt="ShipX Logo"
-                className="md:w-[3vw] md:h-[1.5vw] w-[14vw] h-[7vw]"
-              />
-            </SmartNavLink>
-            <SmartNavLink
-              to="/"
-              className={linkClass}
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            >
-              <img
-                loading="lazy"
-                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo_sglink_amilo.svg"
-                alt="SGLink Logo"
-                className="md:w-[3vw] md:h-[1.5vw] w-[16vw] h-[5vw]"
-              />
-            </SmartNavLink>
-          </div>
-          <img
-            loading="lazy"
-            className="h-[1vw] w-[1vw]"
-            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_img_14.webp"
-            alt="Separator"
-          />
-          <span className={cn(themeGuide.headerTagline, "hidden md:inline")}>
-            {/* ASEAN's Next Generation Platform */}
-            {t("header.tagline")}
-          </span>
-          <Listbox
-            className={cn(themeGuide.headerLanguageItem, "md:block hidden")}
-            value={selected}
-            onChange={async (language) => {
-              setSelected(language);
-              try {
-                await i18n.changeLanguage(language.key); // loads from CDN
-                localStorage.setItem("lang", language.key);
-
-                const segments = window.location.pathname
-                  .split("/")
-                  .filter(Boolean);
-
-                if (languages.some((l) => l.key === segments[0])) {
-                  segments.shift();
-                }
-
-                const newPath =
-                  language.key === "en"
-                    ? `/${segments.join("/")}`
-                    : `/${language.key}${segments.length ? "/" + segments.join("/") : ""}`;
-                navigate(newPath, { replace: true });
-              } catch (err) {
-                console.error("Failed to load language:", err);
-              }
-            }}
-          >
-            <div className="relative">
-              <ListboxButton
-                type="button"
-                className="relative flex flex-row w-full justify-center items-center gap-x-[0.5vw] px-[0.6vw] py-[0.3vw] cursor-pointer md:rounded-[0.5vw] rounded-[2vw] text-center focus-visible:outline-0 shadow-[0_0.1vw_0.5vw_rgba(255,0,229,0.15)]"
-              >
-                <span className="flex items-center">
-                  <span
-                    className={cn(
-                      themeGuide.headerLanguageItem,
-                      "block font-semibold!",
-                    )}
-                  >
-                    {selected.name}
-                  </span>
-                </span>
-                {/* Check Up Down Icon */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="#1A1A1A"
-                  className="md:size-[1vw] size-[4vw]"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-                  />
-                </svg>
-              </ListboxButton>
-
-              <Portal>
-                <ListboxOptions
-                  anchor="bottom start"
-                  transition
-                  className="relative h-fit overflow-auto md:rounded-[0.5vw] rounded-[2vw] bg-white py-[0.5vw] mt-[0.5vw] text-start outline-1 -outline-offset-1 outline-white/10 data-leave:transition data-leave:duration-100 data-leave:ease-in data-closed:data-leave:opacity-0 z-1000 md:shadow-[0_0.5vw_0.5vw_rgba(255,0,229,0.15)] shadow-[0_3vw_5vw_rgba(255,0,229,0.15)]"
-                >
-                  {languages.map((language) => (
-                    <ListboxOption
-                      key={language.id}
-                      value={language}
-                      className="group relative cursor-default py-2 pr-9 pl-3 text-white select-none data-focus:bg-[#FF00E5] data-focus:outline-hidden"
-                    >
-                      <div className="flex items-center">
-                        <span
-                          className={cn(
-                            themeGuide.headerLanguageItem,
-                            "ml-3 block truncate group-data-focus:text-white group-data-focus:font-semibold",
-                          )}
-                          onClick={() => i18n.changeLanguage(language.key)}
-                        >
-                          {language.name}
-                        </span>
-                      </div>
-                    </ListboxOption>
-                  ))}
-                </ListboxOptions>
-              </Portal>
-            </div>
-          </Listbox>
-        </div>
+        <Logo />
 
         {/* Right: Nav + Buttons (hidden on mobile) */}
-        <nav className="hidden md:flex flex-row gap-x-[2.5vw] font-medium text-[0.8vw]">
+        <nav
+          className="
+            hidden md:flex
+            flex-row
+            gap-x-[2.5vw]
+            font-normal
+            2xl:text-4
+            text-[0.8vw]
+            text-nav
+          "
+        >
           {navLinks.map((link) =>
             link.items ? (
               <Dropdown
@@ -337,8 +246,118 @@ const Header = memo(() => {
           )}
         </nav>
 
-        <div className="hidden md:flex flex-row justify-center items-center gap-x-[1vw] md:text-base text-[0.8vw] font-normal">
+        <div
+          className="
+            hidden md:flex
+            flex-row
+            justify-center items-center
+            gap-x-[1vw]
+            2xl:text-4
+            md:text-base
+            text-[0.8vw]
+            font-normal
+            text-nav
+          "
+        >
+          {/* Translations Dropdown */}
+          <Popover
+            className={cn(
+              themeGuide.headerLanguageItem,
+              "md:block hidden",
+              "relative",
+            )}
+          >
+            {({ open, close }) => (
+              <>
+                <Popover.Button
+                  type="button"
+                  className="
+                    relative
+                    flex flex-row
+                    w-full
+                    justify-center items-center
+                    gap-x-[0.5vw]
+                    cursor-pointer
+                    md:rounded-[0.5vw] rounded-[2vw]
+                    text-center
+                    focus-visible:outline-0
+                  "
+                >
+                  <span className="flex items-center">
+                    <span className={cn(themeGuide.headerLanguageItem)}>
+                      {selected.name}
+                    </span>
+                  </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2.5}
+                    className={`w-3 h-3 transition-all duration-300 group-hover:stroke-[#FF00E5] ${
+                      open ? "rotate-180 stroke-[#FF00E5]" : "stroke-[#1A1A1A]"
+                    }`}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                </Popover.Button>
+                <Popover.Panel
+                  transition
+                  className="
+                    absolute right-0 z-1000
+                    mt-[0.5vw]
+                    h-fit w-max
+                    overflow-auto
+                    md:rounded-[0.5vw] rounded-[2vw]
+                    bg-white
+                    py-[0.5vw]
+                    text-start
+                    outline-1 -outline-offset-1 outline-white/10
+                    data-leave:transition data-leave:duration-100 data-leave:ease-in
+                    data-closed:data-leave:opacity-0
+                    border border-[#FF00E5]
+                  "
+                >
+                  {languages.map((language) => (
+                    <div
+                      key={language.id}
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => {
+                        handleLanguageChange(language);
+                        close();
+                      }}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          handleLanguageChange(language);
+                          close();
+                        }
+                      }}
+                      className="group relative cursor-pointer py-2 pr-9 pl-3 select-none hover:bg-[#FF00E5] hover:outline-hidden"
+                    >
+                      <div className="flex items-center">
+                        <span
+                          className={cn(
+                            themeGuide.headerLanguageItem,
+                            "ml-3 block truncate group-hover:text-white group-hover:font-semibold",
+                          )}
+                        >
+                          {language.name}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </Popover.Panel>
+              </>
+            )}
+          </Popover>
+          {/* Login Modal */}
           <LoginModal />
+          {/* Book a Demo and Contact Us Buttons */}
           <SmartNavLink
             to="/book-a-demo"
             className="text-[#4F378A] font-semibold"
@@ -371,19 +390,6 @@ const Header = memo(() => {
                 {t("services_section.book_a_demo")}
               </div>
             </MotionButton>
-          </SmartNavLink>
-          <SmartNavLink
-            to="/#contact-us"
-            className="
-              bg-linear-to-r from-[#4F378A] from-0% via-[#FF00E5] via-60% to-[#FF00E5] to-100%
-              bg-size-[200%_100%] bg-position-[0%_0%]
-              hover:bg-position-[100%_0%]
-              transition-[background-position] duration-1000 ease-in-out
-              md:py-[7.5px] py-[0.5vw] md:px-[1.5vw] px-[30px] rounded-[19px]
-              text-white font-medium
-            "
-          >
-            {t("header.contact_us")}
           </SmartNavLink>
         </div>
 
@@ -460,34 +466,7 @@ const Header = memo(() => {
               <Listbox
                 className={`${linkClass} w-full text-left px-[5vw]`}
                 value={selected}
-                onChange={async (language) => {
-                  setSelected(language);
-
-                  try {
-                    await i18n.changeLanguage(language.key); // update i18n
-                    localStorage.setItem("lang", language.key);
-
-                    // Preserve current path segments
-                    const segments = window.location.pathname
-                      .split("/")
-                      .filter(Boolean);
-
-                    // Remove language prefix if present
-                    if (languages.some((l) => l.key === segments[0])) {
-                      segments.shift();
-                    }
-
-                    // Build new path with language prefix (skip 'en')
-                    const newPath =
-                      language.key === "en"
-                        ? `/${segments.join("/")}`
-                        : `/${language.key}${segments.length ? "/" + segments.join("/") : ""}`;
-
-                    navigate(newPath, { replace: true });
-                  } catch (err) {
-                    console.error("Failed to switch language:", err);
-                  }
-                }}
+                onChange={handleLanguageChange}
               >
                 <div className="relative">
                   <ListboxButton
