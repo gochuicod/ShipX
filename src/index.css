@@ -95,8 +95,13 @@
   --nav: oklch(0.2784 0.0335 257.67);
 
   /* Badge Styling */
-  --badge-bg: oklch(0.9691 0.0161 293.76);
-  --badge-text: oklch(0.6871 0.306761 334.1925);
+  --badge-gray: oklch(0.9691 0.0161 293.76);
+  --badge-gray-2: oklch(0.9433 0.0284 294.59);
+  --badge-gray-light: oklch(0.9768 0.0142 308.3);
+  --badge-pink: oklch(0.6871 0.306761 334.1925);
+  --badge-purple: oklch(0.3801 0.1888 293.64);
+  --badge-text-dark: oklch(0.2784 0.0335 257.67);
+  --badge-text-purple-light: oklch(0.5405 0.2811 292.85);
 }
 
 .dark {

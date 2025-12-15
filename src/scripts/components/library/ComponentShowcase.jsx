@@ -33,7 +33,7 @@ export default function ComponentShowcase() {
       </ComponentWrapper>
 
       <ComponentWrapper title="Badge">
-        <Badge badge_text="Trusted Network" />
+        <Badge />
       </ComponentWrapper>
     </div>
   );
