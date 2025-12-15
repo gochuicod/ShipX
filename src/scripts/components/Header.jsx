@@ -379,7 +379,7 @@ const Header = memo(() => {
           type="button"
           aria-label="Hamburger menu"
           onClick={() => setIsOpen(!isOpen)}
-          className="relative md:hidden flex flex-col justify-between w-[8vw] h-[4.5vw] p-[0.1vw] focus:outline-none"
+          className="relative 2xl:hidden flex flex-col justify-between w-[190p] h-[4.5vw] p-[7.5px] focus:outline-none"
         >
           {/* Top bar */}
           <MotionSpan
