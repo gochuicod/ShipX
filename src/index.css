@@ -93,6 +93,10 @@
 
   /* Navigation Items in Header */
   --nav: oklch(0.2784 0.0335 257.67);
+
+  /* Badge Styling */
+  --badge-bg: oklch(0.9691 0.0161 293.76);
+  --badge-text: oklch(0.6871 0.306761 334.1925);
 }
 
 .dark {

@@ -42,5 +42,5 @@ export const themeGuide = {
     "bg-white/15 text-white text-base font-normal border border-white/95 rounded-[19px] md:py-[7px] md:px-[30px] cursor-pointer",
 
   badge:
-    "text-secondary flex items-center gap-1 rounded-md bg-violet-100 px-4 py-2 text-sm font-bold",
+    "text-secondary flex items-center gap-1 rounded-md px-4 py-2 text-sm font-bold w-fit bg-[var(--badge-bg)] text-[var(--badge-text)]",
 };
