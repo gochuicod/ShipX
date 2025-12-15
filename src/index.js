@@ -14,10 +14,9 @@ const CookieBanner = lazy(() => import("./scripts/components/ui/CookieBanner"));
 const LanguagePrompt = lazy(
   () => import("./scripts/components/ui/LanguagePrompt"),
 );
-import { LenisProvider } from "./scripts/hooks/useLenis";
+// import { LenisProvider } from "./scripts/hooks/useLenis";
 import { ShipmentProvider } from "./scripts/hooks/useShipment";
 import { HsCodeProvider } from "./scripts/hooks/useHsCode";
-import { margin } from "./scripts/utils/constants";
 import LanguageRouterListener from "./scripts/utils/languageRouterListener";
 
 const helmetContext = {};
@@ -28,19 +27,17 @@ const App = () => {
       <BrowserRouter>
         <GtmLoader />
         <LanguagePrompt />
-        <LenisProvider>
-          <ShipmentProvider>
-            <HsCodeProvider>
-              <ResetOnRefresh paths={["/"]} />
-              <Layout>
-                <LanguageRouterListener />
-                <ScrollToHash />
-                <AppRoutes margin={margin} />
-                <CookieBanner />
-              </Layout>
-            </HsCodeProvider>
-          </ShipmentProvider>
-        </LenisProvider>
+        <ShipmentProvider>
+          <HsCodeProvider>
+            <ResetOnRefresh paths={["/"]} />
+            <Layout>
+              <LanguageRouterListener />
+              <ScrollToHash />
+              <AppRoutes />
+              <CookieBanner />
+            </Layout>
+          </HsCodeProvider>
+        </ShipmentProvider>
       </BrowserRouter>
     </HelmetProvider>
   );
