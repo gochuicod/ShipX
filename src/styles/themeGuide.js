@@ -1,4 +1,8 @@
 export const themeGuide = {
+  // Padding
+  paddingX: "2xl:px-24 md:px-8 px-8",
+  paddingY: "2xl:py-5 md:py-5 py-5",
+
   // Typography - Headings
   pageTitle: "text-4xl font-extrabold tracking-tight",
   pageTitleAccent: "text-secondary",

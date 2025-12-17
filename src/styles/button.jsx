@@ -8,7 +8,7 @@ const buttonVariants = cva(
     "inline-flex items-center justify-center gap-2 whitespace-nowrap shrink-0",
 
     // Typography & Appearance
-    "rounded-md text-sm font-medium",
+    "rounded-md text-base font-normal",
 
     // Transitions & Base Interaction
     "transition-all outline-none",
@@ -36,7 +36,7 @@ const buttonVariants = cva(
         outline:
           "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
         primary: [
-          "cursor-pointer font-medium text-white",
+          "cursor-pointer font-normal text-white",
           "bg-gradient-to-r from-[#4F378A] via-[#FF00E5] to-[#FF00E5]",
           "bg-size-[200%_100%] bg-position-[0%_0%]",
           "hover:bg-position-[100%_0%]",

@@ -17,7 +17,8 @@ const Toolkit = lazy(() => import("./toolkit/ToolKitLayout"));
 const Blogs = lazy(() => import("../blogs/BlogsSectionReusable"));
 const SEO = lazy(() => import("../../ui/SEO"));
 
-import HeroSection from "./HeroSection";
+const HeroSection = lazy(() => import("./HeroSection"));
+const PartnersSection = lazy(() => import("./PartnersSection"));
 
 const Main = () => {
   const { t } = useTranslation();
@@ -35,8 +36,9 @@ const Main = () => {
         <MessengerButton />
         <div className="flex flex-col">
           <HeroSection />
-          <Services />
-          <Toolkit />
+          <PartnersSection />
+          {/* <Services /> */}
+          {/* <Toolkit />
           <Statistics />
           <Platform />
           <SGAmiloCards />
@@ -44,7 +46,7 @@ const Main = () => {
           <Offices />
           <Blogs />
           <FAQSection />
-          <ContactUs />
+          <ContactUs /> */}
         </div>
       </div>
     </>

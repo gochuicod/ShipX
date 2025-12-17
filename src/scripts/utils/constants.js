@@ -145,3 +145,112 @@ export const STATUS_I18N_KEYS = {
   SHIPMENT_FAILED_ATTEMPT: `${SHIPMENT_STATUS_I18N_BASE_KEY}.shipment_failed_attempt`,
   HOLD_FOR_PAYMENT: `${SHIPMENT_STATUS_I18N_BASE_KEY}.hold_for_payment`,
 };
+
+const partnersSectionAssetBaseURL =
+  "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners";
+
+export const partnersSectionData = [
+  { id: 1, name: "ASEA", logo: `${partnersSectionAssetBaseURL}/asea.webp` },
+  {
+    id: 2,
+    name: "Bean Daikon",
+    logo: `${partnersSectionAssetBaseURL}/bean_daikon.webp`,
+  },
+  {
+    id: 3,
+    name: "Big Yellow Tag",
+    logo: `${partnersSectionAssetBaseURL}/big_yellow_tag.webp`,
+  },
+  { id: 4, name: "Big C", logo: `${partnersSectionAssetBaseURL}/bigc.webp` },
+  {
+    id: 5,
+    name: "Cool Mate",
+    logo: `${partnersSectionAssetBaseURL}/cool_mate.webp`,
+  },
+  { id: 6, name: "Crafio", logo: `${partnersSectionAssetBaseURL}/crafio.webp` },
+  {
+    id: 7,
+    name: "DH Foods",
+    logo: `${partnersSectionAssetBaseURL}/dh_foods.webp`,
+  },
+  { id: 8, name: "Donex", logo: `${partnersSectionAssetBaseURL}/donex.webp` },
+  {
+    id: 9,
+    name: "Eco Quote",
+    logo: `${partnersSectionAssetBaseURL}/eco_quote.webp`,
+  },
+  { id: 10, name: "Elise", logo: `${partnersSectionAssetBaseURL}/elise.webp` },
+  { id: 11, name: "GGG", logo: `${partnersSectionAssetBaseURL}/ggg.webp` },
+  {
+    id: 12,
+    name: "Hugo Boss",
+    logo: `${partnersSectionAssetBaseURL}/hugo_boss.webp`,
+  },
+  {
+    id: 13,
+    name: "Keebs Project",
+    logo: `${partnersSectionAssetBaseURL}/keebs_project.webp`,
+  },
+  {
+    id: 14,
+    name: "Keith Allen",
+    logo: `${partnersSectionAssetBaseURL}/keith_allen.webp`,
+  },
+  {
+    id: 15,
+    name: "LeFlair",
+    logo: `${partnersSectionAssetBaseURL}/leflair.webp`,
+  },
+  {
+    id: 16,
+    name: "Life Space",
+    logo: `${partnersSectionAssetBaseURL}/life_space.webp`,
+  },
+  {
+    id: 17,
+    name: "Lovepop",
+    logo: `${partnersSectionAssetBaseURL}/lovepop.webp`,
+  },
+  {
+    id: 18,
+    name: "Michelin",
+    logo: `${partnersSectionAssetBaseURL}/michelin.webp`,
+  },
+  {
+    id: 19,
+    name: "Oriembroly",
+    logo: `${partnersSectionAssetBaseURL}/oriembroly.webp`,
+  },
+  {
+    id: 20,
+    name: "Pantio",
+    logo: `${partnersSectionAssetBaseURL}/pantio.webp`,
+  },
+  {
+    id: 21,
+    name: "Seven Eleven",
+    logo: `${partnersSectionAssetBaseURL}/seven_eleven.webp`,
+  },
+  { id: 22, name: "Sixdo", logo: `${partnersSectionAssetBaseURL}/sixdo.webp` },
+  {
+    id: 23,
+    name: "Spry Interior",
+    logo: `${partnersSectionAssetBaseURL}/spry_interior.webp`,
+  },
+  {
+    id: 24,
+    name: "Tele247",
+    logo: `${partnersSectionAssetBaseURL}/tele247.webp`,
+  },
+  { id: 25, name: "Tesco", logo: `${partnersSectionAssetBaseURL}/tesco.webp` },
+  {
+    id: 26,
+    name: "Thea Delight",
+    logo: `${partnersSectionAssetBaseURL}/thea_delight.webp`,
+  },
+  {
+    id: 27,
+    name: "Zumvet",
+    logo: `${partnersSectionAssetBaseURL}/zumvet.webp`,
+  },
+];

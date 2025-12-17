@@ -205,13 +205,12 @@ const Header = memo(() => {
   return (
     <div className="sticky top-0 z-50 select-none">
       <header
-        className="
+        className={`
           sticky top-0 z-50 select-none
-          flex flex-row bg-white text-[#1A1A1A] justify-between items-center 
-          2xl:py-5 2xl:px-24
-          md:py-[1vw]
-          py-[5vw] px-[10vw]
-        "
+          flex flex-row bg-white text-[#1A1A1A] justify-between items-center
+          ${themeGuide.paddingX} ${themeGuide.paddingY}
+          py-5 px-8
+        `}
         style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
       >
         <Logo />
@@ -219,7 +218,7 @@ const Header = memo(() => {
         {/* Right: Nav + Buttons (hidden on mobile) */}
         <nav
           className="
-            hidden md:flex
+            hidden 2xl:flex
             flex-row
             gap-x-[2.5vw]
             font-normal
@@ -245,7 +244,7 @@ const Header = memo(() => {
 
         <div
           className="
-            hidden md:flex
+            hidden 2xl:flex
             flex-row
             justify-center items-center
             gap-x-[1vw]
@@ -355,23 +354,27 @@ const Header = memo(() => {
           {/* Login Modal */}
           <LoginModal />
           {/* Book a Demo and Contact Us Buttons */}
-          <AppButton to="/book-a-demo">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="size-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
-              />
-            </svg>
-            {t("header.book_a_demo")}
-          </AppButton>
+          <AppButton
+            to="/book-a-demo"
+            text={t("header.book_a_demo")}
+            withLeftIcon={true}
+            leftIcon={
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="size-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                />
+              </svg>
+            }
+          />
         </div>
 
         {/* Mobile Hamburger */}
@@ -379,7 +382,7 @@ const Header = memo(() => {
           type="button"
           aria-label="Hamburger menu"
           onClick={() => setIsOpen(!isOpen)}
-          className="relative 2xl:hidden flex flex-col justify-between w-[190p] h-[4.5vw] p-[7.5px] focus:outline-none"
+          className="relative 2xl:hidden flex flex-col justify-between md:w-[4vw] w-[6vw] md:h-[3vw] h-[3.5vw] p-0 focus:outline-none"
         >
           {/* Top bar */}
           <MotionSpan
@@ -411,14 +414,14 @@ const Header = memo(() => {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -20, opacity: 0 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="absolute top-full right-0 w-full bg-white shadow-[0_7vw_10vw_rgba(255,0,229,0.10)] 
-                        flex flex-col items-start p-[5vw] gap-y-[3vw] md:hidden 
-                        text-[#1A1A1A] text-[3.5vw] font-medium divide-y divide-gray-200"
+              className="absolute top-full right-0 w-full bg-white
+                        flex flex-col items-start px-8 pb-5 gap-y-[3vw] 2xl:hidden
+                        text-dark-neutral text-base font-medium divide-y divide-gray-200"
             >
               {mobileNavLinks.map((link) =>
                 link.items ? (
                   <div key={link.label} className="w-full pt-3">
-                    <span className="px-[5vw] font-bold text-gray-400 text-sm">
+                    <span className="font-bold text-gray-400 text-sm">
                       {link.label}
                     </span>
                     {link.items.map((item) => (
@@ -426,7 +429,7 @@ const Header = memo(() => {
                         key={item.to}
                         to={item.to}
                         onClick={handleMobileLinkClick}
-                        className={`${linkClass} block w-full text-left px-[5vw] py-2`}
+                        className={`${linkClass} block w-full text-left py-2`}
                       >
                         {item.label}
                       </SmartNavLink>
@@ -437,7 +440,7 @@ const Header = memo(() => {
                     key={link.to}
                     to={link.to}
                     onClick={handleMobileLinkClick}
-                    className={`${linkClass} w-full text-left px-[5vw] pt-3`}
+                    className={`${linkClass} w-full text-left pt-3`}
                   >
                     {link.label}
                   </SmartNavLink>
@@ -445,7 +448,7 @@ const Header = memo(() => {
               )}
 
               <Listbox
-                className={`${linkClass} w-full text-left px-[5vw]`}
+                className={`${linkClass} w-full text-left`}
                 value={selected}
                 onChange={handleLanguageChange}
               >

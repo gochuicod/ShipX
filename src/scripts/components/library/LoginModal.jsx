@@ -39,7 +39,7 @@ const LoginModal = () => {
       // Use 'to' for internal routing (SmartNavLink logic)
       to: "/book-a-demo",
       // 'main' is your default solid gradient style
-      variant: "main",
+      variant: "primary",
       logo: null,
     },
   ];
@@ -76,7 +76,7 @@ const LoginModal = () => {
   return (
     <div
       ref={dropdownRef}
-      className="relative md:px-0 px-[5vw]"
+      className="relative md:px-0 px-0"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
