@@ -15,8 +15,6 @@ export default function BadgeShowcase() {
 
       {/* 3. Toolkit */}
       <Badge variant="toolkit" size="default">
-        {/* We render the dot directly here as a span */}
-        <span className="h-2 w-2 rounded-full bg-(--badge-pink) mr-1" />
         Trade and Logistics Toolkit
       </Badge>
 

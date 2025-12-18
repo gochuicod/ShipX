@@ -108,6 +108,9 @@
   --badge-text-dark: oklch(0.2784 0.0335 257.67);
   --badge-text-purple-light: oklch(0.5405 0.2811 292.85);
   --badge-text-gray: oklch(0.4378 0.0177 264.38);
+  --badge-orange: oklch(0.9796 0.0158 73.68);
+  --badge-light-purple: oklch(0.9464 0.0327 307.17);
+  --badge-dark-purple: oklch(0.5808 0.2593 334.17);
 
   /* Dark S1 */
   --secondary-hover: oklch(0.9691 0.0161 293.76);

@@ -2,7 +2,7 @@ import AppButton from "./AppButton";
 import Logo from "./Logo";
 import Badge from "./Badge";
 import AffiliateCard from "./AffiliateCard";
-import { useState } from "react";
+import BlogCard from "./BlogCard";
 import { cn } from "../../../lib/util";
 import { CalendarDays, CircleArrowRight } from "lucide-react";
 
@@ -16,7 +16,7 @@ const ComponentWrapper = ({ title, children, className = "" }) => (
 
 export default function ComponentShowcase() {
   return (
-    <div className="py-5 px-24 bg-gray-50 font-sans">
+    <div className="py-5 px-5 bg-gray-50 font-sans">
       <h1 className="text-4xl font-bold text-center mb-10 text-gray-900">
         ShipX Component Library
       </h1>
@@ -47,8 +47,93 @@ export default function ComponentShowcase() {
         <Badge />
       </ComponentWrapper>
 
-      <ComponentWrapper title="Affiliate Card">
-        <AffiliateCard />
+      <ComponentWrapper title="Blog Card">
+        <BlogCard />
+      </ComponentWrapper>
+
+      <ComponentWrapper
+        title="Affiliate Card"
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch"
+      >
+        {/* CARD 1: ShipX / Default */}
+        <AffiliateCard
+          variant="default"
+          badgeVariant="affiliate"
+          logo={{
+            src: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_14.svg",
+            alt: "ShipX Logo",
+          }}
+          illustration={{
+            src: "/assets/3d-globe-bags.png",
+            alt: "Global Shipping",
+          }}
+          heading={
+            <>
+              <span className="text-(--secondary)">Expand your business</span>{" "}
+              abroad with SG Link's cross-border expertise
+            </>
+          }
+          subheading="Ship Your all-in-one partner for logistics, fulfillment and global shippingproducts to global markets quickly and securely with end-to-end delivery solutions."
+          badges={[
+            { label: "Express Delivery" },
+            { label: "Asia-Pacific Routes" },
+            { label: "Customs Brokerage" },
+          ]}
+          actions={[
+            {
+              text: "Login with SG Link",
+              style: "secondary",
+              onClick: () =>
+                window.open("https://admin.sglinkapi.com", "_blank"),
+            },
+            {
+              text: "Sign Up",
+              style: "primary",
+              onClick: () => console.log("Sign up clicked"),
+            },
+          ]}
+        />
+
+        {/* CARD 2: Amilo */}
+        <AffiliateCard
+          variant="amilo"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch"
+          badgeVariant="affiliateOrange"
+          logo={{
+            src: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_15.svg",
+            alt: "Amilo Logo",
+          }}
+          illustration={{
+            src: "../../../assets/affiliate_card/amilo-affiliate-card.webp",
+            alt: "Amilo Illustration",
+          }}
+          heading={
+            <>
+              <span className="text-(--secondary)">
+                Your all-in-one partner
+              </span>{" "}
+              for logistics, fulfillment and global shipping
+            </>
+          }
+          subheading="From warehousing to last-mile delivery, Amilo streamlines every step of your supply chain so you can focus on scaling your brand"
+          badges={[
+            { label: "Express Delivery" },
+            { label: "Asia-Pacific Routes" },
+            { label: "Customs Brokerage" },
+          ]}
+          actions={[
+            {
+              text: "Login with Amilo",
+              style: "secondary",
+              onClick: () => console.log("Amilo sales clicked"),
+            },
+            {
+              text: "Sign Up",
+              style: "primary",
+              onClick: () => console.log("Amilo start clicked"),
+            },
+          ]}
+        />
       </ComponentWrapper>
     </div>
   );

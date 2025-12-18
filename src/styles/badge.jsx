@@ -33,9 +33,13 @@ const badgeVariants = cva(
         // Destructive (Standard error state)
         destructive: "border-transparent bg-red-500 text-white shadow-sm w-fit",
 
-        // Affiliate
+        // Affiliate Amilo
         affiliate:
-          "border-transparent bg-(--badge-gray-2) text-(--badge-text-gray) rounded w-fit",
+          "border-transparent bg-(--badge-light-purple) text-(--badge-text-gray) font-light rounded w-fit",
+
+        // Affiliate Orange
+        affiliateOrange:
+          "border-transparent bg-(--badge-orange) text-(--badge-text-gray) font-light rounded w-fit",
       },
       size: {
         sm: "px-2 py-1 text-xs",
@@ -50,12 +54,16 @@ const badgeVariants = cva(
   },
 );
 
-function Badge({ className, variant, size, ...props }) {
+function Badge({ className, variant, size, children, ...props }) {
   return (
-    <div
-      className={cn(badgeVariants({ variant, size }), className)}
-      {...props}
-    />
+    <div className={cn(badgeVariants({ variant, size }), className)} {...props}
+          style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
+>
+      {variant === "toolkit" && (
+        <span className="h-2 w-2 rounded-full bg-(--badge-pink) mr-1" />
+      )}
+      {children}
+    </div>
   );
 }
 

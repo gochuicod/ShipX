@@ -1,5 +1,5 @@
 import {
-  AffiliateCard,
+  AffiliateCard as AffiliateCardRoot,
   AffiliateCardContent,
   AffiliateCardIllustration,
   AffiliateCardFooter,
@@ -7,85 +7,91 @@ import {
 import { Badge } from "../../../styles/badge";
 import AppButton from "./AppButton";
 
-export default function PromoSection() {
+export default function AffiliateCard({
+  // 1. Style Props
+  variant = "default",
+  containerClassName = "p-1 md:p-10",
+  logo,
+  illustration,
+  heading,
+  subheading,
+  badges = [],
+  badgeVariant = "affiliate",
+
+  // 3. NEW: Action Props (Array of button configs)
+  actions = [],
+}) {
   return (
-    <div className="p-1 md:p-10">
-      <AffiliateCard variant="default">
-        {/* The 3D Illustration */}
-        <AffiliateCardIllustration>
-          {/* Replace this img with your actual 3D asset */}
-          <img
-            src="/assets/3d-globe-bags.png"
-            alt="Global Shipping"
-            className="w-48 h-48 md:w-64 md:h-64 object-contain drop-shadow-xl"
-          />
-        </AffiliateCardIllustration>
+    <div className={containerClassName}>
+      <AffiliateCardRoot variant={variant}>
+        {/* Illustration: Only render if provided */}
+        {illustration && (
+          <AffiliateCardIllustration>
+            <img
+              src={illustration.src}
+              alt={illustration.alt || "Illustration"}
+              className={
+                illustration.className ||
+                "w-48 h-48 md:w-64 md:h-64 object-contain drop-shadow-xl"
+              }
+            />
+          </AffiliateCardIllustration>
+        )}
 
         <AffiliateCardContent>
-          {/* Logo Area */}
-          <div className="mb-2">
-            <img
-              src="/assets/shipx-logo.png"
-              alt="ShipX Logo"
-              className="h-8 md:h-10"
-            />
-          </div>
+          {/* Logo: Only render if provided */}
+          {logo && (
+            <div className="mb-2">
+              <img
+                src={logo.src}
+                alt={logo.alt || "Logo"}
+                className={logo.className || "h-8 md:h-10"}
+              />
+            </div>
+          )}
 
-          {/* Title with Highlighted Text */}
+          {/* Heading */}
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 leading-tight">
-            <span className="text-fuchsia-600">Expand your business</span>{" "}
-            abroad with SG Link’s cross-border expertise
+            {heading}
           </h2>
 
-          {/* Description */}
+          {/* Subheading */}
           <p className="text-slate-600 text-base md:text-lg leading-relaxed">
-            Ship products to global markets quickly and securely with end-to-end
-            delivery solutions tailored for eCommerce sellers.
+            {subheading}
           </p>
 
-          {/* Specialties / Badges */}
-          {/* UPDATED: Added flex-col, items-center for mobile centering. md:items-start restores desktop alignment. */}
-          <div className="mt-2 space-y-2 flex flex-col items-center md:items-start">
-            <p className="text-sm font-semibold text-slate-800">Specialties:</p>
-            {/* UPDATED: Added justify-center for mobile centering. */}
-            <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-              <Badge variant="affiliate" size="default">
-                Express Delivery
-              </Badge>
-              <Badge variant="affiliate" size="default">
-                Asia-Pacific Routes
-              </Badge>
-              <Badge variant="affiliate" size="default">
-                Customs Brokerage
-              </Badge>
+          {/* Badges */}
+          {badges && badges.length > 0 && (
+            <div className="mt-2 space-y-2 flex flex-col items-center md:items-start">
+              <p className="text-sm font-semibold text-slate-800">
+                Specialties:
+              </p>
+              <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                {badges.map((badge, index) => (
+                  <Badge key={index} variant={badgeVariant} size="default">
+                    {badge.label}
+                  </Badge>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </AffiliateCardContent>
 
-        {/* Buttons */}
-        {/* UPDATED: justify-center for mobile, md:justify-end for desktop */}
-        <AffiliateCardFooter className="justify-center md:justify-end">
-          {/* Ghost/White Button */}
-          <AppButton
-            variant="secondary"
-            onClick={() =>
-              window.open("https://admin.sglinkapi.com/", "_blank")
-            }
-          >
-            Login with SG Link
-          </AppButton>
-
-          {/* Gradient/Primary Button */}
-          <AppButton
-            variant="main"
-            onClick={() =>
-              window.open("https://admin.sglinkapi.com/", "_blank")
-            }
-          >
-            Sign Up
-          </AppButton>
-        </AffiliateCardFooter>
-      </AffiliateCard>
+        {/* Dynamic Footer Actions */}
+        {actions && actions.length > 0 && (
+          <AffiliateCardFooter className="justify-center md:justify-end">
+            {actions.map((action, index) => (
+              <AppButton
+                key={index}
+                style={action.style || "primary"}
+                text={action.text}
+                onClick={action.onClick}
+                className={action.className}
+              />
+            ))}
+          </AffiliateCardFooter>
+        )}
+      </AffiliateCardRoot>
     </div>
   );
 }
