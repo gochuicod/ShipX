@@ -45,9 +45,14 @@
   --radius-xl: calc(var(--radius) + 4px);
 
   --color-placeholder: var(--placeholder);
+
   --color-dark-neutral: var(--dark-neutral);
   --color-medium-neutral: var(--medium-neutral);
+
   --color-nav: var(--nav);
+
+  --color-secondary-hover: var(--secondary-hover);
+  --color-secondary-active: var(--secondary-active);
 }
 
 :root {
@@ -103,6 +108,10 @@
   --badge-text-dark: oklch(0.2784 0.0335 257.67);
   --badge-text-purple-light: oklch(0.5405 0.2811 292.85);
   --badge-text-gray: oklch(0.4378 0.0177 264.38);
+
+  /* Dark S1 */
+  --secondary-hover: oklch(0.9691 0.0161 293.76);
+  --secondary-active: oklch(0.5808 0.2593 334.17);
 }
 
 .dark {

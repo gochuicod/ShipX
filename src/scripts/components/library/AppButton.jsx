@@ -2,28 +2,65 @@ import SmartNavLink from "../ui/SmartNavLink";
 import { Button } from "../../../styles/button";
 import { cn } from "../../../lib/util";
 
+const appButtonStyles = {
+  smartNavLink: "flex items-center justify-center gap-2 px-4 py-[10px]",
+};
+
 export default function AppButton({
-  children, // Use 'children' instead of 'text'/'icon' for maximum flexibility
-  to, // Optional: If present, this becomes a Link
+  size = "medium",
+  style = "primary",
+  color = "",
+  status = "default",
+  text = "",
+  withLeftIcon = false,
+  withRightIcon = false,
+  leftIcon,
+  rightIcon,
+  to,
   className,
-  variant = "main", // Default styling
-  ...props // Captures everything else: onClick, type="submit", disabled, etc.
+  ...rest
 }) {
-  // Case 1: It is a Link (because 'to' exists)
+  const ButtonContent = () => (
+    <>
+      {withLeftIcon && leftIcon && <span className="shrink-0">{leftIcon}</span>}
+
+      <span>{text}</span>
+
+      {withRightIcon && rightIcon && (
+        <span className="shrink-0">{rightIcon}</span>
+      )}
+    </>
+  );
+
   if (to) {
     return (
-      <Button asChild variant={variant} className={cn("gap-1")} {...props}>
-        <SmartNavLink to={to} className={cn(className)}>
-          {children}
+      // We pass size and variant to the Button wrapper
+      <Button
+        asChild
+        variant={style}
+        size={size}
+        className={className}
+        {...rest}
+      >
+        <SmartNavLink
+          to={to}
+          // We add flex, items-center and gap-2 here to align icons and text
+          className={cn(appButtonStyles.smartNavLink)}
+        >
+          <ButtonContent />
         </SmartNavLink>
       </Button>
     );
   }
 
-  // Case 2: It is a Standard Button (Form submit, generic click, etc.)
   return (
-    <Button variant={variant} className={cn("gap-1", className)} {...props}>
-      {children}
+    <Button
+      variant={style}
+      size={size}
+      className={cn(appButtonStyles.smartNavLink, className)}
+      {...rest}
+    >
+      <ButtonContent />
     </Button>
   );
 }
