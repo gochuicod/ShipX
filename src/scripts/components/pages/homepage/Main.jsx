@@ -37,11 +37,12 @@ const Main = () => {
         <div className="flex flex-col">
           <HeroSection />
           <PartnersSection />
+          <SGAmiloCards />
+
           {/* <Services /> */}
           {/* <Toolkit />
           <Statistics />
           <Platform />
-          <SGAmiloCards />
           <FreightAndCustoms />
           <Offices />
           <Blogs />

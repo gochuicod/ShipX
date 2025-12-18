@@ -3,8 +3,8 @@ import { cn } from "../lib/util";
 
 // 1. The Container Style
 const cardVariants = cva(
-  // ADDED: h-full
-  "relative w-full flex flex-col h-full overflow-hidden rounded-[24px] shadow-sm transition-all",
+  // ADDED: h-full, Changed overflow-hidden to overflow-visible to allow illustration to float outside
+  "relative w-full flex flex-col h-full overflow-visible rounded-[24px] shadow-sm transition-all",
   {
     variants: {
       variant: {
@@ -29,7 +29,6 @@ function AffiliateCard({ className, variant, padding, children, ...props }) {
   return (
     <div
       className={cn(cardVariants({ variant, padding }), className)}
-      style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
       {...props}
     >
       {children}
@@ -37,12 +36,12 @@ function AffiliateCard({ className, variant, padding, children, ...props }) {
   );
 }
 
-// 2. Illustration (No changes needed, but ensure z-index is correct)
+// 2. Illustration (Floats outside container with negative margin - top half floats out on both mobile and desktop)
 function AffiliateCardIllustration({ className, children, ...props }) {
   return (
     <div
       className={cn(
-        "mb-6 w-full flex justify-center md:absolute md:top-6 md:right-6 md:mb-0 md:w-1/3 md:justify-end z-10 pointer-events-none",
+        "mb-6 w-full flex justify-center md:absolute md:top-0 md:right-6 md:mb-0 md:w-1/3 md:justify-end z-10 pointer-events-none md:-translate-y-1/2",
         className,
       )}
       {...props}

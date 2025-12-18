@@ -6,25 +6,31 @@ import {
 } from "../../../styles/affiliate-card";
 import { Badge } from "../../../styles/badge";
 import AppButton from "./AppButton";
+import { cn } from "../../../lib/util"; // Make sure to import cn
 
 export default function AffiliateCard({
   // 1. Style Props
   variant = "default",
-  containerClassName = "p-1 md:p-10",
+  padding,
+  containerClassName = "p-1 md:p-10 h-full w-full",
   logo,
   illustration,
   heading,
   subheading,
   badges = [],
   badgeVariant = "affiliate",
-
-  // 3. NEW: Action Props (Array of button configs)
   actions = [],
+  className,
+  style,
+  ...props
 }) {
   return (
-    <div className={containerClassName}>
-      <AffiliateCardRoot variant={variant}>
-        {/* Illustration: Only render if provided */}
+    <div
+      className={cn("flex flex-col", containerClassName, className)}
+      style={style}
+      {...props}
+    >
+      <AffiliateCardRoot variant={variant} padding={padding}>
         {illustration && (
           <AffiliateCardIllustration>
             <img
@@ -39,7 +45,6 @@ export default function AffiliateCard({
         )}
 
         <AffiliateCardContent>
-          {/* Logo: Only render if provided */}
           {logo && (
             <div className="mb-2">
               <img
@@ -77,7 +82,7 @@ export default function AffiliateCard({
           )}
         </AffiliateCardContent>
 
-        {/* Dynamic Footer Actions */}
+        {/* Footer */}
         {actions && actions.length > 0 && (
           <AffiliateCardFooter className="justify-center md:justify-end">
             {actions.map((action, index) => (

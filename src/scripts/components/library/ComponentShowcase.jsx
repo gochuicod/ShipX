@@ -53,7 +53,7 @@ export default function ComponentShowcase() {
 
       <ComponentWrapper
         title="Affiliate Card"
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch"
+        className="flex md:flex-row flex-col gap-8"
       >
         {/* CARD 1: ShipX / Default */}
         <AffiliateCard
@@ -64,7 +64,7 @@ export default function ComponentShowcase() {
             alt: "ShipX Logo",
           }}
           illustration={{
-            src: "/assets/3d-globe-bags.png",
+            src: "https://cdn.jsdelivr.net/gh/hezekiahdane/ShipX-Copy@5bf78b31e0206596d7313b84c16a1d0ebdabf957/src/assets/affiliate_card/sglink-affiliate-card.webp",
             alt: "Global Shipping",
           }}
           heading={
@@ -95,27 +95,25 @@ export default function ComponentShowcase() {
         />
 
         {/* CARD 2: Amilo */}
+
         <AffiliateCard
           variant="amilo"
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch"
           badgeVariant="affiliateOrange"
           logo={{
             src: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_svg_15.svg",
             alt: "Amilo Logo",
           }}
           illustration={{
-            src: "../../../assets/affiliate_card/amilo-affiliate-card.webp",
+            src: "https://cdn.jsdelivr.net/gh/hezekiahdane/ShipX-Copy@5bf78b31e0206596d7313b84c16a1d0ebdabf957/src/assets/affiliate_card/amilo-affiliate-card.webp",
             alt: "Amilo Illustration",
           }}
           heading={
             <>
-              <span className="text-(--secondary)">
-                Your all-in-one partner
-              </span>{" "}
-              for logistics, fulfillment and global shipping
+              <span className="text-(--secondary)">Expand your business</span>{" "}
+              abroad with SG Link's cross-border expertise
             </>
           }
-          subheading="From warehousing to last-mile delivery, Amilo streamlines every step of your supply chain so you can focus on scaling your brand"
+          subheading="Ship Your all-in-one partner for logistics, fulfillment and global shippingproducts to global markets quickly and securely with end-to-end delivery solutions."
           badges={[
             { label: "Express Delivery" },
             { label: "Asia-Pacific Routes" },
@@ -125,12 +123,12 @@ export default function ComponentShowcase() {
             {
               text: "Login with Amilo",
               style: "secondary",
-              onClick: () => console.log("Amilo sales clicked"),
+              onClick: () => window.open("https://vip.amilo.co/", "_blank"),
             },
             {
               text: "Sign Up",
               style: "primary",
-              onClick: () => console.log("Amilo start clicked"),
+              onClick: () => console.log("Sign up clicked"),
             },
           ]}
         />
