@@ -102,6 +102,7 @@
   --badge-purple: oklch(0.3801 0.1888 293.64);
   --badge-text-dark: oklch(0.2784 0.0335 257.67);
   --badge-text-purple-light: oklch(0.5405 0.2811 292.85);
+  --badge-text-gray: oklch(0.4378 0.0177 264.38);
 }
 
 .dark {

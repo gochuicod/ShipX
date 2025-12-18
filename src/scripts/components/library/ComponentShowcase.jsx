@@ -1,6 +1,7 @@
 import AppButton from "./AppButton";
 import Logo from "./Logo";
 import Badge from "./Badge";
+import AffiliateCard from "./AffiliateCard";
 import { useState } from "react";
 
 // A wrapper to provide some styling for each component showcase
@@ -34,6 +35,10 @@ export default function ComponentShowcase() {
 
       <ComponentWrapper title="Badge">
         <Badge />
+      </ComponentWrapper>
+
+      <ComponentWrapper title="Affiliate Card">
+        <AffiliateCard />
       </ComponentWrapper>
     </div>
   );

@@ -32,6 +32,10 @@ const badgeVariants = cva(
 
         // Destructive (Standard error state)
         destructive: "border-transparent bg-red-500 text-white shadow-sm w-fit",
+
+        // Affiliate
+        affiliate:
+          "border-transparent bg-(--badge-gray-2) text-(--badge-text-gray) rounded w-fit",
       },
       size: {
         sm: "px-2 py-1 text-xs",
