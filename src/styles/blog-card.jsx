@@ -1,15 +1,15 @@
-import React from "react";
 import { cva } from "class-variance-authority";
-import { cn } from "../lib/util"; // Adjust path to your utils
+import { cn } from "../lib/util"; 
 
-// --- 1. Root Container ---
 const cardVariants = cva(
-  "group flex md:flex-col flex-row h-full w-full md:max-w-sm md:rounded-2xl rounded-lg p-4 md:p-4 gap-4 md:gap-0 transition-all duration-300 hover:cursor-pointer hover:shadow-[0px_4px_25px_0px_#FF00E54D]",
+  "group flex md:flex-col flex-row h-full w-full md:rounded-2xl rounded-lg transition-all duration-300 hover:cursor-pointer hover:shadow-[0px_4px_25px_0px_#FF00E54D]",
   {
     variants: {
       variant: {
         default:
-          "border-none bg-gradient-to-br from-[oklch(0.7_0.1_316)]/20 via-[oklch(1_0_0)]/6 to-[oklch(0.6167_0.2539_333.97)]/24",
+          "md:max-w-sm p-4 md:p-4 gap-4 md:gap-0 border-none bg-gradient-to-br from-[oklch(0.7_0.1_316)]/20 via-[oklch(1_0_0)]/6 to-[oklch(0.6167_0.2539_333.97)]/24",
+        section:
+          "p-4 md:p-4 gap-4 md:gap-0 border-none bg-gradient-to-br from-[oklch(0.7_0.1_316)]/20 via-[oklch(1_0_0)]/6 to-[oklch(0.6167_0.2539_333.97)]/24",
       },
     },
     defaultVariants: {
@@ -27,17 +27,19 @@ export const CardRoot = ({ className, variant, ...props }) => (
 );
 
 // --- 2. Image Components ---
-export const CardImageWrapper = ({ className, ...props }) => (
+export const CardImageWrapper = ({ className, variant, ...props }) => (
   <div
     className={cn(
-      "relative md:mb-4 md:w-full shrink-0 w-1/2 h-auto",
+      variant === "section"
+        ? "relative md:mb-4 md:w-full shrink-0 w-1/2 h-auto md:h-52"
+        : "relative md:mb-4 md:w-full shrink-0 w-1/2 h-auto",
       className,
     )}
     {...props}
   />
 );
 
-export const CardImage = ({ className, ...props }) => (
+export const CardImage = ({ className, variant, ...props }) => (
   <img
     className={cn(
       "w-full h-full object-cover md:rounded-2xl rounded-lg",
@@ -69,10 +71,12 @@ export const CardBadge = ({ className, variant, ...props }) => (
 );
 
 // --- 4. Content Wrappers ---
-export const CardBody = ({ className, ...props }) => (
+export const CardBody = ({ className, variant, ...props }) => (
   <div
     className={cn(
-      "flex flex-col grow w-1/2 md:w-auto px-1 md:px-1 gap-2 md:gap-3",
+      variant === "section"
+        ? "flex flex-col grow w-1/2 md:w-auto px-1 md:px-1 gap-2 md:gap-3"
+        : "flex flex-col grow w-1/2 md:w-auto px-1 md:px-1 gap-2 md:gap-3",
       className,
     )}
     {...props}
@@ -122,7 +126,7 @@ export const CardDate = ({ className, ...props }) => (
 export const CardTitle = ({ className, ...props }) => (
   <h3
     className={cn(
-      "text-sm md:text-lg font-bold text-[#121212] leading-tight group-hover:text-[#CC00B7] transition-colors line-clamp-3",
+      "text-sm md:text-lg font-bold text-[#121212] leading-tight group-hover:text-[#CC00B7] transition-colors line-clamp-4",
       className,
     )}
     {...props}

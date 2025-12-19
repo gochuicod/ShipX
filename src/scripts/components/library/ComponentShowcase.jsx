@@ -48,7 +48,8 @@ export default function ComponentShowcase() {
       </ComponentWrapper>
 
       <ComponentWrapper title="Blog Card">
-        <BlogCard />
+        <BlogCard variant="default" />
+        <BlogCard variant="section" />
       </ComponentWrapper>
 
       <ComponentWrapper

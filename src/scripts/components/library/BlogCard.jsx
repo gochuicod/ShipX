@@ -15,7 +15,7 @@ import {
 import { Badge } from "../../../styles/badge";
 import { useTranslation } from "react-i18next";
 
-const BlogCard = ({ post: postProp }) => {
+const BlogCard = ({ post: postProp, variant = "default" }) => {
   const { t } = useTranslation();
 
   // Fetch blogs from JSON via i18n
@@ -55,15 +55,15 @@ const BlogCard = ({ post: postProp }) => {
 
   // 3. Render
   return (
-    <CardRoot>
+    <CardRoot variant={variant}>
       {/* Image Section */}
-      <CardImageWrapper>
-        <CardImage src={cover} alt={title} />
+      <CardImageWrapper variant={variant}>
+        <CardImage src={cover} alt={title} variant={variant} />
         {isNew && <CardBadge variant="new">NEW</CardBadge>}
       </CardImageWrapper>
 
       {/* Content Section */}
-      <CardBody>
+      <CardBody variant={variant}>
         <CardMetaRow>
           <Badge variant="secondary" size="sm">
             {category}
@@ -86,7 +86,7 @@ const BlogCard = ({ post: postProp }) => {
             <img
               src="https://cdn.jsdelivr.net/gh/hezekiahdane/ShipX-Copy@main/src/assets/blogs-arrow-right-icon.svg"
               alt="Arrow Right"
-              className="w-3 h-3 md:w-4 md:h-4 ml-2 transition-transform group-hover:translate-x-1"
+              className="w-4 h-4 md:w-5 md:h-5 ml-2 transition-transform group-hover:translate-x-1"
             />
           </CardReadMore>
 
@@ -100,7 +100,7 @@ const BlogCard = ({ post: postProp }) => {
             <img
               src="https://cdn.jsdelivr.net/gh/hezekiahdane/ShipX-Copy@main/src/assets/blogs-share-icon.svg"
               alt="Share"
-              className="w-4 h-4"
+              className="w-4 h-4 md:w-5 md:h-5"
             />
           </CardShareButton>
         </CardFooter>
