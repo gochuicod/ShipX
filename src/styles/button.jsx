@@ -36,21 +36,40 @@ const buttonVariants = cva(
         outline:
           "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
         primary: [
-          "cursor-pointer font-normal text-white",
-          "bg-gradient-to-r from-[#4F378A] via-[#FF00E5] to-[#FF00E5]",
-          "bg-size-[200%_100%] bg-position-[0%_0%]",
-          "hover:bg-position-[100%_0%]",
-          "transition-[background-position] duration-1000 ease-in-out",
-          "active:scale-90",
+          // Layout & Shape
+          "flex flex-row justify-center items-center px-4 py-2 gap-1 rounded-[8px] transition-all duration-300 cursor-pointer",
+          "w-[180px] h-[40px]",
+
+          // Typography
+          "font-['Inter'] font-normal text-[16px] text-white",
+
+          // DEFAULT STATE
+          "bg-[linear-gradient(103.43deg,#4F378A_9.78%,#CC00B7_84.11%)]",
+          "shadow-[2px_2px_4px_rgba(20,0,99,0.3),inset_2px_2px_3px_rgba(255,255,255,0.4)]",
+
+          // HOVER STATE
+          "hover:bg-[linear-gradient(103.43deg,#6D4CBF_9.78%,#E000CA_84.11%)]",
+          "hover:shadow-[0px_0px_12px_rgba(255,0,229,0.5),inset_2px_2px_3px_rgba(255,255,255,0.5)]",
+          "hover:scale-[1.01]",
+
+          // EXACT ACTIVE STATE (Uniform Gradient Fix)
+          "active:scale-[0.98]",
+          "active:font-bold",
+          // We use a "flat" gradient of the same color to keep the background-image property occupied
+          "active:bg-[linear-gradient(103.43deg,#CC00B7_0%,#CC00B7_100%)]",
+          // Complex Shadow Stack from Figma
+          "active:shadow-[1px_1px_2px_rgba(20,0,99,0.45),inset_-2px_-2px_4px_rgba(98,0,97,0.4),inset_2px_2px_2px_rgba(255,255,255,0.55),inset_-4px_-4px_25px_rgba(154,4,129,0.2)]",
         ].join(" "),
         secondary: [
           "bg-white hover:bg-secondary-hover active:bg-secondary-active",
+          "w-[180px] h-[40px]",
           "border border-violet-300 active:border-secondary-active",
           "text-primary text-base active:text-white cursor-pointer font-normal",
           "shadow-[1px_1px_2px_rgba(0,0,0,0.3),inset_-2px_-2px_6px_rgba(167,139,250,0.3)]",
         ].join(" "),
         tertiary: [
-          "bg-white hover:bg-secondary-hover active:bg-secondary-active",
+          "bg-white hover:bg-secondary-hover active:bg-secondary-active cursor-pointer p-0",
+          "w-[180px] h-[40px]",
           "text-primary text-base active:text-white cursor-pointer font-normal",
           "shadow-[1px_1px_4px_rgba(20,0,99,0.3),inset_-1px_-1px_1px_rgba(154,4,129,0.15)]",
         ].join(" "),

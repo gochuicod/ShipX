@@ -34,7 +34,7 @@ export default function HeroSection() {
         2xl:bg-position-[right_center] bg-position-[bottom_center]
 
         /* On desktop, keep image normal size. On mobile/tablet, cover the area. */
-        bg-cover 2xl:bg-size-[100%_auto] md:bg-size-[100%_80%] bg-size-[100%_60%]
+        bg-cover 2xl:bg-size-[80%_auto] md:bg-size-[100%_80%] bg-size-[100%_60%]
       "
       style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
     >
@@ -43,8 +43,8 @@ export default function HeroSection() {
           className="
             grid
             gap-12
-            2xl:min-h-[calc(90vh-80px)] md:min-h-[calc(60vh-80px)] min-h-[calc(80vh-80px)]
-            2xl:grid-cols-[0.45fr_0.55fr] grid-cols-1
+            2xl:min-h-[calc(80vh-80px)] md:min-h-[calc(60vh-80px)] min-h-[calc(80vh-80px)]
+            2xl:grid-cols-[0.53fr_0.47fr] grid-cols-1
             2xl:items-center md:items-start
           "
         >
@@ -56,7 +56,7 @@ export default function HeroSection() {
               highlight={t("hero_section.slide_2.header_2")}
               className={cn(
                 themeGuide.pageTitle,
-                "2xl:text-[60px] md:text-5xl text-[32px] 2xl:leading-18 md:leading-12 leading-[32px] 2xl:w-auto md:w-[80%] w-full",
+                "2xl:text-[60px] md:text-5xl text-[32px] 2xl:leading-18 md:leading-12 leading-[32px] 2xl:w-auto md:w-[80%] w-full font-bold",
               )}
               highlightClass="text-[#FF00E5]"
             />
@@ -75,15 +75,17 @@ export default function HeroSection() {
                 text={t("header.book_a_demo") || "Book a Demo"}
                 withLeftIcon={true}
                 leftIcon={<CalendarDays className="size-5" />}
-                className="shadow-lg shadow-purple-200 text-base font-normal!"
               />
               <AppButton
-                to="/#services"
-                text={t("hero_section.slide_2.learn_more") || "Learn More"}
+                to="/hs-code-generator"
+                text={
+                  t(
+                    "hs_code_generator_page.form_section.input_images.upload_files_button",
+                  ) || "Learn More"
+                }
                 style="secondary"
                 withRightIcon={true}
                 rightIcon={<CircleArrowRight className="size-5" />}
-                className="text-base font-normal!"
               />
             </div>
           </div>

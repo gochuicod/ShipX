@@ -56,9 +56,11 @@ const badgeVariants = cva(
 
 function Badge({ className, variant, size, children, ...props }) {
   return (
-    <div className={cn(badgeVariants({ variant, size }), className)} {...props}
-          style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
->
+    <div
+      className={cn(badgeVariants({ variant, size }), className)}
+      {...props}
+      style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
+    >
       {variant === "toolkit" && (
         <span className="h-2 w-2 rounded-full bg-(--badge-pink) mr-1" />
       )}
