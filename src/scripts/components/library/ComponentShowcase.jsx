@@ -3,6 +3,12 @@ import Logo from "./Logo";
 import Badge from "./Badge";
 import AffiliateCard from "./AffiliateCard";
 import BlogCard from "./BlogCard";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "./Accordion";
 import { cn } from "../../../lib/util";
 import { CalendarDays, CircleArrowRight } from "lucide-react";
 
@@ -47,9 +53,21 @@ export default function ComponentShowcase() {
         <Badge />
       </ComponentWrapper>
 
+      <ComponentWrapper title="Accordion">
+        <Accordion>
+          <AccordionItem value="item-1" variant="purple">
+            <AccordionTrigger>What is ShipX?</AccordionTrigger>
+            <AccordionContent>
+              ShipX is a logistics and fulfillment platform that helps
+              businesses manage their shipping and delivery operations
+              efficiently.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </ComponentWrapper>
+
       <ComponentWrapper title="Blog Card">
         <BlogCard variant="default" />
-        <BlogCard variant="section" />
       </ComponentWrapper>
 
       <ComponentWrapper

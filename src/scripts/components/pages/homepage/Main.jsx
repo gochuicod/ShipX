@@ -39,6 +39,7 @@ const Main = () => {
           <PartnersSection />
           <SGAmiloCards />
           <Blogs />
+          <FAQSection />
 
           {/* <Services /> */}
           {/* <Toolkit />
@@ -46,7 +47,6 @@ const Main = () => {
           <Platform />
           <FreightAndCustoms />
           <Offices />
-          <FAQSection />
           <ContactUs /> */}
         </div>
       </div>

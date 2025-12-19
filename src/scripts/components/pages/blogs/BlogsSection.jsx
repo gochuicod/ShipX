@@ -70,7 +70,7 @@ const BlogSection = () => {
         )}
 
         {/* Read More - All Blogs Button */}
-        <div className="text-center md:mt-[2vw] mt-[5vw]">
+        <div className="text-center mt-8">
           <AppButton
             to="/blogs"
             variant="secondary"
