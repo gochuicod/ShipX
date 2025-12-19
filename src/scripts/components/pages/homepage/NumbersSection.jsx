@@ -33,7 +33,7 @@ const STATS_DATA = [
 
 export default function NumbersSection() {
   return (
-    <ParallaxSection>
+    <ParallaxSection className="mt-32">
       <div className="flex flex-col justify-center items-center w-full px-2">
         <div className="flex flex-col justify-center items-center">
           <Badge variant="toolkit" size="default">

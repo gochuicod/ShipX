@@ -21,6 +21,7 @@ const HeroSection = lazy(() => import("./HeroSection"));
 const PartnersSection = lazy(() => import("./PartnersSection"));
 const ServicesSection = lazy(() => import("./ServicesSection"));
 const NumbersSection = lazy(() => import("./NumbersSection"));
+const ToolkitSection = lazy(() => import("./ToolkitSection"));
 
 const Main = () => {
   const { t } = useTranslation();
@@ -40,6 +41,7 @@ const Main = () => {
           <HeroSection />
           <PartnersSection />
           <ServicesSection />
+          <ToolkitSection />
           <NumbersSection />
           <SGAmiloCards />
           <Blogs />

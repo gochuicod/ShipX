@@ -32,7 +32,7 @@ export default function ServicesItems({
             {icon}
           </div>
         </div>
-        <h3 className="text-[40px] leading-tight font-bold text-[#4F378A] whitespace-pre-line mb-1">
+        <h3 className="text-[40px] leading-tight font-normal text-[#4F378A] whitespace-pre-line mb-1">
           {heading}
         </h3>
         <p className="text-[18px] text-[#4F378A]/70 font-medium whitespace-pre-line">
@@ -64,7 +64,7 @@ export default function ServicesItems({
       {/* Text: Inter 16px/20px Bold */}
       <span
         className={cn(
-          "font-['Inter'] font-bold text-[16px] leading-[20px] opacity-90",
+          "font-['Inter'] font-normal text-[16px] leading-[20px] opacity-90",
           isActive ? "text-white" : "text-[#4F378A]",
         )}
       >

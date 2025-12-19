@@ -1,24 +1,20 @@
 import { memo, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import SmartNavLink from "./ui/SmartNavLink";
-import { div as MotionDiv, span as MotionSpan } from "motion/react-client";
+import { span as MotionSpan } from "motion/react-client";
 import { AnimatePresence } from "motion/react";
 import { useTranslation } from "react-i18next";
 import { languages } from "../utils/constants";
-import LoginModal from "./library/LoginModal";
-import {
-  Listbox,
-  ListboxButton,
-  ListboxOption,
-  ListboxOptions,
-  Popover,
-  Portal,
-} from "@headlessui/react";
+import { Popover } from "@headlessui/react";
+
 import { themeGuide } from "../../styles/themeGuide";
+
 import { cn } from "../../lib/util";
 
 import Logo from "./library/Logo";
+import LoginModal from "./library/LoginModal";
 import AppButton from "./library/AppButton";
+import MobileMenu from "./library/MobileMenu";
 
 import { CalendarDays } from "lucide-react";
 
@@ -29,6 +25,18 @@ const Header = memo(() => {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    // Option A: If LoginModal is controlled by state, set that state here.
+    // setIsLoginModalOpen(true);
+
+    // Option B: If LoginModal is a button wrapper, you might need to simulate a click
+    // or simply navigate to a login page if that's how it works.
+    console.log("Login clicked");
+
+    // If you simply want to close the menu after clicking login:
+    setIsOpen(false);
+  };
 
   // Dropdown Component for Navigation (Hoverable)
   const Dropdown = ({ title, items }) => (
@@ -413,101 +421,16 @@ const Header = memo(() => {
         {/* Mobile Dropdown Menu */}
         <AnimatePresence>
           {isOpen && (
-            <MotionDiv
-              initial={{ y: -20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -20, opacity: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="absolute top-full right-0 w-full bg-white
-                        flex flex-col items-start px-8 pb-5 gap-y-[3vw] 2xl:hidden
-                        text-dark-neutral text-base font-medium divide-y divide-gray-200"
-            >
-              {mobileNavLinks.map((link) =>
-                link.items ? (
-                  <div key={link.label} className="w-full pt-3">
-                    <span className="font-bold text-gray-400 text-sm">
-                      {link.label}
-                    </span>
-                    {link.items.map((item) => (
-                      <SmartNavLink
-                        key={item.to}
-                        to={item.to}
-                        onClick={handleMobileLinkClick}
-                        className={`${linkClass} block w-full text-left py-2`}
-                      >
-                        {item.label}
-                      </SmartNavLink>
-                    ))}
-                  </div>
-                ) : (
-                  <SmartNavLink
-                    key={link.to}
-                    to={link.to}
-                    onClick={handleMobileLinkClick}
-                    className={`${linkClass} w-full text-left pt-3`}
-                  >
-                    {link.label}
-                  </SmartNavLink>
-                ),
-              )}
-
-              <Listbox
-                className={`${linkClass} w-full text-left`}
-                value={selected}
-                onChange={handleLanguageChange}
-              >
-                <div className="relative">
-                  <ListboxButton
-                    type="button"
-                    className="relative flex flex-row w-full gap-x-[2vw] justify-start items-center focus-visible:outline-0"
-                  >
-                    <span className="flex items-center">
-                      <span className="block text-[#1A1A1A] text-[3.5vw] font-medium">
-                        {selected.name}
-                      </span>
-                    </span>
-                    {/* Dropdown Icon */}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="#1A1A1A"
-                      className="size-[4.5vw]"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-                      />
-                    </svg>
-                  </ListboxButton>
-
-                  <Portal>
-                    <ListboxOptions
-                      anchor="bottom start"
-                      transition
-                      className="relative h-fit overflow-auto md:rounded-[0.5vw] rounded-[2vw] bg-white py-[0.5vw] mt-[0.5vw] text-start outline-1 -outline-offset-1 outline-white/10 data-leave:transition data-leave:duration-100 data-leave:ease-in data-closed:data-leave:opacity-0 z-1000 md:shadow-[0_0.5vw_0.5vw_rgba(255,0,229,0.15)] shadow-[0_3vw_5vw_rgba(255,0,229,0.15)]"
-                    >
-                      {languages.map((language) => (
-                        <ListboxOption
-                          key={language.id}
-                          value={language}
-                          className="group relative cursor-default py-2 pr-9 pl-3 text-white select-none data-focus:bg-[#FF00E5] data-focus:outline-hidden"
-                        >
-                          <div className="flex items-center">
-                            <span className="ml-3 block truncate font-normal group-data-focus:font-semibold group-data-focus:text-white text-[#1A1A1A] md:text-[3.5vw] text-[3vw]">
-                              {language.name}
-                            </span>
-                          </div>
-                        </ListboxOption>
-                      ))}
-                    </ListboxOptions>
-                  </Portal>
-                </div>
-              </Listbox>
-              <LoginModal />
-            </MotionDiv>
+            <MobileMenu
+              isOpen={isOpen}
+              navLinks={mobileNavLinks}
+              languages={languages}
+              selectedLang={selected}
+              onLanguageChange={handleLanguageChange}
+              onLinkClick={handleMobileLinkClick}
+              onLoginClick={handleLoginClick} // <--- Pass the handler here
+              t={t}
+            />
           )}
         </AnimatePresence>
       </header>
