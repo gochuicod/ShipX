@@ -14,7 +14,7 @@ const FAQSection = lazy(() => import("./FAQSection"));
 const Toolkit = lazy(() => import("./toolkit/ToolKitLayout"));
 
 // External folder lazy imports
-const Blogs = lazy(() => import("../blogs/BlogsSectionReusable"));
+const Blogs = lazy(() => import("../blogs/BlogsSection"));
 const SEO = lazy(() => import("../../ui/SEO"));
 
 const HeroSection = lazy(() => import("./HeroSection"));
@@ -38,6 +38,7 @@ const Main = () => {
           <HeroSection />
           <PartnersSection />
           <SGAmiloCards />
+          <Blogs />
 
           {/* <Services /> */}
           {/* <Toolkit />
@@ -45,7 +46,6 @@ const Main = () => {
           <Platform />
           <FreightAndCustoms />
           <Offices />
-          <Blogs />
           <FAQSection />
           <ContactUs /> */}
         </div>
