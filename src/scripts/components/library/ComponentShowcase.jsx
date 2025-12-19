@@ -3,6 +3,7 @@ import Logo from "./Logo";
 import Badge from "./Badge";
 import AffiliateCard from "./AffiliateCard";
 import BlogCard from "./BlogCard";
+import ServicesItems from "./ServicesItems";
 import {
   Accordion,
   AccordionItem,
@@ -10,6 +11,7 @@ import {
   AccordionContent,
 } from "./Accordion";
 import { cn } from "../../../lib/util";
+
 import { CalendarDays, CircleArrowRight } from "lucide-react";
 
 // A wrapper to provide some styling for each component showcase
@@ -34,19 +36,22 @@ export default function ComponentShowcase() {
       <ComponentWrapper title="Buttons" className="flex flex-wrap gap-4">
         <AppButton
           variant="primary"
-          className="flex flex-row justify-center items-center"
-        >
-          <CalendarDays className="size-5 stroke-[1.5px]" />
-          Book a Demo
-        </AppButton>
+          text="Book a Demo"
+          withLeftIcon={true}
+          leftIcon={<CalendarDays className="size-5 stroke-[1.5px]" />}
+        />
         <AppButton
           variant="secondary"
+          text="Learn More"
+          withLeftIcon={true}
+          leftIcon={<CircleArrowRight className="size-5 stroke-[1.3px]" />}
           className="flex flex-row-reverse justify-center items-center"
-        >
-          <CircleArrowRight className="size-5 stroke-[1.3px]" />
-          Learn More
-        </AppButton>
-        <AppButton variant="tertiary">Thailand</AppButton>
+        />
+        <AppButton variant="tertiary" text="Thailand" withLeftIcon={true} />
+      </ComponentWrapper>
+
+      <ComponentWrapper title="Services Items">
+        <ServicesItems text="test" icon="t" />
       </ComponentWrapper>
 
       <ComponentWrapper title="Badge">

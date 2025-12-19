@@ -20,6 +20,8 @@ import { cn } from "../../lib/util";
 import Logo from "./library/Logo";
 import AppButton from "./library/AppButton";
 
+import { CalendarDays } from "lucide-react";
+
 const linkClass =
   "transition-colors duration-500 hover:text-[#FF00E5] hover:underline hover:decoration-2 hover:underline-offset-5";
 
@@ -28,50 +30,77 @@ const Header = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
-  // Dropdown Component for Navigation
+  // Dropdown Component for Navigation (Hoverable)
   const Dropdown = ({ title, items }) => (
-    <Popover className="relative">
-      {({ open }) => (
-        <>
-          <Popover.Button
-            className={`
-              group ${linkClass} flex items-center gap-x-1 focus:outline-none cursor-pointer
-              ${open ? "text-[#FF00E5]" : ""}
-            `}
-          >
-            {title}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2.5}
-              className={`w-3 h-3 transition-all duration-300 group-hover:stroke-[#FF00E5] ${
-                open ? "rotate-180 stroke-[#FF00E5]" : "stroke-[#1A1A1A]"
-              }`}
+    <div className="relative group h-full flex items-center">
+      {/* The Trigger Link */}
+      <div
+        className={cn(
+          linkClass,
+          "flex items-center gap-x-1 cursor-pointer py-4", // Padding ensures the hover bridge
+          "group-hover:text-[#FF00E5]",
+        )}
+      >
+        {title}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={2.5}
+          className="w-3 h-3 transition-transform duration-300 group-hover:rotate-180 group-hover:stroke-[#FF00E5] stroke-[#1A1A1A]"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="m19.5 8.25-7.5 7.5-7.5-7.5"
+          />
+        </svg>
+      </div>
+
+      {/* The Panel - Automatically fits content via min-w-max */}
+      <div
+        className="
+        absolute top-full left-0 z-50 
+        invisible opacity-0 translate-y-1
+        group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
+        transition-all duration-200 ease-out
+      "
+      >
+        {/* Invisible bridge to prevent menu from closing when moving mouse down */}
+        <div className="h-2 w-full" />
+
+        <div
+          className="
+          min-w-max bg-white rounded-lg border border-[#FF00E5] 
+          shadow-lg p-1 overflow-hidden
+        "
+        >
+          {items.map((item) => (
+            <SmartNavLink
+              key={item.to}
+              to={item.to}
+              className="group/item block"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m19.5 8.25-7.5 7.5-7.5-7.5"
-              />
-            </svg>
-          </Popover.Button>
-          <Popover.Panel className="absolute z-10 mt-3 md:w-[12vw] -translate-x-1/4 transform bg-white md:rounded-[0.5vw] rounded-[2vw] border border-[#FF00E5]">
-            <div className="p-1">
-              {items.map((item) => (
-                <SmartNavLink key={item.to} to={item.to} className="group">
-                  <div className="flex items-center gap-x-3 px-4 py-2 md:text-[0.8vw] text-[2.2vw] text-gray-700 rounded-md transition-colors duration-300 group-hover:text-[#FF00E5] group-hover:underline group-hover:decoration-2 group-hover:underline-offset-4">
-                    {/* Render the icon directly if it exists */}
-                    {item.icon}
-                    <span>{item.label}</span>
-                  </div>
-                </SmartNavLink>
-              ))}
-            </div>
-          </Popover.Panel>
-        </>
-      )}
-    </Popover>
+              <div
+                className="
+                flex items-center gap-x-3 px-4 py-3 
+                text-base text-gray-700 rounded-md 
+                transition-colors duration-200 
+                hover:text-[#FF00E5] hover:underline hover:decoration-2 hover:underline-offset-4
+              "
+              >
+                {/* Render the icon */}
+                <span className="shrink-0 scale-110">{item.icon}</span>
+                {/* min-w-max and whitespace-nowrap prevents text wrapping */}
+                <span className="whitespace-nowrap font-medium pr-2">
+                  {item.label}
+                </span>
+              </div>
+            </SmartNavLink>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 
   const navLinks = [
@@ -208,25 +237,15 @@ const Header = memo(() => {
         className={`
           sticky top-0 z-50 select-none
           flex flex-row bg-white text-[#1A1A1A] justify-between items-center
-          ${themeGuide.paddingX} ${themeGuide.paddingY}
-          py-5 px-8
+          ${themeGuide.paddingX}
+          py-3 px-8
         `}
         style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
       >
         <Logo />
 
         {/* Right: Nav + Buttons (hidden on mobile) */}
-        <nav
-          className="
-            hidden 2xl:flex
-            flex-row
-            gap-x-[2.5vw]
-            font-normal
-            2xl:text-base
-            text-[0.8vw]
-            text-nav
-          "
-        >
+        <nav className="hidden 2xl:flex flex-row gap-x-[2.5vw] font-normal 2xl:text-base text-nav items-center">
           {navLinks.map((link) =>
             link.items ? (
               <Dropdown
@@ -358,22 +377,7 @@ const Header = memo(() => {
             to="/book-a-demo"
             text={t("header.book_a_demo")}
             withLeftIcon={true}
-            leftIcon={
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="size-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
-                />
-              </svg>
-            }
+            leftIcon={<CalendarDays className="size-5" />}
           />
         </div>
 

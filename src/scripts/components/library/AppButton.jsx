@@ -3,7 +3,7 @@ import { Button } from "../../../styles/button";
 import { cn } from "../../../lib/util";
 
 const appButtonStyles = {
-  smartNavLink: "flex items-center justify-center gap-2 px-4 py-[10px]",
+  smartNavLink: "flex items-center justify-center gap-2 px-4 py-[8px]",
 };
 
 export default function AppButton({

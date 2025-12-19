@@ -19,6 +19,8 @@ const SEO = lazy(() => import("../../ui/SEO"));
 
 const HeroSection = lazy(() => import("./HeroSection"));
 const PartnersSection = lazy(() => import("./PartnersSection"));
+const ServicesSection = lazy(() => import("./ServicesSection"));
+const NumbersSection = lazy(() => import("./NumbersSection"));
 
 const Main = () => {
   const { t } = useTranslation();
@@ -37,6 +39,8 @@ const Main = () => {
         <div className="flex flex-col">
           <HeroSection />
           <PartnersSection />
+          <ServicesSection />
+          <NumbersSection />
           <SGAmiloCards />
           <Blogs />
           <FAQSection />
