@@ -38,7 +38,7 @@ export default function AffiliateCard({
               alt={illustration.alt || "Illustration"}
               className={
                 illustration.className ||
-                "w-48 h-48 md:w-64 md:h-64 object-contain drop-shadow-xl"
+                "w-48 h-48 object-contain drop-shadow-xl"
               }
             />
           </AffiliateCardIllustration>
@@ -84,14 +84,17 @@ export default function AffiliateCard({
 
         {/* Footer */}
         {actions && actions.length > 0 && (
-          <AffiliateCardFooter className="justify-center md:justify-end">
+          <AffiliateCardFooter className="justify-center md:justify-end gap-2">
             {actions.map((action, index) => (
               <AppButton
                 key={index}
                 style={action.style || "primary"}
                 text={action.text}
                 onClick={action.onClick}
-                className={action.className}
+                className={cn(
+                  action.className,
+                  action.style === "primary" && "w-fit",
+                )}
               />
             ))}
           </AffiliateCardFooter>

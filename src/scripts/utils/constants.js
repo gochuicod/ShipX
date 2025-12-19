@@ -1,4 +1,4 @@
-export const margin = "md:px-[8vw] px-[10vw]";
+export const margin = "lg:px-24 md:px-16 px-4";
 
 const ASSET_BASE_URL =
   "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/";

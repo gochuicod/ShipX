@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Badge } from "../../../../styles/badge";
 import AppButton from "../../library/AppButton";
 import { CircleArrowRight } from "lucide-react";
+import { margin } from "../../../utils/constants";
 
 import {
   Accordion,
@@ -53,14 +54,16 @@ const FAQSection = () => {
 
   return (
     <ParallaxSection>
-      <div className="w-screen p-8 md:px-32 gap-8 items-center flex flex-col">
-        <div className="w-fit mx-auto gap-8 flex flex-col">
+      <div
+        className={`relative w-screen ${margin} gap-8 items-center flex flex-col`}
+      >
+        <div className="w-full gap-8 flex flex-col">
           {/* --- Header --- */}
           <div className="gap-2 flex flex-col items-center text-center">
             <Badge variant="toolkit" size="default">
               {t("faq_section.badge", "Frequently Asked Questions")}
             </Badge>
-            <h2 className="text-3xl font-bold text-slate-950">
+            <h2 className="md:text-4xl text-2xl font-semibold md:font-bold text-[0E0E0E]">
               {t("faq_section.title", "Everything You Need to Know")}
             </h2>
             <h3 className="font-normal text-sm md:text-base text-[#4D525C]">
@@ -70,7 +73,7 @@ const FAQSection = () => {
 
           {/* --- Accordion Grid --- */}
           <Accordion
-            className="grid grid-cols-1 md:grid-cols-2 md:gap-5 gap-4 items-start md:px-24 p-0"
+            className="grid grid-cols-1 md:grid-cols-2 md:gap-5 gap-4 items-start"
             defaultOpen={leftColItems[0]?.id}
           >
             {/* Left Column */}
@@ -119,16 +122,16 @@ const FAQSection = () => {
               ))}
             </div>
           </Accordion>
-        </div>
-        {/* Read More - All FAQs Button */}
-        <div className="text-center">
-          <AppButton
-            to="/frequently-asked-questions"
-            variant="secondary"
-            text="Read More"
-            withRightIcon={true}
-            rightIcon={<CircleArrowRight className="size-5" />}
-          />
+          {/* Read More - All FAQs Button */}
+          <div className="text-center">
+            <AppButton
+              to="/frequently-asked-questions"
+              variant="secondary"
+              text="Read More"
+              withRightIcon={true}
+              rightIcon={<CircleArrowRight className="size-5" />}
+            />
+          </div>
         </div>
       </div>
     </ParallaxSection>

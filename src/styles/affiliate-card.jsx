@@ -3,8 +3,7 @@ import { cn } from "../lib/util";
 
 // 1. The Container Style
 const cardVariants = cva(
-  // ADDED: h-full, Changed overflow-hidden to overflow-visible to allow illustration to float outside
-  "relative w-full flex flex-col h-full overflow-visible rounded-[24px] shadow-sm transition-all",
+  "relative w-full flex flex-col h-full overflow-visible md:rounded-3xl rounded-sm shadow-sm transition-all",
   {
     variants: {
       variant: {
@@ -14,7 +13,7 @@ const cardVariants = cva(
           "bg-gradient-to-br from-[oklch(0.9524_0.0425_325.9)]/30 to-[oklch(0.7284_0.1708_59.45)]/30",
       },
       padding: {
-        default: "p-8 md:p-20",
+        default: "p-4 md:p-10",
         compact: "p-5",
       },
     },
@@ -41,7 +40,7 @@ function AffiliateCardIllustration({ className, children, ...props }) {
   return (
     <div
       className={cn(
-        "mb-6 w-full flex justify-center md:absolute md:top-0 md:right-6 md:mb-0 md:w-1/3 md:justify-end z-10 pointer-events-none md:-translate-y-1/2",
+        "absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 flex justify-center z-10 pointer-events-none md:left-auto md:w-1/3 md:right-6 md:translate-x-0",
         className,
       )}
       {...props}
@@ -57,7 +56,7 @@ function AffiliateCardContent({ className, children, ...props }) {
   return (
     <div
       className={cn(
-        "relative z-20 flex flex-col gap-4 items-center text-center md:items-start md:text-left max-w-full flex-1 w-full",
+        "relative z-20 flex flex-col gap-4 items-center text-center md:items-start md:text-left max-w-full flex-1 w-full pt-20 md:pt-0",
         className,
       )}
       {...props}
@@ -73,7 +72,7 @@ function AffiliateCardFooter({ className, children, ...props }) {
   return (
     <div
       className={cn(
-        "mt-auto pt-8 flex flex-wrap items-center gap-3",
+        "mt-auto md:pt-8 py-10 md:py-4 flex flex-wrap items-center gap-3",
         className,
       )}
       {...props}

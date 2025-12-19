@@ -31,7 +31,7 @@ const BlogSection = () => {
       style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
     >
       <div
-        className={`w-full ${margin} flex flex-col justify-center items-center mx-auto`}
+        className={`w-screen ${margin} flex flex-col justify-center items-center`}
       >
         <div className="flex justify-center items-center mb-4">
           <Badge variant="toolkit" size="default">
@@ -41,7 +41,7 @@ const BlogSection = () => {
 
         {/* Header */}
         <div className="mb-8 md:mb-10 flex justify-center items-center">
-          <h1 className="text-2xl md:text-4xl font-bold text-gray-900">
+          <h1 className="md:text-4xl text-2xl font-semibold md:font-bold text-[0E0E0E]">
             Latest Insights & Ideas
           </h1>
         </div>

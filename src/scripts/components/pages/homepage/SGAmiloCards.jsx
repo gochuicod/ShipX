@@ -10,7 +10,7 @@ const SGAmiloCards = () => {
   return (
     <ParallaxSection>
       <div
-        className={`relative w-screen ${margin} flex md:flex-row flex-col justify-center items-center`}
+        className={`relative w-screen ${margin} flex md:flex-row flex-col justify-center items-center gap-32 md:gap-8`}
       >
         {/* CARD 1: ShipX / Default */}
         <AffiliateCard
@@ -66,11 +66,13 @@ const SGAmiloCards = () => {
           }}
           heading={
             <>
-              <span className="text-(--secondary)">Expand your business</span>{" "}
-              abroad with SG Link's cross-border expertise
+              <span className="text-(--secondary)">
+                Your all-in-one partner
+              </span>{" "}
+              for logistics, fulfillment and global shipping
             </>
           }
-          subheading="Ship Your all-in-one partner for logistics, fulfillment and global shippingproducts to global markets quickly and securely with end-to-end delivery solutions."
+          subheading="From warehousing to last-mile delivery, Amilo streamlines every step of your supply chain so you can focus on scaling your brand."
           badges={[
             { label: "Express Delivery" },
             { label: "Asia-Pacific Routes" },
