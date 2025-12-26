@@ -4,8 +4,8 @@ import SmartNavLink from "../../ui/SmartNavLink";
 import { Badge } from "../../../../styles/badge";
 import AppButton from "../../library/AppButton";
 import BlogCard from "../../library/BlogCard";
-import { margin } from "../../../utils/constants";
 import { lazy } from "react";
+import { themeGuide } from "../../../../styles/themeGuide";
 
 const ParallaxSection = lazy(() => import("../../ui/ParallaxSection"));
 
@@ -31,7 +31,7 @@ const BlogSection = () => {
       style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
     >
       <div
-        className={`w-screen ${margin} flex flex-col justify-center items-center`}
+        className={`mx-auto relative ${themeGuide.paddingX} flex flex-col justify-center items-center`}
       >
         <div className="flex justify-center items-center mb-4">
           <Badge variant="toolkit" size="default">

@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Badge } from "../../../../styles/badge";
 import AppButton from "../../library/AppButton";
 import { CircleArrowRight } from "lucide-react";
-import { margin } from "../../../utils/constants";
+import { themeGuide } from "../../../../styles/themeGuide";
 
 import {
   Accordion,
@@ -55,7 +55,7 @@ const FAQSection = () => {
   return (
     <ParallaxSection>
       <div
-        className={`relative w-screen ${margin} gap-8 items-center flex flex-col`}
+        className={`mx-auto relative ${themeGuide.paddingX} gap-8 items-center flex flex-col`}
       >
         <div className="w-full gap-8 flex flex-col">
           {/* --- Header --- */}

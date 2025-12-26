@@ -4,6 +4,7 @@ import Badge from "./Badge";
 import AffiliateCard from "./AffiliateCard";
 import BlogCard from "./BlogCard";
 import ServicesItems from "./ServicesItems";
+import IconBox from "./IconBox";
 import {
   Accordion,
   AccordionItem,
@@ -11,7 +12,7 @@ import {
   AccordionContent,
 } from "./Accordion";
 import { cn } from "../../../lib/util";
-
+import { Box, Truck, Globe, Mail } from "lucide-react"; // Example icons
 import { CalendarDays, CircleArrowRight } from "lucide-react";
 
 // A wrapper to provide some styling for each component showcase
@@ -58,12 +59,20 @@ export default function ComponentShowcase() {
         <Badge />
       </ComponentWrapper>
 
-      <ComponentWrapper title="Accordion">
-        <Accordion>
+      <ComponentWrapper title="Accordion" className="items-stretch">
+        <Accordion className="flex flex-row gap-4">
           <AccordionItem value="item-1" variant="purple">
             <AccordionTrigger>What is ShipX?</AccordionTrigger>
             <AccordionContent>
               ShipX is a logistics and fulfillment platform that helps
+              businesses manage their shipping and delivery operations
+              efficiently.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-2" variant="purple">
+            <AccordionTrigger>What is Amilo?</AccordionTrigger>
+            <AccordionContent>
+              Amilo is a logistics and fulfillment platform that helps
               businesses manage their shipping and delivery operations
               efficiently.
             </AccordionContent>
@@ -156,6 +165,84 @@ export default function ComponentShowcase() {
             },
           ]}
         />
+      </ComponentWrapper>
+
+      <ComponentWrapper title="Icon Box" className="flex flex-col gap-8">
+        <div className="flex flex-col gap-4">
+          <h3 className="text-lg font-semibold text-gray-700">
+            Default Layout (Icon on Top)
+          </h3>
+          <div className="flex flex-wrap gap-6">
+            {/* Default Layout - Responsive */}
+            <IconBox
+              layout="default"
+              icon={<Box className="size-8 stroke-purple-600" />}
+              title="Logistics"
+            >
+              Manage your shipping and delivery operations efficiently with our
+              tools.
+            </IconBox>
+
+            {/* Default Layout - Wide */}
+            <IconBox
+              layout="default"
+              size="wide"
+              icon={<Truck className="size-8 stroke-blue-600" />}
+              title="International Express"
+            >
+              Ship products to global markets quickly and securely.
+            </IconBox>
+
+            {/* Default Layout - Compact */}
+            <IconBox
+              layout="default"
+              size="compact"
+              icon={<Globe className="size-8 stroke-orange-500" />}
+              title="Global Reach"
+            >
+              Access Asia-Pacific routes instantly.
+            </IconBox>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-4">
+          <h3 className="text-lg font-semibold text-gray-700">
+            Horizontal Layout (Icon on Left)
+          </h3>
+          <div className="flex flex-wrap gap-6">
+            {/* Horizontal Layout - Responsive */}
+            <IconBox
+              layout="horizontal"
+              icon={<Box className="size-8 stroke-purple-600" />}
+              title="Logistics"
+              size="compact"
+            >
+              Manage your shipping and delivery operations efficiently with our
+              tools.
+            </IconBox>
+
+            {/* Horizontal Layout - Wide */}
+            <IconBox
+              layout="horizontal"
+              size="wide"
+              icon={<Truck className="size-8 stroke-blue-600" />}
+              title="International Express"
+            >
+              Ship products to global markets quickly and securely.
+            </IconBox>
+
+            {/* Horizontal Layout - Compact */}
+            <IconBox
+              layout="horizontal"
+              size="default"
+              icon={<Mail className="size-8 stroke-purple-600" />}
+              title="Email Us"
+              value="info@shipx.asia"
+            >
+              We reply within 24 hours
+            </IconBox>
+          </div>
+        </div>
       </ComponentWrapper>
     </div>
   );

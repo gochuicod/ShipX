@@ -12,6 +12,7 @@ const Offices = lazy(() => import("./Offices"));
 const ContactUs = lazy(() => import("./ContactUs"));
 const FAQSection = lazy(() => import("./FAQSection"));
 const Toolkit = lazy(() => import("./toolkit/ToolKitLayout"));
+const ContactUsNew = lazy(() => import("./ContactUsNew"));
 
 // External folder lazy imports
 const Blogs = lazy(() => import("../blogs/BlogsSection"));
@@ -46,6 +47,7 @@ const Main = () => {
           <SGAmiloCards />
           <Blogs />
           <FAQSection />
+          <ContactUsNew />
 
           {/* <Services /> */}
           {/* <Toolkit />

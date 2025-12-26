@@ -12,7 +12,7 @@ export default function AffiliateCard({
   // 1. Style Props
   variant = "default",
   padding,
-  containerClassName = "p-1 md:p-10 h-full w-full",
+  containerClassName = "h-full w-full",
   logo,
   illustration,
   heading,

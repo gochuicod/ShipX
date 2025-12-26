@@ -6,35 +6,16 @@ import {
   accordionFontStyle,
 } from "../../../styles/accordion-styles";
 
-// ===========================================
-// CONTEXT LAYER
-// ===========================================
-
-/**
- * AccordionContext - Manages open/closed state across all items
- * Provides: { openItems, toggle }
- */
 const AccordionContext = createContext(null);
-
-/**
- * AccordionItemContext - Manages individual item state
- * Provides: { isOpen, variant }
- */
 const AccordionItemContext = createContext(null);
 
-// ===========================================
-// ACCORDION ROOT COMPONENT
-// ===========================================
-
 /**
- * Accordion - Root wrapper for accordion items
- * Manages state and provides context to child items
- *
  * @param {Array} children - AccordionItem components
  * @param {string} className - Grid/layout classes for accordion container
  * @param {boolean} allowMultiple - Allow multiple items open simultaneously (default: false)
  * @param {string} defaultOpen - Item ID to open by default
  */
+
 export const Accordion = ({
   children,
   className,
@@ -64,14 +45,7 @@ export const Accordion = ({
   );
 };
 
-// ===========================================
-// ACCORDION ITEM COMPONENT
-// ===========================================
-
 /**
- * AccordionItem - Wrapper for a single accordion item
- * Manages open/closed state and applies styled container
- *
  * @param {string} value - Unique identifier for this item
  * @param {Array} children - AccordionTrigger and AccordionContent
  * @param {string} className - Additional classes for the item container
@@ -121,10 +95,6 @@ export const AccordionTrigger = ({ children, className }) => {
     />
   );
 };
-
-// ===========================================
-// ACCORDION CONTENT COMPONENT
-// ===========================================
 
 /**
  * AccordionContent - Collapsible content area for accordion item

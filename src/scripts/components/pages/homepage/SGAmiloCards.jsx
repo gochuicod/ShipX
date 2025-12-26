@@ -2,6 +2,7 @@ import { lazy } from "react";
 import { useTranslation } from "react-i18next";
 import { margin } from "../../../utils/constants";
 import AffiliateCard from "../../library/AffiliateCard";
+import { themeGuide } from "../../../../styles/themeGuide";
 const ParallaxSection = lazy(() => import("../../ui/ParallaxSection"));
 
 const SGAmiloCards = () => {
@@ -10,10 +11,12 @@ const SGAmiloCards = () => {
   return (
     <ParallaxSection>
       <div
-        className={`relative w-screen ${margin} flex md:flex-row flex-col justify-center items-center gap-32 md:gap-8`}
+        className={`mx-auto relative ${themeGuide.paddingX} w-full flex md:flex-row flex-col justify-center items-stretch gap-32 md:gap-8`}
       >
         {/* CARD 1: ShipX / Default */}
         <AffiliateCard
+          containerClassName="h-full w-full"
+          className="flex-1 w-full"
           variant="default"
           badgeVariant="affiliate"
           logo={{
@@ -54,6 +57,8 @@ const SGAmiloCards = () => {
         {/* CARD 2: Amilo */}
 
         <AffiliateCard
+          containerClassName="h-full w-full"
+          className="flex-1 w-full"
           variant="amilo"
           badgeVariant="affiliateOrange"
           logo={{
