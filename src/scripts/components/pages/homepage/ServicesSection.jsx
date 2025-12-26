@@ -7,21 +7,34 @@ import { Badge } from "../../../../styles/badge";
 import HighlightedHeading from "../../library/HighlightedHeading";
 import Description from "../../library/Description";
 import AppButton from "../../library/AppButton";
-import {
-  CalendarDays,
-  Plane,
-  ShoppingBasket,
-  Flag,
-  MapPin,
-  Box,
-} from "lucide-react";
+import { CalendarDays } from "lucide-react";
 
 const services = [
-  { id: "express", title: "Express", icon: <Plane /> },
-  { id: "postal", title: "Postal (E-Commerce)", icon: <ShoppingBasket /> },
-  { id: "us-domestic", title: "US Domestic", icon: <Flag /> },
-  { id: "sea-freight", title: "Sea freight", icon: <MapPin /> },
-  { id: "commercial", title: "Commercial", icon: <Box /> },
+  {
+    id: "express",
+    title: "Express",
+    icon: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/icons/duotone/airplaneairplane-delivery-1.svg",
+  },
+  {
+    id: "postal",
+    title: "Postal",
+    icon: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/icons/duotone/airplanebell.svg",
+  },
+  {
+    id: "postal-e-commerce",
+    title: "Postal (E-Commerce)",
+    icon: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/icons/duotone/airplanebasket.svg",
+  },
+  {
+    id: "sea-freight",
+    title: "Sea freight",
+    icon: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/icons/duotone/airplanelocation-maps.svg",
+  },
+  {
+    id: "us-domestic",
+    title: "US Domestic",
+    icon: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/icons/duotone/airplanebasket-1.svg",
+  },
 ];
 
 const SERVICES_CARD_DATA = {
@@ -30,11 +43,11 @@ const SERVICES_CARD_DATA = {
     description:
       "Accelerate your business with premium, time-sensitive global shipping solutions powered by world-class carriers.",
     illustration:
-      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/express-3d.webp",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/services_express.webp",
     partners: [
-      "https://upload.wikimedia.org/wikipedia/commons/2/25/DHL_Logo.svg",
-      "https://upload.wikimedia.org/wikipedia/commons/b/b9/FedEx_Corporation_-_Logo.svg",
-      "https://upload.wikimedia.org/wikipedia/commons/6/6b/United_Parcel_Service_logo_2014.svg",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/dhl.webp",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/fedex.webp",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/ups.webp",
     ],
     countryCodes: ["vn", "sg"],
     ctaText: "International Express Delivery",
@@ -51,14 +64,39 @@ const SERVICES_CARD_DATA = {
     ],
   },
   postal: {
+    title: "Postal",
+    description:
+      "Specialized logistics lines and special handling tailored for unique commercial shipping requirements.",
+    illustration:
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/services_postal.webp",
+    partners: [
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/singapore_post.webp",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/bpost.webp",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/postnl.webp",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/pos_malaysia.webp",
+    ],
+    countryCodes: ["sg", "my"],
+    ctaText: "Cross border Packet Delivery",
+    servicesCovered: [
+      "Standard epacket",
+      "Economy Pak",
+      "Economy epacket",
+      "Expedited epacket",
+    ],
+  },
+  "postal-e-commerce": {
     title: "Postal (E-Commerce)",
     description:
       "Cost-effective, cross-border packet delivery designed specifically to scale your e-commerce reach.",
     illustration:
-      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/postal-3d.webp",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/services_postal_e_commerce.webp",
     partners: [
-      "https://upload.wikimedia.org/wikipedia/commons/4/4e/Singapore_Post_logo.svg",
-      "https://upload.wikimedia.org/wikipedia/commons/a/a3/J%26T_Express_logo.svg",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/singapore_post.webp",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/bpost.webp",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/uniuni.webp",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/postnl.webp",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/pos_malaysia.webp",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/ups.webp",
     ],
     countryCodes: ["my", "sg", "us"],
     ctaText: "Cross border Packet Delivery",
@@ -77,9 +115,10 @@ const SERVICES_CARD_DATA = {
     description:
       "Reliable and scalable ocean freight solutions, including FBA and LCL, for high-volume logistics.",
     illustration:
-      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/sea-freight-3d.webp",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/services_sea_freight.webp",
     partners: [
-      "https://upload.wikimedia.org/wikipedia/commons/5/59/Maersk_Group_Logo.svg",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/vina_link_group.webp",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/vina_dowell.webp",
     ],
     countryCodes: ["vn"],
     ctaText: "Sea Freight Inquiry",
@@ -90,10 +129,12 @@ const SERVICES_CARD_DATA = {
     description:
       "Complete nationwide coverage across the USA, ranging from economy ground to priority expedited options.",
     illustration:
-      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/us-domestic-3d.webp",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/services_domestic.webp",
     partners: [
-      "https://upload.wikimedia.org/wikipedia/commons/2/25/DHL_Logo.svg",
-      "https://upload.wikimedia.org/wikipedia/commons/6/6b/United_Parcel_Service_logo_2014.svg",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/dhl.webp",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/fedex.webp",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/ups.webp",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/uniuni.webp",
     ],
     countryCodes: ["us"],
     ctaText: "US Destination Delivery",
@@ -103,19 +144,6 @@ const SERVICES_CARD_DATA = {
       "Economy Mail",
       "Priority Mail",
     ],
-  },
-  commercial: {
-    title: "Commercial",
-    description:
-      "Specialized logistics lines and special handling tailored for unique commercial shipping requirements.",
-    illustration:
-      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/postal-3d.webp",
-    partners: [
-      "https://upload.wikimedia.org/wikipedia/commons/a/a3/J%26T_Express_logo.svg",
-    ],
-    countryCodes: ["sg", "my"],
-    ctaText: "Commercial Inquiry",
-    servicesCovered: ["Bulk Shipping", "Warehousing", "Customs Clearance"],
   },
 };
 

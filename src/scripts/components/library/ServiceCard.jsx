@@ -55,7 +55,7 @@ export default function ServiceCard({
                     key={index}
                     src={logoUrl}
                     alt="Partner"
-                    className="h-5 w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all"
+                    className="h-5 w-auto object-contain transition-all"
                   />
                 ))}
               </div>

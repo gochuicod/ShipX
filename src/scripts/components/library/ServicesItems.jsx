@@ -13,8 +13,33 @@ export default function ServicesItems({
   const activeShadow =
     "shadow-[1px_1px_2px_rgba(20,0,0,0.45),inset_-2px_-2px_4px_rgba(98,0,97,0.4),inset_2px_2px_2px_rgba(255,255,255,0.55),inset_-4px_-4px_25px_rgba(154,4,129,0.2)]";
 
+  const inactiveShadow =
+    "shadow-[1px_1px_2px_rgba(20,0,0,0.25),inset_-2px_-2px_4px_rgba(154,4,129,0.15)]";
+
   const baseListStyles =
-    "flex flex-row items-center p-[8px_16px] gap-[16px] w-[288px] h-[60px] rounded-[8px] transition-all duration-300 cursor-pointer";
+    "flex flex-row items-center p-[8px_12px] gap-[12px] \
+   w-[160px] sm:w-[200px] md:w-[180px] xl:w-[288px] \
+   h-[62px] xl:h-[60px] \
+   rounded-[8px] transition-all duration-300 cursor-pointer";
+
+  const renderIcon = () => {
+    if (!icon) return null;
+
+    // If icon is a string → treat as image src
+    if (typeof icon === "string") {
+      return (
+        <img
+          src={icon}
+          alt={heading}
+          className="w-full h-full object-contain"
+          draggable={false}
+        />
+      );
+    }
+
+    // Otherwise → assume React node (SVG component)
+    return icon;
+  };
 
   // STAT VARIANT (The "60 million+" card)
   if (variant === "stat") {
@@ -29,7 +54,7 @@ export default function ServicesItems({
         {/* Stat Icon Container: 135deg Gradient from Figma */}
         <div className="w-[80px] h-[80px] mb-6 bg-[linear-gradient(135deg,#F3E8FF_0%,#FAE8FF_100%)] rounded-[24px] flex items-center justify-center shrink-0">
           <div className="size-[40px] flex items-center justify-center">
-            {icon}
+            {renderIcon()}
           </div>
         </div>
         <h3 className="text-[40px] leading-tight font-normal text-[#4F378A] whitespace-pre-line mb-1">
@@ -49,7 +74,7 @@ export default function ServicesItems({
         baseListStyles,
         isActive
           ? `bg-[#CC00B7] ${activeShadow} border-transparent`
-          : "bg-white border border-gray-100 hover:border-[#CC00B7]/30",
+          : `bg-white ${inactiveShadow} hover:outline hover:outline-1 hover:outline-[#CC00B7]/30`,
         className,
       )}
       {...rest}
@@ -57,7 +82,7 @@ export default function ServicesItems({
       {/* Icon Container: 40x40 with Gradient */}
       <div className="w-[40px] h-[40px] shrink-0 bg-[linear-gradient(135deg,#F3E8FF_0%,#FAE8FF_100%)] rounded-[8px] flex items-center justify-center overflow-hidden">
         <div className="relative w-[35px] h-[35px] flex items-center justify-center">
-          {icon}
+          {renderIcon()}
         </div>
       </div>
 
