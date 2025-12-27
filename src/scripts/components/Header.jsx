@@ -5,11 +5,8 @@ import { span as MotionSpan } from "motion/react-client";
 import { AnimatePresence } from "motion/react";
 import { useTranslation } from "react-i18next";
 import { languages } from "../utils/constants";
-import { Popover } from "@headlessui/react";
 
 import { themeGuide } from "../../styles/themeGuide";
-
-import { cn } from "../../lib/util";
 
 import Logo from "./library/Logo";
 import LoginModal from "./library/LoginModal";
@@ -23,6 +20,7 @@ const Header = memo(() => {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
 
   const handleLoginClick = () => setIsOpen(false);
 
@@ -121,7 +119,7 @@ const Header = memo(() => {
   };
 
   const handleLanguageChange = async (language) => {
-    setSelected(language);
+    setSelectedLanguage(language);
     try {
       await i18n.changeLanguage(language.key); // loads from CDN
       localStorage.setItem("lang", language.key);
@@ -201,101 +199,13 @@ const Header = memo(() => {
           "
         >
           {/* Translations Dropdown */}
-          <Popover
-            className={cn(
-              themeGuide.headerLanguageItem,
-              "md:block hidden",
-              "relative",
-            )}
-          >
-            {({ open, close }) => (
-              <>
-                <Popover.Button
-                  type="button"
-                  className="
-                    relative
-                    flex flex-row
-                    w-full
-                    justify-center items-center
-                    gap-x-[0.5vw]
-                    cursor-pointer
-                    md:rounded-[0.5vw] rounded-[2vw]
-                    text-center
-                    focus-visible:outline-0
-                  "
-                >
-                  <span className="flex items-center">
-                    <span className={cn(themeGuide.headerLanguageItem)}>
-                      {selected.name}
-                    </span>
-                  </span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={2.5}
-                    className={`w-3 h-3 transition-all duration-300 group-hover:stroke-[#FF00E5] ${
-                      open ? "rotate-180 stroke-[#FF00E5]" : "stroke-[#1A1A1A]"
-                    }`}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                    />
-                  </svg>
-                </Popover.Button>
-                <Popover.Panel
-                  transition
-                  className="
-                    absolute right-0 z-1000
-                    mt-[0.5vw]
-                    h-fit w-max
-                    overflow-auto
-                    md:rounded-[0.5vw] rounded-[2vw]
-                    bg-white
-                    py-[0.5vw]
-                    text-start
-                    outline-1 -outline-offset-1 outline-white/10
-                    data-leave:transition data-leave:duration-100 data-leave:ease-in
-                    data-closed:data-leave:opacity-0
-                    border border-[#FF00E5]
-                  "
-                >
-                  {languages.map((language) => (
-                    <div
-                      key={language.id}
-                      role="button"
-                      tabIndex={0}
-                      onClick={() => {
-                        handleLanguageChange(language);
-                        close();
-                      }}
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter" || e.key === " ") {
-                          e.preventDefault();
-                          handleLanguageChange(language);
-                          close();
-                        }
-                      }}
-                      className="group relative cursor-pointer py-2 pr-9 pl-3 select-none hover:bg-[#FF00E5] hover:outline-hidden"
-                    >
-                      <div className="flex items-center">
-                        <span
-                          className={cn(
-                            themeGuide.headerLanguageItem,
-                            "ml-3 block truncate group-hover:text-white group-hover:font-semibold",
-                          )}
-                        >
-                          {language.name}
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </Popover.Panel>
-              </>
-            )}
-          </Popover>
+          <Dropdown
+            title="Language"
+            items={languages}
+            selected={selectedLanguage}
+            onSelect={(language) => handleLanguageChange(language)}
+          />
+
           {/* Login Modal */}
           <LoginModal />
           {/* Book a Demo and Contact Us Buttons */}
