@@ -160,7 +160,7 @@ export default function ServicesSection() {
       )}
     >
       {/* --- HEADER SECTION --- */}
-      <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-8 w-full max-w-[1200px]">
+      <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-8 max-md:gap-4 w-full max-w-[1200px]">
         <div className="flex flex-col w-full lg:w-[35%] items-center lg:items-end text-center lg:text-right">
           <Badge variant="toolkit" size="default">
             Our Services
@@ -192,7 +192,7 @@ export default function ServicesSection() {
       {/* --- INTERACTIVE CONTENT SECTION --- */}
       <div className="flex flex-col xl:flex-row justify-center items-center xl:items-start w-full mt-12 gap-8 md:gap-12">
         {/* NAV: Horizontal Wrap on Tablet/Mobile, Vertical on Desktop */}
-        <div className="flex flex-row flex-wrap justify-center xl:flex-col gap-4 w-full xl:w-fit shrink-0 md:max-w-[704px] xl:max-w-none">
+        <div className="flex flex-wrap justify-center xl:flex-col gap-4 w-full xl:w-fit shrink-0 md:max-w-[704px] xl:max-w-none">
           {services.map((item) => (
             <div
               key={item.id}

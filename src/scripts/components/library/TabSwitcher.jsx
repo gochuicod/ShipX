@@ -6,7 +6,10 @@ export default function TabSwitcher({ tabs, activeTab, onChange }) {
     <div
       className={cn(
         "flex flex-row items-center p-2 gap-2 w-full max-w-[572px]",
-        "bg-[rgba(245,243,255,0.1)] rounded-[8px] backdrop-blur-md",
+        "bg-[rgba(245,243,255,0.12)] backdrop-blur-xl",
+        "border border-white/20",
+        "rounded-[8px]",
+        "max-md:max-w-[332px] max-md:h-[103px]",
       )}
     >
       {tabs.map((tab) => {
@@ -16,19 +19,22 @@ export default function TabSwitcher({ tabs, activeTab, onChange }) {
           <Button
             key={tab.id}
             onClick={() => onChange(tab.id)}
-            // Dynamically switching based on your Figma logic
             variant={isActive ? "tabActive" : "tabInactive"}
             className={cn(
               "flex-1 h-[36px] px-4 py-2 gap-2 rounded-[8px] transition-all duration-200 cursor-pointer",
-              // Applying manual font overrides from your spec
               "font-['Inter'] text-[16px] leading-[20px] text-center",
+              "max-md:flex-col",
+              "max-md:flex-none max-md:w-[100px] max-md:h-[87px]",
+              "max-md:px-3 max-md:py-3",
+              "max-md:text-[14px] max-md:leading-[18px]",
             )}
           >
-            {/* SVG Icons with specific Figma-sourced colors */}
             <span className={isActive ? "text-white" : "text-[#FF99F5]"}>
               {tab.icon}
             </span>
-            <span className="whitespace-nowrap">{tab.label}</span>
+            <span className="max-md:whitespace-pre-line whitespace-nowrap">
+              {tab.label}
+            </span>
           </Button>
         );
       })}

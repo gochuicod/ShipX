@@ -69,7 +69,7 @@ export default function HeroSection() {
                 "Your gateway to U.S. e-commerce"}
             </p>
             {/* Book a demo and Learn More buttons */}
-            <div className="mt-8 flex flex-wrap justify-center gap-4 2xl:justify-start md:justify-start">
+            <div className="mt-8 flex flex-row justify-center gap-4 2xl:justify-start md:justify-start">
               <AppButton
                 to="/book-a-demo"
                 text={t("header.book_a_demo") || "Book a Demo"}

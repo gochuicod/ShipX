@@ -3,15 +3,8 @@ import { useTranslation } from "react-i18next";
 
 // Same folder lazy imports
 const MessengerButton = lazy(() => import("./MessengerButton"));
-const Statistics = lazy(() => import("./Statistics"));
-const Services = lazy(() => import("./Services"));
-const Platform = lazy(() => import("./Platform"));
 const SGAmiloCards = lazy(() => import("./SGAmiloCards"));
-const FreightAndCustoms = lazy(() => import("./FreightAndCustoms"));
-const Offices = lazy(() => import("./Offices"));
-const ContactUs = lazy(() => import("./ContactUs"));
 const FAQSection = lazy(() => import("./FAQSection"));
-const Toolkit = lazy(() => import("./toolkit/ToolKitLayout"));
 const ContactUsNew = lazy(() => import("./ContactUsNew"));
 
 // External folder lazy imports
@@ -22,7 +15,7 @@ const HeroSection = lazy(() => import("./HeroSection"));
 const PartnersSection = lazy(() => import("./PartnersSection"));
 const ServicesSection = lazy(() => import("./ServicesSection"));
 const NumbersSection = lazy(() => import("./NumbersSection"));
-const ToolkitSection = lazy(() => import("./ToolkitSection"));
+const ToolkitSection = lazy(() => import("./ToolkitSection/ToolkitSection"));
 
 const Main = () => {
   const { t } = useTranslation();
@@ -48,14 +41,6 @@ const Main = () => {
           <Blogs />
           <FAQSection />
           <ContactUsNew />
-
-          {/* <Services /> */}
-          {/* <Toolkit />
-          <Statistics />
-          <Platform />
-          <FreightAndCustoms />
-          <Offices />
-          <ContactUs /> */}
         </div>
       </div>
     </>
