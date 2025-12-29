@@ -130,7 +130,7 @@ const ContactUsNew = () => {
               size="default"
               icon={
                 <img
-                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@f02316a9e44a273e7cb5e7f1839e8eda93215d68/src/assets/icons/boxed/email_box_icon.svg"
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8a82004d7d7941a90c58ac15e75d57c3309249db/src/assets/icons/boxed/email_box_icon.svg"
                   alt="Email"
                 />
               }
@@ -145,7 +145,7 @@ const ContactUsNew = () => {
               size="default"
               icon={
                 <img
-                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@f02316a9e44a273e7cb5e7f1839e8eda93215d68/src/assets/icons/boxed/phone_box_icon.svg"
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8a82004d7d7941a90c58ac15e75d57c3309249db/src/assets/icons/boxed/phone_icon_box.svg"
                   alt="Phone"
                 />
               }
@@ -160,7 +160,7 @@ const ContactUsNew = () => {
               size="default"
               icon={
                 <img
-                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@f02316a9e44a273e7cb5e7f1839e8eda93215d68/src/assets/icons/boxed/location_box_icon.svg"
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8a82004d7d7941a90c58ac15e75d57c3309249db/src/assets/icons/boxed/location_box_icon.svg"
                   alt="Location"
                 />
               }
