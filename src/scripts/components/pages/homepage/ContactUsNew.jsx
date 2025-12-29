@@ -1,7 +1,7 @@
 import { lazy, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { Mail, Phone, MapPin, Send, CalendarDays } from "lucide-react";
+import { Send, CalendarDays } from "lucide-react";
 import ContactFormNew from "./ContactFormNew";
 import { themeGuide } from "../../../../styles/themeGuide";
 
@@ -128,7 +128,12 @@ const ContactUsNew = () => {
             <IconBox
               layout="horizontal"
               size="default"
-              icon={<Mail className="size-6 text-purple-600" />}
+              icon={
+                <img
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@f02316a9e44a273e7cb5e7f1839e8eda93215d68/src/assets/icons/boxed/email_box_icon.svg"
+                  alt="Email"
+                />
+              }
               title="Email Us"
               value="info@shipx.asia"
             >
@@ -138,7 +143,12 @@ const ContactUsNew = () => {
             <IconBox
               layout="horizontal"
               size="default"
-              icon={<Phone className="size-6 text-purple-600" />}
+              icon={
+                <img
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@f02316a9e44a273e7cb5e7f1839e8eda93215d68/src/assets/icons/boxed/phone_box_icon.svg"
+                  alt="Phone"
+                />
+              }
               title="Call Us"
               value="+1012 3456 789"
             >
@@ -148,7 +158,12 @@ const ContactUsNew = () => {
             <IconBox
               layout="horizontal"
               size="default"
-              icon={<MapPin className="size-6 text-purple-600" />}
+              icon={
+                <img
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@f02316a9e44a273e7cb5e7f1839e8eda93215d68/src/assets/icons/boxed/location_box_icon.svg"
+                  alt="Location"
+                />
+              }
               title="Visit Us"
               value="391B Orchard Road #22,"
             >
