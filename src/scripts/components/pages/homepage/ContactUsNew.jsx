@@ -157,7 +157,7 @@ const ContactUsNew = () => {
           </div>
 
           {/* Right Column: Form */}
-          <div className="lg:col-span-8 bg-gradient-to-br from-[oklch(1_0_0_0)] to-[oklch(0.616_0.2539_333.97)]/24 rounded-2xl p-6 lg:p-10">
+          <div className="lg:col-span-8 bg-linear-to-br from-[oklch(1_0_0_0)] to-[oklch(0.616_0.2539_333.97)]/24 rounded-2xl p-4 md:p-8">
             <ContactFormNew />
           </div>
         </div>

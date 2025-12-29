@@ -111,7 +111,7 @@ const ContactFormNew = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col items-start gap-4 w-full max-w-[757px] mx-auto"
+      className="flex flex-col items-start gap-4 w-full mx-auto"
       style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
     >
       {/* --- Row 1: Name, Email, Phone --- */}
@@ -215,16 +215,26 @@ const ContactFormNew = () => {
       </div>
 
       {/* --- Row 3: Buttons --- */}
-      <div className="flex flex-col-reverse md:flex-row justify-end items-center gap-4 w-full mt-2">
-        {/* Button 1: Book Demo (Secondary Style) */}
+      {/* 1. Use 'grid-cols-2' to force equal 50/50 split 
+          2. Use 'gap-2' (8px) on mobile to save space, 'gap-4' on desktop
+      */}
+      <div className="grid grid-cols-2 gap-2 md:flex md:flex-row md:justify-end md:gap-4 w-full mt-4">
+        {/* Button 1: Book Demo */}
         <AppButton
           to="/book-a-demo"
           text={t("contact_us_section.form.book_a_demo")}
           withLeftIcon={true}
-          leftIcon={<CalendarDays className="size-5" />}
+          /* Hide icon on very small screens OR make it smaller (size-4) */
+          leftIcon={<CalendarDays className="size-4 md:size-5" />}
+          /* Mobile Sizing:
+             - text-xs (smaller font)
+             - px-2 (reduce side padding to prevent overflow)
+             - w-full (fill grid cell)
+          */
+          className="w-full md:w-auto text-xs md:text-base px-2 md:px-6 justify-center whitespace-nowrap"
         />
 
-        {/* Button 2: Submit (Primary Style) */}
+        {/* Button 2: Submit */}
         <AppButton
           as="button"
           text={
@@ -236,9 +246,10 @@ const ContactFormNew = () => {
           }
           style="secondary"
           withLeftIcon={true}
-          leftIcon={<Send className="size-5" />}
+          leftIcon={<Send className="size-4 md:size-5" />}
           onClick={handleSubmit(onSubmit)}
           disabled={isSubmitting}
+          className="w-full md:w-auto text-xs md:text-base px-2 md:px-6 justify-center whitespace-nowrap"
         />
       </div>
     </form>
