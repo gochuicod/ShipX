@@ -105,7 +105,10 @@ const ContactUsNew = () => {
   };
 
   return (
-    <ParallaxSection className="my-16">
+    <ParallaxSection
+      className="my-16"
+      style={{ fontFamily: "Inter, sans-serif" }}
+    >
       <div
         className={`mx-auto relative ${themeGuide.paddingX} flex flex-col justify-center items-center`}
       >
@@ -165,10 +168,14 @@ const ContactUsNew = () => {
                 />
               }
               title="Visit Us"
-              value="391B Orchard Road #22,"
-            >
-              Ngee Ann City, Singapore 238874
-            </IconBox>
+              value={
+                <>
+                  391B Orchard Road #22,
+                  <br />
+                  Ngee Ann City, Singapore 238874
+                </>
+              }
+            ></IconBox>
           </div>
 
           {/* Right Column: Form */}

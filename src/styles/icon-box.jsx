@@ -12,7 +12,7 @@ const iconBoxVariants = cva(
       },
       layout: {
         default: "flex-col items-start",
-        horizontal: "flex-row items-center gap-4",
+        horizontal: "flex-row items-start gap-4",
       },
     },
     defaultVariants: {
@@ -34,13 +34,13 @@ const contentStyles = {
   textStack: "flex flex-col items-start gap-1",
 
   // Label: Inter, 600, 14px, #1E2939
-  label: "font-sans font-semibold text-sm text-[#1E2939] leading-[18px]",
+  label: "font-sans font-semibold text-sm text-[#1E2939] leading-4",
 
   // Value: Inter, 500, 16px, #4F378A
-  value: "font-sans font-medium text-base text-[#4F378A] leading-[20px]",
+  value: "font-sans font-medium text-base text-[#4F378A] leading-5",
 
   // Helper: Inter, 400, 14px, #6A7282
-  helper: "font-sans font-normal text-sm text-[#6A7282] leading-[16px]",
+  helper: "font-sans font-normal text-sm text-[#6A7282] leading-4",
 };
 
 export { iconBoxVariants, contentStyles };
