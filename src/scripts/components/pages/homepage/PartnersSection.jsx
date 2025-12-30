@@ -1,11 +1,14 @@
 import Description from "../../library/Description";
 import HighlightedHeading from "../../library/HighlightedHeading";
 import AppButton from "../../library/AppButton";
+import PartnerCard from "../../library/PartnerCard";
 
 import { Badge } from "../../../../styles/badge";
 import { themeGuide } from "../../../../styles/themeGuide";
 
 import { cn } from "../../../../lib/util";
+
+import { partnersSectionData } from "../../../utils/constants";
 
 import { CircleArrowRight } from "lucide-react";
 
@@ -14,25 +17,6 @@ import { Grid, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/pagination";
-
-import { partnersSectionData } from "../../../utils/constants";
-
-function PartnerCard({ logo, name, className }) {
-  return (
-    <div
-      className={cn(
-        "group flex min-h-[60px] w-full items-center justify-center",
-        className,
-      )}
-    >
-      <img
-        src={logo}
-        alt={`${name} logo`}
-        className="max-h-full max-w-full object-contain grayscale opacity-60 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100"
-      />
-    </div>
-  );
-}
 
 function PartnerGrid({ partners }) {
   return (
@@ -142,6 +126,7 @@ export default function PartnersSection() {
           rightIcon={<CircleArrowRight className="size-5" />}
         />
       </div>
+      {/* Right side of the section */}
       <div className="2xl:w-[65%] w-full 2xl:mt-0 mt-8">
         <PartnerGrid partners={partnersSectionData} />
       </div>
