@@ -11,7 +11,7 @@ export default function LogisticsCard({
   return (
     <div
       className={cn(
-        "flex items-center gap-3 px-4 py-3 w-full rounded-lg",
+        "flex items-center gap-3 lg:px-4 py-3 w-full rounded-lg",
         "hover:bg-white/40 transition-all duration-200 group cursor-default",
         className,
       )}

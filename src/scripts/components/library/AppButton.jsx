@@ -1,40 +1,64 @@
 import SmartNavLink from "../ui/SmartNavLink";
 import { Button } from "../../../styles/button";
 import { cn } from "../../../lib/util";
+import { isValidElement } from "react";
 
 const appButtonStyles = {
   smartNavLink: "flex items-center justify-center gap-2 px-4 py-[8px]",
+  // The container needs a defined size to act as a frame for the "cover" image
+  iconWrapper:
+    "flex items-center justify-center shrink-0 overflow-hidden w-5 h-5",
+  // object-cover ensures the image (like a flag) fills the 20x20px area completely
+  icon: "w-full h-full object-cover",
 };
 
 export default function AppButton({
   size = "medium",
   style = "primary",
-  color = "",
-  status = "default",
   text = "",
   withLeftIcon = false,
   withRightIcon = false,
   leftIcon,
   rightIcon,
+  iconRounded = false,
   to,
   className,
   ...rest
 }) {
+  const renderIcon = (Icon) => {
+    if (!Icon) return null;
+
+    const isUrl = typeof Icon === "string";
+    const roundingClass = iconRounded ? "rounded-full" : "rounded-lg";
+
+    return (
+      <div className={cn(appButtonStyles.iconWrapper, roundingClass)}>
+        {isUrl ? (
+          <img src={Icon} alt="" className={appButtonStyles.icon} />
+        ) : (
+          <span className="flex items-center justify-center w-full h-full">
+            {isValidElement(Icon) ? (
+              Icon
+            ) : (
+              <Icon className="size-full" /> // 'size-full' fills the 20x20 wrapper
+            )}
+          </span>
+        )}
+      </div>
+    );
+  };
+
   const ButtonContent = () => (
     <>
-      {withLeftIcon && leftIcon && <span className="shrink-0">{leftIcon}</span>}
-
+      {withLeftIcon && renderIcon(leftIcon)}
       <span>{text}</span>
-
-      {withRightIcon && rightIcon && (
-        <span className="shrink-0">{rightIcon}</span>
-      )}
+      {withRightIcon && renderIcon(rightIcon)}
     </>
   );
 
+  // ... (to ? SmartNavLink : Button) logic remains the same
   if (to) {
     return (
-      // We pass size and variant to the Button wrapper
       <Button
         asChild
         variant={style}
@@ -42,11 +66,7 @@ export default function AppButton({
         className={className}
         {...rest}
       >
-        <SmartNavLink
-          to={to}
-          // We add flex, items-center and gap-2 here to align icons and text
-          className={cn(appButtonStyles.smartNavLink)}
-        >
+        <SmartNavLink to={to} className={cn(appButtonStyles.smartNavLink)}>
           <ButtonContent />
         </SmartNavLink>
       </Button>

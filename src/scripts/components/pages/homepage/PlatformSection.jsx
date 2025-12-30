@@ -30,6 +30,7 @@ export default function PlatformSection() {
           themeGuide.paddingX,
           "flex xl:flex-row flex-col-reverse justify-center items-center gap-x-8",
         )}
+        id="platform"
       >
         {/* Left side of the section */}
         <div

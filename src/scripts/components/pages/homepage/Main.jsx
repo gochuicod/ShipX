@@ -9,6 +9,7 @@ const ServicesSection = lazy(() => import("./ServicesSection"));
 const ToolkitSection = lazy(() => import("./ToolkitSection/ToolkitSection"));
 const NumbersSection = lazy(() => import("./NumbersSection"));
 const PlatformSection = lazy(() => import("./PlatformSection"));
+const OfficesSection = lazy(() => import("./OfficesSection"));
 const SGAmiloCards = lazy(() => import("./SGAmiloCards"));
 const FAQSection = lazy(() => import("./FAQSection"));
 const ContactUsNew = lazy(() => import("./ContactUsNew"));
@@ -38,6 +39,7 @@ const Main = () => {
           <ToolkitSection />
           <NumbersSection />
           <PlatformSection />
+          <OfficesSection />
           <SGAmiloCards />
           <Blogs />
           <FAQSection />

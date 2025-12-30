@@ -15,26 +15,20 @@ export default function HeroSection() {
         relative
         w-full
 
-        /* --- HEIGHT FIX --- */
-        /* calc(100vh - 80px):
-           100vh is the full screen.
-           80px is the estimated height of your header/navbar.
-           Adjust '80px' to match your actual header height (e.g., 64px, 4rem, etc.)
-        */
         flex items-center
         overflow-hidden
         bg-white
         py-12 2xl:py-0
 
-        /* BACKGROUND IMAGE SETTINGS */
         2xl:bg-[url('https://cdn.jsdelivr.net/gh/gochuicod/ShipX@abf7e88c51827b0a1176d9fdbd6d665f1074dbd3/src/assets/hero_section/shipx_hero_section_image_v2.webp')]
         md:bg-[url('https://cdn.jsdelivr.net/gh/gochuicod/ShipX@0afb4af41b652763fda7e559a32a3e91ae4fc745/src/assets/hero_section/shipx_hero_section_image_v2_tablet.webp')]
         bg-[url('https://cdn.jsdelivr.net/gh/gochuicod/ShipX@0afb4af41b652763fda7e559a32a3e91ae4fc745/src/assets/hero_section/shipx_hero_section_image_v2_mobile.webp')]
         bg-no-repeat
         2xl:bg-position-[right_center] bg-position-[bottom_center]
 
-        /* On desktop, keep image normal size. On mobile/tablet, cover the area. */
-        bg-cover 2xl:bg-size-[80%_auto] md:bg-size-[100%_80%] bg-size-[100%_60%]
+        bg-contain
+        md:bg-size-[100%_80%]
+        2xl:bg-size-[80%_auto]
       "
       style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
     >

@@ -123,19 +123,11 @@ const LoginModal = () => {
                     to={item.to}
                     onClick={item.onClick}
                     variant={item.variant}
-                    // Overrides to match the specific rounded look and padding of the modal buttons
+                    text={item.btnText}
+                    withRightIcon={!!item.logo}
+                    rightIcon={item.logo && <img src={item.logo} alt="" />}
                     className="w-fit px-6 py-2 md:px-[1.5vw] md:py-[0.4vw]"
-                  >
-                    <span className="whitespace-nowrap">{item.btnText}</span>
-                    {item.logo && (
-                      <img
-                        loading="lazy"
-                        src={item.logo}
-                        alt={`${item.btnText} Logo`}
-                        className="h-6 w-auto md:h-[1.2vw] ml-2"
-                      />
-                    )}
-                  </AppButton>
+                  />
                 </div>
               </div>
             ))}

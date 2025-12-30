@@ -458,23 +458,54 @@ export const platformShowcaseData = [
     id: 1,
     gradient: "from-[#FFE6FF]/30 to-[#AA00FF]/10",
     image:
-      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/platform_section/logistics_3d_asset.webp",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/platform_section/card/platform_section_card_1_image.webp",
     imageAlt: "Logistics Solutions",
     headingText:
       "Flexible freight and clearance\\nservices for regional & global trade",
     highlights: ["Flexible", "services"],
     capabilities: platformSectionLogisticsCard,
   },
+  // {
+  //   id: 2,
+  //   gradient: "from-[#E6F0FF]/30 to-[#0066FF]/10",
+  //   image:
+  //     "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/platform_section/card/platform_section_card_1_image.webp",
+  //   imageAlt: "Fulfillment",
+  //   imageClassName: "saturate-50",
+  //   headingText:
+  //     "Automated fulfillment solutions\\nto scale your business faster",
+  //   highlights: ["Automated", "solutions"],
+  //   capabilities: platformSectionLogisticsCard,
+  // },
+];
+
+export const officesSectionCountries = [
   {
-    id: 2,
-    gradient: "from-[#E6F0FF]/30 to-[#0066FF]/10",
-    image:
-      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/platform_section/logistics_3d_asset.webp",
-    imageAlt: "Fulfillment",
-    imageClassName: "saturate-50",
-    headingText:
-      "Automated fulfillment solutions\\nto scale your business faster",
-    highlights: ["Automated", "solutions"],
-    capabilities: platformSectionLogisticsCard,
+    icon: "https://flagcdn.com/sg.svg",
+    name: "Singapore",
+  },
+  {
+    icon: "https://flagcdn.com/th.svg",
+    name: "Thailand",
+  },
+  {
+    icon: "https://flagcdn.com/vn.svg",
+    name: "Vietnam",
+  },
+  {
+    icon: "https://flagcdn.com/my.svg",
+    name: "Malaysia",
+  },
+  {
+    icon: "https://flagcdn.com/id.svg",
+    name: "Indonesia",
+  },
+  {
+    icon: "https://flagcdn.com/ph.svg",
+    name: "Philippines",
+  },
+  {
+    icon: "https://flagcdn.com/us.svg",
+    name: "United States",
   },
 ];
