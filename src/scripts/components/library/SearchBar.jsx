@@ -1,11 +1,11 @@
 import { cn } from "../../../lib/util";
-import AppButton from "./AppButton";
 import {
   searchBarOuterVariants,
   searchBarVariants,
   searchInputVariants,
   searchButtonVariants,
 } from "../../../styles/search-bar";
+import AppButton from "./AppButton";
 
 const SearchBar = ({
   value = "",
@@ -97,12 +97,8 @@ const SearchBar = ({
           </button>
         )}
 
-        {/* Submit Button (AppButton) */}
-        <AppButton
-          text={submitLabel}
-          style="primary"
-          className="h-[48px] px-4 rounded-lg min-w-[85px]"
-        />
+        {/* Submit Button (Purple Gradient) */}
+        <AppButton text={submitLabel} className="title-submit" />
       </div>
     </div>
   );

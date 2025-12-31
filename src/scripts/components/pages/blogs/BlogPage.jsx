@@ -126,6 +126,7 @@ const BlogPage = () => {
                 pageData.placeholder ||
                 "Start typing to find blogs and articles..."
               }
+              // Removed the img submitIcon to allow the new "Search" text button style to render
               submitLabel="Search"
               className="w-full md:w-[822px] mx-auto"
             />
