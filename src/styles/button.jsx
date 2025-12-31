@@ -73,6 +73,20 @@ const buttonVariants = cva(
           "text-primary text-base active:text-white cursor-pointer font-normal",
           "shadow-[1px_1px_4px_rgba(20,0,99,0.3),inset_-1px_-1px_1px_rgba(154,4,129,0.15)]",
         ].join(" "),
+        categoryInactive: [
+          "bg-white hover:bg-secondary-hover active:bg-secondary-active",
+          "h-[40px]",
+          "border-none",
+          "text-primary text-base active:text-white cursor-pointer font-normal text-[#1E2939]",
+          "shadow-[1px_1px_2px_rgba(0,0,0,0.3),inset_-2px_-2px_6px_rgba(167,139,250,0.3)]",
+        ].join(" "),
+        categoryActive: [
+          "bg-[#CC00B7] hover:bg-[#E000CA] active:bg-[#CC00B7]",
+          "h-[40px]",
+          "text-white font-bold text-base cursor-pointer",
+          "shadow-[1px_1px_2px_rgba(20,0,99,0.45),inset_-2px_-2px_4px_rgba(98,0,97,0.4),inset_2px_2px_2px_rgba(255,255,255,0.55),inset_-4px_-4px_25px_rgba(154,4,129,0.2)]",
+          "transition-all duration-300",
+        ].join(" "),
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",

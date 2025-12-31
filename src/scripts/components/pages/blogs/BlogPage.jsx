@@ -5,6 +5,7 @@ import BlogResponsiveFilterBar from "./BlogResponsiveFilterBar";
 import BlogCard from "../../library/BlogCard";
 import SmartNavLink from "../../ui/SmartNavLink";
 import SubPageHero from "../../library/SubPageHero";
+import SearchBar from "../../library/SearchBar";
 import { Badge } from "../../../../styles/badge";
 import HighlightedHeading from "../../library/HighlightedHeading";
 import { themeGuide } from "../../../../styles/themeGuide";
@@ -84,8 +85,8 @@ const BlogPage = () => {
       <div className="w-full bg-white font-sans flex flex-col items-center">
         {/* --- Hero Banner --- */}
         <SubPageHero
-          src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx-all-blogs-banner.webp"
-          srcMobile="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx-all-blogs-banner-mobile.webp"
+          src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/blogs/hero/blogs_hero_desktop.webp"
+          srcMobile="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/blogs/hero/blogs_hero_mobile.webp"
           alt="Blog Banner"
         />
 
@@ -106,113 +107,36 @@ const BlogPage = () => {
             />
 
             {/* Description */}
-            <p
-              className="
-                /* Layout & Alignment */
-                flex items-center justify-center text-center
-                mx-auto w-full
-
-                /* Typography - Family & Weight */
-                font-['Inter'] font-normal
-                
-                /* Color & Opacity */
-                text-[#63666D] opacity-90
-
-                /* Mobile Sizing (Based on Snippet 3) */
-                text-[14px] leading-[18px]
-                max-w-[376px] 
-
-                /* Desktop Sizing (Based on Snippet 1) */
-                md:text-[16px] md:leading-[20px]
-                md:max-w-[822px]
-
-                /* Spacing (Preserved from original) */
-                md:mb-[2vw] mb-[6vw]
-            "
-            >
+            <p className="flex items-center justify-center text-center mx-auto w-full font-['Inter'] font-normal text-[#63666D] opacity-90 text-[14px] leading-[18px] max-w-[376px] md:text-[16px] md:leading-[20px] md:max-w-[822px] md:mb-[2vw] mb-[6vw]">
               {pageData.title_section?.subtitle}
             </p>
 
-            {/* --- SEARCH BAR --- */}
-            <div className="w-full md:w-[58%] mx-auto">
-              <div
-                className="
-                  flex flex-row items-center
-                  bg-white
-                  shadow-[0px_0px_20px_0px_#FF00E533]
-                  md:rounded-[1vw] rounded-[3vw]
-                  md:p-[0.7vw] p-[2.7vw]
-                  md:gap-[0.7vw] gap-[2.7vw]
-                "
-              >
-                <input
-                  type="text"
-                  placeholder={
-                    pageData.placeholder ||
-                    "Start typing to find blogs and articles..."
-                  }
-                  className="
-                    grow
-                    w-full
-                    bg-transparent
-                    focus:outline-none
-                    text-[#1A1A1A]
-                    placeholder-[#99A1AF]
-                    italic
-                    md:text-[1vw] text-[3.5vw]
-                  "
-                  value={searchQuery}
-                  onChange={(e) => {
-                    setSearchQuery(e.target.value);
-                    // Reset to "all" categories when user types
-                    if (e.target.value.trim() && activeCategoryId !== "all") {
-                      setActiveCategoryId("all");
-                    }
-                  }}
-                />
-
-                {/* Clear Search Button */}
-                {searchQuery && (
-                  <button
-                    type="button"
-                    onClick={() => setSearchQuery("")}
-                    className="shrink-0 flex items-center justify-center cursor-pointer hover:opacity-60 transition-opacity text-[#99A1AF]"
-                    title="Clear search"
-                  >
-                    <svg
-                      className="md:w-[2.1vw] md:h-[2.1vw] w-[6vw] h-[6vw]"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </button>
-                )}
-
-                <button
-                  type="button"
-                  className="shrink-0 flex items-center justify-center cursor-pointer hover:opacity-80 transition-opacity"
-                >
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/faq_send_icon.svg"
-                    alt="Search Button"
-                    className="md:w-[2.1vw] md:h-[2.1vw] w-[6vw] h-[6vw] object-contain"
-                  />
-                </button>
-              </div>
-            </div>
+            {/* --- UPDATED SEARCH BAR USAGE --- */}
+            {/* The styling is now handled internally by SearchBar's default variant */}
+            <SearchBar
+              value={searchQuery}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+                if (e.target.value.trim() && activeCategoryId !== "all") {
+                  setActiveCategoryId("all");
+                }
+              }}
+              onClear={() => setSearchQuery("")}
+              placeholder={
+                pageData.placeholder ||
+                "Start typing to find blogs and articles..."
+              }
+              submitLabel="Search"
+              className="w-full md:w-[822px] mx-auto"
+            />
           </div>
 
           {/* Filter Bar (Using New Component) */}
-          <div className="w-[75%] md:w-[60%] md:mb-[0.5vw] mb-[2vw] mx-auto md:mx-0">
+          <div className="w-full flex flex-col items-center gap-4">
             {/* Filter by Category Label */}
-            <h3 className="md:text-[1.1vw] text-[3.5vw] font-semibold text-[#1A1A1A] mb-[1.5vw] md:mb-[0.8vw] text-center">
+            <h3 className="font-['Inter'] font-bold text-[16px] leading-[20px] flex items-center text-center text-black mb-[1.5vw] md:mb-[0.8vw]">
               <span className="md:hidden">Filter by:</span>
-              <span className="hidden md:inline">Filter by Category</span>
+              <span className="hidden md:inline">Select a Category</span>
             </h3>
             <BlogResponsiveFilterBar
               filters={categories}
@@ -222,20 +146,20 @@ const BlogPage = () => {
           </div>
 
           {/* Blogs Display */}
-          <div className="w-full flex flex-col gap-8">
+          <div className="w-full flex flex-col">
             {filteredBlogs.length === 0 ? (
               <div className="text-center py-[10vw] text-gray-400">
                 No articles found matching your criteria.
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
                 {paginatedBlogs.map((post) => (
                   <SmartNavLink
                     key={post.slug}
                     to={`/blog/${post.slug}`}
                     className="no-underline"
                   >
-                    <BlogCard post={post} />
+                    <BlogCard post={post} variant="fluid" />
                   </SmartNavLink>
                 ))}
               </div>

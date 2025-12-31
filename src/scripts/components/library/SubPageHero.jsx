@@ -3,6 +3,7 @@ import { heroVariants } from "../../../styles/sub-page-hero"; // Import styling 
 
 const SubPageHero = ({
   src,
+  srcMobile,
   alt = "Hero image",
   size,
   align,
@@ -24,13 +25,39 @@ const SubPageHero = ({
 
   return (
     <div className={containerClasses} {...props}>
-      {/* Background Image */}
+      {/* Background Image - Mobile */}
+      {srcMobile && (
+        <img
+          src={srcMobile}
+          alt={alt}
+          className={cn(
+            "absolute inset-0 w-full h-full object-cover md:hidden",
+            imageAlignment,
+          )}
+          loading="eager"
+        />
+      )}
+
+      {/* Background Image - Desktop */}
       {src && (
         <img
           src={src}
           alt={alt}
           className={cn(
-            "absolute inset-0 w-full h-full object-cover",
+            "absolute inset-0 w-full h-full object-cover hidden md:block",
+            imageAlignment,
+          )}
+          loading="eager"
+        />
+      )}
+
+      {/* Fallback if no mobile image provided */}
+      {!srcMobile && src && (
+        <img
+          src={src}
+          alt={alt}
+          className={cn(
+            "absolute inset-0 w-full h-full object-cover md:hidden",
             imageAlignment,
           )}
           loading="eager"

@@ -10,6 +10,8 @@ const cardVariants = cva(
           "md:max-w-sm p-4 md:p-4 gap-4 md:gap-0 border-none bg-gradient-to-br from-[oklch(0.7_0.1_316)]/20 via-[oklch(1_0_0)]/6 to-[oklch(0.6167_0.2539_333.97)]/24",
         section:
           "p-4 md:p-4 gap-4 md:gap-0 border-none bg-gradient-to-br from-[oklch(0.7_0.1_316)]/20 via-[oklch(1_0_0)]/6 to-[oklch(0.6167_0.2539_333.97)]/24",
+        fluid:
+          "p-4 md:p-4 gap-4 md:gap-0 border-none bg-gradient-to-br from-[oklch(0.7_0.1_316)]/20 via-[oklch(1_0_0)]/6 to-[oklch(0.6167_0.2539_333.97)]/24",
       },
     },
     defaultVariants: {
