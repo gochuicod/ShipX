@@ -12,7 +12,7 @@ const TermsAndConditions = lazy(
 const BookADemo = lazy(
   () => import("../components/pages/book_a_demo/BookADemo"),
 );
-const BlogList = lazy(() => import("../components/pages/blogs/BlogList"));
+const BlogPage = lazy(() => import("../components/pages/blogs/BlogPage"));
 const Blog = lazy(() => import("../components/pages/blogs/Blog"));
 const NotFound = lazy(() => import("../components/pages/not_found/NotFound"));
 const ShipmentTracker = lazy(
@@ -39,7 +39,7 @@ const AppRoutes = ({ margin }) => (
         <Route path="privacy-policy" element={<PrivacyPolicy />} />
         <Route path="terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="book-a-demo" element={<BookADemo />} />
-        <Route path="blog" element={<BlogList />} />
+        <Route path="blogs" element={<BlogPage />} />
         <Route path="blog/:slug" element={<Blog />} />
         <Route path="shipment-tracker" element={<ShipmentTracker />} />
         <Route path="hs-code-generator" element={<HsCodeGenerator />} />

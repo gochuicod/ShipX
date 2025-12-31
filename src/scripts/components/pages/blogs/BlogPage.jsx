@@ -2,9 +2,14 @@ import { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import SEO from "../../ui/SEO";
 import BlogResponsiveFilterBar from "./BlogResponsiveFilterBar";
-import BlogsGrid from "./BlogsGrid";
+import BlogCard from "../../library/BlogCard";
+import SmartNavLink from "../../ui/SmartNavLink";
+import SubPageHero from "../../library/SubPageHero";
+import { Badge } from "../../../../styles/badge";
+import HighlightedHeading from "../../library/HighlightedHeading";
+import { themeGuide } from "../../../../styles/themeGuide";
 
-const BlogList = () => {
+const BlogPage = () => {
   const { t } = useTranslation();
 
   // --- 1. Data Retrieval ---
@@ -78,52 +83,53 @@ const BlogList = () => {
 
       <div className="w-full bg-white font-sans flex flex-col items-center">
         {/* --- Hero Banner --- */}
-        <div className="w-full">
-          {/* Desktop Image */}
-          <div className="w-full h-[18vw] hidden md:block relative overflow-hidden">
-            <img
-              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx-all-blogs-banner.webp"
-              alt="Blog Banner"
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          {/* Mobile Image */}
-          <div className="w-full h-[50vw] md:hidden relative overflow-hidden">
-            <img
-              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx-all-blogs-banner-mobile.webp"
-              alt="Blog Banner"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
+        <SubPageHero
+          src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx-all-blogs-banner.webp"
+          srcMobile="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipx-all-blogs-banner-mobile.webp"
+          alt="Blog Banner"
+        />
 
         {/* --- Main Content --- */}
-        <main className="flex flex-col items-center w-full max-w-[100vw] px-[5vw] py-[8vw] md:px-[8vw] md:py-[4vw] gap-y-[6vw] md:gap-y-[3vw]">
+        <main
+          className={`mx-auto relative ${themeGuide.paddingX} flex flex-col items-center w-full py-[8vw] md:py-[4vw] gap-y-[6vw] md:gap-y-[3vw]`}
+        >
           {/* Header Block & Search */}
-          <div className="w-full bg-white md:p-[2vw] p-[2vw] text-center">
-            {/* Badge */}
-            <span
-              className="
-                inline-block
-                py-[2.1vw] pl-[2.7vw] pr-[3.5vw] rounded-[2.1vw] text-[2.5vw] mb-[4vw]
-                md:py-[0.42vw] md:pl-[0.52vw] md:pr-[0.68vw] md:rounded-[0.42vw] md:text-[0.7vw] md:mb-[1vw]
-                bg-[#F3F1FF] text-[#FF00E5] font-bold tracking-wide
-              "
-            >
-              ● {pageData.badge_title || "Blogs and Articles"}
-            </span>
+          <div className="w-full flex flex-col gap-2 items-center text-center">
+            <Badge variant="toolkit" size="default">
+              Blogs and Articles
+            </Badge>
 
-            {/* Title */}
-            <h1 className="md:text-[3vw] text-[7vw] font-bold text-[#1A1A1A] md:leading-[3.5vw] leading-[8vw] md:mb-[1vw] mb-[3vw]">
-              {pageData.title_section?.title_prefix}{" "}
-              <span className="text-[#FF00E5]">
-                {pageData.title_section?.title_suffix}
-              </span>
-            </h1>
+            <HighlightedHeading
+              text="The Cross-Border Logistics Hub"
+              highlight="Cross-Border"
+              className="text-2xl 2xl:text-4xl font-semibold mt-2 text-center"
+            />
 
             {/* Description */}
-            <p className="text-[#0E0E0E]/70 md:text-[1.1vw] text-[3.5vw] md:leading-[1.6vw] leading-[5vw] md:max-w-[40vw] w-full mx-auto md:mb-[2vw] mb-[6vw]">
+            <p
+              className="
+                /* Layout & Alignment */
+                flex items-center justify-center text-center
+                mx-auto w-full
+
+                /* Typography - Family & Weight */
+                font-['Inter'] font-normal
+                
+                /* Color & Opacity */
+                text-[#63666D] opacity-90
+
+                /* Mobile Sizing (Based on Snippet 3) */
+                text-[14px] leading-[18px]
+                max-w-[376px] 
+
+                /* Desktop Sizing (Based on Snippet 1) */
+                md:text-[16px] md:leading-[20px]
+                md:max-w-[822px]
+
+                /* Spacing (Preserved from original) */
+                md:mb-[2vw] mb-[6vw]
+            "
+            >
               {pageData.title_section?.subtitle}
             </p>
 
@@ -216,13 +222,23 @@ const BlogList = () => {
           </div>
 
           {/* Blogs Display */}
-          <div className="w-full flex flex-col gap-[6vw] md:gap-[3vw]">
+          <div className="w-full flex flex-col gap-8">
             {filteredBlogs.length === 0 ? (
               <div className="text-center py-[10vw] text-gray-400">
                 No articles found matching your criteria.
               </div>
             ) : (
-              <BlogsGrid posts={paginatedBlogs} />
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 w-full">
+                {paginatedBlogs.map((post) => (
+                  <SmartNavLink
+                    key={post.slug}
+                    to={`/blog/${post.slug}`}
+                    className="no-underline"
+                  >
+                    <BlogCard post={post} />
+                  </SmartNavLink>
+                ))}
+              </div>
             )}
 
             {/* Load More */}
@@ -245,4 +261,4 @@ const BlogList = () => {
   );
 };
 
-export default BlogList;
+export default BlogPage;

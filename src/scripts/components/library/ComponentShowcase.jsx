@@ -5,6 +5,7 @@ import AffiliateCard from "./AffiliateCard";
 import BlogCard from "./BlogCard";
 import ServicesItems from "./ServicesItems";
 import IconBox from "./IconBox";
+import SubPageHero from "./SubPageHero";
 import {
   Accordion,
   AccordionItem,
@@ -22,6 +23,9 @@ const ComponentWrapper = ({ title, children, className = "" }) => (
     <div className={cn("space-y-4", className)}>{children}</div>
   </div>
 );
+
+const demoImage =
+  "https://placehold.co/1440x350/F7F7F7/800080?text=Logistics+Hero";
 
 export default function ComponentShowcase() {
   return (
@@ -241,6 +245,33 @@ export default function ComponentShowcase() {
             >
               We reply within 24 hours
             </IconBox>
+          </div>
+        </div>
+      </ComponentWrapper>
+
+      {/* --- SubPageHero Section --- */}
+      <ComponentWrapper title="Sub Page Hero">
+        <div className="flex flex-col gap-6 p-6 border border-dashed border-purple-400 rounded-lg">
+          {/* Display 1: Default Styling */}
+          <div>
+            <p className="mb-2 text-sm text-gray-500 font-semibold">
+              Default (Responsive)
+            </p>
+            <SubPageHero src={demoImage} />
+          </div>
+
+          {/* Display 2: Custom Alignment & Overlay */}
+          <div>
+            <p className="mb-2 text-sm text-gray-500 font-semibold">
+              With Overlay & Bottom Align
+            </p>
+            <SubPageHero src={demoImage} align="bottom">
+              <div className="flex items-center justify-center h-full bg-black/20">
+                <h2 className="bg-white px-4 py-2 rounded font-bold">
+                  Overlay Content
+                </h2>
+              </div>
+            </SubPageHero>
           </div>
         </div>
       </ComponentWrapper>
