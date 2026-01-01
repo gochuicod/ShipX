@@ -6,7 +6,6 @@ export default function TabSwitcher({
   tabs,
   activeTab,
   onChange,
-  // Custom props with OKLCH defaults
   containerBg,
   activeTabBg,
   border = true,
@@ -30,11 +29,9 @@ export default function TabSwitcher({
         "backdrop-blur-xl rounded-xl",
         border && `border border-${borderColor}`,
         "max-md:max-w-[332px] max-md:h-[103px]",
-        // Only apply the default class if no custom containerBg is provided
         !containerBg && "bg-[rgba(245,243,255,0.12)]",
       )}
       style={{
-        // Use the prop if provided, otherwise the browser ignores this inline style
         backgroundColor: containerBg,
       }}
     >
@@ -47,7 +44,6 @@ export default function TabSwitcher({
             onClick={() => handleTabClick(tab)}
             variant={isActive ? "tabActive" : "tabInactive"}
             style={{
-              // Overrides the variant's background if activeTabBg is passed
               backgroundColor:
                 isActive && activeTabBg ? activeTabBg : undefined,
             }}

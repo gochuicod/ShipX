@@ -18,17 +18,16 @@ const TrackOrderSection = () => {
     <div
       className="
         flex flex-col justify-center md:items-end items-center
-        md:w-[36vw] md:gap-y-0 gap-y-[2vw] md:mb-0 mb-[8vw]
+        md:w-[36vw] md:gap-y-2 gap-y-[2vw] md:mb-0 mb-[8vw]
       "
       style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
     >
       <Badge
-        className="md:text-[0.8vw] text-[2.5vw]"
         badge_text={t("shipment_tracker.track_order_section.badge_text")}
         text_color="#FF00E5"
         bg_color="#F3F1FF"
       />
-      <h2 className="md:text-[2.5vw] text-[6vw] text-[#1E2939] font-bold">
+      <h2 className="text-4xl text-[#1E2939] font-bold">
         {t("shipment_tracker.track_order_section.title.regular")}&nbsp;
         <span className="text-[#FF00E5]">
           {t("shipment_tracker.track_order_section.title.highlighted")}
@@ -85,7 +84,7 @@ const ShipmentTracker = () => {
         <div
           className="
             flex md:flex-row flex-col
-            gap-x-[4vw]
+            gap-x-8
             justify-center items-center
             md:mt-[5vw] mt-[10vw]
             md:px-0 px-[10vw]

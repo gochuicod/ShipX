@@ -1,6 +1,10 @@
 import { useTranslation } from "react-i18next";
 import TabSwitcher from "./TabSwitcher";
+
 import { TOOLKIT_TABS } from "../pages/homepage/ToolkitSection/tabs.config";
+import { themeGuide } from "../../../styles/themeGuide";
+
+import { cn } from "../../../lib/util";
 
 const ToolsHeroSection = ({ activePage }) => {
   const { t } = useTranslation();
@@ -9,32 +13,24 @@ const ToolsHeroSection = ({ activePage }) => {
     <section
       className="relative w-full overflow-hidden flex items-center justify-center"
       style={{
-        // Design background: linear-gradient(180deg, #4F378A 0%, #66005C 159.37%)
         background: "linear-gradient(180deg, #4F378A 0%, #66005C 159.37%)",
         minHeight: "350px",
       }}
     >
-      {/* Main Content Container
-          Desktop: padding 128px 96px, gap 32px
-          Tablet: padding 64px 32px
-          Mobile: padding 48px 32px
-      */}
       <div
-        className="
-        relative z-10 w-full max-w-[1440px] flex flex-col xl:flex-row items-center justify-between
-        xl:px-[96px] xl:py-[128px] xl:gap-[32px]
-        md:px-[32px] md:py-[64px] md:gap-[24px]
-        px-[32px] py-[48px] gap-[16px]
-      "
+        className={cn(
+          themeGuide.paddingX,
+          "relative z-10 w-full flex flex-col items-center lg:items-start",
+        )}
       >
-        {/* Left/Top Content Frame (Frame 2147236747) */}
-        <div className="flex flex-col justify-center items-center xl:items-start text-center xl:text-left gap-6 flex-grow max-w-[608px]">
-          {/* Heading Stack (Frame 2147236748) */}
-          <div className="flex flex-col items-center xl:items-start gap-2 w-full">
+        {/* Left/Top Content Frame - Removed max-w-[608px] to fit entire width */}
+        <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left gap-6 grow w-full">
+          {/* Heading Stack */}
+          <div className="flex flex-col items-center lg:items-start gap-2 w-full">
             <h3
               className="
               font-['Inter'] font-semibold text-white tracking-[-1px]
-              xl:text-[40px] xl:line-height-[48px]
+              lg:text-[40px] lg:line-height-[48px]
               text-[32px] line-height-[40px]
             "
             >
@@ -43,7 +39,7 @@ const ToolsHeroSection = ({ activePage }) => {
             <p
               className="
               font-['Inter'] font-normal text-white
-              xl:text-[16px] xl:line-height-[20px]
+              lg:text-[16px] lg:line-height-[20px]
               text-[14px] line-height-[18px]
               opacity-90 max-w-[608px]
             "
@@ -53,28 +49,27 @@ const ToolsHeroSection = ({ activePage }) => {
           </div>
 
           {/* Tab Switcher Integrated */}
-          <div className="flex justify-center xl:justify-start w-full">
+          <div className="flex justify-center lg:justify-start w-full">
             <TabSwitcher
               tabs={TOOLKIT_TABS}
               activeTab={activePage}
               onChange={() => {}}
-              containerBg="rgba(35, 22, 111, 0.8)"
+              containerBg="rgba(35, 22, 111, 0.7)"
+              border={false}
             />
           </div>
         </div>
 
-        {/* Background Visuals (Frame 2147236749)
-            Hidden on small mobile per design docs but visible on tablet/desktop
-        */}
-        <div className="hidden md:block relative xl:w-[608px] xl:h-[250px] md:w-[219px] md:h-[178px]">
+        {/* Background Visuals - Designed for absolute positioning */}
+        <div className="hidden md:block absolute right-[15vw] top-[7.5vw] -translate-y-1/2 -z-20 pointer-events-none">
           {/* Pink Glow Gradient */}
-          <div className="absolute xl:left-[-10px] xl:top-[-254px] w-[500px] h-[500px] bg-[#FF00E5] opacity-20 blur-[64px] rounded-full" />
+          <div className="absolute lg:left-0 lg:top-[-15vw] w-[800px] h-[800px] bg-[#FF00E5] opacity-20 blur-3xl rounded-full" />
 
           {/* 3D Illustration Container */}
           <img
-            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/toolkit_hero_desktop.webp"
+            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/tools_page/toolkit_hero_section_image_desktop.webp"
             alt="Logistic Tools"
-            className="relative z-20 w-full h-full object-contain"
+            className="relative w-full h-full object-contain scale-90"
           />
         </div>
       </div>

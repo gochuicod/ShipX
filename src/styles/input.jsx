@@ -1,19 +1,30 @@
 import { cn } from "../lib/util";
+import { forwardRef } from "react";
 
-function Input({ className, multiline = false, ...props }) {
+// Wrap with forwardRef so react-hook-form can attach its ref
+const Input = forwardRef(({ className, multiline = false, ...props }, ref) => {
   const baseClasses =
-    "rounded-lg border-b border-[#7F22FE] bg-white placeholder:text-[#99A1AF] italic font-normal text-[#99A1AF] px-4 py-2.5";
+    "rounded-lg border-b border-[#7F22FE] bg-white placeholder:text-[#99A1AF] italic font-normal text-[#99A1AF] px-4 py-2.5 outline-none focus:ring-1 focus:ring-[#7F22FE]/20 transition-all";
 
   if (multiline) {
     return (
       <textarea
-        className={cn(baseClasses, "resize-none h-[110px] w-full")}
+        ref={ref}
+        className={cn(baseClasses, "resize-none h-[110px] w-full", className)}
         {...props}
       />
     );
   }
 
-  return <input className={cn(baseClasses, "h-[55px] w-full")} {...props} />;
-}
+  return (
+    <input
+      ref={ref}
+      className={cn(baseClasses, "h-[55px] w-full", className)}
+      {...props}
+    />
+  );
+});
+
+Input.displayName = "Input";
 
 export { Input };

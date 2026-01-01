@@ -2,8 +2,11 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useShipment } from "../../../../hooks/useShipment";
 import { useTranslation } from "react-i18next";
+import { Search } from "lucide-react";
 import ToolTipError from "../hs_code_generator/ToolTipError";
-import Button from "../../../ui/Button";
+import AppButton from "../../../library/AppButton";
+import { Input } from "../../../../../styles/input";
+import { cn } from "../../../../../lib/util";
 
 const ShipmentTrackerForm = ({ initialTrackingNumber, autoSubmit = false }) => {
   const {
@@ -16,26 +19,20 @@ const ShipmentTrackerForm = ({ initialTrackingNumber, autoSubmit = false }) => {
   } = useForm();
   const { t } = useTranslation();
 
-  // This assumes useShipment is refactored to expose a `trackShipment` function
-  // and an `error` state.
   const { shipmentData, setShipmentData, setTrackingNumber } = useShipment();
 
-  // Combine form errors and API errors for a single source of truth.
   const displayError =
     errors.trackingNumber?.message || shipmentData?.errors?.[0];
 
-  // Effect to handle auto-submission when redirected
   useEffect(() => {
     if (initialTrackingNumber && autoSubmit) {
       setValue("trackingNumber", initialTrackingNumber);
-      // Trigger the form submission programmatically
       handleSubmit(onSubmit)();
     }
   }, [initialTrackingNumber, autoSubmit, setValue, handleSubmit]);
 
   const onSubmit = async (data) => {
     const trackingNumber = data.trackingNumber;
-
     setTrackingNumber(trackingNumber);
 
     try {
@@ -52,88 +49,58 @@ const ShipmentTrackerForm = ({ initialTrackingNumber, autoSubmit = false }) => {
 
       if (!response.ok) {
         const errorData = await response.json();
-        // The API returns a JSON with an `errors` array upon failure.
-        // We set this error object in our state. The `useShipment` hook
-        // is expected to correctly parse this and provide the error message.
         setShipmentData(errorData);
         return;
       }
 
       const result = await response.json();
       setShipmentData(result);
-
       reset();
     } catch (error) {
-      console.error("Fetch error:", error);
-      // This will catch network errors or if response.json() fails on an error response.
       setShipmentData({ errors: ["An error occurred. Please try again."] });
     }
   };
 
   return (
-    <div>
+    <div className="w-full max-w-[640px]">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="
-                    flex flex-row
-                    md:gap-x-[1vw] gap-x-[2vw]
-                    justify-center items-end
-                    bg-white
-                    shadow-[0_0_5vw_rgba(255,0,229,0.10)]
-                    md:py-[1.5vw] py-[3vw]
-                    md:px-[2.5vw] px-[4vw]
-                    md:rounded-[1vw] rounded-[3vw]
-                    md:text-[0.8vw] text-[2.6vw]
-                    md:w-full w-[90vw]
-                "
+        className={cn(
+          "flex flex-col justify-center items-start p-4 gap-2",
+          "w-full h-auto min-h-[116px]",
+          "bg-[linear-gradient(135deg,rgba(255,230,255,0.05)_0%,rgba(170,0,255,0.15)_100%)]",
+          "backdrop-blur-md rounded-2xl",
+        )}
         style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
       >
-        <img
-          className="w-[2.2vw] h-[2.2vw] md:block hidden"
-          src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_1.svg"
-          alt="ShipX - globe"
-        />
-        <div
-          className="
-            flex flex-col
-            md:gap-y-0 gap-y-[1.5vw]
-          "
+        {/* Label positioned above the bar */}
+        <label
+          className="font-semibold text-[16px] text-[#1E2939]"
+          htmlFor="trackingNumber"
         >
-          <label
-            className="
-                            flex flex-row
-                            md:gap-x-0 gap-x-[2vw]
-                            text-nowrap
-                            font-semibold
-                            md:text-[1vw] text-[2.7vw]
-                            text-[#1E2939]
-                        "
-            htmlFor="trackingNumber"
-          >
-            <img
-              className="w-[4vw] h-[4vw] md:hidden block"
-              src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/main_icon_1.svg"
-              alt="ShipX - globe"
-            />
-            {t("shipment_tracker.track_order_section.form.label")}
-          </label>
-          <div className="relative">
-            {isSubmitted && displayError && (
-              <ToolTipError message={displayError} />
-            )}
-            <input
-              aria-invalid={errors.trackingNumber ? "true" : "false"}
+          {t("shipment_tracker.track_order_section.form.label")}
+        </label>
+
+        {/* White Search Bar Container */}
+        <div className="relative flex flex-row items-center p-1 gap-2 w-full bg-white border-b border-[#7F22FE] rounded-lg">
+          {/* Error Tooltip anchors to the bar */}
+          {isSubmitted && displayError && (
+            <ToolTipError message={displayError} />
+          )}
+
+          {/* Icon and Input Section */}
+          <div className="flex items-center gap-2 pl-3 grow min-w-0">
+            <Search className="text-[#99A1AF] shrink-0" size={20} />
+
+            <Input
               id="trackingNumber"
-              className={`
-                              bg-[#F9FAFB]
-                              border border-[#B9AFD0]
-                              md:w-full w-full
-                              md:h-[2.2vw] h-[6.5vw]
-                              md:rounded-[0.5vw] rounded-[2vw]
-                              p-2
-                              focus:outline-none
-                              ${errors.trackingNumber ? "placeholder-red-500" : "placeholder-black/50"}
-                          `}
+              aria-invalid={errors.trackingNumber ? "true" : "false"}
+              placeholder="Enter tracking number (e.g., SX1234567890)"
+              className={cn(
+                "border-none bg-transparent h-10 italic shadow-none px-0 py-0 w-full",
+                "md:min-w-[340px]", // Ensures space for long placeholder on desktop
+                errors.trackingNumber && "placeholder-red-500",
+              )}
               {...register("trackingNumber", {
                 required: "Tracking number is required",
                 pattern: {
@@ -147,20 +114,26 @@ const ShipmentTrackerForm = ({ initialTrackingNumber, autoSubmit = false }) => {
                 },
                 onChange: () => {
                   clearErrors("trackingNumber");
-                  // Also clear API error from useShipment if it exists
                   if (shipmentData?.errors) setShipmentData(null);
                 },
               })}
-              autoComplete="number"
-              placeholder="e.g., SGL2510001808"
+              autoComplete="off"
             />
           </div>
+
+          {/* Submit Button */}
+          <AppButton
+            type="submit"
+            disabled={isSubmitting}
+            style="primary"
+            text={
+              isSubmitting
+                ? t("shipment_tracker.track_order_section.form.submitting")
+                : t("shipment_tracker.track_order_section.form.submit_button")
+            }
+            className="w-[151px] h-12 text-[16px] shrink-0"
+          />
         </div>
-        <Button type="submit" disabled={isSubmitting}>
-          {isSubmitting
-            ? t("shipment_tracker.track_order_section.form.submitting")
-            : t("shipment_tracker.track_order_section.form.submit_button")}
-        </Button>
       </form>
     </div>
   );
