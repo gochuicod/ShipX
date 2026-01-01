@@ -33,9 +33,9 @@ const ToolsHeroSection = ({ activePage = "file-a-claim" }) => {
       style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
     >
       {/* Desktop Layout */}
-      <div className="hidden md:flex flex-row items-center p-24 gap-8 min-h-[350px] w-full h-full">
+      <div className="hidden md:flex flex-row items-center p-24 gap-8 min-h-[350px] w-full h-full max-w-[608px]">
         {/* Heading Container */}
-        <div className="flex flex-col justify-center items-start gap-6 flex-grow">
+        <div className="flex flex-col justify-center items-start gap-6 grow">
           {/* Inner Heading Stack */}
           <div className="flex flex-col items-start gap-2 w-full">
             <h3 className="font-['Inter'] font-semibold text-white tracking-[-1px] text-5xl leading-12">
@@ -94,17 +94,17 @@ const ToolsHeroSection = ({ activePage = "file-a-claim" }) => {
       </div>
 
       {/* Mobile Layout - UPDATED */}
-      <div className="sm:hidden flex flex-col items-center justify-center px-8 py-12 gap-4 h-full w-full">
-        <div className="flex flex-col items-center gap-2 w-full">
-          <h3 className="font-['Inter'] font-semibold text-white text-4xl leading-10 text-center">
+      <div className="sm:hidden flex flex-col items-center justify-center px-6 py-6 gap-6 h-full w-full">
+        <div className="flex flex-col items-center gap-2 w-full max-w-[calc(100%-3rem)]">
+          <h3 className="font-['Inter'] font-semibold text-white text-3xl leading-10 text-center">
             {t("shipment_tracker.hero_section.title")}
           </h3>
-          <p className="font-['Inter'] text-white text-sm leading-5 w-full text-center">
+          <p className="font-['Inter'] text-white text-xs leading-5 w-full text-center">
             {t("shipment_tracker.hero_section.description")}
           </p>
 
           {/* Tab Switch Container */}
-          <div className="flex flex-row items-center p-1 gap-2 w-full bg-[rgba(35,22,111,0.8)] rounded-lg">
+          <div className="flex flex-row items-center p-1 gap-2 w-full mt-6 bg-[rgba(35,22,111,0.8)] rounded-lg">
             <AppButton
               to="/shipment-tracker"
               text={t("shipment_tracker.hero_section.buttons.shipment_tracker")}
