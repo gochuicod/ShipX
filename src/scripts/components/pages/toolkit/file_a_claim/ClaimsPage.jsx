@@ -1,6 +1,6 @@
 import SEO from "../../../ui/SEO";
 import FileAClaimForm from "./FileAClaimForm";
-import ToolsHeroSection from "../shipment_tracker/ToolsHeroSection";
+import ToolsHeroSection from "../../../library/ToolsHeroSection";
 
 const ClaimsPage = () => {
   return (

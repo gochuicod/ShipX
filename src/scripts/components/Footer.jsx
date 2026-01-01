@@ -136,7 +136,7 @@ const Footer = memo(() => {
   ];
 
   return (
-    <div className="md:pt-[15vw] pt-[60vw] relative">
+    <div className="md:pt-[15vw] pt-[60vw] lg:mt-0 mt-[20vw] relative">
       {/* CTA Section */}
       <div
         className="

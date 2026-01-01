@@ -1,11 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SectionGlow from "../../../library/SectionGlow";
 import TabSwitcher from "../../../library/TabSwitcher";
 import { Badge } from "../../../../../styles/badge";
 import { TOOLKIT_TABS } from "./tabs.config";
+import { useLocation } from "react-router-dom";
 
 export default function ToolkitSection() {
-  const [activeTab, setActiveTab] = useState(TOOLKIT_TABS[0].id);
+  const { pathname } = useLocation();
+
+  // Logic to determine tab based on URL or default
+  const getTabFromUrl = () =>
+    TOOLKIT_TABS.find((t) => t.path === pathname)?.id || TOOLKIT_TABS[0].id;
+
+  const [activeTab, setActiveTab] = useState(getTabFromUrl());
+
+  // Automatically switch tabs if the URL changes (e.g., clicking a link elsewhere)
+  useEffect(() => {
+    setActiveTab(getTabFromUrl());
+  }, [pathname]);
 
   const activeTabData = TOOLKIT_TABS.find((tab) => tab.id === activeTab);
   const ActiveForm = activeTabData?.Form;

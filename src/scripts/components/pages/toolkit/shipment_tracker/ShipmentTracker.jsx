@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
 import { useShipment } from "../../../../hooks/useShipment";
 import SEO from "../../../ui/SEO";
-import ToolsHeroSection from "./ToolsHeroSection";
+import ToolsHeroSection from "../../../library/ToolsHeroSection";
 import { useRef, useEffect } from "react";
 import Button from "../../../ui/Button";
 

@@ -5,33 +5,36 @@ import ClaimForm from "./forms/ClaimForm";
 
 export const TOOLKIT_TABS = [
   {
-    id: "tracker",
+    id: "shipment-tracker", // Changed from 'tracker' to match URL/props
+    path: "/shipment-tracker", // Added for navigation
     label: "Shipment Tracker",
     icon: <Box size={18} />,
     Form: TrackerForm,
     badge: "Trade and Logistics Toolkit",
     title: "Track your Order",
     description:
-      "Use your tracking number to instantly access up-to-the-minute updates on your package's journey, from warehouse to doorstep.",
+      "Use your tracking number to instantly access up-to-the-minute updates on your package's journey.",
   },
   {
-    id: "hscode",
+    id: "hs-code-generator", // Changed from 'hscode'
+    path: "/hs-code-generator",
     label: "HS Code Generator",
     icon: <Send size={18} />,
     Form: HsCodeForm,
     badge: "Trade and Logistics Toolkit",
     title: "Generate HS Codes",
     description:
-      "Input your product details, and let our system instantly handle the complexity of HTSUS (US) and HS (ROW) code selection, giving you the certainty required to ship anywhere.",
+      "Input your product details and instantly handle the complexity of HS code selection.",
   },
   {
-    id: "claim",
+    id: "file-a-claim", // Changed from 'claim'
+    path: "/file-a-claim",
     label: "File a Claim",
     icon: <MessageSquare size={14} />,
     Form: ClaimForm,
     badge: "Trade and Logistics Toolkit",
     title: "File a Claim",
     description:
-      "We apologize if you experienced an issue with your delivery. Please complete the form below to help our support team investigate the situation and find a resolution for you as quickly as possible.",
+      "Please complete the form below to help our support team investigate the situation.",
   },
 ];

@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import Badge from "../shipment_tracker/Badge";
 import HsCodeGeneratorForm from "./HsCodeGeneratorForm";
 import HsCodeGeneratorResult from "./HsCodeGeneratorResult";
-import ToolsHeroSection from "../shipment_tracker/ToolsHeroSection";
+import ToolsHeroSection from "../../../library/ToolsHeroSection";
 import { useHsCode } from "../../../../hooks/useHsCode";
 import SEO from "../../../ui/SEO";
 
