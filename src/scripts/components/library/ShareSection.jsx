@@ -106,147 +106,138 @@ const ShareSection = () => {
   };
 
   return (
-    <ParallaxSection
-      style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
-    >
-      <div className="bg-[#F6F3FF] rounded-3xl mx-auto w-full md:w-3/4 px-4 md:px-8 py-8 md:py-8 mt-16 flex flex-col items-center justify-center gap-4 text-center">
-        <h3 className="font-bold text-xl md:text-2xl text-[#1A1A1A] tracking-tight letter-spacing-[-1px] whitespace-nowrap">
-          {t("share_section.title_prefix")}{" "}
-          <span className="text-[#FF00E5]">
-            {t("share_section.title_suffix")}
-          </span>
-        </h3>
+    <div className="bg-[#F6F3FF] rounded-3xl mx-auto w-full md:w-3/4 px-4 md:px-8 py-8 md:py-8 mt-16 flex flex-col items-center justify-center gap-4 text-center">
+      <h3 className="font-bold text-xl md:text-2xl text-[#1A1A1A] tracking-tight letter-spacing-[-1px] whitespace-nowrap">
+        {t("share_section.title_prefix")}{" "}
+        <span className="text-[#FF00E5]">
+          {t("share_section.title_suffix")}
+        </span>
+      </h3>
 
-        <div className="flex flex-row gap-2 md:gap-4 mt-2 w-full max-w-sm md:max-w-none items-center justify-center mx-auto">
-          {/* --- SHARE BUTTON & DROPDOWN --- */}
-          <div className="relative md:flex-none" ref={shareMenuRef}>
-            <button
-              onClick={() => setShowShareMenu(!showShareMenu)}
-              className="w-full h-full"
-            >
-              <AppButton
-                text={t("share_section.share")}
-                style="secondary"
-                withLeftIcon={true}
-                className="text-xs md:text-sm px-2 md:px-4 py-1 md:py-2"
-                leftIcon={
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="#CC00B7"
-                  >
-                    <circle cx="18" cy="5" r="3"></circle>
-                    <circle cx="6" cy="12" r="3"></circle>
-                    <circle cx="18" cy="19" r="3"></circle>
-                    <line
-                      x1="8.59"
-                      y1="13.51"
-                      x2="15.42"
-                      y2="17.49"
-                      stroke="#CC00B7"
-                      strokeWidth="2"
-                    ></line>
-                    <line
-                      x1="15.41"
-                      y1="6.51"
-                      x2="8.59"
-                      y2="10.49"
-                      stroke="#CC00B7"
-                      strokeWidth="2"
-                    ></line>
-                  </svg>
-                }
-              />
-            </button>
-
-            {/* Social Dropdown Menu */}
-            {showShareMenu && (
-              <div className="absolute top-12 left-0 bg-white shadow-xl border border-gray-100 rounded-xl p-2 flex flex-col gap-1 min-w-40 z-50 text-left">
-                <button
-                  onClick={() => handleSocialShare("facebook")}
-                  className="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg text-sm text-gray-700 w-full text-left"
-                >
-                  <span className="text-blue-600 font-bold">f</span> Facebook
-                </button>
-                <button
-                  onClick={() => handleSocialShare("twitter")}
-                  className="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg text-sm text-gray-700 w-full text-left"
-                >
-                  <span className="text-black font-bold">X</span> Twitter
-                </button>
-                <button
-                  onClick={() => handleSocialShare("linkedin")}
-                  className="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg text-sm text-gray-700 w-full text-left"
-                >
-                  <span className="text-blue-700 font-bold">in</span> LinkedIn
-                </button>
-                <button
-                  onClick={() => handleSocialShare("whatsapp")}
-                  className="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg text-sm text-gray-700 w-full text-left"
-                >
-                  <span className="text-green-500 font-bold">WA</span> WhatsApp
-                </button>
-                <div className="h-px bg-gray-100 my-1"></div>
-                <button
-                  onClick={() => handleSocialShare("copy")}
-                  className="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg text-sm text-gray-700 w-full text-left"
-                >
-                  <span>🔗</span> Copy Link
-                </button>
-              </div>
-            )}
-          </div>
-
-          {/* --- BOOKMARK BUTTON --- */}
-          <div className="relative md:flex-none">
+      <div className="flex flex-row gap-2 md:gap-4 mt-2 w-full max-w-sm md:max-w-none items-center justify-center mx-auto">
+        {/* --- SHARE BUTTON & DROPDOWN --- */}
+        <div className="relative md:flex-none" ref={shareMenuRef}>
+          <button
+            onClick={() => setShowShareMenu(!showShareMenu)}
+            className="w-full h-full"
+          >
             <AppButton
-              text={t("share_section.bookmark")}
+              text={t("share_section.share")}
               style="secondary"
               withLeftIcon={true}
               className="text-xs md:text-sm px-2 md:px-4 py-1 md:py-2"
               leftIcon={
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="#CC00B7">
-                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  <circle cx="18" cy="5" r="3"></circle>
+                  <circle cx="6" cy="12" r="3"></circle>
+                  <circle cx="18" cy="19" r="3"></circle>
+                  <line
+                    x1="8.59"
+                    y1="13.51"
+                    x2="15.42"
+                    y2="17.49"
+                    stroke="#CC00B7"
+                    strokeWidth="2"
+                  ></line>
+                  <line
+                    x1="15.41"
+                    y1="6.51"
+                    x2="8.59"
+                    y2="10.49"
+                    stroke="#CC00B7"
+                    strokeWidth="2"
+                  ></line>
                 </svg>
               }
-              onClick={handleBookmark}
             />
-          </div>
+          </button>
+
+          {/* Social Dropdown Menu */}
+          {showShareMenu && (
+            <div className="absolute top-12 left-0 bg-white shadow-xl border border-gray-100 rounded-xl p-2 flex flex-col gap-1 min-w-40 z-50 text-left">
+              <button
+                onClick={() => handleSocialShare("facebook")}
+                className="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg text-sm text-gray-700 w-full text-left"
+              >
+                <span className="text-blue-600 font-bold">f</span> Facebook
+              </button>
+              <button
+                onClick={() => handleSocialShare("twitter")}
+                className="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg text-sm text-gray-700 w-full text-left"
+              >
+                <span className="text-black font-bold">X</span> Twitter
+              </button>
+              <button
+                onClick={() => handleSocialShare("linkedin")}
+                className="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg text-sm text-gray-700 w-full text-left"
+              >
+                <span className="text-blue-700 font-bold">in</span> LinkedIn
+              </button>
+              <button
+                onClick={() => handleSocialShare("whatsapp")}
+                className="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg text-sm text-gray-700 w-full text-left"
+              >
+                <span className="text-green-500 font-bold">WA</span> WhatsApp
+              </button>
+              <div className="h-px bg-gray-100 my-1"></div>
+              <button
+                onClick={() => handleSocialShare("copy")}
+                className="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg text-sm text-gray-700 w-full text-left"
+              >
+                <span>🔗</span> Copy Link
+              </button>
+            </div>
+          )}
         </div>
 
-        {/* --- TOAST COMPONENT (FIXED BOTTOM) --- */}
-        <div
-          className={`fixed bottom-8 left-1/2 -translate-x-1/2 z-100 flex items-center gap-3 px-6 py-3 rounded-xl shadow-2xl transition-all duration-300 ease-in-out ${
-            toast.show
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-4 pointer-events-none"
-          } ${toast.icon === "success" ? "bg-green-600" : "bg-gray-900"}`}
-        >
-          {/* Success Icon */}
-          {toast.icon === "success" && (
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="white"
-              strokeWidth="3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-          )}
-          {/* Info/Star Icon */}
-          {toast.icon === "info" && <span className="text-xl">⭐️</span>}
-
-          <p className="text-white font-medium text-sm md:text-base">
-            {toast.message}
-          </p>
+        {/* --- BOOKMARK BUTTON --- */}
+        <div className="relative md:flex-none">
+          <AppButton
+            text={t("share_section.bookmark")}
+            style="secondary"
+            withLeftIcon={true}
+            className="text-xs md:text-sm px-2 md:px-4 py-1 md:py-2"
+            leftIcon={
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#CC00B7">
+                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+              </svg>
+            }
+            onClick={handleBookmark}
+          />
         </div>
       </div>
-    </ParallaxSection>
+
+      {/* --- TOAST COMPONENT (FIXED BOTTOM) --- */}
+      <div
+        className={`fixed bottom-8 left-1/2 -translate-x-1/2 z-100 flex items-center gap-3 px-6 py-3 rounded-xl shadow-2xl transition-all duration-300 ease-in-out ${
+          toast.show
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-4 pointer-events-none"
+        } ${toast.icon === "success" ? "bg-green-600" : "bg-gray-900"}`}
+      >
+        {/* Success Icon */}
+        {toast.icon === "success" && (
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        )}
+        {/* Info/Star Icon */}
+        {toast.icon === "info" && <span className="text-xl">⭐️</span>}
+
+        <p className="text-white font-medium text-sm md:text-base">
+          {toast.message}
+        </p>
+      </div>
+    </div>
   );
 };
 
