@@ -109,8 +109,8 @@ const FAQPage = () => {
       <div className="w-full bg-white font-sans flex flex-col items-center mb-20">
         {/* --- Hero Banner --- */}
         <SubPageHero
-          src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/hero_section/faq_hero_desktop.webp"
-          srcMobile="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/hero_section/faq_hero_mobile.webp"
+          src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/faq_hero_desktop.webp"
+          srcMobile="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/faq_hero_mobile.webp"
           alt="ShipX FAQ Banner"
         />
 
