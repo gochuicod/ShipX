@@ -34,35 +34,32 @@ const TermsAndConditions = () => {
 
         {/* --- Main Content --- */}
         <main
-          className={`mx-auto relative ${themeGuide.paddingX} flex flex-col items-center w-full py-[8vw] md:py-[4vw] gap-y-[6vw] md:gap-y-[3vw]`}
+          className={`mx-auto relative ${themeGuide.paddingX} flex flex-col items-center w-full py-8 gap-6 md:py-16 md:gap-y-6`}
         >
           {/* Header Block */}
           <div className="w-full flex flex-col gap-2 items-center text-center">
-            <Badge variant="toolkit" size="default">
-              Terms and Conditions
-            </Badge>
+            <div className="md:hidden">
+              <Badge variant="toolkit" size="small">
+                Terms and Conditions
+              </Badge>
+            </div>
+            <div className="hidden md:block">
+              <Badge variant="toolkit" size="default">
+                Terms and Conditions
+              </Badge>
+            </div>
 
             <HighlightedHeading
               text="ShipX User Agreement"
               highlight="ShipX"
               className="text-2xl 2xl:text-4xl font-semibold mt-2 text-center"
             />
-
-            <p className="flex items-center justify-center text-center mx-auto w-full font-['Inter'] font-normal text-[#63666D] opacity-90 text-[14px] leading-[18px] max-w-[376px] md:text-[16px] md:leading-[20px] md:max-w-[822px] md:mb-[2vw] mb-[6vw]">
-              {t("terms_and_conditions_page.subheader")}
-            </p>
           </div>
 
           {/* Content Section */}
-          <div className="w-full flex flex-col md:w-[50vw]">
-            <p className="text-[#63666D] md:text-[0.8vw] text-[2.2vw] font-normal text-justify opacity-70 whitespace-pre-line">
+          <div className="w-full flex flex-col md:w-[882px]">
+            <p className=" font-['Inter'] font-normal text-justify text-base leading-[18px] whitespace-pre-line">
               {t("terms_and_conditions_page.message")}
-            </p>
-
-            <hr className="bg-[#63666D] h-[0.05vw] border-none opacity-70 mt-[2vw]" />
-
-            <p className="text-[#63666D] opacity-60 md:text-[0.6vw] text-[2vw] font-normal mt-[1vw]">
-              {t("terms_and_conditions_page.note")}
             </p>
           </div>
         </main>

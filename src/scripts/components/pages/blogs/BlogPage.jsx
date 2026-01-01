@@ -92,7 +92,7 @@ const BlogPage = () => {
 
         {/* --- Main Content --- */}
         <main
-          className={`mx-auto relative ${themeGuide.paddingX} flex flex-col items-center w-full py-[8vw] md:py-[4vw] gap-y-[6vw] md:gap-y-[3vw]`}
+          className={`mx-auto relative ${themeGuide.paddingX} flex flex-col items-center w-full py-16 gap-y-4`}
         >
           {/* Header Block & Search */}
           <div className="w-full flex flex-col gap-2 items-center text-center">
