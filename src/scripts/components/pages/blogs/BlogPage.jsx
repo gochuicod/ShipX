@@ -107,7 +107,7 @@ const BlogPage = () => {
             />
 
             {/* Description */}
-            <p className="flex items-center justify-center text-center mx-auto w-full font-['Inter'] font-normal text-[#63666D] opacity-90 text-[14px] leading-[18px] max-w-[376px] md:text-[16px] md:leading-[20px] md:max-w-[822px] md:mb-[2vw] mb-[6vw]">
+            <p className="flex items-center justify-center text-center mx-auto w-full font-['Inter'] font-normal text-[#63666D] opacity-90 text-[14px] leading-[18px] max-w-[376px] md:text-[16px] md:leading-5 md:max-w-[822px] md:mb-[2vw] mb-[6vw]">
               {pageData.title_section?.subtitle}
             </p>
 
@@ -135,7 +135,7 @@ const BlogPage = () => {
           {/* Filter Bar (Using New Component) */}
           <div className="w-full flex flex-col items-center gap-4">
             {/* Filter by Category Label */}
-            <h3 className="font-['Inter'] font-bold text-[16px] leading-[20px] flex items-center text-center text-black mb-[1.5vw] md:mb-[0.8vw]">
+            <h3 className="font-['Inter'] font-bold text-[16px] leading-5 flex items-center text-center text-black mb-[1.5vw] md:mb-[0.8vw]">
               <span className="md:hidden">Filter by:</span>
               <span className="hidden md:inline">Select a Category</span>
             </h3>

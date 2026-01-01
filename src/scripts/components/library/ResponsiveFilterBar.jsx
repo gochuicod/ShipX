@@ -11,12 +11,12 @@ const MobileFilterDropdown = ({ options, activeId, onChange }) => {
           className={`
             appearance-none
             flex flex-row items-center justify-center
-            w-[152px] h-[32px]
-            pl-[8px] pr-[30px] /* Right padding ensures text doesn't overlap icon */
-            rounded-[4px]
+            w-[152px] h-8
+            pl-2 pr-8 /* Right padding ensures text doesn't overlap icon */
+            rounded-lg
             
             /* Typography from Figma */
-            font-['Inter'] text-[14px] font-normal leading-[16px]
+            font-['Inter'] text-[14px] font-normal leading-4
             text-[#1E2939] text-center
             
             /* Visual Styling from Figma */
@@ -35,7 +35,7 @@ const MobileFilterDropdown = ({ options, activeId, onChange }) => {
           ))}
         </select>
 
-        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-[8px] text-[#4F378A]">
+        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2 text-[#4F378A]">
           <ChevronDown size={15} />
         </div>
       </div>

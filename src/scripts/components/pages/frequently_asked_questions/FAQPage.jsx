@@ -168,7 +168,7 @@ const FAQPage = () => {
             />
 
             {/* Description */}
-            <p className="flex items-center justify-center text-center mx-auto w-full font-['Inter'] font-normal text-[#63666D] opacity-90 text-[14px] leading-[18px] max-w-[376px] md:text-[16px] md:leading-[20px] md:max-w-[822px] md:mb-[2vw] mb-[6vw]">
+            <p className="flex items-center justify-center text-center mx-auto w-full font-['Inter'] font-normal text-[#63666D] opacity-90 text-[14px] leading-[18px] max-w-[376px] md:text-[16px] md:leading-5 md:max-w-[822px] md:mb-[2vw] mb-[6vw]">
               {header_section.description}
             </p>
 
@@ -194,7 +194,7 @@ const FAQPage = () => {
           {/* Filter Bar */}
           <div className="w-full flex flex-col items-center gap-4">
             {/* Filter by Category Label */}
-            <h3 className="font-['Inter'] font-bold text-[16px] leading-[20px] flex items-center text-center text-black mb-[1.5vw] md:mb-[0.8vw]">
+            <h3 className="font-['Inter'] font-bold text-[16px] leading-5 flex items-center text-center text-black mb-[1.5vw] md:mb-[0.8vw]">
               <span className="md:hidden">
                 {filter_section.title || "Filter by:"}
               </span>
