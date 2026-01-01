@@ -6,6 +6,7 @@ import BlogCard from "./BlogCard";
 import ServicesItems from "./ServicesItems";
 import IconBox from "./IconBox";
 import SubPageHero from "./SubPageHero";
+import VisualContactForm from "./VisualContactForm";
 import {
   Accordion,
   AccordionItem,
@@ -272,6 +273,20 @@ export default function ComponentShowcase() {
                 </h2>
               </div>
             </SubPageHero>
+          </div>
+        </div>
+      </ComponentWrapper>
+
+      <ComponentWrapper title="Contact Form (Visual Demo)">
+        <div className="flex flex-col gap-4">
+          <p className="text-sm text-gray-500">
+            This illustrates the form styling using composed atoms. The email
+            field is forced into an <strong>error state</strong> for
+            demonstration.
+          </p>
+          <div className="w-full max-w-[600px] border border-gray-200 p-6 rounded-xl bg-white mx-auto">
+            {/* Clean usage, no logic attached */}
+            <VisualContactForm />
           </div>
         </div>
       </ComponentWrapper>
