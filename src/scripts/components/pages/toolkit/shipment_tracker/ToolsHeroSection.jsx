@@ -1,126 +1,102 @@
 import { useTranslation } from "react-i18next";
-import SmartNavLink from "../../../ui/SmartNavLink";
+import SubPageHero from "../../../library/SubPageHero";
+import AppButton from "../../../library/AppButton";
 
 const ToolsHeroSection = ({ activePage = "file-a-claim" }) => {
   const { t, i18n } = useTranslation();
 
-  const activeButtonStyle =
-    "bg-[#99008A] text-white font-bold rounded-full md:px-[1.5vw] px-[2.5vw] md:py-[0.45vw] py-[1vw] text-center cursor-pointer md:text-[0.8vw] text-[3vw] whitespace-nowrap";
-
-  const inactiveButtonStyle =
-    "text-[#1A1A1A] text-center md:text-[0.8vw] text-[3vw] cursor-pointer md:px-[1vw] px-[2vw] md:py-[0.45vw] py-[1vw] whitespace-nowrap";
+  // Figma: tab switch container & tab button styles
+  const tabSwitchContainer =
+    "flex md:flex-row flex-col items-center p-2 gap-2 w-fit bg-[rgba(35,22,111,0.8)] rounded-lg font-['Inter']";
 
   const desktopBgUrl =
-    "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipment_tracker_cover_image_v3.webp";
+    "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/toolkit_hero_desktop.webp";
   const mobileBgUrl =
-    "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@main/src/assets/shipment_tracker_cta_image.svg";
+    "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/toolkit_hero_mobile.webp";
 
   return (
-    <div
-      className="
-          flex flex-col
-          w-screen md:h-auto h-[70vw]
-          bg-cover bg-center bg-no-repeat
-          text-white text-[0.8vw]
-          font-normal
-          /* Use CSS Variables to handle the URLs safely */
-          bg-(image:--bg-mobile) 
-          md:bg-(image:--bg-desktop)
-      "
-      style={{
-        "--bg-mobile": `url('${mobileBgUrl}')`,
-        "--bg-desktop": `url('${desktopBgUrl}')`,
-        fontFamily: "Inter, system-ui, -apple-system, sans-serif",
-      }}
+    <SubPageHero
+      src={desktopBgUrl}
+      srcMobile={mobileBgUrl}
+      align="center"
+      style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
     >
       <div
         className={`
-              ${
-                i18n.language === "vn"
-                  ? "md:w-[50vw] w-screen"
-                  : "md:w-[40vw] w-screen"
-              }
-              md:ps-[10vw] ps-[12vw]
-              md:pe-0 pe-[12vw]
-              md:pt-[5vw] pt-[15vw]
-              md:pb-[5vw] pb-[25vw]
-              flex flex-col
-              md:justify-start justify-center md:items-start items-center
-              md:gap-y-[1vw] gap-y-[3vw]
-              z-2
+            md:ps-[10vw] ps-[12vw]
+            md:pe-0 pe-[12vw]
+            md:pt-[5vw] pt-[15vw]
+            md:pb-[5vw] pb-[25vw]
+            flex flex-col justify-center items-center md:items-start
           `}
       >
-        <span
-          className="
-              md:text-[2.4vw] text-[7vw] md:text-start md:justify-start
-              md:font-bold font-semibold text-center
-          "
-        >
-          {t("shipment_tracker.hero_section.title")}
-        </span>
+        {/* Heading Container (Frame 2147236747) */}
+        <div className="flex flex-col justify-center md:items-start items-center gap-6 md:w-[608px] md:max-w-[608px] w-[376px] max-w-[376px]">
+          {/* Inner Heading Stack (Frame 2147236748) */}
+          <div className="flex flex-col md:items-start items-center gap-2 md:w-[608px] w-[376px]">
+            <h3
+              className="
+                font-['Inter'] font-semibold text-white tracking-[-1px]
+                md:text-[40px] md:leading-12
+                text-[32px] leading-10
+                md:text-left text-center
+              "
+            >
+              {t("shipment_tracker.hero_section.title")}
+            </h3>
+            <p
+              className="
+                font-['Inter'] text-white
+                md:text-[16px] md:leading-5
+                text-[14px] leading-[18px]
+                md:text-left text-center
+              "
+            >
+              {t("shipment_tracker.hero_section.description")}
+            </p>
+          </div>
 
-        <span
-          className={`
-              md:text-[1vw] text-[2.8vw] md:font-semibold
-              md:text-start text-center max-w-full leading-[1.2]
-              ${i18n.language === "vn" && "md:w-[30vw] w-full"}
-          `}
-        >
-          {t("shipment_tracker.hero_section.description")}
-        </span>
-
-        <div
-          className="
-                flex flex-row
-                md:gap-x-0 gap-x-[1.5vw]
-                bg-white
-                rounded-full
-                md:py-[0.15vw] py-[0.7vw]
-                md:px-[0.20vw] px-[0.7vw]
-                w-fit
-                items-center justify-center
-                md:text-[0.8vw] text-[2.8vw]
-            "
-        >
-          <SmartNavLink to="/shipment-tracker" end>
-            <button
-              type="button"
+          {/* Tab Switch Container */}
+          <div className={tabSwitchContainer}>
+            <AppButton
+              to="/shipment-tracker"
+              text={t("shipment_tracker.hero_section.buttons.shipment_tracker")}
+              style="default"
+              size="default"
               className={
                 activePage === "shipment-tracker"
-                  ? activeButtonStyle
-                  : inactiveButtonStyle
+                  ? "flex md:flex-row flex-col justify-center items-center gap-2 md:w-[197.26px] md:h-9 w-[97px] h-[79px] bg-[#CC00B7] text-white rounded-lg font-semibold md:text-base text-sm shadow-[1px_1px_2px_rgba(20,0,99,0.45),inset_-2px_-2px_4px_rgba(98,0,97,0.4),inset_2px_2px_2px_rgba(255,255,255,0.55),inset_-4px_-4px_25px_rgba(154,4,129,0.2)]"
+                  : "flex md:flex-row flex-col justify-center items-center gap-2 md:w-[197.26px] md:h-9 w-[97px] h-[79px] bg-transparent text-white rounded-lg font-semibold md:text-base text-sm"
               }
-            >
-              {t("shipment_tracker.hero_section.buttons.shipment_tracker")}
-            </button>
-          </SmartNavLink>
-          <SmartNavLink to="/hs-code-generator" end>
-            <button
-              type="button"
+            />
+            <AppButton
+              to="/hs-code-generator"
+              text={t(
+                "shipment_tracker.hero_section.buttons.hs_code_generator",
+              )}
+              style="default"
+              size="default"
               className={
                 activePage === "hs-code-generator"
-                  ? activeButtonStyle
-                  : inactiveButtonStyle
+                  ? "flex md:flex-row flex-col justify-center items-center gap-2 md:w-[197.26px] md:h-9 w-[97px] h-[79px] bg-[#CC00B7] text-white rounded-lg font-semibold md:text-base text-sm shadow-[1px_1px_2px_rgba(20,0,99,0.45),inset_-2px_-2px_4px_rgba(98,0,97,0.4),inset_2px_2px_2px_rgba(255,255,255,0.55),inset_-4px_-4px_25px_rgba(154,4,129,0.2)]"
+                  : "flex md:flex-row flex-col justify-center items-center gap-2 md:w-[197.26px] md:h-9 w-[97px] h-[79px] bg-transparent text-white rounded-lg font-semibold md:text-base text-sm"
               }
-            >
-              {t("shipment_tracker.hero_section.buttons.hs_code_generator")}
-            </button>
-          </SmartNavLink>
-          <SmartNavLink to="/file-a-claim" end>
-            <button
-              type="button"
+            />
+            <AppButton
+              to="/file-a-claim"
+              text={t("shipment_tracker.hero_section.buttons.file_a_claim")}
+              style="default"
+              size="default"
               className={
                 activePage === "file-a-claim"
-                  ? activeButtonStyle
-                  : inactiveButtonStyle
+                  ? "flex md:flex-row flex-col justify-center items-center gap-2 md:w-[197.26px] md:h-9 w-[97px] h-[79px] bg-[#CC00B7] text-white rounded-lg font-semibold md:text-base text-sm shadow-[1px_1px_2px_rgba(20,0,99,0.45),inset_-2px_-2px_4px_rgba(98,0,97,0.4),inset_2px_2px_2px_rgba(255,255,255,0.55),inset_-4px_-4px_25px_rgba(154,4,129,0.2)]"
+                  : "flex md:flex-row flex-col justify-center items-center gap-2 md:w-[197.26px] md:h-9 w-[97px] h-[79px] bg-transparent text-white rounded-lg font-semibold md:text-base text-sm"
               }
-            >
-              {t("shipment_tracker.hero_section.buttons.file_a_claim")}
-            </button>
-          </SmartNavLink>
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </SubPageHero>
   );
 };
 
