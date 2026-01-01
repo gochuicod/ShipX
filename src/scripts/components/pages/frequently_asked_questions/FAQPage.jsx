@@ -1,15 +1,21 @@
 import { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import SEO from "../../ui/SEO";
 import ResponsiveFilterBar from "../../library/ResponsiveFilterBar";
-import AccordionItem from "./AccordionItem";
 import FAQCTASection from "../../ui/FAQCTASection";
 import BlogSection from "../blogs/BlogsSectionReusable";
 import SubPageHero from "../../library/SubPageHero";
 import SearchBar from "../../library/SearchBar";
+import AppButton from "../../library/AppButton";
 import { Badge } from "../../../../styles/badge";
 import HighlightedHeading from "../../library/HighlightedHeading";
 import { themeGuide } from "../../../../styles/themeGuide";
+import { CircleArrowRight } from "lucide-react";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "../../library/Accordion";
 
 const FAQPage = () => {
   const { t } = useTranslation();
@@ -29,7 +35,6 @@ const FAQPage = () => {
   // --- 2. State ---
   const [activeCategoryId, setActiveCategoryId] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
-  const [openItemId, setOpenItemId] = useState(null);
   const [visibleCount, setVisibleCount] = useState(10);
 
   // --- 3. Helper Functions & Derived Data ---
@@ -42,6 +47,29 @@ const FAQPage = () => {
     return answerBlocks
       .map((block) => (block.title || "") + " " + (block.text || ""))
       .join(" ");
+  };
+
+  // Helper to render the complex inner content of an answer
+  const renderAnswerContent = (item) => {
+    if (item.answer_blocks?.length > 0) {
+      return (
+        <div className="flex flex-col gap-4">
+          {item.answer_blocks.map((block, idx) => (
+            <div key={idx} className="w-full">
+              <p>
+                {block.title && (
+                  <span className="font-bold mr-1 text-[#1E2939]">
+                    {block.title}
+                  </span>
+                )}
+                {block.text}
+              </p>
+            </div>
+          ))}
+        </div>
+      );
+    }
+    return <p>{item.answer || item.description}</p>;
   };
 
   const categories = useMemo(() => {
@@ -86,6 +114,24 @@ const FAQPage = () => {
     });
   }, [rawItems, activeCategoryId, searchQuery]);
 
+  // Grid layout helper - split filtered items into sections
+  const { rowItems, gridLeftColItems, gridRightColItems } = useMemo(() => {
+    const paginatedFiltered = filteredItems.slice(0, visibleCount);
+
+    // First 4 items for the row
+    const row = paginatedFiltered.slice(0, 4);
+
+    // Remaining items split into 2 columns (3 per column)
+    const remaining = paginatedFiltered.slice(4);
+    const gridMidPoint = Math.ceil(remaining.length / 2);
+
+    return {
+      rowItems: row,
+      gridLeftColItems: remaining.slice(0, gridMidPoint),
+      gridRightColItems: remaining.slice(gridMidPoint),
+    };
+  }, [filteredItems, visibleCount]);
+
   // Pagination Logic
   const handleLoadMore = () => setVisibleCount((prev) => prev + 10);
   const hasMoreItems = visibleCount < filteredItems.length;
@@ -99,13 +145,6 @@ const FAQPage = () => {
 
   return (
     <>
-      <SEO
-        title={t("seo.faq_page.title")}
-        description={t("seo.faq_page.description")}
-        canonical={t("seo.faq_page.canonical")}
-        ogImage={t("seo.faq_page.ogImage")}
-      />
-
       <div className="w-full bg-white font-sans flex flex-col items-center mb-20">
         {/* --- Hero Banner --- */}
         <SubPageHero
@@ -173,42 +212,104 @@ const FAQPage = () => {
           </div>
 
           {/* Accordion List */}
-          <div className="w-full flex flex-col">
+          <div className="w-full flex flex-col gap-4">
             {filteredItems.length === 0 ? (
               <div className="text-center py-[10vw] text-gray-400">
                 No results found.
               </div>
             ) : (
-              paginatedItems.map((item) => (
-                <AccordionItem
-                  key={item.id}
-                  item={item}
-                  isOpen={openItemId === item.id}
-                  onClick={() =>
-                    setOpenItemId(openItemId === item.id ? null : item.id)
-                  }
-                />
-              ))
-            )}
+              <>
+                {/* Accordion Column - 4 Items (Horizontal Display) */}
+                {rowItems.length > 0 && (
+                  <Accordion
+                    className="flex flex-col md:gap-5 gap-4 items-start w-full"
+                    defaultOpen={rowItems[0]?.id}
+                  >
+                    {rowItems.map((item) => (
+                      <AccordionItem
+                        key={item.id}
+                        value={item.id}
+                        variant="purple"
+                      >
+                        <AccordionTrigger>
+                          <span className="text-base md:text-lg">
+                            {item.question}
+                          </span>
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          {renderAnswerContent(item)}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                )}
 
-            {/* Load More Button */}
-            {hasMoreItems && (
-              <div className="text-center mt-[4vw] md:mt-[2vw]">
-                <button
-                  onClick={handleLoadMore}
-                  className="group relative inline-flex items-center justify-center p-px rounded-full bg-linear-to-b from-[#FF00E5] to-[#4F378A] transition-transform active:scale-95"
-                >
-                  <span className="block w-full h-full rounded-full bg-white text-[#1A1A1A] px-[8vw] py-[2.5vw] md:px-[2vw] md:py-[0.5vw] text-[3.5vw] md:text-[0.9vw] font-medium transition-all duration-300 group-hover:bg-transparent group-hover:text-white">
-                    {accordion_section.load_more_button || "Load More"}
-                  </span>
-                </button>
-              </div>
+                {/* Accordion Grid - 3 Items per Column */}
+                {(gridLeftColItems.length > 0 ||
+                  gridRightColItems.length > 0) && (
+                  <Accordion
+                    className="grid grid-cols-1 md:grid-cols-2 md:gap-5 gap-4 items-start w-full"
+                    defaultOpen={gridLeftColItems[0]?.id}
+                  >
+                    {/* Left Column */}
+                    <div className="flex flex-col gap-2">
+                      {gridLeftColItems.map((item) => (
+                        <AccordionItem
+                          key={item.id}
+                          value={item.id}
+                          variant="purple"
+                        >
+                          <AccordionTrigger>
+                            <span className="text-base md:text-lg">
+                              {item.question}
+                            </span>
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            {renderAnswerContent(item)}
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </div>
+
+                    {/* Right Column */}
+                    <div className="flex flex-col gap-2">
+                      {gridRightColItems.map((item) => (
+                        <AccordionItem
+                          key={item.id}
+                          value={item.id}
+                          variant="purple"
+                        >
+                          <AccordionTrigger>
+                            <span className="text-base md:text-lg">
+                              {item.question}
+                            </span>
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            {renderAnswerContent(item)}
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </div>
+                  </Accordion>
+                )}
+
+                {/* Load More Button */}
+                {hasMoreItems && (
+                  <div className="flex justify-center mt-4">
+                    <AppButton
+                      onClick={handleLoadMore}
+                      variant="secondary"
+                      text={accordion_section.load_more_button || "Load More"}
+                      withRightIcon={true}
+                      rightIcon={<CircleArrowRight className="size-5" />}
+                    />
+                  </div>
+                )}
+              </>
             )}
           </div>
         </main>
       </div>
-
-      <FAQCTASection ctaData={cta_section} />
       <BlogSection />
     </>
   );
