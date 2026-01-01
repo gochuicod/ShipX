@@ -1,8 +1,6 @@
 import { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import ResponsiveFilterBar from "../../library/ResponsiveFilterBar";
-import FAQCTASection from "../../ui/FAQCTASection";
-import BlogSection from "../blogs/BlogsSectionReusable";
 import SubPageHero from "../../library/SubPageHero";
 import SearchBar from "../../library/SearchBar";
 import AppButton from "../../library/AppButton";
@@ -310,7 +308,6 @@ const FAQPage = () => {
           </div>
         </main>
       </div>
-      <BlogSection />
     </>
   );
 };
