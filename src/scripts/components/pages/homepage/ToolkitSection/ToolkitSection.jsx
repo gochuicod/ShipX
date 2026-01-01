@@ -30,22 +30,22 @@ export default function ToolkitSection() {
       }}
     >
       {/* Background Glows */}
-      <SectionGlow className="left-[1072px] top-[20px]" />
-      <SectionGlow className="left-[148px] top-[-12px]" />
+      <SectionGlow className="left-[1072px] top-5" />
+      <SectionGlow className="left-[148px] -top-3" />
 
       {/* LEFT CONTENT */}
       <div className="relative z-10 flex xl:flex-col md:flex-row flex-col items-center xl:items-end text-center xl:text-right w-full xl:max-w-[390px] md:max-w-full xl:gap-2 md:gap-6">
-        <div className="flex flex-col items-center xl:items-end text-center xl:text-right gap-2 xl:w-auto md:w-[240px]">
+        <div className="flex flex-col items-center xl:items-end text-center xl:text-right gap-2 xl:w-auto md:w-60">
           <Badge variant="toolkit" size="default" className="md:text-sm">
             {activeTabData?.badge}
           </Badge>
 
-          <h2 className="font-['Inter'] font-semibold text-[32px] md:text-md xl:text-[40px] text-white opacity-90 leading-[40px] tracking-[-1px]">
+          <h2 className="font-['Inter'] font-semibold text-[32px] md:text-md xl:text-[40px] text-white opacity-90 leading-10 tracking-[-1px]">
             {activeTabData?.title}
           </h2>
         </div>
 
-        <p className="font-['Inter'] font-normal text-[16px] leading-[20px] text-white opacity-90 xl:w-auto md:w-[450px] xl:text-right md:text-left">
+        <p className="font-['Inter'] font-normal text-[16px] leading-5 text-white opacity-90 xl:w-auto md:w-[450px] xl:text-right md:text-left">
           {activeTabData?.description}
         </p>
       </div>
@@ -66,7 +66,7 @@ export default function ToolkitSection() {
       </div>
 
       {/* Illustration */}
-      <div className="xl:block md:block hidden absolute xl:right-[110px] md:right-[5px] xl:bottom-[40px] md:bottom-[20px] z-20">
+      <div className="xl:block md:block hidden absolute xl:right-[110px] md:right-[5px] xl:bottom-10 md:bottom-5 z-20">
         <img
           src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/delivery_van.webp"
           alt="Delivery Van"

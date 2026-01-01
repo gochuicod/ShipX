@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import Badge from "../shipment_tracker/Badge";
+import { Badge } from "../../../../../styles/badge";
+import HighlightedHeading from "../../../library/HighlightedHeading";
 import ClaimSubmissionModal from "./ClaimSubmissionModal";
 import FileAClaimToolTipError from "./FileAClaimToolTipError";
 import Button from "../../../ui/Button";
@@ -239,15 +240,13 @@ const FileAClaimForm = () => {
       <div className="flex flex-col items-center justify-center w-full py-[10vw] md:py-[5vw] px-[5vw]">
         {/* HEADER SECTION */}
         <div className="flex flex-col items-center gap-y-[2vw] md:gap-y-[0.8vw] mb-[6vw] md:mb-[3vw]">
-          <Badge
-            className="text-[2.5vw] md:text-[0.8vw]"
-            badge_text={t("file_a_claim.header_section.badge_text")}
-            text_color="#FF00E5"
-            bg_color="#F3F1FF"
+          <Badge variant="toolkit" size="default">
+            {t("file_a_claim.header_section.badge_text")}
+          </Badge>
+          <HighlightedHeading
+            text={t("file_a_claim.header_section.title")}
+            className="text-2xl 2xl:text-4xl font-semibold mt-2 text-center"
           />
-          <h2 className="font-bold text-[#1E2939] text-center text-[6vw] md:text-[2.5vw]">
-            {t("file_a_claim.header_section.title")}
-          </h2>
           <p className="text-[#63666D]/75 font-medium md:text-[0.9vw] text-[3.5vw] text-center w-full md:max-w-[40vw] leading-[1.4]">
             {t("file_a_claim.header_section.description")}
           </p>

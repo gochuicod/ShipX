@@ -29,8 +29,8 @@ export default function TrackerForm() {
       </label>
 
       {/* Input + Button */}
-      <div className="flex flex-row items-center p-1 gap-2 bg-white rounded-[8px] shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1)]">
-        <div className="flex items-center gap-2 pl-3 flex-grow">
+      <div className="flex flex-row items-center p-1 gap-2 bg-white rounded-xl shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1)]">
+        <div className="flex items-center gap-2 pl-3 grow">
           <Search className="text-[#63666D]" size={20} />
           <input
             id="trackingNumber"

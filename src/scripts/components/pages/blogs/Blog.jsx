@@ -81,7 +81,7 @@ const Blog = () => {
               {/* Author Section */}
               <div className="flex flex-row items-center gap-2">
                 {/* Placeholder Avatar - replace with post.author_avatar if available */}
-                <div className="w-6 h-6 rounded-full bg-gray-200 overflow-hidden flex-shrink-0">
+                <div className="w-6 h-6 rounded-full bg-gray-200 overflow-hidden shrink-0">
                   <svg
                     className="w-full h-full text-gray-400"
                     fill="currentColor"

@@ -1,8 +1,16 @@
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import AppButton from "../../library/AppButton";
 import { Mail, Send, CalendarDays } from "lucide-react";
+import AppButton from "../../library/AppButton";
+
+// Import from Definition Layer
+import {
+  FormInput,
+  FormLabel,
+  FormTextarea,
+  InputGroup,
+} from "../../library/FormElements";
 
 const ContactFormNew = () => {
   const {
@@ -16,7 +24,7 @@ const ContactFormNew = () => {
   const [isSent, setIsSent] = useState(false);
   const { t } = useTranslation();
 
-  // --- Logic Effects (Kept exactly as original) ---
+  // --- Logic Effects ---
   useEffect(() => {
     if (typeof window !== "undefined" && window.ShipXGeo) {
       console.log("User country:", window.ShipXGeo.country);
@@ -80,34 +88,6 @@ const ContactFormNew = () => {
     }
   };
 
-  // --- Styles ---
-
-  // Reusable Input Wrapper Style
-  const inputContainerClass = "flex flex-col gap-[8px] flex-grow w-full";
-
-  // Reusable Label Style
-  const labelClass =
-    "font-inter font-semibold text-[16px] leading-[20px] text-[#1E2939] flex items-center gap-[5px]";
-
-  // Reusable Asterisk Style
-  const requiredStar = (
-    <span className="text-[#E7000B] font-bold text-[16px] leading-[19px]">
-      *
-    </span>
-  );
-
-  // Reusable Input Field Style
-  // Logic: Height 55px, White BG, Bottom Border Purple, Radius 8px, Italic Placeholder
-  const inputClass = (hasError) => `
-    w-full h-[55px] px-[16px] py-[8px]
-    bg-white rounded-[8px]
-    border-b ${hasError ? "border-red-500" : "border-[#7F22FE]"}
-    font-inter font-normal text-[16px] text-[#1E2939]
-    placeholder:font-inter placeholder:italic placeholder:font-normal placeholder:text-[16px] 
-    ${hasError ? "placeholder-red-400" : "placeholder-[#99A1AF]"}
-    focus:outline-none transition-colors
-  `;
-
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -117,15 +97,14 @@ const ContactFormNew = () => {
       {/* --- Row 1: Name, Email, Phone --- */}
       <div className="flex flex-col md:flex-row items-start gap-4 w-full h-auto md:h-[70px]">
         {/* Name */}
-        <div className={inputContainerClass}>
-          <label htmlFor="name" className={labelClass}>
+        <InputGroup>
+          <FormLabel htmlFor="name" required>
             {t("contact_us_section.form.name")}
-            {requiredStar}
-          </label>
-          <input
+          </FormLabel>
+          <FormInput
             id="name"
+            hasError={!!errors.name}
             aria-invalid={errors.name ? "true" : "false"}
-            className={inputClass(errors.name)}
             placeholder={
               errors.name
                 ? errors.name.message
@@ -136,19 +115,18 @@ const ContactFormNew = () => {
               required: t("contact_us_section.form.name_placeholder"),
             })}
           />
-        </div>
+        </InputGroup>
 
         {/* Email */}
-        <div className={inputContainerClass}>
-          <label htmlFor="email" className={labelClass}>
+        <InputGroup>
+          <FormLabel htmlFor="email" required>
             {t("contact_us_section.form.email")}
-            {requiredStar}
-          </label>
-          <input
+          </FormLabel>
+          <FormInput
             id="email"
             type="email"
+            hasError={!!errors.email}
             aria-invalid={errors.email ? "true" : "false"}
-            className={inputClass(errors.email)}
             placeholder={
               errors.email
                 ? errors.email.message
@@ -163,19 +141,19 @@ const ContactFormNew = () => {
               },
             })}
           />
-        </div>
+        </InputGroup>
 
         {/* Phone */}
-        <div className={inputContainerClass}>
-          <label htmlFor="tel" className={labelClass}>
+        <InputGroup>
+          <FormLabel htmlFor="tel">
             {t("contact_us_section.form.phone")}
-          </label>
-          <input
+          </FormLabel>
+          <FormInput
             id="tel"
             type="tel"
             inputMode="tel"
+            hasError={!!errors.phone}
             aria-invalid={errors.phone ? "true" : "false"}
-            className={inputClass(errors.phone)}
             placeholder={
               errors.phone
                 ? errors.phone.message
@@ -189,19 +167,18 @@ const ContactFormNew = () => {
               },
             })}
           />
-        </div>
+        </InputGroup>
       </div>
 
       {/* --- Row 2: Message --- */}
-      <div className="flex flex-col gap-[8px] w-full">
-        <label htmlFor="message" className={labelClass}>
+      <InputGroup>
+        <FormLabel htmlFor="message" required>
           {t("contact_us_section.form.message")}
-          {requiredStar}
-        </label>
-        <textarea
+        </FormLabel>
+        <FormTextarea
           id="message"
+          hasError={!!errors.message}
           aria-invalid={errors.message ? "true" : "false"}
-          className={`${inputClass(errors.message)} h-[122px] resize-none`}
           placeholder={
             errors.message
               ? errors.message.message
@@ -212,25 +189,16 @@ const ContactFormNew = () => {
             required: t("contact_us_section.form.message_placeholder"),
           })}
         />
-      </div>
+      </InputGroup>
 
       {/* --- Row 3: Buttons --- */}
-      {/* 1. Use 'grid-cols-2' to force equal 50/50 split 
-          2. Use 'gap-2' (8px) on mobile to save space, 'gap-4' on desktop
-      */}
       <div className="grid grid-cols-2 gap-2 md:flex md:flex-row md:justify-end md:gap-4 w-full mt-4">
         {/* Button 1: Book Demo */}
         <AppButton
           to="/book-a-demo"
           text={t("contact_us_section.form.book_a_demo")}
           withLeftIcon={true}
-          /* Hide icon on very small screens OR make it smaller (size-4) */
           leftIcon={<CalendarDays className="size-4 md:size-5" />}
-          /* Mobile Sizing:
-             - text-xs (smaller font)
-             - px-2 (reduce side padding to prevent overflow)
-             - w-full (fill grid cell)
-          */
           className="w-full md:w-auto text-xs md:text-base px-2 md:px-6 justify-center whitespace-nowrap"
         />
 

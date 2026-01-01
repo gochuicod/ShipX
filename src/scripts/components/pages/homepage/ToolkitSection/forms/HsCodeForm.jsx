@@ -11,7 +11,7 @@ export default function HsCodeForm() {
   };
 
   return (
-    <div className="flex flex-col gap-3 bg-white p-3 rounded-[8px] shadow-lg max-w-[500px]">
+    <div className="flex flex-col gap-3 bg-white p-3 rounded-xl shadow-lg max-w-[500px]">
       <Input
         multiline
         value={value}
