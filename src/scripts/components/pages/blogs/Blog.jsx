@@ -4,8 +4,10 @@ import { useTranslation } from "react-i18next";
 import SEO from "../../ui/SEO";
 import SmartNavLink from "../../ui/SmartNavLink";
 import NotFound from "../not_found/NotFound";
-import BlogsSectionReusable from "./BlogsSectionReusable";
-import ShareSection from "./ShareSection";
+import MoreBlogs from "./MoreBlogs";
+import ShareSection from "../../library/ShareSection";
+import { Badge } from "../../../../styles/badge";
+import { themeGuide } from "../../../../styles/themeGuide";
 
 const Blog = () => {
   const { slug } = useParams();
@@ -55,79 +57,53 @@ const Blog = () => {
         style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
       >
         {/* Main Article Container */}
-        <article className="max-w-[90vw] md:max-w-[70vw] lg:max-w-[60vw] mx-auto pt-[12vh] pb-[5vw]">
-          {/* 1. Breadcrumbs & Tags */}
-          <div className="flex flex-col items-start gap-y-6 mb-6">
-            <nav
-              aria-label="breadcrumb"
-              className="w-full text-[#1A1A1A] md:text-[0.8vw] text-[3vw] text-left"
-            >
-              <ol className="flex flex-wrap items-center gap-x-[0.5vw]">
-                <li>
-                  <SmartNavLink
-                    to="/"
-                    className="hover:text-[#1A1A1A]/70 transition-colors"
-                  >
-                    {t("service_headline_section.breadcrumbs.home")}
-                  </SmartNavLink>
-                </li>
-                <li>/</li>
-                <li>
-                  <SmartNavLink
-                    to="/blog"
-                    className="hover:text-[#1A1A1A]/70 transition-colors"
-                  >
-                    {t("service_headline_section.breadcrumbs.blog")}
-                  </SmartNavLink>
-                </li>
-                <li>/</li>
-                <li className="text-[#1A1A1A] font-semibold truncate max-w-[20vw]">
-                  {post.title}
-                </li>
-              </ol>
-            </nav>
-
-            {/* Tags */}
+        <article className={`mx-auto ${themeGuide.paddingX} py-16`}>
+          {/* Header Section: Tags, Headline, Author Meta & Hero Image */}
+          <div className="flex flex-col gap-2 md:items-start items-center md:py-0 py-0 md:px-20">
+            {/* 1. Tags Container */}
             {post.tags && post.tags.length > 0 && (
-              <div className="flex flex-wrap items-center gap-2 mb-2 md:mb-4">
+              <div className="flex flex-row items-center gap-1.5">
                 {post.tags.slice(0, 2).map((tag, index) => (
-                  <span
-                    key={index}
-                    className="bg-[#F8E3F5] text-[#CC00B7] text-[10px] md:text-[0.6vw] font-medium px-2 py-0.5 rounded"
-                  >
+                  <Badge key={index} variant="secondary" size="sm">
                     {tag}
-                  </span>
+                  </Badge>
                 ))}
               </div>
             )}
-          </div>
 
-          {/* 2. Headline */}
-          <h1 className="text-[8vw] md:text-[3.5vw] font-bold text-[#1A1A1A] leading-[1.1] text-left mb-6">
-            {post.title}
-          </h1>
+            {/* 2. Headline */}
+            <h1 className="text-2xl md:text-4xl font-semibold text-[#121212] text-center md:text-left leading-10 md:leading-10 tracking-tight letter-spacing-[-1px]">
+              {post.title}
+            </h1>
 
-          {/* 3. Author Meta */}
-          <div className="flex items-center gap-x-4 mb-8 text-sm md:text-base text-gray-600 border-b border-gray-100 pb-8 w-full">
-            {/* Placeholder Avatar - replace with post.author_avatar if available */}
-            <div className="w-10 h-10 rounded-full bg-gray-200 overflow-hidden">
-              <svg
-                className="w-full h-full text-gray-400"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-              </svg>
-            </div>
-            <div className="flex flex-col md:flex-row md:items-center gap-x-2">
-              <span className="font-semibold text-black">{post.author}</span>
-              <span className="hidden md:block text-gray-400">•</span>
-              <span className="text-gray-500">{post.date}</span>
+            {/* 3. Author Meta & Date */}
+            <div className="flex flex-row items-center gap-6 md:gap-6">
+              {/* Author Section */}
+              <div className="flex flex-row items-center gap-2">
+                {/* Placeholder Avatar - replace with post.author_avatar if available */}
+                <div className="w-6 h-6 rounded-full bg-gray-200 overflow-hidden flex-shrink-0">
+                  <svg
+                    className="w-full h-full text-gray-400"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                </div>
+                <span className="text-[#4D525C] text-sm md:text-base font-normal leading-5">
+                  {post.author}
+                </span>
+              </div>
+
+              {/* Date Section */}
+              <span className="text-[#4D525C] text-sm md:text-base font-normal leading-5">
+                {post.date}
+              </span>
             </div>
           </div>
 
           {/* 4. Hero Image */}
-          <div className="w-full mb-12">
+          <div className="w-full mt-6 md:mt-8 h-52 md:h-80 lg:h-[500px] rounded-3xl overflow-hidden relative">
             <img
               src={
                 i18n.language === "vn" && post.cover_vn
@@ -135,27 +111,26 @@ const Blog = () => {
                   : post.cover
               }
               alt={post.title}
-              className="w-full md:rounded-[2vw] rounded-[3vw] shadow-[0_0vw_1vw_rgba(79,55,138,0.15)]"
+              className="w-full h-full object-cover"
               loading="eager"
             />
           </div>
 
           {/* 5. Rich Text Content */}
-          {/* We use arbitrary styling for standard HTML tags appearing inside the content.
-             This handles the spacing, fonts, and images layout inside the article body.
-          */}
           <div
             className="
-              w-full 
-              text-[#1A1A1A] 
-              text-[4.5vw] md:text-[1.2vw] 
-              leading-[1.6] md:leading-[1.7]
-              [&>p]:mb-6 [&>p]:text-gray-700
-              [&>h2]:text-[5vw] md:[&>h2]:text-[2vw] [&>h2]:font-bold [&>h2]:mt-10 [&>h2]:mb-4 [&>h2]:leading-tight
-              [&>h3]:text-[4.5vw] md:[&>h3]:text-[1.5vw] [&>h3]:font-semibold [&>h3]:mt-8 [&>h3]:mb-3
-              [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:mb-6 [&>ul]:space-y-2
-              [&>img]:rounded-xl [&>img]:my-8 [&>img]:w-full [&>img]:shadow-sm
-              [&>a]:text-blue-600 [&>a]:underline
+              w-full my-4 md:px-20
+              flex flex-col gap-4
+              text-[#1E2939] 
+              md:text-base text-sm
+              md:leading-6 leading-[21px]
+              [&>p]:mb-4 [&>p]:text-[#1E2939] [&>p]:opacity-90
+              [&>h2]:text-[#1E2939] [&>h2]:font-semibold [&>h2]:mt-8 [&>h2]:mb-4 [&>h2]:leading-tight
+              [&>h3]:text-[#1E2939] [&>h3]:font-semibold [&>h3]:mt-6 [&>h3]:mb-3
+              [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:mb-4 [&>ul]:space-y-2
+              [&>ol]:list-decimal [&>ol]:pl-5 [&>ol]:mb-4 [&>ol]:space-y-2
+              [&>a]:text-blue-600 [&>a]:underline hover:[&>a]:text-blue-700
+              font-['Inter']
             "
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
@@ -165,14 +140,8 @@ const Blog = () => {
         </article>
 
         {/* 7. Read Next Section */}
-        {/* Placeholder for your existing BlogsSection component. 
-            Ensure BlogsSection is imported and accepts any necessary props. */}
-        <div className="w-full bg-white py-4 px-[5vw] md:px-[10vw]">
-          <h3 className="text-3xl font-bold text-center mb-5">
-            What to read next
-          </h3>
-          <BlogsSectionReusable />
-        </div>
+        {/* MoreBlogs component displays latest blog posts */}
+        <MoreBlogs />
       </div>
     </>
   );
