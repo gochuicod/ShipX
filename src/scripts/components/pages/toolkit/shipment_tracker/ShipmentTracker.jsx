@@ -33,7 +33,7 @@ const TrackOrderSection = () => {
           {t("shipment_tracker.track_order_section.title.highlighted")}
         </span>
       </h2>
-      <p className="text-[#63666D]/75 md:text-[0.9vw] text-[3.5vw] md:text-end text-center font-medium md:leading-[1.5vw] leading-[4vw]">
+      <p className="text-[#63666D]/75 md:text-base text-[3.5vw] md:text-end text-center font-normal md:leading-[1.5vw] leading-[4vw]">
         {t("shipment_tracker.track_order_section.description")}
       </p>
     </div>
@@ -83,7 +83,7 @@ const ShipmentTracker = () => {
         {/* Track your order section */}
         <div
           className="
-            flex md:flex-row flex-col
+            flex lg:flex-row flex-col
             gap-x-8
             justify-center items-center
             md:mt-[5vw] mt-[10vw]

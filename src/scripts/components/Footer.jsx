@@ -215,7 +215,7 @@ const Footer = memo(() => {
               h-auto
               absolute
               lg:top-[-9.5vw] md:top-0 top-[-26vw]
-              md:right-[-5vw] right-0
+              md:right-[-4vw] right-0
               justify-end
             "
           />

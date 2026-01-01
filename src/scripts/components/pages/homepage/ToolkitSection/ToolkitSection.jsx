@@ -24,7 +24,7 @@ export default function ToolkitSection() {
 
   return (
     <section
-      className="relative w-full min-h-[408px] flex flex-col xl:flex-row items-center justify-center px-6 py-16 lg:px-24 gap-8 overflow-hidden isolation-isolate"
+      className="relative w-full min-h-[408px] flex flex-col lg:flex-row items-center justify-center px-6 py-16 lg:px-24 gap-8 overflow-hidden isolation-isolate"
       style={{
         background: "linear-gradient(180deg, #4F378A 0%, #66005C 159.37%)",
       }}
@@ -34,24 +34,24 @@ export default function ToolkitSection() {
       <SectionGlow className="left-[148px] -top-3" />
 
       {/* LEFT CONTENT */}
-      <div className="relative z-10 flex xl:flex-col md:flex-row flex-col items-center xl:items-end text-center xl:text-right w-full xl:max-w-[390px] md:max-w-full xl:gap-2 md:gap-6">
-        <div className="flex flex-col items-center xl:items-end text-center xl:text-right gap-2 xl:w-auto md:w-60">
+      <div className="relative z-10 flex lg:flex-col md:flex-row flex-col items-center lg:items-end text-center lg:text-right w-full lg:max-w-[390px] md:max-w-full lg:gap-2 md:gap-6">
+        <div className="flex flex-col items-center lg:items-end text-center lg:text-right gap-2 lg:w-auto md:w-60">
           <Badge variant="toolkit" size="default" className="md:text-sm">
             {activeTabData?.badge}
           </Badge>
 
-          <h2 className="font-['Inter'] font-semibold text-[32px] md:text-md xl:text-[40px] text-white opacity-90 leading-10 tracking-[-1px]">
+          <h2 className="font-['Inter'] font-semibold text-[32px] md:text-md lg:text-[40px] text-white opacity-90 leading-10 tracking-[-1px]">
             {activeTabData?.title}
           </h2>
         </div>
 
-        <p className="font-['Inter'] font-normal text-[16px] leading-5 text-white opacity-90 xl:w-auto md:w-[450px] xl:text-right md:text-left">
+        <p className="font-['Inter'] font-normal text-[16px] leading-5 text-white opacity-90 lg:w-auto md:w-[450px] lg:text-right md:text-left">
           {activeTabData?.description}
         </p>
       </div>
 
       {/* RIGHT CONTENT */}
-      <div className="relative z-10 flex flex-col xl:gap-4 md:gap-4 gap-8 w-full xl:max-w-[608px] md:max-w-full">
+      <div className="relative z-10 flex flex-col lg:gap-4 md:gap-4 gap-8 w-full lg:max-w-[808px] md:max-w-full">
         {/* Tabs */}
         <div className="flex justify-center md:justify-start">
           <TabSwitcher
@@ -66,11 +66,11 @@ export default function ToolkitSection() {
       </div>
 
       {/* Illustration */}
-      <div className="xl:block md:block hidden absolute xl:right-[110px] md:right-[5px] xl:bottom-10 md:bottom-5 z-20">
+      <div className="lg:block md:block hidden absolute lg:right-[210px] md:right-[5px] lg:bottom-10 md:bottom-5 z-20">
         <img
           src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/delivery_van.webp"
           alt="Delivery Van"
-          className="xl:w-[300px] md:w-[220px] object-contain drop-shadow-2xl"
+          className="lg:w-[300px] md:w-[220px] object-contain drop-shadow-2xl"
         />
       </div>
     </section>
