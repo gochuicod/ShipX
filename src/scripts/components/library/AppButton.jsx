@@ -51,7 +51,7 @@ export default function AppButton({
   const ButtonContent = () => (
     <>
       {withLeftIcon && renderIcon(leftIcon)}
-      <span>{text}</span>
+      <span className="leading-tight">{text}</span>
       {withRightIcon && renderIcon(rightIcon)}
     </>
   );

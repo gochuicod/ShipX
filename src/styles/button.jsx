@@ -103,6 +103,20 @@ const buttonVariants = cva(
           "bg-[rgba(204,0,183,0.2)] border border-[#FF00E5]",
           "shadow-[1px_1px_2px_rgba(20,0,99,0.45),inset_-2px_-2px_4px_rgba(98,0,97,0.4),inset_-4px_-4px_25px_rgba(154,4,129,0.2)]",
         ].join(" "),
+        toolsHeroActive: [
+          "flex flex-row justify-center items-center gap-2 bg-[#CC00B7] text-white rounded-lg font-semibold",
+          "shadow-[1px_1px_2px_rgba(20,0,99,0.45),inset_-2px_-2px_4px_rgba(98,0,97,0.4),inset_2px_2px_2px_rgba(255,255,255,0.55),inset_-4px_-4px_25px_rgba(154,4,129,0.2)]",
+        ].join(" "),
+        toolsHeroInactive: [
+          "flex flex-row justify-center items-center gap-2 bg-transparent text-white rounded-lg font-semibold",
+        ].join(" "),
+        toolsHeroMobileActive: [
+          "flex flex-col justify-center items-center gap-2 bg-[#CC00B7] text-white rounded-lg font-semibold whitespace-normal break-words text-center",
+          "shadow-[1px_1px_2px_rgba(20,0,99,0.45),inset_-2px_-2px_4px_rgba(98,0,97,0.4),inset_2px_2px_2px_rgba(255,255,255,0.55),inset_-4px_-4px_25px_rgba(154,4,129,0.2)]",
+        ].join(" "),
+        toolsHeroMobileInactive: [
+          "flex flex-col justify-center items-center gap-2 bg-transparent text-white rounded-lg font-semibold whitespace-normal break-words text-center",
+        ].join(" "),
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
