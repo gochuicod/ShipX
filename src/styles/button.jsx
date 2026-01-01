@@ -41,7 +41,7 @@ const buttonVariants = cva(
           "h-[40px]",
 
           // Typography
-          "font-['Inter'] font-normal text-[16px] text-white",
+          "font-['Inter'] font-normal text-base text-white",
 
           // DEFAULT STATE
           "bg-[linear-gradient(103.43deg,#4F378A_9.78%,#CC00B7_84.11%)]",

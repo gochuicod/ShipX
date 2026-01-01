@@ -5,6 +5,9 @@ import { themeGuide } from "../../styles/themeGuide";
 import { MailIcon, LocationIcon } from "../icons/FooterIcons";
 import { cn } from "../../lib/util";
 
+import AppButton from "../components/library/AppButton";
+import { CalendarDays } from "lucide-react";
+
 const ContactItem = ({ icon: Icon, text, href, itemClass, iconClass }) => (
   <li className={`flex gap-[2vw] md:gap-[0.6vw] text-gray-600 ${itemClass}`}>
     <Icon className={cn("shrink-0", iconClass)} />
@@ -89,7 +92,8 @@ const Footer = memo(() => {
     {
       id: "toolkitAndResources",
       isGroup: true,
-      className: "md:flex hidden flex-col gap-[4vw] md:gap-4",
+      className:
+        "md:col-start-2 lg:col-start-auto flex flex-col gap-[4vw] md:gap-4",
       items: [
         {
           id: "toolkit",
@@ -104,20 +108,30 @@ const Footer = memo(() => {
       ],
     },
     {
-      id: "legal",
-      title: "Legal",
-      content: <FooterLinkList links={linkColumns.legal} />,
-    },
-    {
-      id: "contact",
-      title: t("footer.reach_us_1"),
-      content: (
-        <ul className="space-y-[3vw] md:space-y-[8.5px]">
-          {contactItems.map((item) => (
-            <ContactItem key={item.text} {...item} />
-          ))}
-        </ul>
-      ),
+      id: "legalAndContact",
+      isGroup: true,
+      // THE SECRET SAUCE:
+      // Mobile: flex-col gap-0 makes them touch.
+      // Desktop: lg:contents makes the container invisible to the Grid.
+      className: "md:col-start-3 lg:contents flex flex-col gap-0",
+      items: [
+        {
+          id: "legal",
+          title: "Legal",
+          content: <FooterLinkList links={linkColumns.legal} />,
+        },
+        {
+          id: "contact",
+          title: t("footer.reach_us_1"),
+          content: (
+            <ul className="space-y-[3vw] md:space-y-[8.5px]">
+              {contactItems.map((item) => (
+                <ContactItem key={item.text} {...item} />
+              ))}
+            </ul>
+          ),
+        },
+      ],
     },
   ];
 
@@ -126,94 +140,106 @@ const Footer = memo(() => {
       {/* CTA Section */}
       <div
         className="
-                absolute
-                md:top-[4vw] top-0 left-0 right-0
-                flex flex-col
-                md:w-[80vw] w-[90vw]
-                md:h-auto h-[80vw]
-                bg-cover bg-center bg-no-repeat
-                mx-auto
-                md:mb-[4vw] mb-0
-                text-white text-[0.8vw]
-                font-normal
-                md:rounded-[20px] rounded-[2vw]
-                overflow-hidden
-                md:bg-[url('https://cdn.jsdelivr.net/gh/gochuicod/ShipX@ffab8ad2ad6bf54f2ed5c615722bff70ee96f7ef/src/assets/shipment_tracker_cta_image.webp')]
-                bg-[url('https://cdn.jsdelivr.net/gh/gochuicod/ShipX@281b9212a310690d195ec2f7ac6057b96436d583/src/assets/shipment_tracker_cta_image_mobile.svg')]
-                md:shadow-[0.2vw_0.2vw_0.2vw_rgba(0,0,0,0.3)] shadow-[0_0_1vw_rgba(0,0,0,0.8)]
-            "
+          absolute
+          lg:top-[5vw] md:top-[-8vw] top-0 left-0 right-0
+          mx-auto
+          lg:w-[80vw] md:w-[92vw] w-[90vw]
+          md:h-fit h-[80vw]
+          rounded-3xl
+          flex flex-col
+          bg-linear-to-b
+          from-[#4F378A]
+          to-[#66005C]
+        "
         style={{
           fontFamily: "Inter, system-ui, -apple-system, sans-serif",
         }}
       >
+        {/* Glow blobs */}
+        <div className="absolute w-[256px] h-64 bg-[#FF00E5]/20 blur-3xl rounded-full top-1 left-0" />
+
+        {/* Content */}
         <div
           className={`
+            relative
             flex flex-col
-            md:gap-y-0 gap-y-[3vw]
-            ${
-              i18n.language === "vn"
-                ? "md:w-[45vw] w-full"
-                : "md:w-[40vw] w-full"
-            }
-            md:ps-[8vw] ps-[10vw]
-            md:pe-0 pe-[10vw]
-            md:py-[5vw] py-[10vw]
+            md:items-start items-center
+            md:h-auto h-[80vw]
+            justify-end
+            gap-y-[3vw] md:gap-y-0
+            ${i18n.language === "vn" ? "lg:w-full md:w-[45vw]" : "lg:w-full md:w-full"}
+            lg:px-16 lg:py-9 md:p-8.5 p-7
+            text-white
           `}
         >
-          <span className={cn(themeGuide.ctaHeading, "")}>
+          <span
+            className={cn(
+              themeGuide.ctaHeading,
+              "md:text-start text-center md:w-auto w-[70%]",
+            )}
+          >
             {t("shipment_tracker.shipment_cta_section.title")}
           </span>
+
           <span
             className={cn(
               themeGuide.ctaDescription,
-              "shadow-[#0000001A] w-full md:mt-2.5 md: mb-[30px]",
+              "opacity-90 font-light lg:w-[50%] md:w-[50%] md:pt-2 pt-0 md:text-start text-center",
             )}
           >
             {t("shipment_tracker.shipment_cta_section.description")}
           </span>
-          <div
-            className="
-              flex flex-row
-              md:gap-x-[1vw] gap-x-[3vw]
-              md:text-[0.8vw] text-[2.6vw]
-              md:justify-start justify-center
-              md:items-center items-center
-            "
-          >
-            <div className="flex flex-col relative overflow-hidden md:p-[0.10vw] p-[0.5vw]">
-              <SmartNavLink to="/book-a-demo" end>
-                <button type="button" className={themeGuide.buttonFooterCTA}>
-                  {t("footer.book_a_demo")}
-                </button>
-              </SmartNavLink>
-            </div>
-            <SmartNavLink to="/#contact-us" end>
-              <button type="button" className={themeGuide.buttonFooterCTA}>
-                {t("footer.contact_us")}
-              </button>
-            </SmartNavLink>
+
+          <div className="flex flex-row gap-x-[3vw] md:gap-x-[1vw] mt-4">
+            <AppButton
+              to="/book-a-demo"
+              text={t("header.book_a_demo") || "Book a Demo"}
+              withLeftIcon={true}
+              leftIcon={<CalendarDays className="size-5" />}
+            />
+
+            <AppButton
+              to="/#contact-us"
+              text={t("header.contact_us") || "Contact Us"}
+              variant="secondary"
+              withLeftIcon={true}
+              leftIcon={<CalendarDays className="size-5" />}
+            />
           </div>
+          {/* Footer CTA Image */}
+          <img
+            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/footer/footer_cta_image.webp"
+            alt=""
+            className="
+              lg:w-auto md:w-[50%]
+              h-auto
+              absolute
+              lg:top-[-9.5vw] md:top-0 top-[-26vw]
+              md:right-[-5vw] right-0
+              justify-end
+            "
+          />
         </div>
       </div>
       <footer
-        className="bg-[#F3F4F6] w-full pt-[30vw] pb-[4vw] px-[5vw] md:pt-[10vw] md:pb-[2vw] md:px-[10vw]"
+        className="bg-[#F3F4F6] w-full pt-[30vw] pb-[4vw] px-[5vw] md:pt-[10vw] md:pb-[2vw] md:px-[5vw] lg:px-[10vw]"
         style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
       >
         {/* --- TOP SECTION --- */}
-        <div className="flex flex-col md:flex-row justify-normal items-start gap-[3vw] md:gap-0">
+        <div className="flex flex-col lg:items-start md:items-center md:flex-col lg:flex-row gap-[3vw] md:gap-0">
           {/* LEFT COLUMN: Brand Identity */}
-          <div className="flex flex-col w-full md:w-[40%] md:mb-[0.5vw] mb-[3.5vw]">
+          <div className="flex flex-col lg:justify-start lg:items-start justify-center items-center w-full lg:w-[37%] md:w-full md:mb-[0.5vw] mb-[3.5vw]">
             {/* Logos */}
-            <div className="flex md:justify-start justify-center items-center gap-[3vw] md:gap-[1vw] md:mb-0 mb-[2vw]">
+            <div className="flex flex-row items-center gap-[3vw] md:gap-[1vw] md:mb-0 mb-[2vw]">
               <img
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/shipx_logo.svg"
                 alt="ShipX Logo"
-                className="h-[12vw] md:h-[3vw] w-auto object-contain"
+                className="h-12 w-auto object-contain"
               />
               <img
                 src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo_sglink_amilo.svg"
                 alt="Powered by SGLink & Amilo"
-                className="h-[8vw] md:h-[2vw] w-auto object-contain"
+                className="h-8 w-auto object-contain"
               />
             </div>
 
@@ -221,7 +247,7 @@ const Footer = memo(() => {
             <h2
               className={cn(
                 themeGuide.footerTagline,
-                "md:mb-[1vw] mb-[4vw] md:text-start text-center",
+                "md:mb-[1vw] mb-[4vw] lg:text-start md:text-center text-center",
               )}
               style={{
                 fontFamily: "Karla, system-ui, -apple-system, sans-serif",
@@ -234,7 +260,7 @@ const Footer = memo(() => {
             <p
               className={cn(
                 themeGuide.footerBody,
-                "md:text-start text-center md:w-[85%]",
+                "lg:text-start md:text-center text-center md:w-[65%] lg:w-[85%] lg:mt-0 md:mt-2",
               )}
             >
               {t("footer.description_1")} {t("footer.description_2")}
@@ -242,30 +268,54 @@ const Footer = memo(() => {
           </div>
 
           {/* RIGHT COLUMN: Link Cards Container */}
-          <div className="w-full lg:w-[70%] grid grid-cols-1 md:grid-cols-4 gap-[4vw] md:gap-4">
+          <div
+            className="
+              w-full lg:w-[70%] md:w-[90%]
+              grid grid-cols-1
+              md:grid-cols-3
+              lg:grid-cols-4
+              gap-[4vw] md:gap-4
+              auto-rows-min
+              lg:my-0 md:my-6
+            "
+          >
             {footerColumnData.map((col) => {
               if (col.isGroup) {
                 return (
-                  <div key={col.id} className={col.className}>
-                    {col.items.map((item) => (
-                      <FooterColumn key={item.id} title={item.title}>
+                  <div
+                    key={col.id}
+                    className={cn(col.className, "gap-[4vw] md:gap-4")}
+                  >
+                    {col.items.map((item, index) => (
+                      <FooterColumn
+                        key={item.id}
+                        title={item.title}
+                        className={cn(
+                          // If it's the Legal/Contact group...
+                          col.id === "legalAndContact" && index === 0
+                            ? "lg:col-start-3"
+                            : "lg:col-start-4",
+                        )}
+                      >
                         {item.content}
                       </FooterColumn>
                     ))}
                   </div>
                 );
               }
+
+              // Quick Links
               return (
-                <FooterColumn key={col.id} title={col.title}>
-                  {col.content}
-                </FooterColumn>
+                <div key={col.id} className="md:col-start-1 lg:col-start-1">
+                  <FooterColumn title={col.title}>{col.content}</FooterColumn>
+                </div>
               );
             })}
           </div>
         </div>
 
         {/* --- BOTTOM SECTION --- */}
-        <div className="mt-[4vw] md:mt-4 flex flex-col md:flex-row justify-between items-center text-dark-neutral font-medium text-[3vw] md:text-base pt-[4vw] md:pt-0">
+        <div className="mt-[4vw] md:mt-4 flex flex-col md:flex-row justify-between items-center text-dark-neutral font-normal text-[3vw] md:text-base pt-[4vw] md:pt-0">
           <div className="flex flex-row gap-x-[1vw]">
             <SmartNavLink to="terms-and-conditions" end>
               <span>{t("footer.terms_and_conditions")}</span>

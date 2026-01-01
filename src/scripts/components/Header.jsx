@@ -73,7 +73,7 @@ const Header = memo(() => {
       label: t("header.resources"),
       items: [
         {
-          to: "/blog",
+          to: "/blogs",
           label: t("header.blogs"),
           icon: (
             <svg

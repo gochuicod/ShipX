@@ -20,7 +20,7 @@ export const searchBarOuterVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 // 2. Updated: The Inner White Input Box
@@ -42,7 +42,7 @@ export const searchBarVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 export const searchInputVariants = cva(
@@ -58,7 +58,7 @@ export const searchInputVariants = cva(
     defaultVariants: {
       size: "default",
     },
-  }
+  },
 );
 
 // 3. Updated: The Purple Submit Button
@@ -82,5 +82,5 @@ export const searchButtonVariants = cva(
       type: "submit",
       size: "default",
     },
-  }
+  },
 );

@@ -111,6 +111,7 @@ const ContactUsNew = () => {
     >
       <div
         className={`mx-auto relative ${themeGuide.paddingX} flex flex-col justify-center items-center`}
+        id="contact-us"
       >
         {/* Header Section */}
         <div className="flex flex-col justify-center items-center mb-12">

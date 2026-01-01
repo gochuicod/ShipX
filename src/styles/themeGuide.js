@@ -21,8 +21,9 @@ export const themeGuide = {
     "placeholder:text-placeholder text-placeholder italic text-base placeholder:italic md:text-sm",
 
   // Call to Action (CTA)
-  ctaHeading: "text-[40px] font-semibold tracking-tight leading-none",
-  ctaDescription: "text-lg leading-tight",
+  ctaHeading:
+    "lg:text-[40px] md:text-3xl text-2xl font-semibold tracking-tight leading-none",
+  ctaDescription: "lg:text-lg md:text-md text-sm leading-tight",
 
   // Header
   headerTagline: "text-base text-dark-neutral font-normal",
@@ -31,7 +32,7 @@ export const themeGuide = {
 
   // Footer
   footerTagline: "text-lg font-bold leading-tight text-dark-neutral",
-  footerBody: "text-sm leading-none font-normal text-dark-neutral",
+  footerBody: "text-sm leading-sm font-normal text-dark-neutral",
   footerHeading: "text-base font-bold text-secondary",
   footerItem: "text-sm text-medium-neutral hover:text-foreground leading-none",
   footerIcon: "w-5 h-5",

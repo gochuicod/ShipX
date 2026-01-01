@@ -2,7 +2,7 @@ import { cva } from "class-variance-authority";
 
 export const heroVariants = cva(
   // Base styles applied to all variants
-  "relative w-full bg-[#F7F7F7] overflow-hidden", 
+  "relative w-full bg-[#F7F7F7] overflow-hidden",
   {
     variants: {
       // Variant: Controls the height/size of the hero section
@@ -23,5 +23,5 @@ export const heroVariants = cva(
       size: "default",
       align: "center",
     },
-  }
+  },
 );
