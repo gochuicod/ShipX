@@ -1,10 +1,8 @@
 import { ChevronDown } from "lucide-react";
-import BlogFilterPill from "./BlogFilterPill";
+import FilterPill from "./FilterPill";
 
-// --- Mobile Dropdown Component ---
 const MobileFilterDropdown = ({ options, activeId, onChange }) => {
   return (
-    // Container aligned to the right to match the screenshot reference
     <div className="w-full flex justify-end">
       <div className="relative inline-block">
         <select
@@ -30,10 +28,6 @@ const MobileFilterDropdown = ({ options, activeId, onChange }) => {
             cursor-pointer
           `}
         >
-          {/* Optional: If you want the label "Filter by category" to appear 
-            when "All" is selected or as a placeholder, you can handle logic here.
-            Otherwise, it maps the options as before.
-          */}
           {options.map((opt) => (
             <option key={opt.id} value={opt.id}>
               {opt.label}
@@ -41,7 +35,6 @@ const MobileFilterDropdown = ({ options, activeId, onChange }) => {
           ))}
         </select>
 
-        {/* Custom Arrow Icon - Updated Color & Size */}
         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-[8px] text-[#4F378A]">
           <ChevronDown size={15} />
         </div>
@@ -51,11 +44,7 @@ const MobileFilterDropdown = ({ options, activeId, onChange }) => {
 };
 
 // --- Main Responsive Wrapper ---
-const BlogResponsiveFilterBar = ({
-  filters,
-  activeFilterId,
-  onFilterChange,
-}) => {
+const ResponsiveFilterBar = ({ filters, activeFilterId, onFilterChange }) => {
   return (
     <div className="w-full flex justify-center">
       {/* MOBILE: Show Dropdown */}
@@ -70,7 +59,7 @@ const BlogResponsiveFilterBar = ({
       {/* DESKTOP: Show Pills with Flex Wrap Layout */}
       <div className="hidden md:flex flex-row flex-wrap justify-center items-center content-center gap-4 w-full">
         {filters.map((filter) => (
-          <BlogFilterPill
+          <FilterPill
             key={filter.id}
             label={filter.label}
             count={filter.count}
@@ -83,4 +72,4 @@ const BlogResponsiveFilterBar = ({
   );
 };
 
-export default BlogResponsiveFilterBar;
+export default ResponsiveFilterBar;

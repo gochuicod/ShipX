@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import SEO from "../../ui/SEO";
-import BlogResponsiveFilterBar from "./BlogResponsiveFilterBar";
+import ResponsiveFilterBar from "../../library/ResponsiveFilterBar";
 import BlogCard from "../../library/BlogCard";
 import SmartNavLink from "../../ui/SmartNavLink";
 import SubPageHero from "../../library/SubPageHero";
@@ -82,7 +82,7 @@ const BlogPage = () => {
         ogImage={t("seo.blog_page.ogImage")}
       />
 
-      <div className="w-full bg-white font-sans flex flex-col items-center">
+      <div className="w-full bg-white font-sans flex flex-col items-center mb-20">
         {/* --- Hero Banner --- */}
         <SubPageHero
           src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/blogs/hero/blogs_hero_desktop.webp"
@@ -139,7 +139,7 @@ const BlogPage = () => {
               <span className="md:hidden">Filter by:</span>
               <span className="hidden md:inline">Select a Category</span>
             </h3>
-            <BlogResponsiveFilterBar
+            <ResponsiveFilterBar
               filters={categories}
               activeFilterId={activeCategoryId}
               onFilterChange={setActiveCategoryId}

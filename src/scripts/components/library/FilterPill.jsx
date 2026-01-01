@@ -1,6 +1,6 @@
-import AppButton from "../../library/AppButton";
+import AppButton from "./AppButton";
 
-const BlogFilterPill = ({ label, count, isActive, onClick }) => {
+const FilterPill = ({ label, count, isActive, onClick }) => {
   return (
     <AppButton
       text={`${label} ${count !== null && count !== undefined ? `(${count})` : ""}`}
@@ -11,4 +11,4 @@ const BlogFilterPill = ({ label, count, isActive, onClick }) => {
   );
 };
 
-export default BlogFilterPill;
+export default FilterPill;

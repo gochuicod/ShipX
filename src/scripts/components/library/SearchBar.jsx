@@ -11,11 +11,11 @@ const SearchBar = ({
   value = "",
   onChange,
   onClear,
-  placeholder = "Enter tracking number...", // Updated default placeholder
+  placeholder = "Enter tracking number...", 
   variant = "default",
   size = "default",
-  submitLabel = "Search", // New prop for button text
-  submitIcon, // Backwards compatibility if you pass an icon
+  submitLabel = "Search", 
+  submitIcon, 
   showClearButton = true,
   className,
   inputClassName,
