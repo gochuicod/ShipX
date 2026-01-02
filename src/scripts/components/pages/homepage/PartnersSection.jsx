@@ -47,11 +47,11 @@ export default function PartnersSection() {
           />
           <Description
             className="
-                          md:text-base text-sm
-                          2xl:text-end text-center
-                          mb-4
-                          2xl:w-auto md:w-[80%] w-full
-                      "
+              md:text-base text-sm
+              2xl:text-end text-center
+              mb-4
+              2xl:w-auto md:w-[80%] w-full
+            "
           >
             We've built a unified network of leading marketplaces, logistics
             carriers, and technology providers to ensure your business thrives

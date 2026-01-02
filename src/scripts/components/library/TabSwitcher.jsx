@@ -1,6 +1,8 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { cn } from "../../../lib/util";
 import { Button } from "../../../styles/button";
+import { themeGuide } from "../../../styles/themeGuide";
+import theme from "@material-tailwind/react/theme";
 
 export default function TabSwitcher({
   tabs,
@@ -48,13 +50,13 @@ export default function TabSwitcher({
                 isActive && activeTabBg ? activeTabBg : undefined,
             }}
             className={cn(
+              themeGuide.toolsHeroDescription,
               "flex-1 h-9 px-4 py-2 gap-2 rounded-lg transition-all duration-200 cursor-pointer",
-              "flex items-center justify-center font-['Inter'] text-[16px] leading-5",
+              "flex items-center justify-center",
               "max-md:flex-col max-md:flex-none max-md:w-[100px] max-md:h-[87px]",
-              "max-md:text-[14px] max-md:leading-[18px]",
             )}
           >
-            <span className="flex items-center justify-center w-[24px] h-[24px] flex-shrink-0">
+            <span className="flex items-center justify-center w-6 h-6 shrink-0">
               {tab.icon}
             </span>
             <span

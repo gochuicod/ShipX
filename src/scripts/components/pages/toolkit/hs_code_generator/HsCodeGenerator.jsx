@@ -1,10 +1,12 @@
 import { useTranslation } from "react-i18next";
-import Badge from "../shipment_tracker/Badge";
+import { Badge } from "../../../../../styles/badge";
 import HsCodeGeneratorForm from "./HsCodeGeneratorForm";
 import HsCodeGeneratorResult from "./HsCodeGeneratorResult";
 import ToolsHeroSection from "../../../library/ToolsHeroSection";
 import { useHsCode } from "../../../../hooks/useHsCode";
 import SEO from "../../../ui/SEO";
+import { cn } from "../../../../utils";
+import { themeGuide } from "../../../../../styles/themeGuide";
 
 export default function HsCodeGenerator() {
   const { hsCodeResult } = useHsCode();
@@ -24,45 +26,35 @@ export default function HsCodeGenerator() {
 
         {/* Your HS Code AI Finder section */}
         <div
-          className="
-                      flex md:flex-row flex-col
-                      gap-x-[2vw]
-                      justify-center items-center
-                      md:mt-[5vw] mt-[8vw]
-                      md:px-0 px-[10vw]
-                  "
+          className={cn(
+            themeGuide.paddingX,
+            "flex lg:flex-row flex-col gap-x-8 justify-center items-center mt-16",
+          )}
         >
+          {/* Heading and badge */}
           <div
             className="
-                          flex flex-col
-                          justify-center
-                          md:items-end items-center
-                          md:w-[27vw]
-                          md:gap-y-0 gap-y-[2vw]
-                          md:mb-0 mb-[2vw]
-                      "
-            style={{
-              fontFamily: "Inter, system-ui, -apple-system, sans-serif",
-            }}
+              flex flex-col
+              justify-center
+              lg:items-end items-center
+              lg:w-[497px] md:w-full
+              md:gap-y-0 gap-y-[2vw]
+              md:mb-0 mb-[2vw]
+              font-['Inter']
+            "
           >
-            <Badge
-              className="md:text-[0.8vw] text-[2.5vw]"
-              badge_text={t("shipment_tracker.track_order_section.badge_text")}
-              text_color="#FF00E5"
-              bg_color="#F3F1FF"
-            />
+            <Badge variant="toolkit" size="default">
+              {t("shipment_tracker.track_order_section.badge_text")}
+            </Badge>
             <h2
-              className={`
-                md:text-[2.5vw] text-[6vw]
-                text-[#1E2939]
-                font-bold
-                ${
-                  (i18n.language === "vn" ||
-                    i18n.language === "ind" ||
-                    i18n.language === "thai") &&
-                  "text-end"
-                }
-              `}
+              className={cn(
+                themeGuide.sectionHeading,
+                (i18n.language === "vn" ||
+                  i18n.language === "ind" ||
+                  i18n.language === "thai") &&
+                  "text-end",
+                "lg:mt-0 md:mt-2",
+              )}
             >
               {t("hs_code_generator_page.title_section.title_1")}&nbsp;
               <span className="text-[#FF00E5]">
@@ -70,15 +62,14 @@ export default function HsCodeGenerator() {
               </span>
             </h2>
           </div>
+          {/* Description */}
           <p
-            className="
-                          text-[#63666D]/75
-                          md:text-[0.9vw] text-[3.5vw]
-                          md:text-start text-center
-                          font-medium
-                          leading-[1.4]
-                          md:w-[30vw]
-                      "
+            className={cn(
+              themeGuide.sectionDescription,
+              "lg:w-[480px] md:w-full",
+              "lg:text-start text-center",
+              "lg:mt-0 mt-6",
+            )}
           >
             {t("hs_code_generator_page.title_section.description")}
           </p>

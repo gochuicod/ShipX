@@ -67,9 +67,8 @@ export default function HsCodeGeneratorResult() {
                     md:px-[3vw] px-[5vw]
                     md:py-[2vw] py-[5vw]
                     mx-auto
-                    bg-white
+                    bg-linear-to-br from-[#FFE6FF]/5 to-[#AA00FF]/10
                     md:rounded-[1vw] rounded-[3vw]
-                    shadow-[0_0_5vw_rgba(255,0,229,0.10)]
                 "
       >
         <div className="flex flex-col gap-y-[1.5vw]">

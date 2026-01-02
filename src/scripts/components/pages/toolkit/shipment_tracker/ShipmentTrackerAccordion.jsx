@@ -11,6 +11,8 @@ import {
 } from "./StatusMap";
 import Stepper from "./Stepper";
 import { useTranslation } from "react-i18next";
+import { AlertCircle } from "lucide-react"; // Import for the bottom notice
+import { cn } from "../../../../../lib/util";
 
 const STATUS_COLORS = {
   SUCCESS: "text-[#008236]",
@@ -18,59 +20,16 @@ const STATUS_COLORS = {
   DEFAULT: "text-[#1A1A1A]",
 };
 
-const WARNING_STATUSES = new Set([
-  "CREATING_FAILED",
-  "SHIPMENT_DELIVERY_UNSUCCESSFUL",
-  "SHIPMENT_RETUNRED_FROM_OVERSEAS",
-  "SHIPMERNT_RETURNED_TO_SENDER",
-  "SHIPMENT_DAMAGED",
-  "SHIPMENT_LOST",
-  "SHIPMENT_FAILED_ATTEMPT",
-  "SHIPMENT_HOLD_BY_CUSTOMS_AT_DESTINATION",
-  "SHIPMENT_HOLD_AT_POINT_OF_DELIVERY",
-  "HOLD_FOR_PAYMENT",
-]);
-
-const LatestStatusInfo = ({
-  isHidden,
-  statusLabel,
-  statusColor,
-  formattedDate,
-}) => {
-  const { t } = useTranslation();
-
-  if (isHidden) {
-    return null;
-  }
-
-  return (
-    <div className="flex flex-col">
-      <span className="text-[#4D4D4D] md:text-[#1A1A1A] md:text-[0.8vw] text-[3vw] font-bold">
-        {t(
-          "shipment_tracker.shipment_activity_section.accordion_body.latest_status_text",
-        )}
-      </span>
-      <span className={`${statusColor} md:text-[1vw] text-[3.5vw] font-bold`}>
-        {statusLabel}
-      </span>
-      {formattedDate && (
-        <span className="text-[#63666D]/90 md:text-[0.65vw] text-[2.3vw] font-normal">
-          {formattedDate}
-        </span>
-      )}
-    </div>
-  );
-};
-
-export default function ShipmentTrackerAccordion({
+const ShipmentTrackerAccordion = ({
   shipmentData = [],
   trackingNumber = "SGL2510001808",
   latestStatusHidden = false,
-}) {
-  const handleOpen = (value) => setOpen(open === value ? 0 : value);
+}) => {
   const [open, setOpen] = useState(1);
   const { t } = useTranslation();
   const { statuses } = shipmentData;
+
+  const handleOpen = (value) => setOpen(open === value ? 0 : value);
 
   const { steps, lastStatusLabel, statusColor, formattedDate } = useMemo(() => {
     if (!statuses || statuses.length === 0) {
@@ -85,15 +44,11 @@ export default function ShipmentTrackerAccordion({
     const sorted = [...statuses].sort(
       (a, b) => new Date(b.updatedDate) - new Date(a.updatedDate),
     );
-    const latestStatus = sorted[0];
-    const latestStatusCode = latestStatus?.statusCode;
+    const latestStatusCode = sorted[0]?.statusCode;
 
     let color = STATUS_COLORS.DEFAULT;
-    if (latestStatusCode === "SHIPMENT_DELIVERED") {
+    if (latestStatusCode === "SHIPMENT_DELIVERED")
       color = STATUS_COLORS.SUCCESS;
-    } else if (WARNING_STATUSES.has(latestStatusCode)) {
-      color = STATUS_COLORS.WARNING;
-    }
 
     return {
       steps: mapStatuses(statuses, t),
@@ -104,133 +59,60 @@ export default function ShipmentTrackerAccordion({
   }, [statuses, t]);
 
   return (
-    <>
-      {/* Shipment information section */}
-      <div
-        className="
-                    flex
-                    justify-center items-center
-                    md:w-[32vw] w-[90vw]
-                    mx-auto
-                "
-        style={{
-          fontFamily: "Inter, system-ui, -apple-system, sans-serif",
-        }}
+    <div className="flex justify-center items-center md:w-[530px] w-[90vw] mx-auto">
+      <Accordion
+        open={open === 1}
+        className={cn(
+          "border-none overflow-hidden",
+          "bg-linear-to-br from-[#FFE6FF]/5 to-[#AA00FF]/5",
+          "backdrop-blur-md opacity-90 rounded-[20px]",
+        )}
       >
-        <Accordion
-          className="
-            md:rounded-[1vw] rounded-[3vw]
-            shadow-[0_0_5vw_rgba(255,0,229,0.10)]
-            border border-[#C9C4D3]/90
-          "
-          open={open === 1}
+        <AccordionHeader
+          onClick={() => handleOpen(1)}
+          className="border-none flex flex-col items-start p-6 md:p-8 md:pb-4 gap-1"
         >
-          <AccordionHeader
-            className={`
-              flex flex-row gap-x-0
-              justify-between items-center
-              ${open ? "md:rounded-t-[1vw] rounded-t-[3vw]" : "md:rounded-[1vw] rounded-[3vw]"}
-              cursor-pointer border-0
-              bg-[#F6F3FF]
-              md:px-[1.5vw] px-[4vw]
-              md:py-[1vw] py-[2.5vw]
-            `}
-            onClick={() => handleOpen(1)}
-          >
-            <div className="flex flex-col gap-y-0">
-              <span
-                className="
-                  text-[#4D4D4D] md:text-[#1A1A1A]
-                  md:text-[0.8vw] text-[2.3vw]
-                  font-bold
-                "
-              >
-                {t(
-                  "shipment_tracker.shipment_activity_section.accordion_header.tracking_number_label",
-                )}
-                :
-              </span>
-              <span
-                className="
-                  text-[#FF00E5]
-                  md:text-[1.5vw] text-[4.5vw]
-                  font-semibold
-                "
-              >
-                {trackingNumber || "SGL2510001808"}
-              </span>
-            </div>
-          </AccordionHeader>
-          <AccordionBody
-            className="
-              flex flex-col
-              md:px-[1.5vw] px-[4vw]
-              md:py-[1vw] py-[5vw]
-            "
-          >
-            <LatestStatusInfo
-              isHidden={latestStatusHidden}
-              statusLabel={lastStatusLabel}
-              statusColor={statusColor}
-              formattedDate={formattedDate}
-            />
-            <span
-              className={`
-              text-[#4D4D4D] md:text-[#1A1A1A]
-                md:text-[0.8vw] text-[3vw]
-                font-bold
-                md:mb-[1.5vw] mb-[1.5vw]
-                ${
-                  latestStatusHidden === true
-                    ? "md:mt-0 mt-0"
-                    : "md:mt-[1vw] mt-[2vw]"
-                }
-              `}
-              style={{
-                fontFamily: "Inter, system-ui, -apple-system, sans-serif",
-              }}
-            >
+          <span className="text-[#1A1A1A] font-semibold text-[16px] leading-5">
+            {t(
+              "shipment_tracker.shipment_activity_section.accordion_header.tracking_number_label",
+            )}
+            :
+          </span>
+          <span className="text-[#FF00E5] font-semibold md:text-[32px] text-[28px] leading-tight tracking-tight">
+            {trackingNumber}
+          </span>
+        </AccordionHeader>
+
+        <AccordionBody className="p-0 flex flex-col">
+          {/* Activity Log Label Container */}
+          <div className="px-6 md:px-8 pb-2">
+            <span className="text-[#1A1A1A] font-semibold text-[16px] leading-5">
               {t(
                 "shipment_tracker.shipment_activity_section.accordion_header.shipment_activity_log_label",
               )}
             </span>
+          </div>
 
+          {/* Stepper Logic Container */}
+          <div className="px-6 md:px-8 py-2">
             <Stepper statuses={!shipmentData?.errors ? steps : []} />
-            <div
-              className="
-                flex flex-row
-                md:gap-x-[0.25vw] gap-x-[0.5vw]
-                justify-center items-center
-                md:mt-[1vw] mt-[3vw]
-              "
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                className="md:size-[1.2vw] size-[4vw] stroke-[2px] stroke-[#FF00E5]"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
-                />
-              </svg>
-              <p
-                className="
-                  text-[#4D4D4D]/90
-                  md:text-[0.7vw] text-[2.5vw]
-                  font-normal
-                "
-              >
+          </div>
+
+          {/* Local Time Notice - Based on Frame 1618873300 */}
+          <div className="flex flex-row items-center justify-center gap-2 p-4 md:p-6">
+            <div className="flex flex-row items-center gap-2 px-4 py-1 rounded-lg">
+              <AlertCircle size={20} className="text-[#FF00E5] shrink-0" />
+              <p className="text-[#4D525C] text-[14px] leading-tight font-normal">
                 {t(
                   "shipment_tracker.shipment_activity_section.accordion_body.local_time_notice",
                 )}
               </p>
             </div>
-          </AccordionBody>
-        </Accordion>
-      </div>
-    </>
+          </div>
+        </AccordionBody>
+      </Accordion>
+    </div>
   );
-}
+};
+
+export default ShipmentTrackerAccordion;

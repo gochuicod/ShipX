@@ -26,30 +26,22 @@ const ToolsHeroSection = ({ activePage }) => {
         {/* Left/Top Content Frame - Removed max-w-[608px] to fit entire width */}
         <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left gap-6 grow w-full">
           {/* Heading Stack */}
-          <div className="flex flex-col items-center lg:items-start gap-2 w-full">
-            <h3
-              className="
-              font-['Inter'] font-semibold text-white tracking-[-1px]
-              lg:text-[40px] lg:line-height-[48px]
-              text-[32px] line-height-[40px]
-            "
-            >
+          <div className="flex flex-col items-center md:items-start gap-2 w-full">
+            <h3 className={themeGuide.toolsHeroTitle}>
               {t("shipment_tracker.hero_section.title")}
             </h3>
             <p
-              className="
-              font-['Inter'] font-normal text-white
-              lg:text-[16px] lg:line-height-[20px]
-              text-[14px] line-height-[18px]
-              opacity-90 max-w-[608px]
-            "
+              className={cn(
+                themeGuide.toolsHeroDescription,
+                "md:text-start text-center lg:max-w-[608px] md:max-w-[420px]",
+              )}
             >
               {t("shipment_tracker.hero_section.description")}
             </p>
           </div>
 
           {/* Tab Switcher Integrated */}
-          <div className="flex justify-center lg:justify-start w-full">
+          <div className="flex justify-center md:justify-start w-full">
             <TabSwitcher
               tabs={TOOLKIT_TABS}
               activeTab={activePage}
@@ -60,16 +52,23 @@ const ToolsHeroSection = ({ activePage }) => {
           </div>
         </div>
 
-        {/* Background Visuals - Designed for absolute positioning */}
-        <div className="hidden md:block absolute right-[15vw] top-[7.5vw] -translate-y-1/2 -z-20 pointer-events-none">
+        {/* Background Visuals */}
+        <div className="hidden md:block absolute lg:right-[15vw] md:right-0 lg:top-[7.5vw] md:top-[13vw] -translate-y-1/2 -z-20 pointer-events-none">
           {/* Pink Glow Gradient */}
           <div className="absolute lg:left-0 lg:top-[-15vw] w-[800px] h-[800px] bg-[#FF00E5] opacity-20 blur-3xl rounded-full" />
 
-          {/* 3D Illustration Container */}
+          {/* Desktop Image */}
           <img
             src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/tools_page/toolkit_hero_section_image_desktop.webp"
             alt="Logistic Tools"
-            className="relative w-full h-full object-contain scale-90"
+            className="hidden lg:block relative w-full h-full object-contain scale-90"
+          />
+
+          {/* Tablet (md) Image */}
+          <img
+            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/tools_page/toolkit_hero_section_image_mobile.webp"
+            alt="Logistic Tools"
+            className="block lg:hidden relative w-full h-full object-contain scale-110"
           />
         </div>
       </div>

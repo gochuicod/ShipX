@@ -48,4 +48,23 @@ export const themeGuide = {
 
   badge:
     "text-secondary flex items-center gap-1 rounded-md px-4 py-2 text-sm font-bold w-fit bg-[var(--badge-bg)] text-[var(--badge-text)]",
+
+  // Shipment Tracker
+  toolsHeroTitle:
+    "font-['Inter'] font-semibold text-white tracking-[-1px] lg:text-[40px] text-[32px]",
+  toolsHeroDescription:
+    "font-['Inter'] font-normal text-white md:text-[16px] text-[14px] opacity-90",
+
+  // Section Introduction
+  sectionHeading: "lg:text-[32px] text-[28px] font-bold text-[#1E2939]",
+  sectionDescription:
+    "md:text-[16px] text-[14px] font-normal text-[#63666D]/75",
+
+  // Input labels
+  inputLabel:
+    "font-['Inter'] md:text-[16px] text-[14px] font-semibold text-[#1E2939]",
+  inputLabelNote:
+    "font-['Inter'] md:text-[16px] text-[14px] font-normal text-[#4D525C]/90",
+  inputPlaceholder:
+    "font-['Inter'] md:text-[16px] text-[14px] font-normal text-[#99A1AF]",
 };

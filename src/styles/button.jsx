@@ -7,8 +7,8 @@ const buttonVariants = cva(
     // Layout & Flexbox
     "inline-flex items-center justify-center gap-2 whitespace-nowrap shrink-0",
 
-    // Typography & Appearance
-    "rounded-md text-base font-normal",
+    // Appearance
+    "rounded-md font-normal",
 
     // Transitions & Base Interaction
     "transition-all outline-none",
@@ -29,7 +29,6 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-gray-200 text-foreground hover:bg-violet-300/70",
-        tabActive: "bg-primary/90 text-primary-foreground hover:bg-primary",
         tabDefault: "bg-background text-foreground hover:bg-gray-200",
         destructive:
           "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
@@ -37,11 +36,10 @@ const buttonVariants = cva(
           "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
         primary: [
           // Layout & Shape
-          "flex flex-row justify-center items-center px-4 py-2 gap-1 rounded-[8px] transition-all duration-300 cursor-pointer",
-          "h-[40px]",
+          "flex flex-row justify-center items-center gap-1 rounded-[8px] transition-all duration-300 cursor-pointer",
 
           // Typography
-          "font-['Inter'] font-normal text-base text-white",
+          "font-['Inter'] font-normal text-white",
 
           // DEFAULT STATE
           "bg-[linear-gradient(103.43deg,#4F378A_9.78%,#CC00B7_84.11%)]",
@@ -62,28 +60,24 @@ const buttonVariants = cva(
         ].join(" "),
         secondary: [
           "bg-white hover:bg-secondary-hover active:bg-secondary-active",
-          "h-[40px]",
           "border border-violet-300 active:border-secondary-active",
-          "text-primary text-base active:text-white cursor-pointer font-normal",
+          "text-primary active:text-white cursor-pointer font-normal",
           "shadow-[1px_1px_2px_rgba(0,0,0,0.3),inset_-2px_-2px_6px_rgba(167,139,250,0.3)]",
         ].join(" "),
         tertiary: [
           "bg-white hover:bg-secondary-hover active:bg-secondary-active cursor-pointer p-0",
-          "h-[40px]",
-          "text-primary text-base active:text-white cursor-pointer font-normal",
+          "text-primary active:text-white cursor-pointer font-normal",
           "shadow-[1px_1px_4px_rgba(20,0,99,0.3),inset_-1px_-1px_1px_rgba(154,4,129,0.15)]",
         ].join(" "),
         categoryInactive: [
           "bg-white hover:bg-secondary-hover active:bg-secondary-active",
-          "h-[40px]",
           "border-none",
-          "text-primary text-base active:text-white cursor-pointer font-normal text-[#1E2939]",
+          "text-primary active:text-white cursor-pointer font-normal text-[#1E2939]",
           "shadow-[1px_1px_2px_rgba(0,0,0,0.3),inset_-2px_-2px_6px_rgba(167,139,250,0.3)]",
         ].join(" "),
         categoryActive: [
           "bg-[#CC00B7] hover:bg-[#E000CA] active:bg-[#CC00B7]",
-          "h-[40px]",
-          "text-white font-bold text-base cursor-pointer",
+          "text-white font-bold cursor-pointer",
           "shadow-[1px_1px_2px_rgba(20,0,99,0.45),inset_-2px_-2px_4px_rgba(98,0,97,0.4),inset_2px_2px_2px_rgba(255,255,255,0.55),inset_-4px_-4px_25px_rgba(154,4,129,0.2)]",
           "transition-all duration-300",
         ].join(" "),
@@ -119,10 +113,10 @@ const buttonVariants = cva(
         ].join(" "),
       },
       size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
-        tab: "h-full px-4 py-2",
-        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
-        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
+        default: "text-sm md:text-base h-9 px-4 py-2.5 has-[>svg]:px-3",
+        tab: "text-sm md:text-base h-full px-4 py-2.5",
+        sm: "text-xs md:text-sm h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
+        lg: "text-base md:text-lg h-10 rounded-md px-6 has-[>svg]:px-4",
         icon: "size-9",
         "icon-sm": "size-8",
         "icon-lg": "size-10",

@@ -1,14 +1,22 @@
-import Badge from "./Badge";
 import ShipmentTrackerForm from "./ShipmentTrackerForm";
 import ShipmentTrackerAccordion from "./ShipmentTrackerAccordion";
+
+import { Badge } from "../../../../../styles/badge";
+
 import SmartNavLink from "../../../ui/SmartNavLink";
+
 import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
 import { useShipment } from "../../../../hooks/useShipment";
-import SEO from "../../../ui/SEO";
+
 import ToolsHeroSection from "../../../library/ToolsHeroSection";
+import AppButton from "../../../library/AppButton";
+
 import { useRef, useEffect } from "react";
-import Button from "../../../ui/Button";
+import SEO from "../../../ui/SEO";
+
+import { themeGuide } from "../../../../../styles/themeGuide";
+import { cn } from "../../../../../lib/util";
 
 const UI_DELAY_MS = 500;
 
@@ -18,22 +26,26 @@ const TrackOrderSection = () => {
     <div
       className="
         flex flex-col justify-center lg:items-end items-center
-        lg:w-160 md:w-180 gap-y-2 md:mb-0 mb-[8vw]
+        lg:w-160 md:w-180 md:mb-0 mb-[8vw]
       "
       style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
     >
-      <Badge
-        badge_text={t("shipment_tracker.track_order_section.badge_text")}
-        text_color="#FF00E5"
-        bg_color="#F3F1FF"
-      />
-      <h2 className="text-4xl text-[#1E2939] font-bold">
+      <Badge variant="toolkit" size="default">
+        {t("shipment_tracker.track_order_section.badge_text")}
+      </Badge>
+      <h2 className={cn(themeGuide.sectionHeading, "lg:mt-0 md:mt-2")}>
         {t("shipment_tracker.track_order_section.title.regular")}&nbsp;
         <span className="text-[#FF00E5]">
           {t("shipment_tracker.track_order_section.title.highlighted")}
         </span>
       </h2>
-      <p className="text-[#63666D]/75 md:text-base text-[3.5vw] lg:text-end text-center font-normal md:leading-[1.5vw] leading-[4vw]">
+      <p
+        className={cn(
+          themeGuide.sectionDescription,
+          "lg:text-end text-center",
+          "lg:mt-0 md:mt-6",
+        )}
+      >
         {t("shipment_tracker.track_order_section.description")}
       </p>
     </div>
@@ -87,17 +99,19 @@ const ShipmentTracker = () => {
             gap-x-8
             justify-center items-center
             md:mt-[5vw] mt-[10vw]
-            md:px-0 px-[10vw]
+            md:px-0 px-[5vw]
             md:mb-[5vw] mb-[10vw]
           "
         >
           <TrackOrderSection />
 
           {/* Shipment Form */}
-          <ShipmentTrackerForm
-            initialTrackingNumber={urlTrackingNumber}
-            autoSubmit={autoSubmit}
-          />
+          <div className="lg:mt-0 md:mt-6 mt-4">
+            <ShipmentTrackerForm
+              initialTrackingNumber={urlTrackingNumber}
+              autoSubmit={autoSubmit}
+            />
+          </div>
         </div>
 
         {/* Shipment Accordion */}
@@ -117,14 +131,13 @@ const ShipmentTracker = () => {
               />
 
               <SmartNavLink to="shipment-tracker/#" end>
-                <Button
+                <AppButton
                   onClick={handleTrackAnotherShipment}
                   className="w-fit md:mb-[5vw] mb-[10vw]"
-                >
-                  {t(
+                  text={t(
                     "shipment_tracker.shipment_activity_section.track_another_shipment_button_text",
                   )}
-                </Button>
+                />
               </SmartNavLink>
             </div>
           </div>

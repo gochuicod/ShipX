@@ -4,7 +4,7 @@ import { cn } from "../../../lib/util";
 import { isValidElement } from "react";
 
 const appButtonStyles = {
-  smartNavLink: "flex items-center justify-center gap-2 px-4 py-[8px]",
+  smartNavLink: "flex items-center justify-center gap-2",
   // The container needs a defined size to act as a frame for the "cover" image
   iconWrapper:
     "flex items-center justify-center shrink-0 overflow-hidden w-5 h-5",
@@ -13,7 +13,7 @@ const appButtonStyles = {
 };
 
 export default function AppButton({
-  size = "medium",
+  size = "default",
   style = "primary",
   text = "",
   withLeftIcon = false,

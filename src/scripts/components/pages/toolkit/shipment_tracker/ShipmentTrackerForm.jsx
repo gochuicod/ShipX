@@ -7,6 +7,7 @@ import ToolTipError from "../hs_code_generator/ToolTipError";
 import AppButton from "../../../library/AppButton";
 import { Input } from "../../../../../styles/input";
 import { cn } from "../../../../../lib/util";
+import { themeGuide } from "../../../../../styles/themeGuide";
 
 const ShipmentTrackerForm = ({ initialTrackingNumber, autoSubmit = false }) => {
   const {
@@ -68,16 +69,13 @@ const ShipmentTrackerForm = ({ initialTrackingNumber, autoSubmit = false }) => {
         className={cn(
           "flex flex-col justify-center items-start p-4 gap-2",
           "w-full h-auto min-h-[116px]",
-          "bg-[linear-gradient(135deg,rgba(255,230,255,0.05)_0%,rgba(170,0,255,0.15)_100%)]",
+          "bg-linear-to-br from-[#FFE6FF]/5 to-[#AA00FF]/5",
           "backdrop-blur-md rounded-2xl",
         )}
         style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
       >
         {/* Label positioned above the bar */}
-        <label
-          className="font-semibold text-[16px] text-[#1E2939]"
-          htmlFor="trackingNumber"
-        >
+        <label className={themeGuide.inputLabel} htmlFor="trackingNumber">
           {t("shipment_tracker.track_order_section.form.label")}
         </label>
 
@@ -96,7 +94,9 @@ const ShipmentTrackerForm = ({ initialTrackingNumber, autoSubmit = false }) => {
               id="trackingNumber"
               aria-invalid={errors.trackingNumber ? "true" : "false"}
               placeholder="Enter tracking number (e.g., SX1234567890)"
+              disableFocusRing={true}
               className={cn(
+                themeGuide.inputPlaceholder,
                 "border-none bg-transparent h-10 italic shadow-none px-0 py-0 w-full",
                 "md:min-w-[340px]", // Ensures space for long placeholder on desktop
                 errors.trackingNumber && "placeholder-red-500",
@@ -131,7 +131,6 @@ const ShipmentTrackerForm = ({ initialTrackingNumber, autoSubmit = false }) => {
                 ? t("shipment_tracker.track_order_section.form.submitting")
                 : t("shipment_tracker.track_order_section.form.submit_button")
             }
-            className="w-[151px] h-12 text-[16px] shrink-0"
           />
         </div>
       </form>
