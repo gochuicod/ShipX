@@ -25,7 +25,7 @@ export default function TabSwitcher({
   return (
     <div
       className={cn(
-        "flex flex-row items-center p-2 gap-2 w-full max-w-[572px]",
+        "flex flex-row items-center p-2 gap-2 w-fit",
         "backdrop-blur-xl rounded-xl",
         border && `border border-${borderColor}`,
         "max-md:max-w-[332px] max-md:h-[103px]",
@@ -54,7 +54,7 @@ export default function TabSwitcher({
               "max-md:text-[14px] max-md:leading-[18px]",
             )}
           >
-            <span className={isActive ? "text-white" : "text-[#FF99F5]"}>
+            <span className="flex items-center justify-center w-[24px] h-[24px] flex-shrink-0">
               {tab.icon}
             </span>
             <span
