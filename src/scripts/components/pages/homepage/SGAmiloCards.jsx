@@ -11,7 +11,7 @@ const SGAmiloCards = () => {
   return (
     <ParallaxSection>
       <div
-        className={`mx-auto relative ${themeGuide.paddingX} w-full flex md:flex-row flex-col justify-center items-stretch gap-32 md:gap-8`}
+        className={`mx-auto relative ${themeGuide.paddingX} w-full flex lg:flex-row md:flex-col flex-col justify-center items-stretch gap-32 lg:gap-8 md:gap-22`}
       >
         {/* CARD 1: ShipX / Default */}
         <AffiliateCard
