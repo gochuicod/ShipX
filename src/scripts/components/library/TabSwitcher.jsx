@@ -15,7 +15,7 @@ export default function TabSwitcher({
   const { pathname } = useLocation();
 
   const handleTabClick = (tab) => {
-    if (pathname === "/") {
+    if (pathname === "/" || pathname === "/component-library") {
       onChange?.(tab.id);
     } else {
       navigate(tab.path);

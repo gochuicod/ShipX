@@ -17,8 +17,8 @@ const TrackOrderSection = () => {
   return (
     <div
       className="
-        flex flex-col justify-center md:items-end items-center
-        md:w-[36vw] md:gap-y-2 gap-y-[2vw] md:mb-0 mb-[8vw]
+        flex flex-col justify-center lg:items-end items-center
+        lg:w-160 md:w-180 gap-y-2 md:mb-0 mb-[8vw]
       "
       style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
     >
@@ -33,7 +33,7 @@ const TrackOrderSection = () => {
           {t("shipment_tracker.track_order_section.title.highlighted")}
         </span>
       </h2>
-      <p className="text-[#63666D]/75 md:text-base text-[3.5vw] md:text-end text-center font-normal md:leading-[1.5vw] leading-[4vw]">
+      <p className="text-[#63666D]/75 md:text-base text-[3.5vw] lg:text-end text-center font-normal md:leading-[1.5vw] leading-[4vw]">
         {t("shipment_tracker.track_order_section.description")}
       </p>
     </div>

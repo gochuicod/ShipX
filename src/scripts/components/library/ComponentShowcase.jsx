@@ -7,13 +7,20 @@ import ServicesItems from "./ServicesItems";
 import IconBox from "./IconBox";
 import SubPageHero from "./SubPageHero";
 import VisualContactForm from "./VisualContactForm";
+import TabSwitcher from "./TabSwitcher";
+
+import { TOOLKIT_TABS } from "../../components/pages/homepage/ToolkitSection/tabs.config";
+
+import { cn } from "../../../lib/util";
+
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import {
   Accordion,
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
 } from "./Accordion";
-import { cn } from "../../../lib/util";
 import { Box, Truck, Globe, Mail } from "lucide-react"; // Example icons
 import { CalendarDays, CircleArrowRight } from "lucide-react";
 
@@ -29,11 +36,34 @@ const demoImage =
   "https://placehold.co/1440x350/F7F7F7/800080?text=Logistics+Hero";
 
 export default function ComponentShowcase() {
+  const { pathname } = useLocation();
+
+  const getTabFromUrl = () =>
+    TOOLKIT_TABS.find((t) => t.path === pathname)?.id || TOOLKIT_TABS[0].id;
+
+  const [activeTab, setActiveTab] = useState(getTabFromUrl());
+
+  useEffect(() => {
+    setActiveTab(getTabFromUrl());
+  }, [pathname]);
+
+  const activeTabData = TOOLKIT_TABS.find((tab) => tab.id === activeTab);
+
   return (
     <div className="py-5 px-5 bg-gray-50 font-sans">
       <h1 className="text-4xl font-bold text-center mb-10 text-gray-900">
         ShipX Component Library
       </h1>
+
+      <ComponentWrapper title="Tab Switcher">
+        <TabSwitcher
+          tabs={TOOLKIT_TABS}
+          activeTab={activeTab}
+          onChange={setActiveTab}
+          containerBg="rgba(35, 22, 111, 0.7)"
+          border={false}
+        />
+      </ComponentWrapper>
 
       <ComponentWrapper title="Logo">
         <Logo />
