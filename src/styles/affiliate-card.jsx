@@ -3,7 +3,7 @@ import { cn } from "../lib/util";
 
 // 1. The Container Style
 const cardVariants = cva(
-  "relative w-full flex flex-col h-full overflow-visible md:rounded-3xl rounded-sm shadow-sm transition-all",
+  "relative w-full flex flex-col h-fit md:h-full overflow-visible rounded-2xl md:rounded-3xl shadow-sm transition-all",
   {
     variants: {
       variant: {
@@ -13,7 +13,7 @@ const cardVariants = cva(
           "bg-gradient-to-br from-[oklch(0.9524_0.0425_325.9)]/30 to-[oklch(0.7284_0.1708_59.45)]/30",
       },
       padding: {
-        default: "p-4 md:p-10",
+        default: "p-3 md:p-10",
         compact: "p-5",
       },
     },
@@ -56,7 +56,7 @@ function AffiliateCardContent({ className, children, ...props }) {
   return (
     <div
       className={cn(
-        "relative z-20 flex flex-col gap-4 items-center text-center md:items-start md:text-left max-w-full flex-1 w-full pt-20 md:pt-0",
+        "relative z-20 flex flex-col gap-6 items-center text-center md:items-start md:text-left max-w-full flex-1 w-full pt-20 md:pt-0",
         className,
       )}
       {...props}

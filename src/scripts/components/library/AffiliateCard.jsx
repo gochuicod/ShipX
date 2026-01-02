@@ -38,7 +38,7 @@ export default function AffiliateCard({
               alt={illustration.alt || "Illustration"}
               className={
                 illustration.className ||
-                "w-48 h-48 object-contain drop-shadow-xl"
+                "w-48 h-48 md:w-48 md:h-48 object-contain drop-shadow-xl"
               }
             />
           </AffiliateCardIllustration>
@@ -50,18 +50,18 @@ export default function AffiliateCard({
               <img
                 src={logo.src}
                 alt={logo.alt || "Logo"}
-                className={logo.className || "h-8 md:h-10"}
+                className={logo.className || "h-10 md:h-10"}
               />
             </div>
           )}
 
           {/* Heading */}
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 leading-tight">
+          <h2 className="text-lg md:text-3xl font-bold text-slate-900 leading-tight line-clamp-2">
             {heading}
           </h2>
 
           {/* Subheading */}
-          <p className="text-slate-600 text-base md:text-lg leading-relaxed">
+          <p className="text-slate-600 text-sm md:text-lg leading-relaxed">
             {subheading}
           </p>
 
@@ -73,7 +73,11 @@ export default function AffiliateCard({
               </p>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {badges.map((badge, index) => (
-                  <Badge key={index} variant={badgeVariant} size="default">
+                  <Badge
+                    key={index}
+                    variant={badgeVariant}
+                    size="sm md:default"
+                  >
                     {badge.label}
                   </Badge>
                 ))}
