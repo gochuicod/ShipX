@@ -101,9 +101,10 @@ const BlogPage = () => {
             </Badge>
 
             <HighlightedHeading
-              text="The Cross-Border Logistics Hub"
-              highlight="Cross-Border"
+              text={`${pageData.title_section.title_prefix} ${pageData.title_section.title_suffix}`}
+              highlight={pageData.title_section.title_suffix}
               className="text-2xl 2xl:text-4xl font-semibold mt-2 text-center"
+              highlightClass="text-[#FF00E5]"
             />
 
             {/* Description */}
