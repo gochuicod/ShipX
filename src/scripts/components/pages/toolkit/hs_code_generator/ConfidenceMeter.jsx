@@ -36,22 +36,37 @@ const ConfidenceMeter = ({ confidence }) => {
   return (
     <div
       className="
-        bg-[#F8F7FF] md:rounded-[1vw] rounded-[3vw]
-        md:px-[1vw] px-[3vw] md:pt-[1vw] pt-[2.5vw] md:pb-[0.5vw] pb-[1vw]
+        bg-white
+        rounded-[12px]
+        px-4 pt-4 pb-2
       "
     >
+      {/* Progress Bar */}
       <div
-        className={`w-full md:h-[1.5vw] h-[6vw] rounded-full border ${info.borderClass} bg-white p-1`}
+        className={`w-full h-3 rounded-full border ${info.borderClass} bg-white`}
       >
         <div
-          className={`h-full rounded-full ${info.colorClass} transition-all duration-1000 ease-out`}
+          className={`
+            h-full
+            rounded-full
+            ${info.colorClass}
+            transition-all duration-1000 ease-out
+          `}
           style={{ width: `${percentage}%` }}
         />
       </div>
+
+      {/* Label */}
       <div
-        className={`text-center md:mt-[0.5vw] mt-[1.5vw] font-bold ${info.textClass} md:text-[1vw] text-[3vw]`}
+        className={`
+          text-center
+          mt-2
+          font-semibold
+          ${info.textClass}
+          text-sm
+        `}
       >
-        {percentage}% <span className="font-bold ml-1">{info.label}</span>
+        {percentage}%<span className="font-normal ml-1">{info.label}</span>
       </div>
     </div>
   );

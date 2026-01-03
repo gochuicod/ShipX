@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useClipboard } from "../../../../hooks/useClipboard";
+import { ChevronDown } from "lucide-react";
 
 export default function HierarchyPill({ item }) {
   const [isActive, setIsActive] = useState(false);
@@ -7,7 +8,7 @@ export default function HierarchyPill({ item }) {
 
   const handleCopyDescription = (e) => {
     e.preventDefault();
-    e.stopPropagation(); // Stop propagation so we don't trigger wrapper clicks
+    e.stopPropagation();
     copy(item.description);
   };
 
@@ -23,107 +24,97 @@ export default function HierarchyPill({ item }) {
       tabIndex={0}
       onBlur={handleBlur}
     >
-      {/* The Trigger Pill */}
+      {/* Trigger Pill */}
       <div
         onClick={() => setIsActive(!isActive)}
         className={`
-          flex flex-row
-          md:gap-x-[0.5vw] gap-x-[1.5vw]
-          items-center
-          md:rounded-[0.5vw] rounded-[1vw]
-          md:text-[0.8vw] text-[2.3vw]
+          flex items-center gap-2
+          cursor-pointer
           font-medium
-          bg-[#EFECF6]
+          text-sm
+          px-3 py-1.5
+          rounded-sm
+          transition-all duration-200
+
+          shadow-[1px_1px_4px_rgba(20,0,99,0.3),inset_-1px_-1px_1px_rgba(154,4,129,0.15)]
+
           ${
             isActive
-              ? "bg-[#E5D9F2] ring-1 ring-[#CC00B7]"
-              : "bg-[#EFECF6] hover:bg-[#E5D9F2]"
+              ? "bg-[#CC00B7] text-white"
+              : "bg-white text-[#CC00B7] hover:bg-[#FDF4FF]"
           }
-          text-[#CC00B7]
-          md:py-[0.25vw] py-[0.5vw]
-          md:px-[0.5vw] px-[2vw]
-          cursor-help
-          transition-colors hover:bg-[#E5D9F2]
         `}
       >
-        {item.code}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="1.5"
-          stroke="#CC00B7"
-          className="
-            md:w-[1vw] w-[2.5vw]
-            md:h-[1vw] h-[2.5vw]
-            md:stroke-[0.15vw] stroke-[0.5vw]
-          "
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="m4.5 15.75 7.5-7.5 7.5 7.5"
-          />
-        </svg>
+        <span>{item.code}</span>
+
+        <ChevronDown
+          color={isActive ? "currentColor" : "#CC00B7"}
+          className={`
+            w-4 h-4
+            transition-transform duration-200
+            ${isActive ? "rotate-180" : "rotate-0 group-hover:rotate-180"}
+          `}
+        />
       </div>
 
-      {/* The Hoverable Tooltip */}
+      {/* Tooltip Container */}
       <div
         className={`
-          absolute bottom-full left-1/2 -translate-x-1/2 mb-2
-          md:w-[15vw] w-[35vw]
-          md:p-[0.5vw] p-[1.5vw]
-          bg-[#F8F7FF]
-          md:rounded-[0.7vw] rounded-[2vw]
-          opacity-0 invisible 
-          group-hover:opacity-100 group-hover:visible 
-          transition-all duration-200 
+          absolute bottom-full left-1/2 -translate-x-1/2
+          pb-2
+          w-[260px]
+
+          opacity-0 invisible
+          transition-all duration-200
           z-50
-          pointer-events-none group-hover:pointer-events-auto
-          border border-[#CC00B7]
+
+          pointer-events-none
+          group-hover:pointer-events-auto
+          group-hover:opacity-100
+          group-hover:visible
+
           ${
             isActive
               ? "opacity-100 visible pointer-events-auto translate-y-0"
-              : "opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto translate-y-1 group-hover:translate-y-0"
+              : "translate-y-1 group-hover:translate-y-0"
           }
         `}
       >
+        {/* Tooltip Box */}
         <div
           className="
-            text-[#4A5565]
-            md:text-[0.8vw] text-[2.3vw]
-            md:leading-[1vw] leading-[2.2vw]
-            md:mb-[0.5vw] mb-[2vw]
+            relative
+            bg-[#F8F7FF]
+            border border-[#CC00B7]
+            rounded-[12px]
+            p-3
           "
         >
-          {item.description}
+          <div className="text-[#4A5565] text-sm leading-snug mb-3">
+            {item.description}
+          </div>
+
+          <button
+            onClick={handleCopyDescription}
+            className="
+              flex items-center justify-center
+              w-full
+              text-sm
+              font-medium
+              text-white
+              bg-[#CC00B7] hover:bg-[#CC00B7]/90
+              py-1.5
+              rounded-xl
+              transition-colors
+              cursor-pointer
+            "
+          >
+            {isCopied ? "Copied" : "Copy Description"}
+          </button>
+
+          {/* Arrow */}
+          <div className="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-[#CC00B7]" />
         </div>
-
-        <button
-          onClick={handleCopyDescription}
-          className="
-            flex items-center
-            md:text-[0.8vw] text-[2.3vw]
-            text-white
-            font-normal
-            bg-[#CC00B7] hover:bg-[#CC00B7]/90
-            md:py-[0.25vw] py-[0.5vw]
-            md:px-[1vw] px-[2vw]
-            md:rounded-[0.5vw] rounded-[1vw]
-            transition-colors
-            w-full justify-center
-            cursor-pointer
-          "
-        >
-          {isCopied ? (
-            <span className="font-bold">Copied</span>
-          ) : (
-            <span>Copy Description</span>
-          )}
-        </button>
-
-        {/* Little Arrow pointing down */}
-        <div className="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-[#CC00B7]" />
       </div>
     </div>
   );

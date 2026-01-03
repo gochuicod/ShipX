@@ -6,7 +6,7 @@ import SmartNavLink from "../../../ui/SmartNavLink";
 import { useTranslation } from "react-i18next";
 import { useClipboard } from "../../../../hooks/useClipboard";
 import ConfidenceMeter from "./ConfidenceMeter";
-import Button from "../../../ui/Button";
+import AppButton from "../../../library/AppButton";
 
 const UI_DELAY_MS = 500;
 
@@ -37,227 +37,95 @@ export default function HsCodeGeneratorResult() {
   return (
     <div
       ref={hsCodeResultRef}
-      className="
-                flex flex-col
-                md:mb-[10vw] mb-[15vw]
-                md:mt-0 mt-[10vw]
-                justify-center items-center
-            "
-      style={{
-        fontFamily: "Inter, system-ui, -apple-system, sans-serif",
-      }}
+      className="flex flex-col items-center justify-center w-full px-4 md:px-8 py-8 md:py-12"
+      style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
     >
-      <span
-        className="
-                    text-[#FF00E5]
-                    md:text-[2.5vw] text-[4vw]
-                    text-center
-                    font-semibold
-                    md:mb-[3vw] mb-[5vw]
-                "
-      >
+      <h2 className="text-[#FF00E5] text-[24px] md:text-[32px] font-semibold text-center mb-8">
         {t("hs_code_generator_page.result_section.title")}
-      </span>
+      </h2>
+
+      {/* ===== MAIN FRAME (Frame 2147236755) ===== */}
       <div
         className="
-                    flex
-                    md:flex-row flex-col
-                    justify-between
-                    md:w-[80vw] w-[90vw]
-                    md:px-[3vw] px-[5vw]
-                    md:py-[2vw] py-[5vw]
-                    mx-auto
-                    bg-linear-to-br from-[#FFE6FF]/5 to-[#AA00FF]/10
-                    md:rounded-[1vw] rounded-[3vw]
-                "
+          flex flex-col lg:flex-row
+          justify-center items-stretch
+          gap-4 lg:gap-8
+          w-full max-w-[1248px]
+          p-4 lg:p-8
+          rounded-2xl
+          bg-[linear-gradient(135deg,rgba(255,230,255,0.05)_0%,rgba(170,0,255,0.05)_100%)]
+          border border-white/20
+        "
       >
-        <div className="flex flex-col gap-y-[1.5vw]">
-          {/* Recommended HS Code */}
-          <div
-            className="
-                            flex flex-col
-                            md:w-[35.5vw] w-[80vw]
-                        "
-          >
-            <span
-              className="
-                                md:text-[1vw] text-[2.5vw]
-                                text-[#1E2939]
-                                font-semibold
-                                md:leading-0 leading-[2.7vw]
-                            "
-            >
+        {/* ===== LEFT COLUMN ===== */}
+        <div className="flex flex-col gap-8 w-full lg:w-xl shrink-0">
+          {/* Output 1: HS Code */}
+          <div className="flex flex-col gap-2 w-full">
+            <label className="font-semibold text-[16px] text-[#1E2939]">
               {t("hs_code_generator_page.result_section.output_1.label")}
-            </span>
-            <p
-              className="
-                                text-[#4A5565]/80
-                                md:text-[0.8vw] text-[2.3vw]
-                                md:leading-[2vw] leading-[3vw]
-                            "
-            >
+            </label>
+            <p className="text-[16px] text-[#4A5565] leading-[120%]">
               {t("hs_code_generator_page.result_section.output_1.note")}
             </p>
+
             <div
               className="
-                                flex relative
-                                items-center justify-between
-                                bg-[#F8F7FF]
-                                md:rounded-[1vw] rounded-[2vw]
-                                md:px-[2vw] px-[2.5vw]
-                                md:py-[0.5vw] py-[1vw]
-                                md:mt-0 mt-[2vw]
-                            "
+                box-border flex flex-row justify-between items-center
+                p-2 gap-4
+                w-full h-[55px]
+                bg-white rounded-lg
+              "
             >
-              <span
-                className="
-                                    font-mono
-                                    md:text-[2.5vw] text-[5vw]
-                                    font-semibold
-                                    text-[#4B5563]
-                                    tracking-wide
-                                "
-              >
+              <span className="font-['DM_Mono',monospace] font-medium text-[28px] lg:text-[35px] text-[#4A5565] truncate pl-2">
                 {hsCodeResult?.code}
               </span>
+
               <button
                 type="button"
                 onClick={() => copy(hsCodeResult?.code)}
-                className={`
-                                    absolute
-                                    md:block hidden
-                                    right-[0.5vw] bottom-[0.5vw]
-                                    p-2.5 rounded-[0.5vw] transition-all duration-200
-                                    cursor-pointer
-                                    ${
-                                      isCopied
-                                        ? "bg-green-100 text-green-600"
-                                        : "bg-[#EBE8FB] text-[#402B73] hover:bg-[#EBE8FB]/80 hover:text-[#402B73]/80"
-                                    }
-                                `}
-                title="Copy to clipboard"
+                className="
+                  flex justify-center items-center
+                  w-8 h-8
+                  bg-white
+                  shadow-[1px_1px_2px_rgba(20,0,99,0.25),inset_2px_2px_2px_rgba(255,255,255,0.55),inset_-1px_-1px_1px_rgba(154,4,129,0.1)]
+                  rounded-lg
+                  cursor-pointer
+                  hover:bg-gray-50 transition
+                "
               >
                 {isCopied ? (
-                  <Check className="w-[1vw] h-[1vw]" />
+                  <Check className="w-[18px] h-[18px] text-green-600" />
                 ) : (
-                  <Clipboard className="w-[1vw] h-[1vw]" />
+                  <Clipboard className="w-[18px] h-[18px] text-[#1E2939]" />
                 )}
               </button>
             </div>
           </div>
-          {/* Confidence Level */}
-          <div
-            className="
-                            flex flex-col
-                            md:w-[35.5vw] w-[80vw]
-                        "
-          >
-            <span
-              className="
-                                md:text-[1vw] text-[2.5vw]
-                                text-[#1E2939]
-                                font-semibold
-                                md:leading-[1vw] leading-[2.7vw]
-                                md:mt-0 mt-[3vw]
-                            "
-            >
+
+          {/* Output 3: Confidence */}
+          <div className="flex flex-col gap-2 w-full">
+            <label className="font-semibold text-[16px] text-[#1E2939]">
               {t("hs_code_generator_page.result_section.output_3.label")}
-            </span>
-            <p
-              className="
-                                text-[#4A5565]/80
-                                md:text-[0.8vw] text-[2.3vw]
-                                md:leading-[1vw] leading-[3vw]
-                                md:mb-[0.5vw] mb-[2vw]
-                            "
-            >
+            </label>
+            <p className="text-[16px] text-[#4A5565] leading-[120%]">
               {t("hs_code_generator_page.result_section.output_3.note")}
             </p>
-            <ConfidenceMeter confidence={hsCodeResult?.confidence} />
+
+            <div className="py-2">
+              <ConfidenceMeter confidence={hsCodeResult?.confidence} />
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col gap-y-[1.5vw]">
-          {/* AI Justification */}
-          <div
-            className="
-                            flex flex-col
-                            md:w-[35.5vw] w-[80vw]
-                            md:mt-0 mt-[2vw]
-                        "
-          >
-            <span
-              className="
-                                md:text-[1vw] text-[2.5vw]
-                                text-[#1E2939]
-                                font-semibold
-                                md:leading-0 leading-[2.7vw]
-                            "
-            >
-              {t("hs_code_generator_page.result_section.output_2.label")}
-            </span>
-            <p
-              className="
-                                text-[#4A5565]/80
-                                md:text-[0.8vw] text-[2.3vw]
-                                md:leading-[2vw] leading-[3vw]
-                            "
-            >
-              {t("hs_code_generator_page.result_section.output_2.note")}
-            </p>
-            <p
-              className="
-                                overflow-auto
-                                md:h-[6vw] h-[23vw]
-                                bg-[#F8F7FF]
-                                md:rounded-[1vw] rounded-[3vw]
-                                md:px-[1vw] px-[3vw]
-                                md:py-[0.5vw] py-[2vw]
-                                md:text-[0.8vw] text-[2.3vw]
-                                text-[#4A5565]
-                                md:mt-0 mt-[2vw]
-                            "
-            >
-              {hsCodeResult?.justification}
-            </p>
-          </div>
-          {/* Tariff Heirarchy */}
-          <div
-            className="
-                            flex flex-col
-                            md:w-[35.5vw] w-[80vw]
-                            md:mt-0 mt-[2vw]
-                        "
-          >
-            <span
-              className="
-                                md:text-[1vw] text-[2.5vw]
-                                text-[#1E2939]
-                                font-semibold
-                                md:leading-[1vw] leading-[2.7vw]
-                            "
-            >
+
+          {/* Output 4: Tariff Hierarchy (MOVED LEFT) */}
+          <div className="flex flex-col gap-2 w-full">
+            <label className="font-semibold text-[16px] text-[#1E2939]">
               {t("hs_code_generator_page.result_section.output_4.label")}
-            </span>
-            <p
-              className="
-                                text-[#4A5565]/80
-                                md:text-[0.8vw] text-[2.3vw]
-                                md:leading-[1vw] leading-[3vw]
-                                md:mb-[0.5vw] mb-[2vw]
-                            "
-            >
+            </label>
+            <p className="text-[16px] text-[#4A5565] leading-[120%]">
               {t("hs_code_generator_page.result_section.output_4.note")}
             </p>
-            <div
-              className="
-                                flex flex-row
-                                md:gap-x-[0.5vw] gap-x-[1.5vw]
-                                bg-[#F8F7FF]
-                                md:rounded-[1vw] rounded-[2vw]
-                                md:px-[0.5vw] px-[3vw]
-                                md:py-[1.5vw] py-[2.5vw]
-                            "
-            >
+
+            <div className="flex flex-row gap-2 mt-2 bg-white rounded-lg p-3.5 md:justify-center justify-start overflow-scroll">
               {hsCodeResult?.tariffHierarchy &&
                 hsCodeResult?.tariffHierarchy.map((item, index) => (
                   <HierarchyPill key={index} item={item} />
@@ -265,21 +133,47 @@ export default function HsCodeGeneratorResult() {
             </div>
           </div>
         </div>
+
+        {/* ===== RIGHT COLUMN (FULL HEIGHT) ===== */}
+        <div className="flex flex-col w-full lg:w-xl shrink-0">
+          <div className="flex flex-col gap-2 h-full">
+            <label className="font-semibold text-[16px] text-[#1E2939]">
+              {t("hs_code_generator_page.result_section.output_2.label")}
+            </label>
+            <p className="text-[16px] text-[#4A5565] leading-[120%]">
+              {t("hs_code_generator_page.result_section.output_2.note")}
+            </p>
+
+            <div
+              className="
+                box-border flex-1
+                p-4
+                w-full
+                bg-white rounded-lg
+                overflow-auto
+              "
+            >
+              <p className="text-[16px] text-[#4D525C] leading-[120%]">
+                {hsCodeResult?.justification}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      <SmartNavLink
-        className="md:mt-[3vw] mt-[8vw]"
-        to="hs-code-generator/#"
-        end
-      >
-        <Button
-          onClick={handleGenerateAnotherHSCode}
-          className="w-fit md:mb-[2vw] mb-[7vw]"
-        >
-          {t(
-            "hs_code_generator_page.result_section.generate_another_hs_code_button",
-          )}
-        </Button>
-      </SmartNavLink>
+
+      {/* Generate Another */}
+      <div className="mt-10">
+        <SmartNavLink to="hs-code-generator/#" end>
+          <AppButton
+            text={t(
+              "hs_code_generator_page.result_section.generate_another_hs_code_button",
+            )}
+            onClick={handleGenerateAnotherHSCode}
+            style="primary"
+            className="px-8 py-3"
+          />
+        </SmartNavLink>
+      </div>
     </div>
   );
 }
