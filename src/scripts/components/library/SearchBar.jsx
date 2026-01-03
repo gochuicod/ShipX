@@ -98,7 +98,11 @@ const SearchBar = ({
         )}
 
         {/* Submit Button (Purple Gradient) */}
-        <AppButton text={submitLabel} className="title-submit" />
+        <AppButton
+          text={submitLabel}
+          className="title-submit"
+          size="defaultFull"
+        />
       </div>
     </div>
   );

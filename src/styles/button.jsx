@@ -114,6 +114,7 @@ const buttonVariants = cva(
       },
       size: {
         default: "text-sm md:text-base h-9 px-4 py-2.5 has-[>svg]:px-3",
+        defaultFull: "text-sm md:text-base h-full px-4 py-2.5 has-[>svg]:px-3",
         tab: "text-sm md:text-base h-full px-4 py-2.5",
         sm: "text-xs md:text-sm h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
         lg: "text-base md:text-lg h-10 rounded-md px-6 has-[>svg]:px-4",

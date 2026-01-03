@@ -154,7 +154,7 @@ const FAQPage = () => {
         <ParallaxSection>
           {/* --- Main Content --- */}
           <main
-            className={`mx-auto relative ${themeGuide.paddingX} flex flex-col items-center w-full gap-y-8 -mt-8`}
+            className={`mx-auto relative ${themeGuide.paddingX} flex flex-col items-center w-full md:gap-y-8 gap-y-4 lg:-mt-6 -mt-18`}
           >
             {/* Header Block & Search */}
             <div className="w-full flex flex-col md:gap-y-4 gap-y-2 items-center text-center">
@@ -171,7 +171,7 @@ const FAQPage = () => {
                 />
 
                 {/* Description */}
-                <p className="flex items-center justify-center text-center mx-auto w-full font-['Inter'] font-normal text-[#63666D] opacity-90 text-[14px] leading-[18px] max-w-[376px] md:text-[16px] md:leading-5 md:max-w-[522px] lg:max-w-[822px]">
+                <p className="flex items-center justify-center text-center mx-auto w-full font-['Inter'] font-normal text-[#63666D] opacity-90 text-sm leading-[1.125] max-w-[376px] md:text-base md:leading-5 md:max-w-[522px] lg:max-w-[822px] md:mb-0 mb-4">
                   {header_section.description}
                 </p>
               </div>
@@ -196,9 +196,9 @@ const FAQPage = () => {
             </div>
 
             {/* Filter Bar */}
-            <div className="w-full flex flex-col items-center gap-4">
+            <div className="w-full flex flex-col items-center gap-4 lg:py-5 md:py-4 py-0">
               {/* Filter by Category Label */}
-              <h3 className="font-['Inter'] font-bold text-[16px] leading-5 flex items-center text-center text-black">
+              <h3 className="hidden md:inline lg:inline font-['Inter'] font-bold text-base leading-5 items-center text-center text-black">
                 <span className="md:hidden">
                   {filter_section.title || "Filter by:"}
                 </span>
