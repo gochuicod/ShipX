@@ -164,9 +164,10 @@ const FAQPage = () => {
 
               <div className="w-full flex flex-col md:gap-y-4 gap-y-2 items-center text-center">
                 <HighlightedHeading
-                  text={header_section.title_prefix || "Frequently Asked"}
-                  highlight={header_section.title_suffix || "Questions"}
+                  text={`${header_section.title_prefix} ${header_section.title_suffix}`}
+                  highlight={header_section.title_suffix}
                   className="text-2xl 2xl:text-4xl font-semibold mt-2 text-center"
+                  highlightClass="text-[#FF00E5]"
                 />
 
                 {/* Description */}
