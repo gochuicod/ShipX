@@ -193,16 +193,7 @@ const ContactFormNew = () => {
 
       {/* --- Row 3: Buttons --- */}
       <div className="grid grid-cols-2 gap-2 md:flex md:flex-row md:justify-end md:gap-4 w-full mt-4">
-        {/* Button 1: Book Demo */}
-        <AppButton
-          to="/book-a-demo"
-          text={t("contact_us_section.form.book_a_demo")}
-          withLeftIcon={true}
-          leftIcon={<CalendarDays className="size-4 md:size-5" />}
-          className="w-full md:w-auto text-xs md:text-base px-2 md:px-6 justify-center whitespace-nowrap"
-        />
-
-        {/* Button 2: Submit */}
+        {/* Button 1: Submit */}
         <AppButton
           as="button"
           text={
@@ -217,6 +208,15 @@ const ContactFormNew = () => {
           leftIcon={<Send className="size-4 md:size-5" />}
           onClick={handleSubmit(onSubmit)}
           disabled={isSubmitting}
+          className="w-full md:w-auto text-xs md:text-base px-2 md:px-6 justify-center whitespace-nowrap"
+        />
+
+        {/* Button 2: Book Demo */}
+        <AppButton
+          to="/book-a-demo"
+          text={t("contact_us_section.form.book_a_demo")}
+          withLeftIcon={true}
+          leftIcon={<CalendarDays className="size-4 md:size-5" />}
           className="w-full md:w-auto text-xs md:text-base px-2 md:px-6 justify-center whitespace-nowrap"
         />
       </div>

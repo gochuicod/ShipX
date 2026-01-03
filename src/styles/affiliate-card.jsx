@@ -3,7 +3,7 @@ import { cn } from "../lib/util";
 
 // 1. The Container Style
 const cardVariants = cva(
-  "relative w-full flex flex-col h-fit md:h-full overflow-visible rounded-2xl md:rounded-3xl shadow-sm transition-all",
+  "relative w-full flex flex-col h-[600px] md:h-full overflow-visible rounded-2xl md:rounded-3xl shadow-sm transition-all",
   {
     variants: {
       variant: {
@@ -40,7 +40,7 @@ function AffiliateCardIllustration({ className, children, ...props }) {
   return (
     <div
       className={cn(
-        "absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 flex justify-center z-10 pointer-events-none md:left-auto md:w-1/3 md:right-6 md:translate-x-0",
+        "absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 flex justify-center z-[1000] pointer-events-none md:left-auto md:w-1/3 md:right-6 md:translate-x-0",
         className,
       )}
       {...props}

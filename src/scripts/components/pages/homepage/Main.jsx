@@ -10,7 +10,7 @@ const ToolkitSection = lazy(() => import("./ToolkitSection/ToolkitSection"));
 const NumbersSection = lazy(() => import("./NumbersSection"));
 const PlatformSection = lazy(() => import("./PlatformSection"));
 const OfficesSection = lazy(() => import("./OfficesSection"));
-const SGAmiloCards = lazy(() => import("./SGAmiloCards"));
+const AffiliateSection = lazy(() => import("./AffiliateSection"));
 const FAQSection = lazy(() => import("./FAQSection"));
 const ContactUsNew = lazy(() => import("./ContactUsNew"));
 
@@ -40,7 +40,7 @@ const Main = () => {
           <NumbersSection />
           <PlatformSection />
           <OfficesSection />
-          <SGAmiloCards />
+          <AffiliateSection />
           <Blogs />
           <FAQSection />
           <ContactUsNew />

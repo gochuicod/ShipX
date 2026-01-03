@@ -20,7 +20,7 @@ export default function PartnersSection() {
       <div
         className={cn(
           themeGuide.paddingX,
-          "lg:pt-32 lg:pb-0 md:pt-16 md:pb-16 pt-12 pb-12 flex 2xl:flex-row flex-col justify-center items-start gap-x-8",
+          "lg:pt-32 lg:pb-0 md:pt-16 md:pb-16 pt-12 pb-12 flex 2xl:flex-row md:flex-col flex-col justify-center items-start gap-x-8",
         )}
       >
         {/* Left side of the section */}
@@ -40,7 +40,7 @@ export default function PartnersSection() {
             highlight="World-Class Partners"
             className="
                           text-2xl
-                          2xl:text-end text-center
+                          2xl:text-end md:text-center text-center
                           font-semibold
                           mt-2
                       "
@@ -48,7 +48,7 @@ export default function PartnersSection() {
           <Description
             className="
               md:text-base text-sm
-              2xl:text-end text-center
+              2xl:text-end md:text-center text-center
               mb-4
               2xl:w-auto md:w-[80%] w-full
             "

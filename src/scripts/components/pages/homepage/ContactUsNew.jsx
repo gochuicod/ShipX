@@ -128,55 +128,61 @@ const ContactUsNew = () => {
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full">
           {/* Left Column: Contact Details */}
-          <div className="lg:col-span-4 flex flex-col gap-4">
-            <IconBox
-              layout="horizontal"
-              size="default"
-              icon={
-                <img
-                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8a82004d7d7941a90c58ac15e75d57c3309249db/src/assets/icons/boxed/email_box_icon.svg"
-                  alt="Email"
-                />
-              }
-              title="Email Us"
-              value="info@shipx.asia"
-            >
-              We'll respond within 2 hours
-            </IconBox>
+          <div className="lg:col-span-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4">
+            <div>
+              <IconBox
+                layout="horizontal"
+                size="default"
+                icon={
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8a82004d7d7941a90c58ac15e75d57c3309249db/src/assets/icons/boxed/email_box_icon.svg"
+                    alt="Email"
+                  />
+                }
+                title="Email Us"
+                value="info@shipx.asia"
+              >
+                We'll respond within 2 hours
+              </IconBox>
+            </div>
 
-            <IconBox
-              layout="horizontal"
-              size="default"
-              icon={
-                <img
-                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8a82004d7d7941a90c58ac15e75d57c3309249db/src/assets/icons/boxed/phone_icon_box.svg"
-                  alt="Phone"
-                />
-              }
-              title="Call Us"
-              value="+1012 3456 789"
-            >
-              Mon-Fri 9am to 6pm
-            </IconBox>
+            <div>
+              <IconBox
+                layout="horizontal"
+                size="default"
+                icon={
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8a82004d7d7941a90c58ac15e75d57c3309249db/src/assets/icons/boxed/phone_icon_box.svg"
+                    alt="Phone"
+                  />
+                }
+                title="Call Us"
+                value="+1012 3456 789"
+              >
+                Mon-Fri 9am to 6pm
+              </IconBox>
+            </div>
 
-            <IconBox
-              layout="horizontal"
-              size="default"
-              icon={
-                <img
-                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8a82004d7d7941a90c58ac15e75d57c3309249db/src/assets/icons/boxed/location_box_icon.svg"
-                  alt="Location"
-                />
-              }
-              title="Visit Us"
-              value={
-                <>
-                  391B Orchard Road #22,
-                  <br />
-                  Ngee Ann City, Singapore 238874
-                </>
-              }
-            ></IconBox>
+            <div className="md:col-span-2 lg:col-span-1">
+              <IconBox
+                layout="horizontal"
+                size="default"
+                icon={
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8a82004d7d7941a90c58ac15e75d57c3309249db/src/assets/icons/boxed/location_box_icon.svg"
+                    alt="Location"
+                  />
+                }
+                title="Visit Us"
+                value={
+                  <>
+                    391B Orchard Road #22,
+                    <br />
+                    Ngee Ann City, Singapore 238874
+                  </>
+                }
+              ></IconBox>
+            </div>
           </div>
 
           {/* Right Column: Form */}
