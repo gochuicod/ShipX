@@ -73,7 +73,7 @@ const FAQSection = () => {
 
           {/* --- Accordion Grid --- */}
           <Accordion
-            className="grid grid-cols-1 md:grid-cols-2 md:gap-5 gap-4 items-start"
+            className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:gap-5 gap-4 items-start"
             defaultOpen={leftColItems[0]?.id}
           >
             {/* Left Column */}

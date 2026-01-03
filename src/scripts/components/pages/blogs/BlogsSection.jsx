@@ -53,11 +53,11 @@ const BlogSection = () => {
               .slice()
               .reverse()
               .slice(0, 3)
-              .map((post) => (
+              .map((post, idx) => (
                 <SmartNavLink
                   key={post.slug}
                   to={`/blog/${post.slug}`}
-                  className="hover:cursor-pointer"
+                  className={`hover:cursor-pointer ${idx === 2 ? "md:hidden lg:block" : ""}`}
                 >
                   <BlogCard post={post} variant="section" />
                 </SmartNavLink>
