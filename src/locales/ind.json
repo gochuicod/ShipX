@@ -1500,6 +1500,7 @@
         "button": "Pesan Demo",
         "card_1": {
           "title": "Layanan kargo dan izin yang fleksibel\nuntuk perdagangan regional & global",
+          "title_highlighted": ["fleksibel", "Layanan"],
           "item_1_title": "Transportasi Multimoda",
           "item_1_description": "laut, udara, darat & logistik gabungan",
           "item_2_title": "Truk Lintas Batas",

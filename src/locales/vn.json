@@ -1500,6 +1500,7 @@
         "button": "Đặt lịch Demo",
         "card_1": {
           "title": "Dịch vụ vận tải và thông quan linh hoạt\ncho thương mại khu vực & toàn cầu",
+          "title_highlighted": ["linh hoạt", "Dịch vụ"],
           "item_1_title": "Vận tải đa phương thức",
           "item_1_description": "đường biển, đường hàng không, đường bộ & logistics kết hợp",
           "item_2_title": "Vận tải xe tải xuyên biên giới",

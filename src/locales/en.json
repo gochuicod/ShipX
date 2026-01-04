@@ -1500,6 +1500,7 @@
         "button": "Book a Demo",
         "card_1": {
           "title": "Flexible freight and clearance\nservices for regional & global trade",
+          "title_highlighted": ["Flexible", "services"],
           "item_1_title": "Multimodal Transport",
           "item_1_description": "sea, air, road & combined logistics",
           "item_2_title": "Cross-Border Trucking",
