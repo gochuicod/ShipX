@@ -40,18 +40,24 @@ const TermsAndConditions = () => {
           <div className="w-full flex flex-col gap-2 items-center text-center">
             <div className="md:hidden">
               <Badge variant="toolkit" size="small">
-                Terms and Conditions
+                {t("terms_and_conditions_page.badge", "Terms and Conditions")}
               </Badge>
             </div>
             <div className="hidden md:block">
               <Badge variant="toolkit" size="default">
-                Terms and Conditions
+                {t("terms_and_conditions_page.badge", "Terms and Conditions")}
               </Badge>
             </div>
 
             <HighlightedHeading
-              text="ShipX User Agreement"
-              highlight="ShipX"
+              text={t(
+                "terms_and_conditions_page.header",
+                "ShipX User Agreement",
+              )}
+              highlight={t(
+                "terms_and_conditions_page.highlightedText",
+                "ShipX",
+              )}
               className="text-2xl 2xl:text-4xl font-semibold mt-2 text-center"
             />
           </div>

@@ -40,18 +40,21 @@ const PrivacyPolicy = () => {
           <div className="w-full flex flex-col gap-2 items-center text-center">
             <div className="md:hidden">
               <Badge variant="toolkit" size="small">
-                Terms and Conditions
+                {t("privacy_policy_page.badge", "Privacy Policy")}
               </Badge>
             </div>
             <div className="hidden md:block">
               <Badge variant="toolkit" size="default">
-                Terms and Conditions
+                {t("privacy_policy_page.badge", "Privacy Policy")}
               </Badge>
             </div>
 
             <HighlightedHeading
-              text="Privacy Policy"
-              highlight="Privacy Policy"
+              text={t("privacy_policy_page.header", "Privacy Policy")}
+              highlight={t(
+                "privacy_policy_page.highlightedText",
+                "Privacy Policy",
+              )}
               className="text-2xl 2xl:text-4xl font-semibold mt-2 text-center"
             />
           </div>
