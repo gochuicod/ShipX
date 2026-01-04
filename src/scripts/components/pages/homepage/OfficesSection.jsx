@@ -22,13 +22,13 @@ function CountryButtons() {
     <>
       <div className="flex flex-wrap justify-center xl:justify-start gap-4 mt-6">
         {officesSectionCountries.map((item) => {
-          const officeKey = item.name.toLowerCase().replace(/\s/g, "_");
-          const officeData = t(`offices_section.offices.${officeKey}`, {
-            returnObjects: true,
-          });
+          const officeKey = item.country_key; // use the country_key directly
 
+          // Create office object with icon
           const office = {
-            ...officeData,
+            country_name: t(item.country_key),
+            address: item.location_key ? t(item.location_key) : "",
+            email: item.email_key ? t(item.email_key) : "",
             icon: item.icon,
           };
 
@@ -36,7 +36,7 @@ function CountryButtons() {
             <AppButton
               key={officeKey}
               variant="tertiary"
-              text={item.name}
+              text={t(item.country_key)}
               withLeftIcon
               leftIcon={item.icon}
               iconRounded
@@ -49,13 +49,15 @@ function CountryButtons() {
       <OfficeModal
         isOpen={!!selectedOffice}
         onClose={() => setSelectedOffice(null)}
-        office={selectedOffice} // pass full office object
+        office={selectedOffice}
       />
     </>
   );
 }
 
 export default function OfficesSection() {
+  const { t } = useTranslation();
+
   return (
     <ParallaxSection>
       <div
@@ -91,12 +93,12 @@ export default function OfficesSection() {
           "
         >
           <Badge variant="toolkit" size="default">
-            Our Offices
+            {t("our_offices_section.badge")}
           </Badge>
 
           <HighlightedHeading
-            text="Local presence, global corridors\n— the ShipX advantage"
-            highlight="the ShipX advantage"
+            text={t("our_offices_section.title")}
+            highlight={t("our_offices_section.title_heading")}
             className="
               text-2xl
               xl:text-start text-center
@@ -113,8 +115,7 @@ export default function OfficesSection() {
               w-full
             "
           >
-            Our Network Of Regional Hubs And Domain Experts Ensures Your
-            Business Thrives Globally, Without Losing Its Local Edge
+            {t("our_offices_section.description")}
           </Description>
 
           {/* Buttons on the RIGHT for xl+ */}
