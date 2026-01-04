@@ -130,6 +130,7 @@ const BlogPage = () => {
                   "Start typing to find blogs and articles..."
                 }
                 submitLabel="Search"
+                translationKey="blog_page.searchButton"
                 className="w-full lg:w-[822px] lg:mx-auto md:w-xl md:mx-auto"
               />
             </div>

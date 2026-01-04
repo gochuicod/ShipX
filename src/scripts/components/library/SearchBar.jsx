@@ -1,4 +1,5 @@
 import { cn } from "../../../lib/util";
+import { useTranslation } from "react-i18next";
 import {
   searchBarOuterVariants,
   searchBarVariants,
@@ -20,9 +21,15 @@ const SearchBar = ({
   className,
   inputClassName,
   containerClassName,
+  translationKey,
   ...props
 }) => {
-  // 1. Classes for the Purple Gradient Wrapper
+  const { t } = useTranslation();
+
+  // Use translation key if provided, otherwise use submitLabel
+  const buttonText = translationKey
+    ? t(translationKey, submitLabel)
+    : submitLabel;
   const outerClasses = cn(searchBarOuterVariants({ variant, size }), className);
 
   // 2. Classes for the White Form Container
@@ -99,7 +106,7 @@ const SearchBar = ({
 
         {/* Submit Button (Purple Gradient) */}
         <AppButton
-          text={submitLabel}
+          text={buttonText}
           className="title-submit"
           size="defaultFull"
         />
