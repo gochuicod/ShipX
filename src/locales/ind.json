@@ -1328,12 +1328,14 @@
   "partners_section": {
     "badge": "Mitra Kami",
     "headline": "Mendorong Pertumbuhan\ndengan Mitra Kelas Dunia",
+    "headline_highlighted": "Mitra Kelas Dunia",
     "description": "Kami telah membangun jaringan terpadu dari marketplace terkemuka, penyedia logistik, dan penyedia teknologi untuk memastikan bisnis Anda berkembang secara global.",
     "button": "Bermitra dengan Kami"
   },
   "services_section": {
     "badge": "Layanan Kami",
     "headline": "Platform Terpadu untuk\nLogistik Lintas Batas",
+    "headline_highlighted": "Platform Terpadu",
     "description": "ShipX menggabungkan solusi dari Amilo & SG Link untuk menawarkan rangkaian layanan yang komprehensif. Baik Anda membutuhkan pengiriman Express Worldwide, Fulfillment Tujuan AS, atau penanganan FBA khusus, kami mengelola kerumitan kepatuhan dan dokumentasi global untuk Anda.",
     "button": "Pesan Demo",
     "cards": {
@@ -1448,6 +1450,7 @@
   "our_numbers_section": {
     "badge": "Angka Kami",
     "title": "Memberikan Keunggulan dalam Skala Besar",
+    "title_highlighted": "Keunggulan",
     "items": {
       "item_1": {
         "title": "60 juta+",
@@ -1478,6 +1481,7 @@
   "our_platform_section": {
     "badge": "Platform Kami",
     "title": "Platform Terpadu Kami untuk\nLogistik Global",
+    "title_highlighted": "Logistik Global",
     "description": "Sederhanakan perdagangan lintas batas dengan satu dasbor untuk pengiriman, fulfillment, dan kepatuhan.",
     "cards": {
       "left_section_cards": {
@@ -1503,6 +1507,7 @@
   "our_offices_section": {
     "badge": "Kantor Kami",
     "title": "Kehadiran lokal, koridor global\n— keunggulan ShipX",
+    "title_highlighted": "keunggulan ShipX",
     "description": "Jaringan Hub Regional dan Ahli Domain Kami Memastikan Bisnis Anda Berkembang Secara Global, Tanpa Kehilangan Keunggulan Lokal",
     "cards": {
       "card_1": {
@@ -1545,6 +1550,7 @@
   "sg_link_and_amilo_section": {
     "sg_link_card": {
       "title": "Perluas bisnis Anda ke luar negeri dengan keahlian lintas batas SG Link",
+      "title_highlighted": "Perluas bisnis Anda",
       "description": "Kirim produk Anda ke pasar global dengan cepat dan aman menggunakan solusi pengiriman ujung-ke-ujung.",
       "specialties_label": "Spesialisasi",
       "specialties": {
@@ -1556,7 +1562,8 @@
       "signup_button": "Daftar"
     },
     "amilo_card": {
-      "title": "Mitra serba ada untuk logistik, fulfillment, dan pengiriman global",
+      "title": "Mitra serba ada Anda untuk logistik, fulfillment, dan pengiriman global",
+      "title_highlighted": "Mitra serba ada Anda",
       "description": "Dari pergudangan hingga pengiriman last-mile, Amilo menyederhanakan setiap langkah rantai pasokan Anda sehingga Anda dapat fokus mengembangkan merek Anda.",
       "specialties_label": "Spesialisasi",
       "specialties": {

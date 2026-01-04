@@ -1328,12 +1328,14 @@
   "partners_section": {
     "badge": "Đối tác của chúng tôi",
     "headline": "Thúc đẩy tăng trưởng\ncùng các đối tác đẳng cấp thế giới",
+    "headline_highlighted": "đối tác đẳng cấp thế giới",
     "description": "Chúng tôi đã xây dựng một mạng lưới thống nhất gồm các sàn thương mại điện tử hàng đầu, các nhà vận chuyển logistics và các nhà cung cấp công nghệ để đảm bảo doanh nghiệp của bạn phát triển toàn cầu.",
     "button": "Hợp tác với chúng tôi"
   },
   "services_section": {
     "badge": "Dịch vụ của chúng tôi",
     "headline": "Nền tảng thống nhất cho\nLogistics xuyên biên giới",
+    "headline_highlighted": "Nền tảng thống nhất",
     "description": "ShipX tổng hợp các giải pháp từ Amilo & SG Link để cung cấp một bộ dịch vụ toàn diện. Cho dù bạn cần vận chuyển Nhanh Toàn cầu (Express Worldwide), Hoàn tất đơn hàng tại Mỹ (USA Fulfillment), hay xử lý FBA chuyên biệt, chúng tôi sẽ quản lý các phức tạp về tuân thủ và thủ tục giấy tờ toàn cầu cho bạn.",
     "button": "Đặt lịch Demo",
     "cards": {
@@ -1448,6 +1450,7 @@
   "our_numbers_section": {
     "badge": "Số liệu của chúng tôi",
     "title": "Mang lại sự xuất sắc ở quy mô lớn",
+    "title_highlighted": "sự xuất sắc",
     "items": {
       "item_1": {
         "title": "60 triệu+",
@@ -1477,7 +1480,8 @@
   },
   "our_platform_section": {
     "badge": "Nền tảng của chúng tôi",
-    "title": "Nền tảng thống nhất cho\nLogistics Toàn cầu",
+    "title": "Nền tảng thống nhất của chúng tôi cho\nLogistics Toàn cầu",
+    "title_highlighted": "Logistics Toàn cầu",
     "description": "Đơn giản hóa thương mại xuyên biên giới với một bảng điều khiển duy nhất cho vận chuyển, hoàn tất đơn hàng và tuân thủ.",
     "cards": {
       "left_section_cards": {
@@ -1503,6 +1507,7 @@
   "our_offices_section": {
     "badge": "Văn phòng của chúng tôi",
     "title": "Hiện diện địa phương, kết nối toàn cầu\n— lợi thế của ShipX",
+    "title_highlighted": "lợi thế của ShipX",
     "description": "Mạng lưới các trung tâm khu vực và các chuyên gia trong ngành của chúng tôi đảm bảo doanh nghiệp của bạn phát triển toàn cầu mà không mất đi lợi thế địa phương",
     "cards": {
       "card_1": {
@@ -1544,7 +1549,8 @@
   },
   "sg_link_and_amilo_section": {
     "sg_link_card": {
-      "title": "Mở rộng doanh nghiệp ra nước ngoài với chuyên môn xuyên biên giới của SG Link",
+      "title": "Mở rộng doanh nghiệp của bạn ra nước ngoài với chuyên môn xuyên biên giới của SG Link",
+      "title_highlighted": "Mở rộng doanh nghiệp của bạn",
       "description": "Vận chuyển sản phẩm của bạn đến các thị trường toàn cầu một cách nhanh chóng và an toàn với các giải pháp giao hàng đầu-cuối (end-to-end).",
       "specialties_label": "Chuyên môn",
       "specialties": {
@@ -1556,7 +1562,8 @@
       "signup_button": "Đăng ký"
     },
     "amilo_card": {
-      "title": "Đối tác tất cả-trong-một cho logistics, hoàn tất đơn hàng và vận chuyển toàn cầu",
+      "title": "Đối tác tất cả-trong-một của bạn cho logistics, hoàn tất đơn hàng và vận chuyển toàn cầu",
+      "title_highlighted": "Đối tác tất cả-trong-một của bạn",
       "description": "Từ kho bãi đến giao hàng chặng cuối, Amilo tinh giản mọi bước trong chuỗi cung ứng của bạn để bạn có thể tập trung vào việc mở rộng thương hiệu.",
       "specialties_label": "Chuyên môn",
       "specialties": {

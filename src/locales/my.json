@@ -1332,12 +1332,14 @@
   "partners_section": {
     "badge": "Rakan Kongsi Kami",
     "headline": "Memacu Pertumbuhan\ndengan Rakan Kongsi Bertaraf Dunia",
+    "headline_highlighted": "Rakan Kongsi Bertaraf Dunia",
     "description": "Kami telah membina rangkaian bersepadu pasaran terkemuka, pembawa logistik, dan penyedia teknologi untuk memastikan perniagaan anda berkembang maju di peringkat global.",
     "button": "Bekerjasama dengan Kami"
   },
   "services_section": {
     "badge": "Perkhidmatan Kami",
     "headline": "Platform Bersepadu untuk\nLogistik Rentas Sempadan",
+    "headline_highlighted": "Platform Bersepadu",
     "description": "ShipX menggabungkan penyelesaian daripada Amilo & SG Link untuk menawarkan suite perkhidmatan yang komprehensif. Sama ada anda memerlukan penghantaran Ekspres Seluruh Dunia, Pemenuhan Destinasi AS, atau pengendalian FBA khusus, kami menguruskan kerumitan pematuhan dan dokumentasi global untuk anda.",
     "button": "Tempah Demo",
     "cards": {
@@ -1452,6 +1454,7 @@
   "our_numbers_section": {
     "badge": "Nombor Kami",
     "title": "Menyampaikan Kecemerlangan Pada Skala Besar",
+    "title_highlighted": "Kecemerlangan",
     "items": {
       "item_1": {
         "title": "60 juta+",
@@ -1482,6 +1485,7 @@
   "our_platform_section": {
     "badge": "Platform Kami",
     "title": "Platform Bersepadu Kami untuk\nLogistik Global",
+    "title_highlighted": "Logistik Global",
     "description": "Permudahkan perdagangan rentas sempadan dengan satu papan pemuka untuk penghantaran, pemenuhan dan pematuhan.",
     "cards": {
       "left_section_cards": {
@@ -1507,6 +1511,7 @@
   "our_offices_section": {
     "badge": "Pejabat Kami",
     "title": "Kehadiran tempatan, koridor global\n— kelebihan ShipX",
+    "title_highlighted": "kelebihan ShipX",
     "description": "Rangkaian Hab Serantau dan Pakar Domain Kami Memastikan Perniagaan Anda Berkembang Maju Secara Global, Tanpa Kehilangan Kelebihan Tempatan",
     "cards": {
       "card_1": {
@@ -1549,6 +1554,7 @@
   "sg_link_and_amilo_section": {
     "sg_link_card": {
       "title": "Kembangkan perniagaan anda ke luar negara dengan kepakaran rentas sempadan SG Link",
+      "title_highlighted": "Kembangkan perniagaan anda",
       "description": "Hantar produk anda ke pasaran global dengan cepat dan selamat menggunakan penyelesaian penghantaran hujung-ke-hujung.",
       "specialties_label": "Kepakaran",
       "specialties": {
@@ -1561,6 +1567,7 @@
     },
     "amilo_card": {
       "title": "Rakan kongsi serba ada anda untuk logistik, pemenuhan dan penghantaran global",
+      "title_highlighted": "Rakan kongsi serba ada anda",
       "description": "Dari pergudangan hingga penghantaran 'last-mile', Amilo memperkemaskan setiap langkah rantaian bekalan anda supaya anda boleh fokus pada pengembangan jenama anda.",
       "specialties_label": "Kepakaran",
       "specialties": {

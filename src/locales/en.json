@@ -1328,12 +1328,14 @@
   "partners_section": {
     "badge": "Our Partners",
     "headline": "Powering Growth\nwith World-Class Partners",
+    "headline_highlighted": "World-Class Partners",
     "description": "We've built a unified network of leading marketplaces, logistics carriers, and technology providers to ensure your business thrives globally.",
     "button": "Partner with Us"
   },
   "services_section": {
     "badge": "Our Services",
     "headline": "A Unified Platform for\nCross-Border Logistics",
+    "headline_highlighted": "Unified Platform",
     "description": "ShipX aggregates solutions from Amilo & SG Link to offer a comprehensive suite of services. Whether you need Express Worldwide shipping, USA Destination Fulfillment, or specialized FBA handling, we manage the complexities of global compliance and documentation for you.",
     "button": "Book a Demo",
     "cards": {
@@ -1448,6 +1450,7 @@
   "our_numbers_section": {
     "badge": "Our Numbers",
     "title": "Delivering Excellence at Scale",
+    "title_highlighted": "Excellence",
     "items": {
       "item_1": {
         "title": "60 million+",
@@ -1478,6 +1481,7 @@
   "our_platform_section": {
     "badge": "Our Platform",
     "title": "Our Unified Platform for\nGlobal Logistics",
+    "title_highlighted": "Global Logistics",
     "description": "Simplify cross-border trade with a single dashboard for shipping, fulfillment and compliance.",
     "cards": {
       "left_section_cards": {
@@ -1503,6 +1507,7 @@
   "our_offices_section": {
     "badge": "Our Offices",
     "title": "Local presence, global corridors\n— the ShipX advantage",
+    "title_highlighted": "the ShipX advantage",
     "description": "Our Network Of Regional Hubs And Domain Experts Ensures Your Business Thrives Globally, Without Losing Its Local Edge",
     "cards": {
       "card_1": {
@@ -1545,6 +1550,7 @@
   "sg_link_and_amilo_section": {
     "sg_link_card": {
       "title": "Expand your business abroad with SG Link's cross-border expertise",
+      "title_highlighted": "Expand your business",
       "description": "Ship Your all-in-one partner for logistics, fulfillment and global shipping products to global markets quickly and securely with end-to-end delivery solutions.",
       "specialties_label": "Specialties",
       "specialties": {
@@ -1557,6 +1563,7 @@
     },
     "amilo_card": {
       "title": "Your all-in-one partner for logistics, fulfillment and global shipping",
+      "title_highlighted": "Your all-in-one partner",
       "description": "From warehousing to last-mile delivery, Amilo streamlines every step of your supply chain so you can focus on scaling your brand.",
       "specialties_label": "Specialties",
       "specialties": {
