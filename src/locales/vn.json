@@ -1446,7 +1446,8 @@
         "tab_name": "Gửi khiếu nại",
         "form": {
           "label": "Nhập chi tiết khiếu nại của bạn",
-          "placeholder": "Nhập chi tiết khiếu nại (ví dụ: mô tả, số tiền)",
+          "placeholder_1": "Nhập chi tiết khiếu nại (ví dụ: mô tả, số tiền)",
+          "placeholder_2": "Cung cấp càng nhiều chi tiết càng tốt về khiếu nại của bạn...",
           "submit_button": "Gửi khiếu nại"
         }
       }

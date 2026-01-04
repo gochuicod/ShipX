@@ -1446,7 +1446,8 @@
         "tab_name": "Ajukan Klaim",
         "form": {
           "label": "Masukkan detail klaim Anda",
-          "placeholder": "Masukkan detail klaim (misal: deskripsi, jumlah)",
+          "placeholder_1": "Masukkan detail klaim (misal: deskripsi, jumlah)",
+          "placeholder_2": "Berikan detail sebanyak mungkin tentang klaim Anda...",
           "submit_button": "Kirim Klaim"
         }
       }

@@ -1446,7 +1446,8 @@
         "tab_name": "File a Claim",
         "form": {
           "label": "Input your claim details",
-          "placeholder": "Enter claim details (e.g., description, amount)",
+          "placeholder_1": "Enter claim details (e.g., description, amount)",
+          "placeholder_2": "Provide as much detail as possible about your claim...",
           "submit_button": "Submit Claim"
         }
       }

@@ -1450,7 +1450,8 @@
         "tab_name": "Failkan Tuntutan",
         "form": {
           "label": "Masukkan butiran tuntutan anda",
-          "placeholder": "Masukkan butiran tuntutan (cth: huraian, jumlah)",
+          "placeholder_1": "Masukkan butiran tuntutan (cth: huraian, jumlah)",
+          "placeholder_2": "Berikan butiran sebanyak mungkin mengenai tuntutan anda...",
           "submit_button": "Hantar Tuntutan"
         }
       }
