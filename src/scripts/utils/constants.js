@@ -435,31 +435,45 @@ export const getPlatformShowcaseData = (t) => {
 export const officesSectionCountries = [
   {
     icon: "https://flagcdn.com/sg.svg",
-    name: "Singapore",
+    country_key: "our_offices_section.cards.card_1.title",
+    location_key: "our_offices_section.cards.card_1.location",
+    email_key: "our_offices_section.cards.card_1.email",
   },
   {
     icon: "https://flagcdn.com/th.svg",
-    name: "Thailand",
+    country_key: "our_offices_section.cards.card_2.title",
+    location_key: "our_offices_section.cards.card_2.location",
+    email_key: "our_offices_section.cards.card_2.email",
   },
   {
     icon: "https://flagcdn.com/vn.svg",
-    name: "Vietnam",
+    country_key: "our_offices_section.cards.card_3.title",
+    location_key: "our_offices_section.cards.card_3.location",
+    email_key: "our_offices_section.cards.card_3.email",
   },
   {
     icon: "https://flagcdn.com/my.svg",
-    name: "Malaysia",
+    country_key: "our_offices_section.cards.card_4.title",
+    location_key: "our_offices_section.cards.card_4.location",
+    email_key: "our_offices_section.cards.card_4.email",
   },
   {
     icon: "https://flagcdn.com/id.svg",
-    name: "Indonesia",
+    country_key: "our_offices_section.cards.card_5.title",
+    location_key: "our_offices_section.cards.card_5.location",
+    email_key: "our_offices_section.cards.card_5.email",
   },
   {
     icon: "https://flagcdn.com/ph.svg",
-    name: "Philippines",
+    country_key: "our_offices_section.cards.card_6.title",
+    location_key: "our_offices_section.cards.card_6.location",
+    email_key: "our_offices_section.cards.card_6.email",
   },
   {
     icon: "https://flagcdn.com/us.svg",
-    name: "United States",
+    country_key: "our_offices_section.cards.card_7.title",
+    location_key: "our_offices_section.cards.card_7.location",
+    email_key: "our_offices_section.cards.card_7.email",
   },
 ];
 
