@@ -1349,6 +1349,7 @@
         "partners_label": "พาร์ทเนอร์การจัดส่ง",
         "country_label": "ประเทศต้นทาง",
         "service_name": "การจัดส่งด่วนระหว่างประเทศ",
+        "services_covered_label": "บริการที่ครอบคลุม",
         "services_covered": {
           "service_1": "Premium Express",
           "service_2": "Priority Express",
@@ -1367,6 +1368,7 @@
         "partners_label": "พาร์ทเนอร์การจัดส่ง",
         "country_label": "ประเทศต้นทาง",
         "service_name": "การจัดส่งพัสดุข้ามพรมแดน",
+        "services_covered_label": "บริการที่ครอบคลุม",
         "services_covered": {
           "service_1": "Standard epacket",
           "service_2": "Economy Pak",
@@ -1380,6 +1382,7 @@
         "partners_label": "พาร์ทเนอร์การจัดส่ง",
         "country_label": "ประเทศต้นทาง",
         "service_name": "การจัดส่งพัสดุข้ามพรมแดน",
+        "services_covered_label": "บริการที่ครอบคลุม",
         "services_covered": {
           "service_1": "Economy epacket",
           "service_2": "Plus economy epacket",
@@ -1396,6 +1399,7 @@
         "partners_label": "พาร์ทเนอร์การจัดส่ง",
         "country_label": "ประเทศต้นทาง",
         "service_name": "สอบถามข้อมูลการขนส่งทางทะเล",
+        "services_covered_label": "บริการที่ครอบคลุม",
         "services_covered": {
           "service_1": "FBA",
           "service_2": "การขนส่ง LCL",
@@ -1408,6 +1412,7 @@
         "partners_label": "พาร์ทเนอร์การจัดส่ง",
         "country_label": "ประเทศต้นทาง",
         "service_name": "การจัดส่งปลายทางสหรัฐฯ",
+        "services_covered_label": "บริการที่ครอบคลุม",
         "services_covered": {
           "service_1": "Standard Mail",
           "service_2": "Express Mail",

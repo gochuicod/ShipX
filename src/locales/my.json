@@ -1349,6 +1349,7 @@
         "partners_label": "Rakan Penghantaran",
         "country_label": "Negara Asal",
         "service_name": "Penghantaran Ekspres Antarabangsa",
+        "services_covered_label": "Perkhidmatan yang Diliputi",
         "services_covered": {
           "service_1": "Premium Express",
           "service_2": "Priority Express",
@@ -1367,6 +1368,7 @@
         "partners_label": "Rakan Penghantaran",
         "country_label": "Negara Asal",
         "service_name": "Penghantaran Paket Rentas Sempadan",
+        "services_covered_label": "Perkhidmatan yang Diliputi",
         "services_covered": {
           "service_1": "Standard epacket",
           "service_2": "Economy Pak",
@@ -1380,6 +1382,7 @@
         "partners_label": "Rakan Penghantaran",
         "country_label": "Negara Asal",
         "service_name": "Penghantaran Paket Rentas Sempadan",
+        "services_covered_label": "Perkhidmatan yang Diliputi",
         "services_covered": {
           "service_1": "Economy epacket",
           "service_2": "Plus economy epacket",
@@ -1396,6 +1399,7 @@
         "partners_label": "Rakan Penghantaran",
         "country_label": "Negara Asal",
         "service_name": "Pertanyaan Kargo Laut",
+        "services_covered_label": "Perkhidmatan yang Diliputi",
         "services_covered": {
           "service_1": "FBA",
           "service_2": "Penghantaran LCL",
@@ -1408,6 +1412,7 @@
         "partners_label": "Rakan Penghantaran",
         "country_label": "Negara Asal",
         "service_name": "Penghantaran Destinasi AS",
+        "services_covered_label": "Perkhidmatan yang Diliputi",
         "services_covered": {
           "service_1": "Standard Mail",
           "service_2": "Express Mail",

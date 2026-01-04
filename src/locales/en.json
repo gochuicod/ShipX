@@ -1345,6 +1345,7 @@
         "partners_label": "Delivery Partners",
         "country_label": "Country Origin",
         "service_name": "International Express Delivery",
+        "services_covered_label": "Services Covered",
         "services_covered": {
           "service_1": "Premium Express",
           "service_2": "Priority Express",
@@ -1363,6 +1364,7 @@
         "partners_label": "Delivery Partners",
         "country_label": "Country Origin",
         "service_name": "Cross border Packet Delivery",
+        "services_covered_label": "Services Covered",
         "services_covered": {
           "service_1": "Standard epacket",
           "service_2": "Economy Pak",
@@ -1376,6 +1378,7 @@
         "partners_label": "Delivery Partners",
         "country_label": "Country Origin",
         "service_name": "Cross border Packet Delivery",
+        "services_covered_label": "Services Covered",
         "services_covered": {
           "service_1": "Ecomony epacket",
           "service_2": "Plus economy epacket",
@@ -1392,6 +1395,7 @@
         "partners_label": "Delivery Partners",
         "country_label": "Country Origin",
         "service_name": "Sea Freight Inquiry",
+        "services_covered_label": "Services Covered",
         "services_covered": {
           "service_1": "FBA",
           "service_2": "LCL Shipping",
@@ -1404,6 +1408,7 @@
         "partners_label": "Delivery Partners",
         "country_label": "Country Origin",
         "service_name": "US Destination Delivery",
+        "services_covered_label": "Services Covered",
         "services_covered": {
           "service_1": "Standard Mail",
           "service_2": "Express Mail",
