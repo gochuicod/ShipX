@@ -1,13 +1,18 @@
 import { useState } from "react";
 import { Button } from "../../../../../../styles/button";
 import { Input } from "../../../../../../styles/input";
+import { useLangNavigate } from "../../../../../hooks/useLangNavigate";
+import { useTranslation } from "react-i18next";
 
 export default function HsCodeForm() {
   const [value, setValue] = useState("");
+  const navigateWithLang = useLangNavigate();
+  const { t } = useTranslation();
 
   const handleHsCodeGenerator = () => {
-    const targetUrl = `/hs-code-generator?productDescription=${encodeURIComponent(value)}`;
-    window.location.href = targetUrl;
+    navigateWithLang(
+      `/hs-code-generator?productDescription=${encodeURIComponent(value)}`,
+    );
   };
 
   return (
@@ -16,7 +21,9 @@ export default function HsCodeForm() {
         multiline
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        placeholder="Describe your product"
+        placeholder={t(
+          "trade_and_logistics_toolkit_section.tools.hs_code_generator.form.placeholder",
+        )}
       />
 
       <div className="flex flex-row justify-between">
@@ -33,7 +40,9 @@ export default function HsCodeForm() {
           className="self-end"
           onClick={handleHsCodeGenerator}
         >
-          Generate HS Code
+          {t(
+            "trade_and_logistics_toolkit_section.tools.hs_code_generator.form.submit_button",
+          )}
         </Button>
       </div>
     </div>

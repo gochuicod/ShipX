@@ -1,3 +1,4 @@
+// tabs.config.js
 import TrackerForm from "./forms/TrackerForm";
 import HsCodeForm from "./forms/HsCodeForm";
 import ClaimForm from "./forms/ClaimForm";
@@ -5,16 +6,25 @@ import ClaimForm from "./forms/ClaimForm";
 // CDN URLs for icons
 const shipmentTrackerIcon =
   "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/icons/toolkit/shipment_tracker.svg";
+
 const hsCodeGeneratorIcon =
   "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/icons/toolkit/hs_code_generator.svg";
+
 const fileAClaimIcon =
   "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/icons/toolkit/file_a_claim.svg";
 
 export const TOOLKIT_TABS = [
   {
-    id: "shipment-tracker", // Changed from 'tracker' to match URL/props
-    path: "/shipment-tracker", // Added for navigation
-    label: "Shipment Tracker",
+    id: "shipment-tracker",
+    path: "/shipment-tracker",
+
+    // 🔑 i18n bridge key
+    i18nKey: "shipment_tracker",
+
+    // 🧩 Behavior
+    Form: TrackerForm,
+
+    // 🎨 UI
     icon: (
       <img
         src={shipmentTrackerIcon}
@@ -22,16 +32,12 @@ export const TOOLKIT_TABS = [
         className="w-full h-full object-contain"
       />
     ),
-    Form: TrackerForm,
-    badge: "Trade and Logistics Toolkit",
-    title: "Track your Order",
-    description:
-      "Use your tracking number to instantly access up-to-the-minute updates on your package's journey.",
   },
   {
-    id: "hs-code-generator", // Changed from 'hscode'
+    id: "hs-code-generator",
     path: "/hs-code-generator",
-    label: "HS Code Generator",
+    i18nKey: "hs_code_generator",
+    Form: HsCodeForm,
     icon: (
       <img
         src={hsCodeGeneratorIcon}
@@ -39,16 +45,12 @@ export const TOOLKIT_TABS = [
         className="w-full h-full object-contain"
       />
     ),
-    Form: HsCodeForm,
-    badge: "Trade and Logistics Toolkit",
-    title: "Generate HS Codes",
-    description:
-      "Input your product details and instantly handle the complexity of HS code selection.",
   },
   {
-    id: "file-a-claim", // Changed from 'claim'
+    id: "file-a-claim",
     path: "/file-a-claim",
-    label: "File a Claim",
+    i18nKey: "file_a_claim",
+    Form: ClaimForm,
     icon: (
       <img
         src={fileAClaimIcon}
@@ -56,10 +58,5 @@ export const TOOLKIT_TABS = [
         className="w-full h-full object-contain"
       />
     ),
-    Form: ClaimForm,
-    badge: "Trade and Logistics Toolkit",
-    title: "File a Claim",
-    description:
-      "Please complete the form below to help our support team investigate the situation.",
   },
 ];

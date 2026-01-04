@@ -258,36 +258,36 @@ export const partnersSectionData = [
 export const servicesSectionServiceItems = [
   {
     id: "express",
-    title: "Express",
     icon: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/icons/duotone/airplaneairplane-delivery-1.svg",
   },
   {
     id: "postal",
-    title: "Postal",
     icon: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/icons/duotone/airplanebell.svg",
   },
   {
-    id: "postal-e-commerce",
-    title: "Postal (E-Commerce)",
+    id: "postal_e_commerce",
     icon: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/icons/duotone/airplanebasket.svg",
   },
   {
-    id: "sea-freight",
-    title: "Sea freight",
+    id: "sea_freight",
     icon: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/icons/duotone/airplanelocation-maps.svg",
   },
   {
-    id: "us-domestic",
-    title: "US Domestic",
+    id: "us_domestic",
     icon: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/icons/duotone/airplanebasket-1.svg",
   },
 ];
 
-export const servicesSectionCardData = {
+export const servicesSectionCardKeys = {
+  express: "services_section.cards.express",
+  postal: "services_section.cards.postal",
+  postal_e_commerce: "services_section.cards.postal_e_commerce",
+  sea_freight: "services_section.cards.sea_freight",
+  us_domestic: "services_section.cards.us_domestic",
+};
+
+export const servicesSectionCardStaticData = {
   express: {
-    title: "Express",
-    description:
-      "Accelerate your business with premium, time-sensitive global shipping solutions powered by world-class carriers.",
     illustration:
       "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/services_express.webp",
     partners: [
@@ -296,23 +296,8 @@ export const servicesSectionCardData = {
       "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/ups.webp",
     ],
     countryCodes: ["vn", "sg"],
-    ctaText: "International Express Delivery",
-    servicesCovered: [
-      "Premium Express",
-      "Priority Express",
-      "Economy Express",
-      "Preferred Express",
-      "Prime Express",
-      "Regular Express",
-      "Plus Express",
-      "Standard Express",
-      "Saver Express",
-    ],
   },
   postal: {
-    title: "Postal",
-    description:
-      "Specialized logistics lines and special handling tailored for unique commercial shipping requirements.",
     illustration:
       "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/services_postal.webp",
     partners: [
@@ -322,18 +307,8 @@ export const servicesSectionCardData = {
       "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/pos_malaysia.webp",
     ],
     countryCodes: ["sg", "my"],
-    ctaText: "Cross border Packet Delivery",
-    servicesCovered: [
-      "Standard epacket",
-      "Economy Pak",
-      "Economy epacket",
-      "Expedited epacket",
-    ],
   },
-  "postal-e-commerce": {
-    title: "Postal (E-Commerce)",
-    description:
-      "Cost-effective, cross-border packet delivery designed specifically to scale your e-commerce reach.",
+  postal_e_commerce: {
     illustration:
       "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/services_postal_e_commerce.webp",
     partners: [
@@ -345,21 +320,8 @@ export const servicesSectionCardData = {
       "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/ups.webp",
     ],
     countryCodes: ["my", "sg", "us"],
-    ctaText: "Cross border Packet Delivery",
-    servicesCovered: [
-      "Economy epacket",
-      "Plus economy epacket",
-      "Standard epacket",
-      "Economy Pak",
-      "Expedited epacket",
-      "Saver Direct epacket",
-      "Direct epacket",
-    ],
   },
-  "sea-freight": {
-    title: "Sea Freight",
-    description:
-      "Reliable and scalable ocean freight solutions, including FBA and LCL, for high-volume logistics.",
+  sea_freight: {
     illustration:
       "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/services_sea_freight.webp",
     partners: [
@@ -367,13 +329,8 @@ export const servicesSectionCardData = {
       "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/vina_dowell.webp",
     ],
     countryCodes: ["vn"],
-    ctaText: "Sea Freight Inquiry",
-    servicesCovered: ["FBA", "LCL Shipping", "FCL Shipping"],
   },
-  "us-domestic": {
-    title: "US Domestic",
-    description:
-      "Complete nationwide coverage across the USA, ranging from economy ground to priority expedited options.",
+  us_domestic: {
     illustration:
       "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/services_domestic.webp",
     partners: [
@@ -383,13 +340,6 @@ export const servicesSectionCardData = {
       "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/uniuni.webp",
     ],
     countryCodes: ["us"],
-    ctaText: "US Destination Delivery",
-    servicesCovered: [
-      "Standard Mail",
-      "Express Mail",
-      "Economy Mail",
-      "Priority Mail",
-    ],
   },
 };
 
@@ -461,7 +411,7 @@ export const platformShowcaseData = [
       "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/platform_section/card/platform_section_card_1_image.webp",
     imageAlt: "Logistics Solutions",
     headingText:
-      "Flexible freight and clearance\\nservices for regional & global trade",
+      "Flexible freight and clearance\nservices for regional & global trade",
     highlights: ["Flexible", "services"],
     capabilities: platformSectionLogisticsCard,
   },

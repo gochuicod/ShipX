@@ -1,25 +1,44 @@
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { CalendarDays } from "lucide-react";
+
+import { cn } from "../../../../lib/util";
 import { themeGuide } from "../../../../styles/themeGuide";
+import { Badge } from "../../../../styles/badge";
+
 import ServicesItems from "../../library/ServicesItems";
 import ServiceCard from "../../library/ServiceCard";
 import HighlightedHeading from "../../library/HighlightedHeading";
 import Description from "../../library/Description";
 import AppButton from "../../library/AppButton";
-
-import { Badge } from "../../../../styles/badge";
-
-import { useState } from "react";
-import { CalendarDays } from "lucide-react";
-import { cn } from "../../../../lib/util";
 import ParallaxSection from "../../ui/ParallaxSection";
 
 import {
   servicesSectionServiceItems,
-  servicesSectionCardData,
+  servicesSectionCardKeys,
+  servicesSectionCardStaticData,
 } from "../../../utils/constants";
 
 export default function ServicesSection() {
   const [activeServiceId, setActiveServiceId] = useState("express");
-  const activeData = servicesSectionCardData[activeServiceId];
+  const { t } = useTranslation();
+
+  const activeKey = servicesSectionCardKeys[activeServiceId];
+  const activeStatic = servicesSectionCardStaticData[activeServiceId];
+
+  // Build activeData from translations + static assets
+  const activeData = activeKey
+    ? {
+        title: t(`${activeKey}.title`),
+        description: t(`${activeKey}.description`),
+        ctaText: t(`${activeKey}.service_name`),
+        servicesCovered:
+          Object.values(
+            t(`${activeKey}.services_covered`, { returnObjects: true }),
+          ) || [],
+        ...activeStatic,
+      }
+    : null;
 
   return (
     <ParallaxSection>
@@ -30,29 +49,25 @@ export default function ServicesSection() {
           "py-12 md:py-16 2xl:py-46 flex flex-col items-center overflow-hidden",
         )}
       >
-        {/* --- HEADER SECTION --- */}
+        {/* --- HEADER --- */}
         <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-8 max-md:gap-4 w-full max-w-[1200px]">
           <div className="flex flex-col w-full lg:w-[35%] items-center lg:items-end text-center lg:text-right">
             <Badge variant="toolkit" size="default">
-              Our Services
+              {t("services_section.badge")}
             </Badge>
             <HighlightedHeading
-              text="A Unified Platform for\nCross-Border Logistics"
-              highlight="Unified Platform"
+              text={t("services_section.headline")}
+              highlight={t("services_section.headline_highlighted")}
               className="text-2xl font-semibold mt-2"
             />
           </div>
           <div className="flex flex-col flex-1 items-center lg:items-start text-center lg:text-left">
             <Description className="mb-4 md:text-base text-sm lg:w-[85%]">
-              ShipX aggregates solutions from Amilo & SG Link to offer a
-              comprehensive suite of services. Whether you need Express
-              Worldwide shipping, USA Destination Fulfillment, or specialized
-              FBA handling, we manage the complexities of global compliance and
-              documentation for you.
+              {t("services_section.description")}
             </Description>
             <AppButton
-              text="Book a Demo"
-              withLeftIcon={true}
+              text={t("services_section.button")}
+              withLeftIcon
               leftIcon={<CalendarDays className="size-5" />}
               className="w-fit"
               to="/book-a-demo"
@@ -60,9 +75,9 @@ export default function ServicesSection() {
           </div>
         </div>
 
-        {/* --- INTERACTIVE CONTENT SECTION --- */}
+        {/* --- INTERACTIVE CONTENT --- */}
         <div className="flex flex-col xl:flex-row justify-center items-center xl:items-start w-full mt-12 gap-8 md:gap-12">
-          {/* NAV: Horizontal Wrap on Tablet/Mobile, Vertical on Desktop */}
+          {/* NAV */}
           <div className="flex flex-wrap justify-center xl:flex-col gap-4 w-full xl:w-fit shrink-0 md:max-w-[704px] xl:max-w-none">
             {servicesSectionServiceItems.map((item) => (
               <div
@@ -74,13 +89,13 @@ export default function ServicesSection() {
                   variant="list"
                   isActive={activeServiceId === item.id}
                   icon={item.icon}
-                  heading={item.title}
+                  heading={t(`${servicesSectionCardKeys[item.id]}.title`)}
                 />
               </div>
             ))}
           </div>
 
-          {/* DISPLAY: Centered Card Area */}
+          {/* DISPLAY CARD */}
           <div className="flex justify-center w-full max-w-[714px]">
             {activeData && (
               <ServiceCard

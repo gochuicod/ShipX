@@ -45,7 +45,6 @@ const ToolsHeroSection = ({ activePage }) => {
             <TabSwitcher
               tabs={TOOLKIT_TABS}
               activeTab={activePage}
-              onChange={() => {}}
               containerBg="rgba(35, 22, 111, 0.7)"
               border={false}
             />

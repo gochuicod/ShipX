@@ -1,17 +1,22 @@
 import { useState } from "react";
 import { Search } from "lucide-react";
 import { Button } from "../../../../../../styles/button";
+import { useLangNavigate } from "../../../../../hooks/useLangNavigate";
+import { useTranslation } from "react-i18next";
 
 export default function TrackerForm() {
   const [trackingNumber, setTrackingNumber] = useState("");
+  const navigateWithLang = useLangNavigate();
+  const { t } = useTranslation();
 
   const handleTrackShipment = () => {
     if (!trackingNumber.trim()) return;
 
-    const targetUrl = `/shipment-tracker?trackingNumber=${encodeURIComponent(
-      trackingNumber,
-    )}&autosubmit=true`;
-    window.location.href = targetUrl;
+    navigateWithLang(
+      `/shipment-tracker?trackingNumber=${encodeURIComponent(
+        trackingNumber,
+      )}&autosubmit=true`,
+    );
   };
 
   const handleKeyPress = (e) => {
@@ -25,7 +30,9 @@ export default function TrackerForm() {
         htmlFor="trackingNumber"
         className="xl:text-start md:text-start text-center text-sm font-medium text-white/90 font-['Inter']"
       >
-        Input your shipment tracking number
+        {t(
+          "trade_and_logistics_toolkit_section.tools.shipment_tracker.form.label",
+        )}
       </label>
 
       {/* Input + Button */}
@@ -35,7 +42,9 @@ export default function TrackerForm() {
           <input
             id="trackingNumber"
             type="text"
-            placeholder="Enter tracking number (e.g., SX1234567890)"
+            placeholder={t(
+              "trade_and_logistics_toolkit_section.tools.shipment_tracker.form.placeholder",
+            )}
             value={trackingNumber}
             onChange={(e) => setTrackingNumber(e.target.value)}
             onKeyDown={handleKeyPress}
@@ -49,7 +58,9 @@ export default function TrackerForm() {
           className="w-[151px] h-[42px]"
           disabled={trackingNumber.length < 2}
         >
-          Track Shipment
+          {t(
+            "trade_and_logistics_toolkit_section.tools.shipment_tracker.form.submit_button",
+          )}
         </Button>
       </div>
     </div>

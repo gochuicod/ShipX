@@ -2,7 +2,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { cn } from "../../../lib/util";
 import { Button } from "../../../styles/button";
 import { themeGuide } from "../../../styles/themeGuide";
-import theme from "@material-tailwind/react/theme";
 
 export default function TabSwitcher({
   tabs,
@@ -16,11 +15,20 @@ export default function TabSwitcher({
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
+  // Extract current language (e.g. /vn/services → vn)
+  const pathSegments = pathname.split("/").filter(Boolean);
+  const currentLang = pathSegments[0];
+
   const handleTabClick = (tab) => {
-    if (pathname === "/" || pathname === "/component-library") {
-      onChange?.(tab.id);
-    } else {
-      navigate(tab.path);
+    // 🟢 HOMEPAGE / LOCAL MODE
+    if (onChange) {
+      onChange(tab.id);
+      return;
+    }
+
+    // 🔵 PAGE NAVIGATION MODE
+    if (tab.path) {
+      navigate(`/${currentLang}${tab.path}`);
     }
   };
 
@@ -33,9 +41,7 @@ export default function TabSwitcher({
         "max-md:max-w-[332px] max-md:h-[103px]",
         !containerBg && "bg-[rgba(245,243,255,0.12)]",
       )}
-      style={{
-        backgroundColor: containerBg,
-      }}
+      style={{ backgroundColor: containerBg }}
     >
       {tabs.map((tab) => {
         const isActive = activeTab === tab.id;

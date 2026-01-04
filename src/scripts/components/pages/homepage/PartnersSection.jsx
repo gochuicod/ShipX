@@ -13,8 +13,11 @@ import { partnersSectionData } from "../../../utils/constants";
 import ParallaxSection from "../../ui/ParallaxSection";
 
 import { CircleArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function PartnersSection() {
+  const { t } = useTranslation();
+
   return (
     <ParallaxSection>
       <div
@@ -33,11 +36,11 @@ export default function PartnersSection() {
                   "
         >
           <Badge variant="toolkit" size="default">
-            Our Partners
+            {t("partners_section.badge")}
           </Badge>
           <HighlightedHeading
-            text="Powering Growth\nwith World-Class Partners"
-            highlight="World-Class Partners"
+            text={t("partners_section.headline")}
+            highlight={t("partners_section.headline_highlighted")}
             className="
                           text-2xl
                           2xl:text-end md:text-center text-center
@@ -53,12 +56,10 @@ export default function PartnersSection() {
               2xl:w-auto md:w-[80%] w-full
             "
           >
-            We've built a unified network of leading marketplaces, logistics
-            carriers, and technology providers to ensure your business thrives
-            globally.
+            {t("partners_section.description")}
           </Description>
           <AppButton
-            text="Partner with Us"
+            text={t("partners_section.button")}
             withRightIcon={true}
             rightIcon={<CircleArrowRight className="size-5" />}
           />

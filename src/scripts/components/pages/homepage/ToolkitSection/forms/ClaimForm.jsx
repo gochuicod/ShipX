@@ -1,14 +1,19 @@
 import { useState } from "react";
 import { Button } from "../../../../../../styles/button";
 import { Input } from "../../../../../../styles/input";
+import { useLangNavigate } from "../../../../../hooks/useLangNavigate";
+import { useTranslation } from "react-i18next";
 
 export default function ClaimForm() {
   const [tracking, setTracking] = useState("");
   const [description, setDescription] = useState("");
+  const navigateWithLang = useLangNavigate();
+  const { t } = useTranslation();
 
   const handleClaimForm = () => {
-    const targetUrl = `/file-a-claim?trackingNumber=${encodeURIComponent(tracking)}&description=${encodeURIComponent(description)}`;
-    window.location.href = targetUrl;
+    navigateWithLang(
+      `/file-a-claim?trackingNumber=${encodeURIComponent(tracking)}&description=${encodeURIComponent(description)}`,
+    );
   };
 
   return (
@@ -16,14 +21,18 @@ export default function ClaimForm() {
       <Input
         value={tracking}
         onChange={(e) => setTracking(e.target.value)}
-        placeholder="Enter tracking number (min 8 characters)"
+        placeholder={t(
+          "trade_and_logistics_toolkit_section.tools.file_a_claim.form.placeholder_1",
+        )}
       />
 
       <Input
         multiline
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-        placeholder="Provide as much detail as possible about your claim..."
+        placeholder={t(
+          "trade_and_logistics_toolkit_section.tools.file_a_claim.form.placeholder_2",
+        )}
       />
 
       <div className="flex flex-row justify-between">
@@ -40,7 +49,9 @@ export default function ClaimForm() {
           disabled={description.length < 25 || tracking < 2}
           onClick={handleClaimForm}
         >
-          Submit Claim
+          {t(
+            "trade_and_logistics_toolkit_section.tools.file_a_claim.form.submit_button",
+          )}
         </Button>
       </div>
     </div>
