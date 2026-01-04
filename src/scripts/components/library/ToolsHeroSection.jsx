@@ -2,12 +2,14 @@ import { useTranslation } from "react-i18next";
 import TabSwitcher from "./TabSwitcher";
 
 import { TOOLKIT_TABS } from "../pages/homepage/ToolkitSection/tabs.config";
+import { getTranslatedToolkitTabs } from "../pages/homepage/ToolkitSection/toolkitTabs.i18n";
 import { themeGuide } from "../../../styles/themeGuide";
 
 import { cn } from "../../../lib/util";
 
 const ToolsHeroSection = ({ activePage }) => {
   const { t } = useTranslation();
+  const translatedTabs = getTranslatedToolkitTabs(t);
 
   return (
     <section
@@ -43,7 +45,7 @@ const ToolsHeroSection = ({ activePage }) => {
           {/* Tab Switcher Integrated */}
           <div className="flex justify-center md:justify-start w-full">
             <TabSwitcher
-              tabs={TOOLKIT_TABS}
+              tabs={translatedTabs}
               activeTab={activePage}
               containerBg="rgba(35, 22, 111, 0.7)"
               border={false}
