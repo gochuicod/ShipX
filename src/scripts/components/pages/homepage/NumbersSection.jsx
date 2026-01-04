@@ -1,47 +1,24 @@
-import {
-  TrendingUp,
-  Package,
-  Globe,
-  Users,
-  Warehouse,
-  Truck,
-} from "lucide-react";
-
 import StatItems from "../../library/StatItems";
 import { Badge } from "../../../../styles/badge";
 import HighlightedHeading from "../../library/HighlightedHeading";
 import ParallaxSection from "../../ui/ParallaxSection";
-
-const STATS_DATA = [
-  {
-    id: 1,
-    icon: <TrendingUp />,
-    heading: "60 million+",
-    description: "GMV Per\nYear",
-  },
-  { id: 2, icon: <Package />, heading: "13 million+", description: "orders" },
-  { id: 3, icon: <Globe />, heading: "192", description: "countries\nserved" },
-  { id: 4, icon: <Users />, heading: "2,500+", description: "customers" },
-  {
-    id: 5,
-    icon: <Warehouse />,
-    heading: "40+",
-    description: "tech enabled\nwarehouses",
-  },
-  { id: 6, icon: <Truck />, heading: "300+", description: "trucks\noperated" },
-];
+import { getNumbersSectionStatsData } from "../../../utils/constants";
+import { useTranslation } from "react-i18next";
 
 export default function NumbersSection() {
+  const { t } = useTranslation();
+  const statsData = getNumbersSectionStatsData(t);
+
   return (
     <ParallaxSection className="my-32 max-md:my-16">
       <div className="flex flex-col justify-center items-center w-full px-2">
         <div className="flex flex-col justify-center items-center">
           <Badge variant="toolkit" size="default">
-            Our Numbers
+            {t("our_numbers_section.badge")}
           </Badge>
           <HighlightedHeading
-            text="Delivering Excellence at Scale"
-            highlight="Excellence"
+            text={t("our_numbers_section.title")}
+            highlight={t("our_numbers_section.title_highlighted")}
             className="text-2xl 2xl:text-4xl font-semibold mt-2 text-center"
           />
         </div>
@@ -63,7 +40,7 @@ export default function NumbersSection() {
                 mx-auto
             "
         >
-          {STATS_DATA.map((stat) => (
+          {statsData.map((stat) => (
             <StatItems
               key={stat.id}
               icon={stat.icon}

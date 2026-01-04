@@ -459,3 +459,33 @@ export const officesSectionCountries = [
     name: "United States",
   },
 ];
+
+import {
+  TrendingUp,
+  Package,
+  Globe,
+  Users,
+  Warehouse,
+  Truck,
+} from "lucide-react";
+
+// Mapping of icons to match the item keys
+const iconsMap = {
+  item_1: <TrendingUp />,
+  item_2: <Package />,
+  item_3: <Globe />,
+  item_4: <Users />,
+  item_5: <Warehouse />,
+  item_6: <Truck />,
+};
+
+export const getNumbersSectionStatsData = (t) => {
+  const items = t("our_numbers_section.items", { returnObjects: true });
+
+  return Object.entries(items).map(([key, value], index) => ({
+    id: index + 1,
+    icon: iconsMap[key],
+    heading: value.title,
+    description: value.description,
+  }));
+};
