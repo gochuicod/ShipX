@@ -1602,6 +1602,10 @@
       "message_field": {
         "label": "Pesan",
         "placeholder": "Ceritakan kebutuhan pengiriman Anda..."
+      },
+      "buttons": {
+        "send_a_message": "Kirim Pesan",
+        "book_a_demo": "Pesan Demo"
       }
     }
   }

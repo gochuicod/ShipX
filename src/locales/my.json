@@ -1606,6 +1606,10 @@
       "message_field": {
         "label": "Mesej",
         "placeholder": "Beritahu kami tentang keperluan penghantaran anda..."
+      },
+      "buttons": {
+        "send_a_message": "Hantar Mesej",
+        "book_a_demo": "Tempah Demo"
       }
     }
   }
