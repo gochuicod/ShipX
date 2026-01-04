@@ -98,7 +98,7 @@ const BlogPage = () => {
             {/* Header Block & Search */}
             <div className="w-full flex flex-col md:gap-y-4 gap-y-2 items-center text-center">
               <Badge variant="toolkit" size="default">
-                Blogs and Articles
+                {t("blogs_section.badge", "Blogs and Articles")}
               </Badge>
 
               <div className="w-full flex flex-col md:gap-y-4 gap-y-2 items-center text-center">

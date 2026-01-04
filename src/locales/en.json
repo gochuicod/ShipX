@@ -482,7 +482,7 @@
       "search_placeholder": "Start typing to find answers..."
     },
     "filter_section": {
-      "title": "Filter by Category",
+      "title": "Select a category",
       "categories": [
         { "id": "all", "label": "All Categories", "count": null },
         {
