@@ -220,7 +220,8 @@
       "title": "ShipX Blog – บทความโลจิสติกส์อีคอมเมิร์ซ & คู่มือการขนส่งข้ามพรมแดน",
       "description": "อ่านบทความด้านโลจิสติกส์อีคอมเมิร์ซ การขนส่งข้ามพรมแดน ฟูลฟิลเมนต์ระหว่างประเทศ พิธีการศุลกากร และกลยุทธ์การขยายตลาดระดับโลกสำหรับแบรนด์ในเอเชียตะวันออกเฉียงใต้.",
       "canonical": "https://shipx.asia/thai/blog",
-      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp",
+      "searchButton": "ค้นหา"
     },
     "book_a_demo_page": {
       "title": "นัดหมายเดโม – ShipX โลจิสติกส์อีคอมเมิร์ซ & การขนส่งข้ามพรมแดน ASEAN-US",

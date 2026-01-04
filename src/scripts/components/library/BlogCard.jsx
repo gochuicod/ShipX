@@ -82,7 +82,7 @@ const BlogCard = ({ post: postProp, variant = "default" }) => {
         {/* Footer Actions */}
         <CardFooter>
           <CardReadMore className="text-xs text-nowrap md:text-base">
-            Read More
+            {t("blogs_section.read_more_button", "Read More")}
             <img
               src="https://cdn.jsdelivr.net/gh/hezekiahdane/ShipX-Copy@main/src/assets/blogs-arrow-right-icon.svg"
               alt="Arrow Right"

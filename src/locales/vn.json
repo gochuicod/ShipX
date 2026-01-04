@@ -219,7 +219,8 @@
       "title": "ShipX Blog – Kiến Thức Logistics Thương Mại Điện Tử & Vận Chuyển Xuyên Biên Giới",
       "description": "Khám phá kiến thức logistics TMĐT, hướng dẫn vận chuyển xuyên biên giới, fulfillment quốc tế, hải quan và mở rộng kinh doanh toàn cầu dành cho thương hiệu Đông Nam Á.",
       "canonical": "https://shipx.asia/vn/blog",
-      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp",
+      "searchButton": "Tìm kiếm"
     },
     "book_a_demo_page": {
       "title": "Đặt Lịch Demo – ShipX Logistics TMĐT & Vận Chuyển Xuyên Biên Giới ASEAN–Mỹ",

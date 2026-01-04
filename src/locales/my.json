@@ -220,7 +220,8 @@
       "title": "ShipX Blog – Panduan Logistik E-Dagang & Wawasan Penghantaran Rentas Sempadan",
       "description": "Dapatkan panduan tentang logistik e-dagang, penghantaran rentas sempadan, kastam, fulfillment antarabangsa dan strategi pengembangan global untuk jenama Asia Tenggara.",
       "canonical": "https://shipx.asia/my/blog",
-      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp",
+      "searchButton": "Cari"
     },
     "book_a_demo_page": {
       "title": "Tempah Demo – Logistik E-Dagang & Penghantaran Rentas Sempadan ASEAN-AS ShipX",

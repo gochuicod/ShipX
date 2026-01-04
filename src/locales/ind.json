@@ -220,7 +220,8 @@
       "title": "ShipX Blog – Wawasan Pengiriman Lintas Negara & Panduan Logistik E-Commerce",
       "description": "Pelajari wawasan logistik e-commerce, pengiriman lintas negara, bea cukai, fulfillment internasional, dan strategi ekspansi global untuk brand Asia Tenggara.",
       "canonical": "https://shipx.asia/ind/blog",
-      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp",
+      "searchButton": "Cari"
     },
     "book_a_demo_page": {
       "title": "Jadwalkan Demo – ShipX Logistik E-Commerce & Pengiriman Lintas Negara ASEAN-AS",

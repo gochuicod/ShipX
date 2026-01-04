@@ -220,7 +220,8 @@
       "title": "ShipX Blog – Cross-Border Shipping Insights & E-Commerce Logistics Guides",
       "description": "Explore expert insights on cross-border shipping, Southeast Asia e-commerce logistics, international fulfillment, customs compliance, and global expansion strategies from the ShipX team.",
       "canonical": "https://shipx.asia/blog",
-      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp"
+      "ogImage": "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/logo-shipx.webp",
+      "searchButton": "Search"
     },
     "book_a_demo_page": {
       "title": "Book a Demo – ShipX Cross-Border E-Commerce Logistics & ASEAN-to-U.S. Shipping",
