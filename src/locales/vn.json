@@ -1324,5 +1324,258 @@
     "title_suffix": "Hãy chia sẻ nhé",
     "share": "Chia sẻ bài viết",
     "bookmark": "Lưu trang này"
+  },
+  "partners_section": {
+    "badge": "Đối tác của chúng tôi",
+    "headline": "Thúc đẩy tăng trưởng\ncùng các đối tác đẳng cấp thế giới",
+    "description": "Chúng tôi đã xây dựng một mạng lưới thống nhất gồm các sàn thương mại điện tử hàng đầu, các nhà vận chuyển logistics và các nhà cung cấp công nghệ để đảm bảo doanh nghiệp của bạn phát triển toàn cầu.",
+    "button": "Hợp tác với chúng tôi"
+  },
+  "services_section": {
+    "badge": "Dịch vụ của chúng tôi",
+    "headline": "Nền tảng thống nhất cho\nLogistics xuyên biên giới",
+    "description": "ShipX tổng hợp các giải pháp từ Amilo & SG Link để cung cấp một bộ dịch vụ toàn diện. Cho dù bạn cần vận chuyển Nhanh Toàn cầu (Express Worldwide), Hoàn tất đơn hàng tại Mỹ (USA Fulfillment), hay xử lý FBA chuyên biệt, chúng tôi sẽ quản lý các phức tạp về tuân thủ và thủ tục giấy tờ toàn cầu cho bạn.",
+    "button": "Đặt lịch Demo",
+    "cards": {
+      "express": {
+        "title": "Chuyển phát nhanh (Express)",
+        "description": "Tăng tốc doanh nghiệp của bạn với các giải pháp vận chuyển toàn cầu cao cấp, nhạy cảm về thời gian, được vận hành bởi các nhà vận chuyển đẳng cấp thế giới.",
+        "partners_label": "Đối tác giao hàng",
+        "country_label": "Quốc gia xuất xứ",
+        "service_name": "Chuyển phát nhanh quốc tế",
+        "services_covered": {
+          "service_1": "Premium Express",
+          "service_2": "Priority Express",
+          "service_3": "Economy Express",
+          "service_4": "Preferred Express",
+          "service_5": "Prime Express",
+          "service_6": "Regular Express",
+          "service_7": "Plus Express",
+          "service_8": "Standard Express",
+          "service_9": "Saver Express"
+        }
+      },
+      "postal": {
+        "title": "Bưu chính (Postal)",
+        "description": "Các tuyến logistics chuyên biệt và xử lý đặc biệt được thiết kế cho các yêu cầu vận chuyển thương mại độc đáo.",
+        "partners_label": "Đối tác giao hàng",
+        "country_label": "Quốc gia xuất xứ",
+        "service_name": "Giao hàng gói nhỏ xuyên biên giới",
+        "services_covered": {
+          "service_1": "Standard epacket",
+          "service_2": "Economy Pak",
+          "service_3": "Economy epacket",
+          "service_4": "Expedited epacket"
+        }
+      },
+      "postal_e_commerce": {
+        "title": "Bưu chính (TMĐT)",
+        "description": "Giao hàng gói nhỏ xuyên biên giới tiết kiệm chi phí, được thiết kế đặc biệt để mở rộng phạm vi tiếp cận thương mại điện tử của bạn.",
+        "partners_label": "Đối tác giao hàng",
+        "country_label": "Quốc gia xuất xứ",
+        "service_name": "Giao hàng gói nhỏ xuyên biên giới",
+        "services_covered": {
+          "service_1": "Economy epacket",
+          "service_2": "Plus economy epacket",
+          "service_3": "Standard epacket",
+          "service_4": "Economy Pak",
+          "service_5": "Expedited epacket",
+          "service_6": "Saver Direct epacket",
+          "service_7": "Direct epacket"
+        }
+      },
+      "sea_freight": {
+        "title": "Vận tải biển",
+        "description": "Giải pháp vận tải biển đáng tin cậy và có thể mở rộng, bao gồm FBA và LCL, cho logistics khối lượng lớn.",
+        "partners_label": "Đối tác giao hàng",
+        "country_label": "Quốc gia xuất xứ",
+        "service_name": "Yêu cầu Vận tải biển",
+        "services_covered": {
+          "service_1": "FBA",
+          "service_2": "Vận chuyển LCL",
+          "service_3": "Vận chuyển FCL"
+        }
+      },
+      "us_domestic": {
+        "title": "Nội địa Mỹ",
+        "description": "Phủ sóng toàn quốc trên khắp Hoa Kỳ, từ các tùy chọn đường bộ tiết kiệm đến ưu tiên nhanh.",
+        "partners_label": "Đối tác giao hàng",
+        "country_label": "Quốc gia xuất xứ",
+        "service_name": "Giao hàng tại Mỹ",
+        "services_covered": {
+          "service_1": "Standard Mail",
+          "service_2": "Express Mail",
+          "service_3": "Economy Mail",
+          "service_4": "Priority Mail"
+        }
+      }
+    }
+  },
+  "trade_and_logistics_toolkit_section": {
+    "badge": "Bộ công cụ Thương mại & Logistics",
+    "tools": {
+      "shipment_tracker": {
+        "title": "Theo dõi đơn hàng",
+        "description": "Sử dụng mã vận đơn của bạn để truy cập ngay các cập nhật từng phút về hành trình của gói hàng, từ kho đến cửa nhà.",
+        "tab_name": "Theo dõi vận chuyển",
+        "form": {
+          "label": "Nhập mã vận đơn của bạn",
+          "placeholder": "Nhập mã vận đơn (ví dụ: SX1234567890)",
+          "submit_button": "Theo dõi"
+        }
+      },
+      "hs_code_generator": {
+        "title": "Trình tạo mã HS",
+        "description": "Nhập chi tiết sản phẩm của bạn và xử lý ngay lập tức sự phức tạp của việc chọn mã HS.",
+        "tab_name": "Trình tạo mã HS",
+        "form": {
+          "placeholder": "Nhập chi tiết sản phẩm (ví dụ: tên, trọng lượng, kích thước)",
+          "submit_button": "Tạo mã HS"
+        }
+      },
+      "file_a_claim": {
+        "title": "Gửi khiếu nại",
+        "description": "Báo cáo bất kỳ vấn đề nào với lô hàng của bạn và nhận sự hỗ trợ từ đội ngũ chuyên trách của chúng tôi.",
+        "tab_name": "Gửi khiếu nại",
+        "form": {
+          "label": "Nhập chi tiết khiếu nại của bạn",
+          "placeholder": "Nhập chi tiết khiếu nại (ví dụ: mô tả, số tiền)",
+          "submit_button": "Gửi khiếu nại"
+        }
+      }
+    }
+  },
+  "our_numbers_section": {
+    "badge": "Số liệu của chúng tôi",
+    "title": "Mang lại sự xuất sắc ở quy mô lớn",
+    "items": {
+      "item_1": {
+        "title": "60 triệu+",
+        "description": "GMV mỗi năm"
+      },
+      "item_2": {
+        "title": "13 triệu+",
+        "description": "Đơn hàng"
+      },
+      "item_3": {
+        "title": "192",
+        "description": "Quốc gia được phục vụ"
+      },
+      "item_4": {
+        "title": "2,500+",
+        "description": "Khách hàng"
+      },
+      "item_5": {
+        "title": "40+",
+        "description": "Kho hàng công nghệ cao"
+      },
+      "item_6": {
+        "title": "300+",
+        "description": "Xe tải vận hành"
+      }
+    }
+  },
+  "our_platform_section": {
+    "badge": "Nền tảng của chúng tôi",
+    "title": "Nền tảng thống nhất cho\nLogistics Toàn cầu",
+    "description": "Đơn giản hóa thương mại xuyên biên giới với một bảng điều khiển duy nhất cho vận chuyển, hoàn tất đơn hàng và tuân thủ.",
+    "cards": {
+      "left_section_cards": {
+        "card_1": "Quản lý đơn hàng và lô hàng trên khắp ASEAN và các điểm đến toàn cầu",
+        "card_2": "Tích hợp các sàn TMĐT như Amazon, Shopee, Lazada, eBay và Shopify",
+        "card_3": "Theo dõi hiệu suất trong thời gian thực, với khả năng hiển thị ở mọi bước",
+        "card_4": "Truy cập kho bãi, hoàn tất đơn hàng, vận tải và giao hàng từ một bảng điều khiển"
+      },
+      "right_section_cards": {
+        "button": "Đặt lịch Demo",
+        "card_1": {
+          "title": "Dịch vụ vận tải và thông quan linh hoạt\ncho thương mại khu vực & toàn cầu",
+          "item_1_title": "Vận tải đa phương thức",
+          "item_1_description": "đường biển, đường hàng không, đường bộ & logistics kết hợp",
+          "item_2_title": "Vận tải xe tải xuyên biên giới",
+          "item_2_description": "làn xe ngoại quan (VN-SG, TH-VN)",
+          "item_3_title": "Giải pháp Hải quan",
+          "item_3_description": "thông quan, IOSS/VAT, quản lý thuế"
+        }
+      }
+    }
+  },
+  "our_offices_section": {
+    "badge": "Văn phòng của chúng tôi",
+    "title": "Hiện diện địa phương, kết nối toàn cầu\n— lợi thế của ShipX",
+    "description": "Mạng lưới các trung tâm khu vực và các chuyên gia trong ngành của chúng tôi đảm bảo doanh nghiệp của bạn phát triển toàn cầu mà không mất đi lợi thế địa phương",
+    "cards": {
+      "card_1": {
+        "title": "Singapore",
+        "location": "60 Kaki Bukit Place, Eunos Techpark #03-19, S415979",
+        "email": "contact.sg@shipx.asia"
+      },
+      "card_2": {
+        "title": "Thái Lan",
+        "location": "450/2 Boonyasathit Building, 2th Floor, Rama III Rd., Bangkok 10120",
+        "email": "contact.th@shipx.asia"
+      },
+      "card_3": {
+        "title": "Việt Nam",
+        "location": "28 Street N0.6, Bay Hien Ward, Ho Chi Minh City, Vietnam",
+        "email": "contact.vn@shipx.asia"
+      },
+      "card_4": {
+        "title": "Malaysia",
+        "location": "Suite 5.03 Level 5 Block, Bangunan Pan Global, 1A, Jln Tandang, Seksyen 51, 46050 Petaling Jaya, Selangor",
+        "email": "contact.my@shipx.asia"
+      },
+      "card_5": {
+        "title": "Indonesia",
+        "location": "Jl. KH Mas Mansyur No. 119 - 121. Nyamplungan Kecamatan Pabean Cantikan, Surabaya",
+        "email": "contact.id@shipx.asia"
+      },
+      "card_6": {
+        "title": "Philippines",
+        "location": "",
+        "email": "contact.ph@shipx.asia"
+      },
+      "card_7": {
+        "title": "Hoa Kỳ",
+        "location": "NL 108 Almond CT, Milford, Pennsylvania. Zip code 18337",
+        "email": "contact.us@shipx.asia"
+      }
+    }
+  },
+  "sg_link_and_amilo_section": {
+    "sg_link_card": {
+      "title": "Mở rộng doanh nghiệp ra nước ngoài với chuyên môn xuyên biên giới của SG Link",
+      "description": "Vận chuyển sản phẩm của bạn đến các thị trường toàn cầu một cách nhanh chóng và an toàn với các giải pháp giao hàng đầu-cuối (end-to-end).",
+      "specialties_label": "Chuyên môn",
+      "specialties": {
+        "specialty_1": "Giao hàng nhanh",
+        "specialty_2": "Tuyến Châu Á - Thái Bình Dương",
+        "specialty_3": "Môi giới Hải quan"
+      },
+      "login_button": "Đăng nhập với SG Link",
+      "signup_button": "Đăng ký"
+    },
+    "amilo_card": {
+      "title": "Đối tác tất cả-trong-một cho logistics, hoàn tất đơn hàng và vận chuyển toàn cầu",
+      "description": "Từ kho bãi đến giao hàng chặng cuối, Amilo tinh giản mọi bước trong chuỗi cung ứng của bạn để bạn có thể tập trung vào việc mở rộng thương hiệu.",
+      "specialties_label": "Chuyên môn",
+      "specialties": {
+        "specialty_1": "Giao hàng nhanh",
+        "specialty_2": "Tuyến Châu Á - Thái Bình Dương",
+        "specialty_3": "Môi giới Hải quan"
+      },
+      "login_button": "Đăng nhập với Amilo",
+      "signup_button": "Đăng ký"
+    }
+  },
+  "blogs_section": {
+    "badge": "Blog và Bài viết",
+    "title": "Thông tin chi tiết & Ý tưởng mới nhất",
+    "read_more_button": "Đọc thêm"
+  },
+  "hero_section": {
+    "title": "Gia nhập liền mạch vào hệ sinh thái TMĐT Hoa Kỳ",
+    "description": "Gia nhập và mở rộng quy mô tại thị trường Hoa Kỳ với các giải pháp logistics tùy chỉnh được xây dựng để hỗ trợ người bán từ khi ra mắt đến khi mở rộng toàn quốc",
+    "note": "Cổng kết nối của bạn tới TMĐT Hoa Kỳ"
   }
 }
