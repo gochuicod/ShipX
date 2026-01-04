@@ -1604,7 +1604,11 @@
         "placeholder": "Tell us about your shipping needs..."
       },
       "buttons": {
-        "send_a_message": "Send a Message",
+        "send_a_message": {
+          "sending": "Sending...",
+          "sent": "Message Sent!",
+          "default": "Send a Message"
+        },
         "book_a_demo": "Book a Demo"
       }
     }

@@ -1604,7 +1604,11 @@
         "placeholder": "Hãy cho chúng tôi biết về nhu cầu vận chuyển của bạn..."
       },
       "buttons": {
-        "send_a_message": "Gửi tin nhắn",
+        "send_a_message": {
+          "sending": "Đang gửi...",
+          "sent": "Tin nhắn đã gửi!",
+          "default": "Gửi tin nhắn"
+        },
         "book_a_demo": "Đặt lịch Demo"
       }
     }

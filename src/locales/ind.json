@@ -1604,7 +1604,11 @@
         "placeholder": "Ceritakan kebutuhan pengiriman Anda..."
       },
       "buttons": {
-        "send_a_message": "Kirim Pesan",
+        "send_a_message": {
+          "sending": "Mengirim...",
+          "sent": "Pesan Terkirim!",
+          "default": "Kirim Pesan"
+        },
         "book_a_demo": "Pesan Demo"
       }
     }
