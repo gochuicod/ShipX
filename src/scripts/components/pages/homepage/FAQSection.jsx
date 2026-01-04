@@ -127,7 +127,7 @@ const FAQSection = () => {
             <AppButton
               to="/frequently-asked-questions"
               variant="secondary"
-              text="Read More"
+              text={t("blogs_section.read_more_button")}
               withRightIcon={true}
               rightIcon={<CircleArrowRight className="size-5" />}
             />

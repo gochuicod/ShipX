@@ -35,14 +35,14 @@ const BlogSection = () => {
       >
         <div className="flex justify-center items-center mb-4">
           <Badge variant="toolkit" size="default">
-            Blogs and Articles
+            {t("blogs_section.badge")}
           </Badge>
         </div>
 
         {/* Header */}
         <div className="mb-8 md:mb-10 flex justify-center items-center">
           <h1 className="md:text-4xl text-2xl font-semibold md:font-bold text-[0E0E0E]">
-            Latest Insights & Ideas
+            {t("blogs_section.title")}
           </h1>
         </div>
 
@@ -74,7 +74,7 @@ const BlogSection = () => {
           <AppButton
             to="/blogs"
             variant="secondary"
-            text="Read More"
+            text={t("blogs_section.read_more_button")}
             withRightIcon={true}
             rightIcon={<CircleArrowRight className="size-5" />}
           />
