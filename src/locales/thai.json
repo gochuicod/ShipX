@@ -36,51 +36,6 @@
       "message": "เลือกประเทศหรือภูมิภาคของคุณในเอเชียเพื่อดูหน้านี้เป็นภาษาของคุณ"
     }
   },
-  "hero_section": {
-    "slide_1": {
-      "badge_1": "ShipX",
-      "badge_2": "ประตูสู่ต่างประเทศของคุณ",
-      "header_1": "ทุกสิ่งที่คุณต้องการ",
-      "header_2": "เพื่อเติบโต",
-      "header_3": "ในระดับสากล",
-      "p_1": "ตั้งแต่การขนส่งประหยัดไปจนถึงการจัดส่งด่วน การเติมเต็ม FBA ไปจนถึงการเชื่อมต่อ",
-      "p_1_1": "กับมาร์เก็ตเพลส ShipX มอบเครื่องมือให้คุณขยายธุรกิจทั่วโลก",
-      "p_2": "ชุมชนผู้ส่งออกนานาชาติจากอาเซียนกว่า 1000+ ราย",
-      "book_a_demo": "จองการสาธิตตอนนี้!",
-      "learn_more": "เรียนรู้เพิ่มเติม",
-      "trusted_by_1": "ได้รับความไว้วางใจจากผู้นำ",
-      "trusted_by_2": "ในอุตสาหกรรมและอีกกว่า 2500+ ราย"
-    },
-    "slide_2": {
-      "badge_1": "ShipX",
-      "badge_2": "ปลายทางสหรัฐฯ",
-      "header_1": "ก้าวเข้าสู่",
-      "header_2": "อีคอมเมิร์ซสหรัฐฯ",
-      "header_3": "ได้อย่างไร้รอยต่อ",
-      "p_1": "เข้าสู่และขยายธุรกิจในตลาดสหรัฐฯ ด้วยโซลูชันโลจิสติกส์ที่ออกแบบมาเพื่อ",
-      "p_1_1": "สนับสนุนผู้ขายตั้งแต่เริ่มเปิดตัวจนถึงการขยายตัวทั่วประเทศ",
-      "p_2": "ประตูสู่ธุรกิจอีคอมเมิร์ซในสหรัฐฯ ของคุณ",
-      "book_a_demo": "จองการสาธิตเลย!",
-      "learn_more": "เรียนรู้เพิ่มเติม",
-      "trusted_by_1": "ผสานพลังโดยอุตสาหกรรม",
-      "trusted_by_2": "พันธมิตรและอีกกว่า 50 ราย"
-    },
-    "slide_3": {
-      "badge_1": "ShipX",
-      "badge_2": "การจัดส่งทั่วโลก",
-      "header_1": "จัดส่งถึง",
-      "header_2": "190+",
-      "header_3": "ประเทศ",
-      "header_4": "ได้อย่างง่ายดาย",
-      "p_1": "เข้าถึงลูกค้าทั่วโลกด้วยโลจิสติกส์ที่ไร้รอยต่อ",
-      "p_1_1": "ทำให้การขายข้ามพรมแดนง่ายขึ้น และเติบโตได้อย่างราบรื่น",
-      "p_2": "พาแบรนด์ของคุณสู่ระดับโลกได้โดยไม่ต้องกังวล",
-      "book_a_demo": "จองการสาธิตตอนนี้!",
-      "learn_more": "เรียนรู้เพิ่มเติม",
-      "trusted_by_1": "เชื่อมต่อด้วยระบบชั้นนำ",
-      "trusted_by_2": "และการเชื่อมต่ออีกกว่า 20+ ราย"
-    }
-  },
   "service_headline_section": {
     "heading_1": "ต้องการเรียนรู้เพิ่มเติมเกี่ยวกับ",
     "heading_2": "ShipX",
@@ -188,283 +143,6 @@
         ]
       }
     ]
-  },
-  "statistics_section": {
-    "badge_1": "สถิติของเรา",
-    "tagline_1": "ขับเคลื่อนด้วยเครือข่าย",
-    "tagline_2": "แบบครบวงจร — มอบความเป็นเลิศ",
-    "tagline_3": "ผ่าน ShipX",
-    "customers_label": "ลูกค้า",
-    "customers_number": "2500",
-    "global_partners_label": "พันธมิตรระดับโลก",
-    "global_partners_number": "10",
-    "countries_covered_label": "ประเทศที่ครอบคลุม",
-    "countries_covered_number": "192",
-    "orders_processed_label": "จำนวนออเดอร์ที่ดำเนินการ",
-    "orders_processed_number": "2.5",
-    "tech_warehouses_label": "คลังสินค้าที่ใช้เทคโนโลยี",
-    "tech_warehouses_number": "40",
-    "orders_fulfilled_label": "ออเดอร์ที่จัดส่งสำเร็จ",
-    "orders_fulfilled_number": "13",
-    "logistics_label": "พันธมิตรโลจิสติกส์และอีคอมเมิร์ซ",
-    "logistics_number": "45",
-    "trucks_label": "จำนวนรถบรรทุกที่ดำเนินงาน",
-    "trucks_number": "300",
-    "gmv_label": "มูลค่า GMV ต่อปี",
-    "gmv_number": "60"
-  },
-  "services_section": {
-    "badge_1": "บริการของเรา",
-    "header_1": "ทุกอย่างในแพลตฟอร์มเดียว",
-    "header_2": "ShipX รวมโซลูชันข้ามพรมแดน",
-    "header_3": "จาก Amilo และ SG LINK",
-    "link_1": "จัดส่งด่วนทั่วโลก",
-    "link_2": "จัดส่งประหยัดทั่วโลก",
-    "link_3": "เส้นทางสหรัฐอเมริกา",
-    "link_4": "การเติมเต็มสินค้าปลายทางในสหรัฐฯ",
-    "link_5": "การจัดส่งสินค้าโดย Amazon",
-    "link_6": "การขนส่งสินค้าจำนวนมากไปสหรัฐฯ",
-    "link_7": "การปฏิบัติตามข้อกำหนดและเอกสารทั่วโลก",
-    "link_8": "โซลูชันแบบบูรณาการ",
-    "book_a_demo": "จองการสาธิต",
-    "contact_us": "ติดต่อเรา",
-    "carousel": {
-      "slide_1": {
-        "header_1": "จาก",
-        "header_2": "สิงคโปร์, เวียดนาม, มาเลเซีย, ไทย, อินโดนีเซีย",
-        "header_3": "ไปยังทุกที่",
-        "header_4": "ทั่วโลก",
-        "price_desc_1": "ราคาเริ่มต้นเพียง",
-        "price_desc_2": "ระยะเวลาขนส่ง ~3-5 วัน",
-        "price": "22",
-        "currency": "$"
-      },
-      "slide_2": {
-        "header_1": "จากทุกที่ใน",
-        "header_2": "อาเซียน",
-        "header_3": "ไปยังทุกที่",
-        "header_4": "ทั่วโลก",
-        "price_desc_1": "ราคาเริ่มต้นเพียง",
-        "price_desc_2": "ระยะเวลาขนส่ง ~10-15 วัน",
-        "price": "9",
-        "currency": "$"
-      },
-      "slide_3": {
-        "header_1": "เส้นทางเฉพาะจาก",
-        "header_2": "อาเซียน",
-        "header_3": "สู่สหรัฐฯ",
-        "header_4": "พร้อมตัวเลือกด้านเวลาและ",
-        "header_5": "ต้นทุนที่หลากหลาย",
-        "price_desc_1": "ราคาเริ่มต้นเพียง",
-        "price_desc_2": "ระยะเวลาขนส่ง $$-$$ วัน",
-        "price": "4.53",
-        "currency": "$"
-      },
-      "slide_4": {
-        "header_1": "เครือข่าย",
-        "header_2": "คลังสินค้ากว่า 2 แห่ง",
-        "header_3": "ทั่วสหรัฐฯ สำหรับการเติมเต็มสินค้าในประเทศ",
-        "price_desc_1": "Pick & Pack ราคาเริ่มต้นเพียง",
-        "price_desc_2": "อัตราค่าจัดส่งสุดท้ายที่พิเศษ",
-        "price_desc_3": "สำหรับการจัดส่งทั่วประเทศ",
-        "price": "4.53",
-        "currency": "$"
-      },
-      "slide_5": {
-        "header_1": "การดำเนินงานแบบครบวงจร",
-        "header_2": "จากต้นทางถึง FBA",
-        "price_desc_1": "Pick & Pack ราคาเริ่มต้นเพียง",
-        "price_desc_2": "ระยะเวลาขนส่ง 30-40 วัน",
-        "price_1": "383",
-        "price_2": "ต่อ CBM",
-        "currency": "$"
-      },
-      "slide_6": {
-        "header_1": "เข้าร่วมตู้คอนเทนเนอร์ขนส่งทางเรือ",
-        "header_2": "แบบตารางเวลาของเราเพื่อ",
-        "header_3": "ราคาที่ถูกกว่า",
-        "header_4": "สำหรับการรวมสินค้าเข้าสหรัฐฯ",
-        "price_desc_1": "ราคาเริ่มต้นเพียง",
-        "price_desc_2": "ระยะเวลาขนส่ง 40-60 วัน",
-        "price": "3.6",
-        "currency": "$"
-      },
-      "slide_7": {
-        "header_1": "ทีมผู้เชี่ยวชาญ",
-        "header_2": "และ API",
-        "header_3": "สำหรับการค้าขายที่มีประสิทธิภาพ",
-        "price_desc_1": "ราคาเริ่มต้นเพียง",
-        "price_desc_2": "ระยะเวลาขนส่ง 10-15 วัน",
-        "price": "99",
-        "currency": "$"
-      },
-      "slide_8": {
-        "badge_1": "เร็วๆ นี้!",
-        "header_1": "เชื่อถือได้",
-        "header_2": "โซลูชัน",
-        "header_3": "กำลังมาหาคุณ!",
-        "list_1": {
-          "item_1": "การเปรียบเทียบราคา",
-          "item_2": "เครื่องคำนวณต้นทุนรวมทั้งหมด",
-          "item_3": "เครื่องคำนวณอัตราภาษี",
-          "item_4": "รหัส HS ด้วย AI",
-          "item_5": "การเงินและบริการลูกค้า"
-        }
-      }
-    },
-    "note": "*ราคาที่แสดงเป็นราคาเริ่มต้นเท่านั้น และอาจแตกต่างกันไปตามประเทศ ข้อกำหนด และเงื่อนไขที่ใช้"
-  },
-  "platform_section": {
-    "badge_1": "แพลตฟอร์มของเรา",
-    "badge_2": "สองแพลตฟอร์มที่พิสูจน์แล้ว รวมเป็นโซลูชันเดียว นั่นคือ ShipX",
-    "header_1": "หน้าต่างเดียวสำหรับ",
-    "header_2": "ความต้องการด้านโลจิสติกส์ข้ามพรมแดนทั้งหมด",
-    "description_1": "ShipX รวมเทคโนโลยีแพลตฟอร์มข้ามพรมแดนสมัยใหม่",
-    "description_2": "เข้ากับเครือข่ายโลจิสติกส์ที่ใช้เทคโนโลยีในโซลูชันเดียว ใช้งานง่าย",
-    "book_a_demo": "จองการสาธิต",
-    "contact_us": "ติดต่อเรา",
-    "trusted_by": "พันธมิตรที่ไว้วางใจเรา",
-    "info_1": "จัดการคำสั่งซื้อและการจัดส่ง",
-    "info_1_1": "ทั่วอาเซียนและปลายทางทั่วโลก",
-    "info_2": "เชื่อมต่อกับมาร์เก็ตเพลส เช่น Amazon,",
-    "info_2_1": "Shopee, Lazada, eBay และ Shopify",
-    "info_3": "ติดตามผลแบบเรียลไทม์",
-    "info_3_1": "ด้วยการมองเห็นทุกขั้นตอน",
-    "info_4": "เข้าถึงคลังสินค้า Fulfillment, การขนส่ง,",
-    "info_4_1": "และการจัดส่งได้จากแดชบอร์ดเดียว"
-  },
-  "freight_section": {
-    "badge_1": "โซลูชันด้านการขนส่งระหว่างประเทศ ศุลกากร และการเติมเต็ม",
-    "header_1": "การค้า",
-    "header_2": "ไร้รอยต่อ",
-    "header_3": "ข้ามพรมแดน",
-    "book_a_demo": "จองการสาธิต",
-    "contact_us": "ติดต่อเรา",
-    "badge_2": "การขนส่ง & ศุลกากร",
-    "header_4": "การขนส่งที่ยืดหยุ่น",
-    "header_5": "และบริการพิธีการศุลกากร",
-    "header_6": "ครบวงจร",
-    "header_7": "สำหรับการค้าภูมิภาคและทั่วโลก",
-    "collapsible_text_opened_1": "แสดงน้อยลง",
-    "collapsible_text_closed_1": "แสดงเพิ่มเติม",
-    "collapsible_text_opened_2": "แสดงน้อยลง",
-    "collapsible_text_closed_2": "แสดงเพิ่มเติม",
-    "services_1": {
-      "multimodal": {
-        "title": "การขนส่งหลายรูปแบบ",
-        "description": "ทางทะเล อากาศ ถนน และการผสมผสานโลจิสติกส์"
-      },
-      "cross_border": {
-        "title": "การขนส่งข้ามพรมแดน",
-        "description": "เส้นทางผ่านศุลกากร (VN-SG, TH-VN)"
-      },
-      "customs": {
-        "title": "โซลูชันศุลกากร",
-        "description": "การพิธีการ, IOSS/VAT, การจัดการภาษีศุลกากร"
-      }
-    },
-    "services_2": {
-      "inventory_services": {
-        "title": "บริการจัดการสินค้าคงคลัง",
-        "description": "การจัดเก็บ Pick & Pack การจัดการสินค้าตีกลับ"
-      },
-      "seamless_integrations": {
-        "title": "การเชื่อมต่ออย่างไร้รอยต่อ",
-        "description": "Shopify, Shopee, Lazada, eBay, Amazon"
-      },
-      "regional_advantage": {
-        "title": "ข้อได้เปรียบด้านภูมิภาค",
-        "description": "ทำเลที่เหมาะสมเพื่อการเติมเต็มที่รวดเร็ว"
-      }
-    },
-    "badge_3": "โซลูชันด้านการขนส่งระหว่างประเทศ ศุลกากร และการเติมเต็ม",
-    "header_8": "ศูนย์กลางเชิงกลยุทธ์",
-    "header_9": "ทั่วเวียดนาม,",
-    "header_10": "ประเทศไทย, สิงคโปร์ และมาเลเซีย",
-    "header_11": "โครงสร้างพื้นฐานที่เชื่อถือได้และการเชื่อมต่ออัจฉริยะ",
-    "header_12": "ที่ทำให้การเติบโตในระดับสากล",
-    "header_13": "ง่ายและรวดเร็วขึ้น"
-  },
-  "offices_section": {
-    "header_1": "การปรากฏตัวในท้องถิ่น, เส้นทางสู่ตลาดโลก",
-    "header_2": "—",
-    "header_3": "ข้อได้เปรียบของ ShipX",
-    "badge_1": "สำนักงานของเรา",
-    "book_a_demo": "จองการสาธิต",
-    "contact_us": "ติดต่อเรา",
-    "description_1": "เครือข่ายศูนย์กลางในภูมิภาคและผู้เชี่ยวชาญของเราช่วยให้มั่นใจว่า",
-    "description_2": "ธุรกิจของคุณเติบโตได้ในระดับโลกโดยไม่สูญเสียความได้เปรียบในท้องถิ่น",
-    "offices": {
-      "singapore": {
-        "country_name": "สิงคโปร์",
-        "address": "60 Kaki Bukit Place, อีูโนส เทคพาร์ค #03-19, S415979",
-        "contact_number": "",
-        "email": "contact.sg@shipx.asia"
-      },
-      "thailand": {
-        "country_name": "ประเทศไทย",
-        "address": "450/2 อาคารบุญญสถิต ชั้น 2 ถนนพระราม 3 กรุงเทพฯ 10120",
-        "contact_number": "",
-        "email": "contact.th@shipx.asia"
-      },
-      "vietnam": {
-        "country_name": "เวียดนาม",
-        "address": "28 ซอย 6, แขวง Bay Hien, นครโฮจิมินห์, เวียดนาม",
-        "contact_number": "",
-        "email": "contact.vn@shipx.asia"
-      },
-      "malaysia": {
-        "country_name": "มาเลเซีย",
-        "address": "Suite 5.03 Level 5 Block, Bangunan Pan Global, 1A, Jln Tandang, Seksyen 51, 46050 Petaling Jaya, Selangor",
-        "contact_number": "",
-        "email": "contact.my@shipx.asia"
-      },
-      "indonesia": {
-        "country_name": "อินโดนีเซีย",
-        "address": "Jl. KH Mas Mansyur No. 119 - 121. Nyamplungan Kecamatan Pabean Cantikan, Surabaya",
-        "email": "contact.id@shipx.asia"
-      },
-      "philippines": {
-        "country_name": "ฟิลิปปินส์",
-        "address": "",
-        "contact_number": "",
-        "email": "contact.ph@shipx.asia"
-      },
-      "united_states": {
-        "country_name": "สหรัฐอเมริกา",
-        "address": "NL 108 Almond CT, Milford, Pennsylvania. Zip code 18337",
-        "email": "contact.us@shipx.asia"
-      }
-    }
-  },
-  "systems_section": {
-    "signup_button": {
-      "question": "ยังไม่มีบัญชีใช่ไหม?",
-      "button": "สมัครสมาชิก"
-    },
-    "sglink_card": {
-      "title_highlight": "ขยายธุรกิจของคุณ",
-      "title_rest": "ไปต่างประเทศด้วยความเชี่ยวชาญด้านการขนส่งข้ามพรมแดนของ SG LINK",
-      "description": "จัดส่งสินค้าสู่ตลาดทั่วโลกอย่างรวดเร็วและปลอดภัยด้วยโซลูชันการจัดส่งแบบครบวงจรที่ออกแบบมาสำหรับผู้ขายออนไลน์",
-      "button": "เข้าสู่ระบบที่"
-    },
-    "amilo_card": {
-      "title_highlight": "พันธมิตรครบวงจรของคุณ",
-      "title_rest": "สำหรับการขนส่ง โลจิสติกส์ และการจัดส่งทั่วโลก",
-      "description": "ตั้งแต่การจัดเก็บไปจนถึงการจัดส่งขั้นสุดท้าย Amilo ช่วยปรับทุกขั้นตอนของห่วงโซ่อุปทานให้ราบรื่น เพื่อให้คุณมุ่งเน้นในการขยายแบรนด์ของคุณได้อย่างเต็มที่",
-      "button": "เข้าสู่ระบบที่"
-    }
-  },
-  "newsletter_section": {
-    "header_1": "รับข้อมูลก่อนใคร",
-    "description_1": "ประกาศพิเศษจาก ShipX การเปิดตัวแพลตฟอร์มใหม่ และอัปเดตพิเศษ",
-    "description_2": "—ส่งตรงถึงกล่องอีเมลของคุณ",
-    "form": {
-      "placeholder": "กรอกอีเมล",
-      "button_sending": "กำลังส่ง...",
-      "button_sent": "ส่งแล้ว!",
-      "button_default": "จองสาธิต"
-    }
   },
   "contact_us_section": {
     "badge_1": "ติดต่อเรา",
@@ -1650,5 +1328,253 @@
     "title_suffix": "ส่งต่อให้ผู้อื่น",
     "share": "แชร์บทความ",
     "bookmark": "บันทึกหน้านี้"
+  },
+  "partners_section": {
+    "badge": "พาร์ทเนอร์ของเรา",
+    "headline": "ขับเคลื่อนการเติบโต\nด้วยพาร์ทเนอร์ระดับโลก",
+    "description": "เราได้สร้างเครือข่ายแบบครบวงจรที่รวมตลาดชั้นนำ ผู้ให้บริการโลจิสติกส์ และผู้ให้บริการเทคโนโลยี เพื่อให้มั่นใจว่าธุรกิจของคุณจะเติบโตได้ทั่วโลก",
+    "button": "ร่วมเป็นพาร์ทเนอร์กับเรา"
+  },
+  "services_section": {
+    "badge": "บริการของเรา",
+    "headline": "แพลตฟอร์มครบวงจรสำหรับ\nโลจิสติกส์ข้ามพรมแดน",
+    "description": "ShipX รวบรวมโซลูชันจาก Amilo และ SG Link เพื่อนำเสนอบริการที่ครอบคลุม ไม่ว่าคุณจะต้องการบริการขนส่งด่วนทั่วโลก (Express Worldwide), คลังสินค้าและการจัดส่งในสหรัฐอเมริกา (USA Fulfillment) หรือการจัดการ FBA โดยเฉพาะ เราจัดการความซับซ้อนด้านการปฏิบัติตามกฎระเบียบและเอกสารระดับโลกให้คุณ",
+    "button": "จองการสาธิต (Demo)",
+    "cards": {
+      "express": {
+        "title": "บริการด่วน (Express)",
+        "description": "เร่งธุรกิจของคุณด้วยโซลูชันการขนส่งระดับโลกที่รวดเร็วและพรีเมียม ขับเคลื่อนโดยผู้ให้บริการขนส่งระดับโลก",
+        "partners_label": "พาร์ทเนอร์การจัดส่ง",
+        "country_label": "ประเทศต้นทาง",
+        "service_name": "การจัดส่งด่วนระหว่างประเทศ",
+        "services_covered": {
+          "service_1": "Premium Express",
+          "service_2": "Priority Express",
+          "service_3": "Economy Express",
+          "service_4": "Preferred Express",
+          "service_5": "Prime Express",
+          "service_6": "Regular Express",
+          "service_7": "Plus Express",
+          "service_8": "Standard Express",
+          "service_9": "Saver Express"
+        }
+      },
+      "postal": {
+        "title": "ไปรษณีย์ (Postal)",
+        "description": "เส้นทางโลจิสติกส์เฉพาะและการจัดการพิเศษที่ออกแบบมาเพื่อความต้องการในการขนส่งเชิงพาณิชย์ที่ไม่เหมือนใคร",
+        "partners_label": "พาร์ทเนอร์การจัดส่ง",
+        "country_label": "ประเทศต้นทาง",
+        "service_name": "การจัดส่งพัสดุข้ามพรมแดน",
+        "services_covered": {
+          "service_1": "Standard epacket",
+          "service_2": "Economy Pak",
+          "service_3": "Economy epacket",
+          "service_4": "Expedited epacket"
+        }
+      },
+      "postal_e_commerce": {
+        "title": "ไปรษณีย์ (E-Commerce)",
+        "description": "การจัดส่งพัสดุข้ามพรมแดนที่คุ้มค่า ออกแบบมาโดยเฉพาะเพื่อขยายการเข้าถึงอีคอมเมิร์ซของคุณ",
+        "partners_label": "พาร์ทเนอร์การจัดส่ง",
+        "country_label": "ประเทศต้นทาง",
+        "service_name": "การจัดส่งพัสดุข้ามพรมแดน",
+        "services_covered": {
+          "service_1": "Economy epacket",
+          "service_2": "Plus economy epacket",
+          "service_3": "Standard epacket",
+          "service_4": "Economy Pak",
+          "service_5": "Expedited epacket",
+          "service_6": "Saver Direct epacket",
+          "service_7": "Direct epacket"
+        }
+      },
+      "sea_freight": {
+        "title": "การขนส่งทางทะเล",
+        "description": "โซลูชันการขนส่งทางทะเลที่เชื่อถือได้และปรับขนาดได้ รวมถึง FBA และ LCL สำหรับโลจิสติกส์ปริมาณมาก",
+        "partners_label": "พาร์ทเนอร์การจัดส่ง",
+        "country_label": "ประเทศต้นทาง",
+        "service_name": "สอบถามข้อมูลการขนส่งทางทะเล",
+        "services_covered": {
+          "service_1": "FBA",
+          "service_2": "การขนส่ง LCL",
+          "service_3": "การขนส่ง FCL"
+        }
+      },
+      "us_domestic": {
+        "title": "ภายในประเทศสหรัฐฯ",
+        "description": "ครอบคลุมทั่วประเทศสหรัฐอเมริกา ตั้งแต่การขนส่งทางบกแบบประหยัดไปจนถึงตัวเลือกเร่งด่วน",
+        "partners_label": "พาร์ทเนอร์การจัดส่ง",
+        "country_label": "ประเทศต้นทาง",
+        "service_name": "การจัดส่งปลายทางสหรัฐฯ",
+        "services_covered": {
+          "service_1": "Standard Mail",
+          "service_2": "Express Mail",
+          "service_3": "Economy Mail",
+          "service_4": "Priority Mail"
+        }
+      }
+    }
+  },
+  "trade_and_logistics_toolkit_section": {
+    "badge": "เครื่องมือการค้าและโลจิสติกส์",
+    "tools": {
+      "shipment_tracker": {
+        "title": "ติดตามคำสั่งซื้อของคุณ",
+        "description": "ใช้หมายเลขติดตามของคุณเพื่อเข้าถึงข้อมูลอัปเดตล่าสุดเกี่ยวกับการเดินทางของพัสดุคุณทันที ตั้งแต่คลังสินค้าจนถึงหน้าประตู",
+        "tab_name": "ติดตามการขนส่ง",
+        "form": {
+          "label": "กรอกหมายเลขติดตามพัสดุของคุณ",
+          "placeholder": "ป้อนหมายเลขติดตาม (เช่น SX1234567890)",
+          "submit_button": "ติดตามพัสดุ"
+        }
+      },
+      "hs_code_generator": {
+        "title": "เครื่องมือสร้างรหัส HS",
+        "description": "ป้อนรายละเอียดสินค้าของคุณและจัดการความซับซ้อนในการเลือกรหัส HS ได้ทันที",
+        "tab_name": "เครื่องมือสร้างรหัส HS",
+        "form": {
+          "placeholder": "ป้อนรายละเอียดสินค้า (เช่น ชื่อ, น้ำหนัก, ขนาด)",
+          "submit_button": "สร้างรหัส HS"
+        }
+      },
+      "file_a_claim": {
+        "title": "ยื่นคำร้องเรียน",
+        "description": "รายงานปัญหาใดๆ เกี่ยวกับการจัดส่งของคุณและรับความช่วยเหลือจากทีมงานเฉพาะของเรา",
+        "tab_name": "ยื่นคำร้องเรียน",
+        "form": {
+          "label": "กรอกรายละเอียดคำร้องเรียนของคุณ",
+          "placeholder": "ป้อนรายละเอียดคำร้องเรียน (เช่น คำอธิบาย, จำนวนเงิน)",
+          "submit_button": "ส่งคำร้องเรียน"
+        }
+      }
+    }
+  },
+  "our_numbers_section": {
+    "badge": "ตัวเลขของเรา",
+    "title": "ส่งมอบความเป็นเลิศในวงกว้าง",
+    "items": {
+      "item_1": {
+        "title": "60 ล้าน+",
+        "description": "ยอดขายสินค้ารวม (GMV) ต่อปี"
+      },
+      "item_2": {
+        "title": "13 ล้าน+",
+        "description": "คำสั่งซื้อ"
+      },
+      "item_3": {
+        "title": "192",
+        "description": "ประเทศที่ให้บริการ"
+      },
+      "item_4": {
+        "title": "2,500+",
+        "description": "ลูกค้า"
+      },
+      "item_5": {
+        "title": "40+",
+        "description": "คลังสินค้าที่ใช้เทคโนโลยี"
+      },
+      "item_6": {
+        "title": "300+",
+        "description": "รถบรรทุกที่ให้บริการ"
+      }
+    }
+  },
+  "our_platform_section": {
+    "badge": "แพลตฟอร์มของเรา",
+    "title": "แพลตฟอร์มครบวงจรสำหรับ\nโลจิสติกส์ระดับโลก",
+    "description": "ลดความซับซ้อนของการค้าข้ามพรมแดนด้วยแดชบอร์ดเดียวสำหรับการจัดส่ง การจัดการคลังสินค้า (Fulfillment) และการปฏิบัติตามกฎระเบียบ",
+    "cards": {
+      "left_section_cards": {
+        "card_1": "จัดการคำสั่งซื้อและการจัดส่งทั่วอาเซียนและจุดหมายปลายทางทั่วโลก",
+        "card_2": "เชื่อมต่อกับตลาดออนไลน์เช่น Amazon, Shopee, Lazada, eBay และ Shopify",
+        "card_3": "ติดตามประสิทธิภาพแบบเรียลไทม์ พร้อมการมองเห็นในทุกขั้นตอน",
+        "card_4": "เข้าถึงคลังสินค้า การจัดการคำสั่งซื้อ การขนส่งสินค้า และการจัดส่งจากแดชบอร์ดเดียว"
+      },
+      "right_section_cards": {
+        "button": "จองการสาธิต (Demo)",
+        "card_1": {
+          "title": "บริการขนส่งสินค้าและพิธีการศุลกากรที่ยืดหยุ่น\nสำหรับการค้าระดับภูมิภาคและระดับโลก",
+          "item_1_title": "การขนส่งต่อเนื่องหลายรูปแบบ",
+          "item_1_description": "ทางทะเล, ทางอากาศ, ทางบก & โลจิสติกส์แบบผสมผสาน",
+          "item_2_title": "การขนส่งข้ามพรมแดนทางรถบรรทุก",
+          "item_2_description": "เส้นทางทัณฑ์บน (VN-SG, TH-VN)",
+          "item_3_title": "โซลูชันศุลกากร",
+          "item_3_description": "การเคลียร์สินค้า, IOSS/VAT, การจัดการภาษีอากร"
+        }
+      }
+    }
+  },
+  "our_offices_section": {
+    "badge": "สำนักงานของเรา",
+    "title": "มีตัวตนในท้องถิ่น เชื่อมโยงระดับโลก\n— ข้อได้เปรียบของ ShipX",
+    "description": "เครือข่ายศูนย์กลางระดับภูมิภาคและผู้เชี่ยวชาญเฉพาะด้านของเราช่วยให้มั่นใจว่าธุรกิจของคุณจะเติบโตได้ทั่วโลก โดยไม่สูญเสียความได้เปรียบในท้องถิ่น",
+    "cards": {
+      "card_1": {
+        "title": "สิงคโปร์",
+        "location": "60 Kaki Bukit Place, Eunos Techpark #03-19, S415979",
+        "email": "contact.sg@shipx.asia"
+      },
+      "card_2": {
+        "title": "ไทย",
+        "location": "450/2 Boonyasathit Building, 2th Floor, Rama III Rd., Bangkok 10120",
+        "email": "contact.th@shipx.asia"
+      },
+      "card_3": {
+        "title": "เวียดนาม",
+        "location": "28 Street N0.6, Bay Hien Ward, Ho Chi Minh City, Vietnam",
+        "email": "contact.vn@shipx.asia"
+      },
+      "card_4": {
+        "title": "มาเลเซีย",
+        "location": "Suite 5.03 Level 5 Block, Bangunan Pan Global, 1A, Jln Tandang, Seksyen 51, 46050 Petaling Jaya, Selangor",
+        "email": "contact.my@shipx.asia"
+      },
+      "card_5": {
+        "title": "อินโดนีเซีย",
+        "location": "Jl. KH Mas Mansyur No. 119 - 121. Nyamplungan Kecamatan Pabean Cantikan, Surabaya",
+        "email": "contact.id@shipx.asia"
+      },
+      "card_6": {
+        "title": "ฟิลิปปินส์",
+        "location": "",
+        "email": "contact.ph@shipx.asia"
+      },
+      "card_7": {
+        "title": "สหรัฐอเมริกา",
+        "location": "NL 108 Almond CT, Milford, Pennsylvania. Zip code 18337",
+        "email": "contact.us@shipx.asia"
+      }
+    }
+  },
+  "sg_link_and_amilo_section": {
+    "sg_link_card": {
+      "title": "ขยายธุรกิจของคุณสู่ต่างประเทศด้วยความเชี่ยวชาญข้ามพรมแดนของ SG Link",
+      "description": "ส่งสินค้าของคุณไปยังตลาดโลกอย่างรวดเร็วและปลอดภัยด้วยโซลูชันการจัดส่งแบบครบวงจร (End-to-End)",
+      "specialties_label": "ความเชี่ยวชาญ",
+      "specialties": {
+        "specialty_1": "การจัดส่งด่วน",
+        "specialty_2": "เส้นทางเอเชียแปซิฟิก",
+        "specialty_3": "ตัวแทนออกของศุลกากร"
+      },
+      "login_button": "เข้าสู่ระบบด้วย SG Link",
+      "signup_button": "ลงทะเบียน"
+    },
+    "amilo_card": {
+      "title": "พาร์ทเนอร์ครบวงจรสำหรับโลจิสติกส์ การจัดการคลังสินค้า และการขนส่งระดับโลก",
+      "description": "ตั้งแต่คลังสินค้าไปจนถึงการจัดส่งไมล์สุดท้าย (Last-mile) Amilo ช่วยลดขั้นตอนในห่วงโซ่อุปทานของคุณ เพื่อให้คุณสามารถมุ่งเน้นไปที่การขยายแบรนด์ของคุณ",
+      "specialties_label": "ความเชี่ยวชาญ",
+      "specialties": {
+        "specialty_1": "การจัดส่งด่วน",
+        "specialty_2": "เส้นทางเอเชียแปซิฟิก",
+        "specialty_3": "ตัวแทนออกของศุลกากร"
+      },
+      "login_button": "เข้าสู่ระบบด้วย Amilo",
+      "signup_button": "ลงทะเบียน"
+    }
+  },
+  "blogs_section": {
+    "badge": "บล็อกและบทความ",
+    "title": "ข้อมูลเชิงลึก & แนวคิดล่าสุด",
+    "read_more_button": "อ่านเพิ่มเติม"
   }
 }

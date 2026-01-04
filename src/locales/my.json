@@ -36,51 +36,6 @@
       "message": "Pilih negara atau wilayah anda di Asia untuk melihat halaman ini dalam bahasa anda."
     }
   },
-  "hero_section": {
-    "slide_1": {
-      "badge_1": "ShipX",
-      "badge_2": "Pintu Anda Ke Luar Negara",
-      "header_1": "Segala Yang Anda Perlukan",
-      "header_2": "Untuk Berkembang",
-      "header_3": "Secara Antarabangsa",
-      "p_1": "Daripada Penghantaran Ekonomi Hingga Penghantaran Ekspres, FBA Fulfillment Hingga Integrasi Marketplace",
-      "p_1_1": "ShipX Membekalkan Alat Untuk Anda Berkembang Di Seluruh Dunia",
-      "p_2": "Komuniti 1000+ Penghantar Antarabangsa Dari ASEAN",
-      "book_a_demo": "Tempah Demo Sekarang!",
-      "learn_more": "Ketahui Lebih Lanjut",
-      "trusted_by_1": "Dipercayai Oleh",
-      "trusted_by_2": "Pemimpin Industri & 2500+ Lagi"
-    },
-    "slide_2": {
-      "badge_1": "ShipX",
-      "badge_2": "Destinasi AS",
-      "header_1": "Kemasukan Lancar ke",
-      "header_2": "E-Dagang AS",
-      "header_3": "Ekosistem",
-      "p_1": "Masuki dan kembangkan pasaran AS dengan penyelesaian logistik tersuai yang dibina untuk",
-      "p_1_1": "menyokong penjual dari pelancaran hingga pengembangan seluruh negara",
-      "p_2": "Gerbang anda ke e-dagang AS",
-      "book_a_demo": "Tempah Demo Sekarang!",
-      "learn_more": "Ketahui Lebih Lanjut",
-      "trusted_by_1": "Disinergikan Oleh Industri",
-      "trusted_by_2": "Rakan Kongsi & 50+ Lagi"
-    },
-    "slide_3": {
-      "badge_1": "ShipX",
-      "badge_2": "Penghantaran Seluruh Dunia",
-      "header_1": "Menghantar Ke",
-      "header_2": "190+",
-      "header_3": "Negara",
-      "header_4": "Dengan Mudah",
-      "p_1": " Capai Pelanggan Seluruh Dunia Dengan Logistik Lancar Yang Memudahkan Jualan Rentas Sempadan",
-      "p_1_1": "Memastikan Pertumbuhan Tanpa Masalah Operasi",
-      "p_2": "Bawa Jenama Anda Ke Peringkat Global, Tanpa Tekanan",
-      "book_a_demo": "Tempah Demo Sekarang!",
-      "learn_more": "Ketahui Lebih Lanjut",
-      "trusted_by_1": "Disambungkan Oleh",
-      "trusted_by_2": "Integrasi Utama & 20+ Lagi"
-    }
-  },
   "service_headline_section": {
     "heading_1": "Ingin tahu lebih lanjut tentang",
     "heading_2": "ShipX",
@@ -188,283 +143,6 @@
         ]
       }
     ]
-  },
-  "statistics_section": {
-    "badge_1": "Statistik Kami",
-    "tagline_1": "Dikuasakan oleh rangkaian bersatu kami",
-    "tagline_2": "— menyampaikan kecemerlangan",
-    "tagline_3": "melalui ShipX",
-    "customers_label": "Pelanggan",
-    "customers_number": "2500",
-    "global_partners_label": "Rakan Global",
-    "global_partners_number": "10",
-    "countries_covered_label": "Negara Diliputi",
-    "countries_covered_number": "192",
-    "orders_processed_label": "Pesanan Diproses",
-    "orders_processed_number": "2.5",
-    "tech_warehouses_label": "Gudang Berteknologi",
-    "tech_warehouses_number": "40",
-    "orders_fulfilled_label": "Pesanan Dipenuhi",
-    "orders_fulfilled_number": "13",
-    "logistics_label": "Rakan Logistik & E-Dagang",
-    "logistics_number": "45",
-    "trucks_label": "Lori Beroperasi",
-    "trucks_number": "300",
-    "gmv_label": "GMV Setahun",
-    "gmv_number": "60"
-  },
-  "services_section": {
-    "badge_1": "Perkhidmatan Kami",
-    "header_1": "Semua dalam satu platform",
-    "header_2": "ShipX mengumpulkan penyelesaian",
-    "header_3": "rentas sempadan daripada Amilo & SG LINK",
-    "link_1": "Ekspres Seluruh Dunia",
-    "link_2": "Ekonomi Seluruh Dunia",
-    "link_3": "Koridor Destinasi AS",
-    "link_4": "Pemenuhan oleh Amazon",
-    "link_5": "Fulfillment by Amazon",
-    "link_6": "Penghantaran Pukal ke AS",
-    "link_7": "Pematuhan Global & Dokumentasi",
-    "link_8": "Penyelesaian Bersepadu",
-    "book_a_demo": "Tempah Demo",
-    "contact_us": "Hubungi Kami",
-    "carousel": {
-      "slide_1": {
-        "header_1": "Dari",
-        "header_2": "SG, VN, MY, TH, ID",
-        "header_3": "ke mana sahaja",
-        "header_4": "di dunia",
-        "price_desc_1": "Harga bermula serendah",
-        "price_desc_2": "Masa transit ~3-5 hari",
-        "price": "22",
-        "currency": "$"
-      },
-      "slide_2": {
-        "header_1": "Dari mana-mana",
-        "header_2": "ASEAN",
-        "header_3": "ke mana sahaja",
-        "header_4": "di dunia",
-        "price_desc_1": "Harga bermula serendah",
-        "price_desc_2": "Masa transit ~10-15 hari",
-        "price": "9",
-        "currency": "$"
-      },
-      "slide_3": {
-        "header_1": "Koridor Khas dari",
-        "header_2": "ASEAN",
-        "header_3": "ke AS",
-        "header_4": "dengan pelbagai pilihan transit dan",
-        "header_5": "kos",
-        "price_desc_1": "Harga bermula serendah",
-        "price_desc_2": "Masa transit $$-$$ hari",
-        "price": "4.53",
-        "currency": "$"
-      },
-      "slide_4": {
-        "header_1": "Rangkaian",
-        "header_2": "2+ gudang",
-        "header_3": "di seluruh AS untuk pemenuhan tempatan",
-        "price_desc_1": "Pick & Pack bermula serendah",
-        "price_desc_2": "Kadar last mile pembawa pilihan untuk",
-        "price_desc_3": "penghantaran seluruh negara",
-        "price": "4.53",
-        "currency": "$"
-      },
-      "slide_5": {
-        "header_1": "Operasi hujung ke hujung",
-        "header_2": "dari asal ke FBA",
-        "price_desc_1": "Pick & Pack bermula serendah",
-        "price_desc_2": "Masa transit 30-40 hari",
-        "price_1": "383",
-        "price_2": "per CBM",
-        "currency": "$"
-      },
-      "slide_6": {
-        "header_1": "Sertai kontena penghantaran laut",
-        "header_2": "berjadual kami untuk",
-        "header_3": "kadar lebih murah",
-        "header_4": "secara konsolidasi ke AS",
-        "price_desc_1": "Harga bermula serendah",
-        "price_desc_2": "Masa transit 40-60 hari",
-        "price": "3.6",
-        "currency": "$"
-      },
-      "slide_7": {
-        "header_1": "Pasukan",
-        "header_2": "Pakar dan API",
-        "header_3": "untuk Perdagangan Efisien",
-        "price_desc_1": "Harga bermula serendah",
-        "price_desc_2": "Masa transit 10-15 hari",
-        "price": "99",
-        "currency": "$"
-      },
-      "slide_8": {
-        "badge_1": "Akan Datang!",
-        "header_1": "Boleh dipercayai",
-        "header_2": "Penyelesaian",
-        "header_3": "akan tiba kepada anda!",
-        "list_1": {
-          "item_1": "Perbandingan Harga",
-          "item_2": "Kalkulator Kos Pendaratan Penuh",
-          "item_3": "Kalkulator Tarif",
-          "item_4": "Kod HS dengan AI",
-          "item_5": "Pembiayaan dan Khidmat Pelanggan"
-        }
-      }
-    },
-    "note": "*Harga yang ditunjukkan adalah harga permulaan sahaja dan mungkin berbeza mengikut negara, spesifikasi, dan syarat yang berkenaan"
-  },
-  "platform_section": {
-    "badge_1": "Platform Kami",
-    "badge_2": "Dua platform terbukti. Satu penyelesaian bersatu. Itulah ShipX",
-    "header_1": "Satu tetingkap untuk semua",
-    "header_2": "keperluan logistik rentas sempadan anda",
-    "description_1": "ShipX Menggabungkan Teknologi Platform Rentas Sempadan Moden Dan Rangkaian Logistik Berteknologi",
-    "description_2": "Ke Dalam Satu Penyelesaian Mudah Digunakan.",
-    "book_a_demo": "Tempah Demo",
-    "contact_us": "Hubungi Kami",
-    "trusted_by": "Rakan Dipercayai Kami",
-    "info_1": "Urus Pesanan Dan Penghantaran Merentasi",
-    "info_1_1": "ASEAN dan Destinasi Global",
-    "info_2": "Integrasi Marketplace Seperti Amazon,",
-    "info_2_1": "Shopee, Lazada, eBay, dan Shopify",
-    "info_3": "Jejaki Prestasi Secara Masa Nyata, Dengan",
-    "info_3_1": "Keterlihatan Pada Setiap Langkah",
-    "info_4": "Akses Gudang, Pemenuhan, Penghantaran,",
-    "info_4_1": "Dan Penghantaran Dari Satu Papan Pemuka"
-  },
-  "freight_section": {
-    "badge_1": "Penyelesaian Penghantaran Global, Kastam & Pemenuhan",
-    "header_1": "Perdagangan",
-    "header_2": "Tanpa Halangan",
-    "header_3": "Merentas Sempadan",
-    "book_a_demo": "Tempah Demo",
-    "contact_us": "Hubungi Kami",
-    "badge_2": "Penghantaran & Kastam",
-    "header_4": "Perkhidmatan",
-    "header_5": "penghantaran dan pelepasan",
-    "header_6": "yang fleksibel",
-    "header_7": "untuk perdagangan serantau & global",
-    "collapsible_text_opened_1": "Tunjuk Kurang",
-    "collapsible_text_closed_1": "Tunjuk Lagi",
-    "collapsible_text_opened_2": "Tunjuk Kurang",
-    "collapsible_text_closed_2": "Tunjuk Lagi",
-    "services_1": {
-      "multimodal": {
-        "title": "Pengangkutan Multimodal",
-        "description": "laut, udara, jalan raya & logistik gabungan"
-      },
-      "cross_border": {
-        "title": "Trak Rentas Sempadan",
-        "description": "laluan berbon (VN-SG, TH-VN)"
-      },
-      "customs": {
-        "title": "Penyelesaian Kastam",
-        "description": "pelepasan, IOSS/VAT, pengurusan duti"
-      }
-    },
-    "services_2": {
-      "inventory_services": {
-        "title": "Perkhidmatan Inventori",
-        "description": "penyimpanan, pick & pack, pengurusan pemulangan"
-      },
-      "seamless_integrations": {
-        "title": "Integrasi Lancar",
-        "description": "Shopify, Shopee, Lazada, eBay, Amazon"
-      },
-      "regional_advantage": {
-        "title": "Kelebihan Serantau",
-        "description": "lokasi dioptimumkan untuk pemenuhan pantas"
-      }
-    },
-    "badge_3": "Penyelesaian Penghantaran Global, Kastam & Pemenuhan",
-    "header_8": "Hab strategik",
-    "header_9": "di Vietnam,",
-    "header_10": "Thailand, Singapura, dan Malaysia",
-    "header_11": "Infrastruktur Dipercayai Dan Integrasi Pintar",
-    "header_12": "Yang Menjadikan Pertumbuhan",
-    "header_13": "Antarabangsa Lebih Mudah Dan Cepat"
-  },
-  "offices_section": {
-    "header_1": "Kehadiran tempatan, koridor global",
-    "header_2": "—",
-    "header_3": "kelebihan ShipX",
-    "badge_1": "Pejabat Kami",
-    "book_a_demo": "Tempah Demo",
-    "contact_us": "Hubungi Kami",
-    "description_1": "Rangkaian Hab Serantau Dan Pakar Domain Kami Memastikan",
-    "description_2": "Perniagaan Anda Berkembang Secara Global, Tanpa Kehilangan Sentuhan Tempatan",
-    "offices": {
-      "singapore": {
-        "country_name": "Singapura",
-        "address": "60 Kaki Bukit Place, Taman Teknologi Eunos #03-19, S415979",
-        "contact_number": "",
-        "email": "contact.sg@shipx.asia"
-      },
-      "thailand": {
-        "country_name": "Thailand",
-        "address": "450/2 Boonyasathit Building, Tingkat 2, Rama III Rd., Bangkok 10120",
-        "contact_number": "",
-        "email": "contact.th@shipx.asia"
-      },
-      "vietnam": {
-        "country_name": "Vietnam",
-        "address": "Jalan No.6 Nombor 28, Taman Bay Hien, Bandar Ho Chi Minh, Vietnam",
-        "contact_number": "",
-        "email": "contact.vn@shipx.asia"
-      },
-      "malaysia": {
-        "country_name": "Malaysia",
-        "address": "Suite 5.03 Level 5 Block, Bangunan Pan Global, 1A, Jln Tandang, Seksyen 51, 46050 Petaling Jaya, Selangor",
-        "contact_number": "",
-        "email": "contact.my@shipx.asia"
-      },
-      "indonesia": {
-        "country_name": "Indonesia",
-        "address": "Jl. KH Mas Mansyur No. 119 - 121. Nyamplungan Kecamatan Pabean Cantikan, Surabaya",
-        "email": "contact.id@shipx.asia"
-      },
-      "philippines": {
-        "country_name": "Filipina",
-        "address": "",
-        "contact_number": "",
-        "email": "contact.ph@shipx.asia"
-      },
-      "united_states": {
-        "country_name": "Amerika Syarikat",
-        "address": "NL 108 Almond CT, Milford, Pennsylvania. Kod pos 18337",
-        "email": "contact.us@shipx.asia"
-      }
-    }
-  },
-  "systems_section": {
-    "signup_button": {
-      "question": "Belum ada akaun?",
-      "button": "Daftar"
-    },
-    "sglink_card": {
-      "title_highlight": "Kembangkan perniagaan anda",
-      "title_rest": "ke luar negara dengan kepakaran rentas sempadan SG LINK",
-      "description": "Hantar produk ke pasaran global dengan cepat dan selamat menggunakan penyelesaian penghantaran menyeluruh yang direka khas untuk penjual eDagang",
-      "button": "Log masuk ke"
-    },
-    "amilo_card": {
-      "title_highlight": "Rakan sehenti anda",
-      "title_rest": "untuk logistik, pemenuhan dan penghantaran global",
-      "description": "Dari penyimpanan hingga penghantaran terakhir, Amilo memudahkan setiap langkah rantaian bekalan supaya anda boleh fokus mengembangkan jenama anda",
-      "button": "Log masuk ke"
-    }
-  },
-  "newsletter_section": {
-    "header_1": "Jadi Yang Pertama Mengetahui",
-    "description_1": "Pengumuman Eksklusif ShipX, Pelancaran Platform Baharu, Dan Kemas Kini Istimewa",
-    "description_2": "— Terus Ke Peti Masuk Anda.",
-    "form": {
-      "placeholder": "Masukkan Emel",
-      "button_sending": "Menghantar...",
-      "button_sent": "Dihantar!",
-      "button_default": "Tempah Demo"
-    }
   },
   "contact_us_section": {
     "badge_1": "Hubungi Kami",
@@ -1650,5 +1328,253 @@
     "title_suffix": "Kongsikan bersama",
     "share": "Kongsi Artikel",
     "bookmark": "Tanda Halaman"
+  },
+  "partners_section": {
+    "badge": "Rakan Kongsi Kami",
+    "headline": "Memacu Pertumbuhan\ndengan Rakan Kongsi Bertaraf Dunia",
+    "description": "Kami telah membina rangkaian bersepadu pasaran terkemuka, pembawa logistik, dan penyedia teknologi untuk memastikan perniagaan anda berkembang maju di peringkat global.",
+    "button": "Bekerjasama dengan Kami"
+  },
+  "services_section": {
+    "badge": "Perkhidmatan Kami",
+    "headline": "Platform Bersepadu untuk\nLogistik Rentas Sempadan",
+    "description": "ShipX menggabungkan penyelesaian daripada Amilo & SG Link untuk menawarkan suite perkhidmatan yang komprehensif. Sama ada anda memerlukan penghantaran Ekspres Seluruh Dunia, Pemenuhan Destinasi AS, atau pengendalian FBA khusus, kami menguruskan kerumitan pematuhan dan dokumentasi global untuk anda.",
+    "button": "Tempah Demo",
+    "cards": {
+      "express": {
+        "title": "Ekspres",
+        "description": "Percepatkan perniagaan anda dengan penyelesaian penghantaran global premium yang sensitif masa, dikuasakan oleh pembawa bertaraf dunia.",
+        "partners_label": "Rakan Penghantaran",
+        "country_label": "Negara Asal",
+        "service_name": "Penghantaran Ekspres Antarabangsa",
+        "services_covered": {
+          "service_1": "Premium Express",
+          "service_2": "Priority Express",
+          "service_3": "Economy Express",
+          "service_4": "Preferred Express",
+          "service_5": "Prime Express",
+          "service_6": "Regular Express",
+          "service_7": "Plus Express",
+          "service_8": "Standard Express",
+          "service_9": "Saver Express"
+        }
+      },
+      "postal": {
+        "title": "Pos (Postal)",
+        "description": "Talian logistik khusus dan pengendalian istimewa yang disesuaikan untuk keperluan penghantaran komersial yang unik.",
+        "partners_label": "Rakan Penghantaran",
+        "country_label": "Negara Asal",
+        "service_name": "Penghantaran Paket Rentas Sempadan",
+        "services_covered": {
+          "service_1": "Standard epacket",
+          "service_2": "Economy Pak",
+          "service_3": "Economy epacket",
+          "service_4": "Expedited epacket"
+        }
+      },
+      "postal_e_commerce": {
+        "title": "Pos (E-Dagang)",
+        "description": "Penghantaran paket rentas sempadan yang kos efektif, direka khas untuk meningkatkan jangkauan e-dagang anda.",
+        "partners_label": "Rakan Penghantaran",
+        "country_label": "Negara Asal",
+        "service_name": "Penghantaran Paket Rentas Sempadan",
+        "services_covered": {
+          "service_1": "Economy epacket",
+          "service_2": "Plus economy epacket",
+          "service_3": "Standard epacket",
+          "service_4": "Economy Pak",
+          "service_5": "Expedited epacket",
+          "service_6": "Saver Direct epacket",
+          "service_7": "Direct epacket"
+        }
+      },
+      "sea_freight": {
+        "title": "Kargo Laut",
+        "description": "Penyelesaian kargo laut yang boleh dipercayai dan berskala, termasuk FBA dan LCL, untuk logistik bervolume tinggi.",
+        "partners_label": "Rakan Penghantaran",
+        "country_label": "Negara Asal",
+        "service_name": "Pertanyaan Kargo Laut",
+        "services_covered": {
+          "service_1": "FBA",
+          "service_2": "Penghantaran LCL",
+          "service_3": "Penghantaran FCL"
+        }
+      },
+      "us_domestic": {
+        "title": "Domestik AS",
+        "description": "Liputan seluruh negara yang lengkap di AS, daripada pilihan darat ekonomi hingga keutamaan yang dipercepatkan.",
+        "partners_label": "Rakan Penghantaran",
+        "country_label": "Negara Asal",
+        "service_name": "Penghantaran Destinasi AS",
+        "services_covered": {
+          "service_1": "Standard Mail",
+          "service_2": "Express Mail",
+          "service_3": "Economy Mail",
+          "service_4": "Priority Mail"
+        }
+      }
+    }
+  },
+  "trade_and_logistics_toolkit_section": {
+    "badge": "Kit Alat Perdagangan & Logistik",
+    "tools": {
+      "shipment_tracker": {
+        "title": "Jejaki Pesanan Anda",
+        "description": "Gunakan nombor penjejakan anda untuk mengakses kemas kini terkini mengenai perjalanan pakej anda dengan serta-merta, dari gudang ke pintu rumah.",
+        "tab_name": "Penjejak Penghantaran",
+        "form": {
+          "label": "Masukkan nombor penjejakan penghantaran anda",
+          "placeholder": "Masukkan nombor penjejakan (cth: SX1234567890)",
+          "submit_button": "Jejaki Penghantaran"
+        }
+      },
+      "hs_code_generator": {
+        "title": "Penjana Kod HS",
+        "description": "Masukkan butiran produk anda dan uruskan kerumitan pemilihan kod HS dengan serta-merta.",
+        "tab_name": "Penjana Kod HS",
+        "form": {
+          "placeholder": "Masukkan butiran produk (cth: nama, berat, dimensi)",
+          "submit_button": "Jana Kod HS"
+        }
+      },
+      "file_a_claim": {
+        "title": "Failkan Tuntutan",
+        "description": "Laporkan sebarang masalah dengan penghantaran anda dan terima bantuan daripada pasukan berdedikasi kami.",
+        "tab_name": "Failkan Tuntutan",
+        "form": {
+          "label": "Masukkan butiran tuntutan anda",
+          "placeholder": "Masukkan butiran tuntutan (cth: huraian, jumlah)",
+          "submit_button": "Hantar Tuntutan"
+        }
+      }
+    }
+  },
+  "our_numbers_section": {
+    "badge": "Nombor Kami",
+    "title": "Menyampaikan Kecemerlangan Pada Skala Besar",
+    "items": {
+      "item_1": {
+        "title": "60 juta+",
+        "description": "GMV Setahun"
+      },
+      "item_2": {
+        "title": "13 juta+",
+        "description": "Pesanan"
+      },
+      "item_3": {
+        "title": "192",
+        "description": "Negara Dilayani"
+      },
+      "item_4": {
+        "title": "2,500+",
+        "description": "Pelanggan"
+      },
+      "item_5": {
+        "title": "40+",
+        "description": "Gudang Berteknologi"
+      },
+      "item_6": {
+        "title": "300+",
+        "description": "Lori Dioperasikan"
+      }
+    }
+  },
+  "our_platform_section": {
+    "badge": "Platform Kami",
+    "title": "Platform Bersepadu Kami untuk\nLogistik Global",
+    "description": "Permudahkan perdagangan rentas sempadan dengan satu papan pemuka untuk penghantaran, pemenuhan dan pematuhan.",
+    "cards": {
+      "left_section_cards": {
+        "card_1": "Urus pesanan dan penghantaran di seluruh ASEAN dan destinasi global",
+        "card_2": "Integrasikan pasaran seperti Amazon, Shopee, Lazada, eBay, dan Shopify",
+        "card_3": "Jejaki prestasi dalam masa nyata, dengan keterlihatan pada setiap langkah",
+        "card_4": "Akses pergudangan, pemenuhan, kargo, dan penghantaran dari satu papan pemuka"
+      },
+      "right_section_cards": {
+        "button": "Tempah Demo",
+        "card_1": {
+          "title": "Perkhidmatan kargo dan pelepasan yang fleksibel\nuntuk perdagangan serantau & global",
+          "item_1_title": "Pengangkutan Multimodal",
+          "item_1_description": "laut, udara, jalan raya & logistik gabungan",
+          "item_2_title": "Pengangkutan Lori Rentas Sempadan",
+          "item_2_description": "laluan berbon (VN-SG, TH-VN)",
+          "item_3_title": "Penyelesaian Kastam",
+          "item_3_description": "pelepasan, IOSS/VAT, pengurusan duti"
+        }
+      }
+    }
+  },
+  "our_offices_section": {
+    "badge": "Pejabat Kami",
+    "title": "Kehadiran tempatan, koridor global\n— kelebihan ShipX",
+    "description": "Rangkaian Hab Serantau dan Pakar Domain Kami Memastikan Perniagaan Anda Berkembang Maju Secara Global, Tanpa Kehilangan Kelebihan Tempatan",
+    "cards": {
+      "card_1": {
+        "title": "Singapura",
+        "location": "60 Kaki Bukit Place, Eunos Techpark #03-19, S415979",
+        "email": "contact.sg@shipx.asia"
+      },
+      "card_2": {
+        "title": "Thailand",
+        "location": "450/2 Boonyasathit Building, 2th Floor, Rama III Rd., Bangkok 10120",
+        "email": "contact.th@shipx.asia"
+      },
+      "card_3": {
+        "title": "Vietnam",
+        "location": "28 Street N0.6, Bay Hien Ward, Ho Chi Minh City, Vietnam",
+        "email": "contact.vn@shipx.asia"
+      },
+      "card_4": {
+        "title": "Malaysia",
+        "location": "Suite 5.03 Level 5 Block, Bangunan Pan Global, 1A, Jln Tandang, Seksyen 51, 46050 Petaling Jaya, Selangor",
+        "email": "contact.my@shipx.asia"
+      },
+      "card_5": {
+        "title": "Indonesia",
+        "location": "Jl. KH Mas Mansyur No. 119 - 121. Nyamplungan Kecamatan Pabean Cantikan, Surabaya",
+        "email": "contact.id@shipx.asia"
+      },
+      "card_6": {
+        "title": "Filipina",
+        "location": "",
+        "email": "contact.ph@shipx.asia"
+      },
+      "card_7": {
+        "title": "Amerika Syarikat",
+        "location": "NL 108 Almond CT, Milford, Pennsylvania. Zip code 18337",
+        "email": "contact.us@shipx.asia"
+      }
+    }
+  },
+  "sg_link_and_amilo_section": {
+    "sg_link_card": {
+      "title": "Kembangkan perniagaan anda ke luar negara dengan kepakaran rentas sempadan SG Link",
+      "description": "Hantar produk anda ke pasaran global dengan cepat dan selamat menggunakan penyelesaian penghantaran hujung-ke-hujung.",
+      "specialties_label": "Kepakaran",
+      "specialties": {
+        "specialty_1": "Penghantaran Ekspres",
+        "specialty_2": "Laluan Asia-Pasifik",
+        "specialty_3": "Broker Kastam"
+      },
+      "login_button": "Log masuk dengan SG Link",
+      "signup_button": "Daftar"
+    },
+    "amilo_card": {
+      "title": "Rakan kongsi serba ada anda untuk logistik, pemenuhan dan penghantaran global",
+      "description": "Dari pergudangan hingga penghantaran 'last-mile', Amilo memperkemaskan setiap langkah rantaian bekalan anda supaya anda boleh fokus pada pengembangan jenama anda.",
+      "specialties_label": "Kepakaran",
+      "specialties": {
+        "specialty_1": "Penghantaran Ekspres",
+        "specialty_2": "Laluan Asia-Pasifik",
+        "specialty_3": "Broker Kastam"
+      },
+      "login_button": "Log masuk dengan Amilo",
+      "signup_button": "Daftar"
+    }
+  },
+  "blogs_section": {
+    "badge": "Blog dan Artikel",
+    "title": "Wawasan & Idea Terkini",
+    "read_more_button": "Baca Lebih Lanjut"
   }
 }

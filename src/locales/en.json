@@ -36,51 +36,6 @@
       "message": "Choose your country or region in Asia to view this page in your language."
     }
   },
-  "hero_section": {
-    "slide_1": {
-      "badge_1": "ShipX",
-      "badge_2": "Your Gateway Abroad",
-      "header_1": "Everything You Need",
-      "header_2": "To Grow",
-      "header_3": "Internationally",
-      "p_1": "From Economy Shipping To Express Delivery, FBA Fulfillment To Marketplace",
-      "p_1_1": "integrations, ShipX Equips You With The Tools To Scale Worldwide",
-      "p_2": "Community Of 1000+ International Shippers From ASEAN",
-      "book_a_demo": "Book a Demo Now!",
-      "learn_more": "Learn More",
-      "trusted_by_1": "Trusted By Industry",
-      "trusted_by_2": "Leaders & 2500+ More"
-    },
-    "slide_2": {
-      "badge_1": "ShipX",
-      "badge_2": "Destination US",
-      "header_1": "Seamless Entry to The",
-      "header_2": "US E-Commerce",
-      "header_3": "Ecosystem",
-      "p_1": " Enter and scale in the U.S. market with custom logistics solutions built to",
-      "p_1_1": "support sellers from launch to nationwide expansion",
-      "p_2": "Your gateway to U.S. e-commerce",
-      "book_a_demo": "Book a Demo Now!",
-      "learn_more": "Learn More",
-      "trusted_by_1": "Synergized By Industry",
-      "trusted_by_2": "Partners & 50+ More"
-    },
-    "slide_3": {
-      "badge_1": "ShipX",
-      "badge_2": "Worldwide Delivery",
-      "header_1": "Delivering To",
-      "header_2": "190+",
-      "header_3": "Countries",
-      "header_4": "With Ease",
-      "p_1": " Reach Customers Worldwide With Seamless Logistics That Simplify Cross-",
-      "p_1_1": "Border Sales, Ensuring Smooth Growth Without Operational Headaches",
-      "p_2": "Take Your Brand Global, Stress-Free",
-      "book_a_demo": "Book a Demo Now!",
-      "learn_more": "Learn More",
-      "trusted_by_1": "Connected By Leading",
-      "trusted_by_2": "Integrations & 20+ More"
-    }
-  },
   "service_headline_section": {
     "heading_1": "Want to learn more about the",
     "heading_2": "ShipX",
@@ -188,283 +143,6 @@
         ]
       }
     ]
-  },
-  "statistics_section": {
-    "badge_1": "Our Statistics",
-    "tagline_1": "Powered by our unified",
-    "tagline_2": "network — delivering",
-    "tagline_3": "excellence through ShipX",
-    "customers_label": "Customers",
-    "customers_number": "2500",
-    "global_partners_label": "Global Partners",
-    "global_partners_number": "10",
-    "countries_covered_label": "Countries Covered",
-    "countries_covered_number": "192",
-    "orders_processed_label": "Orders Processed",
-    "orders_processed_number": "2.5",
-    "tech_warehouses_label": "Tech Enabled Warehouses",
-    "tech_warehouses_number": "40",
-    "orders_fulfilled_label": "Orders Fulfilled",
-    "orders_fulfilled_number": "13",
-    "logistics_label": "Logistics & Ecommerce Partners",
-    "logistics_number": "45",
-    "trucks_label": "Trucks Operated",
-    "trucks_number": "300",
-    "gmv_label": "GMV Per Year",
-    "gmv_number": "60"
-  },
-  "services_section": {
-    "badge_1": "Our Services",
-    "header_1": "All in one platform",
-    "header_2": "ShipX aggregates cross-",
-    "header_3": "border solutions from Amilo & SG LINK",
-    "link_1": "Express Worldwide",
-    "link_2": "Economy Worldwide",
-    "link_3": "USA Destination Corridor",
-    "link_4": "USA Destination Fulfillment",
-    "link_5": "Fulfillment by Amazon",
-    "link_6": "Bulk Freight to USA",
-    "link_7": "Global Compliance & Documentation",
-    "link_8": "Integrated Solutions",
-    "book_a_demo": "Book a Demo",
-    "contact_us": "Contact Us",
-    "carousel": {
-      "slide_1": {
-        "header_1": "From",
-        "header_2": "SG, VN, MY, TH, ID",
-        "header_3": "to anywhere",
-        "header_4": "in the world",
-        "price_desc_1": "Prices starting from as low as",
-        "price_desc_2": "Transit time ~3-5 days",
-        "price": "22",
-        "currency": "$"
-      },
-      "slide_2": {
-        "header_1": "From anywhere in",
-        "header_2": "ASEAN",
-        "header_3": "to anywhere",
-        "header_4": "in the world",
-        "price_desc_1": "Prices starting from as low as",
-        "price_desc_2": "Transit time ~10-15 days",
-        "price": "9",
-        "currency": "$"
-      },
-      "slide_3": {
-        "header_1": "Dedicated Corridor from",
-        "header_2": "ASEAN",
-        "header_3": "to US",
-        "header_4": "with various transit and",
-        "header_5": "cost options",
-        "price_desc_1": "Prices starting from as low as",
-        "price_desc_2": "Transit time $$-$$ days",
-        "price": "4.53",
-        "currency": "$"
-      },
-      "slide_4": {
-        "header_1": "Network of",
-        "header_2": "2+ warehouses",
-        "header_3": "across USA for local fulfillment",
-        "price_desc_1": "Pick & Pack starting from as low as",
-        "price_desc_2": "Preferred carrier last mile rates for",
-        "price_desc_3": "nationwide delivery",
-        "price": "2",
-        "currency": "$"
-      },
-      "slide_5": {
-        "header_1": "End-to-end operations",
-        "header_2": "from origin to FBA",
-        "price_desc_1": "Pick & Pack starting from as low as",
-        "price_desc_2": "Transit time 30-40 days",
-        "price_1": "383",
-        "price_2": "per CBM",
-        "currency": "$"
-      },
-      "slide_6": {
-        "header_1": "Join our scheduled sea-freight",
-        "header_2": "containers for",
-        "header_3": "cheaper",
-        "header_4": "consolidated rates into USA",
-        "price_desc_1": "Prices starting from as low as",
-        "price_desc_2": "Transit time 40-60 days",
-        "price": "3.6",
-        "currency": "$"
-      },
-      "slide_7": {
-        "header_1": "Team of",
-        "header_2": "Experts and APIs",
-        "header_3": "for Efficient Trade",
-        "price_desc_1": "Prices starting from as low as",
-        "price_desc_2": "Transit time 10-15 days",
-        "price": "99",
-        "currency": "$"
-      },
-      "slide_8": {
-        "badge_1": "Coming Soon!",
-        "header_1": "Reliable",
-        "header_2": "solutions",
-        "header_3": "coming your way!",
-        "list_1": {
-          "item_1": "Pricing Comparison",
-          "item_2": "Fully Landed Cost Calculator",
-          "item_3": "Tariff Calculator",
-          "item_4": "HS Codes with AI",
-          "item_5": "Financing and Customer Service"
-        }
-      }
-    },
-    "note": "*Prices shown are starting prices only and may vary by country, specifications, and applicable conditions"
-  },
-  "platform_section": {
-    "badge_1": "Our Platform",
-    "badge_2": "Two proven platforms. One unified solution. That's ShipX",
-    "header_1": "One window for all your",
-    "header_2": "cross-border logistics needs",
-    "description_1": "ShipX Brings Together Modern Cross-Border Platform Technology And Tech-",
-    "description_2": "Enabled Logistics Networks Into A Single, Easy-To-Use Solution.",
-    "book_a_demo": "Book a Demo",
-    "contact_us": "Contact Us",
-    "trusted_by": "Our Trusted Partners",
-    "info_1": "Manage Orders And Shipments Across",
-    "info_1_1": "ASEAN and Global Destinations",
-    "info_2": "Integrate Marketplaces Like Amazon,",
-    "info_2_1": "Shopee, Lazada, eBay, and Shopify",
-    "info_3": "Track Performance In Real Time, With",
-    "info_3_1": "Visibility Across Every Step",
-    "info_4": "Access Warehousing, Fulfillment, Freight,",
-    "info_4_1": "And Delivery From One Dashboard"
-  },
-  "freight_section": {
-    "badge_1": "Global Freight, Customs & Fulfillment Solutions",
-    "header_1": "Seamless",
-    "header_2": "Trade",
-    "header_3": "Across Borders",
-    "book_a_demo": "Book a Demo",
-    "contact_us": "Contact Us",
-    "badge_2": "Freight & Customs",
-    "header_4": "Flexible",
-    "header_5": "freight and clearance",
-    "header_6": "services",
-    "header_7": "for regional & global trade",
-    "collapsible_text_opened_1": "Show Less",
-    "collapsible_text_closed_1": "Show More",
-    "collapsible_text_opened_2": "Show Less",
-    "collapsible_text_closed_2": "Show More",
-    "services_1": {
-      "multimodal": {
-        "title": "Multimodal Transport",
-        "description": "sea, air, road & combined logistics"
-      },
-      "cross_border": {
-        "title": "Cross-Border Trucking",
-        "description": "bonded-lanes (VN-SG, TH-VN)"
-      },
-      "customs": {
-        "title": "Customs Solutions",
-        "description": "clearance, IOSS/VAT, duty management"
-      }
-    },
-    "services_2": {
-      "inventory_services": {
-        "title": "Inventory Services",
-        "description": "storage, pick & pack, returns management"
-      },
-      "seamless_integrations": {
-        "title": "Seamless Integrations",
-        "description": "Shopify, Shopee, Lazada, eBay, Amazon"
-      },
-      "regional_advantage": {
-        "title": "Regional Advantage",
-        "description": "optimized location for fast fulfillment"
-      }
-    },
-    "badge_3": "Global Freight, Customs & Fulfillment Solutions",
-    "header_8": "Strategic hubs",
-    "header_9": "across Vietnam,",
-    "header_10": "Thailand, Singapore, and Malaysia",
-    "header_11": "Trusted Infrastructure And Smart",
-    "header_12": "Integrations That Make International",
-    "header_13": "Growth Simpler And Faster"
-  },
-  "offices_section": {
-    "header_1": "Local presence, global corridors",
-    "header_2": "—",
-    "header_3": "the ShipX advantage",
-    "badge_1": "Our Offices",
-    "book_a_demo": "Book a Demo",
-    "contact_us": "Contact Us",
-    "description_1": "Our Network Of Regional Hubs And Domain Experts Ensures",
-    "description_2": "Your Business Thrives Globally, Without Losing Its Local Edge",
-    "offices": {
-      "singapore": {
-        "country_name": "Singapore",
-        "address": "60 Kaki Bukit Place, Eunos Techpark #03-19, S415979",
-        "contact_number": "",
-        "email": "contact.sg@shipx.asia"
-      },
-      "thailand": {
-        "country_name": "Thailand",
-        "address": "450/2 Boonyasathit Building, 2th Floor, Rama III Rd., Bangkok 10120",
-        "contact_number": "",
-        "email": "contact.th@shipx.asia"
-      },
-      "vietnam": {
-        "country_name": "Vietnam",
-        "address": "28 Street N0.6, Bay Hien Ward, Ho Chi Minh City, Vietnam",
-        "contact_number": "",
-        "email": "contact.vn@shipx.asia"
-      },
-      "malaysia": {
-        "country_name": "Malaysia",
-        "address": "Suite 5.03 Level 5 Block, Bangunan Pan Global, 1A, Jln Tandang, Seksyen 51, 46050 Petaling Jaya, Selangor",
-        "contact_number": "",
-        "email": "contact.my@shipx.asia"
-      },
-      "indonesia": {
-        "country_name": "Indonesia",
-        "address": "Jl. KH Mas Mansyur No. 119 - 121. Nyamplungan Kecamatan Pabean Cantikan, Surabaya",
-        "email": "contact.id@shipx.asia"
-      },
-      "philippines": {
-        "country_name": "Philippines",
-        "address": "",
-        "contact_number": "",
-        "email": "contact.ph@shipx.asia"
-      },
-      "united_states": {
-        "country_name": "United States",
-        "address": "NL 108 Almond CT, Milford, Pennsylvania. Zip code 18337",
-        "email": "contact.us@shipx.asia"
-      }
-    }
-  },
-  "systems_section": {
-    "signup_button": {
-      "question": "Don't have an Account yet?",
-      "button": "Sign Up"
-    },
-    "sglink_card": {
-      "title_highlight": "Expand your business",
-      "title_rest": "abroad with SG LINK's cross-border expertise",
-      "description": "Ship Products To Global Markets Quickly And Securely With End-To-End Delivery Solutions Tailored For eCommerce Sellers",
-      "button": "Log in to"
-    },
-    "amilo_card": {
-      "title_highlight": "Your all-in-one partner",
-      "title_rest": "for logistics, fulfillment and global shipping",
-      "description": "From Warehousing To Last-Mile Delivery, Amilo Streamlines Every Step Of Your Supply Chain So You Can Focus On Scaling Your Brand",
-      "button": "Log in to"
-    }
-  },
-  "newsletter_section": {
-    "header_1": "Be The First To Know",
-    "description_1": "Exclusive ShipX Announcements, New Platform Launches, And Special Updates",
-    "description_2": "—Straight To Your Inbox.",
-    "form": {
-      "placeholder": "Enter Email",
-      "button_sending": "Sending...",
-      "button_sent": "Sent!",
-      "button_default": "Book a Demo"
-    }
   },
   "contact_us_section": {
     "badge_1": "Contact Us",
@@ -1646,5 +1324,253 @@
     "title_suffix": "Pass it on",
     "share": "Share Blog Post",
     "bookmark": "Bookmark Page"
+  },
+  "partners_section": {
+    "badge": "Our Partners",
+    "headline": "Powering Growth\nwith World-Class Partners",
+    "description": "We've built a unified network of leading marketplaces, logistics carriers, and technology providers to ensure your business thrives globally.",
+    "button": "Partner with Us"
+  },
+  "services_section": {
+    "badge": "Our Services",
+    "headline": "A Unified Platform for\nCross-Border Logistics",
+    "description": "ShipX aggregates solutions from Amilo & SG Link to offer a comprehensive suite of services. Whether you need Express Worldwide shipping, USA Destination Fulfillment, or specialized FBA handling, we manage the complexities of global compliance and documentation for you.",
+    "button": "Book a Demo",
+    "cards": {
+      "express": {
+        "title": "Express",
+        "description": "Accelerate your business with premium, time-sensitive global shipping solutions powered by world-class carriers.",
+        "partners_label": "Delivery Partners",
+        "country_label": "Country Origin",
+        "service_name": "International Express Delivery",
+        "services_covered": {
+          "service_1": "Premium Express",
+          "service_2": "Priority Express",
+          "service_3": "Economy Express",
+          "service_4": "Preferred Express",
+          "service_5": "Prime Express",
+          "service_6": "Regular Express",
+          "service_7": "Plus Express",
+          "service_8": "Standard Express",
+          "service_9": "Saver Express"
+        }
+      },
+      "postal": {
+        "title": "Postal",
+        "description": "Specialized logistics lines and special handling tailored for unique commercial shipping requirements.",
+        "partners_label": "Delivery Partners",
+        "country_label": "Country Origin",
+        "service_name": "Cross border Packet Delivery",
+        "services_covered": {
+          "service_1": "Standard epacket",
+          "service_2": "Economy Pak",
+          "service_3": "Economy epacket",
+          "service_4": "Expedited epacket"
+        }
+      },
+      "postal_e_commerce": {
+        "title": "Postal (E-Commerce)",
+        "description": "Cost-effective, cross-border packet delivery designed specifically to scale your e-commerce reach.",
+        "partners_label": "Delivery Partners",
+        "country_label": "Country Origin",
+        "service_name": "Cross border Packet Delivery",
+        "services_covered": {
+          "service_1": "Ecomony epacket",
+          "service_2": "Plus economy epacket",
+          "service_3": "Standard epacket",
+          "service_4": "Economy Pak",
+          "service_5": "Expedited epacket",
+          "service_6": "Saver Direct epacket",
+          "service_7": "Direct epacket"
+        }
+      },
+      "sea_freight": {
+        "title": "Sea Freight",
+        "description": "Reliable and scalable ocean freight solutions, including FBA and LCL, for high-volume logistics.",
+        "partners_label": "Delivery Partners",
+        "country_label": "Country Origin",
+        "service_name": "Sea Freight Inquiry",
+        "services_covered": {
+          "service_1": "FBA",
+          "service_2": "LCL Shipping",
+          "service_3": "FCL Shipping"
+        }
+      },
+      "us_domestic": {
+        "title": "US Domestic",
+        "description": "Complete nationwide coverage across the USA, ranging from economy ground to priority expedited options.",
+        "partners_label": "Delivery Partners",
+        "country_label": "Country Origin",
+        "service_name": "US Destination Delivery",
+        "services_covered": {
+          "service_1": "Standard Mail",
+          "service_2": "Express Mail",
+          "service_3": "Economy Mail",
+          "service_4": "Priority Mail"
+        }
+      }
+    }
+  },
+  "trade_and_logistics_toolkit_section": {
+    "badge": "Trade & Logistics Toolkit",
+    "tools": {
+      "shipment_tracker": {
+        "title": "Track Your Order",
+        "description": "Use your tracking number to instantly access up-to-the-minute updates on your package's journey, from warehouse to doorstep.",
+        "tab_name": "Shipment Tracker",
+        "form": {
+          "label": "Input your shipment tracking number",
+          "placeholder": "Enter tracking number (e.g., SX1234567890)",
+          "submit_button": "Track Shipment"
+        }
+      },
+      "hs_code_generator": {
+        "title": "HS Code Generator",
+        "description": "Input your product details and instantly handle the complexity of HS code selection.",
+        "tab_name": "HS Code Generator",
+        "form": {
+          "placeholder": "Enter product details (e.g., name, weight, dimensions)",
+          "submit_button": "Generate HS Code"
+        }
+      },
+      "file_a_claim": {
+        "title": "File a Claim",
+        "description": "Report any issues with your shipment and receive assistance from our dedicated team.",
+        "tab_name": "File a Claim",
+        "form": {
+          "label": "Input your claim details",
+          "placeholder": "Enter claim details (e.g., description, amount)",
+          "submit_button": "Submit Claim"
+        }
+      }
+    }
+  },
+  "our_numbers_section": {
+    "badge": "Our Numbers",
+    "title": "Delivering Excellence at Scale",
+    "items": {
+      "item_1": {
+        "title": "60 million+",
+        "description": "GMV Per Year"
+      },
+      "item_2": {
+        "title": "13 million+",
+        "description": "Orders"
+      },
+      "item_3": {
+        "title": "192",
+        "description": "Countries Served"
+      },
+      "item_4": {
+        "title": "2,500+",
+        "description": "Customers"
+      },
+      "item_5": {
+        "title": "40+",
+        "description": "Tech Enabled Warehouses"
+      },
+      "item_6": {
+        "title": "300+",
+        "description": "Trucks Operated"
+      }
+    }
+  },
+  "our_platform_section": {
+    "badge": "Our Platform",
+    "title": "Our Unified Platform for\nGlobal Logistics",
+    "description": "Simplify cross-border trade with a single dashboard for shipping, fulfillment and compliance.",
+    "cards": {
+      "left_section_cards": {
+        "card_1": "Manage orders and shipments across ASEAN and global destinations",
+        "card_2": "Integrate marketplaces like Amazon, Shopee, Lazada, eBay, and Shopify",
+        "card_3": "Track performance in real time, with visibility across every step",
+        "card_4": "Access warehousing, fulfillment, freight, and delivery from one dashboard"
+      },
+      "right_section_cards": {
+        "button": "Book a Demo",
+        "card_1": {
+          "title": "Flexible freight and clearance\nservices for regional & global trade",
+          "item_1_title": "Multimodal Transport",
+          "item_1_description": "sea, air, road & combined logistics",
+          "item_2_title": "Cross-Border Trucking",
+          "item_2_description": "bonded lanes (VN-SG, TH-VN)",
+          "item_3_title": "Customs Solutions",
+          "item_3_description": "clearance, IOSS/VAT, duty management"
+        }
+      }
+    }
+  },
+  "our_offices_section": {
+    "badge": "Our Offices",
+    "title": "Local presence, global corridors\n— the ShipX advantage",
+    "description": "Our Network Of Regional Hubs And Domain Experts Ensures Your Business Thrives Globally, Without Losing Its Local Edge",
+    "cards": {
+      "card_1": {
+        "title": "Singapore",
+        "location": "60 Kaki Bukit Place, Eunos Techpark #03-19, S415979",
+        "email": "contact.sg@shipx.asia"
+      },
+      "card_2": {
+        "title": "Thailand",
+        "location": "450/2 Boonyasathit Building, 2th Floor, Rama III Rd., Bangkok 10120",
+        "email": "contact.th@shipx.asia"
+      },
+      "card_3": {
+        "title": "Vietnam",
+        "location": "28 Street N0.6, Bay Hien Ward, Ho Chi Minh City, Vietnam",
+        "email": "contact.vn@shipx.asia"
+      },
+      "card_4": {
+        "title": "Malaysia",
+        "location": "Suite 5.03 Level 5 Block, Bangunan Pan Global, 1A, Jln Tandang, Seksyen 51, 46050 Petaling Jaya, Selangor",
+        "email": "contact.my@shipx.asia"
+      },
+      "card_5": {
+        "title": "Indonesia",
+        "location": "Jl. KH Mas Mansyur No. 119 - 121. Nyamplungan Kecamatan Pabean Cantikan, Surabaya",
+        "email": "contact.id@shipx.asia"
+      },
+      "card_6": {
+        "title": "Philippines",
+        "location": "",
+        "email": "contact.ph@shipx.asia"
+      },
+      "card_7": {
+        "title": "United States",
+        "location": "NL 108 Almond CT, Milford, Pennsylvania. Zip code 18337",
+        "email": "contact.us@shipx.asia"
+      }
+    }
+  },
+  "sg_link_and_amilo_section": {
+    "sg_link_card": {
+      "title": "Expand your business abroad with SG Link's cross-border expertise",
+      "description": "Ship Your all-in-one partner for logistics, fulfillment and global shipping products to global markets quickly and securely with end-to-end delivery solutions.",
+      "specialties_label": "Specialties",
+      "specialties": {
+        "specialty_1": "Express Delivery",
+        "specialty_2": "Asia-Pacific Routes",
+        "specialty_3": "Customs Brokerage"
+      },
+      "login_button": "Login with SG Link",
+      "signup_button": "Sign up"
+    },
+    "amilo_card": {
+      "title": "Your all-in-one partner for logistics, fulfillment and global shipping",
+      "description": "From warehousing to last-mile delivery, Amilo streamlines every step of your supply chain so you can focus on scaling your brand.",
+      "specialties_label": "Specialties",
+      "specialties": {
+        "specialty_1": "Express Delivery",
+        "specialty_2": "Asia-Pacific Routes",
+        "specialty_3": "Customs Brokerage"
+      },
+      "login_button": "Login with Amilo",
+      "signup_button": "Sign up"
+    }
+  },
+  "blogs_section": {
+    "badge": "Blogs and Articles",
+    "title": "Latest Insights & Ideas",
+    "read_more_button": "Read More"
   }
 }
