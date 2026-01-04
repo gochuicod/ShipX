@@ -28,7 +28,7 @@ const SearchBar = ({
 
   // Use translation key if provided, otherwise use submitLabel
   const buttonText = translationKey
-    ? t(translationKey, submitLabel)
+    ? t(translationKey, { defaultValue: submitLabel })
     : submitLabel;
   const outerClasses = cn(searchBarOuterVariants({ variant, size }), className);
 
