@@ -144,34 +144,6 @@
       }
     ]
   },
-  "contact_us_section": {
-    "badge_1": "Hubungi Kami",
-    "header_1": "Bersedia untuk membawa produk anda",
-    "header_2": "ke peringkat global?",
-    "header_3": "Mari berbincang.",
-    "header_4": "Maklumat Hubungan",
-    "subheader_1": "Mari bekerjasama dan berkembang",
-    "number": "",
-    "email": "info@shipx.asia",
-    "address_1": "Jalan No.6 Nombor 28, Taman Bay Hien, ",
-    "address_2": "Bandar Ho Chi Minh, Vietnam",
-    "form": {
-      "name": "Nama Anda",
-      "email": "Alamat Emel",
-      "phone": "Nombor Telefon (pilihan)",
-      "message": "Mesej",
-      "send_a_message_button": "Hantar Mesej",
-      "book_a_demo": "Tempah Demo",
-      "name_placeholder": "Nama diperlukan",
-      "email_placeholder_1": "Emel diperlukan",
-      "email_placeholder_2": "Emel tidak sah",
-      "phone_placeholder": "Nombor telefon tidak sah",
-      "message_placeholder": "Mesej diperlukan",
-      "button_sending": "Menghantar...",
-      "button_sent": "Dihantar!",
-      "button_default": "Hantar Mesej"
-    }
-  },
   "privacy_policy_page": {
     "header": "Dasar Privasi",
     "subheader": "Kali Terakhir Dikemas Kini 1 September 2025",
@@ -1596,5 +1568,27 @@
     "title_highlighted": "E-Dagang AS",
     "description": "Masuk dan berkembang di pasaran AS dengan penyelesaian logistik tersuai yang dibina untuk menyokong penjual dari pelancaran hingga pengembangan seluruh negara",
     "note": "Gerbang anda ke e-dagang AS"
+  },
+  "contact_us_section": {
+    "badge": "Hubungi Kami",
+    "title": "Bersedia untuk membawa produk anda ke peringkat global? Mari berbincang.",
+    "title_highlighted": "global",
+    "cards": {
+      "card_1": {
+        "heading": "E-mel Kami",
+        "contact": "info@shipx.asia",
+        "note": "Kami akan membalas dalam masa 2 jam"
+      },
+      "card_2": {
+        "heading": "Hubungi Kami",
+        "contact": "+1012 3456 789",
+        "note": "Isnin-Jumaat 9 pagi hingga 6 petang"
+      },
+      "card_3": {
+        "heading": "E-mel Kami",
+        "contact": "391B Orchard Road #22, Ngee Ann City, Singapore 238874",
+        "note": ""
+      }
+    }
   }
 }

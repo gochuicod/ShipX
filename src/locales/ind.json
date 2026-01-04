@@ -144,34 +144,6 @@
       }
     ]
   },
-  "contact_us_section": {
-    "badge_1": "Hubungi Kami",
-    "header_1": "Siap membawa produk Anda",
-    "header_2": "ke pasar global?",
-    "header_3": "Mari bicara.",
-    "header_4": "Informasi Kontak",
-    "subheader_1": "Mari bermitra dan berkembang bersama",
-    "number": "",
-    "email": "info@shipx.asia",
-    "address_1": "Jalan No.6 Nomor 28, Kelurahan Bay Hien, ",
-    "address_2": "Kota Ho Chi Minh, Vietnam",
-    "form": {
-      "name": "Nama Anda",
-      "email": "Alamat Email",
-      "phone": "Nomor Telepon (opsional)",
-      "message": "Pesan",
-      "send_a_message_button": "Kirim Pesan",
-      "book_a_demo": "Pesan Demo",
-      "name_placeholder": "Nama wajib diisi",
-      "email_placeholder_1": "Email wajib diisi",
-      "email_placeholder_2": "Email tidak valid",
-      "phone_placeholder": "Nomor telepon tidak valid",
-      "message_placeholder": "Pesan wajib diisi",
-      "button_sending": "Mengirim...",
-      "button_sent": "Terkirim!",
-      "button_default": "Kirim Pesan"
-    }
-  },
   "privacy_policy_page": {
     "header": "Kebijakan Privasi",
     "subheader": "Terakhir Diperbarui 1 September 2025",
@@ -1592,5 +1564,27 @@
     "title_highlighted": "E-Commerce AS",
     "description": "Masuki dan kembangkan skala bisnis di pasar AS dengan solusi logistik khusus yang dibangun untuk mendukung penjual dari peluncuran hingga ekspansi nasional",
     "note": "Gerbang Anda menuju e-commerce AS"
+  },
+  "contact_us_section": {
+    "badge": "Hubungi Kami",
+    "title": "Siap membawa produk Anda ke pasar global? Mari bicara.",
+    "title_highlighted": "global",
+    "cards": {
+      "card_1": {
+        "heading": "Email Kami",
+        "contact": "info@shipx.asia",
+        "note": "Kami akan merespons dalam 2 jam"
+      },
+      "card_2": {
+        "heading": "Hubungi Kami",
+        "contact": "+1012 3456 789",
+        "note": "Sen-Jum 09.00 - 18.00"
+      },
+      "card_3": {
+        "heading": "Email Kami",
+        "contact": "391B Orchard Road #22, Ngee Ann City, Singapore 238874",
+        "note": ""
+      }
+    }
   }
 }

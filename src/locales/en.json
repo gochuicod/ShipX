@@ -144,34 +144,6 @@
       }
     ]
   },
-  "contact_us_section": {
-    "badge_1": "Contact Us",
-    "header_1": "Ready to take your products",
-    "header_2": "global?",
-    "header_3": "Let's talk.",
-    "header_4": "Contact Information",
-    "subheader_1": "Let's partner and grow",
-    "number": "",
-    "email": "info@shipx.asia",
-    "address_1": "28 Street No.6, Bay Hien Ward, ",
-    "address_2": "Ho Chi Minh City, Vietnam",
-    "form": {
-      "name": "Your Name",
-      "email": "Email Address",
-      "phone": "Phone Number (optional)",
-      "message": "Message",
-      "send_a_message_button": "Send a Message",
-      "book_a_demo": "Book a Demo",
-      "name_placeholder": "Name is required",
-      "email_placeholder_1": "Email is required",
-      "email_placeholder_2": "Invalid Email",
-      "phone_placeholder": "Invalid phone number",
-      "message_placeholder": "Message is required",
-      "button_sending": "Sending...",
-      "button_sent": "Sent!",
-      "button_default": "Send a Message"
-    }
-  },
   "privacy_policy_page": {
     "header": "Privacy Policy",
     "subheader": "Last Updated September 1, 2025",
@@ -1592,5 +1564,27 @@
     "title_highlighted": "US E-Commerce",
     "description": "Enter and scale in the U.S. market with custom logistics solutions built to support sellers from launch to nationwide expansion",
     "note": "Your gateway to U.S. e-commerce"
+  },
+  "contact_us_section": {
+    "badge": "Contact Us",
+    "title": "Ready to take your products global? Let's talk.",
+    "title_highlighted": "global",
+    "cards": {
+      "card_1": {
+        "heading": "Email Us",
+        "contact": "info@shipx.asia",
+        "note": "We'll respond within 2 hours"
+      },
+      "card_2": {
+        "heading": "Call Us",
+        "contact": "+1012 3456 789",
+        "note": "Mon-Fri 9am to 6pm"
+      },
+      "card_3": {
+        "heading": "Email Us",
+        "contact": "391B Orchard Road #22, Ngee Ann City, Singapore 238874",
+        "note": ""
+      }
+    }
   }
 }

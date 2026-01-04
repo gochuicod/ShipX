@@ -144,34 +144,6 @@
       }
     ]
   },
-  "contact_us_section": {
-    "badge_1": "Liên hệ",
-    "header_1": "Sẵn sàng để mở rộng thị",
-    "header_2": "trường quốc tế?",
-    "header_3": "Kết nối với chúng tôi ngay.",
-    "header_4": "Thông tin liên hệ",
-    "subheader_1": "Cùng hợp tác và phát triển",
-    "number": "",
-    "email": "info@shipx.asia",
-    "address_1": "Số 28, Đường số 6, Phường Bảy Hiền, ",
-    "address_2": "Thành phố Hồ Chí Minh, Việt Nam",
-    "form": {
-      "name": "Tên của bạn",
-      "email": "Email của bạn",
-      "phone": "Số điện thoại (không bắt buộc)",
-      "message": "Nội dung tin nhắn",
-      "send_a_message_button": "Gửi tin nhắn ngay",
-      "book_a_demo": "Đặt lịch trải nghiệm",
-      "name_placeholder": "Yêu cầu nhập tên",
-      "email_placeholder_1": "Yêu cầu nhập email",
-      "email_placeholder_2": "Email không hợp lệ",
-      "phone_placeholder": "Số điện thoại không hợp lệ",
-      "message_placeholder": "Yêu cầu nhập tin nhắn",
-      "button_sending": "Đang gửi...",
-      "button_sent": "Đã gửi!",
-      "button_default": "Gửi tin nhắn"
-    }
-  },
   "privacy_policy_page": {
     "header": "Chính Sách Quyền Riêng Tư",
     "subheader": "Cập nhật lần cuối: Ngày 1 tháng 9 năm 2025",
@@ -1592,5 +1564,27 @@
     "title_highlighted": "TMĐT Hoa Kỳ",
     "description": "Gia nhập và mở rộng quy mô tại thị trường Hoa Kỳ với các giải pháp logistics tùy chỉnh được xây dựng để hỗ trợ người bán từ khi ra mắt đến khi mở rộng toàn quốc",
     "note": "Cổng kết nối của bạn tới TMĐT Hoa Kỳ"
+  },
+  "contact_us_section": {
+    "badge": "Liên hệ với chúng tôi",
+    "title": "Sẵn sàng đưa sản phẩm của bạn ra toàn cầu? Hãy cùng trò chuyện.",
+    "title_highlighted": "toàn cầu",
+    "cards": {
+      "card_1": {
+        "heading": "Gửi Email cho chúng tôi",
+        "contact": "info@shipx.asia",
+        "note": "Chúng tôi sẽ phản hồi trong vòng 2 giờ"
+      },
+      "card_2": {
+        "heading": "Gọi cho chúng tôi",
+        "contact": "+1012 3456 789",
+        "note": "Thứ 2 - Thứ 6, 9h sáng đến 6h chiều"
+      },
+      "card_3": {
+        "heading": "Gửi Email cho chúng tôi",
+        "contact": "391B Orchard Road #22, Ngee Ann City, Singapore 238874",
+        "note": ""
+      }
+    }
   }
 }
