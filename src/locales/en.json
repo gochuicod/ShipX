@@ -1585,6 +1585,24 @@
         "contact": "391B Orchard Road #22, Ngee Ann City, Singapore 238874",
         "note": ""
       }
+    },
+    "form": {
+      "name_field": {
+        "label": "Name",
+        "placeholder": "Enter your name"
+      },
+      "email_field": {
+        "label": "Email",
+        "placeholder": "john@company.com"
+      },
+      "number_field": {
+        "label": "Phone Number",
+        "placeholder": "+1 (555) 000-0000"
+      },
+      "message_field": {
+        "label": "Message",
+        "placeholder": "Tell us about your shipping needs..."
+      }
     }
   }
 }
