@@ -1289,6 +1289,9 @@
       "title_suffix": "Logistics Hub",
       "subtitle": "Expert insights, strategic guides, and the latest trends to help ASEAN sellers navigate global trade."
     },
+    "filter_section": {
+      "title": "Select a category"
+    },
     "placeholder": "Start typing to find blogs and articles..."
   },
   "share_section": {

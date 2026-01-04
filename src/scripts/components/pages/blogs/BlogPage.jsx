@@ -138,8 +138,12 @@ const BlogPage = () => {
             <div className="w-full flex flex-col items-center gap-4 lg:py-5 md:py-4 py-0">
               {/* Filter by Category Label */}
               <h3 className="hidden md:inline lg:inline font-['Inter'] font-bold text-base leading-5 items-center text-center text-black gap-y-2 md:gap-y-4">
-                <span className="md:hidden">Filter by:</span>
-                <span className="hidden md:inline">Select a Category</span>
+                <span className="md:hidden">
+                  {pageData.filter_section?.title || "Filter by:"}
+                </span>
+                <span className="hidden md:inline">
+                  {pageData.filter_section?.title || "Select a Category"}
+                </span>
               </h3>
               <ResponsiveFilterBar
                 filters={categories}
