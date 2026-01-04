@@ -99,7 +99,7 @@ const ContactFormNew = () => {
         {/* Name */}
         <InputGroup>
           <FormLabel htmlFor="name" required>
-            {t("contact_us_section.form.name")}
+            {t("contact_us_section.form.name_field.label")}
           </FormLabel>
           <FormInput
             id="name"
@@ -108,11 +108,11 @@ const ContactFormNew = () => {
             placeholder={
               errors.name
                 ? errors.name.message
-                : t("contact_us_section.form.name_placeholder")
+                : t("contact_us_section.form.name_field.placeholder")
             }
             autoComplete="name"
             {...register("name", {
-              required: t("contact_us_section.form.name_placeholder"),
+              required: t("contact_us_section.form.name_field.placeholder"),
             })}
           />
         </InputGroup>
@@ -120,7 +120,7 @@ const ContactFormNew = () => {
         {/* Email */}
         <InputGroup>
           <FormLabel htmlFor="email" required>
-            {t("contact_us_section.form.email")}
+            {t("contact_us_section.form.email_field.label")}
           </FormLabel>
           <FormInput
             id="email"
@@ -130,14 +130,14 @@ const ContactFormNew = () => {
             placeholder={
               errors.email
                 ? errors.email.message
-                : t("contact_us_section.form.email_placeholder_1")
+                : t("contact_us_section.form.email_field.placeholder")
             }
             autoComplete="email"
             {...register("email", {
-              required: t("contact_us_section.form.email_placeholder_1"),
+              required: t("contact_us_section.form.email_field.placeholder"),
               pattern: {
                 value: /^\S+@\S+$/i,
-                message: t("contact_us_section.form.email_placeholder_2"),
+                message: t("contact_us_section.form.email_field.placeholder"),
               },
             })}
           />
@@ -146,7 +146,7 @@ const ContactFormNew = () => {
         {/* Phone */}
         <InputGroup>
           <FormLabel htmlFor="tel">
-            {t("contact_us_section.form.phone")}
+            {t("contact_us_section.form.number_field.label")}
           </FormLabel>
           <FormInput
             id="tel"
@@ -157,13 +157,13 @@ const ContactFormNew = () => {
             placeholder={
               errors.phone
                 ? errors.phone.message
-                : t("contact_us_section.form.phone_placeholder")
+                : t("contact_us_section.form.number_field.placeholder")
             }
             autoComplete="tel"
             {...register("phone", {
               pattern: {
                 value: /^\+?[\d\s\-()]{7,}$/,
-                message: t("contact_us_section.form.phone_placeholder"),
+                message: t("contact_us_section.form.number_field.placeholder"),
               },
             })}
           />
@@ -173,7 +173,7 @@ const ContactFormNew = () => {
       {/* --- Row 2: Message --- */}
       <InputGroup>
         <FormLabel htmlFor="message" required>
-          {t("contact_us_section.form.message")}
+          {t("contact_us_section.form.message_field.label")}
         </FormLabel>
         <FormTextarea
           id="message"
@@ -182,11 +182,11 @@ const ContactFormNew = () => {
           placeholder={
             errors.message
               ? errors.message.message
-              : t("contact_us_section.form.message_placeholder")
+              : t("contact_us_section.form.message_field.placeholder")
           }
           autoComplete="off"
           {...register("message", {
-            required: t("contact_us_section.form.message_placeholder"),
+            required: t("contact_us_section.form.message_field.placeholder"),
           })}
         />
       </InputGroup>
@@ -198,10 +198,10 @@ const ContactFormNew = () => {
           as="button"
           text={
             isSubmitting
-              ? t("contact_us_section.form.button_sending")
+              ? t("contact_us_section.form.buttons.send_a_message.sending")
               : isSent
-                ? t("contact_us_section.form.button_sent")
-                : t("contact_us_section.form.button_default")
+                ? t("contact_us_section.form.buttons.send_a_message.sent")
+                : t("contact_us_section.form.buttons.send_a_message.default")
           }
           style="secondary"
           withLeftIcon={true}
@@ -214,7 +214,7 @@ const ContactFormNew = () => {
         {/* Button 2: Book Demo */}
         <AppButton
           to="/book-a-demo"
-          text={t("contact_us_section.form.book_a_demo")}
+          text={t("contact_us_section.form.buttons.book_a_demo")}
           withLeftIcon={true}
           leftIcon={<CalendarDays className="size-4 md:size-5" />}
           className="w-full md:w-auto text-xs md:text-base px-2 md:px-6 justify-center whitespace-nowrap"

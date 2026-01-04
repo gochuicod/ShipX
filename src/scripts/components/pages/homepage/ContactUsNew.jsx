@@ -116,11 +116,11 @@ const ContactUsNew = () => {
         {/* Header Section */}
         <div className="flex flex-col justify-center items-center mb-12">
           <Badge variant="toolkit" size="default">
-            {t("contact_us_section.badge_1", "Contact Us")}
+            {t("contact_us_section.badge")}
           </Badge>
           <HighlightedHeading
-            text={`${t("contact_us_section.header_1", "Ready to take your products")} ${t("contact_us_section.header_2", "global?")} ${t("contact_us_section.header_3", "Let's talk.")}`}
-            highlight={t("contact_us_section.header_2", "global?")}
+            text={t("contact_us_section.title")}
+            highlight={t("contact_us_section.title_highlighted")}
             className="text-2xl 2xl:text-4xl font-semibold mt-2 text-center"
           />
         </div>
@@ -139,10 +139,10 @@ const ContactUsNew = () => {
                     alt="Email"
                   />
                 }
-                title="Email Us"
-                value={t("contact_us_section.email", "info@shipx.asia")}
+                title={t("contact_us_section.cards.card_1.heading")}
+                value={t("contact_us_section.cards.card_1.contact")}
               >
-                We'll respond within 2 hours
+                {t("contact_us_section.cards.card_1.note")}
               </IconBox>
             </div>
 
@@ -156,10 +156,10 @@ const ContactUsNew = () => {
                     alt="Phone"
                   />
                 }
-                title="Call Us"
-                value="+1012 3456 789"
+                title={t("contact_us_section.cards.card_2.heading")}
+                value={t("contact_us_section.cards.card_2.contact")}
               >
-                Mon-Fri 9am to 6pm
+                {t("contact_us_section.cards.card_2.note")}
               </IconBox>
             </div>
 
@@ -173,20 +173,8 @@ const ContactUsNew = () => {
                     alt="Location"
                   />
                 }
-                title="Visit Us"
-                value={
-                  <>
-                    {t(
-                      "contact_us_section.address_1",
-                      "28 Street No.6, Bay Hien Ward, ",
-                    )}
-                    <br />
-                    {t(
-                      "contact_us_section.address_2",
-                      "Ho Chi Minh City, Vietnam",
-                    )}
-                  </>
-                }
+                title={t("contact_us_section.cards.card_3.heading")}
+                value={t("contact_us_section.cards.card_3.contact")}
               ></IconBox>
             </div>
           </div>

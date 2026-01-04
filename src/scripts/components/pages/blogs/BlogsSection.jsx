@@ -28,9 +28,7 @@ const BlogSection = () => {
   };
 
   return (
-    <ParallaxSection
-      style={{ fontFamily: "Inter, sans-serif" }}
-    >
+    <ParallaxSection style={{ fontFamily: "Inter, sans-serif" }}>
       <div
         className={`mx-auto relative ${themeGuide.paddingX} flex flex-col justify-center items-center`}
       >
