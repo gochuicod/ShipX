@@ -1,12 +1,12 @@
 import { lazy, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { margin } from "../../../utils/constants";
-import AffiliateCard from "../../library/AffiliateCard";
 import { themeGuide } from "../../../../styles/themeGuide";
+import AffiliateCard from "../../library/AffiliateCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+
 const ParallaxSection = lazy(() => import("../../ui/ParallaxSection"));
 
 const AffiliateSection = () => {
@@ -28,25 +28,38 @@ const AffiliateSection = () => {
       },
       heading: (
         <>
-          <span className="text-(--secondary)">Expand your business</span>{" "}
-          abroad with SG Link's cross-border expertise
+          <span className="text-(--secondary)">
+            {t("sg_link_and_amilo_section.sg_link_card.title_highlighted")}
+          </span>{" "}
+          {t("sg_link_and_amilo_section.sg_link_card.title")}
         </>
       ),
-      subheading:
-        "Ship Your all-in-one partner for logistics, fulfillment and global shippingproducts to global markets quickly and securely with end-to-end delivery solutions.",
+      subheading: t("sg_link_and_amilo_section.sg_link_card.description"),
       badges: [
-        { label: "Express Delivery" },
-        { label: "Asia-Pacific Routes" },
-        { label: "Customs Brokerage" },
+        {
+          label: t(
+            "sg_link_and_amilo_section.sg_link_card.specialties.specialty_1",
+          ),
+        },
+        {
+          label: t(
+            "sg_link_and_amilo_section.sg_link_card.specialties.specialty_2",
+          ),
+        },
+        {
+          label: t(
+            "sg_link_and_amilo_section.sg_link_card.specialties.specialty_3",
+          ),
+        },
       ],
       actions: [
         {
-          text: "Login with SG Link",
+          text: t("sg_link_and_amilo_section.sg_link_card.login_button"),
           style: "secondary",
           onClick: () => window.open("https://admin.sglinkapi.com", "_blank"),
         },
         {
-          text: "Sign Up",
+          text: t("sg_link_and_amilo_section.sg_link_card.signup_button"),
           style: "primary",
           onClick: () => window.open("https://admin.sglinkapi.com", "_blank"),
         },
@@ -66,25 +79,38 @@ const AffiliateSection = () => {
       },
       heading: (
         <>
-          <span className="text-(--secondary)">Your all-in-one partner</span>{" "}
-          for logistics, fulfillment and global shipping
+          <span className="text-(--secondary)">
+            {t("sg_link_and_amilo_section.amilo_card.title_highlighted")}
+          </span>{" "}
+          {t("sg_link_and_amilo_section.amilo_card.title")}
         </>
       ),
-      subheading:
-        "From warehousing to last-mile delivery, Amilo streamlines every step of your supply chain so you can focus on scaling your brand.",
+      subheading: t("sg_link_and_amilo_section.amilo_card.description"),
       badges: [
-        { label: "Express Delivery" },
-        { label: "Asia-Pacific Routes" },
-        { label: "Customs Brokerage" },
+        {
+          label: t(
+            "sg_link_and_amilo_section.amilo_card.specialties.specialty_1",
+          ),
+        },
+        {
+          label: t(
+            "sg_link_and_amilo_section.amilo_card.specialties.specialty_2",
+          ),
+        },
+        {
+          label: t(
+            "sg_link_and_amilo_section.amilo_card.specialties.specialty_3",
+          ),
+        },
       ],
       actions: [
         {
-          text: "Login with Amilo",
+          text: t("sg_link_and_amilo_section.amilo_card.login_button"),
           style: "secondary",
           onClick: () => window.open("https://vip.amilo.co/", "_blank"),
         },
         {
-          text: "Sign Up",
+          text: t("sg_link_and_amilo_section.amilo_card.signup_button"),
           style: "primary",
           onClick: () => window.open("https://vip.amilo.co/", "_blank"),
         },
@@ -116,7 +142,7 @@ const AffiliateSection = () => {
           ))}
         </div>
 
-        {/* Mobile Swiper Carousel Layout */}
+        {/* Mobile Swiper Carousel */}
         <div className="md:hidden">
           <Swiper
             modules={[Pagination]}
@@ -148,33 +174,15 @@ const AffiliateSection = () => {
             ))}
           </Swiper>
 
-          {/* Custom Pagination Dots */}
           <div className="custom-pagination swiper-pagination mt-4 flex justify-center gap-2"></div>
           <style>{`
-            .custom-pagination {
-              display: flex;
-              justify-content: center;
-              gap: 8px;
-            }
+            .custom-pagination { display: flex; justify-content: center; gap: 8px; }
             .swiper-bullet {
-              width: 10px;
-              height: 10px;
-              border-radius: 50%;
-              background: transparent;
-              border: 2px solid #4F378A;
-              cursor: pointer;
-              transition: all 0.3s ease;
-              flex: none;
-              order: 0;
-              flex-grow: 0;
+              width: 10px; height: 10px; border-radius: 50%; background: transparent;
+              border: 2px solid #4F378A; cursor: pointer; transition: all 0.3s ease;
             }
-            .swiper-bullet-active {
-              background: #4F378A;
-              border: 2px solid #4F378A;
-            }
-            .swiper-slide {
-              padding: 0 12px;
-            }
+            .swiper-bullet-active { background: #4F378A; border: 2px solid #4F378A; }
+            .swiper-slide { padding: 0 12px; }
           `}</style>
         </div>
       </div>
