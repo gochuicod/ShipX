@@ -56,7 +56,7 @@ export default function AffiliateCard({
           )}
 
           {/* Heading */}
-          <h2 className="text-lg md:text-3xl font-bold text-slate-900 leading-tight line-clamp-2">
+          <h2 className="text-lg md:text-3xl font-bold text-slate-900 leading-tight">
             {heading}
           </h2>
 
@@ -68,7 +68,7 @@ export default function AffiliateCard({
           {/* Badges */}
           {badges && badges.length > 0 && (
             <div className="mt-2 space-y-2 flex flex-col items-center md:items-start">
-              <p className="text-sm font-semibold text-slate-800">
+              <p className="lg:text-base md:text-base text-sm font-semibold text-slate-800">
                 Specialties:
               </p>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
@@ -76,7 +76,8 @@ export default function AffiliateCard({
                   <Badge
                     key={index}
                     variant={badgeVariant}
-                    size="sm md:default"
+                    size="sm"
+                    className="lg:px-4 lg:py-1 lg:text-base"
                   >
                     {badge.label}
                   </Badge>

@@ -97,7 +97,7 @@ const AffiliateSection = () => {
       <div className={`mx-auto relative ${themeGuide.paddingX} w-full`}>
         {/* Desktop and Tablet Layout */}
         <div
-          className={`hidden md:flex lg:flex-row md:flex-col justify-center items-stretch gap-32 lg:gap-8 md:gap-22`}
+          className={`hidden md:flex lg:flex-row md:flex-col justify-center items-center lg:items-stretch gap-32 lg:gap-8 md:gap-22`}
         >
           {cards.map((card) => (
             <AffiliateCard

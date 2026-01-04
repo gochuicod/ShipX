@@ -3,7 +3,7 @@ import { cn } from "../lib/util";
 
 // 1. The Container Style
 const cardVariants = cva(
-  "relative w-full flex flex-col h-[600px] md:h-full overflow-visible rounded-2xl md:rounded-3xl shadow-sm transition-all",
+  "relative lg:w-full lg:max-w-full md:max-w-[608px] md:mx-auto flex flex-col h-[600px] md:h-full overflow-visible rounded-2xl md:rounded-3xl shadow-sm transition-all",
   {
     variants: {
       variant: {

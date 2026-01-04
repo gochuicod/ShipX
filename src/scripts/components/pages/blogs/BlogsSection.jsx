@@ -4,6 +4,7 @@ import SmartNavLink from "../../ui/SmartNavLink";
 import { Badge } from "../../../../styles/badge";
 import AppButton from "../../library/AppButton";
 import BlogCard from "../../library/BlogCard";
+import HighlightedHeading from "../../library/HighlightedHeading";
 import { lazy } from "react";
 import { themeGuide } from "../../../../styles/themeGuide";
 
@@ -28,22 +29,23 @@ const BlogSection = () => {
 
   return (
     <ParallaxSection
-      style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
+      style={{ fontFamily: "Inter, sans-serif" }}
     >
       <div
         className={`mx-auto relative ${themeGuide.paddingX} flex flex-col justify-center items-center`}
       >
         <div className="flex justify-center items-center mb-4">
           <Badge variant="toolkit" size="default">
-            Blogs and Articles
+            {t("blogs_section.badge", "Blogs and Articles")}
           </Badge>
         </div>
 
         {/* Header */}
         <div className="mb-8 md:mb-10 flex justify-center items-center">
-          <h1 className="md:text-4xl text-2xl font-semibold md:font-bold text-[0E0E0E]">
-            Latest Insights & Ideas
-          </h1>
+          <HighlightedHeading
+            text={t("blogs_section.title", "Latest Insights & Ideas")}
+            className="text-2xl 2xl:text-4xl font-semibold mt-2 text-center"
+          />
         </div>
 
         {/* Grid Layout */}
@@ -74,7 +76,7 @@ const BlogSection = () => {
           <AppButton
             to="/blogs"
             variant="secondary"
-            text="Read More"
+            text={t("blogs_section.read_more_button", "Read More")}
             withRightIcon={true}
             rightIcon={<CircleArrowRight className="size-5" />}
           />

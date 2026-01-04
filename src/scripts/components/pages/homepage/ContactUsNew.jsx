@@ -106,7 +106,7 @@ const ContactUsNew = () => {
 
   return (
     <ParallaxSection
-      className="my-16"
+      className="lg:mb-16 md:mb-8 mb-4"
       style={{ fontFamily: "Inter, sans-serif" }}
     >
       <div
@@ -116,11 +116,11 @@ const ContactUsNew = () => {
         {/* Header Section */}
         <div className="flex flex-col justify-center items-center mb-12">
           <Badge variant="toolkit" size="default">
-            Contact Us
+            {t("contact_us_section.badge_1", "Contact Us")}
           </Badge>
           <HighlightedHeading
-            text="Ready to take your products global? Let's talk."
-            highlight="global"
+            text={`${t("contact_us_section.header_1", "Ready to take your products")} ${t("contact_us_section.header_2", "global?")} ${t("contact_us_section.header_3", "Let's talk.")}`}
+            highlight={t("contact_us_section.header_2", "global?")}
             className="text-2xl 2xl:text-4xl font-semibold mt-2 text-center"
           />
         </div>
@@ -140,7 +140,7 @@ const ContactUsNew = () => {
                   />
                 }
                 title="Email Us"
-                value="info@shipx.asia"
+                value={t("contact_us_section.email", "info@shipx.asia")}
               >
                 We'll respond within 2 hours
               </IconBox>
@@ -176,9 +176,15 @@ const ContactUsNew = () => {
                 title="Visit Us"
                 value={
                   <>
-                    391B Orchard Road #22,
+                    {t(
+                      "contact_us_section.address_1",
+                      "28 Street No.6, Bay Hien Ward, ",
+                    )}
                     <br />
-                    Ngee Ann City, Singapore 238874
+                    {t(
+                      "contact_us_section.address_2",
+                      "Ho Chi Minh City, Vietnam",
+                    )}
                   </>
                 }
               ></IconBox>

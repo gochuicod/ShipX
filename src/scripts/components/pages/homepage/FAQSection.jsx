@@ -2,6 +2,7 @@ import { useState, lazy, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Badge } from "../../../../styles/badge";
 import AppButton from "../../library/AppButton";
+import HighlightedHeading from "../../library/HighlightedHeading";
 import { CircleArrowRight } from "lucide-react";
 import { themeGuide } from "../../../../styles/themeGuide";
 
@@ -53,7 +54,7 @@ const FAQSection = () => {
   };
 
   return (
-    <ParallaxSection>
+    <ParallaxSection style={{ fontFamily: "Inter, sans-serif" }}>
       <div
         className={`mx-auto relative ${themeGuide.paddingX} gap-8 items-center flex flex-col`}
       >
@@ -63,9 +64,10 @@ const FAQSection = () => {
             <Badge variant="toolkit" size="default">
               {t("faq_section.badge", "Frequently Asked Questions")}
             </Badge>
-            <h2 className="md:text-4xl text-2xl font-semibold md:font-bold text-[0E0E0E]">
-              {t("faq_section.title", "Everything You Need to Know")}
-            </h2>
+            <HighlightedHeading
+              text={t("faq_section.title", "Everything You Need to Know")}
+              className="text-2xl 2xl:text-4xl font-semibold mt-2 text-center"
+            />
             <h3 className="font-normal text-sm md:text-base text-[#4D525C]">
               {t("Have questions? Our team is ready to help you 24/7")}
             </h3>
@@ -73,11 +75,11 @@ const FAQSection = () => {
 
           {/* --- Accordion Grid --- */}
           <Accordion
-            className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:gap-5 gap-4 items-start"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-2 lg:gap-5 items-start"
             defaultOpen={leftColItems[0]?.id}
           >
             {/* Left Column */}
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 md:gap-2 lg:gap-3">
               {leftColItems.map((item) => (
                 <AccordionItem key={item.id} value={item.id} variant="purple">
                   <AccordionTrigger>
@@ -100,7 +102,7 @@ const FAQSection = () => {
             </div>
 
             {/* Right Column */}
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-2 md:gap-2 lg:gap-3">
               {rightColItems.map((item) => (
                 <AccordionItem key={item.id} value={item.id} variant="purple">
                   <AccordionTrigger>
