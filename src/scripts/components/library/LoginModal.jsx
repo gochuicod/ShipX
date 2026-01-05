@@ -15,21 +15,21 @@ const LoginModal = () => {
       key: "amilo",
       title: t("header.login_modal.amilo.title"),
       desc: t("header.login_modal.amilo.description"),
-      btnText: t("header.login_modal.amilo.button"),
+      btnText: `${t("header.login_modal.amilo.button")} Amilo`,
       // Use onClick for external navigation
       onClick: () => (window.location.href = "https://vip.amilo.co/"),
       // 'secondary' in your AppButton config has the border/white bg style
       variant: "secondary",
-      logo: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/header_svg_1.svg",
+      logo: null,
     },
     {
       key: "sglink",
       title: t("header.login_modal.sglink.title"),
       desc: t("header.login_modal.sglink.description"),
-      btnText: t("header.login_modal.sglink.button"),
+      btnText: `${t("header.login_modal.sglink.button")} SG LINK`,
       onClick: () => (window.location.href = "https://admin.sglinkapi.com/"),
       variant: "secondary",
-      logo: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8cee8dfe271cc72185efeb75f3adbb7bb97ec7f0/src/assets/header_svg_2.svg",
+      logo: null,
     },
     {
       key: "signup",
@@ -124,8 +124,6 @@ const LoginModal = () => {
                     onClick={item.onClick}
                     variant={item.variant}
                     text={item.btnText}
-                    withRightIcon={!!item.logo}
-                    rightIcon={item.logo && <img src={item.logo} alt="" />}
                     className="w-fit px-6 py-2 md:px-[1.5vw] md:py-[0.4vw]"
                   />
                 </div>
