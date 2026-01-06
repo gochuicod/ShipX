@@ -125,7 +125,7 @@ export default function HsCodeGeneratorResult() {
               {t("hs_code_generator_page.result_section.output_4.note")}
             </p>
 
-            <div className="flex flex-row gap-2 mt-2 bg-white rounded-lg p-3.5 md:justify-center justify-start overflow-scroll">
+            <div className="flex flex-row gap-2 mt-2 bg-white rounded-lg p-3.5 md:justify-center justify-start overflow-hidden">
               {hsCodeResult?.tariffHierarchy &&
                 hsCodeResult?.tariffHierarchy.map((item, index) => (
                   <HierarchyPill key={index} item={item} />
