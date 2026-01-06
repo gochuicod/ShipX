@@ -1,13 +1,92 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import SEO from "../../ui/SEO";
-import SmartNavLink from "../../ui/SmartNavLink";
 import NotFound from "../not_found/NotFound";
 import MoreBlogs from "./MoreBlogs";
 import ShareSection from "../../library/ShareSection";
 import { Badge } from "../../../../styles/badge";
 import { themeGuide } from "../../../../styles/themeGuide";
+
+// Helper to parse the raw HTML string into structured blocks
+const parseContent = (htmlString) => {
+  if (!htmlString) return [];
+
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(htmlString, "text/html");
+  const children = Array.from(doc.body.childNodes);
+
+  const blocks = [];
+  let currentBuffer = [];
+
+  children.forEach((node) => {
+    // If it's an image, flush the buffer as a full-width text block, then add the image
+    if (node.tagName === "IMG") {
+      if (currentBuffer.length > 0) {
+        blocks.push({
+          type: "text_full",
+          content: currentBuffer
+            .map((n) => n.outerHTML || n.textContent)
+            .join(""),
+        });
+        currentBuffer = [];
+      }
+      blocks.push({
+        type: "image",
+        src: node.getAttribute("src"),
+        alt: node.getAttribute("alt"),
+      });
+    } else if (node.tagName === "SECTION" && node.querySelector("img")) {
+      // Handle cases where img is nested deeply in a section (recursive strategy simplified)
+      // For your specific JSON, images seem to be top level or inside simple wrappers
+      // This block handles the standard text content
+      currentBuffer.push(node);
+    } else {
+      // It's text, paragraphs, uls, etc.
+      currentBuffer.push(node);
+    }
+  });
+
+  // Flush remaining text
+  if (currentBuffer.length > 0) {
+    blocks.push({
+      type: "text_full",
+      content: currentBuffer.map((n) => n.outerHTML || n.textContent).join(""),
+    });
+  }
+
+  // Post-processing: Pair Images with the Text block immediately following them
+  // This creates the "Split" view from Figma
+  const finalLayout = [];
+  for (let i = 0; i < blocks.length; i++) {
+    const block = blocks[i];
+
+    if (block.type === "image") {
+      // Look ahead for the next text block to pair with this image
+      const nextBlock = blocks[i + 1];
+      if (nextBlock && nextBlock.type === "text_full") {
+        finalLayout.push({
+          type: "split",
+          imageSrc: block.src,
+          imageAlt: block.alt,
+          content: nextBlock.content,
+        });
+        i++; // Skip the next block since we just used it
+      } else {
+        // Orphan image (no text after it), render as full width or hidden
+        finalLayout.push({
+          type: "image_full",
+          src: block.src,
+          alt: block.alt,
+        });
+      }
+    } else {
+      finalLayout.push(block);
+    }
+  }
+
+  return finalLayout;
+};
 
 const Blog = () => {
   const { slug } = useParams();
@@ -35,6 +114,12 @@ const Blog = () => {
     return () => i18n.off("languageChanged", handleLangChange);
   }, [slug, i18n.language]);
 
+  // Memoize the parsing so it doesn't run on every re-render
+  const contentBlocks = useMemo(() => {
+    if (!post?.content) return [];
+    return parseContent(post.content);
+  }, [post]);
+
   if (loading)
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -42,6 +127,9 @@ const Blog = () => {
       </div>
     );
   if (!post) return <NotFound />;
+
+  // Counter to toggle Left/Right alignment for split views
+  let splitViewCount = 0;
 
   return (
     <>
@@ -52,15 +140,15 @@ const Blog = () => {
         ogImage={post.cover}
       />
 
-      <div
-        className="w-full bg-white"
-        style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
-      >
-        {/* Main Article Container */}
+      {/* Load Source Serif Pro Font */}
+      <style>
+        {`@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap');`}
+      </style>
+
+      <div className="w-full bg-white font-['Inter']">
         <article className={`mx-auto ${themeGuide.paddingX} py-16`}>
-          {/* Header Section: Tags, Headline, Author Meta & Hero Image */}
-          <div className="flex flex-col gap-2 md:items-start items-center md:py-0 py-0 md:px-20">
-            {/* 1. Tags Container */}
+          {/* --- HEADER SECTION --- */}
+          <div className="flex flex-col gap-4 items-center md:items-start max-w-[1034px] mx-auto mb-12">
             {post.tags && post.tags.length > 0 && (
               <div className="flex flex-row items-center gap-1.5">
                 {post.tags.slice(0, 2).map((tag, index) => (
@@ -70,40 +158,17 @@ const Blog = () => {
                 ))}
               </div>
             )}
-
-            {/* 2. Headline */}
-            <h1 className="text-2xl md:text-4xl font-semibold text-[#121212] text-center md:text-left leading-10 md:leading-10 tracking-tight letter-spacing-[-1px]">
+            <h1 className="text-3xl md:text-5xl font-semibold text-[#121212] leading-tight tracking-tight text-center md:text-left">
               {post.title}
             </h1>
-
-            {/* 3. Author Meta & Date */}
-            <div className="flex flex-row items-center gap-6 md:gap-6">
-              {/* Author Section */}
-              <div className="flex flex-row items-center gap-2">
-                {/* Placeholder Avatar - replace with post.author_avatar if available */}
-                <div className="w-6 h-6 rounded-full bg-gray-200 overflow-hidden shrink-0">
-                  <svg
-                    className="w-full h-full text-gray-400"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
-                </div>
-                <span className="text-[#4D525C] text-sm md:text-base font-normal leading-5">
-                  {post.author}
-                </span>
-              </div>
-
-              {/* Date Section */}
-              <span className="text-[#4D525C] text-sm md:text-base font-normal leading-5">
-                {post.date}
-              </span>
+            <div className="flex flex-row items-center gap-6">
+              <span className="text-[#4D525C]">{post.author}</span>
+              <span className="text-[#4D525C]">{post.date}</span>
             </div>
           </div>
 
-          {/* 4. Hero Image */}
-          <div className="w-full mt-6 md:mt-8 h-52 md:h-80 lg:h-[500px] rounded-3xl overflow-hidden relative">
+          {/* --- HERO IMAGE --- */}
+          <div className="w-full max-w-[1248px] mx-auto h-52 md:h-[500px] rounded-3xl overflow-hidden relative mb-16">
             <img
               src={
                 i18n.language === "vn" && post.cover_vn
@@ -116,31 +181,65 @@ const Blog = () => {
             />
           </div>
 
-          {/* 5. Rich Text Content */}
-          <div
-            className="
-              w-full my-4 md:px-20
-              flex flex-col gap-4
-              text-[#1E2939] 
-              md:text-base text-sm
-              md:leading-6 leading-[21px]
-              [&>p]:mb-4 [&>p]:text-[#1E2939] [&>p]:opacity-90
-              [&>h2]:text-[#1E2939] [&>h2]:font-semibold [&>h2]:mt-8 [&>h2]:mb-4 [&>h2]:leading-tight
-              [&>h3]:text-[#1E2939] [&>h3]:font-semibold [&>h3]:mt-6 [&>h3]:mb-3
-              [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:mb-4 [&>ul]:space-y-2
-              [&>ol]:list-decimal [&>ol]:pl-5 [&>ol]:mb-4 [&>ol]:space-y-2
-              [&>a]:text-blue-600 [&>a]:underline hover:[&>a]:text-blue-700
-              font-['Inter']
-            "
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
+          {/* --- DYNAMIC CONTENT RENDERING BASED ON FIGMA --- */}
+          <div className="flex flex-col gap-16 w-full items-center">
+            {contentBlocks.map((block, index) => {
+              // 1. FULL WIDTH TEXT BLOCK
+              // Figma: 1034px width, Source Serif Pro, 16px/24px
+              if (block.type === "text_full") {
+                return (
+                  <div
+                    key={index}
+                    className="w-full max-w-[1034px] text-[#1E2939] opacity-90 text-base leading-[24px] font-['Source_Serif_Pro'] font-normal 
+                    [&>p]:mb-4 [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:mb-4 [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:mb-4"
+                    dangerouslySetInnerHTML={{ __html: block.content }}
+                  />
+                );
+              }
 
-          {/* 6. Share Section (Bottom CTA) */}
-          <ShareSection />
+              // 2. SPLIT VIEW (IMAGE + TEXT)
+              // Figma: 1248px width, Gap 32px
+              if (block.type === "split") {
+                const isEven = splitViewCount % 2 === 0; // Toggle alignment
+                splitViewCount++;
+
+                return (
+                  <div
+                    key={index}
+                    className={`w-full max-w-[1248px] flex flex-col lg:flex-row gap-8 items-start ${
+                      isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                    }`}
+                  >
+                    {/* Image Container: 501px fixed width on desktop only */}
+                    <div className="w-full lg:w-[501px] h-[280px] lg:h-auto shrink-0 rounded-2xl overflow-hidden relative">
+                      <img
+                        src={block.imageSrc}
+                        alt={block.imageAlt || "Blog image"}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    {/* Text Container: 608px max width on desktop, full width on mobile/tablet */}
+                    <div
+                      className="w-full lg:w-[608px] flex-1 text-[#1A1A1A] opacity-90 text-base leading-[24px] font-['Source_Serif_Pro'] font-normal lg:font-bold
+                      [&>p]:mb-4 [&>h3]:text-xl [&>h3]:font-bold [&>h3]:mb-2 [&>ul]:list-disc [&>ul]:pl-5"
+                      dangerouslySetInnerHTML={{ __html: block.content }}
+                    />
+                  </div>
+                );
+              }
+
+              return null;
+            })}
+          </div>
+
+          {/* --- FOOTER SECTION --- */}
+          <div className="max-w-[1034px] mx-auto mt-16">
+            <ShareSection />
+          </div>
         </article>
 
-        {/* 7. Read Next Section */}
-        {/* MoreBlogs component displays latest blog posts */}
         <MoreBlogs />
       </div>
     </>

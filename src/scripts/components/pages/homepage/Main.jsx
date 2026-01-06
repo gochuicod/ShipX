@@ -13,9 +13,9 @@ const OfficesSection = lazy(() => import("./OfficesSection"));
 const AffiliateSection = lazy(() => import("./AffiliateSection"));
 const FAQSection = lazy(() => import("./FAQSection"));
 const ContactUsNew = lazy(() => import("./ContactUsNew"));
+const Blogs = lazy(() => import("./BlogsSection"));
 
 // External folder lazy imports
-const Blogs = lazy(() => import("../blogs/BlogsSection"));
 const SEO = lazy(() => import("../../ui/SEO"));
 
 const Main = () => {
