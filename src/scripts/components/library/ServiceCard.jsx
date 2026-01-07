@@ -89,14 +89,14 @@ export default function ServiceCard({
           )}
 
           {/* CTA Button */}
-          <button
+          <span
             onClick={onCtaClick}
-            className="mt-2 w-full md:w-auto px-6 py-2 bg-[#4D179A] rounded-lg hover:bg-[#3d127a] transition-colors shadow-md active:scale-95"
+            className="mt-2 w-full md:w-auto px-6 py-2 bg-[#FBE0FF] rounded-lg transition-colors"
           >
-            <span className="font-['Inter'] font-bold text-[14px] leading-4 text-white text-center block">
+            <span className="font-['Inter'] font-normal text-[14px] leading-4 text-[#4D525C] text-center block">
               {ctaText}
             </span>
-          </button>
+          </span>
         </div>
       </div>
 
