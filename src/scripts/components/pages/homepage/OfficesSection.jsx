@@ -1,7 +1,7 @@
 import AppButton from "../../library/AppButton";
 import Description from "../../library/Description";
 import HighlightedHeading from "../../library/HighlightedHeading";
-import OfficeModal from "../../library/OfficeModal";
+import OfficePopover from "../../library/OfficePopover";
 
 import { cn } from "../../../../lib/util";
 import { themeGuide } from "../../../../styles/themeGuide";
@@ -10,23 +10,76 @@ import { Badge } from "../../../../styles/badge";
 import { officesSectionCountries } from "../../../utils/constants";
 
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Map from "../../svgs/Map";
 
-// 1. Accept the onHover prop here
 function CountryButtons({ onHover }) {
   const { t } = useTranslation();
-  const [selectedOffice, setSelectedOffice] = useState(null);
+
+  // Track which country is currently active (string | null)
+  const [activeCountryName, setActiveCountryName] = useState(null);
+
+  // Detect touch devices (Mobile/Tablet)
+  const [isTouch, setIsTouch] = useState(false);
+
+  useEffect(() => {
+    setIsTouch("ontouchstart" in window || navigator.maxTouchPoints > 0);
+  }, []);
+
+  // --- Handlers ---
+
+  // Desktop: Hover triggers popover + map highlight
+  const handleMouseEnter = (name) => {
+    if (!isTouch) {
+      setActiveCountryName(name);
+      onHover && onHover(name);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (!isTouch) {
+      setActiveCountryName(null);
+      onHover && onHover(null);
+    }
+  };
+
+  // Mobile: Click toggles popover + map highlight
+  const handleClick = (name) => {
+    if (isTouch) {
+      if (activeCountryName === name) {
+        // If clicking the same one, close it
+        setActiveCountryName(null);
+        onHover && onHover(null);
+      } else {
+        // Open new one
+        setActiveCountryName(name);
+        onHover && onHover(name);
+      }
+    }
+  };
+
+  // Mobile: Close when clicking background
+  const handleBackgroundClick = () => {
+    setActiveCountryName(null);
+    onHover && onHover(null);
+  };
 
   return (
     <>
+      {/* Mobile Backdrop: Only visible on touch when a popover is open */}
+      {isTouch && activeCountryName && (
+        <div
+          className="fixed inset-0 z-10 cursor-default bg-transparent"
+          onClick={handleBackgroundClick}
+        />
+      )}
+
       <div className="flex flex-wrap justify-center xl:justify-start gap-4 mt-6">
         {officesSectionCountries.map((item) => {
           const officeKey = item.country_key;
-          const countryName = t(item.country_key); // Get the translated name
+          const countryName = t(item.country_key);
 
-          // Create office object with icon
           const office = {
             country_name: countryName,
             address: item.location_key ? t(item.location_key) : "",
@@ -34,31 +87,31 @@ function CountryButtons({ onHover }) {
             icon: item.icon,
           };
 
+          const isOpen = activeCountryName === countryName;
+
           return (
             <div
               key={officeKey}
-              // 2. Add mouse event listeners here to trigger the state change
-              onMouseEnter={() => onHover && onHover(countryName)}
-              onMouseLeave={() => onHover && onHover(null)}
+              className={cn("relative transition-all", isOpen ? "z-20" : "z-0")}
+              onMouseEnter={() => handleMouseEnter(countryName)}
+              onMouseLeave={handleMouseLeave}
             >
               <AppButton
-                variant="quaternary"
+                variant={"quaternary"}
                 text={countryName}
                 withLeftIcon
                 leftIcon={item.icon}
                 iconRounded
-                onClick={() => setSelectedOffice(office)}
+                // We handle click manually for mobile support
+                onClick={() => handleClick(countryName)}
               />
+
+              {/* Render Popover if active */}
+              {isOpen && <OfficePopover office={office} />}
             </div>
           );
         })}
       </div>
-
-      <OfficeModal
-        isOpen={!!selectedOffice}
-        onClose={() => setSelectedOffice(null)}
-        office={selectedOffice}
-      />
     </>
   );
 }
