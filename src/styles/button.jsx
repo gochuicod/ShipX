@@ -69,6 +69,30 @@ const buttonVariants = cva(
           "text-primary active:text-white cursor-pointer font-normal",
           "shadow-[1px_1px_4px_rgba(20,0,99,0.3),inset_-1px_-1px_1px_rgba(154,4,129,0.15)]",
         ].join(" "),
+        quaternary: [
+          // Layout & sizing (matches Figma)
+          "flex flex-row items-center justify-center gap-1",
+          "h-[36px] px-4 rounded-[8px]",
+
+          // Typography
+          "font-['Inter'] font-normal text-[#CC00B7]",
+
+          // Default state (bg-white look with subtle tint)
+          "bg-white",
+          "border border-[rgba(204,0,183,0.16)]",
+          "shadow-none",
+
+          // Hover state (pink link-like highlight)
+          "hover:bg-[rgba(204,0,183,0.06)]",
+          "hover:border-[rgba(204,0,183,0.32)]",
+
+          // Active state
+          "active:bg-[rgba(204,0,183,0.12)]",
+          "active:scale-[0.98]",
+
+          // Transitions
+          "transition-all duration-200 cursor-pointer",
+        ].join(" "),
         categoryInactive: [
           "bg-white hover:bg-secondary-hover active:bg-secondary-active",
           "border-none",

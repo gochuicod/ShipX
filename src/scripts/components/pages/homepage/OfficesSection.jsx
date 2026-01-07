@@ -12,7 +12,10 @@ import { officesSectionCountries } from "../../../utils/constants";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 
-function CountryButtons() {
+import Map from "../../svgs/Map";
+
+// 1. Accept the onHover prop here
+function CountryButtons({ onHover }) {
   const { t } = useTranslation();
   const [selectedOffice, setSelectedOffice] = useState(null);
 
@@ -20,26 +23,33 @@ function CountryButtons() {
     <>
       <div className="flex flex-wrap justify-center xl:justify-start gap-4 mt-6">
         {officesSectionCountries.map((item) => {
-          const officeKey = item.country_key; // use the country_key directly
+          const officeKey = item.country_key;
+          const countryName = t(item.country_key); // Get the translated name
 
           // Create office object with icon
           const office = {
-            country_name: t(item.country_key),
+            country_name: countryName,
             address: item.location_key ? t(item.location_key) : "",
             email: item.email_key ? t(item.email_key) : "",
             icon: item.icon,
           };
 
           return (
-            <AppButton
+            <div
               key={officeKey}
-              variant="tertiary"
-              text={t(item.country_key)}
-              withLeftIcon
-              leftIcon={item.icon}
-              iconRounded
-              onClick={() => setSelectedOffice(office)}
-            />
+              // 2. Add mouse event listeners here to trigger the state change
+              onMouseEnter={() => onHover && onHover(countryName)}
+              onMouseLeave={() => onHover && onHover(null)}
+            >
+              <AppButton
+                variant="quaternary"
+                text={countryName}
+                withLeftIcon
+                leftIcon={item.icon}
+                iconRounded
+                onClick={() => setSelectedOffice(office)}
+              />
+            </div>
           );
         })}
       </div>
@@ -55,6 +65,7 @@ function CountryButtons() {
 
 export default function OfficesSection() {
   const { t } = useTranslation();
+  const [hoveredCountry, setHoveredCountry] = useState(null);
 
   return (
     <div
@@ -67,16 +78,13 @@ export default function OfficesSection() {
       {/* LEFT: Image + mobile buttons */}
       <div className="xl:w-[55%] w-full flex flex-col items-center">
         <div className="relative w-full h-auto">
-          <img
-            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/offices_section/offices_section_map_image.webp"
-            alt="ShipX Global Network Map"
-            className="w-full h-full object-contain"
-          />
+          {/* 3. Pass the dynamic state instead of the hardcoded string */}
+          <Map activeCountry={hoveredCountry} />
         </div>
 
         {/* Buttons BELOW image on md and below */}
         <div className="block xl:hidden w-full">
-          <CountryButtons />
+          <CountryButtons onHover={setHoveredCountry} />
         </div>
       </div>
 
@@ -117,7 +125,7 @@ export default function OfficesSection() {
 
         {/* Buttons on the RIGHT for xl+ */}
         <div className="hidden xl:block w-full">
-          <CountryButtons />
+          <CountryButtons onHover={setHoveredCountry} />
         </div>
       </div>
     </div>
