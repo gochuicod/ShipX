@@ -4,6 +4,9 @@ import { Input } from "../../../../../../styles/input";
 import { useLangNavigate } from "../../../../../hooks/useLangNavigate";
 import { useTranslation } from "react-i18next";
 
+const hsCodeIllustration =
+  "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/hs_code_generator.webp";
+
 export default function HsCodeForm() {
   const [value, setValue] = useState("");
   const navigateWithLang = useLangNavigate();
@@ -16,7 +19,13 @@ export default function HsCodeForm() {
   };
 
   return (
-    <div className="flex flex-col gap-3 bg-white p-3 rounded-xl shadow-lg max-w-[500px]">
+    <div className="relative flex flex-col gap-3 bg-white p-3 rounded-xl shadow-lg max-w-[500px]">
+      <img
+        src={hsCodeIllustration}
+        alt="Shipment Tracker"
+        className="absolute ld:-top-15 md:top-0 lg:-right-[260px] md:-right-[200px] lg:w-[258px] md:w-[186px] object-contain pointer-events-none"
+      />
+
       <Input
         multiline
         value={value}

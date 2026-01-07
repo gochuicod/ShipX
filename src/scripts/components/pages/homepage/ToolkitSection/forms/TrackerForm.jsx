@@ -4,6 +4,10 @@ import { Button } from "../../../../../../styles/button";
 import { useLangNavigate } from "../../../../../hooks/useLangNavigate";
 import { useTranslation } from "react-i18next";
 
+// Illustration URL
+const trackerIllustration =
+  "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/shipment_tracker.webp";
+
 export default function TrackerForm() {
   const [trackingNumber, setTrackingNumber] = useState("");
   const navigateWithLang = useLangNavigate();
@@ -11,11 +15,8 @@ export default function TrackerForm() {
 
   const handleTrackShipment = () => {
     if (!trackingNumber.trim()) return;
-
     navigateWithLang(
-      `/shipment-tracker?trackingNumber=${encodeURIComponent(
-        trackingNumber,
-      )}&autosubmit=true`,
+      `/shipment-tracker?trackingNumber=${encodeURIComponent(trackingNumber)}&autosubmit=true`,
     );
   };
 
@@ -24,11 +25,18 @@ export default function TrackerForm() {
   };
 
   return (
-    <div className="flex flex-col gap-2 max-w-[500px]">
+    <div className="relative flex flex-col max-w-[500px]">
+      {/* Illustration */}
+      <img
+        src={trackerIllustration}
+        alt="Shipment Tracker"
+        className="absolute lg:-top-20 md:-top-12 lg:-right-80 md:-right-[200px] lg:w-[307px] md:w-[186px] object-contain pointer-events-none"
+      />
+
       {/* Label */}
       <label
         htmlFor="trackingNumber"
-        className="xl:text-start md:text-start text-center text-sm font-medium text-white/90 font-['Inter']"
+        className="xl:text-start md:text-start text-center text-sm font-medium text-white/90 font-['Inter'] mb-2"
       >
         {t(
           "trade_and_logistics_toolkit_section.tools.shipment_tracker.form.label",

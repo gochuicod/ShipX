@@ -4,6 +4,9 @@ import { Input } from "../../../../../../styles/input";
 import { useLangNavigate } from "../../../../../hooks/useLangNavigate";
 import { useTranslation } from "react-i18next";
 
+const claimIllustration =
+  "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/file_a_claim.webp";
+
 export default function ClaimForm() {
   const [tracking, setTracking] = useState("");
   const [description, setDescription] = useState("");
@@ -17,7 +20,13 @@ export default function ClaimForm() {
   };
 
   return (
-    <div className="flex flex-col gap-3 bg-white p-3 rounded-xl shadow-lg max-w-[500px]">
+    <div className="relative flex flex-col gap-3 bg-white p-3 rounded-xl shadow-lg max-w-[500px]">
+      <img
+        src={claimIllustration}
+        alt="Shipment Tracker"
+        className="absolute top-0 -right-[200px] lg:w-[151px] md:w-[186px] object-contain pointer-events-none"
+      />
+
       <Input
         value={tracking}
         onChange={(e) => setTracking(e.target.value)}

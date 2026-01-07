@@ -46,7 +46,7 @@ export default function ToolkitSection() {
 
       {/* LEFT CONTENT */}
       <div className="relative z-10 flex lg:flex-col md:flex-row flex-col items-center lg:items-end text-center lg:text-right w-full lg:max-w-[390px] md:max-w-full lg:gap-2 md:gap-6">
-        <div className="flex flex-col items-center lg:items-end text-center lg:text-right gap-2 lg:w-auto md:w-60">
+        <div className="flex flex-col items-center lg:items-end text-center lg:text-right gap-2 lg:w-auto md:w-68">
           {/* Badge */}
           <Badge variant="toolkit" size="default" className="md:text-sm">
             {activeTabData?.badge}
@@ -77,15 +77,6 @@ export default function ToolkitSection() {
 
         {/* Active Form */}
         {ActiveForm && <ActiveForm />}
-      </div>
-
-      {/* Illustration */}
-      <div className="lg:block md:block hidden absolute lg:right-[210px] md:right-[5px] lg:bottom-10 md:bottom-5 z-20">
-        <img
-          src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/delivery_van.webp"
-          alt="Delivery Van"
-          className="lg:w-[300px] md:w-[220px] object-contain drop-shadow-2xl"
-        />
       </div>
     </section>
   );
