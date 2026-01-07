@@ -496,13 +496,38 @@ const iconsMap = {
   item_6: <Truck />,
 };
 
+export function parseStatTitle(title) {
+  const clean = title.replace(/,/g, "");
+
+  const match = clean.match(/^([\d.]+)\s*(.*)$/);
+
+  if (!match) {
+    return {
+      value: 0,
+      suffix: "",
+    };
+  }
+
+  return {
+    value: Number(match[1]),
+    suffix: match[2] || "",
+  };
+}
+
 export const getNumbersSectionStatsData = (t) => {
   const items = t("our_numbers_section.items", { returnObjects: true });
 
-  return Object.entries(items).map(([key, value], index) => ({
-    id: index + 1,
-    icon: iconsMap[key],
-    heading: value.title,
-    description: value.description,
-  }));
+  return Object.entries(items).map(([key, value], index) => {
+    const { value: headingValue, suffix: headingSuffix } = parseStatTitle(
+      value.title,
+    );
+
+    return {
+      id: index + 1,
+      icon: iconsMap[key],
+      headingValue,
+      headingSuffix,
+      description: value.description,
+    };
+  });
 };

@@ -44,7 +44,8 @@ export default function NumbersSection() {
             <StatItems
               key={stat.id}
               icon={stat.icon}
-              heading={stat.heading}
+              headingValue={stat.headingValue}
+              headingSuffix={stat.headingSuffix}
               description={stat.description}
             />
           ))}
