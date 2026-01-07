@@ -6,11 +6,11 @@ export default function FeatureItem({ icon: Icon, text, className }) {
   return (
     <div
       className={cn(
-        "flex flex-row items-center gap-4 p-4 bg-[#F5F3FF] rounded-lg min-h-[64px] w-full",
+        "flex flex-row items-center gap-4 p-4 bg-[#F5F3FF] rounded-lg min-h-16 md:max-w-[288px] max-w-full",
         className,
       )}
     >
-      <div className="flex items-center justify-center w-11 h-11 shrink-0 bg-gradient-to-br from-[#F3E8FF] to-[#FAE8FF] rounded-lg">
+      <div className="flex items-center justify-center w-11 h-11 shrink-0 bg-linear-to-br from-[#F3E8FF] to-[#FAE8FF] rounded-lg">
         {isUrl ? (
           <img src={Icon} alt="" className="w-10 h-10 object-contain" />
         ) : (

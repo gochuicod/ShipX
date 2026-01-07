@@ -64,7 +64,7 @@ export default function PlatformSection() {
           </div>
         </div>
 
-        <div className="xl:w-[65%] w-full xl:mt-0 mt-8">
+        <div className="lg:w-[65%] w-full xl:mt-0 mt-8">
           <img
             src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/platform_section/shipx_dashboard_mockup_v3.webp"
             alt="ShipX Dashboard Mockup"
@@ -81,7 +81,7 @@ export default function PlatformSection() {
         )}
       >
         {/* Features Sidebar */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-4 w-full xl:w-[288px] justify-items-center shrink-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-4 w-auto justify-items-center shrink-0">
           {features.map((feature, index) => (
             <FeatureItem key={index} icon={feature.icon} text={feature.text} />
           ))}
