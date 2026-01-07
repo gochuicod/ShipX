@@ -169,7 +169,7 @@ const Header = memo(() => {
         <Logo />
 
         {/* Right: Nav + Buttons (hidden on mobile) */}
-        <nav className="hidden 2xl:flex flex-row gap-x-[2.5vw] font-normal 2xl:text-base text-nav items-center">
+        <nav className="hidden xl:flex flex-row gap-x-[2.5vw] font-normal xl:text-base text-nav items-center">
           {navLinks.map((link) =>
             link.items ? (
               <Dropdown
@@ -187,11 +187,11 @@ const Header = memo(() => {
 
         <div
           className="
-            hidden 2xl:flex
+            hidden xl:flex
             flex-row
             justify-center items-center
             gap-x-[1vw]
-            2xl:text-base
+            xl:text-base
             md:text-base
             text-[0.8vw]
             font-normal
@@ -222,7 +222,7 @@ const Header = memo(() => {
           type="button"
           aria-label="Hamburger menu"
           onClick={() => setIsOpen(!isOpen)}
-          className="relative 2xl:hidden flex flex-col justify-between md:w-[4vw] w-[6vw] md:h-[3vw] h-[3.5vw] p-0 focus:outline-none"
+          className="relative xl:hidden flex flex-col justify-between md:w-[4vw] w-[6vw] md:h-[3vw] h-[3.5vw] p-0 focus:outline-none"
         >
           {/* Top bar */}
           <MotionSpan
