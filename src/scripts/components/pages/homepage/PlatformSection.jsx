@@ -11,8 +11,6 @@ import AppButton from "../../library/AppButton";
 import ShowcaseSlider from "../../library/ShowcaseSlider";
 import ShowcaseCard from "../../library/ShowcaseCard";
 
-import ParallaxSection from "../../ui/ParallaxSection";
-
 import { CalendarDays } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -30,7 +28,7 @@ export default function PlatformSection() {
   const showcase = getPlatformShowcaseData(t);
 
   return (
-    <ParallaxSection className="flex flex-col">
+    <div className="flex flex-col lg:pt-32 lg:pb-0 pt-16">
       {/* First row */}
       <div
         className={cn(
@@ -107,6 +105,6 @@ export default function PlatformSection() {
           </div>
         </div>
       </div>
-    </ParallaxSection>
+    </div>
   );
 }

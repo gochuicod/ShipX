@@ -1,4 +1,4 @@
-import { useState, lazy, useMemo } from "react";
+import { lazy, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Badge } from "../../../../styles/badge";
 import AppButton from "../../library/AppButton";
@@ -12,8 +12,6 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "../../library/Accordion";
-
-const ParallaxSection = lazy(() => import("../../ui/ParallaxSection"));
 
 const FAQSection = () => {
   const { t } = useTranslation();
@@ -54,89 +52,84 @@ const FAQSection = () => {
   };
 
   return (
-    <ParallaxSection style={{ fontFamily: "Inter, sans-serif" }}>
-      <div
-        className={`mx-auto relative ${themeGuide.paddingX} gap-8 items-center flex flex-col`}
-      >
-        <div className="w-full gap-8 flex flex-col">
-          {/* --- Header --- */}
-          <div className="gap-2 flex flex-col items-center text-center">
-            <Badge variant="toolkit" size="default">
-              {t("faq_section.badge", "Frequently Asked Questions")}
-            </Badge>
-            <HighlightedHeading
-              text={t("faq_section.title", "Everything You Need to Know")}
-              className="text-2xl 2xl:text-4xl font-semibold mt-2 text-center"
-            />
-            <h3 className="font-normal text-sm md:text-base text-[#4D525C]">
-              {t("Have questions? Our team is ready to help you 24/7")}
-            </h3>
+    <div
+      className={`mx-auto relative ${themeGuide.paddingX} gap-8 items-center flex flex-col lg:pt-32 lg:pb-0 pt-16`}
+      style={{ fontFamily: "Inter, sans-serif" }}
+    >
+      <div className="w-full gap-8 flex flex-col">
+        {/* --- Header --- */}
+        <div className="gap-2 flex flex-col items-center text-center">
+          <Badge variant="toolkit" size="default">
+            {t("faq_section.badge", "Frequently Asked Questions")}
+          </Badge>
+          <HighlightedHeading
+            text={t("faq_section.title", "Everything You Need to Know")}
+            className="text-2xl 2xl:text-4xl font-semibold mt-2 text-center"
+          />
+          <h3 className="font-normal text-sm md:text-base text-[#4D525C]">
+            {t("Have questions? Our team is ready to help you 24/7")}
+          </h3>
+        </div>
+
+        {/* --- Accordion Grid --- */}
+        <Accordion
+          className="grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-2 lg:gap-5 items-start"
+          defaultOpen={leftColItems[0]?.id}
+        >
+          {/* Left Column */}
+          <div className="flex flex-col gap-2 md:gap-2 lg:gap-3">
+            {leftColItems.map((item) => (
+              <AccordionItem key={item.id} value={item.id} variant="purple">
+                <AccordionTrigger>
+                  <div className="flex flex-col md:flex-row md:items-center gap-2">
+                    {item.category_label && (
+                      <span className="px-2 py-1 bg-[#EDE9FE] text-[#1A1A1A] text-xs font-semibold rounded-md md:mr-2 w-fit">
+                        {item.category_label}
+                      </span>
+                    )}
+                    <span className="text-base md:text-lg">
+                      {item.question}
+                    </span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent>{renderAnswerContent(item)}</AccordionContent>
+              </AccordionItem>
+            ))}
           </div>
 
-          {/* --- Accordion Grid --- */}
-          <Accordion
-            className="grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-2 lg:gap-5 items-start"
-            defaultOpen={leftColItems[0]?.id}
-          >
-            {/* Left Column */}
-            <div className="flex flex-col gap-2 md:gap-2 lg:gap-3">
-              {leftColItems.map((item) => (
-                <AccordionItem key={item.id} value={item.id} variant="purple">
-                  <AccordionTrigger>
-                    <div className="flex flex-col md:flex-row md:items-center gap-2">
-                      {item.category_label && (
-                        <span className="px-2 py-1 bg-[#EDE9FE] text-[#1A1A1A] text-xs font-semibold rounded-md md:mr-2 w-fit">
-                          {item.category_label}
-                        </span>
-                      )}
-                      <span className="text-base md:text-lg">
-                        {item.question}
+          {/* Right Column */}
+          <div className="flex flex-col gap-2 md:gap-2 lg:gap-3">
+            {rightColItems.map((item) => (
+              <AccordionItem key={item.id} value={item.id} variant="purple">
+                <AccordionTrigger>
+                  <div className="flex flex-col md:flex-row md:items-center gap-2">
+                    {item.category_label && (
+                      <span className="px-2 py-1 bg-[#EDE9FE] text-[#1A1A1A] text-xs font-semibold rounded-md md:mr-2 w-fit">
+                        {item.category_label}
                       </span>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    {renderAnswerContent(item)}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </div>
-
-            {/* Right Column */}
-            <div className="flex flex-col gap-2 md:gap-2 lg:gap-3">
-              {rightColItems.map((item) => (
-                <AccordionItem key={item.id} value={item.id} variant="purple">
-                  <AccordionTrigger>
-                    <div className="flex flex-col md:flex-row md:items-center gap-2">
-                      {item.category_label && (
-                        <span className="px-2 py-1 bg-[#EDE9FE] text-[#1A1A1A] text-xs font-semibold rounded-md md:mr-2 w-fit">
-                          {item.category_label}
-                        </span>
-                      )}
-                      <span className="text-base md:text-lg">
-                        {item.question}
-                      </span>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    {renderAnswerContent(item)}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </div>
-          </Accordion>
-          {/* Read More - All FAQs Button */}
-          <div className="text-center">
-            <AppButton
-              to="/frequently-asked-questions"
-              variant="secondary"
-              text={t("blogs_section.read_more_button")}
-              withRightIcon={true}
-              rightIcon={<CircleArrowRight className="size-5" />}
-            />
+                    )}
+                    <span className="text-base md:text-lg">
+                      {item.question}
+                    </span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent>{renderAnswerContent(item)}</AccordionContent>
+              </AccordionItem>
+            ))}
           </div>
+        </Accordion>
+        {/* Read More - All FAQs Button */}
+        <div className="text-center">
+          <AppButton
+            to="/frequently-asked-questions"
+            variant="secondary"
+            text={t("blogs_section.read_more_button")}
+            withRightIcon={true}
+            rightIcon={<CircleArrowRight className="size-5" />}
+          />
         </div>
       </div>
-    </ParallaxSection>
+    </div>
   );
 };
 

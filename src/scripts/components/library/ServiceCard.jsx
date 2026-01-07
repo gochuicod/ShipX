@@ -27,7 +27,7 @@ export default function ServiceCard({
       >
         {/* LEFT: Dynamic Illustration */}
         <div className="relative w-full md:w-[319px] h-[258px] shrink-0 flex items-center justify-center">
-          <div className="absolute inset-0 bg-linear-to-br from-white/0 via-white/75 to-white/75 border border-white rounded-2xl opacity-50 pointer-events-none" />
+          <div className="absolute inset-0 bg-linear-to-br from-white/0 via-white/75 to-white/75 rounded-2xl opacity-50 pointer-events-none" />
           <img
             src={illustration}
             alt={`${title} Illustration`}

@@ -5,10 +5,7 @@ import { Badge } from "../../../../styles/badge";
 import AppButton from "../../library/AppButton";
 import BlogCard from "../../library/BlogCard";
 import HighlightedHeading from "../../library/HighlightedHeading";
-import { lazy } from "react";
 import { themeGuide } from "../../../../styles/themeGuide";
-
-const ParallaxSection = lazy(() => import("../../ui/ParallaxSection"));
 
 const BlogSection = () => {
   const { t } = useTranslation();
@@ -28,59 +25,58 @@ const BlogSection = () => {
   };
 
   return (
-    <ParallaxSection style={{ fontFamily: "Inter, sans-serif" }}>
-      <div
-        className={`mx-auto relative ${themeGuide.paddingX} flex flex-col justify-center items-center`}
-      >
-        <div className="flex justify-center items-center mb-4">
-          <Badge variant="toolkit" size="default">
-            {t("blogs_section.badge", "Blogs and Articles")}
-          </Badge>
-        </div>
-
-        {/* Header */}
-        <div className="mb-8 md:mb-10 flex justify-center items-center">
-          <HighlightedHeading
-            text={t("blogs_section.title", "Latest Insights & Ideas")}
-            className="text-2xl 2xl:text-4xl font-semibold mt-2 text-center"
-          />
-        </div>
-
-        {/* Grid Layout */}
-        {blogs.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-            {blogs
-              .slice()
-              .reverse()
-              .slice(0, 3)
-              .map((post, idx) => (
-                <SmartNavLink
-                  key={post.slug}
-                  to={`/blog/${post.slug}`}
-                  className={`hover:cursor-pointer ${idx === 2 ? "md:hidden lg:block" : ""}`}
-                >
-                  <BlogCard post={post} variant="section" />
-                </SmartNavLink>
-              ))}
-          </div>
-        ) : (
-          <div className="text-center py-20">
-            <p className="text-gray-500 text-lg">No blog posts found.</p>
-          </div>
-        )}
-
-        {/* Read More - All Blogs Button */}
-        <div className="text-center mt-8">
-          <AppButton
-            to="/blogs"
-            variant="secondary"
-            text={t("blogs_section.read_more_button", "Read More")}
-            withRightIcon={true}
-            rightIcon={<CircleArrowRight className="size-5" />}
-          />
-        </div>
+    <div
+      className={`mx-auto relative ${themeGuide.paddingX} flex flex-col justify-center items-center lg:pt-32 lg:pb-0 pt-16`}
+      style={{ fontFamily: "Inter, sans-serif" }}
+    >
+      <div className="flex justify-center items-center mb-4">
+        <Badge variant="toolkit" size="default">
+          {t("blogs_section.badge", "Blogs and Articles")}
+        </Badge>
       </div>
-    </ParallaxSection>
+
+      {/* Header */}
+      <div className="mb-8 md:mb-10 flex justify-center items-center">
+        <HighlightedHeading
+          text={t("blogs_section.title", "Latest Insights & Ideas")}
+          className="text-2xl 2xl:text-4xl font-semibold mt-2 text-center"
+        />
+      </div>
+
+      {/* Grid Layout */}
+      {blogs.length > 0 ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+          {blogs
+            .slice()
+            .reverse()
+            .slice(0, 3)
+            .map((post, idx) => (
+              <SmartNavLink
+                key={post.slug}
+                to={`/blog/${post.slug}`}
+                className={`hover:cursor-pointer ${idx === 2 ? "md:hidden lg:block" : ""}`}
+              >
+                <BlogCard post={post} variant="section" />
+              </SmartNavLink>
+            ))}
+        </div>
+      ) : (
+        <div className="text-center py-20">
+          <p className="text-gray-500 text-lg">No blog posts found.</p>
+        </div>
+      )}
+
+      {/* Read More - All Blogs Button */}
+      <div className="text-center mt-8">
+        <AppButton
+          to="/blogs"
+          variant="secondary"
+          text={t("blogs_section.read_more_button", "Read More")}
+          withRightIcon={true}
+          rightIcon={<CircleArrowRight className="size-5" />}
+        />
+      </div>
+    </div>
   );
 };
 

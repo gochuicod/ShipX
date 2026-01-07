@@ -30,7 +30,7 @@ export default function TrackerForm() {
       <img
         src={trackerIllustration}
         alt="Shipment Tracker"
-        className="absolute lg:-top-20 md:-top-12 lg:-right-80 md:-right-[200px] lg:w-[307px] md:w-[186px] object-contain pointer-events-none"
+        className="md:block hidden absolute lg:-top-20 md:-top-12 lg:-right-80 md:-right-[200px] lg:w-[307px] md:w-[186px] object-contain pointer-events-none"
       />
 
       {/* Label */}

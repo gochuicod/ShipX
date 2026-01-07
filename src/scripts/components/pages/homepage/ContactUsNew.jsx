@@ -1,7 +1,6 @@
 import { lazy, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { Send, CalendarDays } from "lucide-react";
 import ContactFormNew from "./ContactFormNew";
 import { themeGuide } from "../../../../styles/themeGuide";
 
@@ -9,7 +8,6 @@ import { themeGuide } from "../../../../styles/themeGuide";
 import { Badge } from "../../../../styles/badge";
 import HighlightedHeading from "../../library/HighlightedHeading";
 import IconBox from "../../library/IconBox";
-import AppButton from "../../../components/library/AppButton";
 
 const ParallaxSection = lazy(() => import("../../ui/ParallaxSection"));
 
@@ -105,87 +103,83 @@ const ContactUsNew = () => {
   };
 
   return (
-    <ParallaxSection
-      className="lg:mb-16 md:mb-8 mb-4"
+    <div
+      className={`mx-auto relative ${themeGuide.paddingX} flex flex-col justify-center items-center lg:mb-16 md:mb-8 mb-4 lg:pt-32 lg:pb-0 pt-16`}
       style={{ fontFamily: "Inter, sans-serif" }}
+      id="contact-us"
     >
-      <div
-        className={`mx-auto relative ${themeGuide.paddingX} flex flex-col justify-center items-center`}
-        id="contact-us"
-      >
-        {/* Header Section */}
-        <div className="flex flex-col justify-center items-center mb-12">
-          <Badge variant="toolkit" size="default">
-            {t("contact_us_section.badge")}
-          </Badge>
-          <HighlightedHeading
-            text={t("contact_us_section.title")}
-            highlight={t("contact_us_section.title_highlighted")}
-            className="text-2xl 2xl:text-4xl font-semibold mt-2 text-center"
-          />
+      {/* Header Section */}
+      <div className="flex flex-col justify-center items-center mb-12">
+        <Badge variant="toolkit" size="default">
+          {t("contact_us_section.badge")}
+        </Badge>
+        <HighlightedHeading
+          text={t("contact_us_section.title")}
+          highlight={t("contact_us_section.title_highlighted")}
+          className="text-2xl 2xl:text-4xl font-semibold mt-2 text-center"
+        />
+      </div>
+
+      {/* Main Content Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full">
+        {/* Left Column: Contact Details */}
+        <div className="lg:col-span-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4">
+          <div>
+            <IconBox
+              layout="horizontal"
+              size="default"
+              icon={
+                <img
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8a82004d7d7941a90c58ac15e75d57c3309249db/src/assets/icons/boxed/email_box_icon.svg"
+                  alt="Email"
+                />
+              }
+              title={t("contact_us_section.cards.card_1.heading")}
+              value={t("contact_us_section.cards.card_1.contact")}
+            >
+              {t("contact_us_section.cards.card_1.note")}
+            </IconBox>
+          </div>
+
+          <div>
+            <IconBox
+              layout="horizontal"
+              size="default"
+              icon={
+                <img
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8a82004d7d7941a90c58ac15e75d57c3309249db/src/assets/icons/boxed/phone_icon_box.svg"
+                  alt="Phone"
+                />
+              }
+              title={t("contact_us_section.cards.card_2.heading")}
+              value={t("contact_us_section.cards.card_2.contact")}
+            >
+              {t("contact_us_section.cards.card_2.note")}
+            </IconBox>
+          </div>
+
+          <div className="md:col-span-2 lg:col-span-1">
+            <IconBox
+              layout="horizontal"
+              size="default"
+              icon={
+                <img
+                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8a82004d7d7941a90c58ac15e75d57c3309249db/src/assets/icons/boxed/location_box_icon.svg"
+                  alt="Location"
+                />
+              }
+              title={t("contact_us_section.cards.card_3.heading")}
+              value={t("contact_us_section.cards.card_3.contact")}
+            ></IconBox>
+          </div>
         </div>
 
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full">
-          {/* Left Column: Contact Details */}
-          <div className="lg:col-span-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4">
-            <div>
-              <IconBox
-                layout="horizontal"
-                size="default"
-                icon={
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8a82004d7d7941a90c58ac15e75d57c3309249db/src/assets/icons/boxed/email_box_icon.svg"
-                    alt="Email"
-                  />
-                }
-                title={t("contact_us_section.cards.card_1.heading")}
-                value={t("contact_us_section.cards.card_1.contact")}
-              >
-                {t("contact_us_section.cards.card_1.note")}
-              </IconBox>
-            </div>
-
-            <div>
-              <IconBox
-                layout="horizontal"
-                size="default"
-                icon={
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8a82004d7d7941a90c58ac15e75d57c3309249db/src/assets/icons/boxed/phone_icon_box.svg"
-                    alt="Phone"
-                  />
-                }
-                title={t("contact_us_section.cards.card_2.heading")}
-                value={t("contact_us_section.cards.card_2.contact")}
-              >
-                {t("contact_us_section.cards.card_2.note")}
-              </IconBox>
-            </div>
-
-            <div className="md:col-span-2 lg:col-span-1">
-              <IconBox
-                layout="horizontal"
-                size="default"
-                icon={
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8a82004d7d7941a90c58ac15e75d57c3309249db/src/assets/icons/boxed/location_box_icon.svg"
-                    alt="Location"
-                  />
-                }
-                title={t("contact_us_section.cards.card_3.heading")}
-                value={t("contact_us_section.cards.card_3.contact")}
-              ></IconBox>
-            </div>
-          </div>
-
-          {/* Right Column: Form */}
-          <div className="lg:col-span-8 bg-linear-to-br from-[oklch(1_0_0_0)] to-[oklch(0.616_0.2539_333.97)]/24 rounded-2xl p-4 md:p-8">
-            <ContactFormNew />
-          </div>
+        {/* Right Column: Form */}
+        <div className="lg:col-span-8 bg-linear-to-br from-[oklch(1_0_0_0)] to-[oklch(0.616_0.2539_333.97)]/24 rounded-2xl p-4 md:p-8">
+          <ContactFormNew />
         </div>
       </div>
-    </ParallaxSection>
+    </div>
   );
 };
 

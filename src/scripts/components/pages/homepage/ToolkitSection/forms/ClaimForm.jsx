@@ -24,7 +24,7 @@ export default function ClaimForm() {
       <img
         src={claimIllustration}
         alt="Shipment Tracker"
-        className="absolute top-0 -right-[200px] lg:w-[151px] md:w-[186px] object-contain pointer-events-none"
+        className="md:block hidden absolute top-0 -right-[200px] lg:w-[151px] md:w-[186px] object-contain pointer-events-none"
       />
 
       <Input

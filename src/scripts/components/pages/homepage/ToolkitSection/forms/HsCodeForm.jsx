@@ -23,7 +23,7 @@ export default function HsCodeForm() {
       <img
         src={hsCodeIllustration}
         alt="Shipment Tracker"
-        className="absolute ld:-top-15 md:top-0 lg:-right-[260px] md:-right-[200px] lg:w-[258px] md:w-[186px] object-contain pointer-events-none"
+        className="md:block hidden absolute ld:-top-15 md:top-0 lg:-right-[260px] md:-right-[200px] lg:w-[258px] md:w-[186px] object-contain pointer-events-none"
       />
 
       <Input
