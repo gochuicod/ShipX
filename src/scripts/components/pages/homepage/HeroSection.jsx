@@ -25,22 +25,24 @@ export default function HeroSection() {
 
         bg-[url('https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image.webp')]
         bg-no-repeat
+
         lg:bg-size-[1524px_785px]
         md:bg-size-[1198px_617px]
         bg-size-[776px_400px]
-        lg:bg-position-[bottom_right_-300px]
+
+        lg:bg-position-[calc(50vw-320px)_100%]
         bg-position-[bottom_center]
       "
       style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
     >
-      <Container className="relative z-10 lg:py-6 lg:pt-0 md:pt-16">
+      <Container className="relative z-10 lg:py-6 lg:pt-0 md:pt-16 flex justify-start w-full">
         <div
           className="
             grid
             gap-12
-            xl:min-h-[664px] md:min-h-[762px] min-h-[752px]
+            xl:min-h-[664px] md:min-h-[662px] min-h-[652px]
             lg:items-center md:items-start
-            lg:w-[50%]
+            lg:w-[608px]
           "
         >
           {/* Left Column content */}
