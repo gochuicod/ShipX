@@ -7,7 +7,7 @@ const inputVariants = cva(
     "w-full px-[16px] py-[8px]",
     "bg-white rounded-[8px] border-b",
     "font-inter font-normal text-[16px] text-[#1E2939]",
-    "placeholder:font-inter placeholder:italic placeholder:font-normal placeholder:text-[16px]",
+    "placeholder:font-inter placeholder:italic placeholder:font-normal placeholder:text-[16px] placeholder-[#99A1AF] ",
     "focus:outline-none focus:ring-1 focus:ring-[#7F22FE]/20 transition-colors",
   ].join(" "),
   {
@@ -24,6 +24,31 @@ const inputVariants = cva(
     defaultVariants: {
       state: "default",
       resize: "default",
+    },
+  },
+);
+
+// 1b. Select Dropdown Styles
+const selectVariants = cva(
+  [
+    "w-full px-[16px] py-[8px] pr-[40px]",
+    "bg-white rounded-[8px] border-b",
+    "font-inter font-normal text-[16px] text-[#1E2939]",
+    "placeholder:font-inter placeholder:italic placeholder:font-normal placeholder:text-[16px]",
+    "focus:outline-none focus:ring-1 focus:ring-[#7F22FE]/20 transition-colors",
+    "appearance-none cursor-pointer",
+    "bg-[url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%231E2939%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpolyline points=%276 9 12 15 18 9%27%3e%3c/polyline%3e%3c/svg%3e')]",
+    "bg-[length:20px_20px] bg-[right_12px_center] bg-no-repeat",
+  ].join(" "),
+  {
+    variants: {
+      state: {
+        default: "border-[#7F22FE]",
+        error: "border-red-500",
+      },
+    },
+    defaultVariants: {
+      state: "default",
     },
   },
 );
@@ -45,9 +70,19 @@ const claimsLabelVariants = cva(
 const claimsInputVariants = cva(
   [
     "w-full bg-white border-b border-[#7F22FE] rounded-lg px-4 py-2",
-    "text-[16px] text-[#1E2939] placeholder-[#99A1AF]",
+    "text-[16px] text-[#1E2939] placeholder:italic placeholder-[#99A1AF]",
     "focus:outline-none focus:ring-2 focus:ring-[#7F22FE]/20 transition-all",
-    "h-[36px] italic-placeholder",
+    "h-[36px]",
+  ].join(" "),
+);
+
+// 5b. Claims Form Select Styles
+const claimsSelectVariants = cva(
+  [
+    "w-full bg-white border-b border-[#7F22FE] rounded-lg px-4 py-2",
+    "text-base text-[#1E2939] itallic placeholder-[#99A1AF]",
+    "focus:outline-none focus:ring-2 focus:ring-[#7F22FE]/20 transition-all",
+    "h-[36px] appearance-none cursor-pointer",
   ].join(" "),
 );
 
@@ -122,10 +157,12 @@ const claimsSubmitButtonVariants = cva(
 
 export {
   inputVariants,
+  selectVariants,
   labelVariants,
   inputGroupVariants,
   claimsLabelVariants,
   claimsInputVariants,
+  claimsSelectVariants,
   claimsInputContainerVariants,
   claimsCardVariants,
   claimsHeaderVariants,
