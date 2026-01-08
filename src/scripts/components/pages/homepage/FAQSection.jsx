@@ -75,12 +75,9 @@ const FAQSection = () => {
         </div>
 
         {/* --- Accordion Grid --- */}
-        <Accordion
-          className="grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-2 lg:gap-5 items-start"
-          defaultOpen={leftColItems[0]?.id}
-        >
+        <Accordion className="flex flex-col lg:flex-row gap-5 lg:gap-5 items-start">
           {/* Left Column */}
-          <div className="flex flex-col gap-2 md:gap-2 lg:gap-3">
+          <div className="flex flex-col gap-4 md:gap-5 flex-1">
             {leftColItems.map((item) => (
               <AccordionItem key={item.id} value={item.id} variant="purple">
                 <AccordionTrigger>
@@ -90,9 +87,7 @@ const FAQSection = () => {
                         {item.category_label}
                       </span>
                     )}
-                    <span className="text-base md:text-lg">
-                      {item.question}
-                    </span>
+                    <span>{item.question}</span>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent>{renderAnswerContent(item)}</AccordionContent>
@@ -101,7 +96,7 @@ const FAQSection = () => {
           </div>
 
           {/* Right Column */}
-          <div className="flex flex-col gap-2 md:gap-2 lg:gap-3">
+          <div className="flex flex-col gap-4 md:gap-5 flex-1">
             {rightColItems.map((item) => (
               <AccordionItem key={item.id} value={item.id} variant="purple">
                 <AccordionTrigger>
@@ -111,9 +106,7 @@ const FAQSection = () => {
                         {item.category_label}
                       </span>
                     )}
-                    <span className="text-base md:text-lg">
-                      {item.question}
-                    </span>
+                    <span>{item.question}</span>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent>{renderAnswerContent(item)}</AccordionContent>
