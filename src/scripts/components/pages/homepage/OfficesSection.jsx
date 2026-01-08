@@ -5,7 +5,6 @@ import OfficePopover from "../../library/OfficePopover";
 import Container from "../../library/Container";
 
 import { cn } from "../../../../lib/util";
-import { themeGuide } from "../../../../styles/themeGuide";
 import { Badge } from "../../../../styles/badge";
 
 import { officesSectionCountries } from "../../../utils/constants";
@@ -14,6 +13,7 @@ import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
 
 import Map from "../../svgs/Map";
+import { CalendarDays } from "lucide-react";
 
 function CountryButtons({ onHover }) {
   const { t } = useTranslation();
@@ -169,12 +169,19 @@ export default function OfficesSection() {
             className="
               md:text-base text-sm
               xl:text-start text-center
-              mb-4
+              mb-2
               w-full
             "
           >
             {t("our_offices_section.description")}
           </Description>
+
+          <AppButton
+            to="/book-a-demo"
+            text={t("header.book_a_demo")}
+            withLeftIcon={true}
+            leftIcon={<CalendarDays className="size-5" />}
+          />
 
           {/* Buttons on the RIGHT for xl+ */}
           <div className="hidden xl:block w-full">
