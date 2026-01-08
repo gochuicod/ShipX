@@ -3,6 +3,9 @@ import { cn } from "../../../lib/util";
 import { Button } from "../../../styles/button";
 import { themeGuide } from "../../../styles/themeGuide";
 
+// Define your supported languages here to match i18n.js
+const SUPPORTED_LANGS = ["en", "vn", "my", "ind", "thai"];
+
 export default function TabSwitcher({
   tabs,
   activeTab,
@@ -15,10 +18,6 @@ export default function TabSwitcher({
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
-  // Extract current language (e.g. /vn/services → vn)
-  const pathSegments = pathname.split("/").filter(Boolean);
-  const currentLang = pathSegments[0];
-
   const handleTabClick = (tab) => {
     // 🟢 HOMEPAGE / LOCAL MODE
     if (onChange) {
@@ -28,7 +27,18 @@ export default function TabSwitcher({
 
     // 🔵 PAGE NAVIGATION MODE
     if (tab.path) {
-      navigate(`/${currentLang}${tab.path}`);
+      const pathSegments = pathname.split("/").filter(Boolean);
+      const firstSegment = pathSegments[0];
+
+      // Check if the first segment is a valid language
+      const isLangPrefix = SUPPORTED_LANGS.includes(firstSegment);
+
+      // LOGIC:
+      // If we are currently in a language path (e.g., /vn/...), keep the language.
+      // If we are not (e.g., /shipment-tracker), just go to the root path (e.g., /hs-code-generator).
+      const finalPath = isLangPrefix ? `/${firstSegment}${tab.path}` : tab.path;
+
+      navigate(finalPath);
     }
   };
 
