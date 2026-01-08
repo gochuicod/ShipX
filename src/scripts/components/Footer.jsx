@@ -331,7 +331,7 @@ const Footer = memo(() => {
                 triggerClassName="h-9 px-4 py-2.5 has-[>svg]:px-3 flex items-center justify-center"
               />
               <AppButton
-                to="/#contact-us"
+                to="/book-a-demo"
                 text={t("header.login_signup") || "Login / Signup"}
                 variant="secondary"
               />

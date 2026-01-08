@@ -107,7 +107,7 @@ const LoginModal = () => {
       {open && (
         <div
           className="
-            absolute top-full left-1/2 -translate-x-1/2 z-50
+            absolute top-full left-[-5vw] -translate-x-1/2 z-50
             mt-2 md:mt-[1vw]
             w-[90vw] md:w-auto md:min-w-[50vw]
             bg-white rounded-2xl md:rounded-[1vw]
