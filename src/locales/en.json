@@ -1566,10 +1566,32 @@
     "read_more_button": "Read More"
   },
   "hero_section": {
-    "title": "Seamless Entry to the US E-Commerce Ecosystem",
-    "title_highlighted": "US E-Commerce",
-    "description": "Enter and scale in the U.S. market with custom logistics solutions built to support sellers from launch to nationwide expansion",
-    "note": "Your gateway to U.S. e-commerce"
+    "slides": {
+      "slide_1": {
+        "title": "Seamless Entry to the US E-Commerce Ecosystem",
+        "title_highlighted": "US E-Commerce",
+        "description": "Enter and scale in the U.S. market with custom logistics solutions built to support sellers from launch to nationwide expansion",
+        "note": "Your gateway to U.S. e-commerce",
+        "button_1": "Book a Demo",
+        "button_2": "Learn More"
+      },
+      "slide_2": {
+        "title": "Delivering To 190+ Countries With Ease",
+        "title_highlighted": "190+ Countries",
+        "description": "Reach Customers Worldwide With Seamless Logistics That Simplify Cross-Border Sales, Ensuring Smooth Growth Without Operational Headaches",
+        "note": "Take Your Brand Global, Stress-Free",
+        "button_1": "Book a Demo",
+        "button_2": "Upload Files"
+      },
+      "slide_3": {
+        "title": "Everything you need to grow Internationally",
+        "title_highlighted": "Internationally",
+        "description": "From Economy Shipping To Express Delivery, FBA Fulfillment To Marketplace integrations, ShipX Equips You With The Tools To Scale Worldwide",
+        "note": "Community Of 1000+ International Shippers From ASEAN",
+        "button_1": "Book a Demo",
+        "button_2": "Upload Files"
+      }
+    }
   },
   "contact_us_section": {
     "badge": "Contact Us",

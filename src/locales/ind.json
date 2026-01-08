@@ -335,12 +335,31 @@
       "hold_for_payment": "Pengiriman ditahan untuk pembayaran."
     },
     "hero_section": {
-      "title": "Alat Perdagangan Penting",
-      "description": "Lengkapi bisnis Anda dengan solusi cerdas untuk mengelola, memantau, dan menguasai operasi logistik Anda.",
-      "buttons": {
-        "shipment_tracker": "Pelacak Pengiriman",
-        "hs_code_generator": "Generator Kode HS",
-        "file_a_claim": "Ajukan Klaim"
+      "slides": {
+        "slide_1": {
+          "title": "Akses Mulus ke Ekosistem E-Commerce AS",
+          "title_highlighted": "E-Commerce AS",
+          "description": "Masuk dan kembangkan bisnis di pasar AS dengan solusi logistik khusus yang dibangun untuk mendukung penjual dari peluncuran hingga ekspansi nasional",
+          "note": "Gerbang Anda menuju e-commerce AS",
+          "button_1": "Jadwalkan Demo",
+          "button_2": "Pelajari Lebih Lanjut"
+        },
+        "slide_2": {
+          "title": "Mengirim ke 190+ Negara dengan Mudah",
+          "title_highlighted": "190+ Negara",
+          "description": "Jangkau Pelanggan di Seluruh Dunia dengan Logistik Mulus yang Menyederhanakan Penjualan Lintas Batas, Memastikan Pertumbuhan Lancar Tanpa Pusing Operasional",
+          "note": "Bawa Brand Anda Mendunia, Bebas Stres",
+          "button_1": "Jadwalkan Demo",
+          "button_2": "Unggah File"
+        },
+        "slide_3": {
+          "title": "Segala yang Anda butuhkan untuk tumbuh secara Internasional",
+          "title_highlighted": "Internasional",
+          "description": "Dari Pengiriman Ekonomi hingga Ekspres, Pemenuhan FBA hingga integrasi Marketplace, ShipX Melengkapi Anda dengan Alat untuk Berskala di Seluruh Dunia",
+          "note": "Komunitas 1000+ Pengirim Internasional Dari ASEAN",
+          "button_1": "Jadwalkan Demo",
+          "button_2": "Unggah File"
+        }
       }
     },
     "track_order_section": {
