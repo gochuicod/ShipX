@@ -8,7 +8,7 @@ const Input = forwardRef(
     ref,
   ) => {
     const baseClasses = cn(
-      "rounded-lg border-b border-[#7F22FE] bg-white placeholder:text-[#99A1AF] font-normal text-[#99A1AF] px-4 py-2.5 outline-none transition-all",
+      "rounded-lg border-b border-[#7F22FE] bg-white placeholder:text-[#99A1AF] focus:not-italic italic font-normal text-[#99A1AF] px-4 py-2.5 outline-none transition-all",
       !disableFocusRing && "focus:ring-1 focus:ring-[#7F22FE]/20",
     );
 
