@@ -17,11 +17,11 @@ export default function HeroSection() {
       className="
         relative
         w-full
+        lg:py-0 py-12
 
         flex items-center
         overflow-hidden
         bg-white
-        py-12 lg:py-0
 
         bg-[url('https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image.webp')]
         bg-no-repeat
@@ -33,7 +33,7 @@ export default function HeroSection() {
       "
       style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
     >
-      <Container className="relative z-10">
+      <Container className="relative z-10 lg:py-6 lg:pt-0 md:pt-16">
         <div
           className="
             grid
