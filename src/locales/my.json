@@ -1589,10 +1589,32 @@
     "read_more_button": "Baca Lebih Lanjut"
   },
   "hero_section": {
-    "title": "Kemasukan Lancar ke Ekosistem E-Dagang AS",
-    "title_highlighted": "E-Dagang AS",
-    "description": "Masuk dan berkembang di pasaran AS dengan penyelesaian logistik tersuai yang dibina untuk menyokong penjual dari pelancaran hingga pengembangan seluruh negara",
-    "note": "Gerbang anda ke e-dagang AS"
+    "slides": {
+      "slide_1": {
+        "title": "Akses Lancar ke Ekosistem E-Dagang AS",
+        "title_highlighted": "E-Dagang AS",
+        "description": "Masuki dan kembangkan perniagaan di pasaran AS dengan penyelesaian logistik tersuai yang dibina untuk menyokong penjual dari pelancaran hingga pengembangan seluruh negara",
+        "note": "Gerbang anda ke e-dagang AS",
+        "button_1": "Tempah Demo",
+        "button_2": "Ketahui Lebih Lanjut"
+      },
+      "slide_2": {
+        "title": "Penghantaran ke 190+ Negara dengan Mudah",
+        "title_highlighted": "190+ Negara",
+        "description": "Capai Pelanggan di Seluruh Dunia Dengan Logistik Lancar yang Memudahkan Jualan Rentas Sempadan, Memastikan Pertumbuhan Lancar Tanpa Masalah Operasi",
+        "note": "Bawa Jenama Anda ke Peringkat Global, Tanpa Tekanan",
+        "button_1": "Tempah Demo",
+        "button_2": "Muat Naik Fail"
+      },
+      "slide_3": {
+        "title": "Segalanya yang anda perlukan untuk berkembang di peringkat Antarabangsa",
+        "title_highlighted": "Antarabangsa",
+        "description": "Dari Penghantaran Ekonomi hingga Ekspres, Pemenuhan FBA hingga integrasi Pasaran, ShipX Melengkapkan Anda Dengan Alat untuk Berkembang ke Seluruh Dunia",
+        "note": "Komuniti 1000+ Penghantar Antarabangsa Dari ASEAN",
+        "button_1": "Tempah Demo",
+        "button_2": "Muat Naik Fail"
+      }
+    }
   },
   "contact_us_section": {
     "badge": "Hubungi Kami",

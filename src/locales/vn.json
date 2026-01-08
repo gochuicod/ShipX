@@ -1584,10 +1584,32 @@
     "read_more_button": "Đọc thêm"
   },
   "hero_section": {
-    "title": "Gia nhập liền mạch vào hệ sinh thái TMĐT Hoa Kỳ",
-    "title_highlighted": "TMĐT Hoa Kỳ",
-    "description": "Gia nhập và mở rộng quy mô tại thị trường Hoa Kỳ với các giải pháp logistics tùy chỉnh được xây dựng để hỗ trợ người bán từ khi ra mắt đến khi mở rộng toàn quốc",
-    "note": "Cổng kết nối của bạn tới TMĐT Hoa Kỳ"
+    "slides": {
+      "slide_1": {
+        "title": "Tiếp cận Liền mạch Hệ sinh thái TMĐT Hoa Kỳ",
+        "title_highlighted": "TMĐT Hoa Kỳ",
+        "description": "Thâm nhập và mở rộng quy mô tại thị trường Hoa Kỳ với các giải pháp logistics tùy chỉnh được xây dựng để hỗ trợ người bán từ khi ra mắt đến khi mở rộng toàn quốc",
+        "note": "Cổng kết nối của bạn đến thương mại điện tử Hoa Kỳ",
+        "button_1": "Đặt lịch Demo",
+        "button_2": "Tìm hiểu Thêm"
+      },
+      "slide_2": {
+        "title": "Giao hàng đến hơn 190 Quốc gia thật Dễ dàng",
+        "title_highlighted": "hơn 190 Quốc gia",
+        "description": "Tiếp cận Khách hàng Toàn cầu với Logistics Liền mạch giúp Đơn giản hóa Bán hàng Xuyên biên giới, Đảm bảo Tăng trưởng Thuận lợi mà Không gặp Trở ngại Vận hành",
+        "note": "Đưa Thương hiệu của Bạn vươn tầm Quốc tế, Không Lo âu",
+        "button_1": "Đặt lịch Demo",
+        "button_2": "Tải lên Tập tin"
+      },
+      "slide_3": {
+        "title": "Mọi thứ bạn cần để phát triển Quốc tế",
+        "title_highlighted": "Quốc tế",
+        "description": "Từ Vận chuyển Tiết kiệm đến Chuyển phát nhanh, Hoàn thiện đơn hàng FBA đến tích hợp Sàn thương mại điện tử, ShipX trang bị cho bạn các Công cụ để Mở rộng Toàn cầu",
+        "note": "Cộng đồng hơn 1000 Nhà vận chuyển Quốc tế từ ASEAN",
+        "button_1": "Đặt lịch Demo",
+        "button_2": "Tải lên Tập tin"
+      }
+    }
   },
   "contact_us_section": {
     "badge": "Liên hệ với chúng tôi",
