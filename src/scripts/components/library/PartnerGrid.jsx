@@ -35,7 +35,10 @@ export default function PartnerGrid({ partners }) {
         modules={[Grid, Pagination, Autoplay]}
       >
         {partners.map((partner) => (
-          <SwiperSlide key={partner.id}>
+          <SwiperSlide
+            className="flex justify-center items-center"
+            key={partner.id}
+          >
             <PartnerCard logo={partner.logo} name={partner.name} />
           </SwiperSlide>
         ))}

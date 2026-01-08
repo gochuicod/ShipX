@@ -2,6 +2,7 @@ import AppButton from "../../library/AppButton";
 import Description from "../../library/Description";
 import HighlightedHeading from "../../library/HighlightedHeading";
 import OfficePopover from "../../library/OfficePopover";
+import Container from "../../library/Container";
 
 import { cn } from "../../../../lib/util";
 import { themeGuide } from "../../../../styles/themeGuide";
@@ -121,66 +122,66 @@ export default function OfficesSection() {
   const [hoveredCountry, setHoveredCountry] = useState(null);
 
   return (
-    <div
-      className={cn(
-        themeGuide.paddingX,
-        "flex xl:flex-row flex-col-reverse justify-center items-center gap-x-8 py-32",
-        "bg-linear-to-b from-[#FAF5FF] to-[#FFFFFF]",
-      )}
-    >
-      {/* LEFT: Image + mobile buttons */}
-      <div className="xl:w-[55%] w-full flex flex-col items-center">
-        <div className="relative w-full h-auto">
-          {/* 3. Pass the dynamic state instead of the hardcoded string */}
-          <Map activeCountry={hoveredCountry} />
-        </div>
-
-        {/* Buttons BELOW image on md and below */}
-        <div className="block xl:hidden w-full">
-          <CountryButtons onHover={setHoveredCountry} />
-        </div>
-      </div>
-
-      {/* RIGHT: Text + desktop buttons */}
-      <div
-        className="
-          flex flex-col
-          xl:w-[45%] w-full
-          xl:justify-start justify-center
-          xl:items-start items-center
-        "
+    <div className={cn("bg-linear-to-b from-[#FAF5FF] to-[#FFFFFF]")}>
+      <Container
+        className={cn(
+          "flex xl:flex-row flex-col-reverse justify-center items-center gap-x-8 py-32",
+        )}
       >
-        <Badge variant="toolkit" size="default">
-          {t("our_offices_section.badge")}
-        </Badge>
+        {/* LEFT: Image + mobile buttons */}
+        <div className="lg:w-[50%] w-full flex flex-col items-center">
+          <div className="relative w-full h-auto">
+            {/* 3. Pass the dynamic state instead of the hardcoded string */}
+            <Map activeCountry={hoveredCountry} />
+          </div>
 
-        <HighlightedHeading
-          text={t("our_offices_section.title")}
-          highlight={t("our_offices_section.title_heading")}
-          className="
-            text-2xl
-            xl:text-start text-center
-            font-semibold
-            mt-2
-          "
-        />
+          {/* Buttons BELOW image on md and below */}
+          <div className="block xl:hidden w-full">
+            <CountryButtons onHover={setHoveredCountry} />
+          </div>
+        </div>
 
-        <Description
+        {/* RIGHT: Text + desktop buttons */}
+        <div
           className="
-            md:text-base text-sm
-            xl:text-start text-center
-            mb-4
-            w-full
+            flex flex-col
+            xl:w-[50%] w-full
+            xl:justify-start justify-center
+            xl:items-start items-center
           "
         >
-          {t("our_offices_section.description")}
-        </Description>
+          <Badge variant="toolkit" size="default">
+            {t("our_offices_section.badge")}
+          </Badge>
 
-        {/* Buttons on the RIGHT for xl+ */}
-        <div className="hidden xl:block w-full">
-          <CountryButtons onHover={setHoveredCountry} />
+          <HighlightedHeading
+            text={t("our_offices_section.title")}
+            highlight={t("our_offices_section.title_heading")}
+            className="
+              text-2xl
+              xl:text-start text-center
+              font-semibold
+              mt-2
+            "
+          />
+
+          <Description
+            className="
+              md:text-base text-sm
+              xl:text-start text-center
+              mb-4
+              w-full
+            "
+          >
+            {t("our_offices_section.description")}
+          </Description>
+
+          {/* Buttons on the RIGHT for xl+ */}
+          <div className="hidden xl:block w-full">
+            <CountryButtons onHover={setHoveredCountry} />
+          </div>
         </div>
-      </div>
+      </Container>
     </div>
   );
 }

@@ -1,10 +1,13 @@
 import { useTranslation } from "react-i18next";
 import { CircleArrowRight } from "lucide-react";
 import SmartNavLink from "../../ui/SmartNavLink";
-import { Badge } from "../../../../styles/badge";
+
 import AppButton from "../../library/AppButton";
 import BlogCard from "../../library/BlogCard";
 import HighlightedHeading from "../../library/HighlightedHeading";
+import Container from "../../library/Container";
+
+import { Badge } from "../../../../styles/badge";
 import { themeGuide } from "../../../../styles/themeGuide";
 
 const BlogSection = () => {
@@ -25,8 +28,8 @@ const BlogSection = () => {
   };
 
   return (
-    <div
-      className={`mx-auto relative ${themeGuide.paddingX} flex flex-col justify-center items-center lg:pt-32 lg:pb-0 pt-16`}
+    <Container
+      className="relative flex flex-col justify-center items-center lg:pt-32 lg:pb-0 pt-16"
       style={{ fontFamily: "Inter, sans-serif" }}
     >
       <div className="flex justify-center items-center mb-4">
@@ -76,7 +79,7 @@ const BlogSection = () => {
           rightIcon={<CircleArrowRight className="size-5" />}
         />
       </div>
-    </div>
+    </Container>
   );
 };
 

@@ -1,4 +1,6 @@
 import StatItems from "../../library/StatItems";
+import Container from "../../library/Container";
+
 import { Badge } from "../../../../styles/badge";
 import HighlightedHeading from "../../library/HighlightedHeading";
 import { getNumbersSectionStatsData } from "../../../utils/constants";
@@ -9,7 +11,7 @@ export default function NumbersSection() {
   const statsData = getNumbersSectionStatsData(t);
 
   return (
-    <div className="flex flex-col justify-center items-center w-full px-2 lg:pt-32 lg:pb-0 pt-16">
+    <Container className="flex flex-col justify-center items-center w-full px-2 lg:pt-32 lg:pb-0 pt-16">
       <div className="flex flex-col justify-center items-center">
         <Badge variant="toolkit" size="default">
           {t("our_numbers_section.badge")}
@@ -48,6 +50,6 @@ export default function NumbersSection() {
           />
         ))}
       </div>
-    </div>
+    </Container>
   );
 }

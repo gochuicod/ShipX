@@ -7,10 +7,10 @@ export default function PartnerCard({
   className,
 }) {
   const sizeClasses = {
-    small: "h-8 w-20",
-    default: "h-12 w-28",
-    medium: "h-16 w-36",
-    large: "h-24 w-48",
+    small: "h-8 w-full",
+    default: "h-12 w-full",
+    medium: "h-16 w-full",
+    large: "h-24 w-full",
   };
 
   return (

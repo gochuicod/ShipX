@@ -20,6 +20,8 @@ import {
   getPlatformShowcaseData,
 } from "../../../utils/constants";
 
+import Container from "../../library/Container";
+
 export default function PlatformSection() {
   const { t } = useTranslation();
 
@@ -30,9 +32,8 @@ export default function PlatformSection() {
   return (
     <div className="flex flex-col lg:pt-32 lg:pb-0 pt-16">
       {/* First row */}
-      <div
+      <Container
         className={cn(
-          themeGuide.paddingX,
           "flex xl:flex-row flex-col-reverse justify-center items-center gap-x-8",
         )}
         id="platform"
@@ -62,19 +63,18 @@ export default function PlatformSection() {
           </div>
         </div>
 
-        <div className="lg:w-[65%] w-full xl:mt-0 mt-8">
+        <div className="lg:w-[65%] w-full xl:mt-0 mt-8 flex lg:justify-start justify-center lg:items-center">
           <img
             src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/platform_section/shipx_dashboard_mockup_v3.webp"
             alt="ShipX Dashboard Mockup"
             className="p-1"
           />
         </div>
-      </div>
+      </Container>
 
       {/* Second row: features + showcase */}
-      <div
+      <Container
         className={cn(
-          themeGuide.paddingX,
           "flex flex-col justify-center items-center xl:flex-row gap-8 w-full pt-16 pb-32",
         )}
       >
@@ -104,7 +104,7 @@ export default function PlatformSection() {
             />
           </div>
         </div>
-      </div>
+      </Container>
     </div>
   );
 }

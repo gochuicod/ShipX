@@ -1,15 +1,13 @@
-import { lazy, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import ContactFormNew from "./ContactFormNew";
-import { themeGuide } from "../../../../styles/themeGuide";
 
-// Components
 import { Badge } from "../../../../styles/badge";
+
 import HighlightedHeading from "../../library/HighlightedHeading";
 import IconBox from "../../library/IconBox";
-
-const ParallaxSection = lazy(() => import("../../ui/ParallaxSection"));
+import Container from "../../library/Container";
 
 const ContactUsNew = () => {
   const { t } = useTranslation();
@@ -103,8 +101,8 @@ const ContactUsNew = () => {
   };
 
   return (
-    <div
-      className={`mx-auto relative ${themeGuide.paddingX} flex flex-col justify-center items-center lg:mb-16 md:mb-8 mb-4 lg:pt-32 lg:pb-0 pt-16`}
+    <Container
+      className="relative flex flex-col justify-center items-center lg:mb-16 md:mb-8 mb-4 lg:pt-32 lg:pb-0 pt-16"
       style={{ fontFamily: "Inter, sans-serif" }}
       id="contact-us"
     >
@@ -179,7 +177,7 @@ const ContactUsNew = () => {
           <ContactFormNew />
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

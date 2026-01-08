@@ -1,10 +1,13 @@
-import { lazy, useMemo } from "react";
+import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import { CircleArrowRight } from "lucide-react";
+
 import { Badge } from "../../../../styles/badge";
+import { themeGuide } from "../../../../styles/themeGuide";
+
 import AppButton from "../../library/AppButton";
 import HighlightedHeading from "../../library/HighlightedHeading";
-import { CircleArrowRight } from "lucide-react";
-import { themeGuide } from "../../../../styles/themeGuide";
+import Container from "../../library/Container";
 
 import {
   Accordion,
@@ -52,8 +55,8 @@ const FAQSection = () => {
   };
 
   return (
-    <div
-      className={`mx-auto relative ${themeGuide.paddingX} gap-8 items-center flex flex-col lg:pt-32 lg:pb-0 pt-16`}
+    <Container
+      className="relative gap-8 items-center flex flex-col lg:pt-32 lg:pb-0 pt-16"
       style={{ fontFamily: "Inter, sans-serif" }}
     >
       <div className="w-full gap-8 flex flex-col">
@@ -129,7 +132,7 @@ const FAQSection = () => {
           />
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

@@ -13,6 +13,7 @@ import LoginModal from "./library/LoginModal";
 import AppButton from "./library/AppButton";
 import MobileMenu from "./library/MobileMenu";
 import Dropdown from "./library/Dropdown";
+import Container from "./library/Container";
 
 import { CalendarDays } from "lucide-react";
 
@@ -156,13 +157,11 @@ const Header = memo(() => {
   }, [i18n.language]);
 
   return (
-    <div className="sticky top-0 z-50 select-none">
-      <header
+    <header className="sticky top-0 z-50 select-none bg-white text-[#1A1A1A]">
+      <Container
         className={`
           sticky top-0 z-50 select-none
-          flex flex-row bg-white text-[#1A1A1A] justify-between items-center
-          ${themeGuide.paddingX}
-          py-3 px-8
+          flex flex-row justify-between items-center
         `}
         style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
       >
@@ -261,8 +260,8 @@ const Header = memo(() => {
             />
           )}
         </AnimatePresence>
-      </header>
-    </div>
+      </Container>
+    </header>
   );
 });
 

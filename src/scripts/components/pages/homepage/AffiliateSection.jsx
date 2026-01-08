@@ -7,6 +7,8 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
+import Container from "../../library/Container";
+
 const AffiliateSection = () => {
   const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -117,9 +119,7 @@ const AffiliateSection = () => {
   ];
 
   return (
-    <div
-      className={`mx-auto relative ${themeGuide.paddingX} w-full lg:pt-32 lg:pb-0 pt-16`}
-    >
+    <Container className="relative w-full lg:pt-32 lg:pb-0 pt-16">
       {/* Desktop and Tablet Layout */}
       <div
         className={`hidden md:flex lg:flex-row md:flex-col justify-center items-center lg:items-stretch gap-32 lg:gap-8 md:gap-22`}
@@ -184,7 +184,7 @@ const AffiliateSection = () => {
           .swiper-slide { padding: 0 12px; }
         `}</style>
       </div>
-    </div>
+    </Container>
   );
 };
 

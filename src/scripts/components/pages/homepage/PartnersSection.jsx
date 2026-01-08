@@ -13,23 +13,24 @@ import { partnersSectionData } from "../../../utils/constants";
 import { CircleArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
+import Container from "../../library/Container";
+
 export default function PartnersSection() {
   const { t } = useTranslation();
 
   return (
-    <div
+    <Container
       className={cn(
-        themeGuide.paddingX,
-        "lg:pt-32 lg:pb-0 pt-16 md:pb-16 pb-12 flex 2xl:flex-row md:flex-col flex-col justify-center items-start gap-x-8",
+        "lg:pt-32 lg:pb-0 pt-16 md:pb-16 pb-12 flex lg:flex-row md:flex-col flex-col justify-center items-start gap-x-8",
       )}
     >
       {/* Left side of the section */}
       <div
         className="
                     flex flex-col
-                    2xl:w-[35%] w-full
-                    2xl:justify-end justify-center
-                    2xl:items-end items-center
+                    w-full
+                    lg:justify-end justify-center
+                    lg:items-end items-center
                 "
       >
         <Badge variant="toolkit" size="default">
@@ -40,7 +41,7 @@ export default function PartnersSection() {
           highlight={t("partners_section.headline_highlighted")}
           className="
                         text-2xl
-                        2xl:text-end md:text-center text-center
+                        lg:text-end md:text-center text-center
                         font-semibold
                         mt-2
                     "
@@ -48,9 +49,9 @@ export default function PartnersSection() {
         <Description
           className="
             md:text-base text-sm
-            2xl:text-end md:text-center text-center
+            lg:text-end md:text-center text-center
             mb-4
-            2xl:w-auto md:w-[80%] w-full
+            lg:w-auto md:w-[80%] w-full
           "
         >
           {t("partners_section.description")}
@@ -62,9 +63,9 @@ export default function PartnersSection() {
         />
       </div>
       {/* Right side of the section */}
-      <div className="2xl:w-[65%] w-full 2xl:mt-0 mt-8">
+      <div className="lg:w-[60%] w-full lg:mt-0 mt-8">
         <PartnerGrid partners={partnersSectionData} />
       </div>
-    </div>
+    </Container>
   );
 }
