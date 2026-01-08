@@ -33,7 +33,7 @@ export default function AffiliateCard({
       <AffiliateCardRoot
         variant={variant}
         padding={padding}
-        className="flex flex-col"
+        className="flex flex-col h-full"
       >
         {illustration && (
           <AffiliateCardIllustration>

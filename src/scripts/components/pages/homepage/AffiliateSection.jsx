@@ -119,16 +119,16 @@ const AffiliateSection = () => {
   ];
 
   return (
-    <Container className="relative w-full lg:pt-32 lg:pb-0 pt-16">
+    <Container className="relative w-full overflow-y-visible">
       {/* Desktop and Tablet Layout */}
       <div
-        className={`hidden md:flex lg:flex-row md:flex-col justify-center items-stretch gap-32 lg:gap-8 md:gap-22`}
+        className={`hidden md:flex lg:flex-row md:flex-col justify-center items-center lg:items-stretch gap-32 lg:gap-8 md:gap-22 overflow-y-visible`}
       >
         {cards.map((card) => (
           <AffiliateCard
             key={card.id}
             containerClassName="h-full w-full"
-            className="flex-1 w-full h-full"
+            className="flex-1 w-full"
             variant={card.variant}
             badgeVariant={card.badgeVariant}
             logo={card.logo}
@@ -142,7 +142,7 @@ const AffiliateSection = () => {
       </div>
 
       {/* Mobile Swiper Carousel */}
-      <div className="md:hidden">
+      <div className="md:hidden overflow-y-visible">
         <Swiper
           modules={[Pagination]}
           spaceBetween={24}
@@ -153,10 +153,10 @@ const AffiliateSection = () => {
             bulletActiveClass: "swiper-bullet-active",
           }}
           onSlideChange={(swiper) => setCurrentSlide(swiper.activeIndex)}
-          className="w-full pt-20! pb-2!"
+          className="w-full pt-20! pb-2! overflow-visible"
         >
           {cards.map((card) => (
-            <SwiperSlide key={card.id} className="w-full">
+            <SwiperSlide key={card.id} className="w-full overflow-visible">
               <AffiliateCard
                 containerClassName="h-full w-full"
                 className="w-full"

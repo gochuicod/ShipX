@@ -2,7 +2,7 @@ import { cva } from "class-variance-authority";
 import { cn } from "../lib/util";
 
 const cardVariants = cva(
-  "group flex md:flex-col flex-row h-full w-full md:rounded-2xl rounded-lg transition-all duration-300 hover:cursor-pointer hover:shadow-[0px_4px_25px_0px_#FF00E54D]",
+  "group flex md:flex-col flex-row h-full w-full md:rounded-2xl rounded-lg justify-between transition-transform duration-300 hover:scale-105 active:scale-90",
   {
     variants: {
       variant: {
