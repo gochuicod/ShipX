@@ -137,7 +137,7 @@ export const StyledTrigger = ({ isOpen, textContent, className, ...props }) => {
   return (
     <div
       className={cn(
-        "flex items-start md:items-center justify-between p-4 md:px-8 md:py-4 cursor-pointer gap-4",
+        "flex items-start justify-between p-4 md:px-8 md:py-4 cursor-pointer gap-4",
         className,
       )}
       {...props}
@@ -145,7 +145,7 @@ export const StyledTrigger = ({ isOpen, textContent, className, ...props }) => {
       <div
         className={cn(
           triggerTextVariants({ state }),
-          "grow font-inter text-base md:text-lg",
+          "grow font-inter text-base",
         )}
       >
         {textContent}
