@@ -1485,6 +1485,16 @@
           "item_2_description": "bonded lanes (VN-SG, TH-VN)",
           "item_3_title": "Customs Solutions",
           "item_3_description": "clearance, IOSS/VAT, duty management"
+        },
+        "card_2": {
+          "title": "Strategic hubs across Vietnam, Thailand, Singapore, and Malaysia",
+          "title_highlighted": "Strategic hubs",
+          "item_1_title": "Inventory Services",
+          "item_1_description": "storage, pick & pack, returns management",
+          "item_2_title": "Seamless Integrations",
+          "item_2_description": "Shopify, Shopee, Lazada, eBay, Amazon",
+          "item_3_title": "Regional Advantage",
+          "item_3_description": "optimized location for fast fulfillment"
         }
       }
     }
