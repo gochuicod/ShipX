@@ -47,7 +47,10 @@ export default function ServicesSection() {
       )}
     >
       {/* --- HEADER --- */}
-      <div id="services" className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-8 max-md:gap-4 w-full max-w-[1200px]">
+      <div
+        id="services"
+        className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-8 max-md:gap-4 w-full max-w-[1200px]"
+      >
         <div className="flex flex-col w-full lg:w-[35%] items-center lg:items-end text-center lg:text-right">
           <Badge variant="toolkit" size="default">
             {t("services_section.badge")}
