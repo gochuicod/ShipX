@@ -4,14 +4,27 @@ import SmartNavLink from "../ui/SmartNavLink";
 const linkClass =
   "transition-colors duration-500 hover:text-[#FF00E5] hover:underline hover:decoration-2 hover:underline-offset-5";
 
-export default function Dropdown({ title, items, selected, onSelect }) {
+export default function Dropdown({
+  title,
+  items,
+  selected,
+  onSelect,
+  parentClassName = "",
+  triggerClassName = "",
+  direction = "down", // New prop: "up" | "down"
+}) {
+  const isUp = direction === "up";
+
   return (
-    <div className="relative group h-full flex items-center">
+    <div
+      className={cn("relative group h-full flex items-center", parentClassName)}
+    >
       {/* Trigger */}
       <div
         className={cn(
           linkClass,
-          "flex items-center gap-x-1 cursor-pointer py-4",
+          triggerClassName !== "" ? triggerClassName : "py-4",
+          "flex items-center gap-x-1 cursor-pointer",
           "group-hover:text-[#FF00E5]",
         )}
       >
@@ -36,15 +49,28 @@ export default function Dropdown({ title, items, selected, onSelect }) {
 
       {/* Panel */}
       <div
-        className="
-          absolute top-full left-0 z-50 mt-1 min-w-max 
-          bg-white rounded-lg border border-[#FF00E5] shadow-lg p-1 overflow-hidden
-          opacity-0 invisible translate-y-1
-          group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
-          transition-all duration-200 ease-out
-          pointer-events-auto
-          text-dark-netural
-        "
+        className={cn(
+          // Base styles
+          "absolute left-0 z-50 min-w-max",
+          "bg-white rounded-lg border border-[#FF00E5] shadow-lg p-1 overflow-hidden",
+          "transition-all duration-200 ease-out pointer-events-auto text-dark-netural",
+
+          // Visibility states (Opacity/Visibility)
+          "opacity-0 invisible group-hover:opacity-100 group-hover:visible",
+
+          // Directional Logic
+          isUp
+            ? "bottom-full mb-1" // If Up: Position above, margin bottom
+            : "top-full mt-1", // If Down: Position below, margin top
+
+          // Animation Logic
+          // When hidden (default): translate-y-1 pushes it down slightly
+          // When hovered: translate-y-0 brings it to natural position
+          // This works for both directions:
+          // - Down: It slides "up" into position from slightly below.
+          // - Up: It slides "up" into position from slightly inside the trigger.
+          "translate-y-1 group-hover:translate-y-0",
+        )}
       >
         {items.map((item) =>
           onSelect ? (

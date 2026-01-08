@@ -1,12 +1,16 @@
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
+import { CalendarDays } from "lucide-react";
+import { useState, useEffect } from "react";
+
 import SmartNavLink from "./ui/SmartNavLink";
 import { themeGuide } from "../../styles/themeGuide";
 import { MailIcon, LocationIcon } from "../icons/FooterIcons";
 import { cn } from "../../lib/util";
+import { languages } from "../utils/constants";
 
 import AppButton from "../components/library/AppButton";
-import { CalendarDays } from "lucide-react";
+import Dropdown from "../components/library/Dropdown";
 
 const ContactItem = ({ icon: Icon, text, href, itemClass, iconClass }) => (
   <li className={`flex gap-[2vw] md:gap-[0.6vw] text-gray-600 ${itemClass}`}>
@@ -44,13 +48,49 @@ const FooterLinkList = ({ links }) => (
 
 const Footer = memo(() => {
   const { t, i18n } = useTranslation();
+  const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
+
+  const handleLanguageChange = async (language) => {
+    setSelectedLanguage(language);
+    try {
+      await i18n.changeLanguage(language.key); // loads from CDN
+      localStorage.setItem("lang", language.key);
+
+      const segments = window.location.pathname.split("/").filter(Boolean);
+
+      if (languages.some((l) => l.key === segments[0])) {
+        segments.shift();
+      }
+
+      const newPath =
+        language.key === "en"
+          ? `/${segments.join("/")}`
+          : `/${language.key}${segments.length ? "/" + segments.join("/") : ""}`;
+      navigate(newPath, { replace: true });
+    } catch (err) {
+      console.error("Failed to load language:", err);
+    }
+  };
+
+  const [selected, setSelected] = useState(() => {
+    const current = i18n.language || localStorage.getItem("lang") || "en";
+    return (
+      languages.find((language) => language.key === current) || languages[0]
+    );
+  });
+
+  useEffect(() => {
+    const currentLang = i18n.language || localStorage.getItem("lang") || "en";
+    const matched = languages.find((lang) => lang.key === currentLang);
+    if (matched && matched.key !== selected.key) {
+      setSelected(matched);
+    }
+  }, [i18n.language]);
 
   const linkColumns = {
     quickLinks: [
       { to: "/", label: t("footer.home") },
-      { to: "/#statistics", label: t("footer.statistics") },
       { to: "/#services", label: t("footer.services") },
-      { to: "/#platform", label: t("footer.platform") },
     ],
     toolkit: [
       { to: "/shipment-tracker", label: t("header.shipment_tracker") },
@@ -265,6 +305,42 @@ const Footer = memo(() => {
             >
               {t("footer.description_1")} {t("footer.description_2")}
             </p>
+
+            <div
+              className={cn(
+                "flex flex-row",
+                "lg:gap-2",
+                "lg:justify-center",
+                "lg:items-center",
+                "mt-3",
+              )}
+            >
+              <Dropdown
+                title="Language"
+                items={languages}
+                selected={selectedLanguage}
+                onSelect={(language) => handleLanguageChange(language)}
+                direction="up"
+                parentClassName={cn(
+                  "bg-white hover:bg-secondary-hover active:bg-secondary-active",
+                  "border border-violet-300 active:border-secondary-active",
+                  "text-primary active:text-white cursor-pointer font-normal",
+                  "shadow-[1px_1px_2px_rgba(0,0,0,0.3),inset_-2px_-2px_6px_rgba(167,139,250,0.3)]",
+                  "rounded-md",
+                )}
+                triggerClassName="h-9 px-4 py-2.5 has-[>svg]:px-3 flex items-center justify-center"
+              />
+              <AppButton
+                to="/#contact-us"
+                text={t("header.login_signup") || "Login / Signup"}
+                variant="secondary"
+              />
+              <AppButton
+                to="/book-a-demo"
+                text={t("header.book_a_demo") || "Book a Demo"}
+                variant="primary"
+              />
+            </div>
           </div>
 
           {/* RIGHT COLUMN: Link Cards Container */}
