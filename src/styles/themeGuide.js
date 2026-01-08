@@ -18,7 +18,7 @@ export const themeGuide = {
   inputHeading: "text-foreground text-base leading-tight font-semibold",
   inputDescription: "text-muted-foreground text-sm leading-tight",
   inputPlaceholder:
-    "placeholder:text-placeholder text-placeholder italic text-base placeholder:italic md:text-sm",
+    "placeholder:text-placeholder text-placeholder text-base md:text-sm",
 
   // Call to Action (CTA)
   ctaHeading:

@@ -97,7 +97,7 @@ const ShipmentTrackerForm = ({ initialTrackingNumber, autoSubmit = false }) => {
               disableFocusRing={true}
               className={cn(
                 themeGuide.inputPlaceholder,
-                "border-none bg-transparent h-10 italic shadow-none px-0 py-0 w-full",
+                "border-none h-10 shadow-none px-0 py-0 w-full",
                 "md:min-w-[340px]", // Ensures space for long placeholder on desktop
                 errors.trackingNumber && "placeholder-red-500",
               )}
