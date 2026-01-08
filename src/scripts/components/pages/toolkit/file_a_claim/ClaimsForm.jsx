@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { ChevronDown } from "lucide-react";
 import { cn } from "../../../../../lib/util";
 import ClaimSubmissionModal from "./ClaimSubmissionModal"; // Adjust path
 import FileAClaimToolTipError from "./FileAClaimToolTipError"; // Adjust path
@@ -8,6 +9,7 @@ import AppButton from "../../../library/AppButton"; // Adjust path
 import {
   claimsLabelVariants,
   claimsInputVariants,
+  claimsSelectVariants,
   claimsInputContainerVariants,
   claimsCardVariants,
   claimsHeaderVariants,
@@ -420,27 +422,30 @@ const ClaimsForm = () => {
                   {isFormSubmitted && fieldErrors.country && (
                     <FileAClaimToolTipError message={fieldErrors.country} />
                   )}
-                  <select
-                    name="country"
-                    className={cn(
-                      claimsInputVariants(),
-                      "appearance-none cursor-pointer",
-                    )}
-                    value={formData.country}
-                    onChange={handleChange}
-                  >
-                    <option value="">
-                      {t(
-                        "file_a_claim.form_section.fields.country.default_option",
+                  <div className="relative">
+                    <select
+                      name="country"
+                      className={cn(
+                        claimsSelectVariants(),
+                        "pr-8 text-sm md:text-base",
                       )}
-                    </option>
-                    <option value="VN">Vietnam</option>
-                    <option value="MY">Malaysia</option>
-                    <option value="TH">Thailand</option>
-                    <option value="PH">Philippines</option>
-                    <option value="SG">Singapore</option>
-                    <option value="ID">Indonesia</option>
-                  </select>
+                      value={formData.country}
+                      onChange={handleChange}
+                    >
+                      <option value="">
+                        {t(
+                          "file_a_claim.form_section.fields.country.default_option",
+                        )}
+                      </option>
+                      <option value="VN">Vietnam</option>
+                      <option value="MY">Malaysia</option>
+                      <option value="TH">Thailand</option>
+                      <option value="PH">Philippines</option>
+                      <option value="SG">Singapore</option>
+                      <option value="ID">Indonesia</option>
+                    </select>
+                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#1E2939] pointer-events-none" />
+                  </div>
                 </div>
               </div>
 
@@ -454,36 +459,39 @@ const ClaimsForm = () => {
                   {isFormSubmitted && fieldErrors.claimType && (
                     <FileAClaimToolTipError message={fieldErrors.claimType} />
                   )}
-                  <select
-                    name="claimType"
-                    className={cn(
-                      claimsInputVariants(),
-                      "appearance-none cursor-pointer",
-                    )}
-                    value={formData.claimType}
-                    onChange={handleChange}
-                  >
-                    <option value="">
-                      {t(
-                        "file_a_claim.form_section.fields.claim_type.default_option",
+                  <div className="relative">
+                    <select
+                      name="claimType"
+                      className={cn(
+                        claimsSelectVariants(),
+                        "pr-8 text-sm md:text-base",
                       )}
-                    </option>
-                    <option value="lost">
-                      {t(
-                        "file_a_claim.form_section.fields.claim_type.options.lost",
-                      )}
-                    </option>
-                    <option value="damaged">
-                      {t(
-                        "file_a_claim.form_section.fields.claim_type.options.damaged",
-                      )}
-                    </option>
-                    <option value="late">
-                      {t(
-                        "file_a_claim.form_section.fields.claim_type.options.late",
-                      )}
-                    </option>
-                  </select>
+                      value={formData.claimType}
+                      onChange={handleChange}
+                    >
+                      <option value="">
+                        {t(
+                          "file_a_claim.form_section.fields.claim_type.default_option",
+                        )}
+                      </option>
+                      <option value="lost">
+                        {t(
+                          "file_a_claim.form_section.fields.claim_type.options.lost",
+                        )}
+                      </option>
+                      <option value="damaged">
+                        {t(
+                          "file_a_claim.form_section.fields.claim_type.options.damaged",
+                        )}
+                      </option>
+                      <option value="late">
+                        {t(
+                          "file_a_claim.form_section.fields.claim_type.options.late",
+                        )}
+                      </option>
+                    </select>
+                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#1E2939] pointer-events-none" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -555,7 +563,7 @@ const ClaimsForm = () => {
             </div>
 
             {/* Submit Button */}
-            <div className="flex justify-center md:justify-end mt-4">
+            <div className="flex justify-end mt-4">
               <AppButton
                 as="button"
                 text={
