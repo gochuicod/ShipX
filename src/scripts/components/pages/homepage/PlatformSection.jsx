@@ -36,9 +36,11 @@ export default function PlatformSection() {
         className={cn(
           "flex xl:flex-row flex-col-reverse justify-center items-center gap-x-8",
         )}
-        id="platform"
       >
-        <div className="flex flex-col xl:w-[35%] w-full xl:justify-end justify-center xl:items-end items-center">
+        <div
+          id="platform"
+          className="flex flex-col xl:w-[35%] w-full xl:justify-end justify-center xl:items-end items-center"
+        >
           <Badge variant="toolkit" size="default">
             {t("our_platform_section.badge")}
           </Badge>
