@@ -6,13 +6,13 @@ import {
 } from "../../../styles/affiliate-card";
 import { Badge } from "../../../styles/badge";
 import AppButton from "./AppButton";
-import { cn } from "../../../lib/util"; // Make sure to import cn
+import { cn } from "../../../lib/util";
 
 export default function AffiliateCard({
   // 1. Style Props
   variant = "default",
   padding,
-  containerClassName = "h-full w-full",
+  containerClassName = "w-full",
   logo,
   illustration,
   heading,
@@ -30,7 +30,11 @@ export default function AffiliateCard({
       style={style}
       {...props}
     >
-      <AffiliateCardRoot variant={variant} padding={padding}>
+      <AffiliateCardRoot
+        variant={variant}
+        padding={padding}
+        className="flex flex-col"
+      >
         {illustration && (
           <AffiliateCardIllustration>
             <img
@@ -38,13 +42,17 @@ export default function AffiliateCard({
               alt={illustration.alt || "Illustration"}
               className={
                 illustration.className ||
-                "w-48 h-48 md:w-48 md:h-48 object-contain drop-shadow-xl"
+                "w-80 h-80 md:w-64 md:h-64 object-contain drop-shadow-xl"
               }
             />
           </AffiliateCardIllustration>
         )}
 
-        <AffiliateCardContent>
+        {/* FIX 2: Add "flex-1" (and optionally "w-full")
+           This makes the text content area grow to fill empty space,
+           pushing the footer to the bottom.
+        */}
+        <AffiliateCardContent className="flex-1 w-full">
           {logo && (
             <div className="mb-2">
               <img
@@ -56,14 +64,12 @@ export default function AffiliateCard({
           )}
 
           {/* Heading */}
-          <h2 className="text-lg md:text-3xl font-bold text-slate-900 leading-tight">
+          <h2 className="text-xl font-bold text-slate-900 leading-tight">
             {heading}
           </h2>
 
           {/* Subheading */}
-          <p className="text-slate-600 text-sm md:text-lg leading-relaxed">
-            {subheading}
-          </p>
+          <p className="text-slate-600 text-sm leading-relaxed">{subheading}</p>
 
           {/* Badges */}
           {badges && badges.length > 0 && (

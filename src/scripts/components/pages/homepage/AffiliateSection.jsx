@@ -122,13 +122,13 @@ const AffiliateSection = () => {
     <Container className="relative w-full lg:pt-32 lg:pb-0 pt-16">
       {/* Desktop and Tablet Layout */}
       <div
-        className={`hidden md:flex lg:flex-row md:flex-col justify-center items-center lg:items-stretch gap-32 lg:gap-8 md:gap-22`}
+        className={`hidden md:flex lg:flex-row md:flex-col justify-center items-stretch gap-32 lg:gap-8 md:gap-22`}
       >
         {cards.map((card) => (
           <AffiliateCard
             key={card.id}
             containerClassName="h-full w-full"
-            className="flex-1 w-full"
+            className="flex-1 w-full h-full"
             variant={card.variant}
             badgeVariant={card.badgeVariant}
             logo={card.logo}
