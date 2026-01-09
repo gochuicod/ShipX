@@ -40,7 +40,7 @@ export default function ToolkitSection() {
     <section
       className={cn(
         "flex flex-col lg:flex-row",
-        "items-center justify-center",
+        "items-start justify-center",
         themeGuide.sectionPaddingY,
         "relative w-full min-h-[408px] gap-8 overflow-hidden isolation-isolate",
       )}
