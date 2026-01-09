@@ -10,7 +10,7 @@ import { Badge } from "../../../../styles/badge";
 import { officesSectionCountries } from "../../../utils/constants";
 
 import { useTranslation } from "react-i18next";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import Map from "../../svgs/Map";
 import { CalendarDays } from "lucide-react";
@@ -25,6 +25,9 @@ function CountryButtons({ onHover }) {
   // Detect touch devices (Mobile/Tablet)
   const [isTouch, setIsTouch] = useState(false);
 
+  // Ref to hold the timeout ID for the delay
+  const timeoutRef = useRef(null);
+
   useEffect(() => {
     setIsTouch("ontouchstart" in window || navigator.maxTouchPoints > 0);
   }, []);
@@ -34,6 +37,10 @@ function CountryButtons({ onHover }) {
   // Desktop: Hover triggers popover + map highlight
   const handleMouseEnter = (name) => {
     if (!isTouch) {
+      // Clear any pending close timer immediately
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
       setActiveCountryName(name);
       onHover && onHover(name);
     }
@@ -41,8 +48,12 @@ function CountryButtons({ onHover }) {
 
   const handleMouseLeave = () => {
     if (!isTouch) {
-      setActiveCountryName(null);
-      onHover && onHover(null);
+      // Add a delay before closing. This allows the user to bridge the gap
+      // between the button and the popover without it closing.
+      timeoutRef.current = setTimeout(() => {
+        setActiveCountryName(null);
+        onHover && onHover(null);
+      }, 200); // 200ms grace period
     }
   };
 
@@ -95,6 +106,8 @@ function CountryButtons({ onHover }) {
             <div
               key={officeKey}
               className={cn("relative transition-all", isOpen ? "z-20" : "z-0")}
+              // Move event handlers here to the parent wrapper
+              // This ensures hovering the CHILD (Popover) keeps the state active
               onMouseEnter={() => handleMouseEnter(countryName)}
               onMouseLeave={handleMouseLeave}
             >
@@ -134,7 +147,6 @@ export default function OfficesSection() {
         {/* LEFT: Image + mobile buttons */}
         <div className="lg:w-[50%] w-full flex flex-col items-center">
           <div className="relative w-full h-auto">
-            {/* 3. Pass the dynamic state instead of the hardcoded string */}
             <Map activeCountry={hoveredCountry} />
           </div>
 
