@@ -21,7 +21,8 @@ export default function PartnersSection() {
   return (
     <Container
       className={cn(
-        "lg:pt-32 lg:pb-0 pt-16 md:pb-16 pb-12 flex lg:flex-row md:flex-col flex-col justify-center items-start gap-x-8",
+        "flex lg:flex-row md:flex-col flex-col justify-center items-start gap-x-8",
+        themeGuide.sectionPaddingY,
       )}
     >
       {/* Left side of the section */}

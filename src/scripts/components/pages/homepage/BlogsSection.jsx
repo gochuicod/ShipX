@@ -9,6 +9,7 @@ import Container from "../../library/Container";
 
 import { Badge } from "../../../../styles/badge";
 import { themeGuide } from "../../../../styles/themeGuide";
+import { cn } from "../../../../lib/util";
 
 const BlogSection = () => {
   const { t } = useTranslation();
@@ -29,7 +30,10 @@ const BlogSection = () => {
 
   return (
     <Container
-      className="relative flex flex-col justify-center items-center lg:pt-32 lg:pb-0 pt-16"
+      className={cn(
+        "relative flex flex-col justify-center items-center",
+        themeGuide.sectionPaddingY,
+      )}
       style={{ fontFamily: "Inter, sans-serif" }}
     >
       <div className="flex justify-center items-center mb-4">

@@ -1,6 +1,7 @@
 import { lazy, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { themeGuide } from "../../../../styles/themeGuide";
+import { cn } from "../../../../lib/util";
 import AffiliateCard from "../../library/AffiliateCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
@@ -119,7 +120,12 @@ const AffiliateSection = () => {
   ];
 
   return (
-    <Container className="relative w-full overflow-y-visible">
+    <Container
+      className={cn(
+        "relative w-full overflow-y-visible",
+        themeGuide.sectionPaddingY,
+      )}
+    >
       {/* Desktop and Tablet Layout */}
       <div
         className={`hidden md:flex lg:flex-row md:flex-col justify-center items-center lg:items-stretch gap-32 lg:gap-8 md:gap-22 overflow-y-visible`}

@@ -9,6 +9,9 @@ import HighlightedHeading from "../../library/HighlightedHeading";
 import IconBox from "../../library/IconBox";
 import Container from "../../library/Container";
 
+import { themeGuide } from "../../../../styles/themeGuide";
+import { cn } from "../../../../lib/util";
+
 const ContactUsNew = () => {
   const { t } = useTranslation();
 
@@ -102,7 +105,12 @@ const ContactUsNew = () => {
 
   return (
     <Container
-      className="relative flex flex-col justify-center items-center lg:mb-16 md:mb-8 mb-4 lg:pt-32 lg:pb-0 pt-16"
+      className={cn(
+        "flex flex-col",
+        "justify-center items-center",
+        "relative",
+        themeGuide.sectionPaddingY,
+      )}
       style={{ fontFamily: "Inter, sans-serif" }}
       id="contact-us"
     >

@@ -14,6 +14,7 @@ import { useState, useEffect } from "react";
 
 import Map from "../../svgs/Map";
 import { CalendarDays } from "lucide-react";
+import { themeGuide } from "../../../../styles/themeGuide";
 
 function CountryButtons({ onHover }) {
   const { t } = useTranslation();
@@ -125,7 +126,9 @@ export default function OfficesSection() {
     <div className={cn("bg-linear-to-b from-[#FAF5FF] to-[#FFFFFF]")}>
       <Container
         className={cn(
-          "flex xl:flex-row flex-col-reverse justify-center items-center gap-x-8 py-32",
+          "flex xl:flex-row flex-col-reverse",
+          themeGuide.sectionPaddingY,
+          "justify-center items-center gap-x-8",
         )}
       >
         {/* LEFT: Image + mobile buttons */}

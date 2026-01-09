@@ -8,6 +8,9 @@ import { Badge } from "../../../../../styles/badge";
 import { TOOLKIT_TABS } from "./tabs.config";
 import { getTranslatedToolkitTabs } from "./toolkitTabs.i18n";
 
+import { cn } from "../../../../../lib/util";
+import { themeGuide } from "../../../../../styles/themeGuide";
+
 export default function ToolkitSection() {
   const { pathname } = useLocation();
   const { t } = useTranslation();
@@ -35,7 +38,12 @@ export default function ToolkitSection() {
 
   return (
     <section
-      className="relative w-full min-h-[408px] flex flex-col lg:flex-row items-center justify-center px-6 py-16 lg:px-24 gap-8 overflow-hidden isolation-isolate"
+      className={cn(
+        "flex flex-col lg:flex-row",
+        "items-center justify-center",
+        themeGuide.sectionPaddingY,
+        "relative w-full min-h-[408px] gap-8 overflow-hidden isolation-isolate",
+      )}
       style={{
         background: "linear-gradient(180deg, #4F378A 0%, #66005C 159.37%)",
       }}

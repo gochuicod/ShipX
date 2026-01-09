@@ -4,6 +4,7 @@ import { CircleArrowRight } from "lucide-react";
 
 import { Badge } from "../../../../styles/badge";
 import { themeGuide } from "../../../../styles/themeGuide";
+import { cn } from "../../../../lib/util";
 
 import AppButton from "../../library/AppButton";
 import HighlightedHeading from "../../library/HighlightedHeading";
@@ -56,7 +57,11 @@ const FAQSection = () => {
 
   return (
     <Container
-      className="relative gap-8 items-center flex flex-col lg:pt-32 lg:pb-0 pt-16"
+      className={cn(
+        "flex flex-col",
+        "relative gap-8 items-center",
+        themeGuide.sectionPaddingY,
+      )}
       style={{ fontFamily: "Inter, sans-serif" }}
     >
       <div className="w-full gap-8 flex flex-col">

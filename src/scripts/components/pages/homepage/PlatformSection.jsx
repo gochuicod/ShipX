@@ -30,7 +30,7 @@ export default function PlatformSection() {
   const showcase = getPlatformShowcaseData(t);
 
   return (
-    <div className="flex flex-col lg:pt-32 lg:pb-0 pt-16">
+    <div className={cn("flex flex-col", themeGuide.sectionPaddingY)}>
       {/* First row */}
       <Container
         className={cn(

@@ -43,7 +43,8 @@ export default function ServicesSection() {
   return (
     <Container
       className={cn(
-        "py-12 md:py-16 2xl:py-46 flex flex-col items-center overflow-hidden",
+        "flex flex-col items-center overflow-hidden",
+        themeGuide.sectionPaddingY,
       )}
     >
       {/* --- HEADER --- */}
