@@ -65,18 +65,22 @@ export default function HeroCarousel({
         <div className="absolute 2xl:top-[10vw] xl:top-[20vw] lg:top-[25vw] md:top-[30vw] top-[50vw] 2xl:-right-[200px] right-0 w-full h-full overflow-visible">
           <div className="flex min-h-screen w-full items-center justify-center overflow-visible relative">
             {/* --- Outer Ring --- */}
-            <div className={cn(
-              "absolute rounded-full md:border-80 border-60 border-[#FF00E5]/5",
-              "2xl:h-[1300px] md:h-[1200px] h-[800px]",
-              "2xl:w-[1300px] md:w-[1200px] w-[800px]"
-            )} />
+            <div
+              className={cn(
+                "absolute rounded-full md:border-80 border-60 border-[#FF00E5]/5",
+                "2xl:h-[1400px] md:h-[1200px] h-[800px]",
+                "2xl:w-[1400px] md:w-[1200px] w-[800px]",
+              )}
+            />
 
             {/* --- Inner Ring --- */}
-            <div className={cn(
-              "absolute rounded-full md:border-80 border-60 border-[#FF00E5]/5",
-              "2xl:h-[1000px] md:h-[900px] h-[600px]",
-              "2xl:w-[1000px] md:w-[900px] w-[600px]"
-            )} />
+            <div
+              className={cn(
+                "absolute rounded-full md:border-80 border-60 border-[#FF00E5]/5",
+                "2xl:h-[1100px] md:h-[900px] h-[600px]",
+                "2xl:w-[1100px] md:w-[900px] w-[600px]",
+              )}
+            />
           </div>
         </div>
         {/* Navigation Arrows */}

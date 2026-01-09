@@ -25,58 +25,62 @@ const Main = () => {
   const { t } = useTranslation();
 
   const heroSlides = [
-    // {
-    //   id: 1,
-    //   image:
-    //     "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_1.webp",
-    //   title: t("hero_section.slides.slide_1.title"),
-    //   titleHighlight: t("hero_section.slides.slide_1.title_highlighted"),
-    //   description: t("hero_section.slides.slide_1.description"),
-    //   descriptionClassName: "lg:w-[85%] md:w-[80%] w-full lg:mx-0 mx-auto",
-    //   note: t("hero_section.slides.slide_1.note"),
-    //   primaryButton: {
-    //     text: t("hero_section.slides.slide_1.button_1"),
-    //     to: "/book-a-demo",
-    //     icon: <CalendarDays className="size-5" />,
-    //   },
-    //   secondaryButton: {
-    //     text: t("hero_section.slides.slide_1.button_2"),
-    //     to: "/#services",
-    //     icon: <ChevronDown className="size-5" />,
-    //   },
-    // },
-    // {
-    //   id: 2,
-    //   image:
-    //     "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_2.webp",
-    //   bgClassName: cn(
-    //     "lg:bg-size-[1508px_1206px] md:bg-size-[1093px_1036px] bg-size-[924px_845px]",
-    //     "lg:bg-position-[calc(50vw-320px)_calc(0vw-40px)] md:bg-position-[calc(22vw-320px)_calc(30vw-40px)] bg-position-[calc(25vw-320px)_calc(70vw-40px)]",
-    //   ),
-    //   title: t("hero_section.slides.slide_2.title"),
-    //   titleClassName: "lg:w-full md:w-[70%] lg:mx-0 mx-auto",
-    //   titleHighlight: t("hero_section.slides.slide_2.title_highlighted"),
-    //   description: t("hero_section.slides.slide_2.description"),
-    //   descriptionClassName: "lg:w-full md:w-[80%] w-full lg:mx-0 mx-auto",
-    //   note: t("hero_section.slides.slide_2.note"),
-    //   primaryButton: {
-    //     text: t("hero_section.slides.slide_2.button_1"),
-    //     to: "/book-a-demo",
-    //     icon: <CalendarDays className="size-5" />,
-    //   },
-    //   secondaryButton: {
-    //     text: t("hero_section.slides.slide_2.button_2"),
-    //     to: "/hs-code-generator",
-    //     icon: <CircleArrowRight className="size-5" />,
-    //   },
-    // },
     {
       id: 1,
       image:
         "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_3.webp",
       bgClassName: cn(
         "2xl:bg-size-[1139px_636px] md:bg-size-[1093px_636px] bg-size-[724px_445px]",
-        "2xl:bg-position-[30vw_250px] xl:bg-position-[center_30vw] lg:bg-position-[center_40vw] md:bg-position-[center_50vw] bg-position-[center_110vw]",
+        "2xl:bg-position-[30vw_15vw] xl:bg-position-[center_30vw] lg:bg-position-[center_40vw] md:bg-position-[center_50vw] bg-position-[center_110vw]",
+      ),
+      title: t("hero_section.slides.slide_1.title"),
+      titleHighlight: t("hero_section.slides.slide_1.title_highlighted"),
+      description: t("hero_section.slides.slide_1.description"),
+      descriptionClassName: "lg:w-[85%] md:w-[80%] w-full lg:mx-0 mx-auto",
+      note: t("hero_section.slides.slide_1.note"),
+      primaryButton: {
+        text: t("hero_section.slides.slide_1.button_1"),
+        to: "/book-a-demo",
+        icon: <CalendarDays className="size-5" />,
+      },
+      secondaryButton: {
+        text: t("hero_section.slides.slide_1.button_2"),
+        to: "/#services",
+        icon: <ChevronDown className="size-5" />,
+      },
+    },
+    {
+      id: 2,
+      image:
+        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_2_v2.webp",
+      bgClassName: cn(
+        "2xl:bg-size-[1239px_736px] md:bg-size-[1093px_636px] bg-size-[724px_445px]",
+        "2xl:bg-position-[30vw_5vw] xl:bg-position-[center_30vw] lg:bg-position-[center_40vw] md:bg-position-[center_50vw] bg-position-[center_110vw]",
+      ),
+      title: t("hero_section.slides.slide_2.title"),
+      titleClassName: "lg:w-full md:w-[70%] lg:mx-0 mx-auto",
+      titleHighlight: t("hero_section.slides.slide_2.title_highlighted"),
+      description: t("hero_section.slides.slide_2.description"),
+      descriptionClassName: "lg:w-full md:w-[80%] w-full lg:mx-0 mx-auto",
+      note: t("hero_section.slides.slide_2.note"),
+      primaryButton: {
+        text: t("hero_section.slides.slide_2.button_1"),
+        to: "/book-a-demo",
+        icon: <CalendarDays className="size-5" />,
+      },
+      secondaryButton: {
+        text: t("hero_section.slides.slide_2.button_2"),
+        to: "/hs-code-generator",
+        icon: <CircleArrowRight className="size-5" />,
+      },
+    },
+    {
+      id: 3,
+      image:
+        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_3.webp",
+      bgClassName: cn(
+        "2xl:bg-size-[1139px_636px] md:bg-size-[1093px_636px] bg-size-[724px_445px]",
+        "2xl:bg-position-[30vw_15vw] xl:bg-position-[center_30vw] lg:bg-position-[center_40vw] md:bg-position-[center_50vw] bg-position-[center_110vw]",
       ),
       title: t("hero_section.slides.slide_3.title"),
       titleClassName: "lg:w-full md:w-[80%] lg:mx-0 mx-auto",
