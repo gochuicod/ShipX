@@ -16,81 +16,85 @@ import Map from "../../svgs/Map";
 import { CalendarDays } from "lucide-react";
 import { themeGuide } from "../../../../styles/themeGuide";
 
-function CountryButtons({ onHover }) {
+/* --------------------------------------------
+ * CountryButtons
+ * ------------------------------------------ */
+
+function CountryButtons({ onActiveChange }) {
   const { t } = useTranslation();
 
-  // Track which country is currently active (string | null)
-  const [activeCountryName, setActiveCountryName] = useState(null);
-
-  // Detect touch devices (Mobile/Tablet)
+  const [activeCountry, setActiveCountry] = useState(null);
+  const [pinnedCountry, setPinnedCountry] = useState(null);
   const [isTouch, setIsTouch] = useState(false);
 
-  // Ref to hold the timeout ID for the delay
-  const timeoutRef = useRef(null);
+  const closeTimeoutRef = useRef(null);
 
   useEffect(() => {
     setIsTouch("ontouchstart" in window || navigator.maxTouchPoints > 0);
   }, []);
 
-  // --- Handlers ---
+  /* ---------- helpers ---------- */
 
-  // Desktop: Hover triggers popover + map highlight
+  const activate = (name) => {
+    setActiveCountry(name);
+    onActiveChange?.(name);
+  };
+
+  const deactivate = () => {
+    setActiveCountry(null);
+    setPinnedCountry(null);
+    onActiveChange?.(null);
+  };
+
+  /* ---------- desktop hover ---------- */
+
   const handleMouseEnter = (name) => {
-    if (!isTouch) {
-      // Clear any pending close timer immediately
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-      setActiveCountryName(name);
-      onHover && onHover(name);
+    if (isTouch || pinnedCountry) return;
+
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
     }
+
+    activate(name);
   };
 
   const handleMouseLeave = () => {
-    if (!isTouch) {
-      // Add a delay before closing. This allows the user to bridge the gap
-      // between the button and the popover without it closing.
-      timeoutRef.current = setTimeout(() => {
-        setActiveCountryName(null);
-        onHover && onHover(null);
-      }, 200); // 200ms grace period
-    }
+    if (isTouch || pinnedCountry) return;
+
+    closeTimeoutRef.current = setTimeout(() => {
+      deactivate();
+    }, 200);
   };
 
-  // Mobile: Click toggles popover + map highlight
+  /* ---------- click (desktop + mobile) ---------- */
+
   const handleClick = (name) => {
-    if (isTouch) {
-      if (activeCountryName === name) {
-        // If clicking the same one, close it
-        setActiveCountryName(null);
-        onHover && onHover(null);
-      } else {
-        // Open new one
-        setActiveCountryName(name);
-        onHover && onHover(name);
-      }
+    if (activeCountry === name) {
+      deactivate();
+    } else {
+      setPinnedCountry(name);
+      activate(name);
     }
   };
 
-  // Mobile: Close when clicking background
-  const handleBackgroundClick = () => {
-    setActiveCountryName(null);
-    onHover && onHover(null);
+  /* ---------- mobile backdrop ---------- */
+
+  const handleBackdropClick = () => {
+    deactivate();
   };
 
   return (
     <>
-      {/* Mobile Backdrop: Only visible on touch when a popover is open */}
-      {isTouch && activeCountryName && (
+      {/* Mobile backdrop */}
+      {isTouch && activeCountry && (
         <div
-          className="fixed inset-0 z-10 cursor-default bg-transparent"
-          onClick={handleBackgroundClick}
+          className="fixed inset-0 z-10 bg-transparent"
+          onClick={handleBackdropClick}
         />
       )}
 
       <div className="flex flex-wrap justify-center xl:justify-start gap-4 mt-6">
         {officesSectionCountries.map((item) => {
-          const officeKey = item.country_key;
           const countryName = t(item.country_key);
 
           const office = {
@@ -100,28 +104,24 @@ function CountryButtons({ onHover }) {
             icon: item.icon,
           };
 
-          const isOpen = activeCountryName === countryName;
+          const isOpen = activeCountry === countryName;
 
           return (
             <div
-              key={officeKey}
+              key={item.country_key}
               className={cn("relative transition-all", isOpen ? "z-20" : "z-0")}
-              // Move event handlers here to the parent wrapper
-              // This ensures hovering the CHILD (Popover) keeps the state active
               onMouseEnter={() => handleMouseEnter(countryName)}
               onMouseLeave={handleMouseLeave}
             >
               <AppButton
-                variant={"quaternary"}
+                variant="quaternary"
                 text={countryName}
                 withLeftIcon
                 leftIcon={item.icon}
                 iconRounded
-                // We handle click manually for mobile support
                 onClick={() => handleClick(countryName)}
               />
 
-              {/* Render Popover if active */}
               {isOpen && <OfficePopover office={office} />}
             </div>
           );
@@ -131,12 +131,16 @@ function CountryButtons({ onHover }) {
   );
 }
 
+/* --------------------------------------------
+ * OfficesSection
+ * ------------------------------------------ */
+
 export default function OfficesSection() {
   const { t } = useTranslation();
-  const [hoveredCountry, setHoveredCountry] = useState(null);
+  const [activeCountry, setActiveCountry] = useState(null);
 
   return (
-    <div className={cn("bg-linear-to-b from-[#FAF5FF] to-[#FFFFFF]")}>
+    <div className="bg-linear-to-b from-[#FAF5FF] to-[#FFFFFF]">
       <Container
         className={cn(
           "flex xl:flex-row flex-col-reverse",
@@ -144,15 +148,15 @@ export default function OfficesSection() {
           "justify-center items-center gap-x-8",
         )}
       >
-        {/* LEFT: Image + mobile buttons */}
+        {/* LEFT: Map + mobile buttons */}
         <div className="xl:w-[50%] w-full flex flex-col items-center">
           <div className="relative w-full h-auto">
-            <Map activeCountry={hoveredCountry} />
+            <Map activeCountry={activeCountry} />
           </div>
 
-          {/* Buttons BELOW image on md and below */}
+          {/* Buttons below map on mobile */}
           <div className="block xl:hidden w-full">
-            <CountryButtons onHover={setHoveredCountry} />
+            <CountryButtons onActiveChange={setActiveCountry} />
           </div>
         </div>
 
@@ -161,7 +165,6 @@ export default function OfficesSection() {
           className="
             flex flex-col
             xl:w-[50%] w-full
-            xl:justify-start justify-center
             xl:items-start items-center
           "
         >
@@ -194,13 +197,13 @@ export default function OfficesSection() {
           <AppButton
             to="/book-a-demo"
             text={t("header.book_a_demo")}
-            withLeftIcon={true}
+            withLeftIcon
             leftIcon={<CalendarDays className="size-5" />}
           />
 
-          {/* Buttons on the RIGHT for xl+ */}
+          {/* Buttons on the right for xl+ */}
           <div className="hidden xl:block w-full">
-            <CountryButtons onHover={setHoveredCountry} />
+            <CountryButtons onActiveChange={setActiveCountry} />
           </div>
         </div>
       </Container>
