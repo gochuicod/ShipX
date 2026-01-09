@@ -8,25 +8,19 @@ import PartnerCard from "./PartnerCard";
 
 export default function PartnerGrid({ partners }) {
   return (
-    <div>
+    <div className="w-full max-w-full overflow-hidden">
       <Swiper
         grid={{ rows: 5, fill: "row" }}
         breakpoints={{
           320: { slidesPerView: 3, spaceBetween: 10 },
           640: {
             slidesPerView: 5,
-            grid: {
-              rows: 3,
-              fill: "row",
-            },
+            grid: { rows: 3, fill: "row" },
             spaceBetween: 20,
           },
           1024: {
             slidesPerView: 5,
-            grid: {
-              rows: 3,
-              fill: "row",
-            },
+            grid: { rows: 3, fill: "row" },
             spaceBetween: 30,
           },
         }}
@@ -36,8 +30,8 @@ export default function PartnerGrid({ partners }) {
       >
         {partners.map((partner) => (
           <SwiperSlide
-            className="flex justify-center items-center"
             key={partner.id}
+            className="flex justify-center items-center"
           >
             <PartnerCard logo={partner.logo} name={partner.name} />
           </SwiperSlide>
@@ -45,14 +39,15 @@ export default function PartnerGrid({ partners }) {
       </Swiper>
 
       <style jsx global>{`
-        .swiper-pagination-bullet-active {
-          background: #4c3794 !important;
+        .swiper {
+          width: 100%;
         }
+
         .swiper-pagination {
-          bottom: 0px !important;
           position: relative !important;
           margin-top: 16px;
         }
+
         .swiper-pagination-bullet {
           width: 12px;
           height: 12px;
@@ -62,7 +57,7 @@ export default function PartnerGrid({ partners }) {
         }
 
         .swiper-pagination-bullet-active {
-          background: #4c3794;
+          background: #4c3794 !important;
         }
       `}</style>
     </div>

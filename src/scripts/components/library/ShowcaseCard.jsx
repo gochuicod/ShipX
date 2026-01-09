@@ -14,29 +14,32 @@ export default function ShowcaseCard({
   return (
     <div
       className={cn(
-        "bg-linear-to-br rounded-2xl p-6 flex flex-col md:flex-row items-center justify-start lg:w-fit md:w-full gap-4 border border-white/50 shadow-sm",
+        "bg-linear-to-br",
         gradient,
+        "max-w-[878px] min-w-0 min-h-[225px]",
+        "flex xl:flex",
+        "md:flex-row flex-col",
+        "gap-4",
+        "py-4 px-6",
+        "rounded-2xl",
       )}
     >
-      {/* Left: Visuals & Heading */}
-      <div className="flex flex-col items-center text-center max-w-[351px] w-[351px] h-auto">
+      {/* image and headline */}
+      <div className={cn("flex flex-col gap-2 w-full")}>
         <img
           src={image}
           alt={imageAlt}
-          className={cn(
-            "md:w-full w-[85%] h-full mb-6 rounded-2xl",
-            imageClassName,
-          )}
+          className={cn("rounded-2xl", "max-h-56", "h-[110%]", "object-cover")}
         />
         <HighlightedHeading
           text={headingText}
           highlight={highlights}
-          className="font-bold text-[#4D525C] md:text-[16px] text-[14px] md:px-0 px-3"
+          className="font-bold text-[#4D525C] md:text-[16px] text-[14px] text-center"
+          disableNewlines
         />
       </div>
-
-      {/* Right: Capability List */}
-      <div className="flex flex-col gap-1 w-full max-w-[320px]">
+      {/* platform capabilities */}
+      <div className="flex flex-col gap-1 w-full">
         {capabilities.map((item, index) => (
           <LogisticsCard
             key={index}

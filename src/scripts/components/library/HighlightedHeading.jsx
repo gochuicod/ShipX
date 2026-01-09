@@ -6,28 +6,31 @@ const highlightedHeadingStyles = {
 
 export default function HighlightedHeading({
   text,
-  highlight, // Can be a string "Word" or an array ["Word1", "Word2"]
+  highlight, // string or array
   className,
   highlightClass,
+  disableNewlines = false,
 }) {
   if (!text) return null;
 
-  // Convert literal "\\n" strings into actual newline characters
-  const formattedText = text.replace(/\\n/g, "\n");
+  // Convert literal "\\n" strings
+  const formattedText = disableNewlines
+    ? text.replace(/\\n/g, " ")
+    : text.replace(/\\n/g, "\n");
 
-  // Prepare highlights: Convert single string to array and escape for Regex safety
+  // Prepare highlights
   const highlightList = Array.isArray(highlight)
     ? highlight
     : highlight
       ? [highlight]
       : [];
 
-  // Create a regex group for all highlight words + the newline character
-  // Resulting regex looks like: /(Word1|Word2|\n)/gi
+  // Build regex parts
   const patternParts = [
     ...highlightList.map((h) => h.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&")),
-    "\\n",
-  ];
+    !disableNewlines ? "\\n" : null,
+  ].filter(Boolean);
+
   const regex = new RegExp(`(${patternParts.join("|")})`, "gi");
 
   const parts = formattedText.split(regex);
@@ -35,12 +38,11 @@ export default function HighlightedHeading({
   return (
     <h1 className={cn(highlightedHeadingStyles.h1, className)}>
       {parts.map((part, i) => {
-        // Handle Newlines
-        if (part === "\n") {
+        // Handle Newlines only if enabled
+        if (!disableNewlines && part === "\n") {
           return <br key={i} />;
         }
 
-        // Check if the current part matches any word in our highlight list (case-insensitive)
         const isHighlight = highlightList.some(
           (h) => h.toLowerCase() === part.toLowerCase(),
         );

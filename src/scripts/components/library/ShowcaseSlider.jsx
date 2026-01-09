@@ -36,6 +36,7 @@ export default function ShowcaseSlider({ children }) {
           display: flex;
           justify-content: start;
           gap: 8px;
+          padding-left: 12px;
         }
         .showcase-swiper .swiper-pagination-bullet {
           width: 10px;

@@ -11,6 +11,8 @@ import { getTranslatedToolkitTabs } from "./toolkitTabs.i18n";
 import { cn } from "../../../../../lib/util";
 import { themeGuide } from "../../../../../styles/themeGuide";
 
+import Container from "../../../library/Container";
+
 export default function ToolkitSection() {
   const { pathname } = useLocation();
   const { t } = useTranslation();
@@ -39,10 +41,8 @@ export default function ToolkitSection() {
   return (
     <section
       className={cn(
-        "flex flex-col lg:flex-row",
-        "items-start justify-center",
         themeGuide.sectionPaddingY,
-        "relative w-full min-h-[408px] gap-8 overflow-hidden isolation-isolate",
+        "relative w-full min-h-[408px] overflow-hidden isolation-isolate",
       )}
       style={{
         background: "linear-gradient(180deg, #4F378A 0%, #66005C 159.37%)",
@@ -52,40 +52,48 @@ export default function ToolkitSection() {
       <SectionGlow className="left-[1072px] top-5" />
       <SectionGlow className="left-[148px] -top-3" />
 
-      {/* LEFT CONTENT */}
-      <div className="relative z-10 flex lg:flex-col md:flex-row flex-col items-center lg:items-end text-center lg:text-right w-full lg:max-w-[390px] md:max-w-full lg:gap-2 md:gap-6">
-        <div className="flex flex-col items-center lg:items-end text-center lg:text-right gap-2 lg:w-auto md:w-68">
-          {/* Badge */}
-          <Badge variant="toolkit" size="default" className="md:text-sm">
-            {activeTabData?.badge}
-          </Badge>
+      <Container
+        className={cn(
+          "flex flex-col lg:flex-row",
+          "items-start justify-center",
+          "gap-8",
+        )}
+      >
+        {/* LEFT CONTENT */}
+        <div className="relative z-10 flex lg:flex-col md:flex-row flex-col items-center lg:items-end text-center lg:text-right w-full lg:max-w-[390px] md:max-w-full lg:gap-2 md:gap-6">
+          <div className="flex flex-col items-center md:items-start lg:items-end text-center lg:text-right gap-2 md:w-auto">
+            {/* Badge */}
+            <Badge variant="toolkit" size="default" className="md:text-sm">
+              {activeTabData?.badge}
+            </Badge>
 
-          {/* Title */}
-          <h2 className="font-['Inter'] font-semibold text-[32px] md:text-md lg:text-[40px] text-white opacity-90 leading-10 tracking-[-1px]">
-            {activeTabData?.title}
-          </h2>
+            {/* Title */}
+            <h2 className="font-['Inter'] font-semibold text-[32px] md:text-md lg:text-[40px] text-white opacity-90 leading-10 tracking-[-1px]">
+              {activeTabData?.title}
+            </h2>
+          </div>
+
+          {/* Description */}
+          <p className="font-['Inter'] font-normal text-[16px] leading-5 text-white opacity-90 lg:w-auto md:w-[450px] lg:text-right md:text-left">
+            {activeTabData?.description}
+          </p>
         </div>
 
-        {/* Description */}
-        <p className="font-['Inter'] font-normal text-[16px] leading-5 text-white opacity-90 lg:w-auto md:w-[450px] lg:text-right md:text-left">
-          {activeTabData?.description}
-        </p>
-      </div>
+        {/* RIGHT CONTENT */}
+        <div className="relative z-10 flex flex-col lg:gap-4 md:gap-4 gap-8 w-full lg:max-w-[808px] md:max-w-full">
+          {/* Tab Switcher */}
+          <div className="flex justify-center md:justify-start">
+            <TabSwitcher
+              tabs={translatedTabs}
+              activeTab={activeTab}
+              onChange={setActiveTab}
+            />
+          </div>
 
-      {/* RIGHT CONTENT */}
-      <div className="relative z-10 flex flex-col lg:gap-4 md:gap-4 gap-8 w-full lg:max-w-[808px] md:max-w-full">
-        {/* Tab Switcher */}
-        <div className="flex justify-center md:justify-start">
-          <TabSwitcher
-            tabs={translatedTabs}
-            activeTab={activeTab}
-            onChange={setActiveTab}
-          />
+          {/* Active Form */}
+          {ActiveForm && <ActiveForm />}
         </div>
-
-        {/* Active Form */}
-        {ActiveForm && <ActiveForm />}
-      </div>
+      </Container>
     </section>
   );
 }

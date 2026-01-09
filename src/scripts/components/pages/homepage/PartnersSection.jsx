@@ -21,50 +21,58 @@ export default function PartnersSection() {
   return (
     <Container
       className={cn(
-        "flex lg:flex-row md:flex-col flex-col justify-center items-start gap-x-8",
+        "flex flex-col 2xl:flex-row justify-center items-start gap-x-8",
         themeGuide.sectionPaddingY,
       )}
     >
-      {/* Left side of the section */}
+      {/* Left side */}
       <div
         className="
-                    flex flex-col
-                    w-full
-                    lg:justify-end justify-center
-                    lg:items-end items-center
-                "
+          flex flex-col
+          w-full
+          items-center justify-center
+          2xl:items-end 2xl:justify-end
+        "
       >
         <Badge variant="toolkit" size="default">
           {t("partners_section.badge")}
         </Badge>
+
         <HighlightedHeading
           text={t("partners_section.headline")}
           highlight={t("partners_section.headline_highlighted")}
           className="
-                        text-2xl
-                        lg:text-end md:text-center text-center
-                        font-semibold
-                        mt-2
-                    "
+            text-2xl
+            font-semibold
+            mt-2
+            text-center
+            2xl:text-end
+          "
         />
+
         <Description
           className="
-            md:text-base text-sm
-            lg:text-end md:text-center text-center
+            text-sm md:text-base
+            text-center
+            2xl:text-end
             mb-4
-            lg:w-auto md:w-[80%] w-full
+            w-full
+            md:w-[80%]
+            2xl:w-auto
           "
         >
           {t("partners_section.description")}
         </Description>
+
         <AppButton
           text={t("partners_section.button")}
-          withRightIcon={true}
+          withRightIcon
           rightIcon={<CircleArrowRight className="size-5" />}
         />
       </div>
-      {/* Right side of the section */}
-      <div className="lg:w-[60%] w-full lg:mt-0 mt-8">
+
+      {/* Right side */}
+      <div className="w-full mt-8 2xl:mt-0 2xl:w-[60%]">
         <PartnerGrid partners={partnersSectionData} />
       </div>
     </Container>

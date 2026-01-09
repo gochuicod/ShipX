@@ -81,14 +81,14 @@ export default function PlatformSection() {
         )}
       >
         {/* Features Sidebar */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-4 w-auto justify-items-center shrink-0 lg:mx-0 mx-auto">
+        <div className="flex xl:flex-col flex-wrap gap-4 w-auto justify-center items-center shrink-0 lg:mx-0 mx-auto">
           {features.map((feature, index) => (
             <FeatureItem key={index} icon={feature.icon} text={feature.text} />
           ))}
         </div>
 
         {/* Sliding Showcase Area */}
-        <div className="flex flex-col lg:w-[701px] md:w-full w-[350px] min-w-0">
+        <div className="flex flex-col w-full min-w-0 max-w-[878px]">
           <ShowcaseSlider>
             {showcase.map((card) => (
               <ShowcaseCard key={card.id} {...card} />
