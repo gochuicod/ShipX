@@ -24,14 +24,14 @@ export default function ShowcaseCard({
           src={image}
           alt={imageAlt}
           className={cn(
-            "w-full h-full mb-6 drop-shadow-xl rounded-3xl md:px-0 px-3",
+            "md:w-full w-[85%] h-full mb-6 rounded-2xl",
             imageClassName,
           )}
         />
         <HighlightedHeading
           text={headingText}
           highlight={highlights}
-          className="font-bold text-[#4D525C] md:text-[16px] text-[14px]"
+          className="font-bold text-[#4D525C] md:text-[16px] text-[14px] md:px-0 px-3"
         />
       </div>
 
