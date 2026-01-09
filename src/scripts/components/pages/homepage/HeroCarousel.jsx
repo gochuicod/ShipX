@@ -145,7 +145,7 @@ export default function HeroCarousel({
               </p>
             )}
 
-            <div className="mt-8 flex flex-row gap-4 2xl:justify-start justify-center">
+            <div className="mt-8 flex flex-row gap-4 2xl:justify-start justify-center z-10">
               {activeSlide.primaryButton && (
                 <AppButton
                   to={activeSlide.primaryButton.to}

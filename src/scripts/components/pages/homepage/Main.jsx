@@ -2,7 +2,7 @@ import { lazy } from "react";
 import { useTranslation } from "react-i18next";
 import { cn } from "../../../../lib/util";
 
-import { CalendarDays, CircleArrowRight, ChevronDown } from "lucide-react";
+import { CalendarDays, ChevronDown } from "lucide-react";
 
 // Same folder lazy imports
 const MessengerButton = lazy(() => import("./MessengerButton"));
@@ -69,9 +69,9 @@ const Main = () => {
         icon: <CalendarDays className="size-5" />,
       },
       secondaryButton: {
-        text: t("hero_section.slides.slide_2.button_2"),
-        to: "/hs-code-generator",
-        icon: <CircleArrowRight className="size-5" />,
+        text: t("hero_section.slides.slide_1.button_2"),
+        to: "/#services",
+        icon: <ChevronDown className="size-5" />,
       },
     },
     {
@@ -94,9 +94,9 @@ const Main = () => {
         icon: <CalendarDays className="size-5" />,
       },
       secondaryButton: {
-        text: t("hero_section.slides.slide_3.button_2"),
-        to: "/hs-code-generator",
-        icon: <CircleArrowRight className="size-5" />,
+        text: t("hero_section.slides.slide_1.button_2"),
+        to: "/#services",
+        icon: <ChevronDown className="size-5" />,
       },
     },
   ];
