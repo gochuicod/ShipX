@@ -52,7 +52,7 @@ export default function HeroCarousel({
   return (
     <section
       className={cn(
-        "relative w-full lg:py-0 py-12 flex items-center overflow-hidden bg-white bg-no-repeat transition-all duration-500 ease-in-out",
+        "relative w-full lg:py-0 py-12 flex items-center overflow-hidden bg-white bg-no-repeat transition-all duration-300 ease-in-out",
         activeBgClasses,
       )}
       style={{
@@ -62,6 +62,23 @@ export default function HeroCarousel({
       }}
     >
       <Container className="relative z-10 lg:py-6 lg:pt-0 md:pt-16 flex justify-start w-full">
+        <div className="absolute 2xl:top-[10vw] xl:top-[20vw] lg:top-[25vw] md:top-[30vw] top-[50vw] 2xl:-right-[200px] right-0 w-full h-full overflow-visible">
+          <div className="flex min-h-screen w-full items-center justify-center overflow-visible relative">
+            {/* --- Outer Ring --- */}
+            <div className={cn(
+              "absolute rounded-full md:border-80 border-60 border-[#FF00E5]/5",
+              "2xl:h-[1300px] md:h-[1200px] h-[800px]",
+              "2xl:w-[1300px] md:w-[1200px] w-[800px]"
+            )} />
+
+            {/* --- Inner Ring --- */}
+            <div className={cn(
+              "absolute rounded-full md:border-80 border-60 border-[#FF00E5]/5",
+              "2xl:h-[1000px] md:h-[900px] h-[600px]",
+              "2xl:w-[1000px] md:w-[900px] w-[600px]"
+            )} />
+          </div>
+        </div>
         {/* Navigation Arrows */}
         {slides.length > 1 && (
           <>
@@ -88,13 +105,12 @@ export default function HeroCarousel({
             "xl:min-h-[664px] md:min-h-[662px] min-h-[652px]",
             "lg:items-center md:items-start",
             "animate-fade-in",
-            // DEFAULT CONTENT WIDTH: lg:w-[608px]
-            "lg:w-[608px]",
-            // OVERRIDE: applied via contentClassName prop on the slide object
+            "2xl:w-[608px] md:w-[80%]",
+            "2xl:mx-0 mx-auto",
             activeSlide.contentClassName,
           )}
         >
-          <div className="flex flex-col lg:text-left md:text-center text-center">
+          <div className="flex flex-col 2xl:text-left md:text-center text-center">
             <HighlightedHeading
               text={activeSlide.title}
               highlight={activeSlide.titleHighlight}
@@ -125,7 +141,7 @@ export default function HeroCarousel({
               </p>
             )}
 
-            <div className="mt-8 flex flex-row gap-4 lg:justify-start justify-center">
+            <div className="mt-8 flex flex-row gap-4 2xl:justify-start justify-center">
               {activeSlide.primaryButton && (
                 <AppButton
                   to={activeSlide.primaryButton.to}
