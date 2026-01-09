@@ -36,8 +36,8 @@ export default function ShowcaseSlider({ children }) {
           display: flex;
           justify-content: start;
           gap: 8px;
-          padding-left: 12px;
         }
+
         .showcase-swiper .swiper-pagination-bullet {
           width: 10px;
           height: 10px;
@@ -46,8 +46,14 @@ export default function ShowcaseSlider({ children }) {
           opacity: 1;
           margin: 0 !important;
         }
+
         .showcase-swiper .swiper-pagination-bullet-active {
           background: #4f378a !important;
+        }
+
+        /* ✅ FIX */
+        .showcase-swiper .swiper-slide {
+          padding: 0;
         }
       `}</style>
     </div>
