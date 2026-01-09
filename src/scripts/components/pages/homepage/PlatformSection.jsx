@@ -34,12 +34,12 @@ export default function PlatformSection() {
       {/* First row */}
       <Container
         className={cn(
-          "flex xl:flex-row flex-col-reverse justify-center items-center gap-x-8",
+          "flex 2xl:flex-row flex-col-reverse justify-center items-center gap-x-8",
         )}
       >
         <div
           id="platform"
-          className="flex flex-col xl:w-[35%] w-full xl:justify-end justify-center xl:items-end items-center"
+          className="flex flex-col 2xl:w-[35%] w-full 2xl:justify-end justify-center 2xl:items-end items-center"
         >
           <Badge variant="toolkit" size="default">
             {t("our_platform_section.badge")}
@@ -47,10 +47,10 @@ export default function PlatformSection() {
           <HighlightedHeading
             text={t("our_platform_section.title")}
             highlight={t("our_platform_section.title_highlighted")}
-            className="text-2xl xl:text-end text-center font-semibold mt-2"
+            className="text-2xl 2xl:text-end text-center font-semibold mt-2"
             disableNewlines={{ base: true, "2xl": false }}
           />
-          <Description className="md:text-base text-sm xl:text-end text-center mb-4 xl:w-[70%] md:w-[55%] w-full">
+          <Description className="md:text-base text-sm 2xl:text-end text-center mb-4 2xl:w-[70%] md:w-[55%] w-full">
             {t("our_platform_section.description")}
           </Description>
           <div className="flex flex-row gap-x-8">
@@ -66,7 +66,7 @@ export default function PlatformSection() {
           </div>
         </div>
 
-        <div className="lg:w-[65%] w-full xl:mt-0 mt-8 flex lg:justify-start justify-center lg:items-center">
+        <div className="2xl:w-[65%] w-full 2xl:mt-0 mt-8 flex 2xl:justify-start justify-center 2xl:items-center">
           <img
             src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/platform_section/shipx_dashboard_mockup_v3.webp"
             alt="ShipX Dashboard Mockup"
@@ -78,18 +78,18 @@ export default function PlatformSection() {
       {/* Second row: features + showcase */}
       <Container
         className={cn(
-          "flex flex-col justify-center items-start xl:flex-row gap-8 w-full pt-16 pb-32",
+          "flex flex-col justify-center items-start 2xl:flex-row gap-8 w-full pt-16 pb-32",
         )}
       >
         {/* Features Sidebar */}
-        <div className="flex xl:flex-col flex-wrap gap-4 w-auto justify-center items-center shrink-0 lg:mx-0 mx-auto">
+        <div className="flex 2xl:flex-col flex-wrap gap-4 w-auto justify-center items-center shrink-0 2xl:mx-0 mx-auto">
           {features.map((feature, index) => (
             <FeatureItem key={index} icon={feature.icon} text={feature.text} />
           ))}
         </div>
 
         {/* Sliding Showcase Area */}
-        <div className="flex flex-col w-full min-w-0 max-w-[878px]">
+        <div className="flex flex-col w-full min-w-0 max-w-[878px] 2xl:mx-0 mx-auto">
           <ShowcaseSlider>
             {showcase.map((card) => (
               <ShowcaseCard key={card.id} {...card} />

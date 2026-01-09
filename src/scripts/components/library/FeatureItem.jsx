@@ -6,7 +6,7 @@ export default function FeatureItem({ icon: Icon, text, className }) {
   return (
     <div
       className={cn(
-        "flex flex-row items-center gap-4 p-4 bg-[#F5F3FF] rounded-lg min-h-16 md:max-w-[288px] max-w-full",
+        "flex flex-row items-center gap-4 p-4 bg-[#F5F3FF] rounded-lg min-h-16 md:max-w-[288px] max-w-full w-full",
         className,
       )}
     >

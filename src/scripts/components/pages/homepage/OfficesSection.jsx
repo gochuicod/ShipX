@@ -93,7 +93,7 @@ function CountryButtons({ onActiveChange }) {
         />
       )}
 
-      <div className="flex flex-wrap justify-center xl:justify-start gap-4 mt-6">
+      <div className="flex flex-wrap justify-center 2xl:justify-start gap-4 mt-6">
         {officesSectionCountries.map((item) => {
           const countryName = t(item.country_key);
 
@@ -143,19 +143,19 @@ export default function OfficesSection() {
     <div className="bg-linear-to-b from-[#FAF5FF] to-[#FFFFFF]">
       <Container
         className={cn(
-          "flex xl:flex-row flex-col-reverse",
+          "flex 2xl:flex-row flex-col-reverse",
           themeGuide.sectionPaddingY,
           "justify-center items-center gap-x-8",
         )}
       >
         {/* LEFT: Map + mobile buttons */}
-        <div className="xl:w-[50%] w-full flex flex-col items-center">
+        <div className="2xl:w-[50%] w-full flex flex-col items-center">
           <div className="relative w-full h-auto">
             <Map activeCountry={activeCountry} />
           </div>
 
           {/* Buttons below map on mobile */}
-          <div className="block xl:hidden w-full">
+          <div className="block 2xl:hidden w-full">
             <CountryButtons onActiveChange={setActiveCountry} />
           </div>
         </div>
@@ -164,8 +164,8 @@ export default function OfficesSection() {
         <div
           className="
             flex flex-col
-            xl:w-[50%] w-full
-            xl:items-start items-center
+            2xl:w-[50%] w-full
+            2xl:items-start items-center
           "
         >
           <Badge variant="toolkit" size="default">
@@ -177,7 +177,7 @@ export default function OfficesSection() {
             highlight={t("our_offices_section.title_heading")}
             className="
               text-2xl
-              xl:text-start text-center
+              2xl:text-start text-center
               font-semibold
               mt-2
             "
@@ -186,7 +186,7 @@ export default function OfficesSection() {
           <Description
             className="
               md:text-base text-sm
-              xl:text-start text-center
+              2xl:text-start text-center
               mb-2
               w-full
             "
@@ -202,7 +202,7 @@ export default function OfficesSection() {
           />
 
           {/* Buttons on the right for xl+ */}
-          <div className="hidden xl:block w-full">
+          <div className="hidden 2xl:block w-full">
             <CountryButtons onActiveChange={setActiveCountry} />
           </div>
         </div>

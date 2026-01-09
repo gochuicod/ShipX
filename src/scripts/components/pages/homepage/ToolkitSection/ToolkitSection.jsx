@@ -43,6 +43,7 @@ export default function ToolkitSection() {
       className={cn(
         themeGuide.sectionPaddingY,
         "relative w-full min-h-[408px] overflow-hidden isolation-isolate",
+        "flex items-center",
       )}
       style={{
         background: "linear-gradient(180deg, #4F378A 0%, #66005C 159.37%)",
@@ -54,33 +55,33 @@ export default function ToolkitSection() {
 
       <Container
         className={cn(
-          "flex flex-col lg:flex-row",
+          "flex flex-col 2xl:flex-row",
           "items-start justify-center",
           "gap-8",
         )}
       >
         {/* LEFT CONTENT */}
-        <div className="relative z-10 flex lg:flex-col md:flex-row flex-col items-center lg:items-end text-center lg:text-right w-full lg:max-w-[390px] md:max-w-full lg:gap-2 md:gap-6">
-          <div className="flex flex-col items-center md:items-start lg:items-end text-center lg:text-right gap-2 md:w-auto">
+        <div className="relative z-10 flex 2xl:flex-col md:flex-row flex-col items-center 2xl:items-end text-center 2xl:text-right w-full 2xl:max-w-[390px] md:max-w-full 2xl:gap-2 md:gap-6">
+          <div className="flex flex-col items-center md:items-start 2xl:items-end text-center 2xl:text-right gap-2 md:w-auto">
             {/* Badge */}
             <Badge variant="toolkit" size="default" className="md:text-sm">
               {activeTabData?.badge}
             </Badge>
 
             {/* Title */}
-            <h2 className="font-['Inter'] font-semibold text-[32px] md:text-md lg:text-[40px] text-white opacity-90 leading-10 tracking-[-1px]">
+            <h2 className="font-['Inter'] font-semibold text-[32px] md:text-md 2xl:text-[40px] text-white opacity-90 leading-10 tracking-[-1px]">
               {activeTabData?.title}
             </h2>
           </div>
 
           {/* Description */}
-          <p className="font-['Inter'] font-normal text-[16px] leading-5 text-white opacity-90 lg:w-auto md:w-[450px] lg:text-right md:text-left">
+          <p className="font-['Inter'] font-normal text-[16px] leading-5 text-white opacity-90 2xl:w-auto md:w-[450px] 2xl:text-right md:text-left">
             {activeTabData?.description}
           </p>
         </div>
 
         {/* RIGHT CONTENT */}
-        <div className="relative z-10 flex flex-col lg:gap-4 md:gap-4 gap-8 w-full lg:max-w-[808px] md:max-w-full">
+        <div className="relative z-10 flex flex-col 2xl:gap-4 md:gap-4 gap-8 w-full 2xl:max-w-[808px] md:max-w-full">
           {/* Tab Switcher */}
           <div className="flex justify-center md:justify-start">
             <TabSwitcher

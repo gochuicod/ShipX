@@ -19,7 +19,7 @@ export default function HsCodeForm() {
   };
 
   return (
-    <div className="relative flex flex-col gap-3 bg-white p-3 rounded-xl shadow-lg max-w-[500px]">
+    <div className="relative flex flex-col gap-3 bg-white p-3 rounded-xl shadow-lg min-w-[500px]">
       <img
         src={hsCodeIllustration}
         alt="Shipment Tracker"

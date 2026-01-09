@@ -25,7 +25,7 @@ export default function TrackerForm() {
   };
 
   return (
-    <div className="relative flex flex-col max-w-[500px]">
+    <div className="relative flex flex-col max-w-[500px] md:items-start items-center">
       {/* Illustration */}
       <img
         src={trackerIllustration}
