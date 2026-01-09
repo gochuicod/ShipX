@@ -36,10 +36,10 @@ export default function HeroCarousel({
 
   // 1. Define Defaults
   const defaultBgClasses = `
-    lg:bg-size-[1524px_785px]
+    2xl:bg-size-[1524px_785px]
     md:bg-size-[1198px_617px]
     bg-size-[776px_400px]
-    lg:bg-position-[calc(50vw-320px)_100%]
+    2xl:bg-position-[calc(50vw-320px)_100%]
     bg-position-[bottom_center]
   `;
 
@@ -52,7 +52,7 @@ export default function HeroCarousel({
   return (
     <section
       className={cn(
-        "relative w-full lg:py-0 py-12 flex items-center overflow-hidden bg-white bg-no-repeat transition-all duration-300 ease-in-out",
+        "relative w-full flex items-center overflow-hidden bg-white bg-no-repeat transition-all duration-300 ease-in-out",
         activeBgClasses,
       )}
       style={{
@@ -61,8 +61,8 @@ export default function HeroCarousel({
         ...activeSlide.bgStyle,
       }}
     >
-      <Container className="relative z-10 lg:py-6 lg:pt-0 md:pt-16 flex justify-start w-full">
-        <div className="absolute 2xl:top-[10vw] xl:top-[20vw] lg:top-[25vw] md:top-[30vw] top-[50vw] 2xl:-right-[200px] right-0 w-full h-full overflow-visible">
+      <Container className="relative z-10 flex justify-start w-full">
+        <div className="absolute 2xl:top-[7vw] xl:top-[15vw] md:top-[25vw] top-[50vw] 2xl:-right-[15vw] right-0 w-full h-full overflow-visible">
           <div className="flex min-h-screen w-full items-center justify-center overflow-visible relative">
             {/* --- Outer Ring --- */}
             <div
@@ -107,33 +107,34 @@ export default function HeroCarousel({
           className={cn(
             "grid gap-12",
             "xl:min-h-[664px] md:min-h-[662px] min-h-[652px]",
-            "lg:items-center md:items-start",
+            "2xl:items-center items-start pt-8",
             "animate-fade-in",
-            "2xl:w-[608px] md:w-[80%]",
+            "2xl:w-[608px] w-full",
             "2xl:mx-0 mx-auto",
             activeSlide.contentClassName,
           )}
         >
-          <div className="flex flex-col 2xl:text-left md:text-center text-center">
+          <div className="flex flex-col 2xl:text-left text-center">
             <HighlightedHeading
               text={activeSlide.title}
               highlight={activeSlide.titleHighlight}
               className={cn(
                 themeGuide.pageTitle,
-                "lg:text-[60px] text-[48px] lg:leading-18 leading-12 font-bold",
-                // DEFAULT TITLE WIDTH: lg:w-[90%]
-                "lg:w-[90%] w-full",
-                // OVERRIDE: applied via titleClassName prop
-                activeSlide.titleClassName,
+                "2xl:text-[60px] text-[48px] 2xl:leading-18 leading-12 font-bold",
+                activeSlide.titleClassName
+                  ? activeSlide.titleClassName
+                  : "2xl:w-[90%] xl:w-[55%] lg:w-[65%] md:w-[80%] w-full 2xl:mx-0 mx-auto",
               )}
               highlightClass="text-[#FF00E5]"
+              disableNewlines
             />
 
             <Description
               className={cn(
                 "mt-4",
-                // OVERRIDE: applied via descriptionClassName prop
-                activeSlide.descriptionClassName,
+                activeSlide.descriptionClassName
+                  ? activeSlide.descriptionClassName
+                  : "2xl:w-[80%] xl:w-[55%] lg:w-[65%] md:w-[80%] w-full 2xl:mx-0 mx-auto",
               )}
             >
               {activeSlide.description}

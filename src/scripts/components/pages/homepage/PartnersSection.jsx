@@ -21,7 +21,8 @@ export default function PartnersSection() {
   return (
     <Container
       className={cn(
-        "flex flex-col 2xl:flex-row justify-center items-start gap-x-8",
+        "flex flex-col 2xl:flex-row justify-center items-start gap-8",
+        "xl:max-w-[1200px] lg:max-w-[1000px] md:max-w-[760px] max-w-[607px]",
         themeGuide.sectionPaddingY,
       )}
     >
@@ -41,25 +42,18 @@ export default function PartnersSection() {
         <HighlightedHeading
           text={t("partners_section.headline")}
           highlight={t("partners_section.headline_highlighted")}
-          className="
-            text-2xl
-            font-semibold
-            mt-2
-            text-center
-            2xl:text-end
-          "
+          className={cn(
+            "text-2xl font-semibold mt-2",
+            "2xl:text-end text-center",
+          )}
+          disableNewlines
         />
 
         <Description
-          className="
-            text-sm md:text-base
-            text-center
-            2xl:text-end
-            mb-4
-            w-full
-            md:w-[80%]
-            2xl:w-auto
-          "
+          className={cn(
+            "text-sm md:text-base text-center 2xl:text-end mb-4",
+            "2xl:w-auto md:w-[60%] w-full",
+          )}
         >
           {t("partners_section.description")}
         </Description>
@@ -72,7 +66,7 @@ export default function PartnersSection() {
       </div>
 
       {/* Right side */}
-      <div className="w-full mt-8 2xl:mt-0 2xl:w-[60%]">
+      <div className="2xl:w-[60%] w-full">
         <PartnerGrid partners={partnersSectionData} />
       </div>
     </Container>

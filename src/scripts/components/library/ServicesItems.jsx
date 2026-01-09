@@ -18,8 +18,8 @@ export default function ServicesItems({
 
   const baseListStyles =
     "flex flex-row items-center p-[8px_12px] gap-[12px] \
-   w-[160px] sm:w-[200px] md:w-[180px] xl:w-[288px] \
-   h-[62px] xl:h-[60px] \
+   w-fit \
+   h-fit \
    rounded-[8px] transition-all duration-300 cursor-pointer";
 
   const renderIcon = () => {

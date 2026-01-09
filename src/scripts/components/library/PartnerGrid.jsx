@@ -13,7 +13,7 @@ export default function PartnerGrid({ partners }) {
         grid={{ rows: 5, fill: "row" }}
         breakpoints={{
           320: { slidesPerView: 3, spaceBetween: 10 },
-          640: {
+          768: {
             slidesPerView: 5,
             grid: { rows: 3, fill: "row" },
             spaceBetween: 20,
@@ -21,7 +21,7 @@ export default function PartnerGrid({ partners }) {
           1024: {
             slidesPerView: 5,
             grid: { rows: 3, fill: "row" },
-            spaceBetween: 30,
+            spaceBetween: 20,
           },
         }}
         autoplay={{ delay: 3000, disableOnInteraction: false }}

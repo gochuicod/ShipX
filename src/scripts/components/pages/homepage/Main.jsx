@@ -31,12 +31,11 @@ const Main = () => {
         "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_3.webp",
       bgClassName: cn(
         "2xl:bg-size-[1139px_636px] md:bg-size-[1093px_636px] bg-size-[724px_445px]",
-        "2xl:bg-position-[30vw_15vw] xl:bg-position-[center_30vw] lg:bg-position-[center_40vw] md:bg-position-[center_50vw] bg-position-[center_110vw]",
+        "2xl:bg-position-[35vw_15vw] xl:bg-position-[center_20vw] lg:bg-position-[center_35vw] md:bg-position-[center_40vw] bg-position-[center_110vw]",
       ),
       title: t("hero_section.slides.slide_1.title"),
       titleHighlight: t("hero_section.slides.slide_1.title_highlighted"),
       description: t("hero_section.slides.slide_1.description"),
-      descriptionClassName: "lg:w-[85%] md:w-[80%] w-full lg:mx-0 mx-auto",
       note: t("hero_section.slides.slide_1.note"),
       primaryButton: {
         text: t("hero_section.slides.slide_1.button_1"),
@@ -55,13 +54,11 @@ const Main = () => {
         "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_2_v2.webp",
       bgClassName: cn(
         "2xl:bg-size-[1239px_736px] md:bg-size-[1093px_636px] bg-size-[724px_445px]",
-        "2xl:bg-position-[30vw_5vw] xl:bg-position-[center_30vw] lg:bg-position-[center_40vw] md:bg-position-[center_50vw] bg-position-[center_110vw]",
+        "2xl:bg-position-[30vw_5vw] xl:bg-position-[center_10vw] lg:bg-position-[center_15vw] md:bg-position-[center_20vw] bg-position-[center_80vw]",
       ),
       title: t("hero_section.slides.slide_2.title"),
-      titleClassName: "lg:w-full md:w-[70%] lg:mx-0 mx-auto",
       titleHighlight: t("hero_section.slides.slide_2.title_highlighted"),
       description: t("hero_section.slides.slide_2.description"),
-      descriptionClassName: "lg:w-full md:w-[80%] w-full lg:mx-0 mx-auto",
       note: t("hero_section.slides.slide_2.note"),
       primaryButton: {
         text: t("hero_section.slides.slide_2.button_1"),
@@ -80,13 +77,11 @@ const Main = () => {
         "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_3.webp",
       bgClassName: cn(
         "2xl:bg-size-[1139px_636px] md:bg-size-[1093px_636px] bg-size-[724px_445px]",
-        "2xl:bg-position-[30vw_15vw] xl:bg-position-[center_30vw] lg:bg-position-[center_40vw] md:bg-position-[center_50vw] bg-position-[center_110vw]",
+        "2xl:bg-position-[35vw_15vw] xl:bg-position-[center_20vw] lg:bg-position-[center_35vw] md:bg-position-[center_40vw] bg-position-[center_110vw]",
       ),
       title: t("hero_section.slides.slide_3.title"),
-      titleClassName: "lg:w-full md:w-[80%] lg:mx-0 mx-auto",
       titleHighlight: t("hero_section.slides.slide_3.title_highlighted"),
       description: t("hero_section.slides.slide_3.description"),
-      descriptionClassName: "lg:w-[90%] md:w-[80%] w-full lg:mx-0 mx-auto",
       note: t("hero_section.slides.slide_3.note"),
       primaryButton: {
         text: t("hero_section.slides.slide_3.button_1"),

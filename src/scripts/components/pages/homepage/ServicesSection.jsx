@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { CalendarDays } from "lucide-react";
+import { CircleArrowRight } from "lucide-react";
 
 import { cn } from "../../../../lib/util";
 import { themeGuide } from "../../../../styles/themeGuide";
@@ -50,9 +50,9 @@ export default function ServicesSection() {
       {/* --- HEADER --- */}
       <div
         id="services"
-        className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-8 max-md:gap-4 w-full max-w-[1200px]"
+        className="flex flex-col 2xl:flex-row justify-center items-center 2xl:items-start gap-8 max-md:gap-4 w-full max-w-[1200px]"
       >
-        <div className="flex flex-col w-full lg:w-[35%] items-center lg:items-end text-center lg:text-right">
+        <div className="flex flex-col w-full 2xl:w-[35%] items-center 2xl:items-end text-center 2xl:text-right">
           <Badge variant="toolkit" size="default">
             {t("services_section.badge")}
           </Badge>
@@ -60,16 +60,17 @@ export default function ServicesSection() {
             text={t("services_section.headline")}
             highlight={t("services_section.headline_highlighted")}
             className="text-2xl font-semibold mt-2"
+            disableNewlines
           />
         </div>
-        <div className="flex flex-col flex-1 items-center lg:items-start text-center lg:text-left">
-          <Description className="mb-4 md:text-base text-sm lg:w-[85%]">
+        <div className="flex flex-col flex-1 items-center 2xl:items-start text-center 2xl:text-left">
+          <Description className="mb-4 md:text-base text-sm 2xl:w-[85%]">
             {t("services_section.description")}
           </Description>
           <AppButton
             text={t("services_section.button")}
-            withLeftIcon
-            leftIcon={<CalendarDays className="size-5" />}
+            withRightIcon
+            rightIcon={<CircleArrowRight className="size-5" />}
             className="w-fit"
             to="/book-a-demo"
           />
@@ -77,9 +78,16 @@ export default function ServicesSection() {
       </div>
 
       {/* --- INTERACTIVE CONTENT --- */}
-      <div className="flex flex-col xl:flex-row justify-center items-center xl:items-start w-full mt-12 gap-8 md:gap-12">
+      <div className="flex flex-col 2xl:flex-row justify-center items-center 2xl:items-start w-full mt-12 gap-8 md:gap-12">
         {/* NAV */}
-        <div className="flex flex-wrap justify-center xl:flex-col gap-4 w-full xl:w-fit shrink-0 md:max-w-[704px] xl:max-w-none">
+        <div
+          className={cn(
+            "flex 2xl:flex-col flex-wrap",
+            "justify-center gap-4",
+            "2xl:w-fit w-full",
+            "shrink-0",
+          )}
+        >
           {servicesSectionServiceItems.map((item) => (
             <div
               key={item.id}

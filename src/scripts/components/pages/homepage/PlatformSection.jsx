@@ -48,6 +48,7 @@ export default function PlatformSection() {
             text={t("our_platform_section.title")}
             highlight={t("our_platform_section.title_highlighted")}
             className="text-2xl xl:text-end text-center font-semibold mt-2"
+            disableNewlines={{ base: true, "2xl": false }}
           />
           <Description className="md:text-base text-sm xl:text-end text-center mb-4 xl:w-[70%] md:w-[55%] w-full">
             {t("our_platform_section.description")}
