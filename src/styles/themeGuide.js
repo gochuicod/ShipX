@@ -2,6 +2,8 @@ export const themeGuide = {
   // Padding
   paddingX: "lg:px-24 md:px-8 px-8",
   paddingY: "lg:py-5 md:py-5 py-5",
+  sectionPaddingY: "lg:py-[128px] ",
+  sectionPaddingX: "lg:px-[122px]",
 
   // Typography - Headings
   pageTitle: "text-4xl font-extrabold tracking-tight",

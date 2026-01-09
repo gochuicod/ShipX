@@ -388,26 +388,27 @@ export const getPlatformSectionFeatures = (t) => {
   }));
 };
 
-export const getPlatformSectionLogisticsCard = (t) => {
-  const rightCard = t("our_platform_section.cards.right_section_cards.card_1", {
-    returnObjects: true,
-  });
+export const getPlatformSectionLogisticsCard = (t, cardIndex = 1) => {
+  const card = t(
+    `our_platform_section.cards.right_section_cards.card_${cardIndex}`,
+    { returnObjects: true },
+  );
 
   return [
     {
       icon: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/icons/duotone/airplanebell.svg",
-      title: rightCard.item_1_title,
-      description: rightCard.item_1_description,
+      title: card.item_1_title,
+      description: card.item_1_description,
     },
     {
       icon: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/icons/duotone/airplanedelivery%20(1).svg",
-      title: rightCard.item_2_title,
-      description: rightCard.item_2_description,
+      title: card.item_2_title,
+      description: card.item_2_description,
     },
     {
       icon: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/icons/duotone/airplanemoney-back-.svg",
-      title: rightCard.item_3_title,
-      description: rightCard.item_3_description,
+      title: card.item_3_title,
+      description: card.item_3_description,
     },
   ];
 };
@@ -417,18 +418,31 @@ export const getPlatformShowcaseData = (t) => {
     returnObjects: true,
   });
 
+  const card2 = t("our_platform_section.cards.right_section_cards.card_2", {
+    returnObjects: true,
+  });
+
   return [
     {
       id: 1,
       gradient: "from-[#FFE6FF]/30 to-[#AA00FF]/10",
       image:
-        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/platform_section/card/platform_section_card_1_image.webp",
+        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/platform_section/card/platform_section_card_1_image_v2.webp",
       imageAlt: card1.title,
       headingText: card1.title,
       highlights: card1.title_highlighted || [], // dynamically from locale
-      capabilities: getPlatformSectionLogisticsCard(t),
+      capabilities: getPlatformSectionLogisticsCard(t, 1),
     },
-    // Add more cards here if needed
+    {
+      id: 2,
+      gradient: "from-[#FFE6FF]/30 to-[#AA00FF]/10",
+      image:
+        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/platform_section/card/platform_section_card_2_image_v2.webp",
+      imageAlt: card2.title,
+      headingText: card2.title,
+      highlights: card2.title_highlighted || [], // dynamically from locale
+      capabilities: getPlatformSectionLogisticsCard(t, 2),
+    },
   ];
 };
 
