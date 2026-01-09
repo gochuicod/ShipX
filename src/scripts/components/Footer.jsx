@@ -11,6 +11,7 @@ import { languages } from "../utils/constants";
 
 import AppButton from "../components/library/AppButton";
 import Dropdown from "../components/library/Dropdown";
+import LoginModal from "../components/library/LoginModal";
 
 const ContactItem = ({ icon: Icon, text, href, itemClass, iconClass }) => (
   <li className={`flex gap-[2vw] md:gap-[0.6vw] text-gray-600 ${itemClass}`}>
@@ -133,7 +134,7 @@ const Footer = memo(() => {
       id: "toolkitAndResources",
       isGroup: true,
       className:
-        "md:col-start-2 lg:col-start-auto flex flex-col gap-[4vw] md:gap-4",
+        "md:col-start-2 xl:col-start-auto flex flex-col gap-[4vw] md:gap-4",
       items: [
         {
           id: "toolkit",
@@ -152,8 +153,8 @@ const Footer = memo(() => {
       isGroup: true,
       // THE SECRET SAUCE:
       // Mobile: flex-col gap-0 makes them touch.
-      // Desktop: lg:contents makes the container invisible to the Grid.
-      className: "md:col-start-3 lg:contents flex flex-col gap-0",
+      // Desktop: xl:contents makes the container invisible to the Grid.
+      className: "md:col-start-3 xl:contents flex flex-col gap-0",
       items: [
         {
           id: "legal",
@@ -176,14 +177,14 @@ const Footer = memo(() => {
   ];
 
   return (
-    <div className="md:pt-[15vw] pt-[60vw] lg:mt-0 mt-[20vw] relative">
+    <div className="md:pt-[15vw] pt-[60vw] xl:mt-0 mt-[20vw] relative">
       {/* CTA Section */}
       <div
         className="
           absolute
-          lg:top-[5vw] md:top-[-8vw] top-0 left-0 right-0
+          xl:top-[5vw] md:top-[-8vw] top-0 left-0 right-0
           mx-auto
-          lg:w-[80vw] md:w-[92vw] w-[90vw]
+          xl:w-[80vw] md:w-[92vw] w-[90vw]
           md:h-fit h-[80vw]
           rounded-3xl
           flex flex-col
@@ -207,8 +208,8 @@ const Footer = memo(() => {
             md:h-auto h-[80vw]
             justify-end
             gap-y-[3vw] md:gap-y-0
-            ${i18n.language === "vn" ? "lg:w-full md:w-[45vw]" : "lg:w-full md:w-full"}
-            lg:px-16 lg:py-9 md:p-8.5 p-7
+            ${i18n.language === "vn" ? "xl:w-full md:w-[45vw]" : "xl:w-full md:w-full"}
+            xl:px-16 xl:py-9 md:p-8.5 p-7
             text-white
           `}
         >
@@ -224,7 +225,7 @@ const Footer = memo(() => {
           <span
             className={cn(
               themeGuide.ctaDescription,
-              "opacity-90 font-light lg:w-[50%] md:w-[50%] md:pt-2 pt-0 md:text-start text-center",
+              "opacity-90 font-light xl:w-[50%] md:w-[50%] md:pt-2 pt-0 md:text-start text-center",
             )}
           >
             {t("shipment_tracker.shipment_cta_section.description")}
@@ -237,7 +238,6 @@ const Footer = memo(() => {
               withLeftIcon={true}
               leftIcon={<CalendarDays className="size-5" />}
             />
-
             <AppButton
               to="/#contact-us"
               text={t("header.contact_us") || "Contact Us"}
@@ -251,10 +251,10 @@ const Footer = memo(() => {
             src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/footer/footer_cta_image.webp"
             alt=""
             className="
-              lg:w-auto md:w-[50%]
+              xl:w-auto md:w-[50%]
               h-auto
               absolute
-              lg:top-[-9.5vw] md:top-0 top-[-26vw]
+              xl:top-[-9.5vw] md:top-0 top-[-26vw]
               md:right-[-4vw] right-0
               justify-end
             "
@@ -262,13 +262,13 @@ const Footer = memo(() => {
         </div>
       </div>
       <footer
-        className="bg-[#F3F4F6] w-full pt-[30vw] pb-[4vw] px-[5vw] md:pt-[10vw] md:pb-[2vw] md:px-[5vw] lg:px-[10vw]"
+        className="bg-[#F3F4F6] w-full pt-[30vw] pb-[4vw] px-[5vw] md:pt-[10vw] md:pb-[2vw] md:px-[5vw] xl:px-[10vw]"
         style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
       >
         {/* --- TOP SECTION --- */}
-        <div className="flex flex-col lg:items-start md:items-center md:flex-col lg:flex-row gap-[3vw] md:gap-0">
+        <div className="flex flex-col xl:items-start md:items-center md:flex-col xl:flex-row gap-[3vw] md:gap-0">
           {/* LEFT COLUMN: Brand Identity */}
-          <div className="flex flex-col lg:justify-start lg:items-start justify-center items-center w-full lg:w-[37%] md:w-full md:mb-[0.5vw] mb-[3.5vw]">
+          <div className="flex flex-col xl:justify-start xl:items-start justify-center items-center w-full xl:w-[37%] md:w-full md:mb-[0.5vw] mb-[3.5vw]">
             {/* Logos */}
             <div className="flex flex-row items-center gap-[3vw] md:gap-[1vw] md:mb-0 mb-[2vw]">
               <img
@@ -287,7 +287,7 @@ const Footer = memo(() => {
             <h2
               className={cn(
                 themeGuide.footerTagline,
-                "md:mb-[1vw] mb-[4vw] lg:text-start md:text-center text-center",
+                "md:mb-[1vw] mb-[4vw] xl:text-start md:text-center text-center",
               )}
               style={{
                 fontFamily: "Karla, system-ui, -apple-system, sans-serif",
@@ -300,7 +300,7 @@ const Footer = memo(() => {
             <p
               className={cn(
                 themeGuide.footerBody,
-                "lg:text-start md:text-center text-center md:w-[65%] lg:w-[85%] lg:mt-0 md:mt-2",
+                "xl:text-start md:text-center text-center md:w-[65%] xl:w-[85%] xl:mt-0 md:mt-2",
               )}
             >
               {t("footer.description_1")} {t("footer.description_2")}
@@ -309,9 +309,9 @@ const Footer = memo(() => {
             <div
               className={cn(
                 "flex flex-row",
-                "lg:gap-2",
-                "lg:justify-center",
-                "lg:items-center",
+                "gap-2",
+                "xl:justify-center",
+                "xl:items-center",
                 "mt-3",
               )}
             >
@@ -328,13 +328,9 @@ const Footer = memo(() => {
                   "shadow-[1px_1px_2px_rgba(0,0,0,0.3),inset_-2px_-2px_6px_rgba(167,139,250,0.3)]",
                   "rounded-md",
                 )}
-                triggerClassName="h-9 px-4 py-2.5 has-[>svg]:px-3 flex items-center justify-center"
+                triggerClassName="px-4 py-[5px] flex items-center justify-center"
               />
-              <AppButton
-                to="/book-a-demo"
-                text={t("header.login_signup") || "Login / Signup"}
-                variant="secondary"
-              />
+              <LoginModal footer={true} placement="top" />
               <AppButton
                 to="/book-a-demo"
                 text={t("header.book_a_demo") || "Book a Demo"}
@@ -346,13 +342,13 @@ const Footer = memo(() => {
           {/* RIGHT COLUMN: Link Cards Container */}
           <div
             className="
-              w-full lg:w-[70%] md:w-[90%]
+              w-full xl:w-[70%] md:w-[90%]
               grid grid-cols-1
               md:grid-cols-3
-              lg:grid-cols-4
+              xl:grid-cols-4
               gap-[4vw] md:gap-4
               auto-rows-min
-              lg:my-0 md:my-6
+              xl:my-0 md:my-6
             "
           >
             {footerColumnData.map((col) => {
@@ -369,8 +365,8 @@ const Footer = memo(() => {
                         className={cn(
                           // If it's the Legal/Contact group...
                           col.id === "legalAndContact" && index === 0
-                            ? "lg:col-start-3"
-                            : "lg:col-start-4",
+                            ? "xl:col-start-3"
+                            : "xl:col-start-4",
                         )}
                       >
                         {item.content}
@@ -382,7 +378,7 @@ const Footer = memo(() => {
 
               // Quick Links
               return (
-                <div key={col.id} className="md:col-start-1 lg:col-start-1">
+                <div key={col.id} className="md:col-start-1 xl:col-start-1">
                   <FooterColumn title={col.title}>{col.content}</FooterColumn>
                 </div>
               );
@@ -391,7 +387,7 @@ const Footer = memo(() => {
         </div>
 
         {/* --- BOTTOM SECTION --- */}
-        <div className="mt-[4vw] md:mt-4 flex flex-col md:flex-row justify-between items-center text-dark-neutral font-normal text-[3vw] md:text-base pt-[4vw] md:pt-0">
+        <div className="mt-[4vw] md:mt-4 flex flex-col md:flex-row justify-between items-center text-dark-neutral font-normal text-[14px] pt-[4vw] md:pt-0">
           <div className="flex flex-row gap-x-[1vw]">
             <SmartNavLink to="terms-and-conditions" end>
               <span>{t("footer.terms_and_conditions")}</span>

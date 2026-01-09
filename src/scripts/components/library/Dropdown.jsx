@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from "react";
 import { cn } from "../../../lib/util";
 import SmartNavLink from "../ui/SmartNavLink";
 
@@ -11,21 +12,54 @@ export default function Dropdown({
   onSelect,
   parentClassName = "",
   triggerClassName = "",
-  direction = "down", // New prop: "up" | "down"
+  direction = "down",
+  hoverMode = false, // Set to true if you want it to open on hover as well
 }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
   const isUp = direction === "up";
+
+  // Handle Close on Click Outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isOpen]);
+
+  // Optional: Handle Hover Logic (if hoverMode is true)
+  const handleMouseEnter = () => {
+    if (hoverMode) setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    if (hoverMode) setIsOpen(false);
+  };
+
+  const toggleOpen = () => setIsOpen((prev) => !prev);
 
   return (
     <div
-      className={cn("relative group h-full flex items-center", parentClassName)}
+      ref={dropdownRef}
+      className={cn("relative h-full flex items-center", parentClassName)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       {/* Trigger */}
       <div
+        onClick={toggleOpen}
         className={cn(
           linkClass,
           triggerClassName !== "" ? triggerClassName : "py-4",
-          "flex items-center gap-x-1 cursor-pointer",
-          "group-hover:text-[#FF00E5]",
+          "flex items-center gap-x-1 cursor-pointer select-none",
+          // Highlight trigger if open
+          isOpen ? "text-[#FF00E5]" : "",
         )}
       >
         <span>{selected?.name || title}</span>
@@ -36,7 +70,10 @@ export default function Dropdown({
           strokeWidth={2.5}
           className={cn(
             "w-3 h-3 transition-transform duration-300",
-            "group-hover:rotate-180 group-hover:stroke-[#FF00E5] stroke-[#1A1A1A]",
+            // Rotate based on isOpen state instead of group-hover
+            isOpen
+              ? "rotate-180 stroke-[#FF00E5]"
+              : "rotate-0 stroke-[#1A1A1A]",
           )}
         >
           <path
@@ -55,34 +92,32 @@ export default function Dropdown({
           "bg-white rounded-lg border border-[#FF00E5] shadow-lg p-1 overflow-hidden",
           "transition-all duration-200 ease-out pointer-events-auto text-dark-netural",
 
-          // Visibility states (Opacity/Visibility)
-          "opacity-0 invisible group-hover:opacity-100 group-hover:visible",
+          // Visibility states (Controlled by isOpen state now)
+          isOpen
+            ? "opacity-100 visible translate-y-0"
+            : "opacity-0 invisible translate-y-1",
 
           // Directional Logic
           isUp
-            ? "bottom-full mb-1" // If Up: Position above, margin bottom
-            : "top-full mt-1", // If Down: Position below, margin top
-
-          // Animation Logic
-          // When hidden (default): translate-y-1 pushes it down slightly
-          // When hovered: translate-y-0 brings it to natural position
-          // This works for both directions:
-          // - Down: It slides "up" into position from slightly below.
-          // - Up: It slides "up" into position from slightly inside the trigger.
-          "translate-y-1 group-hover:translate-y-0",
+            ? "bottom-full mb-1" // If Up: Position above
+            : "top-full mt-1", // If Down: Position below
         )}
       >
         {items.map((item) =>
           onSelect ? (
             <div
-              key={item.id}
+              key={item.id || item.key}
               role="button"
               tabIndex={0}
-              onClick={() => onSelect(item)}
+              onClick={() => {
+                onSelect(item);
+                setIsOpen(false); // Close on selection
+              }}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
                   e.preventDefault();
                   onSelect(item);
+                  setIsOpen(false);
                 }
               }}
               className="group relative cursor-pointer px-4 py-3 select-none hover:bg-[#FF00E5] rounded-md text-dark-neutral hover:text-white"
@@ -93,6 +128,7 @@ export default function Dropdown({
             <SmartNavLink
               key={item.to}
               to={item.to}
+              onClick={() => setIsOpen(false)} // Close on navigation
               className="group/item block"
             >
               <div className="flex items-center gap-x-3 px-4 py-3 text-base text-gray-700 rounded-md transition-colors duration-200 hover:text-[#FF00E5] hover:underline hover:decoration-2 hover:underline-offset-4">
