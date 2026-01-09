@@ -145,7 +145,7 @@ export default function OfficesSection() {
         )}
       >
         {/* LEFT: Image + mobile buttons */}
-        <div className="w-full flex flex-col items-center">
+        <div className="xl:w-[50%] w-full flex flex-col items-center">
           <div className="relative w-full h-auto">
             <Map activeCountry={hoveredCountry} />
           </div>
@@ -185,7 +185,7 @@ export default function OfficesSection() {
               md:text-base text-sm
               xl:text-start text-center
               mb-2
-              xl:w-full lg:w-[70%] w-full
+              w-full
             "
           >
             {t("our_offices_section.description")}
