@@ -162,6 +162,7 @@ export default function HeroCarousel({
                   style="secondary"
                   withRightIcon={!!activeSlide.secondaryButton.icon}
                   rightIcon={activeSlide.secondaryButton.icon}
+                  scrollAlign="top"
                 />
               )}
             </div>

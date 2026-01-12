@@ -44,7 +44,7 @@ const Main = () => {
       },
       secondaryButton: {
         text: t("hero_section.slides.slide_1.button_2"),
-        to: "/#services",
+        to: "/#partners",
         icon: <ChevronDown className="size-5" />,
       },
     },
@@ -67,7 +67,7 @@ const Main = () => {
       },
       secondaryButton: {
         text: t("hero_section.slides.slide_1.button_2"),
-        to: "/#services",
+        to: "/#partners",
         icon: <ChevronDown className="size-5" />,
       },
     },
@@ -90,7 +90,7 @@ const Main = () => {
       },
       secondaryButton: {
         text: t("hero_section.slides.slide_1.button_2"),
-        to: "/#services",
+        to: "/#partners",
         icon: <ChevronDown className="size-5" />,
       },
     },

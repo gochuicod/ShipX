@@ -362,6 +362,9 @@ function AppButton({
   iconRounded = false,
   to,
   className,
+  // New prop to control scroll behavior (passed to SmartNavLink)
+  // Options: 'top', 'center', 'bottom'
+  scrollAlign,
   ...rest
 }) {
   const renderIcon = Icon => {
@@ -389,7 +392,7 @@ function AppButton({
     }), withRightIcon && renderIcon(rightIcon)]
   });
 
-  // ... (to ? SmartNavLink : Button) logic remains the same
+  // If 'to' is present, render as a SmartNavLink inside a Button (asChild)
   if (to) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_styles_button__WEBPACK_IMPORTED_MODULE_1__.Button, {
       asChild: true,
@@ -399,7 +402,10 @@ function AppButton({
       ...rest,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ui_SmartNavLink__WEBPACK_IMPORTED_MODULE_0__["default"], {
         to: to,
-        className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_2__.cn)(appButtonStyles.smartNavLink),
+        className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_2__.cn)(appButtonStyles.smartNavLink)
+        // Pass the new prop down to the link component
+        ,
+        scrollAlign: scrollAlign,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ButtonContent, {})
       })
     });
@@ -659,7 +665,8 @@ function HeroCarousel({
               text: activeSlide.secondaryButton.text,
               style: "secondary",
               withRightIcon: !!activeSlide.secondaryButton.icon,
-              rightIcon: activeSlide.secondaryButton.icon
+              rightIcon: activeSlide.secondaryButton.icon,
+              scrollAlign: "top"
             })]
           })]
         })
@@ -700,7 +707,9 @@ const SmartNavLink = ({
   className,
   children,
   delay = 1000,
-  onClick
+  onClick,
+  // New prop: defaults to 'start' (top). Options: 'top', 'bottom', 'center', 'nearest'
+  scrollAlign = "start"
 }) => {
   const location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_0__.useLocation)();
   const navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_0__.useNavigate)();
@@ -711,6 +720,13 @@ const SmartNavLink = ({
 
   // Remove double slashes if any
   fullPath = fullPath.replace(/\/+/g, "/");
+
+  // Helper to map user-friendly terms to scrollIntoView API terms
+  const getBlockAlign = align => {
+    if (align === "top") return "start";
+    if (align === "bottom") return "end";
+    return align; // Returns 'center', 'nearest', 'start', or 'end' as is
+  };
   const handleClick = e => {
     const [pathname, hash] = fullPath.split("#");
     const isSamePath = location.pathname === pathname;
@@ -721,24 +737,25 @@ const SmartNavLink = ({
     }
     if (hash) {
       e.preventDefault();
+      const scrollOptions = {
+        behavior: "smooth",
+        block: getBlockAlign(scrollAlign)
+      };
       if (!isSamePath) {
         navigate(pathname);
         setTimeout(() => {
           const target = document.getElementById(hash);
-          if (target) target.scrollIntoView({
-            behavior: "smooth"
-          });
+          if (target) target.scrollIntoView(scrollOptions);
         }, 300);
       } else {
         const target = document.getElementById(hash);
-        if (target) target.scrollIntoView({
-          behavior: "smooth"
-        });
+        if (target) target.scrollIntoView(scrollOptions);
       }
       setTimeout(() => {
         window.history.replaceState(null, "", pathname);
       }, delay);
     } else {
+      // Logic for non-hash links (scrolls to absolute top of page)
       if (isSamePath) {
         e.preventDefault();
         window.scrollTo({
@@ -960,4 +977,4 @@ const themeGuide = {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_scripts_components_pages_homepage_HeroCarousel_jsx.js.map?ver=4bfbead4206026972bee
+//# sourceMappingURL=src_scripts_components_pages_homepage_HeroCarousel_jsx.js.map?ver=111a02e5befee0b3198f

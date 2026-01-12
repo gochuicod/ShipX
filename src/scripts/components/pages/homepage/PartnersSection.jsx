@@ -34,6 +34,7 @@ export default function PartnersSection() {
           items-center justify-center
           2xl:items-end 2xl:justify-end
         "
+        id="partners"
       >
         <Badge variant="toolkit" size="default">
           {t("partners_section.badge")}

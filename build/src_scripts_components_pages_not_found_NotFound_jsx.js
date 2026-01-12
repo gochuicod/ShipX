@@ -70,7 +70,9 @@ const SmartNavLink = ({
   className,
   children,
   delay = 1000,
-  onClick
+  onClick,
+  // New prop: defaults to 'start' (top). Options: 'top', 'bottom', 'center', 'nearest'
+  scrollAlign = "start"
 }) => {
   const location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_0__.useLocation)();
   const navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_0__.useNavigate)();
@@ -81,6 +83,13 @@ const SmartNavLink = ({
 
   // Remove double slashes if any
   fullPath = fullPath.replace(/\/+/g, "/");
+
+  // Helper to map user-friendly terms to scrollIntoView API terms
+  const getBlockAlign = align => {
+    if (align === "top") return "start";
+    if (align === "bottom") return "end";
+    return align; // Returns 'center', 'nearest', 'start', or 'end' as is
+  };
   const handleClick = e => {
     const [pathname, hash] = fullPath.split("#");
     const isSamePath = location.pathname === pathname;
@@ -91,24 +100,25 @@ const SmartNavLink = ({
     }
     if (hash) {
       e.preventDefault();
+      const scrollOptions = {
+        behavior: "smooth",
+        block: getBlockAlign(scrollAlign)
+      };
       if (!isSamePath) {
         navigate(pathname);
         setTimeout(() => {
           const target = document.getElementById(hash);
-          if (target) target.scrollIntoView({
-            behavior: "smooth"
-          });
+          if (target) target.scrollIntoView(scrollOptions);
         }, 300);
       } else {
         const target = document.getElementById(hash);
-        if (target) target.scrollIntoView({
-          behavior: "smooth"
-        });
+        if (target) target.scrollIntoView(scrollOptions);
       }
       setTimeout(() => {
         window.history.replaceState(null, "", pathname);
       }, delay);
     } else {
+      // Logic for non-hash links (scrolls to absolute top of page)
       if (isSamePath) {
         e.preventDefault();
         window.scrollTo({
@@ -144,4 +154,4 @@ const SmartNavLink = ({
 /***/ })
 
 }]);
-//# sourceMappingURL=src_scripts_components_pages_not_found_NotFound_jsx.js.map?ver=dae2ca72938902d76fbe
+//# sourceMappingURL=src_scripts_components_pages_not_found_NotFound_jsx.js.map?ver=044be3ab436191e76902

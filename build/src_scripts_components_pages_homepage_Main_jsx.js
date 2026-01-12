@@ -153,7 +153,7 @@ const Main = () => {
     },
     secondaryButton: {
       text: t("hero_section.slides.slide_1.button_2"),
-      to: "/#services",
+      to: "/#partners",
       icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
         className: "size-5"
       })
@@ -175,7 +175,7 @@ const Main = () => {
     },
     secondaryButton: {
       text: t("hero_section.slides.slide_1.button_2"),
-      to: "/#services",
+      to: "/#partners",
       icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
         className: "size-5"
       })
@@ -197,7 +197,7 @@ const Main = () => {
     },
     secondaryButton: {
       text: t("hero_section.slides.slide_1.button_2"),
-      to: "/#services",
+      to: "/#partners",
       icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
         className: "size-5"
       })
@@ -227,4 +227,4 @@ const Main = () => {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_scripts_components_pages_homepage_Main_jsx.js.map?ver=ca3223377d3911c3cee7
+//# sourceMappingURL=src_scripts_components_pages_homepage_Main_jsx.js.map?ver=32842262acb59e732940

@@ -23,6 +23,9 @@ export default function AppButton({
   iconRounded = false,
   to,
   className,
+  // New prop to control scroll behavior (passed to SmartNavLink)
+  // Options: 'top', 'center', 'bottom'
+  scrollAlign,
   ...rest
 }) {
   const renderIcon = (Icon) => {
@@ -56,7 +59,7 @@ export default function AppButton({
     </>
   );
 
-  // ... (to ? SmartNavLink : Button) logic remains the same
+  // If 'to' is present, render as a SmartNavLink inside a Button (asChild)
   if (to) {
     return (
       <Button
@@ -66,7 +69,12 @@ export default function AppButton({
         className={className}
         {...rest}
       >
-        <SmartNavLink to={to} className={cn(appButtonStyles.smartNavLink)}>
+        <SmartNavLink
+          to={to}
+          className={cn(appButtonStyles.smartNavLink)}
+          // Pass the new prop down to the link component
+          scrollAlign={scrollAlign}
+        >
           <ButtonContent />
         </SmartNavLink>
       </Button>
