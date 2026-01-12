@@ -704,9 +704,9 @@ const ContactUsNew = () => {
     style: {
       fontFamily: "Inter, sans-serif"
     },
-    id: "contact-us",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
       className: "flex flex-col justify-center items-center mb-12",
+      id: "contact-us",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_styles_badge__WEBPACK_IMPORTED_MODULE_4__.Badge, {
         variant: "toolkit",
         size: "default",
@@ -1297,4 +1297,4 @@ const themeGuide = {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_scripts_components_pages_homepage_ContactUsNew_jsx.js.map?ver=4745e5156677a9f85d69
+//# sourceMappingURL=src_scripts_components_pages_homepage_ContactUsNew_jsx.js.map?ver=adbbce621c54e1dde292

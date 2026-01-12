@@ -108,21 +108,21 @@ const Main = () => {
       <div className="relative overflow-hidden min-h-screen">
         <MessengerButton />
         <div className="flex flex-col">
-          {/* <HeroCarousel
+          <HeroCarousel
             slides={heroSlides}
             autoPlayInterval={15000}
             autoPlay={true}
           />
           <PartnersSection />
-          <ServicesSection />*/}
+          <ServicesSection />
           <ToolkitSection />
-          {/* <NumbersSection />
+          <NumbersSection />
           <PlatformSection />
           <OfficesSection />
           <AffiliateSection />
           <Blogs />
           <FAQSection />
-          <ContactUsNew />*/}
+          <ContactUsNew />
         </div>
       </div>
     </>

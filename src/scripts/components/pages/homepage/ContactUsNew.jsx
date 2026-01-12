@@ -112,10 +112,12 @@ const ContactUsNew = () => {
         themeGuide.sectionPaddingY,
       )}
       style={{ fontFamily: "Inter, sans-serif" }}
-      id="contact-us"
     >
       {/* Header Section */}
-      <div className="flex flex-col justify-center items-center mb-12">
+      <div
+        className="flex flex-col justify-center items-center mb-12"
+        id="contact-us"
+      >
         <Badge variant="toolkit" size="default">
           {t("contact_us_section.badge")}
         </Badge>
