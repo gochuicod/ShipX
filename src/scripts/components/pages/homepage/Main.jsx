@@ -54,7 +54,7 @@ const Main = () => {
         "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_2.png",
       bgClassName: cn(
         "2xl:bg-size-[1239px_auto] md:bg-size-[1093px_auto] bg-size-[724px_auto]",
-        "2xl:bg-position-[30vw_0vw] md:bg-position-[center_5vw] sm:bg-position-[center_30vw] bg-position-[center_50vw]",
+        "2xl:bg-position-[30vw_0vw] md:bg-position-[center_5vw] sm:bg-position-[center_35vw] bg-position-[center_45vw]",
       ),
       title: t("hero_section.slides.slide_2.title"),
       titleHighlight: t("hero_section.slides.slide_2.title_highlighted"),
@@ -108,7 +108,7 @@ const Main = () => {
       <div className="relative overflow-hidden min-h-screen">
         <MessengerButton />
         <div className="flex flex-col">
-          {/* <HeroCarousel
+          <HeroCarousel
             slides={heroSlides}
             autoPlayInterval={15000}
             autoPlay={true}
@@ -117,12 +117,12 @@ const Main = () => {
           <ServicesSection />
           <ToolkitSection />
           <NumbersSection />
-          <PlatformSection /> */}
+          <PlatformSection />
           <OfficesSection />
-          {/* <AffiliateSection />
+          <AffiliateSection />
           <Blogs />
           <FAQSection />
-          <ContactUsNew /> */}
+          <ContactUsNew />
         </div>
       </div>
     </>

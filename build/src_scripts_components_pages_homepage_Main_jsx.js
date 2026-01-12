@@ -161,7 +161,7 @@ const Main = () => {
   }, {
     id: 2,
     image: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_2.png",
-    bgClassName: (0,_lib_util__WEBPACK_IMPORTED_MODULE_2__.cn)("2xl:bg-size-[1239px_auto] md:bg-size-[1093px_auto] bg-size-[724px_auto]", "2xl:bg-position-[30vw_0vw] md:bg-position-[center_5vw] sm:bg-position-[center_30vw] bg-position-[center_50vw]"),
+    bgClassName: (0,_lib_util__WEBPACK_IMPORTED_MODULE_2__.cn)("2xl:bg-size-[1239px_auto] md:bg-size-[1093px_auto] bg-size-[724px_auto]", "2xl:bg-position-[30vw_0vw] md:bg-position-[center_5vw] sm:bg-position-[center_35vw] bg-position-[center_45vw]"),
     title: t("hero_section.slides.slide_2.title"),
     titleHighlight: t("hero_section.slides.slide_2.title_highlighted"),
     description: t("hero_section.slides.slide_2.description"),
@@ -211,9 +211,13 @@ const Main = () => {
       ogImage: t("seo.home_page.ogImage")
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "relative overflow-hidden min-h-screen",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(MessengerButton, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(MessengerButton, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "flex flex-col",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(OfficesSection, {})
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(HeroCarousel, {
+          slides: heroSlides,
+          autoPlayInterval: 15000,
+          autoPlay: true
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(PartnersSection, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(ServicesSection, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(ToolkitSection, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(NumbersSection, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(PlatformSection, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(OfficesSection, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(AffiliateSection, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(Blogs, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(FAQSection, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(ContactUsNew, {})]
       })]
     })]
   });
@@ -223,4 +227,4 @@ const Main = () => {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_scripts_components_pages_homepage_Main_jsx.js.map?ver=516da5b3df1c3def033e
+//# sourceMappingURL=src_scripts_components_pages_homepage_Main_jsx.js.map?ver=e185bdb3270654c622fe
