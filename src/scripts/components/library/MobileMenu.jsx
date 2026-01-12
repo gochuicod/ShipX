@@ -7,6 +7,7 @@ import {
 import { div as MotionDiv } from "motion/react-client";
 import { ChevronDown, CalendarDays } from "lucide-react";
 import AppButton from "./AppButton";
+import LoginModal from "./LoginModal"; // Imported LoginModal
 import { cn } from "../../../lib/util";
 import SmartNavLink from "../ui/SmartNavLink";
 
@@ -17,7 +18,6 @@ const MobileMenu = ({
   selectedLang,
   onLanguageChange,
   onLinkClick,
-  onLoginClick, // <--- New prop for Login action
   t,
 }) => {
   return (
@@ -51,7 +51,6 @@ const MobileMenu = ({
                 />
               </ListboxButton>
 
-              {/* Dropdown Options - Removed Portal for stability */}
               <ListboxOptions className="absolute right-0 top-full mt-1 w-[140px] bg-white border border-[#FF00E5] rounded-lg shadow-xl py-1 z-50 focus:outline-none">
                 {languages.map((lang) => (
                   <ListboxOption
@@ -109,21 +108,20 @@ const MobileMenu = ({
       </nav>
 
       {/* 3. ACTION BUTTONS */}
-      <div className="flex flex-col w-full gap-2 mt-auto pb-2 z-10">
-        <AppButton
-          variant="secondary"
-          text="Login / Signup"
-          onClick={onLoginClick} // <--- Triggers the login modal logic
-          className="w-full h-[36px] text-[16px] font-normal text-[#1E2939] shadow-sm flex justify-center items-center"
-        />
-        <AppButton
+      <div className="flex flex-col w-full gap-3 mt-auto pb-2 z-10">
+        {/* Login Modal Wrapper - [&>div]:w-full forces the inner LoginModal trigger to fill width */}
+        <div className="w-full [&>div]:w-full [&>div]:justify-start">
+          <LoginModal footer={true} />
+        </div>
+
+        {/* <AppButton
           to="/book-a-demo"
           onClick={onLinkClick} // Close menu when clicked
           text={t("header.book_a_demo")}
           withLeftIcon={true}
           leftIcon={<CalendarDays className="size-5" />}
           className="w-full h-[40px] text-[16px] flex justify-center items-center"
-        />
+        />*/}
       </div>
     </MotionDiv>
   );

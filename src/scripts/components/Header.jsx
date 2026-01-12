@@ -218,33 +218,42 @@ const Header = memo(() => {
         </div>
 
         {/* Mobile Hamburger */}
-        <button
-          type="button"
-          aria-label="Hamburger menu"
-          onClick={() => setIsOpen(!isOpen)}
-          className="relative xl:hidden flex flex-col justify-between md:w-[4vw] w-[6vw] md:h-[3vw] h-[3.5vw] p-0 focus:outline-none"
-        >
-          {/* Top bar */}
-          <MotionSpan
-            animate={isOpen ? { rotate: 45, y: 10 } : { rotate: 0, y: 0 }}
-            transition={{ duration: 0.3 }}
-            className="block h-[0.5vw] w-full bg-black rounded-full"
-          />
+        <div className="flex flex-row gap-4 items-center">
+          <button
+            type="button"
+            aria-label="Hamburger menu"
+            onClick={() => setIsOpen(!isOpen)}
+            className="relative xl:hidden flex flex-col justify-between md:w-[4vw] w-[6vw] md:h-[3vw] h-[3.5vw] p-0 focus:outline-none"
+          >
+            {/* Top bar */}
+            <MotionSpan
+              animate={isOpen ? { rotate: 45, y: 10 } : { rotate: 0, y: 0 }}
+              transition={{ duration: 0.3 }}
+              className="block h-[0.5vw] w-full bg-black rounded-full"
+            />
 
-          {/* Middle bar */}
-          <MotionSpan
-            animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-            transition={{ duration: 0.2 }}
-            className="block h-[0.5vw] w-full bg-black rounded-full"
-          />
+            {/* Middle bar */}
+            <MotionSpan
+              animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
+              transition={{ duration: 0.2 }}
+              className="block h-[0.5vw] w-full bg-black rounded-full"
+            />
 
-          {/* Bottom bar */}
-          <MotionSpan
-            animate={isOpen ? { rotate: -45, y: -10 } : { rotate: 0, y: 0 }}
-            transition={{ duration: 0.3 }}
-            className="block h-[0.5vw] w-full bg-black rounded-full"
+            {/* Bottom bar */}
+            <MotionSpan
+              animate={isOpen ? { rotate: -45, y: -10 } : { rotate: 0, y: 0 }}
+              transition={{ duration: 0.3 }}
+              className="block h-[0.5vw] w-full bg-black rounded-full"
+            />
+          </button>
+          <AppButton
+            to="/book-a-demo"
+            text={t("header.book_a_demo")}
+            withLeftIcon={true}
+            leftIcon={<CalendarDays className="size-5" />}
+            className="xl:hidden block"
           />
-        </button>
+        </div>
 
         {/* Mobile Dropdown Menu */}
         <AnimatePresence>

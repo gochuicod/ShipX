@@ -79,21 +79,15 @@ const LoginModal = ({ footer = false, placement = "auto" }) => {
       <div
         onClick={() => isTouch && setOpen((p) => !p)}
         className={cn(
-          // Shared styles for both
           "cursor-pointer transition-colors duration-300 flex items-center",
-
           footer
-            ? // Footer specific styles (Added 'gap-2' for chevron spacing)
-              "bg-white hover:bg-secondary-hover active:bg-secondary-active border border-violet-300 active:border-secondary-active text-primary active:text-white font-normal shadow-[1px_1px_2px_rgba(0,0,0,0.3),inset_-2px_-2px_6px_rgba(167,139,250,0.3)] px-4 py-[5px] rounded-lg gap-2"
-            : // Header specific styles
-              `gap-x-1 text-nav font-normal text-base hover:text-[#FF00E5] ${
+            ? "bg-white hover:bg-secondary-hover active:bg-secondary-active border border-violet-300 active:border-secondary-active text-primary active:text-white font-normal shadow-[1px_1px_2px_rgba(0,0,0,0.3),inset_-2px_-2px_6px_rgba(167,139,250,0.3)] px-4 py-[5px] rounded-lg gap-2"
+            : `gap-x-1 text-nav font-normal text-base hover:text-[#FF00E5] ${
                 open && "text-[#FF00E5]"
               }`,
         )}
       >
         <span>{t("header.login_signup")}</span>
-
-        {/* Animated Chevron (Removed !footer check) */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -101,9 +95,7 @@ const LoginModal = ({ footer = false, placement = "auto" }) => {
           strokeWidth={2.5}
           className={cn(
             "w-3 h-3 transition-transform duration-300",
-            // If footer, use current text color (stroke-current), otherwise specific colors
             footer ? "stroke-current" : "stroke-[#1A1A1A]",
-            // Rotation logic
             open ? `rotate-180 ${!footer && "stroke-[#FF00E5]"}` : "rotate-0",
           )}
         >
@@ -117,41 +109,57 @@ const LoginModal = ({ footer = false, placement = "auto" }) => {
 
       {/* Modal Content */}
       {open && (
-        <div
-          className={cn(
-            "absolute z-50 left-1/2 -translate-x-1/2",
-            "w-[90vw] md:w-auto md:min-w-[600px]",
-            "max-h-[85vh] overflow-y-auto overscroll-contain",
-            "bg-white rounded-2xl md:rounded-xl",
-            "border border-[#FF00E5] shadow-xl",
-            "p-6 md:p-6",
-            effectivePlacement === "top"
-              ? "bottom-full mb-3 origin-bottom"
-              : "top-full mt-3 origin-top",
-          )}
-        >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {modalItems.map((item) => (
-              <div key={item.key} className="flex flex-col gap-3">
-                <span className="text-[#19191D] font-bold text-lg md:text-base">
-                  {item.title}
-                </span>
-                <p className="text-[#757577] text-sm md:text-sm leading-relaxed font-normal">
-                  {item.desc}
-                </p>
-                <div className="mt-2 md:mt-auto">
-                  <AppButton
-                    to={item.to}
-                    onClick={item.onClick}
-                    variant={item.variant}
-                    text={item.btnText}
-                    className="w-full md:w-fit px-4 py-2 text-sm"
-                  />
+        <>
+          {/* Mobile Overlay (Optional backdrop for better focus on mobile) */}
+          <div
+            className="fixed inset-0 bg-black/20 z-40 md:hidden"
+            onClick={() => setOpen(false)}
+          />
+
+          <div
+            className={cn(
+              "z-50 bg-white rounded-2xl md:rounded-xl border border-[#FF00E5] shadow-xl p-6",
+
+              // --- MOBILE STYLES (Fixed Positioning) ---
+              // Centers content on screen, prevents overflow relative to button
+              "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
+              "w-[90vw] max-h-[85vh] overflow-y-auto overscroll-contain",
+
+              // --- DESKTOP STYLES (Absolute Positioning) ---
+              // Resets fixed styles and applies dropdown logic relative to parent
+              "md:absolute md:fixed-none md:top-auto md:bottom-auto md:translate-y-0",
+              "md:w-auto md:min-w-[600px] md:max-h-none md:overflow-visible",
+
+              // Dynamic Placement for Desktop
+              effectivePlacement === "top"
+                ? "md:bottom-full md:mb-3 md:origin-bottom"
+                : "md:top-full md:mt-3 md:origin-top",
+            )}
+          >
+            {/* Grid Layout: 1 Column on Mobile, 3 Columns on Desktop */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {modalItems.map((item) => (
+                <div key={item.key} className="flex flex-col gap-3">
+                  <span className="text-[#19191D] font-bold text-lg md:text-base">
+                    {item.title}
+                  </span>
+                  <p className="text-[#757577] text-sm md:text-sm leading-relaxed font-normal">
+                    {item.desc}
+                  </p>
+                  <div className="mt-2 md:mt-auto">
+                    <AppButton
+                      to={item.to}
+                      onClick={item.onClick}
+                      variant={item.variant}
+                      text={item.btnText}
+                      className="w-full md:w-fit px-4 py-2 text-sm"
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        </>
       )}
     </div>
   );

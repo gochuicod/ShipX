@@ -1003,13 +1003,7 @@ const LoginModal = ({
     onMouseLeave: handleMouseLeave,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       onClick: () => isTouch && setOpen(p => !p),
-      className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.cn)(
-      // Shared styles for both
-      "cursor-pointer transition-colors duration-300 flex items-center", footer ?
-      // Footer specific styles (Added 'gap-2' for chevron spacing)
-      "bg-white hover:bg-secondary-hover active:bg-secondary-active border border-violet-300 active:border-secondary-active text-primary active:text-white font-normal shadow-[1px_1px_2px_rgba(0,0,0,0.3),inset_-2px_-2px_6px_rgba(167,139,250,0.3)] px-4 py-[5px] rounded-lg gap-2" :
-      // Header specific styles
-      `gap-x-1 text-nav font-normal text-base hover:text-[#FF00E5] ${open && "text-[#FF00E5]"}`),
+      className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.cn)("cursor-pointer transition-colors duration-300 flex items-center", footer ? "bg-white hover:bg-secondary-hover active:bg-secondary-active border border-violet-300 active:border-secondary-active text-primary active:text-white font-normal shadow-[1px_1px_2px_rgba(0,0,0,0.3),inset_-2px_-2px_6px_rgba(167,139,250,0.3)] px-4 py-[5px] rounded-lg gap-2" : `gap-x-1 text-nav font-normal text-base hover:text-[#FF00E5] ${open && "text-[#FF00E5]"}`),
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
         children: t("header.login_signup")
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
@@ -1017,41 +1011,50 @@ const LoginModal = ({
         fill: "none",
         viewBox: "0 0 24 24",
         strokeWidth: 2.5,
-        className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.cn)("w-3 h-3 transition-transform duration-300",
-        // If footer, use current text color (stroke-current), otherwise specific colors
-        footer ? "stroke-current" : "stroke-[#1A1A1A]",
-        // Rotation logic
-        open ? `rotate-180 ${!footer && "stroke-[#FF00E5]"}` : "rotate-0"),
+        className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.cn)("w-3 h-3 transition-transform duration-300", footer ? "stroke-current" : "stroke-[#1A1A1A]", open ? `rotate-180 ${!footer && "stroke-[#FF00E5]"}` : "rotate-0"),
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
           strokeLinecap: "round",
           strokeLinejoin: "round",
           d: "m19.5 8.25-7.5 7.5-7.5-7.5"
         })
       })]
-    }), open && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.cn)("absolute z-50 left-1/2 -translate-x-1/2", "w-[90vw] md:w-auto md:min-w-[600px]", "max-h-[85vh] overflow-y-auto overscroll-contain", "bg-white rounded-2xl md:rounded-xl", "border border-[#FF00E5] shadow-xl", "p-6 md:p-6", effectivePlacement === "top" ? "bottom-full mb-3 origin-bottom" : "top-full mt-3 origin-top"),
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "grid grid-cols-1 md:grid-cols-3 gap-6",
-        children: modalItems.map(item => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "flex flex-col gap-3",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-            className: "text-[#19191D] font-bold text-lg md:text-base",
-            children: item.title
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-            className: "text-[#757577] text-sm md:text-sm leading-relaxed font-normal",
-            children: item.desc
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "mt-2 md:mt-auto",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AppButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
-              to: item.to,
-              onClick: item.onClick,
-              variant: item.variant,
-              text: item.btnText,
-              className: "w-full md:w-fit px-4 py-2 text-sm"
-            })
-          })]
-        }, item.key))
-      })
+    }), open && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        className: "fixed inset-0 bg-black/20 z-40 md:hidden",
+        onClick: () => setOpen(false)
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.cn)("z-50 bg-white rounded-2xl md:rounded-xl border border-[#FF00E5] shadow-xl p-6",
+        // --- MOBILE STYLES (Fixed Positioning) ---
+        // Centers content on screen, prevents overflow relative to button
+        "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2", "w-[90vw] max-h-[85vh] overflow-y-auto overscroll-contain",
+        // --- DESKTOP STYLES (Absolute Positioning) ---
+        // Resets fixed styles and applies dropdown logic relative to parent
+        "md:absolute md:fixed-none md:top-auto md:bottom-auto md:translate-y-0", "md:w-auto md:min-w-[600px] md:max-h-none md:overflow-visible",
+        // Dynamic Placement for Desktop
+        effectivePlacement === "top" ? "md:bottom-full md:mb-3 md:origin-bottom" : "md:top-full md:mt-3 md:origin-top"),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: "grid grid-cols-1 md:grid-cols-3 gap-6",
+          children: modalItems.map(item => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "flex flex-col gap-3",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "text-[#19191D] font-bold text-lg md:text-base",
+              children: item.title
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+              className: "text-[#757577] text-sm md:text-sm leading-relaxed font-normal",
+              children: item.desc
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+              className: "mt-2 md:mt-auto",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AppButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+                to: item.to,
+                onClick: item.onClick,
+                variant: item.variant,
+                text: item.btnText,
+                className: "w-full md:w-fit px-4 py-2 text-sm"
+              })
+            })]
+          }, item.key))
+        })
+      })]
     })]
   });
 };
@@ -1392,4 +1395,4 @@ const themeGuide = {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_scripts_components_Footer_jsx.js.map?ver=aced2569e63b8df9edd1
+//# sourceMappingURL=src_scripts_components_Footer_jsx.js.map?ver=783daee452168fa5fc45

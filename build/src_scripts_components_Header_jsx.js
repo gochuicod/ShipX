@@ -214,45 +214,56 @@ const Header = (0,react__WEBPACK_IMPORTED_MODULE_0__.memo)(() => {
             className: "size-5"
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("button", {
-        type: "button",
-        "aria-label": "Hamburger menu",
-        onClick: () => setIsOpen(!isOpen),
-        className: "relative xl:hidden flex flex-col justify-between md:w-[4vw] w-[6vw] md:h-[3vw] h-[3.5vw] p-0 focus:outline-none",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(motion_react_client__WEBPACK_IMPORTED_MODULE_3__.MotionSpan, {
-          animate: isOpen ? {
-            rotate: 45,
-            y: 10
-          } : {
-            rotate: 0,
-            y: 0
-          },
-          transition: {
-            duration: 0.3
-          },
-          className: "block h-[0.5vw] w-full bg-black rounded-full"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(motion_react_client__WEBPACK_IMPORTED_MODULE_3__.MotionSpan, {
-          animate: isOpen ? {
-            opacity: 0
-          } : {
-            opacity: 1
-          },
-          transition: {
-            duration: 0.2
-          },
-          className: "block h-[0.5vw] w-full bg-black rounded-full"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(motion_react_client__WEBPACK_IMPORTED_MODULE_3__.MotionSpan, {
-          animate: isOpen ? {
-            rotate: -45,
-            y: -10
-          } : {
-            rotate: 0,
-            y: 0
-          },
-          transition: {
-            duration: 0.3
-          },
-          className: "block h-[0.5vw] w-full bg-black rounded-full"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
+        className: "flex flex-row gap-4 items-center",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("button", {
+          type: "button",
+          "aria-label": "Hamburger menu",
+          onClick: () => setIsOpen(!isOpen),
+          className: "relative xl:hidden flex flex-col justify-between md:w-[4vw] w-[6vw] md:h-[3vw] h-[3.5vw] p-0 focus:outline-none",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(motion_react_client__WEBPACK_IMPORTED_MODULE_3__.MotionSpan, {
+            animate: isOpen ? {
+              rotate: 45,
+              y: 10
+            } : {
+              rotate: 0,
+              y: 0
+            },
+            transition: {
+              duration: 0.3
+            },
+            className: "block h-[0.5vw] w-full bg-black rounded-full"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(motion_react_client__WEBPACK_IMPORTED_MODULE_3__.MotionSpan, {
+            animate: isOpen ? {
+              opacity: 0
+            } : {
+              opacity: 1
+            },
+            transition: {
+              duration: 0.2
+            },
+            className: "block h-[0.5vw] w-full bg-black rounded-full"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(motion_react_client__WEBPACK_IMPORTED_MODULE_3__.MotionSpan, {
+            animate: isOpen ? {
+              rotate: -45,
+              y: -10
+            } : {
+              rotate: 0,
+              y: 0
+            },
+            transition: {
+              duration: 0.3
+            },
+            className: "block h-[0.5vw] w-full bg-black rounded-full"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_library_AppButton__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          to: "/book-a-demo",
+          text: t("header.book_a_demo"),
+          withLeftIcon: true,
+          leftIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_13__["default"], {
+            className: "size-5"
+          }),
+          className: "xl:hidden block"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(motion_react__WEBPACK_IMPORTED_MODULE_4__.AnimatePresence, {
         children: isOpen && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_library_MobileMenu__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -593,13 +604,7 @@ const LoginModal = ({
     onMouseLeave: handleMouseLeave,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       onClick: () => isTouch && setOpen(p => !p),
-      className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.cn)(
-      // Shared styles for both
-      "cursor-pointer transition-colors duration-300 flex items-center", footer ?
-      // Footer specific styles (Added 'gap-2' for chevron spacing)
-      "bg-white hover:bg-secondary-hover active:bg-secondary-active border border-violet-300 active:border-secondary-active text-primary active:text-white font-normal shadow-[1px_1px_2px_rgba(0,0,0,0.3),inset_-2px_-2px_6px_rgba(167,139,250,0.3)] px-4 py-[5px] rounded-lg gap-2" :
-      // Header specific styles
-      `gap-x-1 text-nav font-normal text-base hover:text-[#FF00E5] ${open && "text-[#FF00E5]"}`),
+      className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.cn)("cursor-pointer transition-colors duration-300 flex items-center", footer ? "bg-white hover:bg-secondary-hover active:bg-secondary-active border border-violet-300 active:border-secondary-active text-primary active:text-white font-normal shadow-[1px_1px_2px_rgba(0,0,0,0.3),inset_-2px_-2px_6px_rgba(167,139,250,0.3)] px-4 py-[5px] rounded-lg gap-2" : `gap-x-1 text-nav font-normal text-base hover:text-[#FF00E5] ${open && "text-[#FF00E5]"}`),
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
         children: t("header.login_signup")
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
@@ -607,41 +612,50 @@ const LoginModal = ({
         fill: "none",
         viewBox: "0 0 24 24",
         strokeWidth: 2.5,
-        className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.cn)("w-3 h-3 transition-transform duration-300",
-        // If footer, use current text color (stroke-current), otherwise specific colors
-        footer ? "stroke-current" : "stroke-[#1A1A1A]",
-        // Rotation logic
-        open ? `rotate-180 ${!footer && "stroke-[#FF00E5]"}` : "rotate-0"),
+        className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.cn)("w-3 h-3 transition-transform duration-300", footer ? "stroke-current" : "stroke-[#1A1A1A]", open ? `rotate-180 ${!footer && "stroke-[#FF00E5]"}` : "rotate-0"),
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
           strokeLinecap: "round",
           strokeLinejoin: "round",
           d: "m19.5 8.25-7.5 7.5-7.5-7.5"
         })
       })]
-    }), open && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.cn)("absolute z-50 left-1/2 -translate-x-1/2", "w-[90vw] md:w-auto md:min-w-[600px]", "max-h-[85vh] overflow-y-auto overscroll-contain", "bg-white rounded-2xl md:rounded-xl", "border border-[#FF00E5] shadow-xl", "p-6 md:p-6", effectivePlacement === "top" ? "bottom-full mb-3 origin-bottom" : "top-full mt-3 origin-top"),
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "grid grid-cols-1 md:grid-cols-3 gap-6",
-        children: modalItems.map(item => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "flex flex-col gap-3",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-            className: "text-[#19191D] font-bold text-lg md:text-base",
-            children: item.title
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-            className: "text-[#757577] text-sm md:text-sm leading-relaxed font-normal",
-            children: item.desc
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "mt-2 md:mt-auto",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AppButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
-              to: item.to,
-              onClick: item.onClick,
-              variant: item.variant,
-              text: item.btnText,
-              className: "w-full md:w-fit px-4 py-2 text-sm"
-            })
-          })]
-        }, item.key))
-      })
+    }), open && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        className: "fixed inset-0 bg-black/20 z-40 md:hidden",
+        onClick: () => setOpen(false)
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.cn)("z-50 bg-white rounded-2xl md:rounded-xl border border-[#FF00E5] shadow-xl p-6",
+        // --- MOBILE STYLES (Fixed Positioning) ---
+        // Centers content on screen, prevents overflow relative to button
+        "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2", "w-[90vw] max-h-[85vh] overflow-y-auto overscroll-contain",
+        // --- DESKTOP STYLES (Absolute Positioning) ---
+        // Resets fixed styles and applies dropdown logic relative to parent
+        "md:absolute md:fixed-none md:top-auto md:bottom-auto md:translate-y-0", "md:w-auto md:min-w-[600px] md:max-h-none md:overflow-visible",
+        // Dynamic Placement for Desktop
+        effectivePlacement === "top" ? "md:bottom-full md:mb-3 md:origin-bottom" : "md:top-full md:mt-3 md:origin-top"),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: "grid grid-cols-1 md:grid-cols-3 gap-6",
+          children: modalItems.map(item => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "flex flex-col gap-3",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "text-[#19191D] font-bold text-lg md:text-base",
+              children: item.title
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+              className: "text-[#757577] text-sm md:text-sm leading-relaxed font-normal",
+              children: item.desc
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+              className: "mt-2 md:mt-auto",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AppButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+                to: item.to,
+                onClick: item.onClick,
+                variant: item.variant,
+                text: item.btnText,
+                className: "w-full md:w-fit px-4 py-2 text-sm"
+              })
+            })]
+          }, item.key))
+        })
+      })]
     })]
   });
 };
@@ -709,9 +723,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _headlessui_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @headlessui/react */ "./node_modules/@headlessui/react/dist/components/listbox/listbox.js");
 /* harmony import */ var motion_react_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! motion/react-client */ "./node_modules/motion/node_modules/framer-motion/dist/es/render/components/motion/elements.mjs");
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/calendar-days.js");
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/chevron-down.js");
-/* harmony import */ var _AppButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./AppButton */ "./src/scripts/components/library/AppButton.jsx");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/chevron-down.js");
+/* harmony import */ var _AppButton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AppButton */ "./src/scripts/components/library/AppButton.jsx");
+/* harmony import */ var _LoginModal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./LoginModal */ "./src/scripts/components/library/LoginModal.jsx");
 /* harmony import */ var _lib_util__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../lib/util */ "./src/lib/util.js");
 /* harmony import */ var _ui_SmartNavLink__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../ui/SmartNavLink */ "./src/scripts/components/ui/SmartNavLink.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
@@ -720,6 +734,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+ // Imported LoginModal
 
 
 
@@ -730,8 +745,6 @@ const MobileMenu = ({
   selectedLang,
   onLanguageChange,
   onLinkClick,
-  onLoginClick,
-  // <--- New prop for Login action
   t
 }) => {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(motion_react_client__WEBPACK_IMPORTED_MODULE_1__.MotionDiv, {
@@ -770,7 +783,7 @@ const MobileMenu = ({
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
               className: "uppercase",
               children: selectedLang.key
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
               className: `size-3 stroke-[2.5px] transition-transform ${open ? "rotate-180" : ""}`
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_0__.ListboxOptions, {
@@ -810,25 +823,14 @@ const MobileMenu = ({
           className: "w-full h-[1px] bg-[#4D525C] opacity-20 my-2"
         })]
       }, link.label))
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-      className: "flex flex-col w-full gap-2 mt-auto pb-2 z-10",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_AppButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        variant: "secondary",
-        text: "Login / Signup",
-        onClick: onLoginClick // <--- Triggers the login modal logic
-        ,
-        className: "w-full h-[36px] text-[16px] font-normal text-[#1E2939] shadow-sm flex justify-center items-center"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_AppButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        to: "/book-a-demo",
-        onClick: onLinkClick // Close menu when clicked
-        ,
-        text: t("header.book_a_demo"),
-        withLeftIcon: true,
-        leftIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          className: "size-5"
-        }),
-        className: "w-full h-[40px] text-[16px] flex justify-center items-center"
-      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      className: "flex flex-col w-full gap-3 mt-auto pb-2 z-10",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        className: "w-full [&>div]:w-full [&>div]:justify-start",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_LoginModal__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          footer: true
+        })
+      })
     })]
   });
 };
@@ -1129,4 +1131,4 @@ const themeGuide = {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_scripts_components_Header_jsx.js.map?ver=a392267dd75412f0ccf9
+//# sourceMappingURL=src_scripts_components_Header_jsx.js.map?ver=10908500b4569c421424

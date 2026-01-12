@@ -992,4 +992,4 @@ const themeGuide = {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_scripts_components_pages_homepage_PlatformSection_jsx.js.map?ver=f3d11fcfe89fc83354cf
+//# sourceMappingURL=src_scripts_components_pages_homepage_PlatformSection_jsx.js.map?ver=c6009f226682119cc493
