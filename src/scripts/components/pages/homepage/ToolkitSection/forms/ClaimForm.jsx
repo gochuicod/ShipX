@@ -5,7 +5,7 @@ import { useLangNavigate } from "../../../../../hooks/useLangNavigate";
 import { useTranslation } from "react-i18next";
 
 const claimIllustration =
-  "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/file_a_claim.webp";
+  "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/file_a_claim.png";
 
 export default function ClaimForm() {
   const [tracking, setTracking] = useState("");

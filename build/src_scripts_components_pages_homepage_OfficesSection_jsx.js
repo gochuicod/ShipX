@@ -1,0 +1,4793 @@
+"use strict";
+(globalThis["webpackChunkshipx_theme"] = globalThis["webpackChunkshipx_theme"] || []).push([["src_scripts_components_pages_homepage_OfficesSection_jsx"],{
+
+/***/ "./node_modules/@radix-ui/react-compose-refs/dist/index.mjs":
+/*!******************************************************************!*\
+  !*** ./node_modules/@radix-ui/react-compose-refs/dist/index.mjs ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   composeRefs: () => (/* binding */ composeRefs),
+/* harmony export */   useComposedRefs: () => (/* binding */ useComposedRefs)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+// packages/react/compose-refs/src/compose-refs.tsx
+
+function setRef(ref, value) {
+  if (typeof ref === "function") {
+    return ref(value);
+  } else if (ref !== null && ref !== void 0) {
+    ref.current = value;
+  }
+}
+function composeRefs(...refs) {
+  return (node) => {
+    let hasCleanup = false;
+    const cleanups = refs.map((ref) => {
+      const cleanup = setRef(ref, node);
+      if (!hasCleanup && typeof cleanup == "function") {
+        hasCleanup = true;
+      }
+      return cleanup;
+    });
+    if (hasCleanup) {
+      return () => {
+        for (let i = 0; i < cleanups.length; i++) {
+          const cleanup = cleanups[i];
+          if (typeof cleanup == "function") {
+            cleanup();
+          } else {
+            setRef(refs[i], null);
+          }
+        }
+      };
+    }
+  };
+}
+function useComposedRefs(...refs) {
+  return react__WEBPACK_IMPORTED_MODULE_0__.useCallback(composeRefs(...refs), refs);
+}
+
+//# sourceMappingURL=index.mjs.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@radix-ui/react-slot/dist/index.mjs":
+/*!**********************************************************!*\
+  !*** ./node_modules/@radix-ui/react-slot/dist/index.mjs ***!
+  \**********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+var react__WEBPACK_IMPORTED_MODULE_0___namespace_cache;
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Root: () => (/* binding */ Slot),
+/* harmony export */   Slot: () => (/* binding */ Slot),
+/* harmony export */   Slottable: () => (/* binding */ Slottable),
+/* harmony export */   createSlot: () => (/* binding */ createSlot),
+/* harmony export */   createSlottable: () => (/* binding */ createSlottable)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var _radix_ui_react_compose_refs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @radix-ui/react-compose-refs */ "./node_modules/@radix-ui/react-compose-refs/dist/index.mjs");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+// src/slot.tsx
+
+
+
+var REACT_LAZY_TYPE = Symbol.for("react.lazy");
+var use = /*#__PURE__*/ (react__WEBPACK_IMPORTED_MODULE_0___namespace_cache || (react__WEBPACK_IMPORTED_MODULE_0___namespace_cache = __webpack_require__.t(react__WEBPACK_IMPORTED_MODULE_0__, 2)))[" use ".trim().toString()];
+function isPromiseLike(value) {
+  return typeof value === "object" && value !== null && "then" in value;
+}
+function isLazyComponent(element) {
+  return element != null && typeof element === "object" && "$$typeof" in element && element.$$typeof === REACT_LAZY_TYPE && "_payload" in element && isPromiseLike(element._payload);
+}
+// @__NO_SIDE_EFFECTS__
+function createSlot(ownerName) {
+  const SlotClone = /* @__PURE__ */ createSlotClone(ownerName);
+  const Slot2 = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef((props, forwardedRef) => {
+    let { children, ...slotProps } = props;
+    if (isLazyComponent(children) && typeof use === "function") {
+      children = use(children._payload);
+    }
+    const childrenArray = react__WEBPACK_IMPORTED_MODULE_0__.Children.toArray(children);
+    const slottable = childrenArray.find(isSlottable);
+    if (slottable) {
+      const newElement = slottable.props.children;
+      const newChildren = childrenArray.map((child) => {
+        if (child === slottable) {
+          if (react__WEBPACK_IMPORTED_MODULE_0__.Children.count(newElement) > 1) return react__WEBPACK_IMPORTED_MODULE_0__.Children.only(null);
+          return react__WEBPACK_IMPORTED_MODULE_0__.isValidElement(newElement) ? newElement.props.children : null;
+        } else {
+          return child;
+        }
+      });
+      return /* @__PURE__ */ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(SlotClone, { ...slotProps, ref: forwardedRef, children: react__WEBPACK_IMPORTED_MODULE_0__.isValidElement(newElement) ? react__WEBPACK_IMPORTED_MODULE_0__.cloneElement(newElement, void 0, newChildren) : null });
+    }
+    return /* @__PURE__ */ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(SlotClone, { ...slotProps, ref: forwardedRef, children });
+  });
+  Slot2.displayName = `${ownerName}.Slot`;
+  return Slot2;
+}
+var Slot = /* @__PURE__ */ createSlot("Slot");
+// @__NO_SIDE_EFFECTS__
+function createSlotClone(ownerName) {
+  const SlotClone = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef((props, forwardedRef) => {
+    let { children, ...slotProps } = props;
+    if (isLazyComponent(children) && typeof use === "function") {
+      children = use(children._payload);
+    }
+    if (react__WEBPACK_IMPORTED_MODULE_0__.isValidElement(children)) {
+      const childrenRef = getElementRef(children);
+      const props2 = mergeProps(slotProps, children.props);
+      if (children.type !== react__WEBPACK_IMPORTED_MODULE_0__.Fragment) {
+        props2.ref = forwardedRef ? (0,_radix_ui_react_compose_refs__WEBPACK_IMPORTED_MODULE_1__.composeRefs)(forwardedRef, childrenRef) : childrenRef;
+      }
+      return react__WEBPACK_IMPORTED_MODULE_0__.cloneElement(children, props2);
+    }
+    return react__WEBPACK_IMPORTED_MODULE_0__.Children.count(children) > 1 ? react__WEBPACK_IMPORTED_MODULE_0__.Children.only(null) : null;
+  });
+  SlotClone.displayName = `${ownerName}.SlotClone`;
+  return SlotClone;
+}
+var SLOTTABLE_IDENTIFIER = Symbol("radix.slottable");
+// @__NO_SIDE_EFFECTS__
+function createSlottable(ownerName) {
+  const Slottable2 = ({ children }) => {
+    return /* @__PURE__ */ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, { children });
+  };
+  Slottable2.displayName = `${ownerName}.Slottable`;
+  Slottable2.__radixId = SLOTTABLE_IDENTIFIER;
+  return Slottable2;
+}
+var Slottable = /* @__PURE__ */ createSlottable("Slottable");
+function isSlottable(child) {
+  return react__WEBPACK_IMPORTED_MODULE_0__.isValidElement(child) && typeof child.type === "function" && "__radixId" in child.type && child.type.__radixId === SLOTTABLE_IDENTIFIER;
+}
+function mergeProps(slotProps, childProps) {
+  const overrideProps = { ...childProps };
+  for (const propName in childProps) {
+    const slotPropValue = slotProps[propName];
+    const childPropValue = childProps[propName];
+    const isHandler = /^on[A-Z]/.test(propName);
+    if (isHandler) {
+      if (slotPropValue && childPropValue) {
+        overrideProps[propName] = (...args) => {
+          const result = childPropValue(...args);
+          slotPropValue(...args);
+          return result;
+        };
+      } else if (slotPropValue) {
+        overrideProps[propName] = slotPropValue;
+      }
+    } else if (propName === "style") {
+      overrideProps[propName] = { ...slotPropValue, ...childPropValue };
+    } else if (propName === "className") {
+      overrideProps[propName] = [slotPropValue, childPropValue].filter(Boolean).join(" ");
+    }
+  }
+  return { ...slotProps, ...overrideProps };
+}
+function getElementRef(element) {
+  let getter = Object.getOwnPropertyDescriptor(element.props, "ref")?.get;
+  let mayWarn = getter && "isReactWarning" in getter && getter.isReactWarning;
+  if (mayWarn) {
+    return element.ref;
+  }
+  getter = Object.getOwnPropertyDescriptor(element, "ref")?.get;
+  mayWarn = getter && "isReactWarning" in getter && getter.isReactWarning;
+  if (mayWarn) {
+    return element.props.ref;
+  }
+  return element.props.ref || element.ref;
+}
+
+//# sourceMappingURL=index.mjs.map
+
+
+/***/ }),
+
+/***/ "./node_modules/class-variance-authority/dist/index.mjs":
+/*!**************************************************************!*\
+  !*** ./node_modules/class-variance-authority/dist/index.mjs ***!
+  \**************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   cva: () => (/* binding */ cva),
+/* harmony export */   cx: () => (/* binding */ cx)
+/* harmony export */ });
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.mjs");
+/**
+ * Copyright 2022 Joe Bell. All rights reserved.
+ *
+ * This file is licensed to you under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR REPRESENTATIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ */ 
+const falsyToString = (value)=>typeof value === "boolean" ? `${value}` : value === 0 ? "0" : value;
+const cx = clsx__WEBPACK_IMPORTED_MODULE_0__.clsx;
+const cva = (base, config)=>(props)=>{
+        var _config_compoundVariants;
+        if ((config === null || config === void 0 ? void 0 : config.variants) == null) return cx(base, props === null || props === void 0 ? void 0 : props.class, props === null || props === void 0 ? void 0 : props.className);
+        const { variants, defaultVariants } = config;
+        const getVariantClassNames = Object.keys(variants).map((variant)=>{
+            const variantProp = props === null || props === void 0 ? void 0 : props[variant];
+            const defaultVariantProp = defaultVariants === null || defaultVariants === void 0 ? void 0 : defaultVariants[variant];
+            if (variantProp === null) return null;
+            const variantKey = falsyToString(variantProp) || falsyToString(defaultVariantProp);
+            return variants[variant][variantKey];
+        });
+        const propsWithoutUndefined = props && Object.entries(props).reduce((acc, param)=>{
+            let [key, value] = param;
+            if (value === undefined) {
+                return acc;
+            }
+            acc[key] = value;
+            return acc;
+        }, {});
+        const getCompoundVariantClassNames = config === null || config === void 0 ? void 0 : (_config_compoundVariants = config.compoundVariants) === null || _config_compoundVariants === void 0 ? void 0 : _config_compoundVariants.reduce((acc, param)=>{
+            let { class: cvClass, className: cvClassName, ...compoundVariantOptions } = param;
+            return Object.entries(compoundVariantOptions).every((param)=>{
+                let [key, value] = param;
+                return Array.isArray(value) ? value.includes({
+                    ...defaultVariants,
+                    ...propsWithoutUndefined
+                }[key]) : ({
+                    ...defaultVariants,
+                    ...propsWithoutUndefined
+                })[key] === value;
+            }) ? [
+                ...acc,
+                cvClass,
+                cvClassName
+            ] : acc;
+        }, []);
+        return cx(base, getVariantClassNames, getCompoundVariantClassNames, props === null || props === void 0 ? void 0 : props.class, props === null || props === void 0 ? void 0 : props.className);
+    };
+
+
+
+/***/ }),
+
+/***/ "./src/scripts/components/library/AppButton.jsx":
+/*!******************************************************!*\
+  !*** ./src/scripts/components/library/AppButton.jsx ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ AppButton)
+/* harmony export */ });
+/* harmony import */ var _ui_SmartNavLink__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ui/SmartNavLink */ "./src/scripts/components/ui/SmartNavLink.js");
+/* harmony import */ var _styles_button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../styles/button */ "./src/styles/button.jsx");
+/* harmony import */ var _lib_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../lib/util */ "./src/lib/util.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+const appButtonStyles = {
+  smartNavLink: "flex items-center justify-center gap-2",
+  // The container needs a defined size to act as a frame for the "cover" image
+  iconWrapper: "flex items-center justify-center shrink-0 overflow-hidden w-5 h-5",
+  // object-cover ensures the image (like a flag) fills the 20x20px area completely
+  icon: "w-full h-full object-cover"
+};
+function AppButton({
+  size = "default",
+  style = "primary",
+  text = "",
+  withLeftIcon = false,
+  withRightIcon = false,
+  leftIcon,
+  rightIcon,
+  iconRounded = false,
+  to,
+  className,
+  ...rest
+}) {
+  const renderIcon = Icon => {
+    if (!Icon) return null;
+    const isUrl = typeof Icon === "string";
+    const roundingClass = iconRounded ? "rounded-full" : "rounded-lg";
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_2__.cn)(appButtonStyles.iconWrapper, roundingClass),
+      children: isUrl ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+        src: Icon,
+        alt: "",
+        className: appButtonStyles.icon
+      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+        className: "flex items-center justify-center w-full h-full",
+        children: (0,react__WEBPACK_IMPORTED_MODULE_3__.isValidElement)(Icon) ? Icon : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Icon, {
+          className: "size-full"
+        }) // 'size-full' fills the 20x20 wrapper
+      })
+    });
+  };
+  const ButtonContent = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: [withLeftIcon && renderIcon(leftIcon), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+      className: "leading-tight",
+      children: text
+    }), withRightIcon && renderIcon(rightIcon)]
+  });
+
+  // ... (to ? SmartNavLink : Button) logic remains the same
+  if (to) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_styles_button__WEBPACK_IMPORTED_MODULE_1__.Button, {
+      asChild: true,
+      variant: style,
+      size: size,
+      className: className,
+      ...rest,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ui_SmartNavLink__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        to: to,
+        className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_2__.cn)(appButtonStyles.smartNavLink),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ButtonContent, {})
+      })
+    });
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_styles_button__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    variant: style,
+    size: size,
+    className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_2__.cn)(appButtonStyles.smartNavLink, className),
+    ...rest,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ButtonContent, {})
+  });
+}
+
+/***/ }),
+
+/***/ "./src/scripts/components/library/Container.jsx":
+/*!******************************************************!*\
+  !*** ./src/scripts/components/library/Container.jsx ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Container)
+/* harmony export */ });
+/* harmony import */ var _styles_themeGuide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../styles/themeGuide */ "./src/styles/themeGuide.js");
+/* harmony import */ var _lib_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../lib/util */ "./src/lib/util.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+function Container({
+  className,
+  children,
+  rest
+}) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.cn)(_styles_themeGuide__WEBPACK_IMPORTED_MODULE_0__.themeGuide.paddingX, "max-w-[1440px]", "lg:mx-auto", className),
+    ...rest,
+    children: children
+  });
+}
+
+/***/ }),
+
+/***/ "./src/scripts/components/library/Description.jsx":
+/*!********************************************************!*\
+  !*** ./src/scripts/components/library/Description.jsx ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Description)
+/* harmony export */ });
+/* harmony import */ var _lib_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../lib/util */ "./src/lib/util.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const descriptionStyles = {
+  paragraph: "text-lg leading-[24px] text-[#757577] font-normal"
+};
+function Description({
+  children,
+  className
+}) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+    className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_0__.cn)(className, descriptionStyles.paragraph),
+    children: children
+  });
+}
+
+/***/ }),
+
+/***/ "./src/scripts/components/library/HighlightedHeading.jsx":
+/*!***************************************************************!*\
+  !*** ./src/scripts/components/library/HighlightedHeading.jsx ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ HighlightedHeading)
+/* harmony export */ });
+/* harmony import */ var _lib_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../lib/util */ "./src/lib/util.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const highlightedHeadingStyles = {
+  h1: "text-4xl font-bold text-dark-neutral"
+};
+function HighlightedHeading({
+  text,
+  highlight,
+  // string or array
+  className,
+  highlightClass,
+  disableNewlines = false
+}) {
+  if (!text) return null;
+
+  // Convert literal "\\n" strings
+  const formattedText = disableNewlines ? text.replace(/\\n/g, " ") : text.replace(/\\n/g, "\n");
+
+  // Prepare highlights
+  const highlightList = Array.isArray(highlight) ? highlight : highlight ? [highlight] : [];
+
+  // Build regex parts
+  const patternParts = [...highlightList.map(h => h.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&")), !disableNewlines ? "\\n" : null].filter(Boolean);
+  const regex = new RegExp(`(${patternParts.join("|")})`, "gi");
+  const parts = formattedText.split(regex);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+    className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_0__.cn)(highlightedHeadingStyles.h1, className),
+    children: parts.map((part, i) => {
+      // Handle Newlines only if enabled
+      if (!disableNewlines && part === "\n") {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}, i);
+      }
+      const isHighlight = highlightList.some(h => h.toLowerCase() === part.toLowerCase());
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_0__.cn)(isHighlight ? `text-[#FF00E5] ${highlightClass || ""}` : ""),
+        children: part
+      }, i);
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./src/scripts/components/library/OfficePopover.jsx":
+/*!**********************************************************!*\
+  !*** ./src/scripts/components/library/OfficePopover.jsx ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ OfficePopover)
+/* harmony export */ });
+/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
+/* harmony import */ var _lib_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../lib/util */ "./src/lib/util.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+function OfficePopover({
+  office,
+  className
+}) {
+  const {
+    t
+  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_0__.useTranslation)();
+  if (!office) return null;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.cn)(
+    // Positioning
+    "absolute bottom-full left-1/2 -translate-x-1/2 mb-3 z-50",
+    // Styling
+    "bg-white rounded-xl shadow-xl border border-gray-100 p-5 w-[280px]",
+    // Animation (optional)
+    "animate-in fade-in zoom-in-95 duration-200", className),
+    onClick: e => e.stopPropagation() // Prevent clicks inside from closing it
+    ,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "flex items-start gap-3",
+      children: [office.icon && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+        src: office.icon,
+        alt: office.country_name,
+        className: "w-8 h-8 object-cover rounded-full shrink-0 mt-1 shadow-sm"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "flex flex-col text-left",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+          className: "text-base font-bold text-gray-900 leading-tight",
+          children: t(office.country_name)
+        }), office.address && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          className: "mt-2 text-xs text-gray-600 leading-relaxed",
+          children: t(office.address)
+        }), office.email && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+          href: `mailto:${t(office.email)}`,
+          className: "mt-2 text-xs font-semibold text-[#FF00E5] hover:underline",
+          children: t(office.email)
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white rotate-45 border-b border-r border-gray-100"
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/scripts/components/pages/homepage/OfficesSection.jsx":
+/*!******************************************************************!*\
+  !*** ./src/scripts/components/pages/homepage/OfficesSection.jsx ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ OfficesSection)
+/* harmony export */ });
+/* harmony import */ var _library_AppButton__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../library/AppButton */ "./src/scripts/components/library/AppButton.jsx");
+/* harmony import */ var _library_Description__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../library/Description */ "./src/scripts/components/library/Description.jsx");
+/* harmony import */ var _library_HighlightedHeading__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../library/HighlightedHeading */ "./src/scripts/components/library/HighlightedHeading.jsx");
+/* harmony import */ var _library_OfficePopover__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../library/OfficePopover */ "./src/scripts/components/library/OfficePopover.jsx");
+/* harmony import */ var _library_Container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../library/Container */ "./src/scripts/components/library/Container.jsx");
+/* harmony import */ var _lib_util__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../lib/util */ "./src/lib/util.js");
+/* harmony import */ var _styles_badge__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../styles/badge */ "./src/styles/badge.jsx");
+/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../utils/constants */ "./src/scripts/utils/constants.js");
+/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _svgs_Map__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../svgs/Map */ "./src/scripts/components/svgs/Map.jsx");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/calendar-days.js");
+/* harmony import */ var _styles_themeGuide__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../../styles/themeGuide */ "./src/styles/themeGuide.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------------------------------
+ * CountryButtons
+ * ------------------------------------------ */
+
+function CountryButtons({
+  onActiveChange
+}) {
+  const {
+    t
+  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_8__.useTranslation)();
+  const [activeCountry, setActiveCountry] = (0,react__WEBPACK_IMPORTED_MODULE_9__.useState)(null);
+  const [pinnedCountry, setPinnedCountry] = (0,react__WEBPACK_IMPORTED_MODULE_9__.useState)(null);
+  const [isTouch, setIsTouch] = (0,react__WEBPACK_IMPORTED_MODULE_9__.useState)(false);
+  const closeTimeoutRef = (0,react__WEBPACK_IMPORTED_MODULE_9__.useRef)(null);
+  (0,react__WEBPACK_IMPORTED_MODULE_9__.useEffect)(() => {
+    setIsTouch("ontouchstart" in window || navigator.maxTouchPoints > 0);
+  }, []);
+
+  /* ---------- helpers ---------- */
+
+  const activate = name => {
+    setActiveCountry(name);
+    onActiveChange?.(name);
+  };
+  const deactivate = () => {
+    setActiveCountry(null);
+    setPinnedCountry(null);
+    onActiveChange?.(null);
+  };
+
+  /* ---------- desktop hover ---------- */
+
+  const handleMouseEnter = name => {
+    if (isTouch || pinnedCountry) return;
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+    }
+    activate(name);
+  };
+  const handleMouseLeave = () => {
+    if (isTouch || pinnedCountry) return;
+    closeTimeoutRef.current = setTimeout(() => {
+      deactivate();
+    }, 200);
+  };
+
+  /* ---------- click (desktop + mobile) ---------- */
+
+  const handleClick = name => {
+    if (activeCountry === name) {
+      deactivate();
+    } else {
+      setPinnedCountry(name);
+      activate(name);
+    }
+  };
+
+  /* ---------- mobile backdrop ---------- */
+
+  const handleBackdropClick = () => {
+    deactivate();
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.Fragment, {
+    children: [isTouch && activeCountry && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
+      className: "fixed inset-0 z-10 bg-transparent",
+      onClick: handleBackdropClick
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
+      className: "flex flex-wrap justify-center 2xl:justify-start gap-4 mt-6",
+      children: _utils_constants__WEBPACK_IMPORTED_MODULE_7__.officesSectionCountries.map(item => {
+        const countryName = t(item.country_key);
+        const office = {
+          country_name: countryName,
+          address: item.location_key ? t(item.location_key) : "",
+          email: item.email_key ? t(item.email_key) : "",
+          icon: item.icon
+        };
+        const isOpen = activeCountry === countryName;
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+          className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.cn)("relative transition-all", isOpen ? "z-20" : "z-0"),
+          onMouseEnter: () => handleMouseEnter(countryName),
+          onMouseLeave: handleMouseLeave,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_library_AppButton__WEBPACK_IMPORTED_MODULE_0__["default"], {
+            variant: "quaternary",
+            text: countryName,
+            withLeftIcon: true,
+            leftIcon: item.icon,
+            iconRounded: true,
+            onClick: () => handleClick(countryName)
+          }), isOpen && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_library_OfficePopover__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            office: office
+          })]
+        }, item.country_key);
+      })
+    })]
+  });
+}
+
+/* --------------------------------------------
+ * OfficesSection
+ * ------------------------------------------ */
+
+function OfficesSection() {
+  const {
+    t
+  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_8__.useTranslation)();
+  const [activeCountry, setActiveCountry] = (0,react__WEBPACK_IMPORTED_MODULE_9__.useState)(null);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
+    className: "bg-linear-to-b from-[#FAF5FF] to-[#FFFFFF]",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(_library_Container__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.cn)("flex 2xl:flex-row flex-col-reverse", _styles_themeGuide__WEBPACK_IMPORTED_MODULE_12__.themeGuide.sectionPaddingY, "justify-center items-center gap-x-8"),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+        className: "2xl:w-[50%] w-full flex flex-col items-center",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
+          className: "relative w-full h-auto",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_svgs_Map__WEBPACK_IMPORTED_MODULE_10__["default"], {
+            activeCountry: activeCountry
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
+          className: "block 2xl:hidden w-full",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(CountryButtons, {
+            onActiveChange: setActiveCountry
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+        className: " flex flex-col 2xl:w-[50%] w-full 2xl:items-start items-center ",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_styles_badge__WEBPACK_IMPORTED_MODULE_6__.Badge, {
+          variant: "toolkit",
+          size: "default",
+          children: t("our_offices_section.badge")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_library_HighlightedHeading__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          text: t("our_offices_section.title"),
+          highlight: t("our_offices_section.title_heading"),
+          className: " text-2xl 2xl:text-start text-center font-semibold mt-2 "
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_library_Description__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          className: " md:text-base text-sm 2xl:text-start text-center mb-2 w-full ",
+          children: t("our_offices_section.description")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_library_AppButton__WEBPACK_IMPORTED_MODULE_0__["default"], {
+          to: "/book-a-demo",
+          text: t("header.book_a_demo"),
+          withLeftIcon: true,
+          leftIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_11__["default"], {
+            className: "size-5"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
+          className: "hidden 2xl:block w-full",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(CountryButtons, {
+            onActiveChange: setActiveCountry
+          })
+        })]
+      })]
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./src/scripts/components/svgs/Map.jsx":
+/*!*********************************************!*\
+  !*** ./src/scripts/components/svgs/Map.jsx ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Map)
+/* harmony export */ });
+/* harmony import */ var _lib_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../lib/util */ "./src/lib/util.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function Map({
+  className,
+  activeCountry
+}) {
+  const isActive = country => activeCountry === country;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+    viewBox: "0 0 672 375",
+    preserveAspectRatio: "xMidYMid meet",
+    className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_0__.cn)("w-full h-full", className),
+    xmlns: "http://www.w3.org/2000/svg",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("g", {
+      opacity: "0.5",
+      filter: "url(#filter0_d_127_456)",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 308.615C207.985 308.615 209.332 307.271 209.332 305.613C209.332 303.956 207.985 302.612 206.323 302.612C204.661 302.612 203.314 303.956 203.314 305.613C203.314 307.271 204.661 308.615 206.323 308.615Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M197.974 308.615C199.636 308.615 200.984 307.271 200.984 305.613C200.984 303.956 199.636 302.612 197.974 302.612C196.312 302.612 194.965 303.956 194.965 305.613C194.965 307.271 196.312 308.615 197.974 308.615Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 300.385C207.985 300.385 209.332 299.041 209.332 297.384C209.332 295.726 207.985 294.382 206.323 294.382C204.661 294.382 203.314 295.726 203.314 297.384C203.314 299.041 204.661 300.385 206.323 300.385Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M197.974 300.385C199.636 300.385 200.984 299.041 200.984 297.384C200.984 295.726 199.636 294.382 197.974 294.382C196.312 294.382 194.965 295.726 194.965 297.384C194.965 299.041 196.312 300.385 197.974 300.385Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M590.541 292.155C592.203 292.155 593.551 290.812 593.551 289.154C593.551 287.496 592.203 286.153 590.541 286.153C588.879 286.153 587.532 287.496 587.532 289.154C587.532 290.812 588.879 292.155 590.541 292.155Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 292.155C207.985 292.155 209.332 290.812 209.332 289.154C209.332 287.496 207.985 286.153 206.323 286.153C204.661 286.153 203.314 287.496 203.314 289.154C203.314 290.812 204.661 292.155 206.323 292.155Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M197.974 292.155C199.636 292.155 200.984 290.812 200.984 289.154C200.984 287.496 199.636 286.153 197.974 286.153C196.312 286.153 194.965 287.496 194.965 289.154C194.965 290.812 196.312 292.155 197.974 292.155Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M598.89 283.926C600.552 283.926 601.899 282.582 601.899 280.924C601.899 279.267 600.552 277.923 598.89 277.923C597.228 277.923 595.88 279.267 595.88 280.924C595.88 282.582 597.228 283.926 598.89 283.926Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M557.148 283.926C558.81 283.926 560.157 282.582 560.157 280.924C560.157 279.267 558.81 277.923 557.148 277.923C555.486 277.923 554.139 279.267 554.139 280.924C554.139 282.582 555.486 283.926 557.148 283.926Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 283.926C207.985 283.926 209.332 282.582 209.332 280.924C209.332 279.267 207.985 277.923 206.323 277.923C204.661 277.923 203.314 279.267 203.314 280.924C203.314 282.582 204.661 283.926 206.323 283.926Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M197.974 283.926C199.636 283.926 200.984 282.582 200.984 280.924C200.984 279.267 199.636 277.923 197.974 277.923C196.312 277.923 194.965 279.267 194.965 280.924C194.965 282.582 196.312 283.926 197.974 283.926Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M557.148 275.696C558.81 275.696 560.157 274.352 560.157 272.695C560.157 271.037 558.81 269.693 557.148 269.693C555.486 269.693 554.139 271.037 554.139 272.695C554.139 274.352 555.486 275.696 557.148 275.696Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M548.8 275.696C550.462 275.696 551.809 274.352 551.809 272.695C551.809 271.037 550.462 269.693 548.8 269.693C547.138 269.693 545.79 271.037 545.79 272.695C545.79 274.352 547.138 275.696 548.8 275.696Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M223.02 275.696C224.682 275.696 226.029 274.352 226.029 272.695C226.029 271.037 224.682 269.693 223.02 269.693C221.358 269.693 220.01 271.037 220.01 272.695C220.01 274.352 221.358 275.696 223.02 275.696Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M214.671 275.696C216.333 275.696 217.68 274.352 217.68 272.695C217.68 271.037 216.333 269.693 214.671 269.693C213.009 269.693 211.662 271.037 211.662 272.695C211.662 274.352 213.009 275.696 214.671 275.696Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 275.696C207.985 275.696 209.332 274.352 209.332 272.695C209.332 271.037 207.985 269.693 206.323 269.693C204.661 269.693 203.314 271.037 203.314 272.695C203.314 274.352 204.661 275.696 206.323 275.696Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M197.974 275.696C199.636 275.696 200.984 274.352 200.984 272.695C200.984 271.037 199.636 269.693 197.974 269.693C196.312 269.693 194.965 271.037 194.965 272.695C194.965 274.352 196.312 275.696 197.974 275.696Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M557.148 267.466C558.81 267.466 560.157 266.123 560.157 264.465C560.157 262.807 558.81 261.464 557.148 261.464C555.486 261.464 554.139 262.807 554.139 264.465C554.139 266.123 555.486 267.466 557.148 267.466Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M548.8 267.466C550.462 267.466 551.809 266.123 551.809 264.465C551.809 262.807 550.462 261.464 548.8 261.464C547.138 261.464 545.79 262.807 545.79 264.465C545.79 266.123 547.138 267.466 548.8 267.466Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M540.451 267.466C542.113 267.466 543.46 266.123 543.46 264.465C543.46 262.807 542.113 261.464 540.451 261.464C538.789 261.464 537.442 262.807 537.442 264.465C537.442 266.123 538.789 267.466 540.451 267.466Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M515.406 267.466C517.068 267.466 518.415 266.123 518.415 264.465C518.415 262.807 517.068 261.464 515.406 261.464C513.744 261.464 512.397 262.807 512.397 264.465C512.397 266.123 513.744 267.466 515.406 267.466Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M507.058 267.466C508.72 267.466 510.067 266.123 510.067 264.465C510.067 262.807 508.72 261.464 507.058 261.464C505.396 261.464 504.048 262.807 504.048 264.465C504.048 266.123 505.396 267.466 507.058 267.466Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 267.466C358.352 267.466 359.7 266.123 359.7 264.465C359.7 262.807 358.352 261.464 356.69 261.464C355.028 261.464 353.681 262.807 353.681 264.465C353.681 266.123 355.028 267.466 356.69 267.466Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M348.342 267.466C350.004 267.466 351.351 266.123 351.351 264.465C351.351 262.807 350.004 261.464 348.342 261.464C346.68 261.464 345.333 262.807 345.333 264.465C345.333 266.123 346.68 267.466 348.342 267.466Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M231.368 267.466C233.03 267.466 234.377 266.123 234.377 264.465C234.377 262.807 233.03 261.464 231.368 261.464C229.706 261.464 228.359 262.807 228.359 264.465C228.359 266.123 229.706 267.466 231.368 267.466Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M223.02 267.466C224.682 267.466 226.029 266.123 226.029 264.465C226.029 262.807 224.682 261.464 223.02 261.464C221.358 261.464 220.01 262.807 220.01 264.465C220.01 266.123 221.358 267.466 223.02 267.466Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M214.671 267.466C216.333 267.466 217.68 266.123 217.68 264.465C217.68 262.807 216.333 261.464 214.671 261.464C213.009 261.464 211.662 262.807 211.662 264.465C211.662 266.123 213.009 267.466 214.671 267.466Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 267.466C207.985 267.466 209.332 266.123 209.332 264.465C209.332 262.807 207.985 261.464 206.323 261.464C204.661 261.464 203.314 262.807 203.314 264.465C203.314 266.123 204.661 267.466 206.323 267.466Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M565.496 259.237C567.158 259.237 568.506 257.893 568.506 256.235C568.506 254.578 567.158 253.234 565.496 253.234C563.834 253.234 562.487 254.578 562.487 256.235C562.487 257.893 563.834 259.237 565.496 259.237Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M557.148 259.237C558.81 259.237 560.157 257.893 560.157 256.235C560.157 254.578 558.81 253.234 557.148 253.234C555.486 253.234 554.139 254.578 554.139 256.235C554.139 257.893 555.486 259.237 557.148 259.237Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M548.8 259.237C550.462 259.237 551.809 257.893 551.809 256.235C551.809 254.578 550.462 253.234 548.8 253.234C547.138 253.234 545.79 254.578 545.79 256.235C545.79 257.893 547.138 259.237 548.8 259.237Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M540.451 259.237C542.113 259.237 543.46 257.893 543.46 256.235C543.46 254.578 542.113 253.234 540.451 253.234C538.789 253.234 537.442 254.578 537.442 256.235C537.442 257.893 538.789 259.237 540.451 259.237Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M532.103 259.237C533.765 259.237 535.112 257.893 535.112 256.235C535.112 254.578 533.765 253.234 532.103 253.234C530.441 253.234 529.094 254.578 529.094 256.235C529.094 257.893 530.441 259.237 532.103 259.237Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M523.754 259.237C525.416 259.237 526.764 257.893 526.764 256.235C526.764 254.578 525.416 253.234 523.754 253.234C522.093 253.234 520.745 254.578 520.745 256.235C520.745 257.893 522.093 259.237 523.754 259.237Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M515.406 259.237C517.068 259.237 518.415 257.893 518.415 256.235C518.415 254.578 517.068 253.234 515.406 253.234C513.744 253.234 512.397 254.578 512.397 256.235C512.397 257.893 513.744 259.237 515.406 259.237Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M507.058 259.237C508.72 259.237 510.067 257.893 510.067 256.235C510.067 254.578 508.72 253.234 507.058 253.234C505.396 253.234 504.048 254.578 504.048 256.235C504.048 257.893 505.396 259.237 507.058 259.237Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M365.039 259.237C366.701 259.237 368.048 257.893 368.048 256.235C368.048 254.578 366.701 253.234 365.039 253.234C363.377 253.234 362.029 254.578 362.029 256.235C362.029 257.893 363.377 259.237 365.039 259.237Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 259.237C358.352 259.237 359.7 257.893 359.7 256.235C359.7 254.578 358.352 253.234 356.69 253.234C355.028 253.234 353.681 254.578 353.681 256.235C353.681 257.893 355.028 259.237 356.69 259.237Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M348.342 259.237C350.004 259.237 351.351 257.893 351.351 256.235C351.351 254.578 350.004 253.234 348.342 253.234C346.68 253.234 345.333 254.578 345.333 256.235C345.333 257.893 346.68 259.237 348.342 259.237Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M231.368 259.237C233.03 259.237 234.377 257.893 234.377 256.235C234.377 254.578 233.03 253.234 231.368 253.234C229.706 253.234 228.359 254.578 228.359 256.235C228.359 257.893 229.706 259.237 231.368 259.237Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M223.02 259.237C224.682 259.237 226.029 257.893 226.029 256.235C226.029 254.578 224.682 253.234 223.02 253.234C221.358 253.234 220.01 254.578 220.01 256.235C220.01 257.893 221.358 259.237 223.02 259.237Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M214.671 259.237C216.333 259.237 217.68 257.893 217.68 256.235C217.68 254.578 216.333 253.234 214.671 253.234C213.009 253.234 211.662 254.578 211.662 256.235C211.662 257.893 213.009 259.237 214.671 259.237Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 259.237C207.985 259.237 209.332 257.893 209.332 256.235C209.332 254.578 207.985 253.234 206.323 253.234C204.661 253.234 203.314 254.578 203.314 256.235C203.314 257.893 204.661 259.237 206.323 259.237Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M557.148 251.104C558.81 251.104 560.157 249.76 560.157 248.102C560.157 246.445 558.81 245.101 557.148 245.101C555.486 245.101 554.139 246.445 554.139 248.102C554.139 249.76 555.486 251.104 557.148 251.104Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M548.8 251.104C550.462 251.104 551.809 249.76 551.809 248.102C551.809 246.445 550.462 245.101 548.8 245.101C547.138 245.101 545.79 246.445 545.79 248.102C545.79 249.76 547.138 251.104 548.8 251.104Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M540.451 251.104C542.113 251.104 543.46 249.76 543.46 248.102C543.46 246.445 542.113 245.101 540.451 245.101C538.789 245.101 537.442 246.445 537.442 248.102C537.442 249.76 538.789 251.104 540.451 251.104Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M532.103 251.104C533.765 251.104 535.112 249.76 535.112 248.102C535.112 246.445 533.765 245.101 532.103 245.101C530.441 245.101 529.094 246.445 529.094 248.102C529.094 249.76 530.441 251.104 532.103 251.104Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M523.754 251.104C525.416 251.104 526.764 249.76 526.764 248.102C526.764 246.445 525.416 245.101 523.754 245.101C522.093 245.101 520.745 246.445 520.745 248.102C520.745 249.76 522.093 251.104 523.754 251.104Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M515.406 251.104C517.068 251.104 518.415 249.76 518.415 248.102C518.415 246.445 517.068 245.101 515.406 245.101C513.744 245.101 512.397 246.445 512.397 248.102C512.397 249.76 513.744 251.104 515.406 251.104Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M507.058 251.104C508.72 251.104 510.067 249.76 510.067 248.102C510.067 246.445 508.72 245.101 507.058 245.101C505.396 245.101 504.048 246.445 504.048 248.102C504.048 249.76 505.396 251.104 507.058 251.104Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M498.709 251.104C500.371 251.104 501.719 249.76 501.719 248.102C501.719 246.445 500.371 245.101 498.709 245.101C497.047 245.101 495.7 246.445 495.7 248.102C495.7 249.76 497.047 251.104 498.709 251.104Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M390.084 251.104C391.746 251.104 393.093 249.76 393.093 248.102C393.093 246.445 391.746 245.101 390.084 245.101C388.422 245.101 387.074 246.445 387.074 248.102C387.074 249.76 388.422 251.104 390.084 251.104Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M373.387 251.104C375.049 251.104 376.396 249.76 376.396 248.102C376.396 246.445 375.049 245.101 373.387 245.101C371.725 245.101 370.378 246.445 370.378 248.102C370.378 249.76 371.725 251.104 373.387 251.104Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M365.039 251.104C366.701 251.104 368.048 249.76 368.048 248.102C368.048 246.445 366.701 245.101 365.039 245.101C363.377 245.101 362.029 246.445 362.029 248.102C362.029 249.76 363.377 251.104 365.039 251.104Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 251.104C358.352 251.104 359.7 249.76 359.7 248.102C359.7 246.445 358.352 245.101 356.69 245.101C355.028 245.101 353.681 246.445 353.681 248.102C353.681 249.76 355.028 251.104 356.69 251.104Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M348.342 251.104C350.004 251.104 351.351 249.76 351.351 248.102C351.351 246.445 350.004 245.101 348.342 245.101C346.68 245.101 345.333 246.445 345.333 248.102C345.333 249.76 346.68 251.104 348.342 251.104Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M239.716 251.104C241.378 251.104 242.726 249.76 242.726 248.102C242.726 246.445 241.378 245.101 239.716 245.101C238.054 245.101 236.707 246.445 236.707 248.102C236.707 249.76 238.054 251.104 239.716 251.104Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M231.368 251.104C233.03 251.104 234.377 249.76 234.377 248.102C234.377 246.445 233.03 245.101 231.368 245.101C229.706 245.101 228.359 246.445 228.359 248.102C228.359 249.76 229.706 251.104 231.368 251.104Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M223.02 251.104C224.682 251.104 226.029 249.76 226.029 248.102C226.029 246.445 224.682 245.101 223.02 245.101C221.358 245.101 220.01 246.445 220.01 248.102C220.01 249.76 221.358 251.104 223.02 251.104Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M214.671 251.104C216.333 251.104 217.68 249.76 217.68 248.102C217.68 246.445 216.333 245.101 214.671 245.101C213.009 245.101 211.662 246.445 211.662 248.102C211.662 249.76 213.009 251.104 214.671 251.104Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 251.104C207.985 251.104 209.332 249.76 209.332 248.102C209.332 246.445 207.985 245.101 206.323 245.101C204.661 245.101 203.314 246.445 203.314 248.102C203.314 249.76 204.661 251.104 206.323 251.104Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M548.8 242.874C550.462 242.874 551.809 241.53 551.809 239.873C551.809 238.215 550.462 236.871 548.8 236.871C547.138 236.871 545.79 238.215 545.79 239.873C545.79 241.53 547.138 242.874 548.8 242.874Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M540.451 242.874C542.113 242.874 543.46 241.53 543.46 239.873C543.46 238.215 542.113 236.871 540.451 236.871C538.789 236.871 537.442 238.215 537.442 239.873C537.442 241.53 538.789 242.874 540.451 242.874Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M532.103 242.874C533.765 242.874 535.112 241.53 535.112 239.873C535.112 238.215 533.765 236.871 532.103 236.871C530.441 236.871 529.094 238.215 529.094 239.873C529.094 241.53 530.441 242.874 532.103 242.874Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M523.754 242.874C525.416 242.874 526.764 241.53 526.764 239.873C526.764 238.215 525.416 236.871 523.754 236.871C522.093 236.871 520.745 238.215 520.745 239.873C520.745 241.53 522.093 242.874 523.754 242.874Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M515.406 242.874C517.068 242.874 518.415 241.53 518.415 239.873C518.415 238.215 517.068 236.871 515.406 236.871C513.744 236.871 512.397 238.215 512.397 239.873C512.397 241.53 513.744 242.874 515.406 242.874Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M390.084 242.874C391.746 242.874 393.093 241.53 393.093 239.873C393.093 238.215 391.746 236.871 390.084 236.871C388.422 236.871 387.074 238.215 387.074 239.873C387.074 241.53 388.422 242.874 390.084 242.874Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M373.387 242.874C375.049 242.874 376.396 241.53 376.396 239.873C376.396 238.215 375.049 236.871 373.387 236.871C371.725 236.871 370.378 238.215 370.378 239.873C370.378 241.53 371.725 242.874 373.387 242.874Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M365.039 242.874C366.701 242.874 368.048 241.53 368.048 239.873C368.048 238.215 366.701 236.871 365.039 236.871C363.377 236.871 362.029 238.215 362.029 239.873C362.029 241.53 363.377 242.874 365.039 242.874Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 242.874C358.352 242.874 359.7 241.53 359.7 239.873C359.7 238.215 358.352 236.871 356.69 236.871C355.028 236.871 353.681 238.215 353.681 239.873C353.681 241.53 355.028 242.874 356.69 242.874Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M348.342 242.874C350.004 242.874 351.351 241.53 351.351 239.873C351.351 238.215 350.004 236.871 348.342 236.871C346.68 236.871 345.333 238.215 345.333 239.873C345.333 241.53 346.68 242.874 348.342 242.874Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M339.994 242.874C341.656 242.874 343.003 241.53 343.003 239.873C343.003 238.215 341.656 236.871 339.994 236.871C338.332 236.871 336.984 238.215 336.984 239.873C336.984 241.53 338.332 242.874 339.994 242.874Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M248.162 242.874C249.824 242.874 251.171 241.53 251.171 239.873C251.171 238.215 249.824 236.871 248.162 236.871C246.5 236.871 245.152 238.215 245.152 239.873C245.152 241.53 246.5 242.874 248.162 242.874Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M239.716 242.874C241.378 242.874 242.726 241.53 242.726 239.873C242.726 238.215 241.378 236.871 239.716 236.871C238.054 236.871 236.707 238.215 236.707 239.873C236.707 241.53 238.054 242.874 239.716 242.874Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M231.368 242.874C233.03 242.874 234.377 241.53 234.377 239.873C234.377 238.215 233.03 236.871 231.368 236.871C229.706 236.871 228.359 238.215 228.359 239.873C228.359 241.53 229.706 242.874 231.368 242.874Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M223.02 242.874C224.682 242.874 226.029 241.53 226.029 239.873C226.029 238.215 224.682 236.871 223.02 236.871C221.358 236.871 220.01 238.215 220.01 239.873C220.01 241.53 221.358 242.874 223.02 242.874Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M214.671 242.874C216.333 242.874 217.68 241.53 217.68 239.873C217.68 238.215 216.333 236.871 214.671 236.871C213.009 236.871 211.662 238.215 211.662 239.873C211.662 241.53 213.009 242.874 214.671 242.874Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 242.874C207.985 242.874 209.332 241.53 209.332 239.873C209.332 238.215 207.985 236.871 206.323 236.871C204.661 236.871 203.314 238.215 203.314 239.873C203.314 241.53 204.661 242.874 206.323 242.874Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M548.8 234.645C550.462 234.645 551.809 233.301 551.809 231.643C551.809 229.986 550.462 228.642 548.8 228.642C547.138 228.642 545.79 229.986 545.79 231.643C545.79 233.301 547.138 234.645 548.8 234.645Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M532.103 234.645C533.765 234.645 535.112 233.301 535.112 231.643C535.112 229.986 533.765 228.642 532.103 228.642C530.441 228.642 529.094 229.986 529.094 231.643C529.094 233.301 530.441 234.645 532.103 234.645Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M523.754 234.645C525.416 234.645 526.764 233.301 526.764 231.643C526.764 229.986 525.416 228.642 523.754 228.642C522.093 228.642 520.745 229.986 520.745 231.643C520.745 233.301 522.093 234.645 523.754 234.645Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M398.432 234.645C400.094 234.645 401.441 233.301 401.441 231.643C401.441 229.986 400.094 228.642 398.432 228.642C396.77 228.642 395.423 229.986 395.423 231.643C395.423 233.301 396.77 234.645 398.432 234.645Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M381.735 234.645C383.397 234.645 384.745 233.301 384.745 231.643C384.745 229.986 383.397 228.642 381.735 228.642C380.073 228.642 378.726 229.986 378.726 231.643C378.726 233.301 380.073 234.645 381.735 234.645Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M373.387 234.645C375.049 234.645 376.396 233.301 376.396 231.643C376.396 229.986 375.049 228.642 373.387 228.642C371.725 228.642 370.378 229.986 370.378 231.643C370.378 233.301 371.725 234.645 373.387 234.645Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M365.039 234.645C366.701 234.645 368.048 233.301 368.048 231.643C368.048 229.986 366.701 228.642 365.039 228.642C363.377 228.642 362.029 229.986 362.029 231.643C362.029 233.301 363.377 234.645 365.039 234.645Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 234.645C358.352 234.645 359.7 233.301 359.7 231.643C359.7 229.986 358.352 228.642 356.69 228.642C355.028 228.642 353.681 229.986 353.681 231.643C353.681 233.301 355.028 234.645 356.69 234.645Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M348.342 234.645C350.004 234.645 351.351 233.301 351.351 231.643C351.351 229.986 350.004 228.642 348.342 228.642C346.68 228.642 345.333 229.986 345.333 231.643C345.333 233.301 346.68 234.645 348.342 234.645Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M339.994 234.645C341.656 234.645 343.003 233.301 343.003 231.643C343.003 229.986 341.656 228.642 339.994 228.642C338.332 228.642 336.984 229.986 336.984 231.643C336.984 233.301 338.332 234.645 339.994 234.645Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M248.162 234.645C249.824 234.645 251.171 233.301 251.171 231.643C251.171 229.986 249.824 228.642 248.162 228.642C246.5 228.642 245.152 229.986 245.152 231.643C245.152 233.301 246.5 234.645 248.162 234.645Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M239.716 234.645C241.378 234.645 242.726 233.301 242.726 231.643C242.726 229.986 241.378 228.642 239.716 228.642C238.054 228.642 236.707 229.986 236.707 231.643C236.707 233.301 238.054 234.645 239.716 234.645Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M231.368 234.645C233.03 234.645 234.377 233.301 234.377 231.643C234.377 229.986 233.03 228.642 231.368 228.642C229.706 228.642 228.359 229.986 228.359 231.643C228.359 233.301 229.706 234.645 231.368 234.645Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M223.02 234.645C224.682 234.645 226.029 233.301 226.029 231.643C226.029 229.986 224.682 228.642 223.02 228.642C221.358 228.642 220.01 229.986 220.01 231.643C220.01 233.301 221.358 234.645 223.02 234.645Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M214.671 234.645C216.333 234.645 217.68 233.301 217.68 231.643C217.68 229.986 216.333 228.642 214.671 228.642C213.009 228.642 211.662 229.986 211.662 231.643C211.662 233.301 213.009 234.645 214.671 234.645Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 234.645C207.985 234.645 209.332 233.301 209.332 231.643C209.332 229.986 207.985 228.642 206.323 228.642C204.661 228.642 203.314 229.986 203.314 231.643C203.314 233.301 204.661 234.645 206.323 234.645Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M197.974 234.645C199.636 234.645 200.984 233.301 200.984 231.643C200.984 229.986 199.636 228.642 197.974 228.642C196.312 228.642 194.965 229.986 194.965 231.643C194.965 233.301 196.312 234.645 197.974 234.645Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M557.148 226.415C558.81 226.415 560.157 225.071 560.157 223.413C560.157 221.756 558.81 220.412 557.148 220.412C555.486 220.412 554.139 221.756 554.139 223.413C554.139 225.071 555.486 226.415 557.148 226.415Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M548.8 226.415C550.462 226.415 551.809 225.071 551.809 223.413C551.809 221.756 550.462 220.412 548.8 220.412C547.138 220.412 545.79 221.756 545.79 223.413C545.79 225.071 547.138 226.415 548.8 226.415Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M507.058 226.415C508.72 226.415 510.067 225.071 510.067 223.413C510.067 221.756 508.72 220.412 507.058 220.412C505.396 220.412 504.048 221.756 504.048 223.413C504.048 225.071 505.396 226.415 507.058 226.415Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M381.735 226.415C383.397 226.415 384.745 225.071 384.745 223.413C384.745 221.756 383.397 220.412 381.735 220.412C380.073 220.412 378.726 221.756 378.726 223.413C378.726 225.071 380.073 226.415 381.735 226.415Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M373.387 226.415C375.049 226.415 376.396 225.071 376.396 223.413C376.396 221.756 375.049 220.412 373.387 220.412C371.725 220.412 370.378 221.756 370.378 223.413C370.378 225.071 371.725 226.415 373.387 226.415Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M365.039 226.415C366.701 226.415 368.048 225.071 368.048 223.413C368.048 221.756 366.701 220.412 365.039 220.412C363.377 220.412 362.029 221.756 362.029 223.413C362.029 225.071 363.377 226.415 365.039 226.415Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 226.415C358.352 226.415 359.7 225.071 359.7 223.413C359.7 221.756 358.352 220.412 356.69 220.412C355.028 220.412 353.681 221.756 353.681 223.413C353.681 225.071 355.028 226.415 356.69 226.415Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M348.342 226.415C350.004 226.415 351.351 225.071 351.351 223.413C351.351 221.756 350.004 220.412 348.342 220.412C346.68 220.412 345.333 221.756 345.333 223.413C345.333 225.071 346.68 226.415 348.342 226.415Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M339.994 226.415C341.656 226.415 343.003 225.071 343.003 223.413C343.003 221.756 341.656 220.412 339.994 220.412C338.332 220.412 336.984 221.756 336.984 223.413C336.984 225.071 338.332 226.415 339.994 226.415Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M256.51 226.415C258.172 226.415 259.519 225.071 259.519 223.413C259.519 221.756 258.172 220.412 256.51 220.412C254.848 220.412 253.501 221.756 253.501 223.413C253.501 225.071 254.848 226.415 256.51 226.415Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M248.162 226.415C249.824 226.415 251.171 225.071 251.171 223.413C251.171 221.756 249.824 220.412 248.162 220.412C246.5 220.412 245.152 221.756 245.152 223.413C245.152 225.071 246.5 226.415 248.162 226.415Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M239.716 226.415C241.378 226.415 242.726 225.071 242.726 223.413C242.726 221.756 241.378 220.412 239.716 220.412C238.054 220.412 236.707 221.756 236.707 223.413C236.707 225.071 238.054 226.415 239.716 226.415Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M231.368 226.415C233.03 226.415 234.377 225.071 234.377 223.413C234.377 221.756 233.03 220.412 231.368 220.412C229.706 220.412 228.359 221.756 228.359 223.413C228.359 225.071 229.706 226.415 231.368 226.415Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M223.02 226.415C224.682 226.415 226.029 225.071 226.029 223.413C226.029 221.756 224.682 220.412 223.02 220.412C221.358 220.412 220.01 221.756 220.01 223.413C220.01 225.071 221.358 226.415 223.02 226.415Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M214.671 226.415C216.333 226.415 217.68 225.071 217.68 223.413C217.68 221.756 216.333 220.412 214.671 220.412C213.009 220.412 211.662 221.756 211.662 223.413C211.662 225.071 213.009 226.415 214.671 226.415Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 226.415C207.985 226.415 209.332 225.071 209.332 223.413C209.332 221.756 207.985 220.412 206.323 220.412C204.661 220.412 203.314 221.756 203.314 223.413C203.314 225.071 204.661 226.415 206.323 226.415Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M197.974 226.415C199.636 226.415 200.984 225.071 200.984 223.413C200.984 221.756 199.636 220.412 197.974 220.412C196.312 220.412 194.965 221.756 194.965 223.413C194.965 225.071 196.312 226.415 197.974 226.415Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M189.626 226.415C191.288 226.415 192.635 225.071 192.635 223.413C192.635 221.756 191.288 220.412 189.626 220.412C187.964 220.412 186.617 221.756 186.617 223.413C186.617 225.071 187.964 226.415 189.626 226.415Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M565.496 218.185C567.158 218.185 568.506 216.842 568.506 215.184C568.506 213.526 567.158 212.182 565.496 212.182C563.834 212.182 562.487 213.526 562.487 215.184C562.487 216.842 563.834 218.185 565.496 218.185Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M557.148 218.185C558.81 218.185 560.157 216.842 560.157 215.184C560.157 213.526 558.81 212.182 557.148 212.182C555.486 212.182 554.139 213.526 554.139 215.184C554.139 216.842 555.486 218.185 557.148 218.185Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M548.8 218.185C550.462 218.185 551.809 216.842 551.809 215.184C551.809 213.526 550.462 212.182 548.8 212.182C547.138 212.182 545.79 213.526 545.79 215.184C545.79 216.842 547.138 218.185 548.8 218.185Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M540.451 218.185C542.113 218.185 543.46 216.842 543.46 215.184C543.46 213.526 542.113 212.182 540.451 212.182C538.789 212.182 537.442 213.526 537.442 215.184C537.442 216.842 538.789 218.185 540.451 218.185Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M515.406 218.185C517.068 218.185 518.415 216.842 518.415 215.184C518.415 213.526 517.068 212.182 515.406 212.182C513.744 212.182 512.397 213.526 512.397 215.184C512.397 216.842 513.744 218.185 515.406 218.185Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M482.013 218.185C483.675 218.185 485.022 216.842 485.022 215.184C485.022 213.526 483.675 212.182 482.013 212.182C480.351 212.182 479.003 213.526 479.003 215.184C479.003 216.842 480.351 218.185 482.013 218.185Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M381.735 218.185C383.397 218.185 384.745 216.842 384.745 215.184C384.745 213.526 383.397 212.182 381.735 212.182C380.073 212.182 378.726 213.526 378.726 215.184C378.726 216.842 380.073 218.185 381.735 218.185Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M373.387 218.185C375.049 218.185 376.396 216.842 376.396 215.184C376.396 213.526 375.049 212.182 373.387 212.182C371.725 212.182 370.378 213.526 370.378 215.184C370.378 216.842 371.725 218.185 373.387 218.185Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M365.039 218.185C366.701 218.185 368.048 216.842 368.048 215.184C368.048 213.526 366.701 212.182 365.039 212.182C363.377 212.182 362.029 213.526 362.029 215.184C362.029 216.842 363.377 218.185 365.039 218.185Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 218.185C358.352 218.185 359.7 216.842 359.7 215.184C359.7 213.526 358.352 212.182 356.69 212.182C355.028 212.182 353.681 213.526 353.681 215.184C353.681 216.842 355.028 218.185 356.69 218.185Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M348.342 218.185C350.004 218.185 351.351 216.842 351.351 215.184C351.351 213.526 350.004 212.182 348.342 212.182C346.68 212.182 345.333 213.526 345.333 215.184C345.333 216.842 346.68 218.185 348.342 218.185Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M339.994 218.185C341.656 218.185 343.003 216.842 343.003 215.184C343.003 213.526 341.656 212.182 339.994 212.182C338.332 212.182 336.984 213.526 336.984 215.184C336.984 216.842 338.332 218.185 339.994 218.185Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M256.51 218.185C258.172 218.185 259.519 216.842 259.519 215.184C259.519 213.526 258.172 212.182 256.51 212.182C254.848 212.182 253.501 213.526 253.501 215.184C253.501 216.842 254.848 218.185 256.51 218.185Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M248.162 218.185C249.824 218.185 251.171 216.842 251.171 215.184C251.171 213.526 249.824 212.182 248.162 212.182C246.5 212.182 245.152 213.526 245.152 215.184C245.152 216.842 246.5 218.185 248.162 218.185Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M239.716 218.185C241.378 218.185 242.726 216.842 242.726 215.184C242.726 213.526 241.378 212.182 239.716 212.182C238.054 212.182 236.707 213.526 236.707 215.184C236.707 216.842 238.054 218.185 239.716 218.185Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M231.368 218.185C233.03 218.185 234.377 216.842 234.377 215.184C234.377 213.526 233.03 212.182 231.368 212.182C229.706 212.182 228.359 213.526 228.359 215.184C228.359 216.842 229.706 218.185 231.368 218.185Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M223.02 218.185C224.682 218.185 226.029 216.842 226.029 215.184C226.029 213.526 224.682 212.182 223.02 212.182C221.358 212.182 220.01 213.526 220.01 215.184C220.01 216.842 221.358 218.185 223.02 218.185Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M214.671 218.185C216.333 218.185 217.68 216.842 217.68 215.184C217.68 213.526 216.333 212.182 214.671 212.182C213.009 212.182 211.662 213.526 211.662 215.184C211.662 216.842 213.009 218.185 214.671 218.185Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 218.185C207.985 218.185 209.332 216.842 209.332 215.184C209.332 213.526 207.985 212.182 206.323 212.182C204.661 212.182 203.314 213.526 203.314 215.184C203.314 216.842 204.661 218.185 206.323 218.185Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M197.974 218.185C199.636 218.185 200.984 216.842 200.984 215.184C200.984 213.526 199.636 212.182 197.974 212.182C196.312 212.182 194.965 213.526 194.965 215.184C194.965 216.842 196.312 218.185 197.974 218.185Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M189.626 218.185C191.288 218.185 192.635 216.842 192.635 215.184C192.635 213.526 191.288 212.182 189.626 212.182C187.964 212.182 186.617 213.526 186.617 215.184C186.617 216.842 187.964 218.185 189.626 218.185Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M523.754 209.956C525.416 209.956 526.764 208.612 526.764 206.954C526.764 205.297 525.416 203.953 523.754 203.953C522.093 203.953 520.745 205.297 520.745 206.954C520.745 208.612 522.093 209.956 523.754 209.956Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M515.406 209.956C517.068 209.956 518.415 208.612 518.415 206.954C518.415 205.297 517.068 203.953 515.406 203.953C513.744 203.953 512.397 205.297 512.397 206.954C512.397 208.612 513.744 209.956 515.406 209.956Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M507.058 209.956C508.72 209.956 510.067 208.612 510.067 206.954C510.067 205.297 508.72 203.953 507.058 203.953C505.396 203.953 504.048 205.297 504.048 206.954C504.048 208.612 505.396 209.956 507.058 209.956Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M498.709 209.956C500.371 209.956 501.719 208.612 501.719 206.954C501.719 205.297 500.371 203.953 498.709 203.953C497.047 203.953 495.7 205.297 495.7 206.954C495.7 208.612 497.047 209.956 498.709 209.956Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M482.013 209.956C483.675 209.956 485.022 208.612 485.022 206.954C485.022 205.297 483.675 203.953 482.013 203.953C480.351 203.953 479.003 205.297 479.003 206.954C479.003 208.612 480.351 209.956 482.013 209.956Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M381.735 209.956C383.397 209.956 384.745 208.612 384.745 206.954C384.745 205.297 383.397 203.953 381.735 203.953C380.073 203.953 378.726 205.297 378.726 206.954C378.726 208.612 380.073 209.956 381.735 209.956Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M373.387 209.956C375.049 209.956 376.396 208.612 376.396 206.954C376.396 205.297 375.049 203.953 373.387 203.953C371.725 203.953 370.378 205.297 370.378 206.954C370.378 208.612 371.725 209.956 373.387 209.956Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M365.039 209.956C366.701 209.956 368.048 208.612 368.048 206.954C368.048 205.297 366.701 203.953 365.039 203.953C363.377 203.953 362.029 205.297 362.029 206.954C362.029 208.612 363.377 209.956 365.039 209.956Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 209.956C358.352 209.956 359.7 208.612 359.7 206.954C359.7 205.297 358.352 203.953 356.69 203.953C355.028 203.953 353.681 205.297 353.681 206.954C353.681 208.612 355.028 209.956 356.69 209.956Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M348.342 209.956C350.004 209.956 351.351 208.612 351.351 206.954C351.351 205.297 350.004 203.953 348.342 203.953C346.68 203.953 345.333 205.297 345.333 206.954C345.333 208.612 346.68 209.956 348.342 209.956Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M339.994 209.956C341.656 209.956 343.003 208.612 343.003 206.954C343.003 205.297 341.656 203.953 339.994 203.953C338.332 203.953 336.984 205.297 336.984 206.954C336.984 208.612 338.332 209.956 339.994 209.956Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M231.368 209.956C233.03 209.956 234.377 208.612 234.377 206.954C234.377 205.297 233.03 203.953 231.368 203.953C229.706 203.953 228.359 205.297 228.359 206.954C228.359 208.612 229.706 209.956 231.368 209.956Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M223.02 209.956C224.682 209.956 226.029 208.612 226.029 206.954C226.029 205.297 224.682 203.953 223.02 203.953C221.358 203.953 220.01 205.297 220.01 206.954C220.01 208.612 221.358 209.956 223.02 209.956Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M214.671 209.956C216.333 209.956 217.68 208.612 217.68 206.954C217.68 205.297 216.333 203.953 214.671 203.953C213.009 203.953 211.662 205.297 211.662 206.954C211.662 208.612 213.009 209.956 214.671 209.956Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 209.956C207.985 209.956 209.332 208.612 209.332 206.954C209.332 205.297 207.985 203.953 206.323 203.953C204.661 203.953 203.314 205.297 203.314 206.954C203.314 208.612 204.661 209.956 206.323 209.956Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M197.974 209.956C199.636 209.956 200.984 208.612 200.984 206.954C200.984 205.297 199.636 203.953 197.974 203.953C196.312 203.953 194.965 205.297 194.965 206.954C194.965 208.612 196.312 209.956 197.974 209.956Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M189.626 209.956C191.288 209.956 192.635 208.612 192.635 206.954C192.635 205.297 191.288 203.953 189.626 203.953C187.964 203.953 186.617 205.297 186.617 206.954C186.617 208.612 187.964 209.956 189.626 209.956Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M507.058 201.726C508.72 201.726 510.067 200.382 510.067 198.725C510.067 197.067 508.72 195.723 507.058 195.723C505.396 195.723 504.048 197.067 504.048 198.725C504.048 200.382 505.396 201.726 507.058 201.726Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M482.013 201.726C483.675 201.726 485.022 200.382 485.022 198.725C485.022 197.067 483.675 195.723 482.013 195.723C480.351 195.723 479.003 197.067 479.003 198.725C479.003 200.382 480.351 201.726 482.013 201.726Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M473.664 201.726C475.326 201.726 476.674 200.382 476.674 198.725C476.674 197.067 475.326 195.723 473.664 195.723C472.002 195.723 470.655 197.067 470.655 198.725C470.655 200.382 472.002 201.726 473.664 201.726Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M448.619 201.726C450.281 201.726 451.629 200.382 451.629 198.725C451.629 197.067 450.281 195.723 448.619 195.723C446.957 195.723 445.61 197.067 445.61 198.725C445.61 200.382 446.957 201.726 448.619 201.726Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M390.084 201.726C391.746 201.726 393.093 200.382 393.093 198.725C393.093 197.067 391.746 195.723 390.084 195.723C388.422 195.723 387.074 197.067 387.074 198.725C387.074 200.382 388.422 201.726 390.084 201.726Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M381.735 201.726C383.397 201.726 384.745 200.382 384.745 198.725C384.745 197.067 383.397 195.723 381.735 195.723C380.073 195.723 378.726 197.067 378.726 198.725C378.726 200.382 380.073 201.726 381.735 201.726Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M373.387 201.726C375.049 201.726 376.396 200.382 376.396 198.725C376.396 197.067 375.049 195.723 373.387 195.723C371.725 195.723 370.378 197.067 370.378 198.725C370.378 200.382 371.725 201.726 373.387 201.726Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M365.039 201.726C366.701 201.726 368.048 200.382 368.048 198.725C368.048 197.067 366.701 195.723 365.039 195.723C363.377 195.723 362.029 197.067 362.029 198.725C362.029 200.382 363.377 201.726 365.039 201.726Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 201.726C358.352 201.726 359.7 200.382 359.7 198.725C359.7 197.067 358.352 195.723 356.69 195.723C355.028 195.723 353.681 197.067 353.681 198.725C353.681 200.382 355.028 201.726 356.69 201.726Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M348.342 201.726C350.004 201.726 351.351 200.382 351.351 198.725C351.351 197.067 350.004 195.723 348.342 195.723C346.68 195.723 345.333 197.067 345.333 198.725C345.333 200.382 346.68 201.726 348.342 201.726Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M339.994 201.726C341.656 201.726 343.003 200.382 343.003 198.725C343.003 197.067 341.656 195.723 339.994 195.723C338.332 195.723 336.984 197.067 336.984 198.725C336.984 200.382 338.332 201.726 339.994 201.726Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M331.645 201.726C333.307 201.726 334.655 200.382 334.655 198.725C334.655 197.067 333.307 195.723 331.645 195.723C329.983 195.723 328.636 197.067 328.636 198.725C328.636 200.382 329.983 201.726 331.645 201.726Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M314.948 201.726C316.61 201.726 317.958 200.382 317.958 198.725C317.958 197.067 316.61 195.723 314.948 195.723C313.287 195.723 311.939 197.067 311.939 198.725C311.939 200.382 313.287 201.726 314.948 201.726Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M306.6 201.726C308.262 201.726 309.609 200.382 309.609 198.725C309.609 197.067 308.262 195.723 306.6 195.723C304.938 195.723 303.591 197.067 303.591 198.725C303.591 200.382 304.938 201.726 306.6 201.726Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M231.368 201.726C233.03 201.726 234.377 200.382 234.377 198.725C234.377 197.067 233.03 195.723 231.368 195.723C229.706 195.723 228.359 197.067 228.359 198.725C228.359 200.382 229.706 201.726 231.368 201.726Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M223.02 201.726C224.682 201.726 226.029 200.382 226.029 198.725C226.029 197.067 224.682 195.723 223.02 195.723C221.358 195.723 220.01 197.067 220.01 198.725C220.01 200.382 221.358 201.726 223.02 201.726Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M214.671 201.726C216.333 201.726 217.68 200.382 217.68 198.725C217.68 197.067 216.333 195.723 214.671 195.723C213.009 195.723 211.662 197.067 211.662 198.725C211.662 200.382 213.009 201.726 214.671 201.726Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 201.726C207.985 201.726 209.332 200.382 209.332 198.725C209.332 197.067 207.985 195.723 206.323 195.723C204.661 195.723 203.314 197.067 203.314 198.725C203.314 200.382 204.661 201.726 206.323 201.726Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M197.974 201.726C199.636 201.726 200.984 200.382 200.984 198.725C200.984 197.067 199.636 195.723 197.974 195.723C196.312 195.723 194.965 197.067 194.965 198.725C194.965 200.382 196.312 201.726 197.974 201.726Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M515.406 193.593C517.068 193.593 518.415 192.249 518.415 190.592C518.415 188.934 517.068 187.59 515.406 187.59C513.744 187.59 512.397 188.934 512.397 190.592C512.397 192.249 513.744 193.593 515.406 193.593Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M490.361 193.593C492.023 193.593 493.37 192.249 493.37 190.592C493.37 188.934 492.023 187.59 490.361 187.59C488.699 187.59 487.352 188.934 487.352 190.592C487.352 192.249 488.699 193.593 490.361 193.593Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M398.432 193.593C400.094 193.593 401.441 192.249 401.441 190.592C401.441 188.934 400.094 187.59 398.432 187.59C396.77 187.59 395.423 188.934 395.423 190.592C395.423 192.249 396.77 193.593 398.432 193.593Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M390.084 193.593C391.746 193.593 393.093 192.249 393.093 190.592C393.093 188.934 391.746 187.59 390.084 187.59C388.422 187.59 387.074 188.934 387.074 190.592C387.074 192.249 388.422 193.593 390.084 193.593Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M381.735 193.593C383.397 193.593 384.745 192.249 384.745 190.592C384.745 188.934 383.397 187.59 381.735 187.59C380.073 187.59 378.726 188.934 378.726 190.592C378.726 192.249 380.073 193.593 381.735 193.593Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M373.387 193.593C375.049 193.593 376.396 192.249 376.396 190.592C376.396 188.934 375.049 187.59 373.387 187.59C371.725 187.59 370.378 188.934 370.378 190.592C370.378 192.249 371.725 193.593 373.387 193.593Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M365.039 193.593C366.701 193.593 368.048 192.249 368.048 190.592C368.048 188.934 366.701 187.59 365.039 187.59C363.377 187.59 362.029 188.934 362.029 190.592C362.029 192.249 363.377 193.593 365.039 193.593Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 193.593C358.352 193.593 359.7 192.249 359.7 190.592C359.7 188.934 358.352 187.59 356.69 187.59C355.028 187.59 353.681 188.934 353.681 190.592C353.681 192.249 355.028 193.593 356.69 193.593Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M348.342 193.593C350.004 193.593 351.351 192.249 351.351 190.592C351.351 188.934 350.004 187.59 348.342 187.59C346.68 187.59 345.333 188.934 345.333 190.592C345.333 192.249 346.68 193.593 348.342 193.593Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M339.994 193.593C341.656 193.593 343.003 192.249 343.003 190.592C343.003 188.934 341.656 187.59 339.994 187.59C338.332 187.59 336.984 188.934 336.984 190.592C336.984 192.249 338.332 193.593 339.994 193.593Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M331.645 193.593C333.307 193.593 334.655 192.249 334.655 190.592C334.655 188.934 333.307 187.59 331.645 187.59C329.983 187.59 328.636 188.934 328.636 190.592C328.636 192.249 329.983 193.593 331.645 193.593Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M323.297 193.593C324.959 193.593 326.306 192.249 326.306 190.592C326.306 188.934 324.959 187.59 323.297 187.59C321.635 187.59 320.288 188.934 320.288 190.592C320.288 192.249 321.635 193.593 323.297 193.593Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M314.948 193.593C316.61 193.593 317.958 192.249 317.958 190.592C317.958 188.934 316.61 187.59 314.948 187.59C313.287 187.59 311.939 188.934 311.939 190.592C311.939 192.249 313.287 193.593 314.948 193.593Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M306.6 193.593C308.262 193.593 309.609 192.249 309.609 190.592C309.609 188.934 308.262 187.59 306.6 187.59C304.938 187.59 303.591 188.934 303.591 190.592C303.591 192.249 304.938 193.593 306.6 193.593Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M298.252 193.593C299.914 193.593 301.261 192.249 301.261 190.592C301.261 188.934 299.914 187.59 298.252 187.59C296.59 187.59 295.243 188.934 295.243 190.592C295.243 192.249 296.59 193.593 298.252 193.593Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M214.671 193.593C216.333 193.593 217.68 192.249 217.68 190.592C217.68 188.934 216.333 187.59 214.671 187.59C213.009 187.59 211.662 188.934 211.662 190.592C211.662 192.249 213.009 193.593 214.671 193.593Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 193.593C207.985 193.593 209.332 192.249 209.332 190.592C209.332 188.934 207.985 187.59 206.323 187.59C204.661 187.59 203.314 188.934 203.314 190.592C203.314 192.249 204.661 193.593 206.323 193.593Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M197.974 193.593C199.636 193.593 200.984 192.249 200.984 190.592C200.984 188.934 199.636 187.59 197.974 187.59C196.312 187.59 194.965 188.934 194.965 190.592C194.965 192.249 196.312 193.593 197.974 193.593Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M181.278 193.593C182.94 193.593 184.287 192.249 184.287 190.592C184.287 188.934 182.94 187.59 181.278 187.59C179.616 187.59 178.268 188.934 178.268 190.592C178.268 192.249 179.616 193.593 181.278 193.593Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M515.406 185.363C517.068 185.363 518.415 184.02 518.415 182.362C518.415 180.704 517.068 179.361 515.406 179.361C513.744 179.361 512.397 180.704 512.397 182.362C512.397 184.02 513.744 185.363 515.406 185.363Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M490.361 185.363C492.023 185.363 493.37 184.02 493.37 182.362C493.37 180.704 492.023 179.361 490.361 179.361C488.699 179.361 487.352 180.704 487.352 182.362C487.352 184.02 488.699 185.363 490.361 185.363Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M482.013 185.363C483.675 185.363 485.022 184.02 485.022 182.362C485.022 180.704 483.675 179.361 482.013 179.361C480.351 179.361 479.003 180.704 479.003 182.362C479.003 184.02 480.351 185.363 482.013 185.363Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M473.664 185.363C475.326 185.363 476.674 184.02 476.674 182.362C476.674 180.704 475.326 179.361 473.664 179.361C472.002 179.361 470.655 180.704 470.655 182.362C470.655 184.02 472.002 185.363 473.664 185.363Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M448.619 185.363C450.281 185.363 451.629 184.02 451.629 182.362C451.629 180.704 450.281 179.361 448.619 179.361C446.957 179.361 445.61 180.704 445.61 182.362C445.61 184.02 446.957 185.363 448.619 185.363Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M440.271 185.363C441.933 185.363 443.28 184.02 443.28 182.362C443.28 180.704 441.933 179.361 440.271 179.361C438.609 179.361 437.262 180.704 437.262 182.362C437.262 184.02 438.609 185.363 440.271 185.363Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M398.432 185.363C400.094 185.363 401.441 184.02 401.441 182.362C401.441 180.704 400.094 179.361 398.432 179.361C396.77 179.361 395.423 180.704 395.423 182.362C395.423 184.02 396.77 185.363 398.432 185.363Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M390.084 185.363C391.746 185.363 393.093 184.02 393.093 182.362C393.093 180.704 391.746 179.361 390.084 179.361C388.422 179.361 387.074 180.704 387.074 182.362C387.074 184.02 388.422 185.363 390.084 185.363Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M381.735 185.363C383.397 185.363 384.745 184.02 384.745 182.362C384.745 180.704 383.397 179.361 381.735 179.361C380.073 179.361 378.726 180.704 378.726 182.362C378.726 184.02 380.073 185.363 381.735 185.363Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M373.387 185.363C375.049 185.363 376.396 184.02 376.396 182.362C376.396 180.704 375.049 179.361 373.387 179.361C371.725 179.361 370.378 180.704 370.378 182.362C370.378 184.02 371.725 185.363 373.387 185.363Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M365.039 185.363C366.701 185.363 368.048 184.02 368.048 182.362C368.048 180.704 366.701 179.361 365.039 179.361C363.377 179.361 362.029 180.704 362.029 182.362C362.029 184.02 363.377 185.363 365.039 185.363Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 185.363C358.352 185.363 359.7 184.02 359.7 182.362C359.7 180.704 358.352 179.361 356.69 179.361C355.028 179.361 353.681 180.704 353.681 182.362C353.681 184.02 355.028 185.363 356.69 185.363Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M348.342 185.363C350.004 185.363 351.351 184.02 351.351 182.362C351.351 180.704 350.004 179.361 348.342 179.361C346.68 179.361 345.333 180.704 345.333 182.362C345.333 184.02 346.68 185.363 348.342 185.363Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M339.994 185.363C341.656 185.363 343.003 184.02 343.003 182.362C343.003 180.704 341.656 179.361 339.994 179.361C338.332 179.361 336.984 180.704 336.984 182.362C336.984 184.02 338.332 185.363 339.994 185.363Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M331.645 185.363C333.307 185.363 334.655 184.02 334.655 182.362C334.655 180.704 333.307 179.361 331.645 179.361C329.983 179.361 328.636 180.704 328.636 182.362C328.636 184.02 329.983 185.363 331.645 185.363Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M323.297 185.363C324.959 185.363 326.306 184.02 326.306 182.362C326.306 180.704 324.959 179.361 323.297 179.361C321.635 179.361 320.288 180.704 320.288 182.362C320.288 184.02 321.635 185.363 323.297 185.363Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M314.948 185.363C316.61 185.363 317.958 184.02 317.958 182.362C317.958 180.704 316.61 179.361 314.948 179.361C313.287 179.361 311.939 180.704 311.939 182.362C311.939 184.02 313.287 185.363 314.948 185.363Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M306.6 185.363C308.262 185.363 309.609 184.02 309.609 182.362C309.609 180.704 308.262 179.361 306.6 179.361C304.938 179.361 303.591 180.704 303.591 182.362C303.591 184.02 304.938 185.363 306.6 185.363Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M298.252 185.363C299.914 185.363 301.261 184.02 301.261 182.362C301.261 180.704 299.914 179.361 298.252 179.361C296.59 179.361 295.243 180.704 295.243 182.362C295.243 184.02 296.59 185.363 298.252 185.363Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M289.903 185.363C291.565 185.363 292.913 184.02 292.913 182.362C292.913 180.704 291.565 179.361 289.903 179.361C288.241 179.361 286.894 180.704 286.894 182.362C286.894 184.02 288.241 185.363 289.903 185.363Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M181.278 185.363C182.94 185.363 184.287 184.02 184.287 182.362C184.287 180.704 182.94 179.361 181.278 179.361C179.616 179.361 178.268 180.704 178.268 182.362C178.268 184.02 179.616 185.363 181.278 185.363Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M172.929 185.363C174.591 185.363 175.939 184.02 175.939 182.362C175.939 180.704 174.591 179.361 172.929 179.361C171.267 179.361 169.92 180.704 169.92 182.362C169.92 184.02 171.267 185.363 172.929 185.363Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M164.581 185.363C166.243 185.363 167.59 184.02 167.59 182.362C167.59 180.704 166.243 179.361 164.581 179.361C162.919 179.361 161.572 180.704 161.572 182.362C161.572 184.02 162.919 185.363 164.581 185.363Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M156.233 185.363C157.895 185.363 159.242 184.02 159.242 182.362C159.242 180.704 157.895 179.361 156.233 179.361C154.571 179.361 153.223 180.704 153.223 182.362C153.223 184.02 154.571 185.363 156.233 185.363Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M490.361 177.134C492.023 177.134 493.37 175.79 493.37 174.132C493.37 172.475 492.023 171.131 490.361 171.131C488.699 171.131 487.352 172.475 487.352 174.132C487.352 175.79 488.699 177.134 490.361 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M482.013 177.134C483.675 177.134 485.022 175.79 485.022 174.132C485.022 172.475 483.675 171.131 482.013 171.131C480.351 171.131 479.003 172.475 479.003 174.132C479.003 175.79 480.351 177.134 482.013 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M473.664 177.134C475.326 177.134 476.674 175.79 476.674 174.132C476.674 172.475 475.326 171.131 473.664 171.131C472.002 171.131 470.655 172.475 470.655 174.132C470.655 175.79 472.002 177.134 473.664 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M456.968 177.134C458.63 177.134 459.977 175.79 459.977 174.132C459.977 172.475 458.63 171.131 456.968 171.131C455.306 171.131 453.958 172.475 453.958 174.132C453.958 175.79 455.306 177.134 456.968 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M448.619 177.134C450.281 177.134 451.629 175.79 451.629 174.132C451.629 172.475 450.281 171.131 448.619 171.131C446.957 171.131 445.61 172.475 445.61 174.132C445.61 175.79 446.957 177.134 448.619 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M440.271 177.134C441.933 177.134 443.28 175.79 443.28 174.132C443.28 172.475 441.933 171.131 440.271 171.131C438.609 171.131 437.262 172.475 437.262 174.132C437.262 175.79 438.609 177.134 440.271 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M431.923 177.134C433.585 177.134 434.932 175.79 434.932 174.132C434.932 172.475 433.585 171.131 431.923 171.131C430.261 171.131 428.913 172.475 428.913 174.132C428.913 175.79 430.261 177.134 431.923 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M406.78 177.134C408.442 177.134 409.79 175.79 409.79 174.132C409.79 172.475 408.442 171.131 406.78 171.131C405.118 171.131 403.771 172.475 403.771 174.132C403.771 175.79 405.118 177.134 406.78 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M398.432 177.134C400.094 177.134 401.441 175.79 401.441 174.132C401.441 172.475 400.094 171.131 398.432 171.131C396.77 171.131 395.423 172.475 395.423 174.132C395.423 175.79 396.77 177.134 398.432 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M390.084 177.134C391.746 177.134 393.093 175.79 393.093 174.132C393.093 172.475 391.746 171.131 390.084 171.131C388.422 171.131 387.074 172.475 387.074 174.132C387.074 175.79 388.422 177.134 390.084 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M381.735 177.134C383.397 177.134 384.745 175.79 384.745 174.132C384.745 172.475 383.397 171.131 381.735 171.131C380.073 171.131 378.726 172.475 378.726 174.132C378.726 175.79 380.073 177.134 381.735 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M373.387 177.134C375.049 177.134 376.396 175.79 376.396 174.132C376.396 172.475 375.049 171.131 373.387 171.131C371.725 171.131 370.378 172.475 370.378 174.132C370.378 175.79 371.725 177.134 373.387 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M365.039 177.134C366.701 177.134 368.048 175.79 368.048 174.132C368.048 172.475 366.701 171.131 365.039 171.131C363.377 171.131 362.029 172.475 362.029 174.132C362.029 175.79 363.377 177.134 365.039 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 177.134C358.352 177.134 359.7 175.79 359.7 174.132C359.7 172.475 358.352 171.131 356.69 171.131C355.028 171.131 353.681 172.475 353.681 174.132C353.681 175.79 355.028 177.134 356.69 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M348.342 177.134C350.004 177.134 351.351 175.79 351.351 174.132C351.351 172.475 350.004 171.131 348.342 171.131C346.68 171.131 345.333 172.475 345.333 174.132C345.333 175.79 346.68 177.134 348.342 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M339.994 177.134C341.656 177.134 343.003 175.79 343.003 174.132C343.003 172.475 341.656 171.131 339.994 171.131C338.332 171.131 336.984 172.475 336.984 174.132C336.984 175.79 338.332 177.134 339.994 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M331.645 177.134C333.307 177.134 334.655 175.79 334.655 174.132C334.655 172.475 333.307 171.131 331.645 171.131C329.983 171.131 328.636 172.475 328.636 174.132C328.636 175.79 329.983 177.134 331.645 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M323.297 177.134C324.959 177.134 326.306 175.79 326.306 174.132C326.306 172.475 324.959 171.131 323.297 171.131C321.635 171.131 320.288 172.475 320.288 174.132C320.288 175.79 321.635 177.134 323.297 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M314.948 177.134C316.61 177.134 317.958 175.79 317.958 174.132C317.958 172.475 316.61 171.131 314.948 171.131C313.287 171.131 311.939 172.475 311.939 174.132C311.939 175.79 313.287 177.134 314.948 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M306.6 177.134C308.262 177.134 309.609 175.79 309.609 174.132C309.609 172.475 308.262 171.131 306.6 171.131C304.938 171.131 303.591 172.475 303.591 174.132C303.591 175.79 304.938 177.134 306.6 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M298.252 177.134C299.914 177.134 301.261 175.79 301.261 174.132C301.261 172.475 299.914 171.131 298.252 171.131C296.59 171.131 295.243 172.475 295.243 174.132C295.243 175.79 296.59 177.134 298.252 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M289.903 177.134C291.565 177.134 292.913 175.79 292.913 174.132C292.913 172.475 291.565 171.131 289.903 171.131C288.241 171.131 286.894 172.475 286.894 174.132C286.894 175.79 288.241 177.134 289.903 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M197.974 177.134C199.636 177.134 200.984 175.79 200.984 174.132C200.984 172.475 199.636 171.131 197.974 171.131C196.312 171.131 194.965 172.475 194.965 174.132C194.965 175.79 196.312 177.134 197.974 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M189.626 177.134C191.288 177.134 192.635 175.79 192.635 174.132C192.635 172.475 191.288 171.131 189.626 171.131C187.964 171.131 186.617 172.475 186.617 174.132C186.617 175.79 187.964 177.134 189.626 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M172.929 177.134C174.591 177.134 175.939 175.79 175.939 174.132C175.939 172.475 174.591 171.131 172.929 171.131C171.267 171.131 169.92 172.475 169.92 174.132C169.92 175.79 171.267 177.134 172.929 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M156.233 177.134C157.895 177.134 159.242 175.79 159.242 174.132C159.242 172.475 157.895 171.131 156.233 171.131C154.571 171.131 153.223 172.475 153.223 174.132C153.223 175.79 154.571 177.134 156.233 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M147.884 177.134C149.546 177.134 150.894 175.79 150.894 174.132C150.894 172.475 149.546 171.131 147.884 171.131C146.222 171.131 144.875 172.475 144.875 174.132C144.875 175.79 146.222 177.134 147.884 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M64.4007 177.134C66.0627 177.134 67.41 175.79 67.41 174.132C67.41 172.475 66.0627 171.131 64.4007 171.131C62.7387 171.131 61.3914 172.475 61.3914 174.132C61.3914 175.79 62.7387 177.134 64.4007 177.134Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M515.406 168.904C517.068 168.904 518.415 167.56 518.415 165.903C518.415 164.245 517.068 162.901 515.406 162.901C513.744 162.901 512.397 164.245 512.397 165.903C512.397 167.56 513.744 168.904 515.406 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M507.058 168.904C508.72 168.904 510.067 167.56 510.067 165.903C510.067 164.245 508.72 162.901 507.058 162.901C505.396 162.901 504.048 164.245 504.048 165.903C504.048 167.56 505.396 168.904 507.058 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M498.709 168.904C500.371 168.904 501.719 167.56 501.719 165.903C501.719 164.245 500.371 162.901 498.709 162.901C497.047 162.901 495.7 164.245 495.7 165.903C495.7 167.56 497.047 168.904 498.709 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M490.361 168.904C492.023 168.904 493.37 167.56 493.37 165.903C493.37 164.245 492.023 162.901 490.361 162.901C488.699 162.901 487.352 164.245 487.352 165.903C487.352 167.56 488.699 168.904 490.361 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M482.013 168.904C483.675 168.904 485.022 167.56 485.022 165.903C485.022 164.245 483.675 162.901 482.013 162.901C480.351 162.901 479.003 164.245 479.003 165.903C479.003 167.56 480.351 168.904 482.013 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M473.664 168.904C475.326 168.904 476.674 167.56 476.674 165.903C476.674 164.245 475.326 162.901 473.664 162.901C472.002 162.901 470.655 164.245 470.655 165.903C470.655 167.56 472.002 168.904 473.664 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M465.316 168.904C466.978 168.904 468.325 167.56 468.325 165.903C468.325 164.245 466.978 162.901 465.316 162.901C463.654 162.901 462.307 164.245 462.307 165.903C462.307 167.56 463.654 168.904 465.316 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M456.968 168.904C458.63 168.904 459.977 167.56 459.977 165.903C459.977 164.245 458.63 162.901 456.968 162.901C455.306 162.901 453.958 164.245 453.958 165.903C453.958 167.56 455.306 168.904 456.968 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M448.619 168.904C450.281 168.904 451.629 167.56 451.629 165.903C451.629 164.245 450.281 162.901 448.619 162.901C446.957 162.901 445.61 164.245 445.61 165.903C445.61 167.56 446.957 168.904 448.619 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M440.271 168.904C441.933 168.904 443.28 167.56 443.28 165.903C443.28 164.245 441.933 162.901 440.271 162.901C438.609 162.901 437.262 164.245 437.262 165.903C437.262 167.56 438.609 168.904 440.271 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M431.923 168.904C433.585 168.904 434.932 167.56 434.932 165.903C434.932 164.245 433.585 162.901 431.923 162.901C430.261 162.901 428.913 164.245 428.913 165.903C428.913 167.56 430.261 168.904 431.923 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M423.477 168.904C425.139 168.904 426.486 167.56 426.486 165.903C426.486 164.245 425.139 162.901 423.477 162.901C421.815 162.901 420.468 164.245 420.468 165.903C420.468 167.56 421.815 168.904 423.477 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M415.129 168.904C416.791 168.904 418.138 167.56 418.138 165.903C418.138 164.245 416.791 162.901 415.129 162.901C413.467 162.901 412.12 164.245 412.12 165.903C412.12 167.56 413.467 168.904 415.129 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M406.78 168.904C408.442 168.904 409.79 167.56 409.79 165.903C409.79 164.245 408.442 162.901 406.78 162.901C405.118 162.901 403.771 164.245 403.771 165.903C403.771 167.56 405.118 168.904 406.78 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M398.432 168.904C400.094 168.904 401.441 167.56 401.441 165.903C401.441 164.245 400.094 162.901 398.432 162.901C396.77 162.901 395.423 164.245 395.423 165.903C395.423 167.56 396.77 168.904 398.432 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M390.084 168.904C391.746 168.904 393.093 167.56 393.093 165.903C393.093 164.245 391.746 162.901 390.084 162.901C388.422 162.901 387.074 164.245 387.074 165.903C387.074 167.56 388.422 168.904 390.084 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M381.735 168.904C383.397 168.904 384.745 167.56 384.745 165.903C384.745 164.245 383.397 162.901 381.735 162.901C380.073 162.901 378.726 164.245 378.726 165.903C378.726 167.56 380.073 168.904 381.735 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M373.387 168.904C375.049 168.904 376.396 167.56 376.396 165.903C376.396 164.245 375.049 162.901 373.387 162.901C371.725 162.901 370.378 164.245 370.378 165.903C370.378 167.56 371.725 168.904 373.387 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M365.039 168.904C366.701 168.904 368.048 167.56 368.048 165.903C368.048 164.245 366.701 162.901 365.039 162.901C363.377 162.901 362.029 164.245 362.029 165.903C362.029 167.56 363.377 168.904 365.039 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 168.904C358.352 168.904 359.7 167.56 359.7 165.903C359.7 164.245 358.352 162.901 356.69 162.901C355.028 162.901 353.681 164.245 353.681 165.903C353.681 167.56 355.028 168.904 356.69 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M348.342 168.904C350.004 168.904 351.351 167.56 351.351 165.903C351.351 164.245 350.004 162.901 348.342 162.901C346.68 162.901 345.333 164.245 345.333 165.903C345.333 167.56 346.68 168.904 348.342 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M339.994 168.904C341.656 168.904 343.003 167.56 343.003 165.903C343.003 164.245 341.656 162.901 339.994 162.901C338.332 162.901 336.984 164.245 336.984 165.903C336.984 167.56 338.332 168.904 339.994 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M331.645 168.904C333.307 168.904 334.655 167.56 334.655 165.903C334.655 164.245 333.307 162.901 331.645 162.901C329.983 162.901 328.636 164.245 328.636 165.903C328.636 167.56 329.983 168.904 331.645 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M323.297 168.904C324.959 168.904 326.306 167.56 326.306 165.903C326.306 164.245 324.959 162.901 323.297 162.901C321.635 162.901 320.288 164.245 320.288 165.903C320.288 167.56 321.635 168.904 323.297 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M314.948 168.904C316.61 168.904 317.958 167.56 317.958 165.903C317.958 164.245 316.61 162.901 314.948 162.901C313.287 162.901 311.939 164.245 311.939 165.903C311.939 167.56 313.287 168.904 314.948 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M306.6 168.904C308.262 168.904 309.609 167.56 309.609 165.903C309.609 164.245 308.262 162.901 306.6 162.901C304.938 162.901 303.591 164.245 303.591 165.903C303.591 167.56 304.938 168.904 306.6 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M298.252 168.904C299.914 168.904 301.261 167.56 301.261 165.903C301.261 164.245 299.914 162.901 298.252 162.901C296.59 162.901 295.243 164.245 295.243 165.903C295.243 167.56 296.59 168.904 298.252 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M189.626 168.904C191.288 168.904 192.635 167.56 192.635 165.903C192.635 164.245 191.288 162.901 189.626 162.901C187.964 162.901 186.617 164.245 186.617 165.903C186.617 167.56 187.964 168.904 189.626 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M156.233 168.904C157.895 168.904 159.242 167.56 159.242 165.903C159.242 164.245 157.895 162.901 156.233 162.901C154.571 162.901 153.223 164.245 153.223 165.903C153.223 167.56 154.571 168.904 156.233 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M147.884 168.904C149.546 168.904 150.894 167.56 150.894 165.903C150.894 164.245 149.546 162.901 147.884 162.901C146.222 162.901 144.875 164.245 144.875 165.903C144.875 167.56 146.222 168.904 147.884 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M139.536 168.904C141.198 168.904 142.545 167.56 142.545 165.903C142.545 164.245 141.198 162.901 139.536 162.901C137.874 162.901 136.527 164.245 136.527 165.903C136.527 167.56 137.874 168.904 139.536 168.904Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M515.406 160.674C517.068 160.674 518.415 159.331 518.415 157.673C518.415 156.015 517.068 154.672 515.406 154.672C513.744 154.672 512.397 156.015 512.397 157.673C512.397 159.331 513.744 160.674 515.406 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M507.058 160.674C508.72 160.674 510.067 159.331 510.067 157.673C510.067 156.015 508.72 154.672 507.058 154.672C505.396 154.672 504.048 156.015 504.048 157.673C504.048 159.331 505.396 160.674 507.058 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M498.709 160.674C500.371 160.674 501.719 159.331 501.719 157.673C501.719 156.015 500.371 154.672 498.709 154.672C497.047 154.672 495.7 156.015 495.7 157.673C495.7 159.331 497.047 160.674 498.709 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M490.361 160.674C492.023 160.674 493.37 159.331 493.37 157.673C493.37 156.015 492.023 154.672 490.361 154.672C488.699 154.672 487.352 156.015 487.352 157.673C487.352 159.331 488.699 160.674 490.361 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M482.013 160.674C483.675 160.674 485.022 159.331 485.022 157.673C485.022 156.015 483.675 154.672 482.013 154.672C480.351 154.672 479.003 156.015 479.003 157.673C479.003 159.331 480.351 160.674 482.013 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M473.664 160.674C475.326 160.674 476.674 159.331 476.674 157.673C476.674 156.015 475.326 154.672 473.664 154.672C472.002 154.672 470.655 156.015 470.655 157.673C470.655 159.331 472.002 160.674 473.664 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M465.316 160.674C466.978 160.674 468.325 159.331 468.325 157.673C468.325 156.015 466.978 154.672 465.316 154.672C463.654 154.672 462.307 156.015 462.307 157.673C462.307 159.331 463.654 160.674 465.316 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M456.968 160.674C458.63 160.674 459.977 159.331 459.977 157.673C459.977 156.015 458.63 154.672 456.968 154.672C455.306 154.672 453.958 156.015 453.958 157.673C453.958 159.331 455.306 160.674 456.968 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M448.619 160.674C450.281 160.674 451.629 159.331 451.629 157.673C451.629 156.015 450.281 154.672 448.619 154.672C446.957 154.672 445.61 156.015 445.61 157.673C445.61 159.331 446.957 160.674 448.619 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M440.271 160.674C441.933 160.674 443.28 159.331 443.28 157.673C443.28 156.015 441.933 154.672 440.271 154.672C438.609 154.672 437.262 156.015 437.262 157.673C437.262 159.331 438.609 160.674 440.271 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M431.923 160.674C433.585 160.674 434.932 159.331 434.932 157.673C434.932 156.015 433.585 154.672 431.923 154.672C430.261 154.672 428.913 156.015 428.913 157.673C428.913 159.331 430.261 160.674 431.923 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M423.477 160.674C425.139 160.674 426.486 159.331 426.486 157.673C426.486 156.015 425.139 154.672 423.477 154.672C421.815 154.672 420.468 156.015 420.468 157.673C420.468 159.331 421.815 160.674 423.477 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M415.129 160.674C416.791 160.674 418.138 159.331 418.138 157.673C418.138 156.015 416.791 154.672 415.129 154.672C413.467 154.672 412.12 156.015 412.12 157.673C412.12 159.331 413.467 160.674 415.129 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M406.78 160.674C408.442 160.674 409.79 159.331 409.79 157.673C409.79 156.015 408.442 154.672 406.78 154.672C405.118 154.672 403.771 156.015 403.771 157.673C403.771 159.331 405.118 160.674 406.78 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M398.432 160.674C400.094 160.674 401.441 159.331 401.441 157.673C401.441 156.015 400.094 154.672 398.432 154.672C396.77 154.672 395.423 156.015 395.423 157.673C395.423 159.331 396.77 160.674 398.432 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M390.084 160.674C391.746 160.674 393.093 159.331 393.093 157.673C393.093 156.015 391.746 154.672 390.084 154.672C388.422 154.672 387.074 156.015 387.074 157.673C387.074 159.331 388.422 160.674 390.084 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M381.735 160.674C383.397 160.674 384.745 159.331 384.745 157.673C384.745 156.015 383.397 154.672 381.735 154.672C380.073 154.672 378.726 156.015 378.726 157.673C378.726 159.331 380.073 160.674 381.735 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M373.387 160.674C375.049 160.674 376.396 159.331 376.396 157.673C376.396 156.015 375.049 154.672 373.387 154.672C371.725 154.672 370.378 156.015 370.378 157.673C370.378 159.331 371.725 160.674 373.387 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M365.039 160.674C366.701 160.674 368.048 159.331 368.048 157.673C368.048 156.015 366.701 154.672 365.039 154.672C363.377 154.672 362.029 156.015 362.029 157.673C362.029 159.331 363.377 160.674 365.039 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 160.674C358.352 160.674 359.7 159.331 359.7 157.673C359.7 156.015 358.352 154.672 356.69 154.672C355.028 154.672 353.681 156.015 353.681 157.673C353.681 159.331 355.028 160.674 356.69 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M348.342 160.674C350.004 160.674 351.351 159.331 351.351 157.673C351.351 156.015 350.004 154.672 348.342 154.672C346.68 154.672 345.333 156.015 345.333 157.673C345.333 159.331 346.68 160.674 348.342 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M339.994 160.674C341.656 160.674 343.003 159.331 343.003 157.673C343.003 156.015 341.656 154.672 339.994 154.672C338.332 154.672 336.984 156.015 336.984 157.673C336.984 159.331 338.332 160.674 339.994 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M331.645 160.674C333.307 160.674 334.655 159.331 334.655 157.673C334.655 156.015 333.307 154.672 331.645 154.672C329.983 154.672 328.636 156.015 328.636 157.673C328.636 159.331 329.983 160.674 331.645 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M323.297 160.674C324.959 160.674 326.306 159.331 326.306 157.673C326.306 156.015 324.959 154.672 323.297 154.672C321.635 154.672 320.288 156.015 320.288 157.673C320.288 159.331 321.635 160.674 323.297 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M314.948 160.674C316.61 160.674 317.958 159.331 317.958 157.673C317.958 156.015 316.61 154.672 314.948 154.672C313.287 154.672 311.939 156.015 311.939 157.673C311.939 159.331 313.287 160.674 314.948 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M306.6 160.674C308.262 160.674 309.609 159.331 309.609 157.673C309.609 156.015 308.262 154.672 306.6 154.672C304.938 154.672 303.591 156.015 303.591 157.673C303.591 159.331 304.938 160.674 306.6 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M181.278 160.674C182.94 160.674 184.287 159.331 184.287 157.673C184.287 156.015 182.94 154.672 181.278 154.672C179.616 154.672 178.268 156.015 178.268 157.673C178.268 159.331 179.616 160.674 181.278 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M172.929 160.674C174.591 160.674 175.939 159.331 175.939 157.673C175.939 156.015 174.591 154.672 172.929 154.672C171.267 154.672 169.92 156.015 169.92 157.673C169.92 159.331 171.267 160.674 172.929 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M164.581 160.674C166.243 160.674 167.59 159.331 167.59 157.673C167.59 156.015 166.243 154.672 164.581 154.672C162.919 154.672 161.572 156.015 161.572 157.673C161.572 159.331 162.919 160.674 164.581 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M156.233 160.674C157.895 160.674 159.242 159.331 159.242 157.673C159.242 156.015 157.895 154.672 156.233 154.672C154.571 154.672 153.223 156.015 153.223 157.673C153.223 159.331 154.571 160.674 156.233 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M147.884 160.674C149.546 160.674 150.894 159.331 150.894 157.673C150.894 156.015 149.546 154.672 147.884 154.672C146.222 154.672 144.875 156.015 144.875 157.673C144.875 159.331 146.222 160.674 147.884 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M139.536 160.674C141.198 160.674 142.545 159.331 142.545 157.673C142.545 156.015 141.198 154.672 139.536 154.672C137.874 154.672 136.527 156.015 136.527 157.673C136.527 159.331 137.874 160.674 139.536 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M131.188 160.674C132.85 160.674 134.197 159.331 134.197 157.673C134.197 156.015 132.85 154.672 131.188 154.672C129.526 154.672 128.178 156.015 128.178 157.673C128.178 159.331 129.526 160.674 131.188 160.674Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M540.451 152.445C542.113 152.445 543.46 151.101 543.46 149.443C543.46 147.786 542.113 146.442 540.451 146.442C538.789 146.442 537.442 147.786 537.442 149.443C537.442 151.101 538.789 152.445 540.451 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M532.103 152.445C533.765 152.445 535.112 151.101 535.112 149.443C535.112 147.786 533.765 146.442 532.103 146.442C530.441 146.442 529.094 147.786 529.094 149.443C529.094 151.101 530.441 152.445 532.103 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M523.754 152.445C525.416 152.445 526.764 151.101 526.764 149.443C526.764 147.786 525.416 146.442 523.754 146.442C522.093 146.442 520.745 147.786 520.745 149.443C520.745 151.101 522.093 152.445 523.754 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M507.058 152.445C508.72 152.445 510.067 151.101 510.067 149.443C510.067 147.786 508.72 146.442 507.058 146.442C505.396 146.442 504.048 147.786 504.048 149.443C504.048 151.101 505.396 152.445 507.058 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M498.709 152.445C500.371 152.445 501.719 151.101 501.719 149.443C501.719 147.786 500.371 146.442 498.709 146.442C497.047 146.442 495.7 147.786 495.7 149.443C495.7 151.101 497.047 152.445 498.709 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M490.361 152.445C492.023 152.445 493.37 151.101 493.37 149.443C493.37 147.786 492.023 146.442 490.361 146.442C488.699 146.442 487.352 147.786 487.352 149.443C487.352 151.101 488.699 152.445 490.361 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M482.013 152.445C483.675 152.445 485.022 151.101 485.022 149.443C485.022 147.786 483.675 146.442 482.013 146.442C480.351 146.442 479.003 147.786 479.003 149.443C479.003 151.101 480.351 152.445 482.013 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M473.664 152.445C475.326 152.445 476.674 151.101 476.674 149.443C476.674 147.786 475.326 146.442 473.664 146.442C472.002 146.442 470.655 147.786 470.655 149.443C470.655 151.101 472.002 152.445 473.664 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M465.316 152.445C466.978 152.445 468.325 151.101 468.325 149.443C468.325 147.786 466.978 146.442 465.316 146.442C463.654 146.442 462.307 147.786 462.307 149.443C462.307 151.101 463.654 152.445 465.316 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M456.968 152.445C458.63 152.445 459.977 151.101 459.977 149.443C459.977 147.786 458.63 146.442 456.968 146.442C455.306 146.442 453.958 147.786 453.958 149.443C453.958 151.101 455.306 152.445 456.968 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M448.619 152.445C450.281 152.445 451.629 151.101 451.629 149.443C451.629 147.786 450.281 146.442 448.619 146.442C446.957 146.442 445.61 147.786 445.61 149.443C445.61 151.101 446.957 152.445 448.619 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M440.271 152.445C441.933 152.445 443.28 151.101 443.28 149.443C443.28 147.786 441.933 146.442 440.271 146.442C438.609 146.442 437.262 147.786 437.262 149.443C437.262 151.101 438.609 152.445 440.271 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M431.923 152.445C433.585 152.445 434.932 151.101 434.932 149.443C434.932 147.786 433.585 146.442 431.923 146.442C430.261 146.442 428.913 147.786 428.913 149.443C428.913 151.101 430.261 152.445 431.923 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M423.477 152.445C425.139 152.445 426.486 151.101 426.486 149.443C426.486 147.786 425.139 146.442 423.477 146.442C421.815 146.442 420.468 147.786 420.468 149.443C420.468 151.101 421.815 152.445 423.477 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M415.129 152.445C416.791 152.445 418.138 151.101 418.138 149.443C418.138 147.786 416.791 146.442 415.129 146.442C413.467 146.442 412.12 147.786 412.12 149.443C412.12 151.101 413.467 152.445 415.129 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M406.78 152.445C408.442 152.445 409.79 151.101 409.79 149.443C409.79 147.786 408.442 146.442 406.78 146.442C405.118 146.442 403.771 147.786 403.771 149.443C403.771 151.101 405.118 152.445 406.78 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M398.432 152.445C400.094 152.445 401.441 151.101 401.441 149.443C401.441 147.786 400.094 146.442 398.432 146.442C396.77 146.442 395.423 147.786 395.423 149.443C395.423 151.101 396.77 152.445 398.432 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M390.084 152.445C391.746 152.445 393.093 151.101 393.093 149.443C393.093 147.786 391.746 146.442 390.084 146.442C388.422 146.442 387.074 147.786 387.074 149.443C387.074 151.101 388.422 152.445 390.084 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M381.735 152.445C383.397 152.445 384.745 151.101 384.745 149.443C384.745 147.786 383.397 146.442 381.735 146.442C380.073 146.442 378.726 147.786 378.726 149.443C378.726 151.101 380.073 152.445 381.735 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 152.445C358.352 152.445 359.7 151.101 359.7 149.443C359.7 147.786 358.352 146.442 356.69 146.442C355.028 146.442 353.681 147.786 353.681 149.443C353.681 151.101 355.028 152.445 356.69 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M331.645 152.445C333.307 152.445 334.655 151.101 334.655 149.443C334.655 147.786 333.307 146.442 331.645 146.442C329.983 146.442 328.636 147.786 328.636 149.443C328.636 151.101 329.983 152.445 331.645 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M323.297 152.445C324.959 152.445 326.306 151.101 326.306 149.443C326.306 147.786 324.959 146.442 323.297 146.442C321.635 146.442 320.288 147.786 320.288 149.443C320.288 151.101 321.635 152.445 323.297 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M314.948 152.445C316.61 152.445 317.958 151.101 317.958 149.443C317.958 147.786 316.61 146.442 314.948 146.442C313.287 146.442 311.939 147.786 311.939 149.443C311.939 151.101 313.287 152.445 314.948 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M189.626 152.445C191.288 152.445 192.635 151.101 192.635 149.443C192.635 147.786 191.288 146.442 189.626 146.442C187.964 146.442 186.617 147.786 186.617 149.443C186.617 151.101 187.964 152.445 189.626 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M181.278 152.445C182.94 152.445 184.287 151.101 184.287 149.443C184.287 147.786 182.94 146.442 181.278 146.442C179.616 146.442 178.268 147.786 178.268 149.443C178.268 151.101 179.616 152.445 181.278 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M172.929 152.445C174.591 152.445 175.939 151.101 175.939 149.443C175.939 147.786 174.591 146.442 172.929 146.442C171.267 146.442 169.92 147.786 169.92 149.443C169.92 151.101 171.267 152.445 172.929 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M164.581 152.445C166.243 152.445 167.59 151.101 167.59 149.443C167.59 147.786 166.243 146.442 164.581 146.442C162.919 146.442 161.572 147.786 161.572 149.443C161.572 151.101 162.919 152.445 164.581 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M156.233 152.445C157.895 152.445 159.242 151.101 159.242 149.443C159.242 147.786 157.895 146.442 156.233 146.442C154.571 146.442 153.223 147.786 153.223 149.443C153.223 151.101 154.571 152.445 156.233 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M147.884 152.445C149.546 152.445 150.894 151.101 150.894 149.443C150.894 147.786 149.546 146.442 147.884 146.442C146.222 146.442 144.875 147.786 144.875 149.443C144.875 151.101 146.222 152.445 147.884 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M139.536 152.445C141.198 152.445 142.545 151.101 142.545 149.443C142.545 147.786 141.198 146.442 139.536 146.442C137.874 146.442 136.527 147.786 136.527 149.443C136.527 151.101 137.874 152.445 139.536 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M131.188 152.445C132.85 152.445 134.197 151.101 134.197 149.443C134.197 147.786 132.85 146.442 131.188 146.442C129.526 146.442 128.178 147.786 128.178 149.443C128.178 151.101 129.526 152.445 131.188 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M122.839 152.445C124.501 152.445 125.849 151.101 125.849 149.443C125.849 147.786 124.501 146.442 122.839 146.442C121.177 146.442 119.83 147.786 119.83 149.443C119.83 151.101 121.177 152.445 122.839 152.445Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M548.8 144.215C550.462 144.215 551.809 142.871 551.809 141.214C551.809 139.556 550.462 138.212 548.8 138.212C547.138 138.212 545.79 139.556 545.79 141.214C545.79 142.871 547.138 144.215 548.8 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M523.754 144.215C525.416 144.215 526.764 142.871 526.764 141.214C526.764 139.556 525.416 138.212 523.754 138.212C522.093 138.212 520.745 139.556 520.745 141.214C520.745 142.871 522.093 144.215 523.754 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M515.406 144.215C517.068 144.215 518.415 142.871 518.415 141.214C518.415 139.556 517.068 138.212 515.406 138.212C513.744 138.212 512.397 139.556 512.397 141.214C512.397 142.871 513.744 144.215 515.406 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M507.058 144.215C508.72 144.215 510.067 142.871 510.067 141.214C510.067 139.556 508.72 138.212 507.058 138.212C505.396 138.212 504.048 139.556 504.048 141.214C504.048 142.871 505.396 144.215 507.058 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M498.709 144.215C500.371 144.215 501.719 142.871 501.719 141.214C501.719 139.556 500.371 138.212 498.709 138.212C497.047 138.212 495.7 139.556 495.7 141.214C495.7 142.871 497.047 144.215 498.709 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M490.361 144.215C492.023 144.215 493.37 142.871 493.37 141.214C493.37 139.556 492.023 138.212 490.361 138.212C488.699 138.212 487.352 139.556 487.352 141.214C487.352 142.871 488.699 144.215 490.361 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M482.013 144.215C483.675 144.215 485.022 142.871 485.022 141.214C485.022 139.556 483.675 138.212 482.013 138.212C480.351 138.212 479.003 139.556 479.003 141.214C479.003 142.871 480.351 144.215 482.013 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M473.664 144.215C475.326 144.215 476.674 142.871 476.674 141.214C476.674 139.556 475.326 138.212 473.664 138.212C472.002 138.212 470.655 139.556 470.655 141.214C470.655 142.871 472.002 144.215 473.664 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M465.316 144.215C466.978 144.215 468.325 142.871 468.325 141.214C468.325 139.556 466.978 138.212 465.316 138.212C463.654 138.212 462.307 139.556 462.307 141.214C462.307 142.871 463.654 144.215 465.316 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M456.968 144.215C458.63 144.215 459.977 142.871 459.977 141.214C459.977 139.556 458.63 138.212 456.968 138.212C455.306 138.212 453.958 139.556 453.958 141.214C453.958 142.871 455.306 144.215 456.968 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M448.619 144.215C450.281 144.215 451.629 142.871 451.629 141.214C451.629 139.556 450.281 138.212 448.619 138.212C446.957 138.212 445.61 139.556 445.61 141.214C445.61 142.871 446.957 144.215 448.619 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M440.271 144.215C441.933 144.215 443.28 142.871 443.28 141.214C443.28 139.556 441.933 138.212 440.271 138.212C438.609 138.212 437.262 139.556 437.262 141.214C437.262 142.871 438.609 144.215 440.271 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M431.923 144.215C433.585 144.215 434.932 142.871 434.932 141.214C434.932 139.556 433.585 138.212 431.923 138.212C430.261 138.212 428.913 139.556 428.913 141.214C428.913 142.871 430.261 144.215 431.923 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M423.477 144.215C425.139 144.215 426.486 142.871 426.486 141.214C426.486 139.556 425.139 138.212 423.477 138.212C421.815 138.212 420.468 139.556 420.468 141.214C420.468 142.871 421.815 144.215 423.477 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M415.129 144.215C416.791 144.215 418.138 142.871 418.138 141.214C418.138 139.556 416.791 138.212 415.129 138.212C413.467 138.212 412.12 139.556 412.12 141.214C412.12 142.871 413.467 144.215 415.129 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M406.78 144.215C408.442 144.215 409.79 142.871 409.79 141.214C409.79 139.556 408.442 138.212 406.78 138.212C405.118 138.212 403.771 139.556 403.771 141.214C403.771 142.871 405.118 144.215 406.78 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M390.084 144.215C391.746 144.215 393.093 142.871 393.093 141.214C393.093 139.556 391.746 138.212 390.084 138.212C388.422 138.212 387.074 139.556 387.074 141.214C387.074 142.871 388.422 144.215 390.084 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M381.735 144.215C383.397 144.215 384.745 142.871 384.745 141.214C384.745 139.556 383.397 138.212 381.735 138.212C380.073 138.212 378.726 139.556 378.726 141.214C378.726 142.871 380.073 144.215 381.735 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M373.387 144.215C375.049 144.215 376.396 142.871 376.396 141.214C376.396 139.556 375.049 138.212 373.387 138.212C371.725 138.212 370.378 139.556 370.378 141.214C370.378 142.871 371.725 144.215 373.387 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M365.039 144.215C366.701 144.215 368.048 142.871 368.048 141.214C368.048 139.556 366.701 138.212 365.039 138.212C363.377 138.212 362.029 139.556 362.029 141.214C362.029 142.871 363.377 144.215 365.039 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 144.215C358.352 144.215 359.7 142.871 359.7 141.214C359.7 139.556 358.352 138.212 356.69 138.212C355.028 138.212 353.681 139.556 353.681 141.214C353.681 142.871 355.028 144.215 356.69 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M331.645 144.215C333.307 144.215 334.655 142.871 334.655 141.214C334.655 139.556 333.307 138.212 331.645 138.212C329.983 138.212 328.636 139.556 328.636 141.214C328.636 142.871 329.983 144.215 331.645 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M323.297 144.215C324.959 144.215 326.306 142.871 326.306 141.214C326.306 139.556 324.959 138.212 323.297 138.212C321.635 138.212 320.288 139.556 320.288 141.214C320.288 142.871 321.635 144.215 323.297 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M314.948 144.215C316.61 144.215 317.958 142.871 317.958 141.214C317.958 139.556 316.61 138.212 314.948 138.212C313.287 138.212 311.939 139.556 311.939 141.214C311.939 142.871 313.287 144.215 314.948 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M306.6 144.215C308.262 144.215 309.609 142.871 309.609 141.214C309.609 139.556 308.262 138.212 306.6 138.212C304.938 138.212 303.591 139.556 303.591 141.214C303.591 142.871 304.938 144.215 306.6 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M189.626 144.215C191.288 144.215 192.635 142.871 192.635 141.214C192.635 139.556 191.288 138.212 189.626 138.212C187.964 138.212 186.617 139.556 186.617 141.214C186.617 142.871 187.964 144.215 189.626 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M181.278 144.215C182.94 144.215 184.287 142.871 184.287 141.214C184.287 139.556 182.94 138.212 181.278 138.212C179.616 138.212 178.268 139.556 178.268 141.214C178.268 142.871 179.616 144.215 181.278 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M172.929 144.215C174.591 144.215 175.939 142.871 175.939 141.214C175.939 139.556 174.591 138.212 172.929 138.212C171.267 138.212 169.92 139.556 169.92 141.214C169.92 142.871 171.267 144.215 172.929 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M164.581 144.215C166.243 144.215 167.59 142.871 167.59 141.214C167.59 139.556 166.243 138.212 164.581 138.212C162.919 138.212 161.572 139.556 161.572 141.214C161.572 142.871 162.919 144.215 164.581 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M156.233 144.215C157.895 144.215 159.242 142.871 159.242 141.214C159.242 139.556 157.895 138.212 156.233 138.212C154.571 138.212 153.223 139.556 153.223 141.214C153.223 142.871 154.571 144.215 156.233 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M147.884 144.215C149.546 144.215 150.894 142.871 150.894 141.214C150.894 139.556 149.546 138.212 147.884 138.212C146.222 138.212 144.875 139.556 144.875 141.214C144.875 142.871 146.222 144.215 147.884 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M139.536 144.215C141.198 144.215 142.545 142.871 142.545 141.214C142.545 139.556 141.198 138.212 139.536 138.212C137.874 138.212 136.527 139.556 136.527 141.214C136.527 142.871 137.874 144.215 139.536 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M131.188 144.215C132.85 144.215 134.197 142.871 134.197 141.214C134.197 139.556 132.85 138.212 131.188 138.212C129.526 138.212 128.178 139.556 128.178 141.214C128.178 142.871 129.526 144.215 131.188 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M122.839 144.215C124.501 144.215 125.849 142.871 125.849 141.214C125.849 139.556 124.501 138.212 122.839 138.212C121.177 138.212 119.83 139.556 119.83 141.214C119.83 142.871 121.177 144.215 122.839 144.215Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M548.8 136.082C550.462 136.082 551.809 134.739 551.809 133.081C551.809 131.423 550.462 130.08 548.8 130.08C547.138 130.08 545.79 131.423 545.79 133.081C545.79 134.739 547.138 136.082 548.8 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M532.103 136.082C533.765 136.082 535.112 134.739 535.112 133.081C535.112 131.423 533.765 130.08 532.103 130.08C530.441 130.08 529.094 131.423 529.094 133.081C529.094 134.739 530.441 136.082 532.103 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M523.754 136.082C525.416 136.082 526.764 134.739 526.764 133.081C526.764 131.423 525.416 130.08 523.754 130.08C522.093 130.08 520.745 131.423 520.745 133.081C520.745 134.739 522.093 136.082 523.754 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M515.406 136.082C517.068 136.082 518.415 134.739 518.415 133.081C518.415 131.423 517.068 130.08 515.406 130.08C513.744 130.08 512.397 131.423 512.397 133.081C512.397 134.739 513.744 136.082 515.406 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M507.058 136.082C508.72 136.082 510.067 134.739 510.067 133.081C510.067 131.423 508.72 130.08 507.058 130.08C505.396 130.08 504.048 131.423 504.048 133.081C504.048 134.739 505.396 136.082 507.058 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M498.709 136.082C500.371 136.082 501.719 134.739 501.719 133.081C501.719 131.423 500.371 130.08 498.709 130.08C497.047 130.08 495.7 131.423 495.7 133.081C495.7 134.739 497.047 136.082 498.709 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M490.361 136.082C492.023 136.082 493.37 134.739 493.37 133.081C493.37 131.423 492.023 130.08 490.361 130.08C488.699 130.08 487.352 131.423 487.352 133.081C487.352 134.739 488.699 136.082 490.361 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M482.013 136.082C483.675 136.082 485.022 134.739 485.022 133.081C485.022 131.423 483.675 130.08 482.013 130.08C480.351 130.08 479.003 131.423 479.003 133.081C479.003 134.739 480.351 136.082 482.013 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M473.664 136.082C475.326 136.082 476.674 134.739 476.674 133.081C476.674 131.423 475.326 130.08 473.664 130.08C472.002 130.08 470.655 131.423 470.655 133.081C470.655 134.739 472.002 136.082 473.664 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M465.316 136.082C466.978 136.082 468.325 134.739 468.325 133.081C468.325 131.423 466.978 130.08 465.316 130.08C463.654 130.08 462.307 131.423 462.307 133.081C462.307 134.739 463.654 136.082 465.316 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M456.968 136.082C458.63 136.082 459.977 134.739 459.977 133.081C459.977 131.423 458.63 130.08 456.968 130.08C455.306 130.08 453.958 131.423 453.958 133.081C453.958 134.739 455.306 136.082 456.968 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M448.619 136.082C450.281 136.082 451.629 134.739 451.629 133.081C451.629 131.423 450.281 130.08 448.619 130.08C446.957 130.08 445.61 131.423 445.61 133.081C445.61 134.739 446.957 136.082 448.619 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M440.271 136.082C441.933 136.082 443.28 134.739 443.28 133.081C443.28 131.423 441.933 130.08 440.271 130.08C438.609 130.08 437.262 131.423 437.262 133.081C437.262 134.739 438.609 136.082 440.271 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M431.923 136.082C433.585 136.082 434.932 134.739 434.932 133.081C434.932 131.423 433.585 130.08 431.923 130.08C430.261 130.08 428.913 131.423 428.913 133.081C428.913 134.739 430.261 136.082 431.923 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M423.477 136.082C425.139 136.082 426.486 134.739 426.486 133.081C426.486 131.423 425.139 130.08 423.477 130.08C421.815 130.08 420.468 131.423 420.468 133.081C420.468 134.739 421.815 136.082 423.477 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M415.129 136.082C416.791 136.082 418.138 134.739 418.138 133.081C418.138 131.423 416.791 130.08 415.129 130.08C413.467 130.08 412.12 131.423 412.12 133.081C412.12 134.739 413.467 136.082 415.129 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M406.78 136.082C408.442 136.082 409.79 134.739 409.79 133.081C409.79 131.423 408.442 130.08 406.78 130.08C405.118 130.08 403.771 131.423 403.771 133.081C403.771 134.739 405.118 136.082 406.78 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M390.084 136.082C391.746 136.082 393.093 134.739 393.093 133.081C393.093 131.423 391.746 130.08 390.084 130.08C388.422 130.08 387.074 131.423 387.074 133.081C387.074 134.739 388.422 136.082 390.084 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 136.082C358.352 136.082 359.7 134.739 359.7 133.081C359.7 131.423 358.352 130.08 356.69 130.08C355.028 130.08 353.681 131.423 353.681 133.081C353.681 134.739 355.028 136.082 356.69 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M348.342 136.082C350.004 136.082 351.351 134.739 351.351 133.081C351.351 131.423 350.004 130.08 348.342 130.08C346.68 130.08 345.333 131.423 345.333 133.081C345.333 134.739 346.68 136.082 348.342 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M339.994 136.082C341.656 136.082 343.003 134.739 343.003 133.081C343.003 131.423 341.656 130.08 339.994 130.08C338.332 130.08 336.984 131.423 336.984 133.081C336.984 134.739 338.332 136.082 339.994 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M323.297 136.082C324.959 136.082 326.306 134.739 326.306 133.081C326.306 131.423 324.959 130.08 323.297 130.08C321.635 130.08 320.288 131.423 320.288 133.081C320.288 134.739 321.635 136.082 323.297 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M314.948 136.082C316.61 136.082 317.958 134.739 317.958 133.081C317.958 131.423 316.61 130.08 314.948 130.08C313.287 130.08 311.939 131.423 311.939 133.081C311.939 134.739 313.287 136.082 314.948 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M306.6 136.082C308.262 136.082 309.609 134.739 309.609 133.081C309.609 131.423 308.262 130.08 306.6 130.08C304.938 130.08 303.591 131.423 303.591 133.081C303.591 134.739 304.938 136.082 306.6 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M197.974 136.082C199.636 136.082 200.984 134.739 200.984 133.081C200.984 131.423 199.636 130.08 197.974 130.08C196.312 130.08 194.965 131.423 194.965 133.081C194.965 134.739 196.312 136.082 197.974 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M189.626 136.082C191.288 136.082 192.635 134.739 192.635 133.081C192.635 131.423 191.288 130.08 189.626 130.08C187.964 130.08 186.617 131.423 186.617 133.081C186.617 134.739 187.964 136.082 189.626 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M181.278 136.082C182.94 136.082 184.287 134.739 184.287 133.081C184.287 131.423 182.94 130.08 181.278 130.08C179.616 130.08 178.268 131.423 178.268 133.081C178.268 134.739 179.616 136.082 181.278 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M172.929 136.082C174.591 136.082 175.939 134.739 175.939 133.081C175.939 131.423 174.591 130.08 172.929 130.08C171.267 130.08 169.92 131.423 169.92 133.081C169.92 134.739 171.267 136.082 172.929 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M164.581 136.082C166.243 136.082 167.59 134.739 167.59 133.081C167.59 131.423 166.243 130.08 164.581 130.08C162.919 130.08 161.572 131.423 161.572 133.081C161.572 134.739 162.919 136.082 164.581 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M156.233 136.082C157.895 136.082 159.242 134.739 159.242 133.081C159.242 131.423 157.895 130.08 156.233 130.08C154.571 130.08 153.223 131.423 153.223 133.081C153.223 134.739 154.571 136.082 156.233 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M147.884 136.082C149.546 136.082 150.894 134.739 150.894 133.081C150.894 131.423 149.546 130.08 147.884 130.08C146.222 130.08 144.875 131.423 144.875 133.081C144.875 134.739 146.222 136.082 147.884 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M139.536 136.082C141.198 136.082 142.545 134.739 142.545 133.081C142.545 131.423 141.198 130.08 139.536 130.08C137.874 130.08 136.527 131.423 136.527 133.081C136.527 134.739 137.874 136.082 139.536 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M131.188 136.082C132.85 136.082 134.197 134.739 134.197 133.081C134.197 131.423 132.85 130.08 131.188 130.08C129.526 130.08 128.178 131.423 128.178 133.081C128.178 134.739 129.526 136.082 131.188 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M122.839 136.082C124.501 136.082 125.849 134.739 125.849 133.081C125.849 131.423 124.501 130.08 122.839 130.08C121.177 130.08 119.83 131.423 119.83 133.081C119.83 134.739 121.177 136.082 122.839 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M114.491 136.082C116.153 136.082 117.5 134.739 117.5 133.081C117.5 131.423 116.153 130.08 114.491 130.08C112.829 130.08 111.482 131.423 111.482 133.081C111.482 134.739 112.829 136.082 114.491 136.082Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M548.8 127.853C550.462 127.853 551.809 126.509 551.809 124.851C551.809 123.194 550.462 121.85 548.8 121.85C547.138 121.85 545.79 123.194 545.79 124.851C545.79 126.509 547.138 127.853 548.8 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M540.451 127.853C542.113 127.853 543.46 126.509 543.46 124.851C543.46 123.194 542.113 121.85 540.451 121.85C538.789 121.85 537.442 123.194 537.442 124.851C537.442 126.509 538.789 127.853 540.451 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M532.103 127.853C533.765 127.853 535.112 126.509 535.112 124.851C535.112 123.194 533.765 121.85 532.103 121.85C530.441 121.85 529.094 123.194 529.094 124.851C529.094 126.509 530.441 127.853 532.103 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M523.754 127.853C525.416 127.853 526.764 126.509 526.764 124.851C526.764 123.194 525.416 121.85 523.754 121.85C522.093 121.85 520.745 123.194 520.745 124.851C520.745 126.509 522.093 127.853 523.754 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M515.406 127.853C517.068 127.853 518.415 126.509 518.415 124.851C518.415 123.194 517.068 121.85 515.406 121.85C513.744 121.85 512.397 123.194 512.397 124.851C512.397 126.509 513.744 127.853 515.406 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M507.058 127.853C508.72 127.853 510.067 126.509 510.067 124.851C510.067 123.194 508.72 121.85 507.058 121.85C505.396 121.85 504.048 123.194 504.048 124.851C504.048 126.509 505.396 127.853 507.058 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M498.709 127.853C500.371 127.853 501.719 126.509 501.719 124.851C501.719 123.194 500.371 121.85 498.709 121.85C497.047 121.85 495.7 123.194 495.7 124.851C495.7 126.509 497.047 127.853 498.709 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M490.361 127.853C492.023 127.853 493.37 126.509 493.37 124.851C493.37 123.194 492.023 121.85 490.361 121.85C488.699 121.85 487.352 123.194 487.352 124.851C487.352 126.509 488.699 127.853 490.361 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M482.013 127.853C483.675 127.853 485.022 126.509 485.022 124.851C485.022 123.194 483.675 121.85 482.013 121.85C480.351 121.85 479.003 123.194 479.003 124.851C479.003 126.509 480.351 127.853 482.013 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M473.664 127.853C475.326 127.853 476.674 126.509 476.674 124.851C476.674 123.194 475.326 121.85 473.664 121.85C472.002 121.85 470.655 123.194 470.655 124.851C470.655 126.509 472.002 127.853 473.664 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M465.316 127.853C466.978 127.853 468.325 126.509 468.325 124.851C468.325 123.194 466.978 121.85 465.316 121.85C463.654 121.85 462.307 123.194 462.307 124.851C462.307 126.509 463.654 127.853 465.316 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M456.968 127.853C458.63 127.853 459.977 126.509 459.977 124.851C459.977 123.194 458.63 121.85 456.968 121.85C455.306 121.85 453.958 123.194 453.958 124.851C453.958 126.509 455.306 127.853 456.968 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M448.619 127.853C450.281 127.853 451.629 126.509 451.629 124.851C451.629 123.194 450.281 121.85 448.619 121.85C446.957 121.85 445.61 123.194 445.61 124.851C445.61 126.509 446.957 127.853 448.619 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M440.271 127.853C441.933 127.853 443.28 126.509 443.28 124.851C443.28 123.194 441.933 121.85 440.271 121.85C438.609 121.85 437.262 123.194 437.262 124.851C437.262 126.509 438.609 127.853 440.271 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M431.923 127.853C433.585 127.853 434.932 126.509 434.932 124.851C434.932 123.194 433.585 121.85 431.923 121.85C430.261 121.85 428.913 123.194 428.913 124.851C428.913 126.509 430.261 127.853 431.923 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M423.477 127.853C425.139 127.853 426.486 126.509 426.486 124.851C426.486 123.194 425.139 121.85 423.477 121.85C421.815 121.85 420.468 123.194 420.468 124.851C420.468 126.509 421.815 127.853 423.477 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M415.129 127.853C416.791 127.853 418.138 126.509 418.138 124.851C418.138 123.194 416.791 121.85 415.129 121.85C413.467 121.85 412.12 123.194 412.12 124.851C412.12 126.509 413.467 127.853 415.129 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M406.78 127.853C408.442 127.853 409.79 126.509 409.79 124.851C409.79 123.194 408.442 121.85 406.78 121.85C405.118 121.85 403.771 123.194 403.771 124.851C403.771 126.509 405.118 127.853 406.78 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M398.432 127.853C400.094 127.853 401.441 126.509 401.441 124.851C401.441 123.194 400.094 121.85 398.432 121.85C396.77 121.85 395.423 123.194 395.423 124.851C395.423 126.509 396.77 127.853 398.432 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M390.084 127.853C391.746 127.853 393.093 126.509 393.093 124.851C393.093 123.194 391.746 121.85 390.084 121.85C388.422 121.85 387.074 123.194 387.074 124.851C387.074 126.509 388.422 127.853 390.084 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M381.735 127.853C383.397 127.853 384.745 126.509 384.745 124.851C384.745 123.194 383.397 121.85 381.735 121.85C380.073 121.85 378.726 123.194 378.726 124.851C378.726 126.509 380.073 127.853 381.735 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M373.387 127.853C375.049 127.853 376.396 126.509 376.396 124.851C376.396 123.194 375.049 121.85 373.387 121.85C371.725 121.85 370.378 123.194 370.378 124.851C370.378 126.509 371.725 127.853 373.387 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M365.039 127.853C366.701 127.853 368.048 126.509 368.048 124.851C368.048 123.194 366.701 121.85 365.039 121.85C363.377 121.85 362.029 123.194 362.029 124.851C362.029 126.509 363.377 127.853 365.039 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 127.853C358.352 127.853 359.7 126.509 359.7 124.851C359.7 123.194 358.352 121.85 356.69 121.85C355.028 121.85 353.681 123.194 353.681 124.851C353.681 126.509 355.028 127.853 356.69 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M348.342 127.853C350.004 127.853 351.351 126.509 351.351 124.851C351.351 123.194 350.004 121.85 348.342 121.85C346.68 121.85 345.333 123.194 345.333 124.851C345.333 126.509 346.68 127.853 348.342 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M339.994 127.853C341.656 127.853 343.003 126.509 343.003 124.851C343.003 123.194 341.656 121.85 339.994 121.85C338.332 121.85 336.984 123.194 336.984 124.851C336.984 126.509 338.332 127.853 339.994 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M331.645 127.853C333.307 127.853 334.655 126.509 334.655 124.851C334.655 123.194 333.307 121.85 331.645 121.85C329.983 121.85 328.636 123.194 328.636 124.851C328.636 126.509 329.983 127.853 331.645 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M323.297 127.853C324.959 127.853 326.306 126.509 326.306 124.851C326.306 123.194 324.959 121.85 323.297 121.85C321.635 121.85 320.288 123.194 320.288 124.851C320.288 126.509 321.635 127.853 323.297 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M314.948 127.853C316.61 127.853 317.958 126.509 317.958 124.851C317.958 123.194 316.61 121.85 314.948 121.85C313.287 121.85 311.939 123.194 311.939 124.851C311.939 126.509 313.287 127.853 314.948 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M231.368 127.853C233.03 127.853 234.377 126.509 234.377 124.851C234.377 123.194 233.03 121.85 231.368 121.85C229.706 121.85 228.359 123.194 228.359 124.851C228.359 126.509 229.706 127.853 231.368 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 127.853C207.985 127.853 209.332 126.509 209.332 124.851C209.332 123.194 207.985 121.85 206.323 121.85C204.661 121.85 203.314 123.194 203.314 124.851C203.314 126.509 204.661 127.853 206.323 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M197.974 127.853C199.636 127.853 200.984 126.509 200.984 124.851C200.984 123.194 199.636 121.85 197.974 121.85C196.312 121.85 194.965 123.194 194.965 124.851C194.965 126.509 196.312 127.853 197.974 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M189.626 127.853C191.288 127.853 192.635 126.509 192.635 124.851C192.635 123.194 191.288 121.85 189.626 121.85C187.964 121.85 186.617 123.194 186.617 124.851C186.617 126.509 187.964 127.853 189.626 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M181.278 127.853C182.94 127.853 184.287 126.509 184.287 124.851C184.287 123.194 182.94 121.85 181.278 121.85C179.616 121.85 178.268 123.194 178.268 124.851C178.268 126.509 179.616 127.853 181.278 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M172.929 127.853C174.591 127.853 175.939 126.509 175.939 124.851C175.939 123.194 174.591 121.85 172.929 121.85C171.267 121.85 169.92 123.194 169.92 124.851C169.92 126.509 171.267 127.853 172.929 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M164.581 127.853C166.243 127.853 167.59 126.509 167.59 124.851C167.59 123.194 166.243 121.85 164.581 121.85C162.919 121.85 161.572 123.194 161.572 124.851C161.572 126.509 162.919 127.853 164.581 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M156.233 127.853C157.895 127.853 159.242 126.509 159.242 124.851C159.242 123.194 157.895 121.85 156.233 121.85C154.571 121.85 153.223 123.194 153.223 124.851C153.223 126.509 154.571 127.853 156.233 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M147.884 127.853C149.546 127.853 150.894 126.509 150.894 124.851C150.894 123.194 149.546 121.85 147.884 121.85C146.222 121.85 144.875 123.194 144.875 124.851C144.875 126.509 146.222 127.853 147.884 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M139.536 127.853C141.198 127.853 142.545 126.509 142.545 124.851C142.545 123.194 141.198 121.85 139.536 121.85C137.874 121.85 136.527 123.194 136.527 124.851C136.527 126.509 137.874 127.853 139.536 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M131.188 127.853C132.85 127.853 134.197 126.509 134.197 124.851C134.197 123.194 132.85 121.85 131.188 121.85C129.526 121.85 128.178 123.194 128.178 124.851C128.178 126.509 129.526 127.853 131.188 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M122.839 127.853C124.501 127.853 125.849 126.509 125.849 124.851C125.849 123.194 124.501 121.85 122.839 121.85C121.177 121.85 119.83 123.194 119.83 124.851C119.83 126.509 121.177 127.853 122.839 127.853Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M573.845 119.623C575.507 119.623 576.854 118.279 576.854 116.622C576.854 114.964 575.507 113.62 573.845 113.62C572.183 113.62 570.835 114.964 570.835 116.622C570.835 118.279 572.183 119.623 573.845 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M548.8 119.623C550.462 119.623 551.809 118.279 551.809 116.622C551.809 114.964 550.462 113.62 548.8 113.62C547.138 113.62 545.79 114.964 545.79 116.622C545.79 118.279 547.138 119.623 548.8 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M540.451 119.623C542.113 119.623 543.46 118.279 543.46 116.622C543.46 114.964 542.113 113.62 540.451 113.62C538.789 113.62 537.442 114.964 537.442 116.622C537.442 118.279 538.789 119.623 540.451 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M532.103 119.623C533.765 119.623 535.112 118.279 535.112 116.622C535.112 114.964 533.765 113.62 532.103 113.62C530.441 113.62 529.094 114.964 529.094 116.622C529.094 118.279 530.441 119.623 532.103 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M523.754 119.623C525.416 119.623 526.764 118.279 526.764 116.622C526.764 114.964 525.416 113.62 523.754 113.62C522.093 113.62 520.745 114.964 520.745 116.622C520.745 118.279 522.093 119.623 523.754 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M515.406 119.623C517.068 119.623 518.415 118.279 518.415 116.622C518.415 114.964 517.068 113.62 515.406 113.62C513.744 113.62 512.397 114.964 512.397 116.622C512.397 118.279 513.744 119.623 515.406 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M507.058 119.623C508.72 119.623 510.067 118.279 510.067 116.622C510.067 114.964 508.72 113.62 507.058 113.62C505.396 113.62 504.048 114.964 504.048 116.622C504.048 118.279 505.396 119.623 507.058 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M498.709 119.623C500.371 119.623 501.719 118.279 501.719 116.622C501.719 114.964 500.371 113.62 498.709 113.62C497.047 113.62 495.7 114.964 495.7 116.622C495.7 118.279 497.047 119.623 498.709 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M490.361 119.623C492.023 119.623 493.37 118.279 493.37 116.622C493.37 114.964 492.023 113.62 490.361 113.62C488.699 113.62 487.352 114.964 487.352 116.622C487.352 118.279 488.699 119.623 490.361 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M482.013 119.623C483.675 119.623 485.022 118.279 485.022 116.622C485.022 114.964 483.675 113.62 482.013 113.62C480.351 113.62 479.003 114.964 479.003 116.622C479.003 118.279 480.351 119.623 482.013 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M473.664 119.623C475.326 119.623 476.674 118.279 476.674 116.622C476.674 114.964 475.326 113.62 473.664 113.62C472.002 113.62 470.655 114.964 470.655 116.622C470.655 118.279 472.002 119.623 473.664 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M465.316 119.623C466.978 119.623 468.325 118.279 468.325 116.622C468.325 114.964 466.978 113.62 465.316 113.62C463.654 113.62 462.307 114.964 462.307 116.622C462.307 118.279 463.654 119.623 465.316 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M456.968 119.623C458.63 119.623 459.977 118.279 459.977 116.622C459.977 114.964 458.63 113.62 456.968 113.62C455.306 113.62 453.958 114.964 453.958 116.622C453.958 118.279 455.306 119.623 456.968 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M448.619 119.623C450.281 119.623 451.629 118.279 451.629 116.622C451.629 114.964 450.281 113.62 448.619 113.62C446.957 113.62 445.61 114.964 445.61 116.622C445.61 118.279 446.957 119.623 448.619 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M440.271 119.623C441.933 119.623 443.28 118.279 443.28 116.622C443.28 114.964 441.933 113.62 440.271 113.62C438.609 113.62 437.262 114.964 437.262 116.622C437.262 118.279 438.609 119.623 440.271 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M431.923 119.623C433.585 119.623 434.932 118.279 434.932 116.622C434.932 114.964 433.585 113.62 431.923 113.62C430.261 113.62 428.913 114.964 428.913 116.622C428.913 118.279 430.261 119.623 431.923 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M423.477 119.623C425.139 119.623 426.486 118.279 426.486 116.622C426.486 114.964 425.139 113.62 423.477 113.62C421.815 113.62 420.468 114.964 420.468 116.622C420.468 118.279 421.815 119.623 423.477 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M415.129 119.623C416.791 119.623 418.138 118.279 418.138 116.622C418.138 114.964 416.791 113.62 415.129 113.62C413.467 113.62 412.12 114.964 412.12 116.622C412.12 118.279 413.467 119.623 415.129 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M406.78 119.623C408.442 119.623 409.79 118.279 409.79 116.622C409.79 114.964 408.442 113.62 406.78 113.62C405.118 113.62 403.771 114.964 403.771 116.622C403.771 118.279 405.118 119.623 406.78 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M398.432 119.623C400.094 119.623 401.441 118.279 401.441 116.622C401.441 114.964 400.094 113.62 398.432 113.62C396.77 113.62 395.423 114.964 395.423 116.622C395.423 118.279 396.77 119.623 398.432 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M390.084 119.623C391.746 119.623 393.093 118.279 393.093 116.622C393.093 114.964 391.746 113.62 390.084 113.62C388.422 113.62 387.074 114.964 387.074 116.622C387.074 118.279 388.422 119.623 390.084 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M381.735 119.623C383.397 119.623 384.745 118.279 384.745 116.622C384.745 114.964 383.397 113.62 381.735 113.62C380.073 113.62 378.726 114.964 378.726 116.622C378.726 118.279 380.073 119.623 381.735 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M373.387 119.623C375.049 119.623 376.396 118.279 376.396 116.622C376.396 114.964 375.049 113.62 373.387 113.62C371.725 113.62 370.378 114.964 370.378 116.622C370.378 118.279 371.725 119.623 373.387 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M365.039 119.623C366.701 119.623 368.048 118.279 368.048 116.622C368.048 114.964 366.701 113.62 365.039 113.62C363.377 113.62 362.029 114.964 362.029 116.622C362.029 118.279 363.377 119.623 365.039 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 119.623C358.352 119.623 359.7 118.279 359.7 116.622C359.7 114.964 358.352 113.62 356.69 113.62C355.028 113.62 353.681 114.964 353.681 116.622C353.681 118.279 355.028 119.623 356.69 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M348.342 119.623C350.004 119.623 351.351 118.279 351.351 116.622C351.351 114.964 350.004 113.62 348.342 113.62C346.68 113.62 345.333 114.964 345.333 116.622C345.333 118.279 346.68 119.623 348.342 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M339.994 119.623C341.656 119.623 343.003 118.279 343.003 116.622C343.003 114.964 341.656 113.62 339.994 113.62C338.332 113.62 336.984 114.964 336.984 116.622C336.984 118.279 338.332 119.623 339.994 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M331.645 119.623C333.307 119.623 334.655 118.279 334.655 116.622C334.655 114.964 333.307 113.62 331.645 113.62C329.983 113.62 328.636 114.964 328.636 116.622C328.636 118.279 329.983 119.623 331.645 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M323.297 119.623C324.959 119.623 326.306 118.279 326.306 116.622C326.306 114.964 324.959 113.62 323.297 113.62C321.635 113.62 320.288 114.964 320.288 116.622C320.288 118.279 321.635 119.623 323.297 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M314.948 119.623C316.61 119.623 317.958 118.279 317.958 116.622C317.958 114.964 316.61 113.62 314.948 113.62C313.287 113.62 311.939 114.964 311.939 116.622C311.939 118.279 313.287 119.623 314.948 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M223.02 119.623C224.682 119.623 226.029 118.279 226.029 116.622C226.029 114.964 224.682 113.62 223.02 113.62C221.358 113.62 220.01 114.964 220.01 116.622C220.01 118.279 221.358 119.623 223.02 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M214.671 119.623C216.333 119.623 217.68 118.279 217.68 116.622C217.68 114.964 216.333 113.62 214.671 113.62C213.009 113.62 211.662 114.964 211.662 116.622C211.662 118.279 213.009 119.623 214.671 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 119.623C207.985 119.623 209.332 118.279 209.332 116.622C209.332 114.964 207.985 113.62 206.323 113.62C204.661 113.62 203.314 114.964 203.314 116.622C203.314 118.279 204.661 119.623 206.323 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M197.974 119.623C199.636 119.623 200.984 118.279 200.984 116.622C200.984 114.964 199.636 113.62 197.974 113.62C196.312 113.62 194.965 114.964 194.965 116.622C194.965 118.279 196.312 119.623 197.974 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M189.626 119.623C191.288 119.623 192.635 118.279 192.635 116.622C192.635 114.964 191.288 113.62 189.626 113.62C187.964 113.62 186.617 114.964 186.617 116.622C186.617 118.279 187.964 119.623 189.626 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M181.278 119.623C182.94 119.623 184.287 118.279 184.287 116.622C184.287 114.964 182.94 113.62 181.278 113.62C179.616 113.62 178.268 114.964 178.268 116.622C178.268 118.279 179.616 119.623 181.278 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M172.929 119.623C174.591 119.623 175.939 118.279 175.939 116.622C175.939 114.964 174.591 113.62 172.929 113.62C171.267 113.62 169.92 114.964 169.92 116.622C169.92 118.279 171.267 119.623 172.929 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M164.581 119.623C166.243 119.623 167.59 118.279 167.59 116.622C167.59 114.964 166.243 113.62 164.581 113.62C162.919 113.62 161.572 114.964 161.572 116.622C161.572 118.279 162.919 119.623 164.581 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M156.233 119.623C157.895 119.623 159.242 118.279 159.242 116.622C159.242 114.964 157.895 113.62 156.233 113.62C154.571 113.62 153.223 114.964 153.223 116.622C153.223 118.279 154.571 119.623 156.233 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M147.884 119.623C149.546 119.623 150.894 118.279 150.894 116.622C150.894 114.964 149.546 113.62 147.884 113.62C146.222 113.62 144.875 114.964 144.875 116.622C144.875 118.279 146.222 119.623 147.884 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M139.536 119.623C141.198 119.623 142.545 118.279 142.545 116.622C142.545 114.964 141.198 113.62 139.536 113.62C137.874 113.62 136.527 114.964 136.527 116.622C136.527 118.279 137.874 119.623 139.536 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M131.188 119.623C132.85 119.623 134.197 118.279 134.197 116.622C134.197 114.964 132.85 113.62 131.188 113.62C129.526 113.62 128.178 114.964 128.178 116.622C128.178 118.279 129.526 119.623 131.188 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M122.839 119.623C124.501 119.623 125.849 118.279 125.849 116.622C125.849 114.964 124.501 113.62 122.839 113.62C121.177 113.62 119.83 114.964 119.83 116.622C119.83 118.279 121.177 119.623 122.839 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M114.491 119.623C116.153 119.623 117.5 118.279 117.5 116.622C117.5 114.964 116.153 113.62 114.491 113.62C112.829 113.62 111.482 114.964 111.482 116.622C111.482 118.279 112.829 119.623 114.491 119.623Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M573.845 111.393C575.507 111.393 576.854 110.05 576.854 108.392C576.854 106.734 575.507 105.391 573.845 105.391C572.183 105.391 570.835 106.734 570.835 108.392C570.835 110.05 572.183 111.393 573.845 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M532.103 111.393C533.765 111.393 535.112 110.05 535.112 108.392C535.112 106.734 533.765 105.391 532.103 105.391C530.441 105.391 529.094 106.734 529.094 108.392C529.094 110.05 530.441 111.393 532.103 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M523.754 111.393C525.416 111.393 526.764 110.05 526.764 108.392C526.764 106.734 525.416 105.391 523.754 105.391C522.093 105.391 520.745 106.734 520.745 108.392C520.745 110.05 522.093 111.393 523.754 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M515.406 111.393C517.068 111.393 518.415 110.05 518.415 108.392C518.415 106.734 517.068 105.391 515.406 105.391C513.744 105.391 512.397 106.734 512.397 108.392C512.397 110.05 513.744 111.393 515.406 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M507.058 111.393C508.72 111.393 510.067 110.05 510.067 108.392C510.067 106.734 508.72 105.391 507.058 105.391C505.396 105.391 504.048 106.734 504.048 108.392C504.048 110.05 505.396 111.393 507.058 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M498.709 111.393C500.371 111.393 501.719 110.05 501.719 108.392C501.719 106.734 500.371 105.391 498.709 105.391C497.047 105.391 495.7 106.734 495.7 108.392C495.7 110.05 497.047 111.393 498.709 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M490.361 111.393C492.023 111.393 493.37 110.05 493.37 108.392C493.37 106.734 492.023 105.391 490.361 105.391C488.699 105.391 487.352 106.734 487.352 108.392C487.352 110.05 488.699 111.393 490.361 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M482.013 111.393C483.675 111.393 485.022 110.05 485.022 108.392C485.022 106.734 483.675 105.391 482.013 105.391C480.351 105.391 479.003 106.734 479.003 108.392C479.003 110.05 480.351 111.393 482.013 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M473.664 111.393C475.326 111.393 476.674 110.05 476.674 108.392C476.674 106.734 475.326 105.391 473.664 105.391C472.002 105.391 470.655 106.734 470.655 108.392C470.655 110.05 472.002 111.393 473.664 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M465.316 111.393C466.978 111.393 468.325 110.05 468.325 108.392C468.325 106.734 466.978 105.391 465.316 105.391C463.654 105.391 462.307 106.734 462.307 108.392C462.307 110.05 463.654 111.393 465.316 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M456.968 111.393C458.63 111.393 459.977 110.05 459.977 108.392C459.977 106.734 458.63 105.391 456.968 105.391C455.306 105.391 453.958 106.734 453.958 108.392C453.958 110.05 455.306 111.393 456.968 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M448.619 111.393C450.281 111.393 451.629 110.05 451.629 108.392C451.629 106.734 450.281 105.391 448.619 105.391C446.957 105.391 445.61 106.734 445.61 108.392C445.61 110.05 446.957 111.393 448.619 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M440.271 111.393C441.933 111.393 443.28 110.05 443.28 108.392C443.28 106.734 441.933 105.391 440.271 105.391C438.609 105.391 437.262 106.734 437.262 108.392C437.262 110.05 438.609 111.393 440.271 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M431.923 111.393C433.585 111.393 434.932 110.05 434.932 108.392C434.932 106.734 433.585 105.391 431.923 105.391C430.261 105.391 428.913 106.734 428.913 108.392C428.913 110.05 430.261 111.393 431.923 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M423.477 111.393C425.139 111.393 426.486 110.05 426.486 108.392C426.486 106.734 425.139 105.391 423.477 105.391C421.815 105.391 420.468 106.734 420.468 108.392C420.468 110.05 421.815 111.393 423.477 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M415.129 111.393C416.791 111.393 418.138 110.05 418.138 108.392C418.138 106.734 416.791 105.391 415.129 105.391C413.467 105.391 412.12 106.734 412.12 108.392C412.12 110.05 413.467 111.393 415.129 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M406.78 111.393C408.442 111.393 409.79 110.05 409.79 108.392C409.79 106.734 408.442 105.391 406.78 105.391C405.118 105.391 403.771 106.734 403.771 108.392C403.771 110.05 405.118 111.393 406.78 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M398.432 111.393C400.094 111.393 401.441 110.05 401.441 108.392C401.441 106.734 400.094 105.391 398.432 105.391C396.77 105.391 395.423 106.734 395.423 108.392C395.423 110.05 396.77 111.393 398.432 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M390.084 111.393C391.746 111.393 393.093 110.05 393.093 108.392C393.093 106.734 391.746 105.391 390.084 105.391C388.422 105.391 387.074 106.734 387.074 108.392C387.074 110.05 388.422 111.393 390.084 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M381.735 111.393C383.397 111.393 384.745 110.05 384.745 108.392C384.745 106.734 383.397 105.391 381.735 105.391C380.073 105.391 378.726 106.734 378.726 108.392C378.726 110.05 380.073 111.393 381.735 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M373.387 111.393C375.049 111.393 376.396 110.05 376.396 108.392C376.396 106.734 375.049 105.391 373.387 105.391C371.725 105.391 370.378 106.734 370.378 108.392C370.378 110.05 371.725 111.393 373.387 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M365.039 111.393C366.701 111.393 368.048 110.05 368.048 108.392C368.048 106.734 366.701 105.391 365.039 105.391C363.377 105.391 362.029 106.734 362.029 108.392C362.029 110.05 363.377 111.393 365.039 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 111.393C358.352 111.393 359.7 110.05 359.7 108.392C359.7 106.734 358.352 105.391 356.69 105.391C355.028 105.391 353.681 106.734 353.681 108.392C353.681 110.05 355.028 111.393 356.69 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M348.342 111.393C350.004 111.393 351.351 110.05 351.351 108.392C351.351 106.734 350.004 105.391 348.342 105.391C346.68 105.391 345.333 106.734 345.333 108.392C345.333 110.05 346.68 111.393 348.342 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M339.994 111.393C341.656 111.393 343.003 110.05 343.003 108.392C343.003 106.734 341.656 105.391 339.994 105.391C338.332 105.391 336.984 106.734 336.984 108.392C336.984 110.05 338.332 111.393 339.994 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M314.948 111.393C316.61 111.393 317.958 110.05 317.958 108.392C317.958 106.734 316.61 105.391 314.948 105.391C313.287 105.391 311.939 106.734 311.939 108.392C311.939 110.05 313.287 111.393 314.948 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M306.6 111.393C308.262 111.393 309.609 110.05 309.609 108.392C309.609 106.734 308.262 105.391 306.6 105.391C304.938 105.391 303.591 106.734 303.591 108.392C303.591 110.05 304.938 111.393 306.6 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M223.02 111.393C224.682 111.393 226.029 110.05 226.029 108.392C226.029 106.734 224.682 105.391 223.02 105.391C221.358 105.391 220.01 106.734 220.01 108.392C220.01 110.05 221.358 111.393 223.02 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M214.671 111.393C216.333 111.393 217.68 110.05 217.68 108.392C217.68 106.734 216.333 105.391 214.671 105.391C213.009 105.391 211.662 106.734 211.662 108.392C211.662 110.05 213.009 111.393 214.671 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 111.393C207.985 111.393 209.332 110.05 209.332 108.392C209.332 106.734 207.985 105.391 206.323 105.391C204.661 105.391 203.314 106.734 203.314 108.392C203.314 110.05 204.661 111.393 206.323 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M197.974 111.393C199.636 111.393 200.984 110.05 200.984 108.392C200.984 106.734 199.636 105.391 197.974 105.391C196.312 105.391 194.965 106.734 194.965 108.392C194.965 110.05 196.312 111.393 197.974 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M189.626 111.393C191.288 111.393 192.635 110.05 192.635 108.392C192.635 106.734 191.288 105.391 189.626 105.391C187.964 105.391 186.617 106.734 186.617 108.392C186.617 110.05 187.964 111.393 189.626 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M181.278 111.393C182.94 111.393 184.287 110.05 184.287 108.392C184.287 106.734 182.94 105.391 181.278 105.391C179.616 105.391 178.268 106.734 178.268 108.392C178.268 110.05 179.616 111.393 181.278 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M172.929 111.393C174.591 111.393 175.939 110.05 175.939 108.392C175.939 106.734 174.591 105.391 172.929 105.391C171.267 105.391 169.92 106.734 169.92 108.392C169.92 110.05 171.267 111.393 172.929 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M164.581 111.393C166.243 111.393 167.59 110.05 167.59 108.392C167.59 106.734 166.243 105.391 164.581 105.391C162.919 105.391 161.572 106.734 161.572 108.392C161.572 110.05 162.919 111.393 164.581 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M156.233 111.393C157.895 111.393 159.242 110.05 159.242 108.392C159.242 106.734 157.895 105.391 156.233 105.391C154.571 105.391 153.223 106.734 153.223 108.392C153.223 110.05 154.571 111.393 156.233 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M147.884 111.393C149.546 111.393 150.894 110.05 150.894 108.392C150.894 106.734 149.546 105.391 147.884 105.391C146.222 105.391 144.875 106.734 144.875 108.392C144.875 110.05 146.222 111.393 147.884 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M139.536 111.393C141.198 111.393 142.545 110.05 142.545 108.392C142.545 106.734 141.198 105.391 139.536 105.391C137.874 105.391 136.527 106.734 136.527 108.392C136.527 110.05 137.874 111.393 139.536 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M131.188 111.393C132.85 111.393 134.197 110.05 134.197 108.392C134.197 106.734 132.85 105.391 131.188 105.391C129.526 105.391 128.178 106.734 128.178 108.392C128.178 110.05 129.526 111.393 131.188 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M122.839 111.393C124.501 111.393 125.849 110.05 125.849 108.392C125.849 106.734 124.501 105.391 122.839 105.391C121.177 105.391 119.83 106.734 119.83 108.392C119.83 110.05 121.177 111.393 122.839 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M114.491 111.393C116.153 111.393 117.5 110.05 117.5 108.392C117.5 106.734 116.153 105.391 114.491 105.391C112.829 105.391 111.482 106.734 111.482 108.392C111.482 110.05 112.829 111.393 114.491 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M106.143 111.393C107.804 111.393 109.152 110.05 109.152 108.392C109.152 106.734 107.804 105.391 106.143 105.391C104.481 105.391 103.133 106.734 103.133 108.392C103.133 110.05 104.481 111.393 106.143 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M47.6069 111.393C49.2689 111.393 50.6162 110.05 50.6162 108.392C50.6162 106.734 49.2689 105.391 47.6069 105.391C45.945 105.391 44.5977 106.734 44.5977 108.392C44.5977 110.05 45.945 111.393 47.6069 111.393Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M573.845 103.164C575.507 103.164 576.854 101.82 576.854 100.162C576.854 98.5046 575.507 97.1609 573.845 97.1609C572.183 97.1609 570.835 98.5046 570.835 100.162C570.835 101.82 572.183 103.164 573.845 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M540.451 103.164C542.113 103.164 543.46 101.82 543.46 100.162C543.46 98.5046 542.113 97.1609 540.451 97.1609C538.789 97.1609 537.442 98.5046 537.442 100.162C537.442 101.82 538.789 103.164 540.451 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M532.103 103.164C533.765 103.164 535.112 101.82 535.112 100.162C535.112 98.5046 533.765 97.1609 532.103 97.1609C530.441 97.1609 529.094 98.5046 529.094 100.162C529.094 101.82 530.441 103.164 532.103 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M523.754 103.164C525.416 103.164 526.764 101.82 526.764 100.162C526.764 98.5046 525.416 97.1609 523.754 97.1609C522.093 97.1609 520.745 98.5046 520.745 100.162C520.745 101.82 522.093 103.164 523.754 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M515.406 103.164C517.068 103.164 518.415 101.82 518.415 100.162C518.415 98.5046 517.068 97.1609 515.406 97.1609C513.744 97.1609 512.397 98.5046 512.397 100.162C512.397 101.82 513.744 103.164 515.406 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M507.058 103.164C508.72 103.164 510.067 101.82 510.067 100.162C510.067 98.5046 508.72 97.1609 507.058 97.1609C505.396 97.1609 504.048 98.5046 504.048 100.162C504.048 101.82 505.396 103.164 507.058 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M498.709 103.164C500.371 103.164 501.719 101.82 501.719 100.162C501.719 98.5046 500.371 97.1609 498.709 97.1609C497.047 97.1609 495.7 98.5046 495.7 100.162C495.7 101.82 497.047 103.164 498.709 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M490.361 103.164C492.023 103.164 493.37 101.82 493.37 100.162C493.37 98.5046 492.023 97.1609 490.361 97.1609C488.699 97.1609 487.352 98.5046 487.352 100.162C487.352 101.82 488.699 103.164 490.361 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M482.013 103.164C483.675 103.164 485.022 101.82 485.022 100.162C485.022 98.5046 483.675 97.1609 482.013 97.1609C480.351 97.1609 479.003 98.5046 479.003 100.162C479.003 101.82 480.351 103.164 482.013 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M473.664 103.164C475.326 103.164 476.674 101.82 476.674 100.162C476.674 98.5046 475.326 97.1609 473.664 97.1609C472.002 97.1609 470.655 98.5046 470.655 100.162C470.655 101.82 472.002 103.164 473.664 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M465.316 103.164C466.978 103.164 468.325 101.82 468.325 100.162C468.325 98.5046 466.978 97.1609 465.316 97.1609C463.654 97.1609 462.307 98.5046 462.307 100.162C462.307 101.82 463.654 103.164 465.316 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M456.968 103.164C458.63 103.164 459.977 101.82 459.977 100.162C459.977 98.5046 458.63 97.1609 456.968 97.1609C455.306 97.1609 453.958 98.5046 453.958 100.162C453.958 101.82 455.306 103.164 456.968 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M448.619 103.164C450.281 103.164 451.629 101.82 451.629 100.162C451.629 98.5046 450.281 97.1609 448.619 97.1609C446.957 97.1609 445.61 98.5046 445.61 100.162C445.61 101.82 446.957 103.164 448.619 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M440.271 103.164C441.933 103.164 443.28 101.82 443.28 100.162C443.28 98.5046 441.933 97.1609 440.271 97.1609C438.609 97.1609 437.262 98.5046 437.262 100.162C437.262 101.82 438.609 103.164 440.271 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M431.923 103.164C433.585 103.164 434.932 101.82 434.932 100.162C434.932 98.5046 433.585 97.1609 431.923 97.1609C430.261 97.1609 428.913 98.5046 428.913 100.162C428.913 101.82 430.261 103.164 431.923 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M423.477 103.164C425.139 103.164 426.486 101.82 426.486 100.162C426.486 98.5046 425.139 97.1609 423.477 97.1609C421.815 97.1609 420.468 98.5046 420.468 100.162C420.468 101.82 421.815 103.164 423.477 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M415.129 103.164C416.791 103.164 418.138 101.82 418.138 100.162C418.138 98.5046 416.791 97.1609 415.129 97.1609C413.467 97.1609 412.12 98.5046 412.12 100.162C412.12 101.82 413.467 103.164 415.129 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M406.78 103.164C408.442 103.164 409.79 101.82 409.79 100.162C409.79 98.5046 408.442 97.1609 406.78 97.1609C405.118 97.1609 403.771 98.5046 403.771 100.162C403.771 101.82 405.118 103.164 406.78 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M398.432 103.164C400.094 103.164 401.441 101.82 401.441 100.162C401.441 98.5046 400.094 97.1609 398.432 97.1609C396.77 97.1609 395.423 98.5046 395.423 100.162C395.423 101.82 396.77 103.164 398.432 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M390.084 103.164C391.746 103.164 393.093 101.82 393.093 100.162C393.093 98.5046 391.746 97.1609 390.084 97.1609C388.422 97.1609 387.074 98.5046 387.074 100.162C387.074 101.82 388.422 103.164 390.084 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M381.735 103.164C383.397 103.164 384.745 101.82 384.745 100.162C384.745 98.5046 383.397 97.1609 381.735 97.1609C380.073 97.1609 378.726 98.5046 378.726 100.162C378.726 101.82 380.073 103.164 381.735 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M373.387 103.164C375.049 103.164 376.396 101.82 376.396 100.162C376.396 98.5046 375.049 97.1609 373.387 97.1609C371.725 97.1609 370.378 98.5046 370.378 100.162C370.378 101.82 371.725 103.164 373.387 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M365.039 103.164C366.701 103.164 368.048 101.82 368.048 100.162C368.048 98.5046 366.701 97.1609 365.039 97.1609C363.377 97.1609 362.029 98.5046 362.029 100.162C362.029 101.82 363.377 103.164 365.039 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 103.164C358.352 103.164 359.7 101.82 359.7 100.162C359.7 98.5046 358.352 97.1609 356.69 97.1609C355.028 97.1609 353.681 98.5046 353.681 100.162C353.681 101.82 355.028 103.164 356.69 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M348.342 103.164C350.004 103.164 351.351 101.82 351.351 100.162C351.351 98.5046 350.004 97.1609 348.342 97.1609C346.68 97.1609 345.333 98.5046 345.333 100.162C345.333 101.82 346.68 103.164 348.342 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M339.994 103.164C341.656 103.164 343.003 101.82 343.003 100.162C343.003 98.5046 341.656 97.1609 339.994 97.1609C338.332 97.1609 336.984 98.5046 336.984 100.162C336.984 101.82 338.332 103.164 339.994 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M331.645 103.164C333.307 103.164 334.655 101.82 334.655 100.162C334.655 98.5046 333.307 97.1609 331.645 97.1609C329.983 97.1609 328.636 98.5046 328.636 100.162C328.636 101.82 329.983 103.164 331.645 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M314.948 103.164C316.61 103.164 317.958 101.82 317.958 100.162C317.958 98.5046 316.61 97.1609 314.948 97.1609C313.287 97.1609 311.939 98.5046 311.939 100.162C311.939 101.82 313.287 103.164 314.948 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M306.6 103.164C308.262 103.164 309.609 101.82 309.609 100.162C309.609 98.5046 308.262 97.1609 306.6 97.1609C304.938 97.1609 303.591 98.5046 303.591 100.162C303.591 101.82 304.938 103.164 306.6 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M214.671 103.164C216.333 103.164 217.68 101.82 217.68 100.162C217.68 98.5046 216.333 97.1609 214.671 97.1609C213.009 97.1609 211.662 98.5046 211.662 100.162C211.662 101.82 213.009 103.164 214.671 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 103.164C207.985 103.164 209.332 101.82 209.332 100.162C209.332 98.5046 207.985 97.1609 206.323 97.1609C204.661 97.1609 203.314 98.5046 203.314 100.162C203.314 101.82 204.661 103.164 206.323 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M197.974 103.164C199.636 103.164 200.984 101.82 200.984 100.162C200.984 98.5046 199.636 97.1609 197.974 97.1609C196.312 97.1609 194.965 98.5046 194.965 100.162C194.965 101.82 196.312 103.164 197.974 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M189.626 103.164C191.288 103.164 192.635 101.82 192.635 100.162C192.635 98.5046 191.288 97.1609 189.626 97.1609C187.964 97.1609 186.617 98.5046 186.617 100.162C186.617 101.82 187.964 103.164 189.626 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M164.581 103.164C166.243 103.164 167.59 101.82 167.59 100.162C167.59 98.5046 166.243 97.1609 164.581 97.1609C162.919 97.1609 161.572 98.5046 161.572 100.162C161.572 101.82 162.919 103.164 164.581 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M156.233 103.164C157.895 103.164 159.242 101.82 159.242 100.162C159.242 98.5046 157.895 97.1609 156.233 97.1609C154.571 97.1609 153.223 98.5046 153.223 100.162C153.223 101.82 154.571 103.164 156.233 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M147.884 103.164C149.546 103.164 150.894 101.82 150.894 100.162C150.894 98.5046 149.546 97.1609 147.884 97.1609C146.222 97.1609 144.875 98.5046 144.875 100.162C144.875 101.82 146.222 103.164 147.884 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M139.536 103.164C141.198 103.164 142.545 101.82 142.545 100.162C142.545 98.5046 141.198 97.1609 139.536 97.1609C137.874 97.1609 136.527 98.5046 136.527 100.162C136.527 101.82 137.874 103.164 139.536 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M131.188 103.164C132.85 103.164 134.197 101.82 134.197 100.162C134.197 98.5046 132.85 97.1609 131.188 97.1609C129.526 97.1609 128.178 98.5046 128.178 100.162C128.178 101.82 129.526 103.164 131.188 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M122.839 103.164C124.501 103.164 125.849 101.82 125.849 100.162C125.849 98.5046 124.501 97.1609 122.839 97.1609C121.177 97.1609 119.83 98.5046 119.83 100.162C119.83 101.82 121.177 103.164 122.839 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M114.491 103.164C116.153 103.164 117.5 101.82 117.5 100.162C117.5 98.5046 116.153 97.1609 114.491 97.1609C112.829 97.1609 111.482 98.5046 111.482 100.162C111.482 101.82 112.829 103.164 114.491 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M106.143 103.164C107.804 103.164 109.152 101.82 109.152 100.162C109.152 98.5046 107.804 97.1609 106.143 97.1609C104.481 97.1609 103.133 98.5046 103.133 100.162C103.133 101.82 104.481 103.164 106.143 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M97.7942 103.164C99.4562 103.164 100.803 101.82 100.803 100.162C100.803 98.5046 99.4562 97.1609 97.7942 97.1609C96.1322 97.1609 94.7849 98.5046 94.7849 100.162C94.7849 101.82 96.1322 103.164 97.7942 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M64.4007 103.164C66.0627 103.164 67.41 101.82 67.41 100.162C67.41 98.5046 66.0627 97.1609 64.4007 97.1609C62.7387 97.1609 61.3914 98.5046 61.3914 100.162C61.3914 101.82 62.7387 103.164 64.4007 103.164Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M598.89 94.934C600.552 94.934 601.899 93.5902 601.899 91.9326C601.899 90.275 600.552 88.9312 598.89 88.9312C597.228 88.9312 595.88 90.275 595.88 91.9326C595.88 93.5902 597.228 94.934 598.89 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M590.541 94.934C592.203 94.934 593.551 93.5902 593.551 91.9326C593.551 90.275 592.203 88.9312 590.541 88.9312C588.879 88.9312 587.532 90.275 587.532 91.9326C587.532 93.5902 588.879 94.934 590.541 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M582.193 94.934C583.855 94.934 585.202 93.5902 585.202 91.9326C585.202 90.275 583.855 88.9312 582.193 88.9312C580.531 88.9312 579.184 90.275 579.184 91.9326C579.184 93.5902 580.531 94.934 582.193 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M573.845 94.934C575.507 94.934 576.854 93.5902 576.854 91.9326C576.854 90.275 575.507 88.9312 573.845 88.9312C572.183 88.9312 570.835 90.275 570.835 91.9326C570.835 93.5902 572.183 94.934 573.845 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M565.496 94.934C567.158 94.934 568.506 93.5902 568.506 91.9326C568.506 90.275 567.158 88.9312 565.496 88.9312C563.834 88.9312 562.487 90.275 562.487 91.9326C562.487 93.5902 563.834 94.934 565.496 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M557.148 94.934C558.81 94.934 560.157 93.5902 560.157 91.9326C560.157 90.275 558.81 88.9312 557.148 88.9312C555.486 88.9312 554.139 90.275 554.139 91.9326C554.139 93.5902 555.486 94.934 557.148 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M548.8 94.934C550.462 94.934 551.809 93.5902 551.809 91.9326C551.809 90.275 550.462 88.9312 548.8 88.9312C547.138 88.9312 545.79 90.275 545.79 91.9326C545.79 93.5902 547.138 94.934 548.8 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M540.451 94.934C542.113 94.934 543.46 93.5902 543.46 91.9326C543.46 90.275 542.113 88.9312 540.451 88.9312C538.789 88.9312 537.442 90.275 537.442 91.9326C537.442 93.5902 538.789 94.934 540.451 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M532.103 94.934C533.765 94.934 535.112 93.5902 535.112 91.9326C535.112 90.275 533.765 88.9312 532.103 88.9312C530.441 88.9312 529.094 90.275 529.094 91.9326C529.094 93.5902 530.441 94.934 532.103 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M523.754 94.934C525.416 94.934 526.764 93.5902 526.764 91.9326C526.764 90.275 525.416 88.9312 523.754 88.9312C522.093 88.9312 520.745 90.275 520.745 91.9326C520.745 93.5902 522.093 94.934 523.754 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M515.406 94.934C517.068 94.934 518.415 93.5902 518.415 91.9326C518.415 90.275 517.068 88.9312 515.406 88.9312C513.744 88.9312 512.397 90.275 512.397 91.9326C512.397 93.5902 513.744 94.934 515.406 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M507.058 94.934C508.72 94.934 510.067 93.5902 510.067 91.9326C510.067 90.275 508.72 88.9312 507.058 88.9312C505.396 88.9312 504.048 90.275 504.048 91.9326C504.048 93.5902 505.396 94.934 507.058 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M498.709 94.934C500.371 94.934 501.719 93.5902 501.719 91.9326C501.719 90.275 500.371 88.9312 498.709 88.9312C497.047 88.9312 495.7 90.275 495.7 91.9326C495.7 93.5902 497.047 94.934 498.709 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M490.361 94.934C492.023 94.934 493.37 93.5902 493.37 91.9326C493.37 90.275 492.023 88.9312 490.361 88.9312C488.699 88.9312 487.352 90.275 487.352 91.9326C487.352 93.5902 488.699 94.934 490.361 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M482.013 94.934C483.675 94.934 485.022 93.5902 485.022 91.9326C485.022 90.275 483.675 88.9312 482.013 88.9312C480.351 88.9312 479.003 90.275 479.003 91.9326C479.003 93.5902 480.351 94.934 482.013 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M473.664 94.934C475.326 94.934 476.674 93.5902 476.674 91.9326C476.674 90.275 475.326 88.9312 473.664 88.9312C472.002 88.9312 470.655 90.275 470.655 91.9326C470.655 93.5902 472.002 94.934 473.664 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M465.316 94.934C466.978 94.934 468.325 93.5902 468.325 91.9326C468.325 90.275 466.978 88.9312 465.316 88.9312C463.654 88.9312 462.307 90.275 462.307 91.9326C462.307 93.5902 463.654 94.934 465.316 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M456.968 94.934C458.63 94.934 459.977 93.5902 459.977 91.9326C459.977 90.275 458.63 88.9312 456.968 88.9312C455.306 88.9312 453.958 90.275 453.958 91.9326C453.958 93.5902 455.306 94.934 456.968 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M448.619 94.934C450.281 94.934 451.629 93.5902 451.629 91.9326C451.629 90.275 450.281 88.9312 448.619 88.9312C446.957 88.9312 445.61 90.275 445.61 91.9326C445.61 93.5902 446.957 94.934 448.619 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M440.271 94.934C441.933 94.934 443.28 93.5902 443.28 91.9326C443.28 90.275 441.933 88.9312 440.271 88.9312C438.609 88.9312 437.262 90.275 437.262 91.9326C437.262 93.5902 438.609 94.934 440.271 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M431.923 94.934C433.585 94.934 434.932 93.5902 434.932 91.9326C434.932 90.275 433.585 88.9312 431.923 88.9312C430.261 88.9312 428.913 90.275 428.913 91.9326C428.913 93.5902 430.261 94.934 431.923 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M423.477 94.934C425.139 94.934 426.486 93.5902 426.486 91.9326C426.486 90.275 425.139 88.9312 423.477 88.9312C421.815 88.9312 420.468 90.275 420.468 91.9326C420.468 93.5902 421.815 94.934 423.477 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M415.129 94.934C416.791 94.934 418.138 93.5902 418.138 91.9326C418.138 90.275 416.791 88.9312 415.129 88.9312C413.467 88.9312 412.12 90.275 412.12 91.9326C412.12 93.5902 413.467 94.934 415.129 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M406.78 94.934C408.442 94.934 409.79 93.5902 409.79 91.9326C409.79 90.275 408.442 88.9312 406.78 88.9312C405.118 88.9312 403.771 90.275 403.771 91.9326C403.771 93.5902 405.118 94.934 406.78 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M398.432 94.934C400.094 94.934 401.441 93.5902 401.441 91.9326C401.441 90.275 400.094 88.9312 398.432 88.9312C396.77 88.9312 395.423 90.275 395.423 91.9326C395.423 93.5902 396.77 94.934 398.432 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M390.084 94.934C391.746 94.934 393.093 93.5902 393.093 91.9326C393.093 90.275 391.746 88.9312 390.084 88.9312C388.422 88.9312 387.074 90.275 387.074 91.9326C387.074 93.5902 388.422 94.934 390.084 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M381.735 94.934C383.397 94.934 384.745 93.5902 384.745 91.9326C384.745 90.275 383.397 88.9312 381.735 88.9312C380.073 88.9312 378.726 90.275 378.726 91.9326C378.726 93.5902 380.073 94.934 381.735 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M373.387 94.934C375.049 94.934 376.396 93.5902 376.396 91.9326C376.396 90.275 375.049 88.9312 373.387 88.9312C371.725 88.9312 370.378 90.275 370.378 91.9326C370.378 93.5902 371.725 94.934 373.387 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M365.039 94.934C366.701 94.934 368.048 93.5902 368.048 91.9326C368.048 90.275 366.701 88.9312 365.039 88.9312C363.377 88.9312 362.029 90.275 362.029 91.9326C362.029 93.5902 363.377 94.934 365.039 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 94.934C358.352 94.934 359.7 93.5902 359.7 91.9326C359.7 90.275 358.352 88.9312 356.69 88.9312C355.028 88.9312 353.681 90.275 353.681 91.9326C353.681 93.5902 355.028 94.934 356.69 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M339.994 94.934C341.656 94.934 343.003 93.5902 343.003 91.9326C343.003 90.275 341.656 88.9312 339.994 88.9312C338.332 88.9312 336.984 90.275 336.984 91.9326C336.984 93.5902 338.332 94.934 339.994 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M331.645 94.934C333.307 94.934 334.655 93.5902 334.655 91.9326C334.655 90.275 333.307 88.9312 331.645 88.9312C329.983 88.9312 328.636 90.275 328.636 91.9326C328.636 93.5902 329.983 94.934 331.645 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M248.162 94.934C249.824 94.934 251.171 93.5902 251.171 91.9326C251.171 90.275 249.824 88.9312 248.162 88.9312C246.5 88.9312 245.152 90.275 245.152 91.9326C245.152 93.5902 246.5 94.934 248.162 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M239.716 94.934C241.378 94.934 242.726 93.5902 242.726 91.9326C242.726 90.275 241.378 88.9312 239.716 88.9312C238.054 88.9312 236.707 90.275 236.707 91.9326C236.707 93.5902 238.054 94.934 239.716 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M197.974 94.934C199.636 94.934 200.984 93.5902 200.984 91.9326C200.984 90.275 199.636 88.9312 197.974 88.9312C196.312 88.9312 194.965 90.275 194.965 91.9326C194.965 93.5902 196.312 94.934 197.974 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M189.626 94.934C191.288 94.934 192.635 93.5902 192.635 91.9326C192.635 90.275 191.288 88.9312 189.626 88.9312C187.964 88.9312 186.617 90.275 186.617 91.9326C186.617 93.5902 187.964 94.934 189.626 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M164.581 94.934C166.243 94.934 167.59 93.5902 167.59 91.9326C167.59 90.275 166.243 88.9312 164.581 88.9312C162.919 88.9312 161.572 90.275 161.572 91.9326C161.572 93.5902 162.919 94.934 164.581 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M156.233 94.934C157.895 94.934 159.242 93.5902 159.242 91.9326C159.242 90.275 157.895 88.9312 156.233 88.9312C154.571 88.9312 153.223 90.275 153.223 91.9326C153.223 93.5902 154.571 94.934 156.233 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M147.884 94.934C149.546 94.934 150.894 93.5902 150.894 91.9326C150.894 90.275 149.546 88.9312 147.884 88.9312C146.222 88.9312 144.875 90.275 144.875 91.9326C144.875 93.5902 146.222 94.934 147.884 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M139.536 94.934C141.198 94.934 142.545 93.5902 142.545 91.9326C142.545 90.275 141.198 88.9312 139.536 88.9312C137.874 88.9312 136.527 90.275 136.527 91.9326C136.527 93.5902 137.874 94.934 139.536 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M131.188 94.934C132.85 94.934 134.197 93.5902 134.197 91.9326C134.197 90.275 132.85 88.9312 131.188 88.9312C129.526 88.9312 128.178 90.275 128.178 91.9326C128.178 93.5902 129.526 94.934 131.188 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M122.839 94.934C124.501 94.934 125.849 93.5902 125.849 91.9326C125.849 90.275 124.501 88.9312 122.839 88.9312C121.177 88.9312 119.83 90.275 119.83 91.9326C119.83 93.5902 121.177 94.934 122.839 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M114.491 94.934C116.153 94.934 117.5 93.5902 117.5 91.9326C117.5 90.275 116.153 88.9312 114.491 88.9312C112.829 88.9312 111.482 90.275 111.482 91.9326C111.482 93.5902 112.829 94.934 114.491 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M106.143 94.934C107.804 94.934 109.152 93.5902 109.152 91.9326C109.152 90.275 107.804 88.9312 106.143 88.9312C104.481 88.9312 103.133 90.275 103.133 91.9326C103.133 93.5902 104.481 94.934 106.143 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M97.7942 94.934C99.4562 94.934 100.803 93.5902 100.803 91.9326C100.803 90.275 99.4562 88.9312 97.7942 88.9312C96.1322 88.9312 94.7849 90.275 94.7849 91.9326C94.7849 93.5902 96.1322 94.934 97.7942 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M89.4458 94.934C91.1078 94.934 92.4551 93.5902 92.4551 91.9326C92.4551 90.275 91.1078 88.9312 89.4458 88.9312C87.7838 88.9312 86.4365 90.275 86.4365 91.9326C86.4365 93.5902 87.7838 94.934 89.4458 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M81.0974 94.934C82.7594 94.934 84.1067 93.5902 84.1067 91.9326C84.1067 90.275 82.7594 88.9312 81.0974 88.9312C79.4355 88.9312 78.0882 90.275 78.0882 91.9326C78.0882 93.5902 79.4355 94.934 81.0974 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M72.7491 94.934C74.4111 94.934 75.7584 93.5902 75.7584 91.9326C75.7584 90.275 74.4111 88.9312 72.7491 88.9312C71.0871 88.9312 69.7398 90.275 69.7398 91.9326C69.7398 93.5902 71.0871 94.934 72.7491 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M64.4007 94.934C66.0627 94.934 67.41 93.5902 67.41 91.9326C67.41 90.275 66.0627 88.9312 64.4007 88.9312C62.7387 88.9312 61.3914 90.275 61.3914 91.9326C61.3914 93.5902 62.7387 94.934 64.4007 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M56.0524 94.934C57.7144 94.934 59.0617 93.5902 59.0617 91.9326C59.0617 90.275 57.7144 88.9312 56.0524 88.9312C54.3904 88.9312 53.0431 90.275 53.0431 91.9326C53.0431 93.5902 54.3904 94.934 56.0524 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M47.6069 94.934C49.2689 94.934 50.6162 93.5902 50.6162 91.9326C50.6162 90.275 49.2689 88.9312 47.6069 88.9312C45.945 88.9312 44.5977 90.275 44.5977 91.9326C44.5977 93.5902 45.945 94.934 47.6069 94.934Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M624.032 86.7043C625.694 86.7043 627.041 85.3606 627.041 83.7029C627.041 82.0453 625.694 80.7015 624.032 80.7015C622.37 80.7015 621.023 82.0453 621.023 83.7029C621.023 85.3606 622.37 86.7043 624.032 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M615.586 86.7043C617.248 86.7043 618.596 85.3606 618.596 83.7029C618.596 82.0453 617.248 80.7015 615.586 80.7015C613.924 80.7015 612.577 82.0453 612.577 83.7029C612.577 85.3606 613.924 86.7043 615.586 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M607.238 86.7043C608.9 86.7043 610.247 85.3606 610.247 83.7029C610.247 82.0453 608.9 80.7015 607.238 80.7015C605.576 80.7015 604.229 82.0453 604.229 83.7029C604.229 85.3606 605.576 86.7043 607.238 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M598.89 86.7043C600.552 86.7043 601.899 85.3606 601.899 83.7029C601.899 82.0453 600.552 80.7015 598.89 80.7015C597.228 80.7015 595.88 82.0453 595.88 83.7029C595.88 85.3606 597.228 86.7043 598.89 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M590.541 86.7043C592.203 86.7043 593.551 85.3606 593.551 83.7029C593.551 82.0453 592.203 80.7015 590.541 80.7015C588.879 80.7015 587.532 82.0453 587.532 83.7029C587.532 85.3606 588.879 86.7043 590.541 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M582.193 86.7043C583.855 86.7043 585.202 85.3606 585.202 83.7029C585.202 82.0453 583.855 80.7015 582.193 80.7015C580.531 80.7015 579.184 82.0453 579.184 83.7029C579.184 85.3606 580.531 86.7043 582.193 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M573.845 86.7043C575.507 86.7043 576.854 85.3606 576.854 83.7029C576.854 82.0453 575.507 80.7015 573.845 80.7015C572.183 80.7015 570.835 82.0453 570.835 83.7029C570.835 85.3606 572.183 86.7043 573.845 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M565.496 86.7043C567.158 86.7043 568.506 85.3606 568.506 83.7029C568.506 82.0453 567.158 80.7015 565.496 80.7015C563.834 80.7015 562.487 82.0453 562.487 83.7029C562.487 85.3606 563.834 86.7043 565.496 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M557.148 86.7043C558.81 86.7043 560.157 85.3606 560.157 83.7029C560.157 82.0453 558.81 80.7015 557.148 80.7015C555.486 80.7015 554.139 82.0453 554.139 83.7029C554.139 85.3606 555.486 86.7043 557.148 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M548.8 86.7043C550.462 86.7043 551.809 85.3606 551.809 83.7029C551.809 82.0453 550.462 80.7015 548.8 80.7015C547.138 80.7015 545.79 82.0453 545.79 83.7029C545.79 85.3606 547.138 86.7043 548.8 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M540.451 86.7043C542.113 86.7043 543.46 85.3606 543.46 83.7029C543.46 82.0453 542.113 80.7015 540.451 80.7015C538.789 80.7015 537.442 82.0453 537.442 83.7029C537.442 85.3606 538.789 86.7043 540.451 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M532.103 86.7043C533.765 86.7043 535.112 85.3606 535.112 83.7029C535.112 82.0453 533.765 80.7015 532.103 80.7015C530.441 80.7015 529.094 82.0453 529.094 83.7029C529.094 85.3606 530.441 86.7043 532.103 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M523.754 86.7043C525.416 86.7043 526.764 85.3606 526.764 83.7029C526.764 82.0453 525.416 80.7015 523.754 80.7015C522.093 80.7015 520.745 82.0453 520.745 83.7029C520.745 85.3606 522.093 86.7043 523.754 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M515.406 86.7043C517.068 86.7043 518.415 85.3606 518.415 83.7029C518.415 82.0453 517.068 80.7015 515.406 80.7015C513.744 80.7015 512.397 82.0453 512.397 83.7029C512.397 85.3606 513.744 86.7043 515.406 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M507.058 86.7043C508.72 86.7043 510.067 85.3606 510.067 83.7029C510.067 82.0453 508.72 80.7015 507.058 80.7015C505.396 80.7015 504.048 82.0453 504.048 83.7029C504.048 85.3606 505.396 86.7043 507.058 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M498.709 86.7043C500.371 86.7043 501.719 85.3606 501.719 83.7029C501.719 82.0453 500.371 80.7015 498.709 80.7015C497.047 80.7015 495.7 82.0453 495.7 83.7029C495.7 85.3606 497.047 86.7043 498.709 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M490.361 86.7043C492.023 86.7043 493.37 85.3606 493.37 83.7029C493.37 82.0453 492.023 80.7015 490.361 80.7015C488.699 80.7015 487.352 82.0453 487.352 83.7029C487.352 85.3606 488.699 86.7043 490.361 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M482.013 86.7043C483.675 86.7043 485.022 85.3606 485.022 83.7029C485.022 82.0453 483.675 80.7015 482.013 80.7015C480.351 80.7015 479.003 82.0453 479.003 83.7029C479.003 85.3606 480.351 86.7043 482.013 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M473.664 86.7043C475.326 86.7043 476.674 85.3606 476.674 83.7029C476.674 82.0453 475.326 80.7015 473.664 80.7015C472.002 80.7015 470.655 82.0453 470.655 83.7029C470.655 85.3606 472.002 86.7043 473.664 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M465.316 86.7043C466.978 86.7043 468.325 85.3606 468.325 83.7029C468.325 82.0453 466.978 80.7015 465.316 80.7015C463.654 80.7015 462.307 82.0453 462.307 83.7029C462.307 85.3606 463.654 86.7043 465.316 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M456.968 86.7043C458.63 86.7043 459.977 85.3606 459.977 83.7029C459.977 82.0453 458.63 80.7015 456.968 80.7015C455.306 80.7015 453.958 82.0453 453.958 83.7029C453.958 85.3606 455.306 86.7043 456.968 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M448.619 86.7043C450.281 86.7043 451.629 85.3606 451.629 83.7029C451.629 82.0453 450.281 80.7015 448.619 80.7015C446.957 80.7015 445.61 82.0453 445.61 83.7029C445.61 85.3606 446.957 86.7043 448.619 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M440.271 86.7043C441.933 86.7043 443.28 85.3606 443.28 83.7029C443.28 82.0453 441.933 80.7015 440.271 80.7015C438.609 80.7015 437.262 82.0453 437.262 83.7029C437.262 85.3606 438.609 86.7043 440.271 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M431.923 86.7043C433.585 86.7043 434.932 85.3606 434.932 83.7029C434.932 82.0453 433.585 80.7015 431.923 80.7015C430.261 80.7015 428.913 82.0453 428.913 83.7029C428.913 85.3606 430.261 86.7043 431.923 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M423.477 86.7043C425.139 86.7043 426.486 85.3606 426.486 83.7029C426.486 82.0453 425.139 80.7015 423.477 80.7015C421.815 80.7015 420.468 82.0453 420.468 83.7029C420.468 85.3606 421.815 86.7043 423.477 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M415.129 86.7043C416.791 86.7043 418.138 85.3606 418.138 83.7029C418.138 82.0453 416.791 80.7015 415.129 80.7015C413.467 80.7015 412.12 82.0453 412.12 83.7029C412.12 85.3606 413.467 86.7043 415.129 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M406.78 86.7043C408.442 86.7043 409.79 85.3606 409.79 83.7029C409.79 82.0453 408.442 80.7015 406.78 80.7015C405.118 80.7015 403.771 82.0453 403.771 83.7029C403.771 85.3606 405.118 86.7043 406.78 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M398.432 86.7043C400.094 86.7043 401.441 85.3606 401.441 83.7029C401.441 82.0453 400.094 80.7015 398.432 80.7015C396.77 80.7015 395.423 82.0453 395.423 83.7029C395.423 85.3606 396.77 86.7043 398.432 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M390.084 86.7043C391.746 86.7043 393.093 85.3606 393.093 83.7029C393.093 82.0453 391.746 80.7015 390.084 80.7015C388.422 80.7015 387.074 82.0453 387.074 83.7029C387.074 85.3606 388.422 86.7043 390.084 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M381.735 86.7043C383.397 86.7043 384.745 85.3606 384.745 83.7029C384.745 82.0453 383.397 80.7015 381.735 80.7015C380.073 80.7015 378.726 82.0453 378.726 83.7029C378.726 85.3606 380.073 86.7043 381.735 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M373.387 86.7043C375.049 86.7043 376.396 85.3606 376.396 83.7029C376.396 82.0453 375.049 80.7015 373.387 80.7015C371.725 80.7015 370.378 82.0453 370.378 83.7029C370.378 85.3606 371.725 86.7043 373.387 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M365.039 86.7043C366.701 86.7043 368.048 85.3606 368.048 83.7029C368.048 82.0453 366.701 80.7015 365.039 80.7015C363.377 80.7015 362.029 82.0453 362.029 83.7029C362.029 85.3606 363.377 86.7043 365.039 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M348.342 86.7043C350.004 86.7043 351.351 85.3606 351.351 83.7029C351.351 82.0453 350.004 80.7015 348.342 80.7015C346.68 80.7015 345.333 82.0453 345.333 83.7029C345.333 85.3606 346.68 86.7043 348.342 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M339.994 86.7043C341.656 86.7043 343.003 85.3606 343.003 83.7029C343.003 82.0453 341.656 80.7015 339.994 80.7015C338.332 80.7015 336.984 82.0453 336.984 83.7029C336.984 85.3606 338.332 86.7043 339.994 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M289.903 86.7043C291.565 86.7043 292.913 85.3606 292.913 83.7029C292.913 82.0453 291.565 80.7015 289.903 80.7015C288.241 80.7015 286.894 82.0453 286.894 83.7029C286.894 85.3606 288.241 86.7043 289.903 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M281.555 86.7043C283.217 86.7043 284.564 85.3606 284.564 83.7029C284.564 82.0453 283.217 80.7015 281.555 80.7015C279.893 80.7015 278.546 82.0453 278.546 83.7029C278.546 85.3606 279.893 86.7043 281.555 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M248.162 86.7043C249.824 86.7043 251.171 85.3606 251.171 83.7029C251.171 82.0453 249.824 80.7015 248.162 80.7015C246.5 80.7015 245.152 82.0453 245.152 83.7029C245.152 85.3606 246.5 86.7043 248.162 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M239.716 86.7043C241.378 86.7043 242.726 85.3606 242.726 83.7029C242.726 82.0453 241.378 80.7015 239.716 80.7015C238.054 80.7015 236.707 82.0453 236.707 83.7029C236.707 85.3606 238.054 86.7043 239.716 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M231.368 86.7043C233.03 86.7043 234.377 85.3606 234.377 83.7029C234.377 82.0453 233.03 80.7015 231.368 80.7015C229.706 80.7015 228.359 82.0453 228.359 83.7029C228.359 85.3606 229.706 86.7043 231.368 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 86.7043C207.985 86.7043 209.332 85.3606 209.332 83.7029C209.332 82.0453 207.985 80.7015 206.323 80.7015C204.661 80.7015 203.314 82.0453 203.314 83.7029C203.314 85.3606 204.661 86.7043 206.323 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M197.974 86.7043C199.636 86.7043 200.984 85.3606 200.984 83.7029C200.984 82.0453 199.636 80.7015 197.974 80.7015C196.312 80.7015 194.965 82.0453 194.965 83.7029C194.965 85.3606 196.312 86.7043 197.974 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M189.626 86.7043C191.288 86.7043 192.635 85.3606 192.635 83.7029C192.635 82.0453 191.288 80.7015 189.626 80.7015C187.964 80.7015 186.617 82.0453 186.617 83.7029C186.617 85.3606 187.964 86.7043 189.626 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M181.278 86.7043C182.94 86.7043 184.287 85.3606 184.287 83.7029C184.287 82.0453 182.94 80.7015 181.278 80.7015C179.616 80.7015 178.268 82.0453 178.268 83.7029C178.268 85.3606 179.616 86.7043 181.278 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M172.929 86.7043C174.591 86.7043 175.939 85.3606 175.939 83.7029C175.939 82.0453 174.591 80.7015 172.929 80.7015C171.267 80.7015 169.92 82.0453 169.92 83.7029C169.92 85.3606 171.267 86.7043 172.929 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M164.581 86.7043C166.243 86.7043 167.59 85.3606 167.59 83.7029C167.59 82.0453 166.243 80.7015 164.581 80.7015C162.919 80.7015 161.572 82.0453 161.572 83.7029C161.572 85.3606 162.919 86.7043 164.581 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M156.233 86.7043C157.895 86.7043 159.242 85.3606 159.242 83.7029C159.242 82.0453 157.895 80.7015 156.233 80.7015C154.571 80.7015 153.223 82.0453 153.223 83.7029C153.223 85.3606 154.571 86.7043 156.233 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M147.884 86.7043C149.546 86.7043 150.894 85.3606 150.894 83.7029C150.894 82.0453 149.546 80.7015 147.884 80.7015C146.222 80.7015 144.875 82.0453 144.875 83.7029C144.875 85.3606 146.222 86.7043 147.884 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M139.536 86.7043C141.198 86.7043 142.545 85.3606 142.545 83.7029C142.545 82.0453 141.198 80.7015 139.536 80.7015C137.874 80.7015 136.527 82.0453 136.527 83.7029C136.527 85.3606 137.874 86.7043 139.536 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M131.188 86.7043C132.85 86.7043 134.197 85.3606 134.197 83.7029C134.197 82.0453 132.85 80.7015 131.188 80.7015C129.526 80.7015 128.178 82.0453 128.178 83.7029C128.178 85.3606 129.526 86.7043 131.188 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M122.839 86.7043C124.501 86.7043 125.849 85.3606 125.849 83.7029C125.849 82.0453 124.501 80.7015 122.839 80.7015C121.177 80.7015 119.83 82.0453 119.83 83.7029C119.83 85.3606 121.177 86.7043 122.839 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M114.491 86.7043C116.153 86.7043 117.5 85.3606 117.5 83.7029C117.5 82.0453 116.153 80.7015 114.491 80.7015C112.829 80.7015 111.482 82.0453 111.482 83.7029C111.482 85.3606 112.829 86.7043 114.491 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M106.143 86.7043C107.804 86.7043 109.152 85.3606 109.152 83.7029C109.152 82.0453 107.804 80.7015 106.143 80.7015C104.481 80.7015 103.133 82.0453 103.133 83.7029C103.133 85.3606 104.481 86.7043 106.143 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M97.7942 86.7043C99.4562 86.7043 100.803 85.3606 100.803 83.7029C100.803 82.0453 99.4562 80.7015 97.7942 80.7015C96.1322 80.7015 94.7849 82.0453 94.7849 83.7029C94.7849 85.3606 96.1322 86.7043 97.7942 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M89.4458 86.7043C91.1078 86.7043 92.4551 85.3606 92.4551 83.7029C92.4551 82.0453 91.1078 80.7015 89.4458 80.7015C87.7838 80.7015 86.4365 82.0453 86.4365 83.7029C86.4365 85.3606 87.7838 86.7043 89.4458 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M81.0974 86.7043C82.7594 86.7043 84.1067 85.3606 84.1067 83.7029C84.1067 82.0453 82.7594 80.7015 81.0974 80.7015C79.4355 80.7015 78.0882 82.0453 78.0882 83.7029C78.0882 85.3606 79.4355 86.7043 81.0974 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M72.7491 86.7043C74.4111 86.7043 75.7584 85.3606 75.7584 83.7029C75.7584 82.0453 74.4111 80.7015 72.7491 80.7015C71.0871 80.7015 69.7398 82.0453 69.7398 83.7029C69.7398 85.3606 71.0871 86.7043 72.7491 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M64.4007 86.7043C66.0627 86.7043 67.41 85.3606 67.41 83.7029C67.41 82.0453 66.0627 80.7015 64.4007 80.7015C62.7387 80.7015 61.3914 82.0453 61.3914 83.7029C61.3914 85.3606 62.7387 86.7043 64.4007 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M56.0524 86.7043C57.7144 86.7043 59.0617 85.3606 59.0617 83.7029C59.0617 82.0453 57.7144 80.7015 56.0524 80.7015C54.3904 80.7015 53.0431 82.0453 53.0431 83.7029C53.0431 85.3606 54.3904 86.7043 56.0524 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M47.6069 86.7043C49.2689 86.7043 50.6162 85.3606 50.6162 83.7029C50.6162 82.0453 49.2689 80.7015 47.6069 80.7015C45.945 80.7015 44.5977 82.0453 44.5977 83.7029C44.5977 85.3606 45.945 86.7043 47.6069 86.7043Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M615.586 78.5715C617.248 78.5715 618.596 77.2277 618.596 75.5701C618.596 73.9124 617.248 72.5687 615.586 72.5687C613.924 72.5687 612.577 73.9124 612.577 75.5701C612.577 77.2277 613.924 78.5715 615.586 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M607.238 78.5715C608.9 78.5715 610.247 77.2277 610.247 75.5701C610.247 73.9124 608.9 72.5687 607.238 72.5687C605.576 72.5687 604.229 73.9124 604.229 75.5701C604.229 77.2277 605.576 78.5715 607.238 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M598.89 78.5715C600.552 78.5715 601.899 77.2277 601.899 75.5701C601.899 73.9124 600.552 72.5687 598.89 72.5687C597.228 72.5687 595.88 73.9124 595.88 75.5701C595.88 77.2277 597.228 78.5715 598.89 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M590.541 78.5715C592.203 78.5715 593.551 77.2277 593.551 75.5701C593.551 73.9124 592.203 72.5687 590.541 72.5687C588.879 72.5687 587.532 73.9124 587.532 75.5701C587.532 77.2277 588.879 78.5715 590.541 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M582.193 78.5715C583.855 78.5715 585.202 77.2277 585.202 75.5701C585.202 73.9124 583.855 72.5687 582.193 72.5687C580.531 72.5687 579.184 73.9124 579.184 75.5701C579.184 77.2277 580.531 78.5715 582.193 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M573.845 78.5715C575.507 78.5715 576.854 77.2277 576.854 75.5701C576.854 73.9124 575.507 72.5687 573.845 72.5687C572.183 72.5687 570.835 73.9124 570.835 75.5701C570.835 77.2277 572.183 78.5715 573.845 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M565.496 78.5715C567.158 78.5715 568.506 77.2277 568.506 75.5701C568.506 73.9124 567.158 72.5687 565.496 72.5687C563.834 72.5687 562.487 73.9124 562.487 75.5701C562.487 77.2277 563.834 78.5715 565.496 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M557.148 78.5715C558.81 78.5715 560.157 77.2277 560.157 75.5701C560.157 73.9124 558.81 72.5687 557.148 72.5687C555.486 72.5687 554.139 73.9124 554.139 75.5701C554.139 77.2277 555.486 78.5715 557.148 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M548.8 78.5715C550.462 78.5715 551.809 77.2277 551.809 75.5701C551.809 73.9124 550.462 72.5687 548.8 72.5687C547.138 72.5687 545.79 73.9124 545.79 75.5701C545.79 77.2277 547.138 78.5715 548.8 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M540.451 78.5715C542.113 78.5715 543.46 77.2277 543.46 75.5701C543.46 73.9124 542.113 72.5687 540.451 72.5687C538.789 72.5687 537.442 73.9124 537.442 75.5701C537.442 77.2277 538.789 78.5715 540.451 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M532.103 78.5715C533.765 78.5715 535.112 77.2277 535.112 75.5701C535.112 73.9124 533.765 72.5687 532.103 72.5687C530.441 72.5687 529.094 73.9124 529.094 75.5701C529.094 77.2277 530.441 78.5715 532.103 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M523.754 78.5715C525.416 78.5715 526.764 77.2277 526.764 75.5701C526.764 73.9124 525.416 72.5687 523.754 72.5687C522.093 72.5687 520.745 73.9124 520.745 75.5701C520.745 77.2277 522.093 78.5715 523.754 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M515.406 78.5715C517.068 78.5715 518.415 77.2277 518.415 75.5701C518.415 73.9124 517.068 72.5687 515.406 72.5687C513.744 72.5687 512.397 73.9124 512.397 75.5701C512.397 77.2277 513.744 78.5715 515.406 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M507.058 78.5715C508.72 78.5715 510.067 77.2277 510.067 75.5701C510.067 73.9124 508.72 72.5687 507.058 72.5687C505.396 72.5687 504.048 73.9124 504.048 75.5701C504.048 77.2277 505.396 78.5715 507.058 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M498.709 78.5715C500.371 78.5715 501.719 77.2277 501.719 75.5701C501.719 73.9124 500.371 72.5687 498.709 72.5687C497.047 72.5687 495.7 73.9124 495.7 75.5701C495.7 77.2277 497.047 78.5715 498.709 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M490.361 78.5715C492.023 78.5715 493.37 77.2277 493.37 75.5701C493.37 73.9124 492.023 72.5687 490.361 72.5687C488.699 72.5687 487.352 73.9124 487.352 75.5701C487.352 77.2277 488.699 78.5715 490.361 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M482.013 78.5715C483.675 78.5715 485.022 77.2277 485.022 75.5701C485.022 73.9124 483.675 72.5687 482.013 72.5687C480.351 72.5687 479.003 73.9124 479.003 75.5701C479.003 77.2277 480.351 78.5715 482.013 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M473.664 78.5715C475.326 78.5715 476.674 77.2277 476.674 75.5701C476.674 73.9124 475.326 72.5687 473.664 72.5687C472.002 72.5687 470.655 73.9124 470.655 75.5701C470.655 77.2277 472.002 78.5715 473.664 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M465.316 78.5715C466.978 78.5715 468.325 77.2277 468.325 75.5701C468.325 73.9124 466.978 72.5687 465.316 72.5687C463.654 72.5687 462.307 73.9124 462.307 75.5701C462.307 77.2277 463.654 78.5715 465.316 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M456.968 78.5715C458.63 78.5715 459.977 77.2277 459.977 75.5701C459.977 73.9124 458.63 72.5687 456.968 72.5687C455.306 72.5687 453.958 73.9124 453.958 75.5701C453.958 77.2277 455.306 78.5715 456.968 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M448.619 78.5715C450.281 78.5715 451.629 77.2277 451.629 75.5701C451.629 73.9124 450.281 72.5687 448.619 72.5687C446.957 72.5687 445.61 73.9124 445.61 75.5701C445.61 77.2277 446.957 78.5715 448.619 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M440.271 78.5715C441.933 78.5715 443.28 77.2277 443.28 75.5701C443.28 73.9124 441.933 72.5687 440.271 72.5687C438.609 72.5687 437.262 73.9124 437.262 75.5701C437.262 77.2277 438.609 78.5715 440.271 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M431.923 78.5715C433.585 78.5715 434.932 77.2277 434.932 75.5701C434.932 73.9124 433.585 72.5687 431.923 72.5687C430.261 72.5687 428.913 73.9124 428.913 75.5701C428.913 77.2277 430.261 78.5715 431.923 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M423.477 78.5715C425.139 78.5715 426.486 77.2277 426.486 75.5701C426.486 73.9124 425.139 72.5687 423.477 72.5687C421.815 72.5687 420.468 73.9124 420.468 75.5701C420.468 77.2277 421.815 78.5715 423.477 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M415.129 78.5715C416.791 78.5715 418.138 77.2277 418.138 75.5701C418.138 73.9124 416.791 72.5687 415.129 72.5687C413.467 72.5687 412.12 73.9124 412.12 75.5701C412.12 77.2277 413.467 78.5715 415.129 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M406.78 78.5715C408.442 78.5715 409.79 77.2277 409.79 75.5701C409.79 73.9124 408.442 72.5687 406.78 72.5687C405.118 72.5687 403.771 73.9124 403.771 75.5701C403.771 77.2277 405.118 78.5715 406.78 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M398.432 78.5715C400.094 78.5715 401.441 77.2277 401.441 75.5701C401.441 73.9124 400.094 72.5687 398.432 72.5687C396.77 72.5687 395.423 73.9124 395.423 75.5701C395.423 77.2277 396.77 78.5715 398.432 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M390.084 78.5715C391.746 78.5715 393.093 77.2277 393.093 75.5701C393.093 73.9124 391.746 72.5687 390.084 72.5687C388.422 72.5687 387.074 73.9124 387.074 75.5701C387.074 77.2277 388.422 78.5715 390.084 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M381.735 78.5715C383.397 78.5715 384.745 77.2277 384.745 75.5701C384.745 73.9124 383.397 72.5687 381.735 72.5687C380.073 72.5687 378.726 73.9124 378.726 75.5701C378.726 77.2277 380.073 78.5715 381.735 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M373.387 78.5715C375.049 78.5715 376.396 77.2277 376.396 75.5701C376.396 73.9124 375.049 72.5687 373.387 72.5687C371.725 72.5687 370.378 73.9124 370.378 75.5701C370.378 77.2277 371.725 78.5715 373.387 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M365.039 78.5715C366.701 78.5715 368.048 77.2277 368.048 75.5701C368.048 73.9124 366.701 72.5687 365.039 72.5687C363.377 72.5687 362.029 73.9124 362.029 75.5701C362.029 77.2277 363.377 78.5715 365.039 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 78.5715C358.352 78.5715 359.7 77.2277 359.7 75.5701C359.7 73.9124 358.352 72.5687 356.69 72.5687C355.028 72.5687 353.681 73.9124 353.681 75.5701C353.681 77.2277 355.028 78.5715 356.69 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M348.342 78.5715C350.004 78.5715 351.351 77.2277 351.351 75.5701C351.351 73.9124 350.004 72.5687 348.342 72.5687C346.68 72.5687 345.333 73.9124 345.333 75.5701C345.333 77.2277 346.68 78.5715 348.342 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M339.994 78.5715C341.656 78.5715 343.003 77.2277 343.003 75.5701C343.003 73.9124 341.656 72.5687 339.994 72.5687C338.332 72.5687 336.984 73.9124 336.984 75.5701C336.984 77.2277 338.332 78.5715 339.994 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M264.858 78.5715C266.52 78.5715 267.868 77.2277 267.868 75.5701C267.868 73.9124 266.52 72.5687 264.858 72.5687C263.196 72.5687 261.849 73.9124 261.849 75.5701C261.849 77.2277 263.196 78.5715 264.858 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M256.51 78.5715C258.172 78.5715 259.519 77.2277 259.519 75.5701C259.519 73.9124 258.172 72.5687 256.51 72.5687C254.848 72.5687 253.501 73.9124 253.501 75.5701C253.501 77.2277 254.848 78.5715 256.51 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M248.162 78.5715C249.824 78.5715 251.171 77.2277 251.171 75.5701C251.171 73.9124 249.824 72.5687 248.162 72.5687C246.5 72.5687 245.152 73.9124 245.152 75.5701C245.152 77.2277 246.5 78.5715 248.162 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M239.716 78.5715C241.378 78.5715 242.726 77.2277 242.726 75.5701C242.726 73.9124 241.378 72.5687 239.716 72.5687C238.054 72.5687 236.707 73.9124 236.707 75.5701C236.707 77.2277 238.054 78.5715 239.716 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M231.368 78.5715C233.03 78.5715 234.377 77.2277 234.377 75.5701C234.377 73.9124 233.03 72.5687 231.368 72.5687C229.706 72.5687 228.359 73.9124 228.359 75.5701C228.359 77.2277 229.706 78.5715 231.368 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M214.671 78.5715C216.333 78.5715 217.68 77.2277 217.68 75.5701C217.68 73.9124 216.333 72.5687 214.671 72.5687C213.009 72.5687 211.662 73.9124 211.662 75.5701C211.662 77.2277 213.009 78.5715 214.671 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 78.5715C207.985 78.5715 209.332 77.2277 209.332 75.5701C209.332 73.9124 207.985 72.5687 206.323 72.5687C204.661 72.5687 203.314 73.9124 203.314 75.5701C203.314 77.2277 204.661 78.5715 206.323 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M197.974 78.5715C199.636 78.5715 200.984 77.2277 200.984 75.5701C200.984 73.9124 199.636 72.5687 197.974 72.5687C196.312 72.5687 194.965 73.9124 194.965 75.5701C194.965 77.2277 196.312 78.5715 197.974 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M181.278 78.5715C182.94 78.5715 184.287 77.2277 184.287 75.5701C184.287 73.9124 182.94 72.5687 181.278 72.5687C179.616 72.5687 178.268 73.9124 178.268 75.5701C178.268 77.2277 179.616 78.5715 181.278 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M172.929 78.5715C174.591 78.5715 175.939 77.2277 175.939 75.5701C175.939 73.9124 174.591 72.5687 172.929 72.5687C171.267 72.5687 169.92 73.9124 169.92 75.5701C169.92 77.2277 171.267 78.5715 172.929 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M164.581 78.5715C166.243 78.5715 167.59 77.2277 167.59 75.5701C167.59 73.9124 166.243 72.5687 164.581 72.5687C162.919 72.5687 161.572 73.9124 161.572 75.5701C161.572 77.2277 162.919 78.5715 164.581 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M156.233 78.5715C157.895 78.5715 159.242 77.2277 159.242 75.5701C159.242 73.9124 157.895 72.5687 156.233 72.5687C154.571 72.5687 153.223 73.9124 153.223 75.5701C153.223 77.2277 154.571 78.5715 156.233 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M147.884 78.5715C149.546 78.5715 150.894 77.2277 150.894 75.5701C150.894 73.9124 149.546 72.5687 147.884 72.5687C146.222 72.5687 144.875 73.9124 144.875 75.5701C144.875 77.2277 146.222 78.5715 147.884 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M139.536 78.5715C141.198 78.5715 142.545 77.2277 142.545 75.5701C142.545 73.9124 141.198 72.5687 139.536 72.5687C137.874 72.5687 136.527 73.9124 136.527 75.5701C136.527 77.2277 137.874 78.5715 139.536 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M131.188 78.5715C132.85 78.5715 134.197 77.2277 134.197 75.5701C134.197 73.9124 132.85 72.5687 131.188 72.5687C129.526 72.5687 128.178 73.9124 128.178 75.5701C128.178 77.2277 129.526 78.5715 131.188 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M122.839 78.5715C124.501 78.5715 125.849 77.2277 125.849 75.5701C125.849 73.9124 124.501 72.5687 122.839 72.5687C121.177 72.5687 119.83 73.9124 119.83 75.5701C119.83 77.2277 121.177 78.5715 122.839 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M114.491 78.5715C116.153 78.5715 117.5 77.2277 117.5 75.5701C117.5 73.9124 116.153 72.5687 114.491 72.5687C112.829 72.5687 111.482 73.9124 111.482 75.5701C111.482 77.2277 112.829 78.5715 114.491 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M106.143 78.5715C107.804 78.5715 109.152 77.2277 109.152 75.5701C109.152 73.9124 107.804 72.5687 106.143 72.5687C104.481 72.5687 103.133 73.9124 103.133 75.5701C103.133 77.2277 104.481 78.5715 106.143 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M97.7942 78.5715C99.4562 78.5715 100.803 77.2277 100.803 75.5701C100.803 73.9124 99.4562 72.5687 97.7942 72.5687C96.1322 72.5687 94.7849 73.9124 94.7849 75.5701C94.7849 77.2277 96.1322 78.5715 97.7942 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M89.4458 78.5715C91.1078 78.5715 92.4551 77.2277 92.4551 75.5701C92.4551 73.9124 91.1078 72.5687 89.4458 72.5687C87.7838 72.5687 86.4365 73.9124 86.4365 75.5701C86.4365 77.2277 87.7838 78.5715 89.4458 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M81.0974 78.5715C82.7594 78.5715 84.1067 77.2277 84.1067 75.5701C84.1067 73.9124 82.7594 72.5687 81.0974 72.5687C79.4355 72.5687 78.0882 73.9124 78.0882 75.5701C78.0882 77.2277 79.4355 78.5715 81.0974 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M72.7491 78.5715C74.4111 78.5715 75.7584 77.2277 75.7584 75.5701C75.7584 73.9124 74.4111 72.5687 72.7491 72.5687C71.0871 72.5687 69.7398 73.9124 69.7398 75.5701C69.7398 77.2277 71.0871 78.5715 72.7491 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M64.4007 78.5715C66.0627 78.5715 67.41 77.2277 67.41 75.5701C67.41 73.9124 66.0627 72.5687 64.4007 72.5687C62.7387 72.5687 61.3914 73.9124 61.3914 75.5701C61.3914 77.2277 62.7387 78.5715 64.4007 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M56.0524 78.5715C57.7144 78.5715 59.0617 77.2277 59.0617 75.5701C59.0617 73.9124 57.7144 72.5687 56.0524 72.5687C54.3904 72.5687 53.0431 73.9124 53.0431 75.5701C53.0431 77.2277 54.3904 78.5715 56.0524 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M47.6069 78.5715C49.2689 78.5715 50.6162 77.2277 50.6162 75.5701C50.6162 73.9124 49.2689 72.5687 47.6069 72.5687C45.945 72.5687 44.5977 73.9124 44.5977 75.5701C44.5977 77.2277 45.945 78.5715 47.6069 78.5715Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M607.238 70.3418C608.9 70.3418 610.247 68.998 610.247 67.3404C610.247 65.6828 608.9 64.339 607.238 64.339C605.576 64.339 604.229 65.6828 604.229 67.3404C604.229 68.998 605.576 70.3418 607.238 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M573.845 70.3418C575.507 70.3418 576.854 68.998 576.854 67.3404C576.854 65.6828 575.507 64.339 573.845 64.339C572.183 64.339 570.835 65.6828 570.835 67.3404C570.835 68.998 572.183 70.3418 573.845 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M565.496 70.3418C567.158 70.3418 568.506 68.998 568.506 67.3404C568.506 65.6828 567.158 64.339 565.496 64.339C563.834 64.339 562.487 65.6828 562.487 67.3404C562.487 68.998 563.834 70.3418 565.496 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M557.148 70.3418C558.81 70.3418 560.157 68.998 560.157 67.3404C560.157 65.6828 558.81 64.339 557.148 64.339C555.486 64.339 554.139 65.6828 554.139 67.3404C554.139 68.998 555.486 70.3418 557.148 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M548.8 70.3418C550.462 70.3418 551.809 68.998 551.809 67.3404C551.809 65.6828 550.462 64.339 548.8 64.339C547.138 64.339 545.79 65.6828 545.79 67.3404C545.79 68.998 547.138 70.3418 548.8 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M540.451 70.3418C542.113 70.3418 543.46 68.998 543.46 67.3404C543.46 65.6828 542.113 64.339 540.451 64.339C538.789 64.339 537.442 65.6828 537.442 67.3404C537.442 68.998 538.789 70.3418 540.451 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M532.103 70.3418C533.765 70.3418 535.112 68.998 535.112 67.3404C535.112 65.6828 533.765 64.339 532.103 64.339C530.441 64.339 529.094 65.6828 529.094 67.3404C529.094 68.998 530.441 70.3418 532.103 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M523.754 70.3418C525.416 70.3418 526.764 68.998 526.764 67.3404C526.764 65.6828 525.416 64.339 523.754 64.339C522.093 64.339 520.745 65.6828 520.745 67.3404C520.745 68.998 522.093 70.3418 523.754 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M515.406 70.3418C517.068 70.3418 518.415 68.998 518.415 67.3404C518.415 65.6828 517.068 64.339 515.406 64.339C513.744 64.339 512.397 65.6828 512.397 67.3404C512.397 68.998 513.744 70.3418 515.406 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M507.058 70.3418C508.72 70.3418 510.067 68.998 510.067 67.3404C510.067 65.6828 508.72 64.339 507.058 64.339C505.396 64.339 504.048 65.6828 504.048 67.3404C504.048 68.998 505.396 70.3418 507.058 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M498.709 70.3418C500.371 70.3418 501.719 68.998 501.719 67.3404C501.719 65.6828 500.371 64.339 498.709 64.339C497.047 64.339 495.7 65.6828 495.7 67.3404C495.7 68.998 497.047 70.3418 498.709 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M490.361 70.3418C492.023 70.3418 493.37 68.998 493.37 67.3404C493.37 65.6828 492.023 64.339 490.361 64.339C488.699 64.339 487.352 65.6828 487.352 67.3404C487.352 68.998 488.699 70.3418 490.361 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M482.013 70.3418C483.675 70.3418 485.022 68.998 485.022 67.3404C485.022 65.6828 483.675 64.339 482.013 64.339C480.351 64.339 479.003 65.6828 479.003 67.3404C479.003 68.998 480.351 70.3418 482.013 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M473.664 70.3418C475.326 70.3418 476.674 68.998 476.674 67.3404C476.674 65.6828 475.326 64.339 473.664 64.339C472.002 64.339 470.655 65.6828 470.655 67.3404C470.655 68.998 472.002 70.3418 473.664 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M465.316 70.3418C466.978 70.3418 468.325 68.998 468.325 67.3404C468.325 65.6828 466.978 64.339 465.316 64.339C463.654 64.339 462.307 65.6828 462.307 67.3404C462.307 68.998 463.654 70.3418 465.316 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M456.968 70.3418C458.63 70.3418 459.977 68.998 459.977 67.3404C459.977 65.6828 458.63 64.339 456.968 64.339C455.306 64.339 453.958 65.6828 453.958 67.3404C453.958 68.998 455.306 70.3418 456.968 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M448.619 70.3418C450.281 70.3418 451.629 68.998 451.629 67.3404C451.629 65.6828 450.281 64.339 448.619 64.339C446.957 64.339 445.61 65.6828 445.61 67.3404C445.61 68.998 446.957 70.3418 448.619 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M440.271 70.3418C441.933 70.3418 443.28 68.998 443.28 67.3404C443.28 65.6828 441.933 64.339 440.271 64.339C438.609 64.339 437.262 65.6828 437.262 67.3404C437.262 68.998 438.609 70.3418 440.271 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M431.923 70.3418C433.585 70.3418 434.932 68.998 434.932 67.3404C434.932 65.6828 433.585 64.339 431.923 64.339C430.261 64.339 428.913 65.6828 428.913 67.3404C428.913 68.998 430.261 70.3418 431.923 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M415.129 70.3418C416.791 70.3418 418.138 68.998 418.138 67.3404C418.138 65.6828 416.791 64.339 415.129 64.339C413.467 64.339 412.12 65.6828 412.12 67.3404C412.12 68.998 413.467 70.3418 415.129 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M406.78 70.3418C408.442 70.3418 409.79 68.998 409.79 67.3404C409.79 65.6828 408.442 64.339 406.78 64.339C405.118 64.339 403.771 65.6828 403.771 67.3404C403.771 68.998 405.118 70.3418 406.78 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M365.039 70.3418C366.701 70.3418 368.048 68.998 368.048 67.3404C368.048 65.6828 366.701 64.339 365.039 64.339C363.377 64.339 362.029 65.6828 362.029 67.3404C362.029 68.998 363.377 70.3418 365.039 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 70.3418C358.352 70.3418 359.7 68.998 359.7 67.3404C359.7 65.6828 358.352 64.339 356.69 64.339C355.028 64.339 353.681 65.6828 353.681 67.3404C353.681 68.998 355.028 70.3418 356.69 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M348.342 70.3418C350.004 70.3418 351.351 68.998 351.351 67.3404C351.351 65.6828 350.004 64.339 348.342 64.339C346.68 64.339 345.333 65.6828 345.333 67.3404C345.333 68.998 346.68 70.3418 348.342 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M281.555 70.3418C283.217 70.3418 284.564 68.998 284.564 67.3404C284.564 65.6828 283.217 64.339 281.555 64.339C279.893 64.339 278.546 65.6828 278.546 67.3404C278.546 68.998 279.893 70.3418 281.555 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M273.207 70.3418C274.869 70.3418 276.216 68.998 276.216 67.3404C276.216 65.6828 274.869 64.339 273.207 64.339C271.545 64.339 270.197 65.6828 270.197 67.3404C270.197 68.998 271.545 70.3418 273.207 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M264.858 70.3418C266.52 70.3418 267.868 68.998 267.868 67.3404C267.868 65.6828 266.52 64.339 264.858 64.339C263.196 64.339 261.849 65.6828 261.849 67.3404C261.849 68.998 263.196 70.3418 264.858 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M256.51 70.3418C258.172 70.3418 259.519 68.998 259.519 67.3404C259.519 65.6828 258.172 64.339 256.51 64.339C254.848 64.339 253.501 65.6828 253.501 67.3404C253.501 68.998 254.848 70.3418 256.51 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M248.162 70.3418C249.824 70.3418 251.171 68.998 251.171 67.3404C251.171 65.6828 249.824 64.339 248.162 64.339C246.5 64.339 245.152 65.6828 245.152 67.3404C245.152 68.998 246.5 70.3418 248.162 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M239.716 70.3418C241.378 70.3418 242.726 68.998 242.726 67.3404C242.726 65.6828 241.378 64.339 239.716 64.339C238.054 64.339 236.707 65.6828 236.707 67.3404C236.707 68.998 238.054 70.3418 239.716 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M231.368 70.3418C233.03 70.3418 234.377 68.998 234.377 67.3404C234.377 65.6828 233.03 64.339 231.368 64.339C229.706 64.339 228.359 65.6828 228.359 67.3404C228.359 68.998 229.706 70.3418 231.368 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 70.3418C207.985 70.3418 209.332 68.998 209.332 67.3404C209.332 65.6828 207.985 64.339 206.323 64.339C204.661 64.339 203.314 65.6828 203.314 67.3404C203.314 68.998 204.661 70.3418 206.323 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M197.974 70.3418C199.636 70.3418 200.984 68.998 200.984 67.3404C200.984 65.6828 199.636 64.339 197.974 64.339C196.312 64.339 194.965 65.6828 194.965 67.3404C194.965 68.998 196.312 70.3418 197.974 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M189.626 70.3418C191.288 70.3418 192.635 68.998 192.635 67.3404C192.635 65.6828 191.288 64.339 189.626 64.339C187.964 64.339 186.617 65.6828 186.617 67.3404C186.617 68.998 187.964 70.3418 189.626 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M181.278 70.3418C182.94 70.3418 184.287 68.998 184.287 67.3404C184.287 65.6828 182.94 64.339 181.278 64.339C179.616 64.339 178.268 65.6828 178.268 67.3404C178.268 68.998 179.616 70.3418 181.278 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M172.929 70.3418C174.591 70.3418 175.939 68.998 175.939 67.3404C175.939 65.6828 174.591 64.339 172.929 64.339C171.267 64.339 169.92 65.6828 169.92 67.3404C169.92 68.998 171.267 70.3418 172.929 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M164.581 70.3418C166.243 70.3418 167.59 68.998 167.59 67.3404C167.59 65.6828 166.243 64.339 164.581 64.339C162.919 64.339 161.572 65.6828 161.572 67.3404C161.572 68.998 162.919 70.3418 164.581 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M147.884 70.3418C149.546 70.3418 150.894 68.998 150.894 67.3404C150.894 65.6828 149.546 64.339 147.884 64.339C146.222 64.339 144.875 65.6828 144.875 67.3404C144.875 68.998 146.222 70.3418 147.884 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M139.536 70.3418C141.198 70.3418 142.545 68.998 142.545 67.3404C142.545 65.6828 141.198 64.339 139.536 64.339C137.874 64.339 136.527 65.6828 136.527 67.3404C136.527 68.998 137.874 70.3418 139.536 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M131.188 70.3418C132.85 70.3418 134.197 68.998 134.197 67.3404C134.197 65.6828 132.85 64.339 131.188 64.339C129.526 64.339 128.178 65.6828 128.178 67.3404C128.178 68.998 129.526 70.3418 131.188 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M72.7491 70.3418C74.4111 70.3418 75.7584 68.998 75.7584 67.3404C75.7584 65.6828 74.4111 64.339 72.7491 64.339C71.0871 64.339 69.7398 65.6828 69.7398 67.3404C69.7398 68.998 71.0871 70.3418 72.7491 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M64.4007 70.3418C66.0627 70.3418 67.41 68.998 67.41 67.3404C67.41 65.6828 66.0627 64.339 64.4007 64.339C62.7387 64.339 61.3914 65.6828 61.3914 67.3404C61.3914 68.998 62.7387 70.3418 64.4007 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M56.0524 70.3418C57.7144 70.3418 59.0617 68.998 59.0617 67.3404C59.0617 65.6828 57.7144 64.339 56.0524 64.339C54.3904 64.339 53.0431 65.6828 53.0431 67.3404C53.0431 68.998 54.3904 70.3418 56.0524 70.3418Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M548.8 62.1121C550.462 62.1121 551.809 60.7684 551.809 59.1107C551.809 57.4531 550.462 56.1093 548.8 56.1093C547.138 56.1093 545.79 57.4531 545.79 59.1107C545.79 60.7684 547.138 62.1121 548.8 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M523.754 62.1121C525.416 62.1121 526.764 60.7684 526.764 59.1107C526.764 57.4531 525.416 56.1093 523.754 56.1093C522.093 56.1093 520.745 57.4531 520.745 59.1107C520.745 60.7684 522.093 62.1121 523.754 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M515.406 62.1121C517.068 62.1121 518.415 60.7684 518.415 59.1107C518.415 57.4531 517.068 56.1093 515.406 56.1093C513.744 56.1093 512.397 57.4531 512.397 59.1107C512.397 60.7684 513.744 62.1121 515.406 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M507.058 62.1121C508.72 62.1121 510.067 60.7684 510.067 59.1107C510.067 57.4531 508.72 56.1093 507.058 56.1093C505.396 56.1093 504.048 57.4531 504.048 59.1107C504.048 60.7684 505.396 62.1121 507.058 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M498.709 62.1121C500.371 62.1121 501.719 60.7684 501.719 59.1107C501.719 57.4531 500.371 56.1093 498.709 56.1093C497.047 56.1093 495.7 57.4531 495.7 59.1107C495.7 60.7684 497.047 62.1121 498.709 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M490.361 62.1121C492.023 62.1121 493.37 60.7684 493.37 59.1107C493.37 57.4531 492.023 56.1093 490.361 56.1093C488.699 56.1093 487.352 57.4531 487.352 59.1107C487.352 60.7684 488.699 62.1121 490.361 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M482.013 62.1121C483.675 62.1121 485.022 60.7684 485.022 59.1107C485.022 57.4531 483.675 56.1093 482.013 56.1093C480.351 56.1093 479.003 57.4531 479.003 59.1107C479.003 60.7684 480.351 62.1121 482.013 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M473.664 62.1121C475.326 62.1121 476.674 60.7684 476.674 59.1107C476.674 57.4531 475.326 56.1093 473.664 56.1093C472.002 56.1093 470.655 57.4531 470.655 59.1107C470.655 60.7684 472.002 62.1121 473.664 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M465.316 62.1121C466.978 62.1121 468.325 60.7684 468.325 59.1107C468.325 57.4531 466.978 56.1093 465.316 56.1093C463.654 56.1093 462.307 57.4531 462.307 59.1107C462.307 60.7684 463.654 62.1121 465.316 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M456.968 62.1121C458.63 62.1121 459.977 60.7684 459.977 59.1107C459.977 57.4531 458.63 56.1093 456.968 56.1093C455.306 56.1093 453.958 57.4531 453.958 59.1107C453.958 60.7684 455.306 62.1121 456.968 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M448.619 62.1121C450.281 62.1121 451.629 60.7684 451.629 59.1107C451.629 57.4531 450.281 56.1093 448.619 56.1093C446.957 56.1093 445.61 57.4531 445.61 59.1107C445.61 60.7684 446.957 62.1121 448.619 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M431.923 62.1121C433.585 62.1121 434.932 60.7684 434.932 59.1107C434.932 57.4531 433.585 56.1093 431.923 56.1093C430.261 56.1093 428.913 57.4531 428.913 59.1107C428.913 60.7684 430.261 62.1121 431.923 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M406.78 62.1121C408.442 62.1121 409.79 60.7684 409.79 59.1107C409.79 57.4531 408.442 56.1093 406.78 56.1093C405.118 56.1093 403.771 57.4531 403.771 59.1107C403.771 60.7684 405.118 62.1121 406.78 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M281.555 62.1121C283.217 62.1121 284.564 60.7684 284.564 59.1107C284.564 57.4531 283.217 56.1093 281.555 56.1093C279.893 56.1093 278.546 57.4531 278.546 59.1107C278.546 60.7684 279.893 62.1121 281.555 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M273.207 62.1121C274.869 62.1121 276.216 60.7684 276.216 59.1107C276.216 57.4531 274.869 56.1093 273.207 56.1093C271.545 56.1093 270.197 57.4531 270.197 59.1107C270.197 60.7684 271.545 62.1121 273.207 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M264.858 62.1121C266.52 62.1121 267.868 60.7684 267.868 59.1107C267.868 57.4531 266.52 56.1093 264.858 56.1093C263.196 56.1093 261.849 57.4531 261.849 59.1107C261.849 60.7684 263.196 62.1121 264.858 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M256.51 62.1121C258.172 62.1121 259.519 60.7684 259.519 59.1107C259.519 57.4531 258.172 56.1093 256.51 56.1093C254.848 56.1093 253.501 57.4531 253.501 59.1107C253.501 60.7684 254.848 62.1121 256.51 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M248.162 62.1121C249.824 62.1121 251.171 60.7684 251.171 59.1107C251.171 57.4531 249.824 56.1093 248.162 56.1093C246.5 56.1093 245.152 57.4531 245.152 59.1107C245.152 60.7684 246.5 62.1121 248.162 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M239.716 62.1121C241.378 62.1121 242.726 60.7684 242.726 59.1107C242.726 57.4531 241.378 56.1093 239.716 56.1093C238.054 56.1093 236.707 57.4531 236.707 59.1107C236.707 60.7684 238.054 62.1121 239.716 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M231.368 62.1121C233.03 62.1121 234.377 60.7684 234.377 59.1107C234.377 57.4531 233.03 56.1093 231.368 56.1093C229.706 56.1093 228.359 57.4531 228.359 59.1107C228.359 60.7684 229.706 62.1121 231.368 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M189.626 62.1121C191.288 62.1121 192.635 60.7684 192.635 59.1107C192.635 57.4531 191.288 56.1093 189.626 56.1093C187.964 56.1093 186.617 57.4531 186.617 59.1107C186.617 60.7684 187.964 62.1121 189.626 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M181.278 62.1121C182.94 62.1121 184.287 60.7684 184.287 59.1107C184.287 57.4531 182.94 56.1093 181.278 56.1093C179.616 56.1093 178.268 57.4531 178.268 59.1107C178.268 60.7684 179.616 62.1121 181.278 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M172.929 62.1121C174.591 62.1121 175.939 60.7684 175.939 59.1107C175.939 57.4531 174.591 56.1093 172.929 56.1093C171.267 56.1093 169.92 57.4531 169.92 59.1107C169.92 60.7684 171.267 62.1121 172.929 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M164.581 62.1121C166.243 62.1121 167.59 60.7684 167.59 59.1107C167.59 57.4531 166.243 56.1093 164.581 56.1093C162.919 56.1093 161.572 57.4531 161.572 59.1107C161.572 60.7684 162.919 62.1121 164.581 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M156.233 62.1121C157.895 62.1121 159.242 60.7684 159.242 59.1107C159.242 57.4531 157.895 56.1093 156.233 56.1093C154.571 56.1093 153.223 57.4531 153.223 59.1107C153.223 60.7684 154.571 62.1121 156.233 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M147.884 62.1121C149.546 62.1121 150.894 60.7684 150.894 59.1107C150.894 57.4531 149.546 56.1093 147.884 56.1093C146.222 56.1093 144.875 57.4531 144.875 59.1107C144.875 60.7684 146.222 62.1121 147.884 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M139.536 62.1121C141.198 62.1121 142.545 60.7684 142.545 59.1107C142.545 57.4531 141.198 56.1093 139.536 56.1093C137.874 56.1093 136.527 57.4531 136.527 59.1107C136.527 60.7684 137.874 62.1121 139.536 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M131.188 62.1121C132.85 62.1121 134.197 60.7684 134.197 59.1107C134.197 57.4531 132.85 56.1093 131.188 56.1093C129.526 56.1093 128.178 57.4531 128.178 59.1107C128.178 60.7684 129.526 62.1121 131.188 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M122.839 62.1121C124.501 62.1121 125.849 60.7684 125.849 59.1107C125.849 57.4531 124.501 56.1093 122.839 56.1093C121.177 56.1093 119.83 57.4531 119.83 59.1107C119.83 60.7684 121.177 62.1121 122.839 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M114.491 62.1121C116.153 62.1121 117.5 60.7684 117.5 59.1107C117.5 57.4531 116.153 56.1093 114.491 56.1093C112.829 56.1093 111.482 57.4531 111.482 59.1107C111.482 60.7684 112.829 62.1121 114.491 62.1121Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M548.8 53.8825C550.462 53.8825 551.809 52.5387 551.809 50.8811C551.809 49.2234 550.462 47.8797 548.8 47.8797C547.138 47.8797 545.79 49.2234 545.79 50.8811C545.79 52.5387 547.138 53.8825 548.8 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M540.451 53.8825C542.113 53.8825 543.46 52.5387 543.46 50.8811C543.46 49.2234 542.113 47.8797 540.451 47.8797C538.789 47.8797 537.442 49.2234 537.442 50.8811C537.442 52.5387 538.789 53.8825 540.451 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M498.709 53.8825C500.371 53.8825 501.719 52.5387 501.719 50.8811C501.719 49.2234 500.371 47.8797 498.709 47.8797C497.047 47.8797 495.7 49.2234 495.7 50.8811C495.7 52.5387 497.047 53.8825 498.709 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M490.361 53.8825C492.023 53.8825 493.37 52.5387 493.37 50.8811C493.37 49.2234 492.023 47.8797 490.361 47.8797C488.699 47.8797 487.352 49.2234 487.352 50.8811C487.352 52.5387 488.699 53.8825 490.361 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M482.013 53.8825C483.675 53.8825 485.022 52.5387 485.022 50.8811C485.022 49.2234 483.675 47.8797 482.013 47.8797C480.351 47.8797 479.003 49.2234 479.003 50.8811C479.003 52.5387 480.351 53.8825 482.013 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M473.664 53.8825C475.326 53.8825 476.674 52.5387 476.674 50.8811C476.674 49.2234 475.326 47.8797 473.664 47.8797C472.002 47.8797 470.655 49.2234 470.655 50.8811C470.655 52.5387 472.002 53.8825 473.664 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M423.477 53.8825C425.139 53.8825 426.486 52.5387 426.486 50.8811C426.486 49.2234 425.139 47.8797 423.477 47.8797C421.815 47.8797 420.468 49.2234 420.468 50.8811C420.468 52.5387 421.815 53.8825 423.477 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M415.129 53.8825C416.791 53.8825 418.138 52.5387 418.138 50.8811C418.138 49.2234 416.791 47.8797 415.129 47.8797C413.467 47.8797 412.12 49.2234 412.12 50.8811C412.12 52.5387 413.467 53.8825 415.129 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M281.555 53.8825C283.217 53.8825 284.564 52.5387 284.564 50.8811C284.564 49.2234 283.217 47.8797 281.555 47.8797C279.893 47.8797 278.546 49.2234 278.546 50.8811C278.546 52.5387 279.893 53.8825 281.555 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M273.207 53.8825C274.869 53.8825 276.216 52.5387 276.216 50.8811C276.216 49.2234 274.869 47.8797 273.207 47.8797C271.545 47.8797 270.197 49.2234 270.197 50.8811C270.197 52.5387 271.545 53.8825 273.207 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M264.858 53.8825C266.52 53.8825 267.868 52.5387 267.868 50.8811C267.868 49.2234 266.52 47.8797 264.858 47.8797C263.196 47.8797 261.849 49.2234 261.849 50.8811C261.849 52.5387 263.196 53.8825 264.858 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M256.51 53.8825C258.172 53.8825 259.519 52.5387 259.519 50.8811C259.519 49.2234 258.172 47.8797 256.51 47.8797C254.848 47.8797 253.501 49.2234 253.501 50.8811C253.501 52.5387 254.848 53.8825 256.51 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M248.162 53.8825C249.824 53.8825 251.171 52.5387 251.171 50.8811C251.171 49.2234 249.824 47.8797 248.162 47.8797C246.5 47.8797 245.152 49.2234 245.152 50.8811C245.152 52.5387 246.5 53.8825 248.162 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M239.716 53.8825C241.378 53.8825 242.726 52.5387 242.726 50.8811C242.726 49.2234 241.378 47.8797 239.716 47.8797C238.054 47.8797 236.707 49.2234 236.707 50.8811C236.707 52.5387 238.054 53.8825 239.716 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M231.368 53.8825C233.03 53.8825 234.377 52.5387 234.377 50.8811C234.377 49.2234 233.03 47.8797 231.368 47.8797C229.706 47.8797 228.359 49.2234 228.359 50.8811C228.359 52.5387 229.706 53.8825 231.368 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M223.02 53.8825C224.682 53.8825 226.029 52.5387 226.029 50.8811C226.029 49.2234 224.682 47.8797 223.02 47.8797C221.358 47.8797 220.01 49.2234 220.01 50.8811C220.01 52.5387 221.358 53.8825 223.02 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M214.671 53.8825C216.333 53.8825 217.68 52.5387 217.68 50.8811C217.68 49.2234 216.333 47.8797 214.671 47.8797C213.009 47.8797 211.662 49.2234 211.662 50.8811C211.662 52.5387 213.009 53.8825 214.671 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 53.8825C207.985 53.8825 209.332 52.5387 209.332 50.8811C209.332 49.2234 207.985 47.8797 206.323 47.8797C204.661 47.8797 203.314 49.2234 203.314 50.8811C203.314 52.5387 204.661 53.8825 206.323 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M172.929 53.8825C174.591 53.8825 175.939 52.5387 175.939 50.8811C175.939 49.2234 174.591 47.8797 172.929 47.8797C171.267 47.8797 169.92 49.2234 169.92 50.8811C169.92 52.5387 171.267 53.8825 172.929 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M164.581 53.8825C166.243 53.8825 167.59 52.5387 167.59 50.8811C167.59 49.2234 166.243 47.8797 164.581 47.8797C162.919 47.8797 161.572 49.2234 161.572 50.8811C161.572 52.5387 162.919 53.8825 164.581 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M156.233 53.8825C157.895 53.8825 159.242 52.5387 159.242 50.8811C159.242 49.2234 157.895 47.8797 156.233 47.8797C154.571 47.8797 153.223 49.2234 153.223 50.8811C153.223 52.5387 154.571 53.8825 156.233 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M147.884 53.8825C149.546 53.8825 150.894 52.5387 150.894 50.8811C150.894 49.2234 149.546 47.8797 147.884 47.8797C146.222 47.8797 144.875 49.2234 144.875 50.8811C144.875 52.5387 146.222 53.8825 147.884 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M139.536 53.8825C141.198 53.8825 142.545 52.5387 142.545 50.8811C142.545 49.2234 141.198 47.8797 139.536 47.8797C137.874 47.8797 136.527 49.2234 136.527 50.8811C136.527 52.5387 137.874 53.8825 139.536 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M131.188 53.8825C132.85 53.8825 134.197 52.5387 134.197 50.8811C134.197 49.2234 132.85 47.8797 131.188 47.8797C129.526 47.8797 128.178 49.2234 128.178 50.8811C128.178 52.5387 129.526 53.8825 131.188 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M122.839 53.8825C124.501 53.8825 125.849 52.5387 125.849 50.8811C125.849 49.2234 124.501 47.8797 122.839 47.8797C121.177 47.8797 119.83 49.2234 119.83 50.8811C119.83 52.5387 121.177 53.8825 122.839 53.8825Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M482.013 45.6528C483.675 45.6528 485.022 44.309 485.022 42.6514C485.022 40.9938 483.675 39.65 482.013 39.65C480.351 39.65 479.003 40.9938 479.003 42.6514C479.003 44.309 480.351 45.6528 482.013 45.6528Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 45.6528C358.352 45.6528 359.7 44.309 359.7 42.6514C359.7 40.9938 358.352 39.65 356.69 39.65C355.028 39.65 353.681 40.9938 353.681 42.6514C353.681 44.309 355.028 45.6528 356.69 45.6528Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M348.342 45.6528C350.004 45.6528 351.351 44.309 351.351 42.6514C351.351 40.9938 350.004 39.65 348.342 39.65C346.68 39.65 345.333 40.9938 345.333 42.6514C345.333 44.309 346.68 45.6528 348.342 45.6528Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M339.994 45.6528C341.656 45.6528 343.003 44.309 343.003 42.6514C343.003 40.9938 341.656 39.65 339.994 39.65C338.332 39.65 336.984 40.9938 336.984 42.6514C336.984 44.309 338.332 45.6528 339.994 45.6528Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M281.555 45.6528C283.217 45.6528 284.564 44.309 284.564 42.6514C284.564 40.9938 283.217 39.65 281.555 39.65C279.893 39.65 278.546 40.9938 278.546 42.6514C278.546 44.309 279.893 45.6528 281.555 45.6528Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M273.207 45.6528C274.869 45.6528 276.216 44.309 276.216 42.6514C276.216 40.9938 274.869 39.65 273.207 39.65C271.545 39.65 270.197 40.9938 270.197 42.6514C270.197 44.309 271.545 45.6528 273.207 45.6528Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M264.858 45.6528C266.52 45.6528 267.868 44.309 267.868 42.6514C267.868 40.9938 266.52 39.65 264.858 39.65C263.196 39.65 261.849 40.9938 261.849 42.6514C261.849 44.309 263.196 45.6528 264.858 45.6528Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M256.51 45.6528C258.172 45.6528 259.519 44.309 259.519 42.6514C259.519 40.9938 258.172 39.65 256.51 39.65C254.848 39.65 253.501 40.9938 253.501 42.6514C253.501 44.309 254.848 45.6528 256.51 45.6528Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M248.162 45.6528C249.824 45.6528 251.171 44.309 251.171 42.6514C251.171 40.9938 249.824 39.65 248.162 39.65C246.5 39.65 245.152 40.9938 245.152 42.6514C245.152 44.309 246.5 45.6528 248.162 45.6528Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M239.716 45.6528C241.378 45.6528 242.726 44.309 242.726 42.6514C242.726 40.9938 241.378 39.65 239.716 39.65C238.054 39.65 236.707 40.9938 236.707 42.6514C236.707 44.309 238.054 45.6528 239.716 45.6528Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M231.368 45.6528C233.03 45.6528 234.377 44.309 234.377 42.6514C234.377 40.9938 233.03 39.65 231.368 39.65C229.706 39.65 228.359 40.9938 228.359 42.6514C228.359 44.309 229.706 45.6528 231.368 45.6528Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M223.02 45.6528C224.682 45.6528 226.029 44.309 226.029 42.6514C226.029 40.9938 224.682 39.65 223.02 39.65C221.358 39.65 220.01 40.9938 220.01 42.6514C220.01 44.309 221.358 45.6528 223.02 45.6528Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M214.671 45.6528C216.333 45.6528 217.68 44.309 217.68 42.6514C217.68 40.9938 216.333 39.65 214.671 39.65C213.009 39.65 211.662 40.9938 211.662 42.6514C211.662 44.309 213.009 45.6528 214.671 45.6528Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 45.6528C207.985 45.6528 209.332 44.309 209.332 42.6514C209.332 40.9938 207.985 39.65 206.323 39.65C204.661 39.65 203.314 40.9938 203.314 42.6514C203.314 44.309 204.661 45.6528 206.323 45.6528Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M189.626 45.6528C191.288 45.6528 192.635 44.309 192.635 42.6514C192.635 40.9938 191.288 39.65 189.626 39.65C187.964 39.65 186.617 40.9938 186.617 42.6514C186.617 44.309 187.964 45.6528 189.626 45.6528Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M181.278 45.6528C182.94 45.6528 184.287 44.309 184.287 42.6514C184.287 40.9938 182.94 39.65 181.278 39.65C179.616 39.65 178.268 40.9938 178.268 42.6514C178.268 44.309 179.616 45.6528 181.278 45.6528Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M172.929 45.6528C174.591 45.6528 175.939 44.309 175.939 42.6514C175.939 40.9938 174.591 39.65 172.929 39.65C171.267 39.65 169.92 40.9938 169.92 42.6514C169.92 44.309 171.267 45.6528 172.929 45.6528Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M156.233 45.6528C157.895 45.6528 159.242 44.309 159.242 42.6514C159.242 40.9938 157.895 39.65 156.233 39.65C154.571 39.65 153.223 40.9938 153.223 42.6514C153.223 44.309 154.571 45.6528 156.233 45.6528Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M147.884 45.6528C149.546 45.6528 150.894 44.309 150.894 42.6514C150.894 40.9938 149.546 39.65 147.884 39.65C146.222 39.65 144.875 40.9938 144.875 42.6514C144.875 44.309 146.222 45.6528 147.884 45.6528Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M139.536 45.6528C141.198 45.6528 142.545 44.309 142.545 42.6514C142.545 40.9938 141.198 39.65 139.536 39.65C137.874 39.65 136.527 40.9938 136.527 42.6514C136.527 44.309 137.874 45.6528 139.536 45.6528Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M473.664 37.4232C475.326 37.4232 476.674 36.0794 476.674 34.4217C476.674 32.7641 475.326 31.4203 473.664 31.4203C472.002 31.4203 470.655 32.7641 470.655 34.4217C470.655 36.0794 472.002 37.4232 473.664 37.4232Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M415.129 37.4232C416.791 37.4232 418.138 36.0794 418.138 34.4217C418.138 32.7641 416.791 31.4203 415.129 31.4203C413.467 31.4203 412.12 32.7641 412.12 34.4217C412.12 36.0794 413.467 37.4232 415.129 37.4232Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M406.78 37.4232C408.442 37.4232 409.79 36.0794 409.79 34.4217C409.79 32.7641 408.442 31.4203 406.78 31.4203C405.118 31.4203 403.771 32.7641 403.771 34.4217C403.771 36.0794 405.118 37.4232 406.78 37.4232Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M398.432 37.4232C400.094 37.4232 401.441 36.0794 401.441 34.4217C401.441 32.7641 400.094 31.4203 398.432 31.4203C396.77 31.4203 395.423 32.7641 395.423 34.4217C395.423 36.0794 396.77 37.4232 398.432 37.4232Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M390.084 37.4232C391.746 37.4232 393.093 36.0794 393.093 34.4217C393.093 32.7641 391.746 31.4203 390.084 31.4203C388.422 31.4203 387.074 32.7641 387.074 34.4217C387.074 36.0794 388.422 37.4232 390.084 37.4232Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M356.69 37.4232C358.352 37.4232 359.7 36.0794 359.7 34.4217C359.7 32.7641 358.352 31.4203 356.69 31.4203C355.028 31.4203 353.681 32.7641 353.681 34.4217C353.681 36.0794 355.028 37.4232 356.69 37.4232Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M348.342 37.4232C350.004 37.4232 351.351 36.0794 351.351 34.4217C351.351 32.7641 350.004 31.4203 348.342 31.4203C346.68 31.4203 345.333 32.7641 345.333 34.4217C345.333 36.0794 346.68 37.4232 348.342 37.4232Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M289.903 37.4232C291.565 37.4232 292.913 36.0794 292.913 34.4217C292.913 32.7641 291.565 31.4203 289.903 31.4203C288.241 31.4203 286.894 32.7641 286.894 34.4217C286.894 36.0794 288.241 37.4232 289.903 37.4232Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M281.555 37.4232C283.217 37.4232 284.564 36.0794 284.564 34.4217C284.564 32.7641 283.217 31.4203 281.555 31.4203C279.893 31.4203 278.546 32.7641 278.546 34.4217C278.546 36.0794 279.893 37.4232 281.555 37.4232Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M273.207 37.4232C274.869 37.4232 276.216 36.0794 276.216 34.4217C276.216 32.7641 274.869 31.4203 273.207 31.4203C271.545 31.4203 270.197 32.7641 270.197 34.4217C270.197 36.0794 271.545 37.4232 273.207 37.4232Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M264.858 37.4232C266.52 37.4232 267.868 36.0794 267.868 34.4217C267.868 32.7641 266.52 31.4203 264.858 31.4203C263.196 31.4203 261.849 32.7641 261.849 34.4217C261.849 36.0794 263.196 37.4232 264.858 37.4232Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M256.51 37.4232C258.172 37.4232 259.519 36.0794 259.519 34.4217C259.519 32.7641 258.172 31.4203 256.51 31.4203C254.848 31.4203 253.501 32.7641 253.501 34.4217C253.501 36.0794 254.848 37.4232 256.51 37.4232Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M248.162 37.4232C249.824 37.4232 251.171 36.0794 251.171 34.4217C251.171 32.7641 249.824 31.4203 248.162 31.4203C246.5 31.4203 245.152 32.7641 245.152 34.4217C245.152 36.0794 246.5 37.4232 248.162 37.4232Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M239.716 37.4232C241.378 37.4232 242.726 36.0794 242.726 34.4217C242.726 32.7641 241.378 31.4203 239.716 31.4203C238.054 31.4203 236.707 32.7641 236.707 34.4217C236.707 36.0794 238.054 37.4232 239.716 37.4232Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M231.368 37.4232C233.03 37.4232 234.377 36.0794 234.377 34.4217C234.377 32.7641 233.03 31.4203 231.368 31.4203C229.706 31.4203 228.359 32.7641 228.359 34.4217C228.359 36.0794 229.706 37.4232 231.368 37.4232Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M223.02 37.4232C224.682 37.4232 226.029 36.0794 226.029 34.4217C226.029 32.7641 224.682 31.4203 223.02 31.4203C221.358 31.4203 220.01 32.7641 220.01 34.4217C220.01 36.0794 221.358 37.4232 223.02 37.4232Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M214.671 37.4232C216.333 37.4232 217.68 36.0794 217.68 34.4217C217.68 32.7641 216.333 31.4203 214.671 31.4203C213.009 31.4203 211.662 32.7641 211.662 34.4217C211.662 36.0794 213.009 37.4232 214.671 37.4232Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 37.4232C207.985 37.4232 209.332 36.0794 209.332 34.4217C209.332 32.7641 207.985 31.4203 206.323 31.4203C204.661 31.4203 203.314 32.7641 203.314 34.4217C203.314 36.0794 204.661 37.4232 206.323 37.4232Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M197.974 37.4232C199.636 37.4232 200.984 36.0794 200.984 34.4217C200.984 32.7641 199.636 31.4203 197.974 31.4203C196.312 31.4203 194.965 32.7641 194.965 34.4217C194.965 36.0794 196.312 37.4232 197.974 37.4232Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M189.626 37.4232C191.288 37.4232 192.635 36.0794 192.635 34.4217C192.635 32.7641 191.288 31.4203 189.626 31.4203C187.964 31.4203 186.617 32.7641 186.617 34.4217C186.617 36.0794 187.964 37.4232 189.626 37.4232Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M181.278 37.4232C182.94 37.4232 184.287 36.0794 184.287 34.4217C184.287 32.7641 182.94 31.4203 181.278 31.4203C179.616 31.4203 178.268 32.7641 178.268 34.4217C178.268 36.0794 179.616 37.4232 181.278 37.4232Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M172.929 37.4232C174.591 37.4232 175.939 36.0794 175.939 34.4217C175.939 32.7641 174.591 31.4203 172.929 31.4203C171.267 31.4203 169.92 32.7641 169.92 34.4217C169.92 36.0794 171.267 37.4232 172.929 37.4232Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M164.581 37.4232C166.243 37.4232 167.59 36.0794 167.59 34.4217C167.59 32.7641 166.243 31.4203 164.581 31.4203C162.919 31.4203 161.572 32.7641 161.572 34.4217C161.572 36.0794 162.919 37.4232 164.581 37.4232Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M281.555 29.1935C283.217 29.1935 284.564 27.8497 284.564 26.1921C284.564 24.5345 283.217 23.1907 281.555 23.1907C279.893 23.1907 278.546 24.5345 278.546 26.1921C278.546 27.8497 279.893 29.1935 281.555 29.1935Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M273.207 29.1935C274.869 29.1935 276.216 27.8497 276.216 26.1921C276.216 24.5345 274.869 23.1907 273.207 23.1907C271.545 23.1907 270.197 24.5345 270.197 26.1921C270.197 27.8497 271.545 29.1935 273.207 29.1935Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M264.858 29.1935C266.52 29.1935 267.868 27.8497 267.868 26.1921C267.868 24.5345 266.52 23.1907 264.858 23.1907C263.196 23.1907 261.849 24.5345 261.849 26.1921C261.849 27.8497 263.196 29.1935 264.858 29.1935Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M256.51 29.1935C258.172 29.1935 259.519 27.8497 259.519 26.1921C259.519 24.5345 258.172 23.1907 256.51 23.1907C254.848 23.1907 253.501 24.5345 253.501 26.1921C253.501 27.8497 254.848 29.1935 256.51 29.1935Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M248.162 29.1935C249.824 29.1935 251.171 27.8497 251.171 26.1921C251.171 24.5345 249.824 23.1907 248.162 23.1907C246.5 23.1907 245.152 24.5345 245.152 26.1921C245.152 27.8497 246.5 29.1935 248.162 29.1935Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M239.716 29.1935C241.378 29.1935 242.726 27.8497 242.726 26.1921C242.726 24.5345 241.378 23.1907 239.716 23.1907C238.054 23.1907 236.707 24.5345 236.707 26.1921C236.707 27.8497 238.054 29.1935 239.716 29.1935Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M231.368 29.1935C233.03 29.1935 234.377 27.8497 234.377 26.1921C234.377 24.5345 233.03 23.1907 231.368 23.1907C229.706 23.1907 228.359 24.5345 228.359 26.1921C228.359 27.8497 229.706 29.1935 231.368 29.1935Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M223.02 29.1935C224.682 29.1935 226.029 27.8497 226.029 26.1921C226.029 24.5345 224.682 23.1907 223.02 23.1907C221.358 23.1907 220.01 24.5345 220.01 26.1921C220.01 27.8497 221.358 29.1935 223.02 29.1935Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M214.671 29.1935C216.333 29.1935 217.68 27.8497 217.68 26.1921C217.68 24.5345 216.333 23.1907 214.671 23.1907C213.009 23.1907 211.662 24.5345 211.662 26.1921C211.662 27.8497 213.009 29.1935 214.671 29.1935Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M206.323 29.1935C207.985 29.1935 209.332 27.8497 209.332 26.1921C209.332 24.5345 207.985 23.1907 206.323 23.1907C204.661 23.1907 203.314 24.5345 203.314 26.1921C203.314 27.8497 204.661 29.1935 206.323 29.1935Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M197.974 29.1935C199.636 29.1935 200.984 27.8497 200.984 26.1921C200.984 24.5345 199.636 23.1907 197.974 23.1907C196.312 23.1907 194.965 24.5345 194.965 26.1921C194.965 27.8497 196.312 29.1935 197.974 29.1935Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M189.626 29.1935C191.288 29.1935 192.635 27.8497 192.635 26.1921C192.635 24.5345 191.288 23.1907 189.626 23.1907C187.964 23.1907 186.617 24.5345 186.617 26.1921C186.617 27.8497 187.964 29.1935 189.626 29.1935Z",
+        fill: "#A684FF"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M181.278 29.1935C182.94 29.1935 184.287 27.8497 184.287 26.1921C184.287 24.5345 182.94 23.1907 181.278 23.1907C179.616 23.1907 178.268 24.5345 178.268 26.1921C178.268 27.8497 179.616 29.1935 181.278 29.1935Z",
+        fill: "#A684FF"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M554.819 258.45C554.819 258.45 562.319 252.45 562.319 245.95C562.319 241.808 558.961 238.45 554.819 238.45C550.677 238.45 547.319 241.808 547.319 245.95C547.319 252.45 554.819 258.45 554.819 258.45Z",
+      fill: "url(#paint0_linear_127_456)",
+      stroke: "url(#paint1_linear_127_456)",
+      "stroke-width": "2",
+      "stroke-linejoin": "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M554.819 248.95C556.476 248.95 557.819 247.607 557.819 245.95C557.819 244.294 556.476 242.95 554.819 242.95C553.162 242.95 551.819 244.294 551.819 245.95C551.819 247.607 553.162 248.95 554.819 248.95Z",
+      fill: "white",
+      stroke: "white",
+      "stroke-width": "2",
+      "stroke-linejoin": "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+      x: "549.801",
+      y: "240.274",
+      width: "9.88184",
+      height: "9.88184",
+      fill: "url(#paint2_linear_127_456)"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("g", {
+      filter: "url(#filter1_d_127_456)",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M555.942 249.734H558.022H559.026V251.259V252.785L555.942 249.734Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M559.026 243.945H556.809H556.255H555.978L559.026 240.894V243.945Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M556.809 243.945H559.026L556.116 246.839L555.347 247.604L554.578 248.369L553.058 246.848L550.157 243.945H553.206L554.592 245.323L555.978 243.945H556.255H556.809Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M552.375 249.734H550.157L552.72 247.185L554.24 248.706L553.206 249.734H552.929H552.375Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M558.022 249.734H555.942L554.578 248.369L555.347 247.604L556.578 247.541L558.022 249.734Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M556.116 246.839L555.347 247.604L556.578 247.541L556.116 246.839Z",
+        fill: "#4A5565"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M516.819 213.45C516.819 213.45 524.319 207.45 524.319 200.95C524.319 196.808 520.961 193.45 516.819 193.45C512.677 193.45 509.319 196.808 509.319 200.95C509.319 207.45 516.819 213.45 516.819 213.45Z"
+      // CORRECTED LOGIC HERE:
+      ,
+      fill: isActive("Malaysia") || isActive("Singapore") ? "#FF00E5" : "#402B73",
+      stroke: isActive("Malaysia") || isActive("Singapore") ? "#FF00E5" : "#402B73",
+      strokeWidth: "2",
+      strokeLinejoin: "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M516.819 203.95C518.476 203.95 519.819 202.607 519.819 200.95C519.819 199.294 518.476 197.95 516.819 197.95C515.162 197.95 513.819 199.294 513.819 200.95C513.819 202.607 515.162 203.95 516.819 203.95Z",
+      fill: "white",
+      stroke: "white",
+      strokeWidth: "2",
+      strokeLinejoin: "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+      x: "511.801",
+      y: "195.274",
+      width: "9.88184",
+      height: "9.88184"
+      // CORRECTED LOGIC HERE:
+      ,
+      fill: isActive("Malaysia") || isActive("Singapore") ? "#FF00E5" : "#402B73"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("g", {
+      filter: "url(#filter2_d_127_456)",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M517.942 204.734H520.022H521.026V206.259V207.785L517.942 204.734Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M521.026 198.945H518.809H518.255H517.978L521.026 195.894V198.945Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M518.809 198.945H521.026L518.116 201.839L517.347 202.604L516.578 203.369L515.058 201.848L512.157 198.945H515.206L516.592 200.323L517.978 198.945H518.255H518.809Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M514.375 204.734H512.157L514.72 202.185L516.24 203.706L515.206 204.734H514.929H514.375Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M520.022 204.734H517.942L516.578 203.369L517.347 202.604L518.578 202.541L520.022 204.734Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M518.116 201.839L517.347 202.604L518.578 202.541L518.116 201.839Z",
+        fill: "#4A5565"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M547.819 191.45C547.819 191.45 555.319 185.45 555.319 178.95C555.319 174.808 551.961 171.45 547.819 171.45C543.677 171.45 540.319 174.808 540.319 178.95C540.319 185.45 547.819 191.45 547.819 191.45Z",
+      fill: "url(#paint3_linear_127_456)",
+      stroke: "url(#paint4_linear_127_456)",
+      "stroke-width": "2",
+      "stroke-linejoin": "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M547.819 181.95C549.476 181.95 550.819 180.607 550.819 178.95C550.819 177.294 549.476 175.95 547.819 175.95C546.162 175.95 544.819 177.294 544.819 178.95C544.819 180.607 546.162 181.95 547.819 181.95Z",
+      fill: "white",
+      stroke: "white",
+      "stroke-width": "2",
+      "stroke-linejoin": "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+      x: "542.801",
+      y: "173.274",
+      width: "9.88184",
+      height: "9.88184",
+      fill: "url(#paint5_linear_127_456)"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("g", {
+      filter: "url(#filter3_d_127_456)",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M548.942 182.734H551.022H552.026V184.259V185.785L548.942 182.734Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M552.026 176.945H549.809H549.255H548.978L552.026 173.894V176.945Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M549.809 176.945H552.026L549.116 179.839L548.347 180.604L547.578 181.369L546.058 179.848L543.157 176.945H546.206L547.592 178.323L548.978 176.945H549.255H549.809Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M545.375 182.734H543.157L545.72 180.185L547.24 181.706L546.206 182.734H545.929H545.375Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M551.022 182.734H548.942L547.578 181.369L548.347 180.604L549.578 180.541L551.022 182.734Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M549.116 179.839L548.347 180.604L549.578 180.541L549.116 179.839Z",
+        fill: "#4A5565"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M505.819 174.45C505.819 174.45 513.319 168.45 513.319 161.95C513.319 157.808 509.961 154.45 505.819 154.45C501.677 154.45 498.319 157.808 498.319 161.95C498.319 168.45 505.819 174.45 505.819 174.45Z",
+      fill: "url(#paint6_linear_127_456)",
+      stroke: "url(#paint7_linear_127_456)",
+      "stroke-width": "2",
+      "stroke-linejoin": "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M505.819 164.95C507.476 164.95 508.819 163.607 508.819 161.95C508.819 160.294 507.476 158.95 505.819 158.95C504.162 158.95 502.819 160.294 502.819 161.95C502.819 163.607 504.162 164.95 505.819 164.95Z",
+      fill: "white",
+      stroke: "white",
+      "stroke-width": "2",
+      "stroke-linejoin": "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+      x: "500.801",
+      y: "156.274",
+      width: "9.88184",
+      height: "9.88184",
+      fill: "url(#paint8_linear_127_456)"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("g", {
+      filter: "url(#filter4_d_127_456)",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M506.942 165.734H509.022H510.026V167.259V168.785L506.942 165.734Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M510.026 159.945H507.809H507.255H506.978L510.026 156.894V159.945Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M507.809 159.945H510.026L507.116 162.839L506.347 163.604L505.578 164.369L504.058 162.848L501.157 159.945H504.206L505.592 161.323L506.978 159.945H507.255H507.809Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M503.375 165.734H501.157L503.72 163.185L505.24 164.706L504.206 165.734H503.929H503.375Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M509.022 165.734H506.942L505.578 164.369L506.347 163.604L507.578 163.541L509.022 165.734Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M507.116 162.839L506.347 163.604L507.578 163.541L507.116 162.839Z",
+        fill: "#4A5565"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M553.819 137.45C553.819 137.45 561.319 131.45 561.319 124.95C561.319 120.808 557.961 117.45 553.819 117.45C549.677 117.45 546.319 120.808 546.319 124.95C546.319 131.45 553.819 137.45 553.819 137.45Z",
+      fill: "url(#paint9_linear_127_456)",
+      stroke: "url(#paint10_linear_127_456)",
+      "stroke-width": "2",
+      "stroke-linejoin": "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M553.819 127.95C555.476 127.95 556.819 126.607 556.819 124.95C556.819 123.294 555.476 121.95 553.819 121.95C552.162 121.95 550.819 123.294 550.819 124.95C550.819 126.607 552.162 127.95 553.819 127.95Z",
+      fill: "white",
+      stroke: "white",
+      "stroke-width": "2",
+      "stroke-linejoin": "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+      x: "548.801",
+      y: "119.274",
+      width: "9.88184",
+      height: "9.88184",
+      fill: "url(#paint11_linear_127_456)"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("g", {
+      filter: "url(#filter5_d_127_456)",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M554.942 128.734H557.022H558.026V130.259V131.785L554.942 128.734Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M558.026 122.945H555.809H555.255H554.978L558.026 119.894V122.945Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M555.809 122.945H558.026L555.116 125.839L554.347 126.604L553.578 127.369L552.058 125.848L549.157 122.945H552.206L553.592 124.323L554.978 122.945H555.255H555.809Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M551.375 128.734H549.157L551.72 126.185L553.24 127.706L552.206 128.734H551.929H551.375Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M557.022 128.734H554.942L553.578 127.369L554.347 126.604L555.578 126.541L557.022 128.734Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M555.116 125.839L554.347 126.604L555.578 126.541L555.116 125.839Z",
+        fill: "#4A5565"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M196.819 146.45C196.819 146.45 204.319 140.45 204.319 133.95C204.319 129.808 200.961 126.45 196.819 126.45C192.677 126.45 189.319 129.808 189.319 133.95C189.319 140.45 196.819 146.45 196.819 146.45Z",
+      fill: "url(#paint12_linear_127_456)",
+      stroke: "url(#paint13_linear_127_456)",
+      "stroke-width": "2",
+      "stroke-linejoin": "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M196.819 136.95C198.476 136.95 199.819 135.607 199.819 133.95C199.819 132.294 198.476 130.95 196.819 130.95C195.162 130.95 193.819 132.294 193.819 133.95C193.819 135.607 195.162 136.95 196.819 136.95Z",
+      fill: "white",
+      stroke: "white",
+      "stroke-width": "2",
+      "stroke-linejoin": "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+      x: "191.801",
+      y: "128.274",
+      width: "9.88184",
+      height: "9.88184",
+      fill: "url(#paint14_linear_127_456)"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("g", {
+      filter: "url(#filter6_d_127_456)",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M197.942 137.734H200.022H201.026V139.259V140.785L197.942 137.734Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M201.026 131.945H198.809H198.255H197.978L201.026 128.894V131.945Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M198.809 131.945H201.026L198.116 134.839L197.347 135.604L196.578 136.369L195.058 134.848L192.157 131.945H195.206L196.592 133.323L197.978 131.945H198.255H198.809Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M194.375 137.734H192.157L194.72 135.185L196.24 136.706L195.206 137.734H194.929H194.375Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M200.022 137.734H197.942L196.578 136.369L197.347 135.604L198.578 135.541L200.022 137.734Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M198.116 134.839L197.347 135.604L198.578 135.541L198.116 134.839Z",
+        fill: "#4A5565"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M119.819 118.45C119.819 118.45 127.319 112.45 127.319 105.95C127.319 101.808 123.961 98.4504 119.819 98.4504C115.677 98.4504 112.319 101.808 112.319 105.95C112.319 112.45 119.819 118.45 119.819 118.45Z",
+      fill: "url(#paint15_linear_127_456)",
+      stroke: "url(#paint16_linear_127_456)",
+      "stroke-width": "2",
+      "stroke-linejoin": "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M119.819 108.95C121.476 108.95 122.819 107.607 122.819 105.95C122.819 104.294 121.476 102.95 119.819 102.95C118.162 102.95 116.819 104.294 116.819 105.95C116.819 107.607 118.162 108.95 119.819 108.95Z",
+      fill: "white",
+      stroke: "white",
+      "stroke-width": "2",
+      "stroke-linejoin": "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+      x: "114.801",
+      y: "100.274",
+      width: "9.88184",
+      height: "9.88184",
+      fill: "url(#paint17_linear_127_456)"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("g", {
+      filter: "url(#filter7_d_127_456)",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M120.942 109.734H123.022H124.026V111.259V112.785L120.942 109.734Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M124.026 103.945H121.809H121.255H120.978L124.026 100.894V103.945Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M121.809 103.945H124.026L121.116 106.839L120.347 107.604L119.578 108.369L118.058 106.848L115.157 103.945H118.206L119.592 105.323L120.978 103.945H121.255H121.809Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M117.375 109.734H115.157L117.72 107.185L119.24 108.706L118.206 109.734H117.929H117.375Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M123.022 109.734H120.942L119.578 108.369L120.347 107.604L121.578 107.541L123.022 109.734Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M121.116 106.839L120.347 107.604L121.578 107.541L121.116 106.839Z",
+        fill: "#4A5565"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M436.819 148.45C436.819 148.45 444.319 142.45 444.319 135.95C444.319 131.808 440.961 128.45 436.819 128.45C432.677 128.45 429.319 131.808 429.319 135.95C429.319 142.45 436.819 148.45 436.819 148.45Z",
+      fill: "url(#paint18_linear_127_456)",
+      stroke: "url(#paint19_linear_127_456)",
+      "stroke-width": "2",
+      "stroke-linejoin": "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M436.819 138.95C438.476 138.95 439.819 137.607 439.819 135.95C439.819 134.294 438.476 132.95 436.819 132.95C435.162 132.95 433.819 134.294 433.819 135.95C433.819 137.607 435.162 138.95 436.819 138.95Z",
+      fill: "white",
+      stroke: "white",
+      "stroke-width": "2",
+      "stroke-linejoin": "round"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+      x: "431.801",
+      y: "130.274",
+      width: "9.88184",
+      height: "9.88184",
+      fill: "url(#paint20_linear_127_456)"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("g", {
+      filter: "url(#filter8_d_127_456)",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M437.942 139.734H440.022H441.026V141.259V142.785L437.942 139.734Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M441.026 133.945H438.809H438.255H437.978L441.026 130.894V133.945Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M438.809 133.945H441.026L438.116 136.839L437.347 137.604L436.578 138.369L435.058 136.848L432.157 133.945H435.206L436.592 135.323L437.978 133.945H438.255H438.809Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M434.375 139.734H432.157L434.72 137.185L436.24 138.706L435.206 139.734H434.929H434.375Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M440.022 139.734H437.942L436.578 138.369L437.347 137.604L438.578 137.541L440.022 139.734Z",
+        fill: "white"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M438.116 136.839L437.347 137.604L438.578 137.541L438.116 136.839Z",
+        fill: "#4A5565"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("defs", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("filter", {
+        id: "filter0_d_127_456",
+        x: "0.000141144",
+        y: "-3.43323e-05",
+        width: "671.638",
+        height: "374.619",
+        filterUnits: "userSpaceOnUse",
+        "color-interpolation-filters": "sRGB",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feFlood", {
+          "flood-opacity": "0",
+          result: "BackgroundImageFix"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feColorMatrix", {
+          in: "SourceAlpha",
+          type: "matrix",
+          values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",
+          result: "hardAlpha"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feOffset", {
+          dy: "21.4068"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feGaussianBlur", {
+          stdDeviation: "22.2988"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feComposite", {
+          in2: "hardAlpha",
+          operator: "out"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feColorMatrix", {
+          type: "matrix",
+          values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feBlend", {
+          mode: "normal",
+          in2: "BackgroundImageFix",
+          result: "effect1_dropShadow_127_456"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feBlend", {
+          mode: "normal",
+          in: "SourceGraphic",
+          in2: "effect1_dropShadow_127_456",
+          result: "shape"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("filter", {
+        id: "filter1_d_127_456",
+        x: "545.37",
+        y: "238.021",
+        width: "18.4442",
+        height: "21.4661",
+        filterUnits: "userSpaceOnUse",
+        "color-interpolation-filters": "sRGB",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feFlood", {
+          "flood-opacity": "0",
+          result: "BackgroundImageFix"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feColorMatrix", {
+          in: "SourceAlpha",
+          type: "matrix",
+          values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",
+          result: "hardAlpha"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feOffset", {
+          dy: "1.91501"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feGaussianBlur", {
+          stdDeviation: "2.39376"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feComposite", {
+          in2: "hardAlpha",
+          operator: "out"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feColorMatrix", {
+          type: "matrix",
+          values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feBlend", {
+          mode: "normal",
+          in2: "BackgroundImageFix",
+          result: "effect1_dropShadow_127_456"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feBlend", {
+          mode: "normal",
+          in: "SourceGraphic",
+          in2: "effect1_dropShadow_127_456",
+          result: "shape"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("filter", {
+        id: "filter2_d_127_456",
+        x: "507.37",
+        y: "193.021",
+        width: "18.4442",
+        height: "21.4661",
+        filterUnits: "userSpaceOnUse",
+        "color-interpolation-filters": "sRGB",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feFlood", {
+          "flood-opacity": "0",
+          result: "BackgroundImageFix"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feColorMatrix", {
+          in: "SourceAlpha",
+          type: "matrix",
+          values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",
+          result: "hardAlpha"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feOffset", {
+          dy: "1.91501"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feGaussianBlur", {
+          stdDeviation: "2.39376"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feComposite", {
+          in2: "hardAlpha",
+          operator: "out"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feColorMatrix", {
+          type: "matrix",
+          values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feBlend", {
+          mode: "normal",
+          in2: "BackgroundImageFix",
+          result: "effect1_dropShadow_127_456"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feBlend", {
+          mode: "normal",
+          in: "SourceGraphic",
+          in2: "effect1_dropShadow_127_456",
+          result: "shape"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("filter", {
+        id: "filter3_d_127_456",
+        x: "538.37",
+        y: "171.021",
+        width: "18.4442",
+        height: "21.4661",
+        filterUnits: "userSpaceOnUse",
+        "color-interpolation-filters": "sRGB",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feFlood", {
+          "flood-opacity": "0",
+          result: "BackgroundImageFix"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feColorMatrix", {
+          in: "SourceAlpha",
+          type: "matrix",
+          values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",
+          result: "hardAlpha"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feOffset", {
+          dy: "1.91501"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feGaussianBlur", {
+          stdDeviation: "2.39376"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feComposite", {
+          in2: "hardAlpha",
+          operator: "out"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feColorMatrix", {
+          type: "matrix",
+          values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feBlend", {
+          mode: "normal",
+          in2: "BackgroundImageFix",
+          result: "effect1_dropShadow_127_456"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feBlend", {
+          mode: "normal",
+          in: "SourceGraphic",
+          in2: "effect1_dropShadow_127_456",
+          result: "shape"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("filter", {
+        id: "filter4_d_127_456",
+        x: "496.37",
+        y: "154.021",
+        width: "18.4442",
+        height: "21.4661",
+        filterUnits: "userSpaceOnUse",
+        "color-interpolation-filters": "sRGB",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feFlood", {
+          "flood-opacity": "0",
+          result: "BackgroundImageFix"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feColorMatrix", {
+          in: "SourceAlpha",
+          type: "matrix",
+          values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",
+          result: "hardAlpha"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feOffset", {
+          dy: "1.91501"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feGaussianBlur", {
+          stdDeviation: "2.39376"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feComposite", {
+          in2: "hardAlpha",
+          operator: "out"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feColorMatrix", {
+          type: "matrix",
+          values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feBlend", {
+          mode: "normal",
+          in2: "BackgroundImageFix",
+          result: "effect1_dropShadow_127_456"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feBlend", {
+          mode: "normal",
+          in: "SourceGraphic",
+          in2: "effect1_dropShadow_127_456",
+          result: "shape"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("filter", {
+        id: "filter5_d_127_456",
+        x: "544.37",
+        y: "117.021",
+        width: "18.4442",
+        height: "21.4661",
+        filterUnits: "userSpaceOnUse",
+        "color-interpolation-filters": "sRGB",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feFlood", {
+          "flood-opacity": "0",
+          result: "BackgroundImageFix"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feColorMatrix", {
+          in: "SourceAlpha",
+          type: "matrix",
+          values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",
+          result: "hardAlpha"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feOffset", {
+          dy: "1.91501"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feGaussianBlur", {
+          stdDeviation: "2.39376"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feComposite", {
+          in2: "hardAlpha",
+          operator: "out"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feColorMatrix", {
+          type: "matrix",
+          values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feBlend", {
+          mode: "normal",
+          in2: "BackgroundImageFix",
+          result: "effect1_dropShadow_127_456"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feBlend", {
+          mode: "normal",
+          in: "SourceGraphic",
+          in2: "effect1_dropShadow_127_456",
+          result: "shape"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("filter", {
+        id: "filter6_d_127_456",
+        x: "187.37",
+        y: "126.021",
+        width: "18.4442",
+        height: "21.4661",
+        filterUnits: "userSpaceOnUse",
+        "color-interpolation-filters": "sRGB",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feFlood", {
+          "flood-opacity": "0",
+          result: "BackgroundImageFix"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feColorMatrix", {
+          in: "SourceAlpha",
+          type: "matrix",
+          values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",
+          result: "hardAlpha"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feOffset", {
+          dy: "1.91501"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feGaussianBlur", {
+          stdDeviation: "2.39376"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feComposite", {
+          in2: "hardAlpha",
+          operator: "out"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feColorMatrix", {
+          type: "matrix",
+          values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feBlend", {
+          mode: "normal",
+          in2: "BackgroundImageFix",
+          result: "effect1_dropShadow_127_456"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feBlend", {
+          mode: "normal",
+          in: "SourceGraphic",
+          in2: "effect1_dropShadow_127_456",
+          result: "shape"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("filter", {
+        id: "filter7_d_127_456",
+        x: "110.37",
+        y: "98.0213",
+        width: "18.4442",
+        height: "21.4661",
+        filterUnits: "userSpaceOnUse",
+        "color-interpolation-filters": "sRGB",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feFlood", {
+          "flood-opacity": "0",
+          result: "BackgroundImageFix"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feColorMatrix", {
+          in: "SourceAlpha",
+          type: "matrix",
+          values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",
+          result: "hardAlpha"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feOffset", {
+          dy: "1.91501"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feGaussianBlur", {
+          stdDeviation: "2.39376"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feComposite", {
+          in2: "hardAlpha",
+          operator: "out"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feColorMatrix", {
+          type: "matrix",
+          values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feBlend", {
+          mode: "normal",
+          in2: "BackgroundImageFix",
+          result: "effect1_dropShadow_127_456"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feBlend", {
+          mode: "normal",
+          in: "SourceGraphic",
+          in2: "effect1_dropShadow_127_456",
+          result: "shape"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("filter", {
+        id: "filter8_d_127_456",
+        x: "427.37",
+        y: "128.021",
+        width: "18.4442",
+        height: "21.4661",
+        filterUnits: "userSpaceOnUse",
+        "color-interpolation-filters": "sRGB",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feFlood", {
+          "flood-opacity": "0",
+          result: "BackgroundImageFix"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feColorMatrix", {
+          in: "SourceAlpha",
+          type: "matrix",
+          values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",
+          result: "hardAlpha"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feOffset", {
+          dy: "1.91501"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feGaussianBlur", {
+          stdDeviation: "2.39376"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feComposite", {
+          in2: "hardAlpha",
+          operator: "out"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feColorMatrix", {
+          type: "matrix",
+          values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feBlend", {
+          mode: "normal",
+          in2: "BackgroundImageFix",
+          result: "effect1_dropShadow_127_456"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("feBlend", {
+          mode: "normal",
+          in: "SourceGraphic",
+          in2: "effect1_dropShadow_127_456",
+          result: "shape"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("linearGradient", {
+        id: "paint0_linear_127_456",
+        x1: "554.819",
+        y1: "238.45",
+        x2: "554.819",
+        y2: "258.45",
+        gradientUnits: "userSpaceOnUse",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          stopColor: isActive("Indonesia") ? "#FF00E5" : "#4F378A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          offset: "1",
+          stopColor: isActive("Indonesia") ? "#FF00E5" : "#4F378A"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("linearGradient", {
+        id: "paint1_linear_127_456",
+        x1: "554.819",
+        y1: "238.45",
+        x2: "554.819",
+        y2: "258.45",
+        gradientUnits: "userSpaceOnUse",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          stopColor: isActive("Indonesia") ? "#FF00E5" : "#4F378A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          offset: "1",
+          stopColor: isActive("Indonesia") ? "#FF00E5" : "#4F378A"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("linearGradient", {
+        id: "paint2_linear_127_456",
+        x1: "554.742",
+        y1: "240.274",
+        x2: "554.742",
+        y2: "250.156",
+        gradientUnits: "userSpaceOnUse",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          stopColor: isActive("Indonesia") ? "#FF00E5" : "#4F378A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          offset: "1",
+          stopColor: isActive("Indonesia") ? "#FF00E5" : "#4F378A"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("linearGradient", {
+        id: "paint3_linear_127_456",
+        x1: "547.819",
+        y1: "171.45",
+        x2: "547.819",
+        y2: "191.45",
+        gradientUnits: "userSpaceOnUse",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          stopColor: isActive("Philippines") ? "#FF00E5" : "#4F378A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          offset: "1",
+          stopColor: isActive("Philippines") ? "#FF00E5" : "#4F378A"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("linearGradient", {
+        id: "paint4_linear_127_456",
+        x1: "547.819",
+        y1: "171.45",
+        x2: "547.819",
+        y2: "191.45",
+        gradientUnits: "userSpaceOnUse",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          stopColor: isActive("Philippines") ? "#FF00E5" : "#4F378A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          offset: "1",
+          stopColor: isActive("Philippines") ? "#FF00E5" : "#4F378A"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("linearGradient", {
+        id: "paint5_linear_127_456",
+        x1: "547.742",
+        y1: "173.274",
+        x2: "547.742",
+        y2: "183.156",
+        gradientUnits: "userSpaceOnUse",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          stopColor: isActive("Philippines") ? "#FF00E5" : "#4F378A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          offset: "1",
+          stopColor: isActive("Philippines") ? "#FF00E5" : "#4F378A"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("linearGradient", {
+        id: "paint6_linear_127_456",
+        x1: "505.819",
+        y1: "154.45",
+        x2: "505.819",
+        y2: "174.45",
+        gradientUnits: "userSpaceOnUse",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          stopColor: isActive("Vietnam") ? "#FF00E5" : "#4F378A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          offset: "1",
+          stopColor: isActive("Vietnam") ? "#FF00E5" : "#4F378A"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("linearGradient", {
+        id: "paint7_linear_127_456",
+        x1: "505.819",
+        y1: "154.45",
+        x2: "505.819",
+        y2: "174.45",
+        gradientUnits: "userSpaceOnUse",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          stopColor: isActive("Vietnam") ? "#FF00E5" : "#4F378A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          offset: "1",
+          stopColor: isActive("Vietnam") ? "#FF00E5" : "#4F378A"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("linearGradient", {
+        id: "paint8_linear_127_456",
+        x1: "505.742",
+        y1: "156.274",
+        x2: "505.742",
+        y2: "166.156",
+        gradientUnits: "userSpaceOnUse",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          stopColor: isActive("Vietnam") ? "#FF00E5" : "#4F378A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          offset: "1",
+          stopColor: isActive("Vietnam") ? "#FF00E5" : "#4F378A"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("linearGradient", {
+        id: "paint9_linear_127_456",
+        x1: "553.819",
+        y1: "117.45",
+        x2: "553.819",
+        y2: "137.45",
+        gradientUnits: "userSpaceOnUse",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          "stop-color": "#4F378A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          offset: "1",
+          "stop-color": "#402B73"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("linearGradient", {
+        id: "paint10_linear_127_456",
+        x1: "553.819",
+        y1: "117.45",
+        x2: "553.819",
+        y2: "137.45",
+        gradientUnits: "userSpaceOnUse",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          "stop-color": "#4F378A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          offset: "1",
+          "stop-color": "#402B73"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("linearGradient", {
+        id: "paint11_linear_127_456",
+        x1: "553.742",
+        y1: "119.274",
+        x2: "553.742",
+        y2: "129.156",
+        gradientUnits: "userSpaceOnUse",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          "stop-color": "#4F378A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          offset: "1",
+          "stop-color": "#402B73"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("linearGradient", {
+        id: "paint12_linear_127_456",
+        x1: "196.819",
+        y1: "126.45",
+        x2: "196.819",
+        y2: "146.45",
+        gradientUnits: "userSpaceOnUse",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          stopColor: isActive("United States") ? "#FF00E5" : "#4F378A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          offset: "1",
+          stopColor: isActive("United States") ? "#FF00E5" : "#4F378A"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("linearGradient", {
+        id: "paint13_linear_127_456",
+        x1: "196.819",
+        y1: "126.45",
+        x2: "196.819",
+        y2: "146.45",
+        gradientUnits: "userSpaceOnUse",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          stopColor: isActive("United States") ? "#FF00E5" : "#4F378A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          offset: "1",
+          stopColor: isActive("United States") ? "#FF00E5" : "#4F378A"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("linearGradient", {
+        id: "paint14_linear_127_456",
+        x1: "196.742",
+        y1: "128.274",
+        x2: "196.742",
+        y2: "138.156",
+        gradientUnits: "userSpaceOnUse",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          stopColor: isActive("United States") ? "#FF00E5" : "#4F378A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          offset: "1",
+          stopColor: isActive("United States") ? "#FF00E5" : "#4F378A"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("linearGradient", {
+        id: "paint15_linear_127_456",
+        x1: "119.819",
+        y1: "98.4504",
+        x2: "119.819",
+        y2: "118.45",
+        gradientUnits: "userSpaceOnUse",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          "stop-color": "#4F378A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          offset: "1",
+          "stop-color": "#402B73"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("linearGradient", {
+        id: "paint16_linear_127_456",
+        x1: "119.819",
+        y1: "98.4504",
+        x2: "119.819",
+        y2: "118.45",
+        gradientUnits: "userSpaceOnUse",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          "stop-color": "#4F378A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          offset: "1",
+          "stop-color": "#402B73"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("linearGradient", {
+        id: "paint17_linear_127_456",
+        x1: "119.742",
+        y1: "100.274",
+        x2: "119.742",
+        y2: "110.156",
+        gradientUnits: "userSpaceOnUse",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          "stop-color": "#4F378A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          offset: "1",
+          "stop-color": "#402B73"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("linearGradient", {
+        id: "paint18_linear_127_456",
+        x1: "436.819",
+        y1: "128.45",
+        x2: "436.819",
+        y2: "148.45",
+        gradientUnits: "userSpaceOnUse",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          "stop-color": isActive("Thailand") ? "#FF00E5" : "#4F378A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          offset: "1",
+          "stop-color": isActive("Thailand") ? "#FF00E5" : "#4F378A"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("linearGradient", {
+        id: "paint19_linear_127_456",
+        x1: "436.819",
+        y1: "128.45",
+        x2: "436.819",
+        y2: "148.45",
+        gradientUnits: "userSpaceOnUse",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          "stop-color": isActive("Thailand") ? "#FF00E5" : "#4F378A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          offset: "1",
+          "stop-color": isActive("Thailand") ? "#FF00E5" : "#4F378A"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("linearGradient", {
+        id: "paint20_linear_127_456",
+        x1: "436.742",
+        y1: "130.274",
+        x2: "436.742",
+        y2: "140.156",
+        gradientUnits: "userSpaceOnUse",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          "stop-color": isActive("Thailand") ? "#FF00E5" : "#4F378A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("stop", {
+          offset: "1",
+          "stop-color": isActive("Thailand") ? "#FF00E5" : "#4F378A"
+        })]
+      })]
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/scripts/components/ui/SmartNavLink.js":
+/*!***************************************************!*\
+  !*** ./src/scripts/components/ui/SmartNavLink.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/development/chunk-OIYGIGL5.mjs");
+/* harmony import */ var _i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../i18n */ "./src/i18n.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+const SmartNavLink = ({
+  to = "/",
+  end = false,
+  className,
+  children,
+  delay = 1000,
+  onClick
+}) => {
+  const location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_0__.useLocation)();
+  const navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_0__.useNavigate)();
+
+  // Prepend language prefix if not default
+  const langPrefix = _i18n__WEBPACK_IMPORTED_MODULE_1__["default"].language !== "en" ? `/${_i18n__WEBPACK_IMPORTED_MODULE_1__["default"].language}` : "";
+  let fullPath = to.startsWith("/") ? `${langPrefix}${to}` : `${langPrefix}/${to}`;
+
+  // Remove double slashes if any
+  fullPath = fullPath.replace(/\/+/g, "/");
+  const handleClick = e => {
+    const [pathname, hash] = fullPath.split("#");
+    const isSamePath = location.pathname === pathname;
+
+    // If an external onClick handler is provided, execute it.
+    if (onClick) {
+      onClick(e);
+    }
+    if (hash) {
+      e.preventDefault();
+      if (!isSamePath) {
+        navigate(pathname);
+        setTimeout(() => {
+          const target = document.getElementById(hash);
+          if (target) target.scrollIntoView({
+            behavior: "smooth"
+          });
+        }, 300);
+      } else {
+        const target = document.getElementById(hash);
+        if (target) target.scrollIntoView({
+          behavior: "smooth"
+        });
+      }
+      setTimeout(() => {
+        window.history.replaceState(null, "", pathname);
+      }, delay);
+    } else {
+      if (isSamePath) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+        setTimeout(() => {
+          window.history.replaceState(null, "", location.pathname);
+        }, delay);
+      } else {
+        e.preventDefault();
+        navigate(pathname);
+        setTimeout(() => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+          window.history.replaceState(null, "", pathname);
+        }, 300);
+      }
+    }
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_0__.NavLink, {
+    to: fullPath,
+    end: end,
+    className: className,
+    onClick: handleClick,
+    children: children
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SmartNavLink);
+
+/***/ }),
+
+/***/ "./src/styles/badge.jsx":
+/*!******************************!*\
+  !*** ./src/styles/badge.jsx ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Badge: () => (/* binding */ Badge),
+/* harmony export */   badgeVariants: () => (/* binding */ badgeVariants)
+/* harmony export */ });
+/* harmony import */ var class_variance_authority__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! class-variance-authority */ "./node_modules/class-variance-authority/dist/index.mjs");
+/* harmony import */ var _lib_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../lib/util */ "./src/lib/util.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+const badgeVariants = (0,class_variance_authority__WEBPACK_IMPORTED_MODULE_0__.cva)([
+// Base Layout
+"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+// Vertical alignment fixes for icons/dots
+"align-middle gap-1.5"].join(" "), {
+  variants: {
+    variant: {
+      // 1. Solid Pink "NEW" - Top
+      new: "border-transparent bg-(--badge-pink) rounded text-white shadow-sm w-fit",
+      // 2. Light Purple Badge
+      secondary: "border-transparent bg-(--badge-gray-2) text-(--badge-text-dark) rounded w-fit",
+      // 3. Soft Pink Toolkit Badge
+      toolkit: "border-transparent bg-(--badge-gray) text-(--badge-pink) font-semibold text-md w-fit",
+      // 4. International Express (Standard/Default - Solid Dark Blue)
+      default: "border-transparent bg-(--badge-purple) text-white font-semibold text-md w-fit",
+      // 5. Outline "NEW" - Bottom
+      outline: "border-transparent bg-(--badge-gray-light) rounded text-(--badge-text-purple-light) w-fit",
+      // Destructive (Standard error state)
+      destructive: "border-transparent bg-red-500 text-white shadow-sm w-fit",
+      // Affiliate Amilo
+      affiliate: "border-transparent bg-(--badge-light-purple) text-(--badge-text-gray) font-light rounded w-fit",
+      // Affiliate Orange
+      affiliateOrange: "border-transparent bg-(--badge-orange) text-(--badge-text-gray) font-light rounded w-fit"
+    },
+    size: {
+      sm: "px-2 py-1 text-xs",
+      default: "px-4 py-1 text-base",
+      lg: "px-6 py-3 text-base"
+    }
+  },
+  defaultVariants: {
+    variant: "default",
+    size: "default"
+  }
+});
+function Badge({
+  className,
+  variant,
+  size,
+  children,
+  ...props
+}) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.cn)(badgeVariants({
+      variant,
+      size
+    }), className),
+    ...props,
+    style: {
+      fontFamily: "Inter, system-ui, -apple-system, sans-serif"
+    },
+    children: [variant === "toolkit" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+      className: "h-2 w-2 rounded-full bg-(--badge-pink) mr-1"
+    }), children]
+  });
+}
+
+
+/***/ }),
+
+/***/ "./src/styles/button.jsx":
+/*!*******************************!*\
+  !*** ./src/styles/button.jsx ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Button: () => (/* binding */ Button),
+/* harmony export */   buttonVariants: () => (/* binding */ buttonVariants)
+/* harmony export */ });
+/* harmony import */ var _radix_ui_react_slot__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @radix-ui/react-slot */ "./node_modules/@radix-ui/react-slot/dist/index.mjs");
+/* harmony import */ var class_variance_authority__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! class-variance-authority */ "./node_modules/class-variance-authority/dist/index.mjs");
+/* harmony import */ var _lib_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../lib/util */ "./src/lib/util.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+const buttonVariants = (0,class_variance_authority__WEBPACK_IMPORTED_MODULE_1__.cva)([
+// Layout & Flexbox
+"inline-flex items-center justify-center gap-2 whitespace-nowrap shrink-0",
+// Appearance
+"rounded-md font-normal",
+// Transitions & Base Interaction
+"transition-all outline-none",
+// Focus States
+"focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:border-ring",
+// Disabled States
+"disabled:pointer-events-none disabled:opacity-50",
+// Validation / Error States
+"aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+// Child Element Overrides (SVG icons)
+"[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"].join(" "), {
+  variants: {
+    variant: {
+      default: "bg-gray-200 text-foreground hover:bg-violet-300/70",
+      tabDefault: "bg-background text-foreground hover:bg-gray-200",
+      destructive: "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
+      outline: "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
+      primary: [
+      // Layout & Shape
+      "flex flex-row justify-center items-center gap-1 rounded-[8px] transition-all duration-300 cursor-pointer",
+      // Typography
+      "font-['Inter'] font-normal text-white",
+      // DEFAULT STATE
+      "bg-[linear-gradient(103.43deg,#4F378A_9.78%,#CC00B7_84.11%)]", "shadow-[2px_2px_4px_rgba(20,0,99,0.3),inset_2px_2px_3px_rgba(255,255,255,0.4)]",
+      // HOVER STATE
+      "hover:bg-[linear-gradient(103.43deg,#6D4CBF_9.78%,#E000CA_84.11%)]", "hover:shadow-[0px_0px_12px_rgba(255,0,229,0.5),inset_2px_2px_3px_rgba(255,255,255,0.5)]", "hover:scale-[1.01]",
+      // EXACT ACTIVE STATE (Uniform Gradient Fix)
+      "active:scale-[0.98]", "active:font-bold",
+      // We use a "flat" gradient of the same color to keep the background-image property occupied
+      "active:bg-[linear-gradient(103.43deg,#CC00B7_0%,#CC00B7_100%)]",
+      // Complex Shadow Stack from Figma
+      "active:shadow-[1px_1px_2px_rgba(20,0,99,0.45),inset_-2px_-2px_4px_rgba(98,0,97,0.4),inset_2px_2px_2px_rgba(255,255,255,0.55),inset_-4px_-4px_25px_rgba(154,4,129,0.2)]"].join(" "),
+      secondary: ["bg-white hover:bg-secondary-hover active:bg-secondary-active", "border border-violet-300 active:border-secondary-active", "text-primary active:text-white cursor-pointer font-normal", "shadow-[1px_1px_2px_rgba(0,0,0,0.3),inset_-2px_-2px_6px_rgba(167,139,250,0.3)]"].join(" "),
+      tertiary: ["bg-white hover:bg-secondary-hover active:bg-secondary-active cursor-pointer p-0", "text-primary active:text-white cursor-pointer font-normal", "shadow-[1px_1px_4px_rgba(20,0,99,0.3),inset_-1px_-1px_1px_rgba(154,4,129,0.15)]"].join(" "),
+      quaternary: [
+      // Layout & sizing (matches Figma)
+      "flex flex-row items-center justify-center gap-1", "h-[36px] px-4 rounded-[8px]",
+      // Typography
+      "font-['Inter'] font-normal text-[#CC00B7]",
+      // Default state (bg-white look with subtle tint)
+      "bg-white", "border border-[rgba(204,0,183,0.16)]", "shadow-none",
+      // Hover state (pink link-like highlight)
+      "hover:bg-[rgba(204,0,183,0.06)]", "hover:border-[rgba(204,0,183,0.32)]",
+      // Active state
+      "active:bg-[rgba(204,0,183,0.12)]", "active:scale-[0.98]",
+      // Transitions
+      "transition-all duration-200 cursor-pointer"].join(" "),
+      categoryInactive: ["bg-white hover:bg-secondary-hover active:bg-secondary-active", "border-none", "text-primary active:text-white cursor-pointer font-normal text-[#1E2939]", "shadow-[1px_1px_2px_rgba(0,0,0,0.3),inset_-2px_-2px_6px_rgba(167,139,250,0.3)]"].join(" "),
+      categoryActive: ["bg-[#CC00B7] hover:bg-[#E000CA] active:bg-[#CC00B7]", "text-white font-bold cursor-pointer", "shadow-[1px_1px_2px_rgba(20,0,99,0.45),inset_-2px_-2px_4px_rgba(98,0,97,0.4),inset_2px_2px_2px_rgba(255,255,255,0.55),inset_-4px_-4px_25px_rgba(154,4,129,0.2)]", "transition-all duration-300"].join(" "),
+      ghost: "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
+      link: "text-primary underline-offset-4 hover:underline",
+      tabActive: ["bg-[#CC00B7]", "shadow-[1px_1px_2px_rgba(20,0,99,0.45),inset_-2px_-2px_4px_rgba(98,0,97,0.4),inset_2px_2px_2px_rgba(255,255,255,0.55),inset_-4px_-4px_25px_rgba(154,4,129,0.2)]", "text-white font-medium"].join(" "),
+      tabInactive: ["bg-transparent text-white/90 font-normal hover:bg-white/5"].join(" "),
+      // This matches your secondary code snippet for "HS Code Generator" style (bordered active state)
+      tabBorderedActive: ["bg-[rgba(204,0,183,0.2)] border border-[#FF00E5]", "shadow-[1px_1px_2px_rgba(20,0,99,0.45),inset_-2px_-2px_4px_rgba(98,0,97,0.4),inset_-4px_-4px_25px_rgba(154,4,129,0.2)]"].join(" "),
+      toolsHeroActive: ["flex flex-row justify-center items-center gap-2 bg-[#CC00B7] text-white rounded-lg font-semibold", "shadow-[1px_1px_2px_rgba(20,0,99,0.45),inset_-2px_-2px_4px_rgba(98,0,97,0.4),inset_2px_2px_2px_rgba(255,255,255,0.55),inset_-4px_-4px_25px_rgba(154,4,129,0.2)]"].join(" "),
+      toolsHeroInactive: ["flex flex-row justify-center items-center gap-2 bg-transparent text-white rounded-lg font-semibold"].join(" "),
+      toolsHeroMobileActive: ["flex flex-col justify-center items-center gap-2 bg-[#CC00B7] text-white rounded-lg font-semibold whitespace-normal break-words text-center", "shadow-[1px_1px_2px_rgba(20,0,99,0.45),inset_-2px_-2px_4px_rgba(98,0,97,0.4),inset_2px_2px_2px_rgba(255,255,255,0.55),inset_-4px_-4px_25px_rgba(154,4,129,0.2)]"].join(" "),
+      toolsHeroMobileInactive: ["flex flex-col justify-center items-center gap-2 bg-transparent text-white rounded-lg font-semibold whitespace-normal break-words text-center"].join(" ")
+    },
+    size: {
+      default: "text-sm md:text-base h-9 px-4 py-2.5 has-[>svg]:px-3",
+      defaultFull: "text-sm md:text-base h-full px-4 py-2.5 has-[>svg]:px-3",
+      tab: "text-sm md:text-base h-full px-4 py-2.5",
+      sm: "text-xs md:text-sm h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
+      lg: "text-base md:text-lg h-10 rounded-md px-6 has-[>svg]:px-4",
+      icon: "size-9",
+      "icon-sm": "size-8",
+      "icon-lg": "size-10"
+    }
+  },
+  defaultVariants: {
+    variant: "default",
+    size: "default"
+  }
+});
+function Button({
+  className,
+  variant,
+  size,
+  asChild = false,
+  ...props
+}) {
+  const Comp = asChild ? _radix_ui_react_slot__WEBPACK_IMPORTED_MODULE_0__.Slot : "button";
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Comp, {
+    "data-slot": "button",
+    className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_2__.cn)(buttonVariants({
+      variant,
+      size,
+      className
+    })),
+    style: {
+      fontFamily: "Inter, system-ui, -apple-system, sans-serif"
+    },
+    ...props
+  });
+}
+
+
+/***/ }),
+
+/***/ "./src/styles/themeGuide.js":
+/*!**********************************!*\
+  !*** ./src/styles/themeGuide.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   themeGuide: () => (/* binding */ themeGuide)
+/* harmony export */ });
+const themeGuide = {
+  // Padding
+  paddingX: "lg:px-24 md:px-8 px-8",
+  paddingY: "lg:py-5 md:py-5 py-5",
+  sectionPaddingY: "xl:py-[128px] md:py-[64px] py-[48px]",
+  sectionPaddingX: "xl:px-[122px]",
+  // Typography - Headings
+  pageTitle: "text-4xl font-extrabold tracking-tight",
+  pageTitleAccent: "text-secondary",
+  sectionHeading: "text-3xl font-semibold tracking-tight text-foreground",
+  sectionHeadingAccent: "text-secondary",
+  // Typography - Body
+  sectionDescription: "text-foreground text-base",
+  bodyText: "text-foreground text-base",
+  // Form / Input Elements
+  inputHeading: "text-foreground text-base leading-tight font-semibold",
+  inputDescription: "text-muted-foreground text-sm leading-tight",
+  inputPlaceholder: "placeholder:text-placeholder text-placeholder text-base md:text-sm",
+  // Call to Action (CTA)
+  ctaHeading: "lg:text-[40px] md:text-3xl text-2xl font-semibold tracking-tight leading-none",
+  ctaDescription: "lg:text-lg md:text-md text-sm leading-tight",
+  // Header
+  headerTagline: "text-base text-dark-neutral font-normal",
+  headerLinks: "text-base text-dark-neutral font-medium",
+  headerLanguageItem: "text-md text-dark-neutral font-normal",
+  // Footer
+  footerTagline: "text-lg font-bold leading-tight text-dark-neutral",
+  footerBody: "text-sm leading-sm font-normal text-dark-neutral",
+  footerHeading: "text-base font-bold text-secondary",
+  footerItem: "text-sm text-medium-neutral hover:text-foreground leading-none",
+  footerIcon: "w-5 h-5",
+  // Buttons & UI
+  // Note: These often need base button classes + variant classes
+  buttonPrimary: "rounded-md text-sm font-medium mainButton inline-flex items-center justify-center gap-2 whitespace-nowrap shrink-0 min-h-12 px-4 py-2 has-[>svg]:px-3",
+  buttonNormal: "bg-gray-200 text-foreground hover:bg-violet-300/70 h-9 px-4 py-2 rounded-md",
+  buttonFooterCTA: "bg-white/15 text-white text-base font-normal border border-white/95 rounded-[19px] md:py-[7px] md:px-[30px] cursor-pointer",
+  badge: "text-secondary flex items-center gap-1 rounded-md px-4 py-2 text-sm font-bold w-fit bg-[var(--badge-bg)] text-[var(--badge-text)]",
+  // Shipment Tracker
+  toolsHeroTitle: "font-['Inter'] font-semibold text-white tracking-[-1px] lg:text-[40px] text-[32px]",
+  toolsHeroDescription: "font-['Inter'] font-normal text-white md:text-[16px] text-[14px] opacity-90",
+  // Section Introduction
+  sectionHeading: "lg:text-[32px] text-[28px] font-bold text-[#1E2939]",
+  sectionDescription: "md:text-[16px] text-[14px] font-normal text-[#63666D]/75",
+  // Input labels
+  inputLabel: "font-['Inter'] md:text-[16px] text-[14px] font-semibold text-[#1E2939]",
+  inputLabelNote: "font-['Inter'] md:text-[16px] text-[14px] font-normal text-[#4D525C]/90",
+  inputPlaceholder: "font-['Inter'] md:text-[16px] text-[14px] font-normal text-[#99A1AF]"
+};
+
+/***/ })
+
+}]);
+//# sourceMappingURL=src_scripts_components_pages_homepage_OfficesSection_jsx.js.map?ver=51112684088517a0940f

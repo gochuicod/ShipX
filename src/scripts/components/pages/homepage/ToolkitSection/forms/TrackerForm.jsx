@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 // Illustration URL
 const trackerIllustration =
-  "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/shipment_tracker.webp";
+  "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/shipment_tracker.png";
 
 export default function TrackerForm() {
   const [trackingNumber, setTrackingNumber] = useState("");

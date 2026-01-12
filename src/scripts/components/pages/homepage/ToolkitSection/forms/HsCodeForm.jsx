@@ -5,7 +5,7 @@ import { useLangNavigate } from "../../../../../hooks/useLangNavigate";
 import { useTranslation } from "react-i18next";
 
 const hsCodeIllustration =
-  "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/hs_code_generator.webp";
+  "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/hs_code_generator.png";
 
 export default function HsCodeForm() {
   const [value, setValue] = useState("");
