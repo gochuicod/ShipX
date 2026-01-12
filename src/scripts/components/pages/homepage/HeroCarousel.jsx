@@ -10,7 +10,7 @@ import Container from "../../library/Container";
 export default function HeroCarousel({
   slides = [],
   autoPlay = false,
-  autoPlayInterval = 5000,
+  autoPlayInterval = 7000,
 }) {
   const [current, setCurrent] = useState(0);
 
