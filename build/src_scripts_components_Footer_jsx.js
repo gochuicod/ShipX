@@ -1395,4 +1395,4 @@ const themeGuide = {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_scripts_components_Footer_jsx.js.map?ver=783daee452168fa5fc45
+//# sourceMappingURL=src_scripts_components_Footer_jsx.js.map?ver=90ee19263ccd59b10270

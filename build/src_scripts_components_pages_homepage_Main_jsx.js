@@ -138,8 +138,8 @@ const Main = () => {
   } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_1__.useTranslation)();
   const heroSlides = [{
     id: 1,
-    image: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_3.webp",
-    bgClassName: (0,_lib_util__WEBPACK_IMPORTED_MODULE_2__.cn)("2xl:bg-size-[1139px_636px] md:bg-size-[1093px_636px] bg-size-[724px_445px]", "2xl:bg-position-[35vw_15vw] xl:bg-position-[center_20vw] lg:bg-position-[center_35vw] md:bg-position-[center_40vw] bg-position-[center_110vw]"),
+    image: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_1.png",
+    bgClassName: (0,_lib_util__WEBPACK_IMPORTED_MODULE_2__.cn)("2xl:bg-size-[1139px_636px] md:bg-size-[1093px_636px] bg-size-[724px_445px]", "2xl:bg-position-[30vw_center] bg-position-[center_bottom]"),
     title: t("hero_section.slides.slide_1.title"),
     titleHighlight: t("hero_section.slides.slide_1.title_highlighted"),
     description: t("hero_section.slides.slide_1.description"),
@@ -160,8 +160,8 @@ const Main = () => {
     }
   }, {
     id: 2,
-    image: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_2_v2.webp",
-    bgClassName: (0,_lib_util__WEBPACK_IMPORTED_MODULE_2__.cn)("2xl:bg-size-[1239px_736px] md:bg-size-[1093px_636px] bg-size-[724px_445px]", "2xl:bg-position-[30vw_5vw] xl:bg-position-[center_10vw] lg:bg-position-[center_15vw] md:bg-position-[center_20vw] bg-position-[center_80vw]"),
+    image: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_2.png",
+    bgClassName: (0,_lib_util__WEBPACK_IMPORTED_MODULE_2__.cn)("2xl:bg-size-[1239px_auto] md:bg-size-[1093px_auto] bg-size-[724px_auto]", "2xl:bg-position-[30vw_0vw] md:bg-position-[center_5vw] sm:bg-position-[center_30vw] bg-position-[center_50vw]"),
     title: t("hero_section.slides.slide_2.title"),
     titleHighlight: t("hero_section.slides.slide_2.title_highlighted"),
     description: t("hero_section.slides.slide_2.description"),
@@ -182,8 +182,8 @@ const Main = () => {
     }
   }, {
     id: 3,
-    image: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_3.webp",
-    bgClassName: (0,_lib_util__WEBPACK_IMPORTED_MODULE_2__.cn)("2xl:bg-size-[1139px_636px] md:bg-size-[1093px_636px] bg-size-[724px_445px]", "2xl:bg-position-[35vw_15vw] xl:bg-position-[center_20vw] lg:bg-position-[center_35vw] md:bg-position-[center_40vw] bg-position-[center_110vw]"),
+    image: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_3_v2.png",
+    bgClassName: (0,_lib_util__WEBPACK_IMPORTED_MODULE_2__.cn)("2xl:bg-size-[1139px_636px] md:bg-size-[1093px_636px] bg-size-[724px_445px]", "2xl:bg-position-[30vw_center] bg-position-[center_bottom]"),
     title: t("hero_section.slides.slide_3.title"),
     titleHighlight: t("hero_section.slides.slide_3.title_highlighted"),
     description: t("hero_section.slides.slide_3.description"),
@@ -227,4 +227,4 @@ const Main = () => {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_scripts_components_pages_homepage_Main_jsx.js.map?ver=79f3b0c4d016818ed58b
+//# sourceMappingURL=src_scripts_components_pages_homepage_Main_jsx.js.map?ver=12ab0816decdc142a13b

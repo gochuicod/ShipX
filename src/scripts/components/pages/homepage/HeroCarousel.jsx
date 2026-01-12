@@ -34,7 +34,7 @@ export default function HeroCarousel({
 
   const activeSlide = slides[current];
 
-  // 1. Define Defaults
+  // 1. Define Defaults (Used for background positioning/sizing)
   const defaultBgClasses = `
     2xl:bg-size-[1524px_785px]
     md:bg-size-[1198px_617px]
@@ -43,46 +43,44 @@ export default function HeroCarousel({
     bg-position-[bottom_center]
   `;
 
-  // 2. Determine active classes
-  const activeBgClasses =
-    activeSlide.bgClassName !== undefined
-      ? activeSlide.bgClassName
-      : defaultBgClasses;
-
   return (
     <section
       className={cn(
-        "relative w-full flex items-center overflow-hidden bg-white bg-no-repeat transition-all duration-300 ease-in-out",
-        activeBgClasses,
+        "relative w-full flex items-center overflow-hidden bg-white transition-all duration-300 ease-in-out",
       )}
       style={{
         fontFamily: "Inter, system-ui, -apple-system, sans-serif",
-        backgroundImage: `url('${activeSlide.image}')`,
-        ...activeSlide.bgStyle,
       }}
     >
-      <Container className="relative z-10 flex justify-start w-full">
-        <div className="absolute 2xl:top-[7vw] xl:top-[15vw] md:top-[25vw] top-[50vw] 2xl:-right-[15vw] right-0 w-full h-full overflow-visible">
-          <div className="flex min-h-screen w-full items-center justify-center overflow-visible relative">
-            {/* --- Outer Ring --- */}
-            <div
-              className={cn(
-                "absolute rounded-full md:border-80 border-60 border-[#FF00E5]/5",
-                "2xl:h-[1400px] md:h-[1200px] h-[800px]",
-                "2xl:w-[1400px] md:w-[1200px] w-[800px]",
-              )}
-            />
+      {/* BACKGROUND LAYERS
+        We render a background div for EACH slide and animate opacity.
+        This allows for the smooth cross-fade effect requested.
+      */}
+      {slides.map((slide, index) => {
+        const isCurrent = index === current;
+        // Determine classes for this specific slide
+        const bgClasses =
+          slide.bgClassName !== undefined
+            ? slide.bgClassName
+            : defaultBgClasses;
 
-            {/* --- Inner Ring --- */}
-            <div
-              className={cn(
-                "absolute rounded-full md:border-80 border-60 border-[#FF00E5]/5",
-                "2xl:h-[1100px] md:h-[900px] h-[600px]",
-                "2xl:w-[1100px] md:w-[900px] w-[600px]",
-              )}
-            />
-          </div>
-        </div>
+        return (
+          <div
+            key={slide.id || index}
+            className={cn(
+              "absolute inset-0 w-full h-full bg-no-repeat pointer-events-none transition-opacity duration-700 ease-in-out",
+              bgClasses,
+              isCurrent ? "opacity-100 z-0" : "opacity-0 z-0",
+            )}
+            style={{
+              backgroundImage: `url('${slide.image}')`,
+              ...slide.bgStyle,
+            }}
+          />
+        );
+      })}
+
+      <Container className="relative z-10 flex justify-start w-full">
         {/* Navigation Arrows */}
         {slides.length > 1 && (
           <>
@@ -108,7 +106,7 @@ export default function HeroCarousel({
             "grid gap-12",
             "xl:min-h-[664px] md:min-h-[662px] min-h-[652px]",
             "2xl:items-center items-start pt-8",
-            "animate-fade-in",
+            "animate-fade-in", // Keeps text animation
             "2xl:w-[608px] w-full",
             "2xl:mx-0 mx-auto",
             activeSlide.contentClassName,
@@ -123,7 +121,7 @@ export default function HeroCarousel({
                 "2xl:text-[60px] text-[48px] 2xl:leading-18 leading-12 font-bold",
                 activeSlide.titleClassName
                   ? activeSlide.titleClassName
-                  : "2xl:w-[90%] xl:w-[55%] lg:w-[65%] md:w-[80%] w-full 2xl:mx-0 mx-auto",
+                  : "2xl:w-full xl:w-[55%] lg:w-[65%] md:w-[80%] w-full 2xl:mx-0 mx-auto",
               )}
               highlightClass="text-[#FF00E5]"
               disableNewlines

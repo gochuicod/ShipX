@@ -28,10 +28,10 @@ const Main = () => {
     {
       id: 1,
       image:
-        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_3.webp",
+        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_1.png",
       bgClassName: cn(
         "2xl:bg-size-[1139px_636px] md:bg-size-[1093px_636px] bg-size-[724px_445px]",
-        "2xl:bg-position-[35vw_15vw] xl:bg-position-[center_20vw] lg:bg-position-[center_35vw] md:bg-position-[center_40vw] bg-position-[center_110vw]",
+        "2xl:bg-position-[30vw_center] bg-position-[center_bottom]",
       ),
       title: t("hero_section.slides.slide_1.title"),
       titleHighlight: t("hero_section.slides.slide_1.title_highlighted"),
@@ -51,10 +51,10 @@ const Main = () => {
     {
       id: 2,
       image:
-        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_2_v2.webp",
+        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_2.png",
       bgClassName: cn(
-        "2xl:bg-size-[1239px_736px] md:bg-size-[1093px_636px] bg-size-[724px_445px]",
-        "2xl:bg-position-[30vw_5vw] xl:bg-position-[center_10vw] lg:bg-position-[center_15vw] md:bg-position-[center_20vw] bg-position-[center_80vw]",
+        "2xl:bg-size-[1239px_auto] md:bg-size-[1093px_auto] bg-size-[724px_auto]",
+        "2xl:bg-position-[30vw_0vw] md:bg-position-[center_5vw] sm:bg-position-[center_30vw] bg-position-[center_50vw]",
       ),
       title: t("hero_section.slides.slide_2.title"),
       titleHighlight: t("hero_section.slides.slide_2.title_highlighted"),
@@ -74,10 +74,10 @@ const Main = () => {
     {
       id: 3,
       image:
-        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_3.webp",
+        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_3_v2.png",
       bgClassName: cn(
         "2xl:bg-size-[1139px_636px] md:bg-size-[1093px_636px] bg-size-[724px_445px]",
-        "2xl:bg-position-[35vw_15vw] xl:bg-position-[center_20vw] lg:bg-position-[center_35vw] md:bg-position-[center_40vw] bg-position-[center_110vw]",
+        "2xl:bg-position-[30vw_center] bg-position-[center_bottom]",
       ),
       title: t("hero_section.slides.slide_3.title"),
       titleHighlight: t("hero_section.slides.slide_3.title_highlighted"),

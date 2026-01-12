@@ -593,7 +593,7 @@ function HeroCarousel({
   if (!slides || slides.length === 0) return null;
   const activeSlide = slides[current];
 
-  // 1. Define Defaults
+  // 1. Define Defaults (Used for background positioning/sizing)
   const defaultBgClasses = `
     2xl:bg-size-[1524px_785px]
     md:bg-size-[1198px_617px]
@@ -601,29 +601,25 @@ function HeroCarousel({
     2xl:bg-position-[calc(50vw-320px)_100%]
     bg-position-[bottom_center]
   `;
-
-  // 2. Determine active classes
-  const activeBgClasses = activeSlide.bgClassName !== undefined ? activeSlide.bgClassName : defaultBgClasses;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("section", {
-    className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.cn)("relative w-full flex items-center overflow-hidden bg-white bg-no-repeat transition-all duration-300 ease-in-out", activeBgClasses),
+    className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.cn)("relative w-full flex items-center overflow-hidden bg-white transition-all duration-300 ease-in-out"),
     style: {
-      fontFamily: "Inter, system-ui, -apple-system, sans-serif",
-      backgroundImage: `url('${activeSlide.image}')`,
-      ...activeSlide.bgStyle
+      fontFamily: "Inter, system-ui, -apple-system, sans-serif"
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_library_Container__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    children: [slides.map((slide, index) => {
+      const isCurrent = index === current;
+      // Determine classes for this specific slide
+      const bgClasses = slide.bgClassName !== undefined ? slide.bgClassName : defaultBgClasses;
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+        className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.cn)("absolute inset-0 w-full h-full bg-no-repeat pointer-events-none transition-opacity duration-700 ease-in-out", bgClasses, isCurrent ? "opacity-100 z-0" : "opacity-0 z-0"),
+        style: {
+          backgroundImage: `url('${slide.image}')`,
+          ...slide.bgStyle
+        }
+      }, slide.id || index);
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_library_Container__WEBPACK_IMPORTED_MODULE_8__["default"], {
       className: "relative z-10 flex justify-start w-full",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-        className: "absolute 2xl:top-[7vw] xl:top-[15vw] md:top-[25vw] top-[50vw] 2xl:-right-[15vw] right-0 w-full h-full overflow-visible",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-          className: "flex min-h-screen w-full items-center justify-center overflow-visible relative",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-            className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.cn)("absolute rounded-full md:border-80 border-60 border-[#FF00E5]/5", "2xl:h-[1400px] md:h-[1200px] h-[800px]", "2xl:w-[1400px] md:w-[1200px] w-[800px]")
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-            className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.cn)("absolute rounded-full md:border-80 border-60 border-[#FF00E5]/5", "2xl:h-[1100px] md:h-[900px] h-[600px]", "2xl:w-[1100px] md:w-[900px] w-[600px]")
-          })]
-        })
-      }), slides.length > 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {
+      children: [slides.length > 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
           onClick: prevSlide,
           className: "absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/50 hover:bg-white transition-colors hidden",
@@ -638,13 +634,15 @@ function HeroCarousel({
           })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-        className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.cn)("grid gap-12", "xl:min-h-[664px] md:min-h-[662px] min-h-[652px]", "2xl:items-center items-start pt-8", "animate-fade-in", "2xl:w-[608px] w-full", "2xl:mx-0 mx-auto", activeSlide.contentClassName),
+        className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.cn)("grid gap-12", "xl:min-h-[664px] md:min-h-[662px] min-h-[652px]", "2xl:items-center items-start pt-8", "animate-fade-in",
+        // Keeps text animation
+        "2xl:w-[608px] w-full", "2xl:mx-0 mx-auto", activeSlide.contentClassName),
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
           className: "flex flex-col 2xl:text-left text-center",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_library_HighlightedHeading__WEBPACK_IMPORTED_MODULE_5__["default"], {
             text: activeSlide.title,
             highlight: activeSlide.titleHighlight,
-            className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.cn)(_styles_themeGuide__WEBPACK_IMPORTED_MODULE_4__.themeGuide.pageTitle, "2xl:text-[60px] text-[48px] 2xl:leading-18 leading-12 font-bold", activeSlide.titleClassName ? activeSlide.titleClassName : "2xl:w-[90%] xl:w-[55%] lg:w-[65%] md:w-[80%] w-full 2xl:mx-0 mx-auto"),
+            className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.cn)(_styles_themeGuide__WEBPACK_IMPORTED_MODULE_4__.themeGuide.pageTitle, "2xl:text-[60px] text-[48px] 2xl:leading-18 leading-12 font-bold", activeSlide.titleClassName ? activeSlide.titleClassName : "2xl:w-full xl:w-[55%] lg:w-[65%] md:w-[80%] w-full 2xl:mx-0 mx-auto"),
             highlightClass: "text-[#FF00E5]",
             disableNewlines: true
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_library_Description__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -977,4 +975,4 @@ const themeGuide = {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_scripts_components_pages_homepage_HeroCarousel_jsx.js.map?ver=6c996d9a3c03c731a98b
+//# sourceMappingURL=src_scripts_components_pages_homepage_HeroCarousel_jsx.js.map?ver=8cd78fb94e64187da57d
