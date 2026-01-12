@@ -458,12 +458,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
 /* harmony import */ var _library_SectionGlow__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../library/SectionGlow */ "./src/scripts/components/library/SectionGlow.jsx");
 /* harmony import */ var _library_TabSwitcher__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../library/TabSwitcher */ "./src/scripts/components/library/TabSwitcher.jsx");
-/* harmony import */ var _styles_badge__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../styles/badge */ "./src/styles/badge.jsx");
-/* harmony import */ var _tabs_config__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./tabs.config */ "./src/scripts/components/pages/homepage/ToolkitSection/tabs.config.js");
-/* harmony import */ var _toolkitTabs_i18n__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./toolkitTabs.i18n */ "./src/scripts/components/pages/homepage/ToolkitSection/toolkitTabs.i18n.js");
-/* harmony import */ var _lib_util__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../../lib/util */ "./src/lib/util.js");
-/* harmony import */ var _styles_themeGuide__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../../styles/themeGuide */ "./src/styles/themeGuide.js");
-/* harmony import */ var _library_Container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../library/Container */ "./src/scripts/components/library/Container.jsx");
+/* harmony import */ var _library_Container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../library/Container */ "./src/scripts/components/library/Container.jsx");
+/* harmony import */ var _styles_badge__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../styles/badge */ "./src/styles/badge.jsx");
+/* harmony import */ var _tabs_config__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./tabs.config */ "./src/scripts/components/pages/homepage/ToolkitSection/tabs.config.js");
+/* harmony import */ var _toolkitTabs_i18n__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./toolkitTabs.i18n */ "./src/scripts/components/pages/homepage/ToolkitSection/toolkitTabs.i18n.js");
+/* harmony import */ var _lib_util__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../../lib/util */ "./src/lib/util.js");
+/* harmony import */ var _styles_themeGuide__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../../../styles/themeGuide */ "./src/styles/themeGuide.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__);
 
@@ -485,21 +485,13 @@ function ToolkitSection() {
   const {
     t
   } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_2__.useTranslation)();
-
-  // Get translated tabs from i18n
-  const translatedTabs = (0,_toolkitTabs_i18n__WEBPACK_IMPORTED_MODULE_7__.getTranslatedToolkitTabs)(t);
-
-  // Determine the active tab from URL or default
-  const getTabFromUrl = () => _tabs_config__WEBPACK_IMPORTED_MODULE_6__.TOOLKIT_TABS.find(tab => tab.path === pathname)?.id || _tabs_config__WEBPACK_IMPORTED_MODULE_6__.TOOLKIT_TABS[0].id;
+  const translatedTabs = (0,_toolkitTabs_i18n__WEBPACK_IMPORTED_MODULE_8__.getTranslatedToolkitTabs)(t);
+  const getTabFromUrl = () => _tabs_config__WEBPACK_IMPORTED_MODULE_7__.TOOLKIT_TABS.find(tab => tab.path === pathname)?.id || _tabs_config__WEBPACK_IMPORTED_MODULE_7__.TOOLKIT_TABS[0].id;
   const [activeTab, setActiveTab] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(getTabFromUrl());
-
-  // Update active tab if URL changes
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     setActiveTab(getTabFromUrl());
   }, [pathname]);
-
-  // Merge static config with translated content
-  const activeTabConfig = _tabs_config__WEBPACK_IMPORTED_MODULE_6__.TOOLKIT_TABS.find(tab => tab.id === activeTab);
+  const activeTabConfig = _tabs_config__WEBPACK_IMPORTED_MODULE_7__.TOOLKIT_TABS.find(tab => tab.id === activeTab);
   const activeTabTranslations = translatedTabs.find(tab => tab.id === activeTab) || {};
   const activeTabData = {
     ...activeTabConfig,
@@ -507,7 +499,7 @@ function ToolkitSection() {
   };
   const ActiveForm = activeTabData?.Form;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("section", {
-    className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_8__.cn)(_styles_themeGuide__WEBPACK_IMPORTED_MODULE_9__.themeGuide.sectionPaddingY, "relative w-full min-h-[408px] overflow-hidden isolation-isolate", "flex items-center"),
+    className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_9__.cn)(_styles_themeGuide__WEBPACK_IMPORTED_MODULE_10__.themeGuide.sectionPaddingY, "relative w-full min-h-[408px] overflow-hidden isolation-isolate", "flex items-center"),
     style: {
       background: "linear-gradient(180deg, #4F378A 0%, #66005C 159.37%)"
     },
@@ -515,13 +507,17 @@ function ToolkitSection() {
       className: "left-[1072px] top-5"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_library_SectionGlow__WEBPACK_IMPORTED_MODULE_3__["default"], {
       className: "left-[148px] -top-3"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(_library_Container__WEBPACK_IMPORTED_MODULE_10__["default"], {
-      className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_8__.cn)("flex flex-col 2xl:flex-row", "items-start justify-center", "gap-8"),
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
-        className: "relative z-10 flex 2xl:flex-col md:flex-row flex-col items-center 2xl:items-end text-center 2xl:text-right w-full 2xl:max-w-[390px] md:max-w-full 2xl:gap-2 md:gap-6",
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(_library_Container__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_9__.cn)("flex flex-col 2xl:flex-row", "items-center 2xl:items-stretch justify-center", "gap-8 mx-auto"),
+      children: [activeTabData?.illustration && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("img", {
+        src: activeTabData.illustration,
+        alt: activeTabData.title,
+        className: "block 2xl:hidden w-full max-w-[262px] mx-auto h-auto animate-in fade-in zoom-in-95 duration-500 mb-4"
+      }, `mobile-${activeTab}`), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
+        className: "relative z-10 flex flex-col items-center 2xl:items-end text-center 2xl:text-right w-full 2xl:max-w-[350px] gap-6 2xl:gap-2 shrink-0",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
-          className: "flex flex-col items-center md:items-start 2xl:items-end text-center 2xl:text-right gap-2 md:w-auto",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_styles_badge__WEBPACK_IMPORTED_MODULE_5__.Badge, {
+          className: "flex flex-col items-center 2xl:items-end gap-2",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_styles_badge__WEBPACK_IMPORTED_MODULE_6__.Badge, {
             variant: "toolkit",
             size: "default",
             className: "md:text-sm",
@@ -531,19 +527,26 @@ function ToolkitSection() {
             children: activeTabData?.title
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
-          className: "font-['Inter'] font-normal text-[16px] leading-5 text-white opacity-90 2xl:w-auto md:w-[450px] 2xl:text-right md:text-left",
+          className: "font-['Inter'] font-normal text-[16px] leading-5 text-white opacity-90 max-w-[450px] 2xl:max-w-none",
           children: activeTabData?.description
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
-        className: "relative z-10 flex flex-col 2xl:gap-4 md:gap-4 gap-8 w-full 2xl:max-w-[808px] md:max-w-full",
+        className: "relative z-10 flex flex-col gap-4 w-full md:max-w-[600px] shrink-0",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
-          className: "flex justify-center md:justify-start",
+          className: "w-full flex 2xl:justify-start justify-center",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_library_TabSwitcher__WEBPACK_IMPORTED_MODULE_4__["default"], {
             tabs: translatedTabs,
             activeTab: activeTab,
             onChange: setActiveTab
           })
         }), ActiveForm && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(ActiveForm, {})]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+        className: "hidden 2xl:flex flex-col justify-end w-full max-w-[350px]",
+        children: activeTabData?.illustration && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("img", {
+          src: activeTabData.illustration,
+          alt: activeTabData.title,
+          className: "w-full h-auto object-contain animate-in fade-in zoom-in-95 duration-500"
+        }, `desktop-${activeTab}`)
       })]
     })]
   });
@@ -575,7 +578,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const claimIllustration = "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/file_a_claim.png";
 function ClaimForm() {
   const [tracking, setTracking] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
   const [description, setDescription] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
@@ -588,11 +590,7 @@ function ClaimForm() {
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     className: "relative flex flex-col gap-3 bg-white p-3 rounded-xl shadow-lg min-w-[500px]",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
-      src: claimIllustration,
-      alt: "Shipment Tracker",
-      className: "md:block hidden absolute top-0 -right-[200px] lg:w-[151px] md:w-[186px] object-contain pointer-events-none"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_styles_input__WEBPACK_IMPORTED_MODULE_2__.Input, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_styles_input__WEBPACK_IMPORTED_MODULE_2__.Input, {
       value: tracking,
       onChange: e => setTracking(e.target.value),
       placeholder: t("trade_and_logistics_toolkit_section.tools.file_a_claim.form.placeholder_1")
@@ -647,7 +645,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const hsCodeIllustration = "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/hs_code_generator.png";
 function HsCodeForm() {
   const [value, setValue] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
   const navigateWithLang = (0,_hooks_useLangNavigate__WEBPACK_IMPORTED_MODULE_3__.useLangNavigate)();
@@ -659,11 +656,7 @@ function HsCodeForm() {
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     className: "relative flex flex-col gap-3 bg-white p-3 rounded-xl shadow-lg min-w-[500px]",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
-      src: hsCodeIllustration,
-      alt: "Shipment Tracker",
-      className: "md:block hidden absolute ld:-top-15 md:top-0 lg:-right-[260px] md:-right-[200px] lg:w-[258px] md:w-[186px] object-contain pointer-events-none"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_styles_input__WEBPACK_IMPORTED_MODULE_2__.Input, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_styles_input__WEBPACK_IMPORTED_MODULE_2__.Input, {
       multiline: true,
       value: value,
       onChange: e => setValue(e.target.value),
@@ -714,9 +707,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// Illustration URL
-
-const trackerIllustration = "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/shipment_tracker.png";
 function TrackerForm() {
   const [trackingNumber, setTrackingNumber] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
   const navigateWithLang = (0,_hooks_useLangNavigate__WEBPACK_IMPORTED_MODULE_3__.useLangNavigate)();
@@ -731,17 +721,13 @@ function TrackerForm() {
     if (e.key === "Enter") handleTrackShipment();
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-    className: "relative flex flex-col max-w-[500px] md:items-start items-center",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
-      src: trackerIllustration,
-      alt: "Shipment Tracker",
-      className: "md:block hidden absolute lg:-top-20 md:-top-12 lg:-right-80 md:-right-[200px] lg:w-[307px] md:w-[186px] object-contain pointer-events-none"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+    className: "flex flex-col max-w-[600px] md:items-start items-center",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
       htmlFor: "trackingNumber",
       className: "xl:text-start md:text-start text-center text-sm font-medium text-white/90 font-['Inter'] mb-2",
       children: t("trade_and_logistics_toolkit_section.tools.shipment_tracker.form.label")
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-      className: "flex flex-row items-center p-1 gap-2 bg-white rounded-xl shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1)]",
+      className: "flex flex-row w-full items-center p-1 gap-2 bg-white rounded-xl shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1)] max-w-[590px]",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "flex items-center gap-2 pl-3 grow",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -789,19 +775,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// CDN URLs for icons
+// --- CDN URLs for Icons ---
 
 const shipmentTrackerIcon = "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/icons/toolkit/shipment_tracker.svg";
 const hsCodeGeneratorIcon = "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/icons/toolkit/hs_code_generator.svg";
 const fileAClaimIcon = "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/icons/toolkit/file_a_claim.svg";
+
+// --- CDN URLs for Illustrations (NEW) ---
+const shipmentTrackerImg = "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/shipment_tracker.png";
+// ⚠️ Verify this file name exists in your assets
+const hsCodeGeneratorImg = "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/hs_code_generator.png";
+// ⚠️ Verify this file name exists in your assets
+const fileAClaimImg = "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/file_a_claim.png";
 const TOOLKIT_TABS = [{
   id: "shipment-tracker",
   path: "/shipment-tracker",
-  // 🔑 i18n bridge key
   i18nKey: "shipment_tracker",
-  // 🧩 Behavior
   Form: _forms_TrackerForm__WEBPACK_IMPORTED_MODULE_0__["default"],
-  // 🎨 UI
+  // Add illustration here
+  illustration: shipmentTrackerImg,
   icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
     src: shipmentTrackerIcon,
     alt: "Shipment Tracker",
@@ -812,6 +804,8 @@ const TOOLKIT_TABS = [{
   path: "/hs-code-generator",
   i18nKey: "hs_code_generator",
   Form: _forms_HsCodeForm__WEBPACK_IMPORTED_MODULE_1__["default"],
+  // Add illustration here
+  illustration: hsCodeGeneratorImg,
   icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
     src: hsCodeGeneratorIcon,
     alt: "HS Code Generator",
@@ -822,6 +816,8 @@ const TOOLKIT_TABS = [{
   path: "/file-a-claim",
   i18nKey: "file_a_claim",
   Form: _forms_ClaimForm__WEBPACK_IMPORTED_MODULE_2__["default"],
+  // Add illustration here
+  illustration: fileAClaimImg,
   icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
     src: fileAClaimIcon,
     alt: "File a Claim",
@@ -1198,4 +1194,4 @@ const themeGuide = {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_scripts_components_pages_homepage_ToolkitSection_ToolkitSection_jsx.js.map?ver=f57c36b0b30dd6ab4318
+//# sourceMappingURL=src_scripts_components_pages_homepage_ToolkitSection_ToolkitSection_jsx.js.map?ver=0262853f743c81670e43

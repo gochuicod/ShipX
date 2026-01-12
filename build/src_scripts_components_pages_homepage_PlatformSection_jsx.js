@@ -976,4 +976,4 @@ const themeGuide = {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_scripts_components_pages_homepage_PlatformSection_jsx.js.map?ver=3ca03de62e6ad3111470
+//# sourceMappingURL=src_scripts_components_pages_homepage_PlatformSection_jsx.js.map?ver=6b1cedaafeac03474404

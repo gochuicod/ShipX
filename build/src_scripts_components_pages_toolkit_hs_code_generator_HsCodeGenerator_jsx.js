@@ -539,7 +539,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const claimIllustration = "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/file_a_claim.png";
 function ClaimForm() {
   const [tracking, setTracking] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
   const [description, setDescription] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
@@ -552,11 +551,7 @@ function ClaimForm() {
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     className: "relative flex flex-col gap-3 bg-white p-3 rounded-xl shadow-lg min-w-[500px]",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
-      src: claimIllustration,
-      alt: "Shipment Tracker",
-      className: "md:block hidden absolute top-0 -right-[200px] lg:w-[151px] md:w-[186px] object-contain pointer-events-none"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_styles_input__WEBPACK_IMPORTED_MODULE_2__.Input, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_styles_input__WEBPACK_IMPORTED_MODULE_2__.Input, {
       value: tracking,
       onChange: e => setTracking(e.target.value),
       placeholder: t("trade_and_logistics_toolkit_section.tools.file_a_claim.form.placeholder_1")
@@ -611,7 +606,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const hsCodeIllustration = "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/hs_code_generator.png";
 function HsCodeForm() {
   const [value, setValue] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
   const navigateWithLang = (0,_hooks_useLangNavigate__WEBPACK_IMPORTED_MODULE_3__.useLangNavigate)();
@@ -623,11 +617,7 @@ function HsCodeForm() {
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     className: "relative flex flex-col gap-3 bg-white p-3 rounded-xl shadow-lg min-w-[500px]",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
-      src: hsCodeIllustration,
-      alt: "Shipment Tracker",
-      className: "md:block hidden absolute ld:-top-15 md:top-0 lg:-right-[260px] md:-right-[200px] lg:w-[258px] md:w-[186px] object-contain pointer-events-none"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_styles_input__WEBPACK_IMPORTED_MODULE_2__.Input, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_styles_input__WEBPACK_IMPORTED_MODULE_2__.Input, {
       multiline: true,
       value: value,
       onChange: e => setValue(e.target.value),
@@ -678,9 +668,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// Illustration URL
-
-const trackerIllustration = "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/shipment_tracker.png";
 function TrackerForm() {
   const [trackingNumber, setTrackingNumber] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
   const navigateWithLang = (0,_hooks_useLangNavigate__WEBPACK_IMPORTED_MODULE_3__.useLangNavigate)();
@@ -695,17 +682,13 @@ function TrackerForm() {
     if (e.key === "Enter") handleTrackShipment();
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-    className: "relative flex flex-col max-w-[500px] md:items-start items-center",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
-      src: trackerIllustration,
-      alt: "Shipment Tracker",
-      className: "md:block hidden absolute lg:-top-20 md:-top-12 lg:-right-80 md:-right-[200px] lg:w-[307px] md:w-[186px] object-contain pointer-events-none"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+    className: "flex flex-col max-w-[600px] md:items-start items-center",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
       htmlFor: "trackingNumber",
       className: "xl:text-start md:text-start text-center text-sm font-medium text-white/90 font-['Inter'] mb-2",
       children: t("trade_and_logistics_toolkit_section.tools.shipment_tracker.form.label")
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-      className: "flex flex-row items-center p-1 gap-2 bg-white rounded-xl shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1)]",
+      className: "flex flex-row w-full items-center p-1 gap-2 bg-white rounded-xl shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1)] max-w-[590px]",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "flex items-center gap-2 pl-3 grow",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -753,19 +736,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// CDN URLs for icons
+// --- CDN URLs for Icons ---
 
 const shipmentTrackerIcon = "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/icons/toolkit/shipment_tracker.svg";
 const hsCodeGeneratorIcon = "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/icons/toolkit/hs_code_generator.svg";
 const fileAClaimIcon = "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/icons/toolkit/file_a_claim.svg";
+
+// --- CDN URLs for Illustrations (NEW) ---
+const shipmentTrackerImg = "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/shipment_tracker.png";
+// ⚠️ Verify this file name exists in your assets
+const hsCodeGeneratorImg = "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/hs_code_generator.png";
+// ⚠️ Verify this file name exists in your assets
+const fileAClaimImg = "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/file_a_claim.png";
 const TOOLKIT_TABS = [{
   id: "shipment-tracker",
   path: "/shipment-tracker",
-  // 🔑 i18n bridge key
   i18nKey: "shipment_tracker",
-  // 🧩 Behavior
   Form: _forms_TrackerForm__WEBPACK_IMPORTED_MODULE_0__["default"],
-  // 🎨 UI
+  // Add illustration here
+  illustration: shipmentTrackerImg,
   icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
     src: shipmentTrackerIcon,
     alt: "Shipment Tracker",
@@ -776,6 +765,8 @@ const TOOLKIT_TABS = [{
   path: "/hs-code-generator",
   i18nKey: "hs_code_generator",
   Form: _forms_HsCodeForm__WEBPACK_IMPORTED_MODULE_1__["default"],
+  // Add illustration here
+  illustration: hsCodeGeneratorImg,
   icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
     src: hsCodeGeneratorIcon,
     alt: "HS Code Generator",
@@ -786,6 +777,8 @@ const TOOLKIT_TABS = [{
   path: "/file-a-claim",
   i18nKey: "file_a_claim",
   Form: _forms_ClaimForm__WEBPACK_IMPORTED_MODULE_2__["default"],
+  // Add illustration here
+  illustration: fileAClaimImg,
   icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
     src: fileAClaimIcon,
     alt: "File a Claim",
@@ -2192,4 +2185,4 @@ const themeGuide = {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_scripts_components_pages_toolkit_hs_code_generator_HsCodeGenerator_jsx.js.map?ver=65c38ed17bcf2e345e03
+//# sourceMappingURL=src_scripts_components_pages_toolkit_hs_code_generator_HsCodeGenerator_jsx.js.map?ver=5219b0c3554dd9d9bc9d
