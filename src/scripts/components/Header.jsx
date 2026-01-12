@@ -121,7 +121,7 @@ const Header = memo(() => {
   const handleLanguageChange = async (language) => {
     setSelectedLanguage(language);
     try {
-      await i18n.changeLanguage(language.key); // loads from CDN
+      await i18n.changeLanguage(language.key);
       localStorage.setItem("lang", language.key);
 
       const segments = window.location.pathname.split("/").filter(Boolean);
@@ -168,7 +168,7 @@ const Header = memo(() => {
       >
         <Logo />
 
-        {/* Right: Nav + Buttons (hidden on mobile) */}
+        {/* --- DESKTOP NAVIGATION (Hidden on XL) --- */}
         <nav className="hidden xl:flex flex-row gap-x-[2.5vw] font-normal xl:text-base text-nav items-center">
           {navLinks.map((link) =>
             link.items ? (
@@ -176,6 +176,7 @@ const Header = memo(() => {
                 key={link.label}
                 title={link.label}
                 items={link.items}
+                hoverMode={true} // Enabled hover
               />
             ) : (
               <SmartNavLink key={link.to} to={link.to} className={linkClass}>
@@ -185,6 +186,7 @@ const Header = memo(() => {
           )}
         </nav>
 
+        {/* --- DESKTOP ACTIONS (Hidden on XL) --- */}
         <div
           className="
             hidden xl:flex
@@ -204,11 +206,13 @@ const Header = memo(() => {
             items={languages}
             selected={selectedLanguage}
             onSelect={(language) => handleLanguageChange(language)}
+            hoverMode={true} // Enabled hover
           />
 
           {/* Login Modal */}
           <LoginModal />
-          {/* Book a Demo and Contact Us Buttons */}
+
+          {/* Book a Demo */}
           <AppButton
             to="/book-a-demo"
             text={t("header.book_a_demo")}
@@ -217,13 +221,18 @@ const Header = memo(() => {
           />
         </div>
 
-        {/* Mobile Hamburger */}
-        <div className="flex flex-row gap-4 items-center">
+        {/* --- MOBILE ACTIONS (Visible < XL) --- */}
+        <div className="xl:hidden flex flex-row items-center gap-4">
+          
+          {/* 1. Login Modal in Mobile Header */}
+          <LoginModal />
+
+          {/* 2. Hamburger Menu */}
           <button
             type="button"
             aria-label="Hamburger menu"
             onClick={() => setIsOpen(!isOpen)}
-            className="relative xl:hidden flex flex-col justify-between md:w-[4vw] w-[6vw] md:h-[3vw] h-[3.5vw] p-0 focus:outline-none"
+            className="relative flex flex-col justify-between md:w-[4vw] w-[6vw] md:h-[3vw] h-[3.5vw] p-0 focus:outline-none"
           >
             {/* Top bar */}
             <MotionSpan
@@ -231,14 +240,12 @@ const Header = memo(() => {
               transition={{ duration: 0.3 }}
               className="block h-[0.5vw] w-full bg-black rounded-full"
             />
-
             {/* Middle bar */}
             <MotionSpan
               animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
               transition={{ duration: 0.2 }}
               className="block h-[0.5vw] w-full bg-black rounded-full"
             />
-
             {/* Bottom bar */}
             <MotionSpan
               animate={isOpen ? { rotate: -45, y: -10 } : { rotate: 0, y: 0 }}
@@ -246,13 +253,6 @@ const Header = memo(() => {
               className="block h-[0.5vw] w-full bg-black rounded-full"
             />
           </button>
-          <AppButton
-            to="/book-a-demo"
-            text={t("header.book_a_demo")}
-            withLeftIcon={true}
-            leftIcon={<CalendarDays className="size-5" />}
-            className="xl:hidden block"
-          />
         </div>
 
         {/* Mobile Dropdown Menu */}
@@ -265,7 +265,7 @@ const Header = memo(() => {
               selectedLang={selected}
               onLanguageChange={handleLanguageChange}
               onLinkClick={handleMobileLinkClick}
-              onLoginClick={handleLoginClick} // <--- Pass the handler here
+              onLoginClick={handleLoginClick}
               t={t}
             />
           )}

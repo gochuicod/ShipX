@@ -13,13 +13,14 @@ export default function Dropdown({
   parentClassName = "",
   triggerClassName = "",
   direction = "down",
-  hoverMode = false, // Set to true if you want it to open on hover as well
+  hoverMode = false, // Set to true to enable hover behavior
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
   const isUp = direction === "up";
+  const hoverTimeoutRef = useRef(null); // Ref to handle close delay
 
-  // Handle Close on Click Outside
+  // Handle Close on Click Outside (for touch interactions)
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -33,16 +34,28 @@ export default function Dropdown({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isOpen]);
 
-  // Optional: Handle Hover Logic (if hoverMode is true)
+  // Hover Handlers with Delay
   const handleMouseEnter = () => {
-    if (hoverMode) setIsOpen(true);
+    if (hoverMode) {
+      if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
+      setIsOpen(true);
+    }
   };
 
   const handleMouseLeave = () => {
-    if (hoverMode) setIsOpen(false);
+    if (hoverMode) {
+      // Small delay prevents flickering if moving mouse quickly between trigger and panel
+      hoverTimeoutRef.current = setTimeout(() => setIsOpen(false), 150);
+    }
   };
 
-  const toggleOpen = () => setIsOpen((prev) => !prev);
+  // Toggle handler (primarily for touch or non-hover mode)
+  const toggleOpen = () => {
+    // If we are in hover mode, usually click does nothing or navigates (if it were a link)
+    // But for touch devices, we need click to toggle.
+    // Simple check: if already open, close it. If closed, open it.
+    setIsOpen((prev) => !prev);
+  };
 
   return (
     <div
@@ -53,12 +66,13 @@ export default function Dropdown({
     >
       {/* Trigger */}
       <div
+        // Only attach click handler if NOT in hover mode OR purely for mobile support
+        // Generally good to keep it for accessibility/mobile.
         onClick={toggleOpen}
         className={cn(
           linkClass,
           triggerClassName !== "" ? triggerClassName : "py-4",
           "flex items-center gap-x-1 cursor-pointer select-none",
-          // Highlight trigger if open
           isOpen ? "text-[#FF00E5]" : "",
         )}
       >
@@ -70,7 +84,6 @@ export default function Dropdown({
           strokeWidth={2.5}
           className={cn(
             "w-3 h-3 transition-transform duration-300",
-            // Rotate based on isOpen state instead of group-hover
             isOpen
               ? "rotate-180 stroke-[#FF00E5]"
               : "rotate-0 stroke-[#1A1A1A]",
@@ -87,21 +100,17 @@ export default function Dropdown({
       {/* Panel */}
       <div
         className={cn(
-          // Base styles
           "absolute left-0 z-50 min-w-max",
           "bg-white rounded-lg border border-[#FF00E5] shadow-lg p-1 overflow-hidden",
           "transition-all duration-200 ease-out pointer-events-auto text-dark-netural",
-
-          // Visibility states (Controlled by isOpen state now)
           isOpen
             ? "opacity-100 visible translate-y-0"
             : "opacity-0 invisible translate-y-1",
-
-          // Directional Logic
-          isUp
-            ? "bottom-full mb-1" // If Up: Position above
-            : "top-full mt-1", // If Down: Position below
+          isUp ? "bottom-full mb-1" : "top-full mt-1",
         )}
+        // Ensure mouse entering the panel keeps it open
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         {items.map((item) =>
           onSelect ? (
@@ -111,14 +120,7 @@ export default function Dropdown({
               tabIndex={0}
               onClick={() => {
                 onSelect(item);
-                setIsOpen(false); // Close on selection
-              }}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  onSelect(item);
-                  setIsOpen(false);
-                }
+                setIsOpen(false);
               }}
               className="group relative cursor-pointer px-4 py-3 select-none hover:bg-[#FF00E5] rounded-md text-dark-neutral hover:text-white"
             >
@@ -128,7 +130,7 @@ export default function Dropdown({
             <SmartNavLink
               key={item.to}
               to={item.to}
-              onClick={() => setIsOpen(false)} // Close on navigation
+              onClick={() => setIsOpen(false)}
               className="group/item block"
             >
               <div className="flex items-center gap-x-3 px-4 py-3 text-base text-gray-700 rounded-md transition-colors duration-200 hover:text-[#FF00E5] hover:underline hover:decoration-2 hover:underline-offset-4">

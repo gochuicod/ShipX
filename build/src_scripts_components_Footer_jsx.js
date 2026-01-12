@@ -812,13 +812,14 @@ function Dropdown({
   parentClassName = "",
   triggerClassName = "",
   direction = "down",
-  hoverMode = false // Set to true if you want it to open on hover as well
+  hoverMode = false // Set to true to enable hover behavior
 }) {
   const [isOpen, setIsOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   const dropdownRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   const isUp = direction === "up";
+  const hoverTimeoutRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null); // Ref to handle close delay
 
-  // Handle Close on Click Outside
+  // Handle Close on Click Outside (for touch interactions)
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     const handleClickOutside = event => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -831,24 +832,37 @@ function Dropdown({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isOpen]);
 
-  // Optional: Handle Hover Logic (if hoverMode is true)
+  // Hover Handlers with Delay
   const handleMouseEnter = () => {
-    if (hoverMode) setIsOpen(true);
+    if (hoverMode) {
+      if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
+      setIsOpen(true);
+    }
   };
   const handleMouseLeave = () => {
-    if (hoverMode) setIsOpen(false);
+    if (hoverMode) {
+      // Small delay prevents flickering if moving mouse quickly between trigger and panel
+      hoverTimeoutRef.current = setTimeout(() => setIsOpen(false), 150);
+    }
   };
-  const toggleOpen = () => setIsOpen(prev => !prev);
+
+  // Toggle handler (primarily for touch or non-hover mode)
+  const toggleOpen = () => {
+    // If we are in hover mode, usually click does nothing or navigates (if it were a link)
+    // But for touch devices, we need click to toggle.
+    // Simple check: if already open, close it. If closed, open it.
+    setIsOpen(prev => !prev);
+  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     ref: dropdownRef,
     className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.cn)("relative h-full flex items-center", parentClassName),
     onMouseEnter: handleMouseEnter,
     onMouseLeave: handleMouseLeave,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      // Only attach click handler if NOT in hover mode OR purely for mobile support
+      // Generally good to keep it for accessibility/mobile.
       onClick: toggleOpen,
-      className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.cn)(linkClass, triggerClassName !== "" ? triggerClassName : "py-4", "flex items-center gap-x-1 cursor-pointer select-none",
-      // Highlight trigger if open
-      isOpen ? "text-[#FF00E5]" : ""),
+      className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.cn)(linkClass, triggerClassName !== "" ? triggerClassName : "py-4", "flex items-center gap-x-1 cursor-pointer select-none", isOpen ? "text-[#FF00E5]" : ""),
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
         children: selected?.name || title
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("svg", {
@@ -856,9 +870,7 @@ function Dropdown({
         fill: "none",
         viewBox: "0 0 24 24",
         strokeWidth: 2.5,
-        className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.cn)("w-3 h-3 transition-transform duration-300",
-        // Rotate based on isOpen state instead of group-hover
-        isOpen ? "rotate-180 stroke-[#FF00E5]" : "rotate-0 stroke-[#1A1A1A]"),
+        className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.cn)("w-3 h-3 transition-transform duration-300", isOpen ? "rotate-180 stroke-[#FF00E5]" : "rotate-0 stroke-[#1A1A1A]"),
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
           strokeLinecap: "round",
           strokeLinejoin: "round",
@@ -866,28 +878,17 @@ function Dropdown({
         })
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.cn)(
-      // Base styles
-      "absolute left-0 z-50 min-w-max", "bg-white rounded-lg border border-[#FF00E5] shadow-lg p-1 overflow-hidden", "transition-all duration-200 ease-out pointer-events-auto text-dark-netural",
-      // Visibility states (Controlled by isOpen state now)
-      isOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-1",
-      // Directional Logic
-      isUp ? "bottom-full mb-1" // If Up: Position above
-      : "top-full mt-1" // If Down: Position below
-      ),
+      className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.cn)("absolute left-0 z-50 min-w-max", "bg-white rounded-lg border border-[#FF00E5] shadow-lg p-1 overflow-hidden", "transition-all duration-200 ease-out pointer-events-auto text-dark-netural", isOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-1", isUp ? "bottom-full mb-1" : "top-full mt-1")
+      // Ensure mouse entering the panel keeps it open
+      ,
+      onMouseEnter: handleMouseEnter,
+      onMouseLeave: handleMouseLeave,
       children: items.map(item => onSelect ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         role: "button",
         tabIndex: 0,
         onClick: () => {
           onSelect(item);
-          setIsOpen(false); // Close on selection
-        },
-        onKeyDown: e => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            onSelect(item);
-            setIsOpen(false);
-          }
+          setIsOpen(false);
         },
         className: "group relative cursor-pointer px-4 py-3 select-none hover:bg-[#FF00E5] rounded-md text-dark-neutral hover:text-white",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
@@ -896,8 +897,7 @@ function Dropdown({
         })
       }, item.id || item.key) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ui_SmartNavLink__WEBPACK_IMPORTED_MODULE_2__["default"], {
         to: item.to,
-        onClick: () => setIsOpen(false) // Close on navigation
-        ,
+        onClick: () => setIsOpen(false),
         className: "group/item block",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "flex items-center gap-x-3 px-4 py-3 text-base text-gray-700 rounded-md transition-colors duration-200 hover:text-[#FF00E5] hover:underline hover:decoration-2 hover:underline-offset-4",
@@ -1395,4 +1395,4 @@ const themeGuide = {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_scripts_components_Footer_jsx.js.map?ver=90ee19263ccd59b10270
+//# sourceMappingURL=src_scripts_components_Footer_jsx.js.map?ver=6131eb810dda8ca18309
