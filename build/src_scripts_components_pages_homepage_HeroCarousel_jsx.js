@@ -572,7 +572,7 @@ __webpack_require__.r(__webpack_exports__);
 function HeroCarousel({
   slides = [],
   autoPlay = false,
-  autoPlayInterval = 5000
+  autoPlayInterval = 7000
 }) {
   const [current, setCurrent] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
 
@@ -975,4 +975,4 @@ const themeGuide = {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_scripts_components_pages_homepage_HeroCarousel_jsx.js.map?ver=8cd78fb94e64187da57d
+//# sourceMappingURL=src_scripts_components_pages_homepage_HeroCarousel_jsx.js.map?ver=85e34428a0b578c35207
