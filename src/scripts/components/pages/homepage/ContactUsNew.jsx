@@ -106,84 +106,108 @@ const ContactUsNew = () => {
   return (
     <Container
       className={cn(
-        "flex flex-col",
-        "justify-center items-center",
+        "flex 2xl:flex-row flex-col",
+        "justify-center items-stretch",
         "relative",
+        "gap-8",
         themeGuide.sectionPaddingY,
       )}
       style={{ fontFamily: "Inter, sans-serif" }}
     >
-      {/* Header Section */}
-      <div
-        className="flex flex-col justify-center items-center mb-12"
-        id="contact-us"
-      >
-        <Badge variant="toolkit" size="default">
-          {t("contact_us_section.badge")}
-        </Badge>
-        <HighlightedHeading
-          text={t("contact_us_section.title")}
-          highlight={t("contact_us_section.title_highlighted")}
-          className="text-2xl 2xl:text-4xl font-semibold mt-2 text-center"
+      {/* Left image */}
+      <div className="w-1/3 max-2xl:w-full relative rounded-2xl overflow-hidden flex-shrink-0">
+        <picture>
+          {/* Mobile image */}
+          <source
+            media="(max-width: 1536px)"
+            srcSet="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/contact_us/contact_us_image_mobile.webp"
+          />
+
+          {/* Desktop image (fallback) */}
+          <img
+            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/contact_us/contact_us_image_desktop.webp"
+            alt="Contact us"
+            className="w-full h-full object-cover"
+          />
+        </picture>
+
+        <div
+          className="absolute inset-0 -z-10"
+          style={{
+            background:
+              "linear-gradient(to top left, oklch(1 0 0 / 0), oklch(0.616 0.2539 333.97 / 0.24))",
+          }}
         />
       </div>
-
       {/* Main Content Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full">
+      <div className="flex 2xl:flex-col flex-wrap gap-8 w-full">
+        {/* Headings */}
+        <div
+          className="flex flex-col justify-start 2xl:items-start items-center w-full"
+          id="contact-us"
+        >
+          <Badge variant="toolkit" size="default">
+            {t("contact_us_section.badge")}
+          </Badge>
+          <HighlightedHeading
+            text={t("contact_us_section.title")}
+            highlight={t("contact_us_section.title_highlighted")}
+            className="text-2xl 2xl:text-4xl font-semibold mt-2 2xl:text-start text-center"
+          />
+        </div>
         {/* Left Column: Contact Details */}
-        <div className="lg:col-span-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4">
-          <div>
-            <IconBox
-              layout="horizontal"
-              size="default"
-              icon={
-                <img
-                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8a82004d7d7941a90c58ac15e75d57c3309249db/src/assets/icons/boxed/email_box_icon.svg"
-                  alt="Email"
-                />
-              }
-              title={t("contact_us_section.cards.card_1.heading")}
-              value={t("contact_us_section.cards.card_1.contact")}
-            >
-              {t("contact_us_section.cards.card_1.note")}
-            </IconBox>
-          </div>
+        <div className="flex flex-row flex-wrap 2xl:flex-nowrap gap-2 2xl:gap-4 w-full">
+          <IconBox
+            layout="vertical"
+            size="default"
+            icon={
+              <img
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8a82004d7d7941a90c58ac15e75d57c3309249db/src/assets/icons/boxed/email_box_icon.svg"
+                alt="Email"
+              />
+            }
+            title={t("contact_us_section.cards.card_1.heading")}
+            value={t("contact_us_section.cards.card_1.contact")}
+            className="flex md:flex-col flex-row gap-2 md:items-start items-center p-4 2xl:w-1/4 md:w-[calc(50%-0.25rem)] w-full"
+          >
+            {t("contact_us_section.cards.card_1.note")}
+          </IconBox>
 
-          <div>
-            <IconBox
-              layout="horizontal"
-              size="default"
-              icon={
-                <img
-                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8a82004d7d7941a90c58ac15e75d57c3309249db/src/assets/icons/boxed/phone_icon_box.svg"
-                  alt="Phone"
-                />
-              }
-              title={t("contact_us_section.cards.card_2.heading")}
-              value={t("contact_us_section.cards.card_2.contact")}
-            >
-              {t("contact_us_section.cards.card_2.note")}
-            </IconBox>
-          </div>
+          <IconBox
+            layout="vertical"
+            size="default"
+            icon={
+              <img
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8a82004d7d7941a90c58ac15e75d57c3309249db/src/assets/icons/boxed/phone_icon_box.svg"
+                alt="Phone"
+              />
+            }
+            title={t("contact_us_section.cards.card_2.heading")}
+            value={t("contact_us_section.cards.card_2.contact")}
+            className="flex md:flex-col flex-row gap-2 md:items-start items-center p-4 2xl:w-1/4 md:w-[calc(50%-0.25rem)] w-full"
+          >
+            {t("contact_us_section.cards.card_2.note")}
+          </IconBox>
 
-          <div className="md:col-span-2 lg:col-span-1">
-            <IconBox
-              layout="horizontal"
-              size="default"
-              icon={
-                <img
-                  src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8a82004d7d7941a90c58ac15e75d57c3309249db/src/assets/icons/boxed/location_box_icon.svg"
-                  alt="Location"
-                />
-              }
-              title={t("contact_us_section.cards.card_3.heading")}
-              value={t("contact_us_section.cards.card_3.contact")}
-            ></IconBox>
-          </div>
+          <IconBox
+            layout="vertical"
+            size="default"
+            icon={
+              <img
+                src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@8a82004d7d7941a90c58ac15e75d57c3309249db/src/assets/icons/boxed/location_box_icon.svg"
+                alt="Location"
+              />
+            }
+            title={t("contact_us_section.cards.card_3.heading")}
+            value={t("contact_us_section.cards.card_3.contact")}
+            className="flex md:flex-col flex-row gap-2 md:items-start items-center p-4 2xl:w-2/4 w-full"
+          >
+            {t("contact_us_section.cards.card_3.note")}
+          </IconBox>
         </div>
 
         {/* Right Column: Form */}
-        <div className="lg:col-span-8 bg-linear-to-br from-[oklch(1_0_0_0)] to-[oklch(0.616_0.2539_333.97)]/24 rounded-2xl p-4 md:p-8">
+        <div className="flex flex-col w-full bg-linear-to-br from-[oklch(1_0_0_0)] to-[oklch(0.616_0.2539_333.97)]/24 rounded-2xl p-4 md:p-8">
           <ContactFormNew />
         </div>
       </div>
