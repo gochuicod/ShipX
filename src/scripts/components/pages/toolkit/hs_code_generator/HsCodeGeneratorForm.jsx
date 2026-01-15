@@ -172,7 +172,9 @@ export default function HsCodeGeneratorForm() {
             )}
             className={cn(
               themeGuide.inputPlaceholder,
-              errors.productDescription && "placeholder-red-500",
+              errors.productDescription
+                ? "placeholder-red-500"
+                : "text-[#1E2939] placeholder-[#99A1AF] font-['Inter']",
               "mt-0", // remove extra top margin
             )}
             {...register("productDescription", {
@@ -204,7 +206,12 @@ export default function HsCodeGeneratorForm() {
             {t("hs_code_generator_page.form_section.input_2.note")}
           </p>
           <Input
-            className={themeGuide.inputPlaceholder}
+            className={cn(
+              themeGuide.inputPlaceholder,
+              errors.intendedUse
+                ? "placeholder-red-500"
+                : "text-[#1E2939] placeholder-[#99A1AF] font-['Inter']",
+            )}
             placeholder={t(
               "hs_code_generator_page.form_section.input_2.placeholder",
             )}
@@ -221,7 +228,12 @@ export default function HsCodeGeneratorForm() {
             {t("hs_code_generator_page.form_section.input_3.note")}
           </p>
           <Input
-            className={themeGuide.inputPlaceholder}
+            className={cn(
+              themeGuide.inputPlaceholder,
+              errors.primaryMaterials
+                ? "placeholder-red-500"
+                : "text-[#1E2939] placeholder-[#99A1AF] font-['Inter']",
+            )}
             placeholder={t(
               "hs_code_generator_page.form_section.input_3.placeholder",
             )}

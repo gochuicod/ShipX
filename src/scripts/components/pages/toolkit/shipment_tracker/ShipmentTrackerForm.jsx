@@ -99,7 +99,9 @@ const ShipmentTrackerForm = ({ initialTrackingNumber, autoSubmit = false }) => {
                 themeGuide.inputPlaceholder,
                 "border-none h-10 shadow-none px-0 py-0 w-full",
                 "md:min-w-[340px]", // Ensures space for long placeholder on desktop
-                errors.trackingNumber && "placeholder-red-500",
+                errors.trackingNumber
+                  ? "placeholder-red-500"
+                  : "text-[#1E2939] placeholder-[#99A1AF] font-['Inter']",
               )}
               {...register("trackingNumber", {
                 required: "Tracking number is required",
