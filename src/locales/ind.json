@@ -1336,18 +1336,18 @@
           "service_9": "Saver Express"
         }
       },
-      "postal": {
-        "title": "Pos (Postal)",
+      "commercial": {
+        "title": "Komersial",
         "description": "Jalur logistik khusus dan penanganan spesial yang disesuaikan untuk kebutuhan pengiriman komersial yang unik.",
         "partners_label": "Mitra Pengiriman",
         "country_label": "Negara Asal",
         "service_name": "Pengiriman Paket Lintas Batas",
-        "services_covered_label": "Layanan yang Tercakup",
+        "services_covered_label": "Layanan yang Dicakup",
         "services_covered": {
-          "service_1": "Standard epacket",
-          "service_2": "Economy Pak",
-          "service_3": "Economy epacket",
-          "service_4": "Expedited epacket"
+          "service_1": "ePacket Standar",
+          "service_2": "Paket Ekonomis",
+          "service_3": "ePacket Ekonomis",
+          "service_4": "ePacket Dipercepat"
         }
       },
       "postal_e_commerce": {

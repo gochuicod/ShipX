@@ -1336,8 +1336,8 @@
           "service_9": "Saver Express"
         }
       },
-      "postal": {
-        "title": "Postal",
+      "commercial": {
+        "title": "Commercial",
         "description": "Specialized logistics lines and special handling tailored for unique commercial shipping requirements.",
         "partners_label": "Delivery Partners",
         "country_label": "Country Origin",

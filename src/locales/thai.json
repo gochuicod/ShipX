@@ -1359,18 +1359,18 @@
           "service_9": "Saver Express"
         }
       },
-      "postal": {
-        "title": "ไปรษณีย์ (Postal)",
-        "description": "เส้นทางโลจิสติกส์เฉพาะและการจัดการพิเศษที่ออกแบบมาเพื่อความต้องการในการขนส่งเชิงพาณิชย์ที่ไม่เหมือนใคร",
+      "commercial": {
+        "title": "เชิงพาณิชย์",
+        "description": "เส้นทางโลจิสติกส์เฉพาะทางและการจัดการพิเศษที่ปรับให้เหมาะกับความต้องการในการจัดส่งเชิงพาณิชย์โดยเฉพาะ",
         "partners_label": "พาร์ทเนอร์การจัดส่ง",
         "country_label": "ประเทศต้นทาง",
         "service_name": "การจัดส่งพัสดุข้ามพรมแดน",
         "services_covered_label": "บริการที่ครอบคลุม",
         "services_covered": {
-          "service_1": "Standard epacket",
-          "service_2": "Economy Pak",
-          "service_3": "Economy epacket",
-          "service_4": "Expedited epacket"
+          "service_1": "ePacket มาตรฐาน",
+          "service_2": "พัสดุแบบประหยัด",
+          "service_3": "ePacket แบบประหยัด",
+          "service_4": "ePacket แบบเร่งด่วน"
         }
       },
       "postal_e_commerce": {

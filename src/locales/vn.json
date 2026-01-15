@@ -1354,18 +1354,18 @@
           "service_9": "Saver Express"
         }
       },
-      "postal": {
-        "title": "Bưu chính (Postal)",
-        "description": "Các tuyến logistics chuyên biệt và xử lý đặc biệt được thiết kế cho các yêu cầu vận chuyển thương mại độc đáo.",
+      "commercial": {
+        "title": "Thương mại",
+        "description": "Các tuyến logistic chuyên dụng và xử lý đặc biệt được thiết kế cho các yêu cầu vận chuyển thương mại riêng biệt.",
         "partners_label": "Đối tác giao hàng",
         "country_label": "Quốc gia xuất xứ",
-        "service_name": "Giao hàng gói nhỏ xuyên biên giới",
+        "service_name": "Giao kiện hàng xuyên biên giới",
         "services_covered_label": "Dịch vụ bao gồm",
         "services_covered": {
-          "service_1": "Standard epacket",
-          "service_2": "Economy Pak",
-          "service_3": "Economy epacket",
-          "service_4": "Expedited epacket"
+          "service_1": "ePacket tiêu chuẩn",
+          "service_2": "Gói tiết kiệm",
+          "service_3": "ePacket tiết kiệm",
+          "service_4": "ePacket chuyển phát nhanh"
         }
       },
       "postal_e_commerce": {

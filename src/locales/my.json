@@ -1359,18 +1359,18 @@
           "service_9": "Saver Express"
         }
       },
-      "postal": {
-        "title": "Pos (Postal)",
+      "commercial": {
+        "title": "Komersial",
         "description": "Talian logistik khusus dan pengendalian istimewa yang disesuaikan untuk keperluan penghantaran komersial yang unik.",
         "partners_label": "Rakan Penghantaran",
         "country_label": "Negara Asal",
         "service_name": "Penghantaran Paket Rentas Sempadan",
         "services_covered_label": "Perkhidmatan yang Diliputi",
         "services_covered": {
-          "service_1": "Standard epacket",
-          "service_2": "Economy Pak",
-          "service_3": "Economy epacket",
-          "service_4": "Expedited epacket"
+          "service_1": "ePacket Standard",
+          "service_2": "Pak Ekonomi",
+          "service_3": "ePacket Ekonomi",
+          "service_4": "ePacket Dipercepatkan"
         }
       },
       "postal_e_commerce": {
