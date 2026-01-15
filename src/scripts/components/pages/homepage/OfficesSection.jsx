@@ -174,7 +174,7 @@ export default function OfficesSection() {
 
           <HighlightedHeading
             text={t("our_offices_section.title")}
-            highlight={t("our_offices_section.title_heading")}
+            highlight={t("our_offices_section.title_highlighted")}
             className="
               text-2xl
               2xl:text-start text-center

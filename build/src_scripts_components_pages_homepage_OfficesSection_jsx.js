@@ -712,7 +712,7 @@ function OfficesSection() {
           children: t("our_offices_section.badge")
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_library_HighlightedHeading__WEBPACK_IMPORTED_MODULE_2__["default"], {
           text: t("our_offices_section.title"),
-          highlight: t("our_offices_section.title_heading"),
+          highlight: t("our_offices_section.title_highlighted"),
           className: " text-2xl 2xl:text-start text-center font-semibold mt-2 "
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_library_Description__WEBPACK_IMPORTED_MODULE_1__["default"], {
           className: " md:text-base text-sm 2xl:text-start text-center mb-2 w-full ",
@@ -4705,4 +4705,4 @@ const themeGuide = {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_scripts_components_pages_homepage_OfficesSection_jsx.js.map?ver=4aa7f96efdc5eace0160
+//# sourceMappingURL=src_scripts_components_pages_homepage_OfficesSection_jsx.js.map?ver=f0016102c5f257192b90
