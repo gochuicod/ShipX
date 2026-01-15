@@ -152,16 +152,16 @@ export default function ServiceCard({
                   key={idx}
                   onClick={() => setSelectedService(service)}
                   className={cn(
-                    "flex flex-row justify-center items-center px-4 py-2 gap-2.5 rounded-lg h-8 cursor-pointer transition-all border",
+                    "flex flex-row justify-center items-center px-4 py-2 gap-2.5 rounded-sm h-8 cursor-pointer transition-all border",
                     isSelected
-                      ? "bg-[#F3E8FF] border-[#7F22FE]" // Active Styles
-                      : "bg-[#FAF5FF] border-transparent hover:border-[#7F22FE]/30", // Inactive Styles
+                      ? "bg-[#CC00B7] border-transparent" // Active Styles
+                      : "border-[#DAB2FF] hover:border-[#DAB2FF]/30", // Inactive Styles
                   )}
                 >
                   <span
                     className={cn(
                       "font-['Inter'] font-medium text-[14px] leading-4 whitespace-nowrap",
-                      isSelected ? "text-[#6B21A8]" : "text-[#7F22FE]",
+                      isSelected ? "text-white font-bold" : "text-[#7F22FE]",
                     )}
                   >
                     {service.service_name}
