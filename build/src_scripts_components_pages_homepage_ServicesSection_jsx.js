@@ -791,20 +791,20 @@ function ServicesSection() {
   const activeKey = _utils_constants__WEBPACK_IMPORTED_MODULE_12__.servicesSectionCardKeys[activeServiceId];
   const activeStatic = _utils_constants__WEBPACK_IMPORTED_MODULE_12__.servicesSectionCardStaticData[activeServiceId];
 
-  // Build activeData from translations + static assets
+  // 1. Fetch the array of pricing objects dynamically based on the active tab
+  // This looks at: services_section.cards.[express/commercial/etc].services_covered
+  const activePricingData = activeKey ? t(`${activeKey}.services_covered`, {
+    returnObjects: true,
+    defaultValue: []
+  }) : [];
+
+  // 2. Build the data object for the card
   const activeData = activeKey ? {
     title: t(`${activeKey}.title`),
     description: t(`${activeKey}.description`),
     ctaText: t(`${activeKey}.service_name`),
-    servicesCovered: Object.values(t(`${activeKey}.services_covered`, {
-      returnObjects: true
-    })) || [],
     ...activeStatic
   } : null;
-  const expressPricing = t("services_section.cards.services_pricing.Express", {
-    returnObjects: true,
-    defaultValue: []
-  });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(_library_Container__WEBPACK_IMPORTED_MODULE_11__["default"], {
     className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.cn)("flex flex-col items-center overflow-hidden", _styles_themeGuide__WEBPACK_IMPORTED_MODULE_4__.themeGuide.sectionPaddingY),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
@@ -855,8 +855,10 @@ function ServicesSection() {
         className: "flex justify-center w-full max-w-[714px]",
         children: activeData && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_library_ServiceCard__WEBPACK_IMPORTED_MODULE_7__["default"], {
           ...activeData,
-          onCtaClick: () => console.log(`Inquiry for ${activeData.title}`),
-          pricingData: expressPricing
+          onCtaClick: () => console.log(`Inquiry for ${activeData.title}`)
+          // 3. Pass the dynamic pricing array here
+          ,
+          pricingData: activePricingData
         }, activeServiceId)
       })]
     })]
@@ -1236,4 +1238,4 @@ const themeGuide = {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_scripts_components_pages_homepage_ServicesSection_jsx.js.map?ver=5a1a58e8771b096d9faa
+//# sourceMappingURL=src_scripts_components_pages_homepage_ServicesSection_jsx.js.map?ver=e0dd8d0f26835edbe4f9

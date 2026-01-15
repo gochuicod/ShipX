@@ -1317,8 +1317,14 @@
     "description": "ShipX aggregates solutions from Amilo & SG Link to offer a comprehensive suite of services. Whether you need Express Worldwide shipping, USA Destination Fulfillment, or specialized FBA handling, we manage the complexities of global compliance and documentation for you.",
     "button": "Book a Demo",
     "cards": {
-      "services_pricing": {
-        "Express": [
+      "express": {
+        "title": "Express",
+        "description": "Accelerate your business with premium, time-sensitive global shipping solutions powered by world-class carriers.",
+        "partners_label": "Delivery Partners",
+        "country_label": "Country Origin",
+        "service_name": "International Express Delivery",
+        "services_covered_label": "Services Covered",
+        "services_covered": [
           {
             "service_name": "[VN] Premium Express",
             "price": "61.28 USD",
@@ -1379,9 +1385,32 @@
             "weight": "0.5 kg",
             "origin": "Vietnam"
           }
-        ],
-
-        "Postal (e-commerce)": [
+        ]
+      },
+      "commercial": {
+        "title": "Commercial",
+        "description": "Specialized logistics lines and special handling tailored for unique commercial shipping requirements.",
+        "partners_label": "Delivery Partners",
+        "country_label": "Country Origin",
+        "service_name": "Cross border Packet Delivery",
+        "services_covered_label": "Services Covered",
+        "services_covered": [
+          {
+            "service_name": "Special line",
+            "price": "24.79 USD",
+            "weight": "0.5 kg",
+            "origin": "Vietnam"
+          }
+        ]
+      },
+      "postal_e_commerce": {
+        "title": "Postal (E-Commerce)",
+        "description": "Cost-effective, cross-border packet delivery designed specifically to scale your e-commerce reach.",
+        "partners_label": "Delivery Partners",
+        "country_label": "Country Origin",
+        "service_name": "Cross border Packet Delivery",
+        "services_covered_label": "Services Covered",
+        "services_covered": [
           {
             "service_name": "Economy epacket",
             "price": "9.05 USD",
@@ -1424,9 +1453,38 @@
             "weight": "0.05 kg",
             "origin": "US"
           }
-        ],
-
-        "US Domestic": [
+        ]
+      },
+      "sea_freight": {
+        "title": "Sea Freight",
+        "description": "Reliable and scalable ocean freight solutions, including FBA and LCL, for high-volume logistics.",
+        "partners_label": "Delivery Partners",
+        "country_label": "Country Origin",
+        "service_name": "Sea Freight Inquiry",
+        "services_covered_label": "Services Covered",
+        "services_covered": [
+          {
+            "service_name": "FBA",
+            "price": "230.87 USD",
+            "weight": "1.0 CBM",
+            "origin": "Vietnam"
+          },
+          {
+            "service_name": "LCL",
+            "price": "3.25 USD",
+            "weight": "1.0 kg",
+            "origin": "Vietnam"
+          }
+        ]
+      },
+      "us_domestic": {
+        "title": "US Domestic",
+        "description": "Complete nationwide coverage across the USA, ranging from economy ground to priority expedited options.",
+        "partners_label": "Delivery Partners",
+        "country_label": "Country Origin",
+        "service_name": "US Destination Delivery",
+        "services_covered_label": "Services Covered",
+        "services_covered": [
           {
             "service_name": "Standard Mail",
             "price": "5.08 USD",
@@ -1445,107 +1503,7 @@
             "weight": "1.0 kg",
             "origin": "US"
           }
-        ],
-
-        "Sea freight": [
-          {
-            "service_name": "FBA",
-            "price": "230.87 USD",
-            "weight": "1.0 CBM",
-            "origin": "Vietnam"
-          },
-          {
-            "service_name": "LCL",
-            "price": "3.25 USD",
-            "weight": "1.0 kg",
-            "origin": "Vietnam"
-          }
-        ],
-        "Commercial": [
-          {
-            "service_name": "Special line",
-            "price": "24.79 USD",
-            "weight": "0.5 kg",
-            "origin": "Vietnam"
-          }
         ]
-      },
-      "express": {
-        "title": "Express",
-        "description": "Accelerate your business with premium, time-sensitive global shipping solutions powered by world-class carriers.",
-        "partners_label": "Delivery Partners",
-        "country_label": "Country Origin",
-        "service_name": "International Express Delivery",
-        "services_covered_label": "Services Covered",
-        "services_covered": {
-          "service_1": "Premium Express",
-          "service_2": "Priority Express",
-          "service_3": "Economy Express",
-          "service_4": "Preferred Express",
-          "service_5": "Prime Express",
-          "service_6": "Regular Express",
-          "service_7": "Plus Express",
-          "service_8": "Standard Express",
-          "service_9": "Saver Express"
-        }
-      },
-      "commercial": {
-        "title": "Commercial",
-        "description": "Specialized logistics lines and special handling tailored for unique commercial shipping requirements.",
-        "partners_label": "Delivery Partners",
-        "country_label": "Country Origin",
-        "service_name": "Cross border Packet Delivery",
-        "services_covered_label": "Services Covered",
-        "services_covered": {
-          "service_1": "Standard epacket",
-          "service_2": "Economy Pak",
-          "service_3": "Economy epacket",
-          "service_4": "Expedited epacket"
-        }
-      },
-      "postal_e_commerce": {
-        "title": "Postal (E-Commerce)",
-        "description": "Cost-effective, cross-border packet delivery designed specifically to scale your e-commerce reach.",
-        "partners_label": "Delivery Partners",
-        "country_label": "Country Origin",
-        "service_name": "Cross border Packet Delivery",
-        "services_covered_label": "Services Covered",
-        "services_covered": {
-          "service_1": "Ecomony epacket",
-          "service_2": "Plus economy epacket",
-          "service_3": "Standard epacket",
-          "service_4": "Economy Pak",
-          "service_5": "Expedited epacket",
-          "service_6": "Saver Direct epacket",
-          "service_7": "Direct epacket"
-        }
-      },
-      "sea_freight": {
-        "title": "Sea Freight",
-        "description": "Reliable and scalable ocean freight solutions, including FBA and LCL, for high-volume logistics.",
-        "partners_label": "Delivery Partners",
-        "country_label": "Country Origin",
-        "service_name": "Sea Freight Inquiry",
-        "services_covered_label": "Services Covered",
-        "services_covered": {
-          "service_1": "FBA",
-          "service_2": "LCL Shipping",
-          "service_3": "FCL Shipping"
-        }
-      },
-      "us_domestic": {
-        "title": "US Domestic",
-        "description": "Complete nationwide coverage across the USA, ranging from economy ground to priority expedited options.",
-        "partners_label": "Delivery Partners",
-        "country_label": "Country Origin",
-        "service_name": "US Destination Delivery",
-        "services_covered_label": "Services Covered",
-        "services_covered": {
-          "service_1": "Standard Mail",
-          "service_2": "Express Mail",
-          "service_3": "Economy Mail",
-          "service_4": "Priority Mail"
-        }
       }
     }
   },

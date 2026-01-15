@@ -26,24 +26,24 @@ export default function ServicesSection() {
   const activeKey = servicesSectionCardKeys[activeServiceId];
   const activeStatic = servicesSectionCardStaticData[activeServiceId];
 
-  // Build activeData from translations + static assets
+  // 1. Fetch the array of pricing objects dynamically based on the active tab
+  // This looks at: services_section.cards.[express/commercial/etc].services_covered
+  const activePricingData = activeKey
+    ? t(`${activeKey}.services_covered`, {
+        returnObjects: true,
+        defaultValue: [],
+      })
+    : [];
+
+  // 2. Build the data object for the card
   const activeData = activeKey
     ? {
         title: t(`${activeKey}.title`),
         description: t(`${activeKey}.description`),
         ctaText: t(`${activeKey}.service_name`),
-        servicesCovered:
-          Object.values(
-            t(`${activeKey}.services_covered`, { returnObjects: true }),
-          ) || [],
         ...activeStatic,
       }
     : null;
-
-  const expressPricing = t("services_section.cards.services_pricing.Express", {
-    returnObjects: true,
-    defaultValue: [],
-  });
 
   return (
     <Container
@@ -93,6 +93,7 @@ export default function ServicesSection() {
             "shrink-0",
           )}
         >
+          {/* Mapping over buttons (Express, Commercial, etc.) */}
           {servicesSectionServiceItems.map((item) => (
             <div
               key={item.id}
@@ -113,10 +114,11 @@ export default function ServicesSection() {
         <div className="flex justify-center w-full max-w-[714px]">
           {activeData && (
             <ServiceCard
-              key={activeServiceId}
+              key={activeServiceId} // Force re-render when switching tabs to reset internal state
               {...activeData}
               onCtaClick={() => console.log(`Inquiry for ${activeData.title}`)}
-              pricingData={expressPricing}
+              // 3. Pass the dynamic pricing array here
+              pricingData={activePricingData}
             />
           )}
         </div>
