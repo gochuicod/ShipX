@@ -40,6 +40,11 @@ export default function ServicesSection() {
       }
     : null;
 
+  const expressPricing = t("services_section.cards.services_pricing.Express", {
+    returnObjects: true,
+    defaultValue: [],
+  });
+
   return (
     <Container
       className={cn(
@@ -111,6 +116,7 @@ export default function ServicesSection() {
               key={activeServiceId}
               {...activeData}
               onCtaClick={() => console.log(`Inquiry for ${activeData.title}`)}
+              pricingData={expressPricing}
             />
           )}
         </div>

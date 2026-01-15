@@ -1340,6 +1340,156 @@
     "description": "ShipX รวบรวมโซลูชันจาก Amilo และ SG Link เพื่อนำเสนอบริการที่ครอบคลุม ไม่ว่าคุณจะต้องการบริการขนส่งด่วนทั่วโลก (Express Worldwide), คลังสินค้าและการจัดส่งในสหรัฐอเมริกา (USA Fulfillment) หรือการจัดการ FBA โดยเฉพาะ เราจัดการความซับซ้อนด้านการปฏิบัติตามกฎระเบียบและเอกสารระดับโลกให้คุณ",
     "button": "จองการสาธิต (Demo)",
     "cards": {
+      "services_pricing": {
+        "Express": [
+          {
+            "service_name": "[VN] ด่วนพรีเมียม",
+            "price": "61.28 USD",
+            "weight": "0.5 kg",
+            "origin": "เวียดนาม"
+          },
+          {
+            "service_name": "ด่วนบุริมสิทธิ์ (Priority)",
+            "price": "49.58 USD",
+            "weight": "0.5 kg",
+            "origin": "สิงคโปร์"
+          },
+          {
+            "service_name": "[MY] ด่วนพรีเมียม",
+            "price": "41.02 USD",
+            "weight": "0.5 kg",
+            "origin": "มาเลเซีย"
+          },
+          {
+            "service_name": "ด่วนประหยัด",
+            "price": "50.23 USD",
+            "weight": "0.5 kg",
+            "origin": "เวียดนาม"
+          },
+          {
+            "service_name": "ด่วนพิเศษ (Preferred)",
+            "price": "51.05 USD",
+            "weight": "0.5 kg",
+            "origin": "เวียดนาม"
+          },
+          {
+            "service_name": "ด่วนไพรม์ (Prime)",
+            "price": "45.32 USD",
+            "weight": "0.5 kg",
+            "origin": "สิงคโปร์"
+          },
+          {
+            "service_name": "ด่วนปกติ",
+            "price": "36.96 USD",
+            "weight": "0.5 kg",
+            "origin": "สิงคโปร์"
+          },
+          {
+            "service_name": "ด่วนพลัส",
+            "price": "34.90 USD",
+            "weight": "0.5 kg",
+            "origin": "สิงคโปร์"
+          },
+          {
+            "service_name": "ด่วนมาตรฐาน",
+            "price": "39.88 USD",
+            "weight": "1.0 kg",
+            "origin": "เวียดนาม"
+          },
+          {
+            "service_name": "ด่วนสุดคุ้ม (Saver)",
+            "price": "38.15 USD",
+            "weight": "0.5 kg",
+            "origin": "เวียดนาม"
+          }
+        ],
+        "Postal (e-commerce)": [
+          {
+            "service_name": "ePacket แบบประหยัด",
+            "price": "9.05 USD",
+            "weight": "0.05 kg",
+            "origin": "สิงคโปร์"
+          },
+          {
+            "service_name": "ePacket แบบประหยัดพลัส",
+            "price": "36.64 USD",
+            "weight": "0.5 kg",
+            "origin": "สิงคโปร์"
+          },
+          {
+            "service_name": "ePacket มาตรฐาน",
+            "price": "7.58 USD",
+            "weight": "0.1 kg",
+            "origin": "สิงคโปร์"
+          },
+          {
+            "service_name": "พัสดุแบบประหยัด",
+            "price": "7.84 USD",
+            "weight": "0.05 kg",
+            "origin": "สิงคโปร์"
+          },
+          {
+            "service_name": "ePacket แบบเร่งด่วน",
+            "price": "7.62 USD",
+            "weight": "0.05 kg",
+            "origin": "มาเลเซีย"
+          },
+          {
+            "service_name": "ePacket ตรงแบบสุดคุ้ม",
+            "price": "5.24 USD",
+            "weight": "0.05 kg",
+            "origin": "สหรัฐอเมริกา"
+          },
+          {
+            "service_name": "ePacket จัดส่งตรง",
+            "price": "5.39 USD",
+            "weight": "0.05 kg",
+            "origin": "สหรัฐอเมริกา"
+          }
+        ],
+        "US Domestic": [
+          {
+            "service_name": "ไปรษณีย์มาตรฐาน",
+            "price": "5.08 USD",
+            "weight": "0.05 kg",
+            "origin": "สหรัฐอเมริกา"
+          },
+          {
+            "service_name": "ไปรษณีย์ด่วน",
+            "price": "10.47 USD",
+            "weight": "0.5 kg",
+            "origin": "สหรัฐอเมริกา"
+          },
+          {
+            "service_name": "ไปรษณีย์ประหยัด",
+            "price": "3.91 USD",
+            "weight": "1.0 kg",
+            "origin": "สหรัฐอเมริกา"
+          }
+        ],
+        "Sea freight": [
+          {
+            "service_name": "FBA",
+            "price": "230.87 USD",
+            "weight": "1.0 CBM",
+            "origin": "เวียดนาม"
+          },
+          {
+            "service_name": "LCL",
+            "price": "3.25 USD",
+            "weight": "1.0 kg",
+            "origin": "เวียดนาม"
+          }
+        ],
+        "Commercial": [
+          {
+            "service_name": "เส้นทางพิเศษ (Special line)",
+            "price": "24.79 USD",
+            "weight": "0.5 kg",
+            "origin": "เวียดนาม"
+          }
+        ]
+      },
       "express": {
         "title": "บริการด่วน (Express)",
         "description": "เร่งธุรกิจของคุณด้วยโซลูชันการขนส่งระดับโลกที่รวดเร็วและพรีเมียม ขับเคลื่อนโดยผู้ให้บริการขนส่งระดับโลก",

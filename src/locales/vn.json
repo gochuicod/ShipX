@@ -1335,6 +1335,156 @@
     "description": "ShipX tổng hợp các giải pháp từ Amilo & SG Link để cung cấp một bộ dịch vụ toàn diện. Cho dù bạn cần vận chuyển Nhanh Toàn cầu (Express Worldwide), Hoàn tất đơn hàng tại Mỹ (USA Fulfillment), hay xử lý FBA chuyên biệt, chúng tôi sẽ quản lý các phức tạp về tuân thủ và thủ tục giấy tờ toàn cầu cho bạn.",
     "button": "Đặt lịch Demo",
     "cards": {
+      "services_pricing": {
+        "Express": [
+          {
+            "service_name": "[VN] Chuyển phát nhanh cao cấp",
+            "price": "61.28 USD",
+            "weight": "0.5 kg",
+            "origin": "Việt Nam"
+          },
+          {
+            "service_name": "Chuyển phát ưu tiên",
+            "price": "49.58 USD",
+            "weight": "0.5 kg",
+            "origin": "Singapore"
+          },
+          {
+            "service_name": "[MY] Chuyển phát nhanh cao cấp",
+            "price": "41.02 USD",
+            "weight": "0.5 kg",
+            "origin": "Malaysia"
+          },
+          {
+            "service_name": "Chuyển phát nhanh tiết kiệm",
+            "price": "50.23 USD",
+            "weight": "0.5 kg",
+            "origin": "Việt Nam"
+          },
+          {
+            "service_name": "Chuyển phát đảm bảo",
+            "price": "51.05 USD",
+            "weight": "0.5 kg",
+            "origin": "Việt Nam"
+          },
+          {
+            "service_name": "Chuyển phát nhanh Prime",
+            "price": "45.32 USD",
+            "weight": "0.5 kg",
+            "origin": "Singapore"
+          },
+          {
+            "service_name": "Chuyển phát nhanh thông thường",
+            "price": "36.96 USD",
+            "weight": "0.5 kg",
+            "origin": "Singapore"
+          },
+          {
+            "service_name": "Chuyển phát nhanh Plus",
+            "price": "34.90 USD",
+            "weight": "0.5 kg",
+            "origin": "Singapore"
+          },
+          {
+            "service_name": "Chuyển phát nhanh tiêu chuẩn",
+            "price": "39.88 USD",
+            "weight": "1.0 kg",
+            "origin": "Việt Nam"
+          },
+          {
+            "service_name": "Chuyển phát nhanh giá rẻ",
+            "price": "38.15 USD",
+            "weight": "0.5 kg",
+            "origin": "Việt Nam"
+          }
+        ],
+        "Postal (e-commerce)": [
+          {
+            "service_name": "ePacket tiết kiệm",
+            "price": "9.05 USD",
+            "weight": "0.05 kg",
+            "origin": "Singapore"
+          },
+          {
+            "service_name": "ePacket tiết kiệm Plus",
+            "price": "36.64 USD",
+            "weight": "0.5 kg",
+            "origin": "Singapore"
+          },
+          {
+            "service_name": "ePacket tiêu chuẩn",
+            "price": "7.58 USD",
+            "weight": "0.1 kg",
+            "origin": "Singapore"
+          },
+          {
+            "service_name": "Gói tiết kiệm",
+            "price": "7.84 USD",
+            "weight": "0.05 kg",
+            "origin": "Singapore"
+          },
+          {
+            "service_name": "ePacket chuyển phát nhanh",
+            "price": "7.62 USD",
+            "weight": "0.05 kg",
+            "origin": "Malaysia"
+          },
+          {
+            "service_name": "ePacket trực tiếp giá rẻ",
+            "price": "5.24 USD",
+            "weight": "0.05 kg",
+            "origin": "Mỹ"
+          },
+          {
+            "service_name": "ePacket trực tiếp",
+            "price": "5.39 USD",
+            "weight": "0.05 kg",
+            "origin": "Mỹ"
+          }
+        ],
+        "US Domestic": [
+          {
+            "service_name": "Thư tiêu chuẩn",
+            "price": "5.08 USD",
+            "weight": "0.05 kg",
+            "origin": "Mỹ"
+          },
+          {
+            "service_name": "Thư chuyển phát nhanh",
+            "price": "10.47 USD",
+            "weight": "0.5 kg",
+            "origin": "Mỹ"
+          },
+          {
+            "service_name": "Thư tiết kiệm",
+            "price": "3.91 USD",
+            "weight": "1.0 kg",
+            "origin": "Mỹ"
+          }
+        ],
+        "Sea freight": [
+          {
+            "service_name": "FBA",
+            "price": "230.87 USD",
+            "weight": "1.0 CBM",
+            "origin": "Việt Nam"
+          },
+          {
+            "service_name": "LCL (Hàng lẻ)",
+            "price": "3.25 USD",
+            "weight": "1.0 kg",
+            "origin": "Việt Nam"
+          }
+        ],
+        "Commercial": [
+          {
+            "service_name": "Tuyến đặc biệt",
+            "price": "24.79 USD",
+            "weight": "0.5 kg",
+            "origin": "Việt Nam"
+          }
+        ]
+      },
       "express": {
         "title": "Chuyển phát nhanh (Express)",
         "description": "Tăng tốc doanh nghiệp của bạn với các giải pháp vận chuyển toàn cầu cao cấp, nhạy cảm về thời gian, được vận hành bởi các nhà vận chuyển đẳng cấp thế giới.",

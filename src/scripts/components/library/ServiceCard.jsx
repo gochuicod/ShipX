@@ -1,5 +1,6 @@
-import { cn } from "../../../lib/util";
+import { cn } from "../../../lib/util"; // Adjust path as needed
 import { useTranslation } from "react-i18next";
+import { useState, useEffect } from "react";
 
 export default function ServiceCard({
   title,
@@ -9,10 +10,22 @@ export default function ServiceCard({
   countryCodes = [],
   ctaText,
   onCtaClick,
-  servicesCovered = [],
+  pricingData = [], // <--- NEW PROP: Pass the specific array from services_pricing here
   className,
 }) {
   const { t } = useTranslation();
+
+  // Initialize state with the first item in the pricing list
+  const [selectedService, setSelectedService] = useState(
+    pricingData[0] || null,
+  );
+
+  // Update state if the prop changes (e.g., switching languages)
+  useEffect(() => {
+    if (pricingData && pricingData.length > 0) {
+      setSelectedService(pricingData[0]);
+    }
+  }, [pricingData]);
 
   return (
     <div className={cn("flex flex-col w-full max-w-[714px] gap-2", className)}>
@@ -91,7 +104,7 @@ export default function ServiceCard({
           {/* CTA Button */}
           <span
             onClick={onCtaClick}
-            className="mt-2 w-full md:w-auto px-6 py-2 bg-[#FBE0FF] rounded-lg transition-colors"
+            className="mt-2 w-full md:w-auto px-6 py-2 bg-[#FBE0FF] rounded-lg transition-colors cursor-pointer hover:bg-[#f0caff]"
           >
             <span className="font-['Inter'] font-normal text-[14px] leading-4 text-[#4D525C] text-center block">
               {ctaText}
@@ -100,24 +113,62 @@ export default function ServiceCard({
         </div>
       </div>
 
-      {/* --- BOTTOM: Services Covered (Responsive Alignment) --- */}
-      {servicesCovered.length > 0 && (
-        <div className="flex flex-col items-center xl:items-start p-4 md:px-4 md:py-2 gap-2 self-stretch bg-white rounded-b-[12px] w-full">
+      {/* --- BOTTOM: Services Covered (Dynamic) --- */}
+      {pricingData.length > 0 && selectedService && (
+        <div className="flex flex-col items-center xl:items-start gap-2 self-stretch bg-white rounded-b-[12px] w-full">
           <h4 className="font-['Inter'] font-bold text-[16px] leading-5 text-[#1E2939]">
             {t("services_section.cards.express.services_covered_label")}:
           </h4>
 
+          {/* Dynamic Pricing Display Box */}
+          <div
+            className={cn(
+              "bg-[linear-gradient(135deg,rgba(242,148,255,0.2)_0%,rgba(255,230,255,0.1)_41.83%,rgba(242,148,255,0.2)_100%)]",
+              "flex flex-row",
+              "justify-between items-center",
+              "w-full",
+              "p-4 rounded-lg",
+            )}
+          >
+            {/* Service Name */}
+            <span className="font-['Inter'] font-bold md:text-[16px] text-[14px] leading-4 text-[#4D525C] whitespace-nowrap truncate mr-2">
+              {selectedService.service_name}
+            </span>
+
+            {/* Price / Weight */}
+            <span className="bg-[#FBE0FF] border border-white text-[#4F378A] px-4 py-2 rounded-sm font-medium whitespace-nowrap">
+              {selectedService.price} per {selectedService.weight}
+            </span>
+          </div>
+
+          {/* Clickable Tags */}
           <div className="flex flex-row flex-wrap justify-center xl:justify-start items-start gap-[5px] w-full">
-            {servicesCovered.map((service, idx) => (
-              <div
-                key={idx}
-                className="flex flex-row justify-center items-center px-4 py-2 gap-2.5 bg-[#FAF5FF] rounded-lg h-8"
-              >
-                <span className="font-['Inter'] font-medium text-[14px] leading-4 text-[#7F22FE] whitespace-nowrap">
-                  {service}
-                </span>
-              </div>
-            ))}
+            {pricingData.map((service, idx) => {
+              const isSelected =
+                selectedService.service_name === service.service_name;
+
+              return (
+                <div
+                  key={idx}
+                  onClick={() => setSelectedService(service)}
+                  className={cn(
+                    "flex flex-row justify-center items-center px-4 py-2 gap-2.5 rounded-lg h-8 cursor-pointer transition-all border",
+                    isSelected
+                      ? "bg-[#F3E8FF] border-[#7F22FE]" // Active Styles
+                      : "bg-[#FAF5FF] border-transparent hover:border-[#7F22FE]/30", // Inactive Styles
+                  )}
+                >
+                  <span
+                    className={cn(
+                      "font-['Inter'] font-medium text-[14px] leading-4 whitespace-nowrap",
+                      isSelected ? "text-[#6B21A8]" : "text-[#7F22FE]",
+                    )}
+                  >
+                    {service.service_name}
+                  </span>
+                </div>
+              );
+            })}
           </div>
         </div>
       )}

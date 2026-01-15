@@ -1317,6 +1317,159 @@
     "description": "ShipX aggregates solutions from Amilo & SG Link to offer a comprehensive suite of services. Whether you need Express Worldwide shipping, USA Destination Fulfillment, or specialized FBA handling, we manage the complexities of global compliance and documentation for you.",
     "button": "Book a Demo",
     "cards": {
+      "services_pricing": {
+        "Express": [
+          {
+            "service_name": "[VN] Premium Express",
+            "price": "61.28 USD",
+            "weight": "0.5 kg",
+            "origin": "Vietnam"
+          },
+          {
+            "service_name": "Priority Express",
+            "price": "49.58 USD",
+            "weight": "0.5 kg",
+            "origin": "Singapore"
+          },
+          {
+            "service_name": "[MY] Premium Express",
+            "price": "41.02 USD",
+            "weight": "0.5 kg",
+            "origin": "Malaysia"
+          },
+          {
+            "service_name": "Economy Express",
+            "price": "50.23 USD",
+            "weight": "0.5 kg",
+            "origin": "Vietnam"
+          },
+          {
+            "service_name": "Preferred Express",
+            "price": "51.05 USD",
+            "weight": "0.5 kg",
+            "origin": "Vietnam"
+          },
+          {
+            "service_name": "Prime Express",
+            "price": "45.32 USD",
+            "weight": "0.5 kg",
+            "origin": "Singapore"
+          },
+          {
+            "service_name": "Regular Express",
+            "price": "36.96 USD",
+            "weight": "0.5 kg",
+            "origin": "Singapore"
+          },
+          {
+            "service_name": "Plus Express",
+            "price": "34.90 USD",
+            "weight": "0.5 kg",
+            "origin": "Singapore"
+          },
+          {
+            "service_name": "Standard Express",
+            "price": "39.88 USD",
+            "weight": "1.0 kg",
+            "origin": "Vietnam"
+          },
+          {
+            "service_name": "Saver Express",
+            "price": "38.15 USD",
+            "weight": "0.5 kg",
+            "origin": "Vietnam"
+          }
+        ],
+
+        "Postal (e-commerce)": [
+          {
+            "service_name": "Economy epacket",
+            "price": "9.05 USD",
+            "weight": "0.05 kg",
+            "origin": "Singapore"
+          },
+          {
+            "service_name": "Plus economy epacket",
+            "price": "36.64 USD",
+            "weight": "0.5 kg",
+            "origin": "Singapore"
+          },
+          {
+            "service_name": "Standard epacket",
+            "price": "7.58 USD",
+            "weight": "0.1 kg",
+            "origin": "Singapore"
+          },
+          {
+            "service_name": "Economy Pak",
+            "price": "7.84 USD",
+            "weight": "0.05 kg",
+            "origin": "Singapore"
+          },
+          {
+            "service_name": "Expedited epacket",
+            "price": "7.62 USD",
+            "weight": "0.05 kg",
+            "origin": "Malaysia"
+          },
+          {
+            "service_name": "Saver Direct epacket",
+            "price": "5.24 USD",
+            "weight": "0.05 kg",
+            "origin": "US"
+          },
+          {
+            "service_name": "Direct epacket",
+            "price": "5.39 USD",
+            "weight": "0.05 kg",
+            "origin": "US"
+          }
+        ],
+
+        "US Domestic": [
+          {
+            "service_name": "Standard Mail",
+            "price": "5.08 USD",
+            "weight": "0.05 kg",
+            "origin": "US"
+          },
+          {
+            "service_name": "Express Mail",
+            "price": "10.47 USD",
+            "weight": "0.5 kg",
+            "origin": "US"
+          },
+          {
+            "service_name": "Economy Mail",
+            "price": "3.91 USD",
+            "weight": "1.0 kg",
+            "origin": "US"
+          }
+        ],
+
+        "Sea freight": [
+          {
+            "service_name": "FBA",
+            "price": "230.87 USD",
+            "weight": "1.0 CBM",
+            "origin": "Vietnam"
+          },
+          {
+            "service_name": "LCL",
+            "price": "3.25 USD",
+            "weight": "1.0 kg",
+            "origin": "Vietnam"
+          }
+        ],
+        "Commercial": [
+          {
+            "service_name": "Special line",
+            "price": "24.79 USD",
+            "weight": "0.5 kg",
+            "origin": "Vietnam"
+          }
+        ]
+      },
       "express": {
         "title": "Express",
         "description": "Accelerate your business with premium, time-sensitive global shipping solutions powered by world-class carriers.",

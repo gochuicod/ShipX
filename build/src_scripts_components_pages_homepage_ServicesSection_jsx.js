@@ -524,8 +524,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _lib_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../lib/util */ "./src/lib/util.js");
 /* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+ // Adjust path as needed
 
 
 
@@ -537,88 +540,114 @@ function ServiceCard({
   countryCodes = [],
   ctaText,
   onCtaClick,
-  servicesCovered = [],
+  pricingData = [],
+  // <--- NEW PROP: Pass the specific array from services_pricing here
   className
 }) {
   const {
     t
   } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_1__.useTranslation)();
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+
+  // Initialize state with the first item in the pricing list
+  const [selectedService, setSelectedService] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(pricingData[0] || null);
+
+  // Update state if the prop changes (e.g., switching languages)
+  (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(() => {
+    if (pricingData && pricingData.length > 0) {
+      setSelectedService(pricingData[0]);
+    }
+  }, [pricingData]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_0__.cn)("flex flex-col w-full max-w-[714px] gap-2", className),
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_0__.cn)("relative flex flex-col md:flex-row items-center", "p-8 gap-8 rounded-2xl", "bg-[linear-gradient(135deg,rgba(242,148,255,0.2)_0%,rgba(255,230,255,0.1)_41.83%,rgba(242,148,255,0.2)_100%)]", "border border-white/50 shadow-sm"),
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "relative w-full md:w-[319px] h-[258px] shrink-0 flex items-center justify-center",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "absolute inset-0 bg-linear-to-br from-white/0 via-white/75 to-white/75 rounded-2xl opacity-50 pointer-events-none"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
           src: illustration,
           alt: `${title} Illustration`,
           className: "relative z-10 w-full h-full object-contain drop-shadow-xl"
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "flex flex-col items-center md:items-start w-full gap-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "flex flex-col gap-2 w-full text-center md:text-left",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
             className: "font-['Inter'] font-bold text-[20px] leading-6 text-[#FF00E5]",
             children: title
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
             className: "font-['Inter'] font-normal text-[14px] leading-4 text-[#364153]",
             children: description
           })]
-        }), partners.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        }), partners.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "flex flex-col gap-1 w-full items-center md:items-start",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
             className: "font-['Inter'] font-bold text-[12px] leading-3.5 text-[#1E2939]",
             children: [t("services_section.cards.express.partners_label"), ":"]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             className: "flex flex-row flex-wrap justify-center md:justify-start items-center gap-3 mt-1",
-            children: partners.map((logoUrl, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+            children: partners.map((logoUrl, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
               src: logoUrl,
               alt: "Partner",
               className: "h-5 w-auto object-contain transition-all"
             }, index))
           })]
-        }), countryCodes.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        }), countryCodes.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "flex flex-col gap-1 w-full items-center md:items-start",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
             className: "font-['Inter'] font-bold text-[12px] leading-3.5 text-[#1E2939]",
             children: [t("services_section.cards.express.country_label"), ":"]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             className: "flex flex-row items-center gap-2 mt-1",
-            children: countryCodes.map(code => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            children: countryCodes.map(code => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
               className: "w-[30px] h-[30px] rounded-full overflow-hidden shadow-sm border border-white",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
                 src: `https://flagcdn.com/${code}.svg`,
                 alt: code,
                 className: "w-full h-full object-cover scale-150"
               })
             }, code))
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
           onClick: onCtaClick,
-          className: "mt-2 w-full md:w-auto px-6 py-2 bg-[#FBE0FF] rounded-lg transition-colors",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          className: "mt-2 w-full md:w-auto px-6 py-2 bg-[#FBE0FF] rounded-lg transition-colors cursor-pointer hover:bg-[#f0caff]",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
             className: "font-['Inter'] font-normal text-[14px] leading-4 text-[#4D525C] text-center block",
             children: ctaText
           })
         })]
       })]
-    }), servicesCovered.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "flex flex-col items-center xl:items-start p-4 md:px-4 md:py-2 gap-2 self-stretch bg-white rounded-b-[12px] w-full",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h4", {
+    }), pricingData.length > 0 && selectedService && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "flex flex-col items-center xl:items-start gap-2 self-stretch bg-white rounded-b-[12px] w-full",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h4", {
         className: "font-['Inter'] font-bold text-[16px] leading-5 text-[#1E2939]",
         children: [t("services_section.cards.express.services_covered_label"), ":"]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_0__.cn)("bg-[linear-gradient(135deg,rgba(242,148,255,0.2)_0%,rgba(255,230,255,0.1)_41.83%,rgba(242,148,255,0.2)_100%)]", "flex flex-row", "justify-between items-center", "w-full", "p-4 rounded-lg"),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+          className: "font-['Inter'] font-bold md:text-[16px] text-[14px] leading-4 text-[#4D525C] whitespace-nowrap truncate mr-2",
+          children: selectedService.service_name
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
+          className: "bg-[#FBE0FF] border border-white text-[#4F378A] px-4 py-2 rounded-sm font-medium whitespace-nowrap",
+          children: [selectedService.price, " per ", selectedService.weight]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "flex flex-row flex-wrap justify-center xl:justify-start items-start gap-[5px] w-full",
-        children: servicesCovered.map((service, idx) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "flex flex-row justify-center items-center px-4 py-2 gap-2.5 bg-[#FAF5FF] rounded-lg h-8",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-            className: "font-['Inter'] font-medium text-[14px] leading-4 text-[#7F22FE] whitespace-nowrap",
-            children: service
-          })
-        }, idx))
+        children: pricingData.map((service, idx) => {
+          const isSelected = selectedService.service_name === service.service_name;
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            onClick: () => setSelectedService(service),
+            className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_0__.cn)("flex flex-row justify-center items-center px-4 py-2 gap-2.5 rounded-lg h-8 cursor-pointer transition-all border", isSelected ? "bg-[#F3E8FF] border-[#7F22FE]" // Active Styles
+            : "bg-[#FAF5FF] border-transparent hover:border-[#7F22FE]/30" // Inactive Styles
+            ),
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+              className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_0__.cn)("font-['Inter'] font-medium text-[14px] leading-4 whitespace-nowrap", isSelected ? "text-[#6B21A8]" : "text-[#7F22FE]"),
+              children: service.service_name
+            })
+          }, idx);
+        })
       })]
     })]
   });
@@ -772,6 +801,10 @@ function ServicesSection() {
     })) || [],
     ...activeStatic
   } : null;
+  const expressPricing = t("services_section.cards.services_pricing.Express", {
+    returnObjects: true,
+    defaultValue: []
+  });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(_library_Container__WEBPACK_IMPORTED_MODULE_11__["default"], {
     className: (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.cn)("flex flex-col items-center overflow-hidden", _styles_themeGuide__WEBPACK_IMPORTED_MODULE_4__.themeGuide.sectionPaddingY),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
@@ -822,7 +855,8 @@ function ServicesSection() {
         className: "flex justify-center w-full max-w-[714px]",
         children: activeData && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_library_ServiceCard__WEBPACK_IMPORTED_MODULE_7__["default"], {
           ...activeData,
-          onCtaClick: () => console.log(`Inquiry for ${activeData.title}`)
+          onCtaClick: () => console.log(`Inquiry for ${activeData.title}`),
+          pricingData: expressPricing
         }, activeServiceId)
       })]
     })]
@@ -1202,4 +1236,4 @@ const themeGuide = {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_scripts_components_pages_homepage_ServicesSection_jsx.js.map?ver=11bb2dacbb5c0308765a
+//# sourceMappingURL=src_scripts_components_pages_homepage_ServicesSection_jsx.js.map?ver=5a1a58e8771b096d9faa
