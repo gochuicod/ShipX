@@ -18,7 +18,7 @@ export default function ServicesItems({
 
   const baseListStyles =
     "flex flex-row items-center p-[8px_12px] gap-[12px] \
-   w-fit \
+   w-full \
    h-fit \
    rounded-[8px] transition-all duration-300 cursor-pointer";
 

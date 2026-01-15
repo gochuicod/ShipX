@@ -654,7 +654,7 @@ function ServicesItems({
   const activeShadow = "shadow-[1px_1px_2px_rgba(20,0,0,0.45),inset_-2px_-2px_4px_rgba(98,0,97,0.4),inset_2px_2px_2px_rgba(255,255,255,0.55),inset_-4px_-4px_25px_rgba(154,4,129,0.2)]";
   const inactiveShadow = "shadow-[1px_1px_2px_rgba(20,0,0,0.25),inset_-2px_-2px_4px_rgba(154,4,129,0.15)]";
   const baseListStyles = "flex flex-row items-center p-[8px_12px] gap-[12px] \
-   w-fit \
+   w-full \
    h-fit \
    rounded-[8px] transition-all duration-300 cursor-pointer";
   const renderIcon = () => {
@@ -1202,4 +1202,4 @@ const themeGuide = {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_scripts_components_pages_homepage_ServicesSection_jsx.js.map?ver=a9df0567abec277435bc
+//# sourceMappingURL=src_scripts_components_pages_homepage_ServicesSection_jsx.js.map?ver=618d2c3122c33573bf44
