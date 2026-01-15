@@ -261,7 +261,7 @@ export const servicesSectionServiceItems = [
     icon: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/icons/duotone/airplaneairplane-delivery-1.svg",
   },
   {
-    id: "postal",
+    id: "commercial",
     icon: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/icons/duotone/airplanebell.svg",
   },
   {
@@ -280,7 +280,7 @@ export const servicesSectionServiceItems = [
 
 export const servicesSectionCardKeys = {
   express: "services_section.cards.express",
-  postal: "services_section.cards.postal",
+  commercial: "services_section.cards.commercial",
   postal_e_commerce: "services_section.cards.postal_e_commerce",
   sea_freight: "services_section.cards.sea_freight",
   us_domestic: "services_section.cards.us_domestic",
@@ -297,7 +297,7 @@ export const servicesSectionCardStaticData = {
     ],
     countryCodes: ["vn", "sg"],
   },
-  postal: {
+  commercial: {
     illustration:
       "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/services_postal.webp",
     partners: [
