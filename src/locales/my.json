@@ -1337,85 +1337,196 @@
     "badge": "Perkhidmatan Kami",
     "headline": "Platform Bersepadu untuk\nLogistik Rentas Sempadan",
     "headline_highlighted": "Platform Bersepadu",
-    "description": "ShipX menggabungkan penyelesaian daripada Amilo & SG Link untuk menawarkan suite perkhidmatan yang komprehensif. Sama ada anda memerlukan penghantaran Ekspres Seluruh Dunia, Pemenuhan Destinasi AS, atau pengendalian FBA khusus, kami menguruskan kerumitan pematuhan dan dokumentasi global untuk anda.",
+    "description": "ShipX menggabungkan penyelesaian daripada Amilo & SG Link untuk menawarkan rangkaian perkhidmatan yang komprehensif. Sama ada anda memerlukan penghantaran Ekspres Seluruh Dunia, Pemenuhan Destinasi AS, atau pengendalian FBA khusus, kami menguruskan kerumitan pematuhan global dan dokumentasi untuk anda.",
     "button": "Tempah Demo",
     "cards": {
       "express": {
         "title": "Ekspres",
-        "description": "Percepatkan perniagaan anda dengan penyelesaian penghantaran global premium yang sensitif masa, dikuasakan oleh pembawa bertaraf dunia.",
+        "description": "Percepatkan perniagaan anda dengan penyelesaian penghantaran global premium yang sensitif masa, dikuasakan oleh syarikat pengangkutan bertaraf dunia.",
         "partners_label": "Rakan Penghantaran",
         "country_label": "Negara Asal",
         "service_name": "Penghantaran Ekspres Antarabangsa",
         "services_covered_label": "Perkhidmatan yang Diliputi",
-        "services_covered": {
-          "service_1": "Premium Express",
-          "service_2": "Priority Express",
-          "service_3": "Economy Express",
-          "service_4": "Preferred Express",
-          "service_5": "Prime Express",
-          "service_6": "Regular Express",
-          "service_7": "Plus Express",
-          "service_8": "Standard Express",
-          "service_9": "Saver Express"
-        }
+        "services_covered": [
+          {
+            "service_name": "[VN] Ekspres Premium",
+            "price": "61.28 USD",
+            "weight": "0.5 kg",
+            "origin": "Vietnam"
+          },
+          {
+            "service_name": "Ekspres Prioriti",
+            "price": "49.58 USD",
+            "weight": "0.5 kg",
+            "origin": "Singapura"
+          },
+          {
+            "service_name": "[MY] Ekspres Premium",
+            "price": "41.02 USD",
+            "weight": "0.5 kg",
+            "origin": "Malaysia"
+          },
+          {
+            "service_name": "Ekspres Ekonomi",
+            "price": "50.23 USD",
+            "weight": "0.5 kg",
+            "origin": "Vietnam"
+          },
+          {
+            "service_name": "Ekspres Pilihan",
+            "price": "51.05 USD",
+            "weight": "0.5 kg",
+            "origin": "Vietnam"
+          },
+          {
+            "service_name": "Ekspres Perdana",
+            "price": "45.32 USD",
+            "weight": "0.5 kg",
+            "origin": "Singapura"
+          },
+          {
+            "service_name": "Ekspres Biasa",
+            "price": "36.96 USD",
+            "weight": "0.5 kg",
+            "origin": "Singapura"
+          },
+          {
+            "service_name": "Ekspres Plus",
+            "price": "34.90 USD",
+            "weight": "0.5 kg",
+            "origin": "Singapura"
+          },
+          {
+            "service_name": "Ekspres Standard",
+            "price": "39.88 USD",
+            "weight": "1.0 kg",
+            "origin": "Vietnam"
+          },
+          {
+            "service_name": "Ekspres Penjimat",
+            "price": "38.15 USD",
+            "weight": "0.5 kg",
+            "origin": "Vietnam"
+          }
+        ]
       },
       "commercial": {
         "title": "Komersial",
         "description": "Talian logistik khusus dan pengendalian istimewa yang disesuaikan untuk keperluan penghantaran komersial yang unik.",
         "partners_label": "Rakan Penghantaran",
         "country_label": "Negara Asal",
-        "service_name": "Penghantaran Paket Rentas Sempadan",
+        "service_name": "Komersial",
         "services_covered_label": "Perkhidmatan yang Diliputi",
-        "services_covered": {
-          "service_1": "ePacket Standard",
-          "service_2": "Pak Ekonomi",
-          "service_3": "ePacket Ekonomi",
-          "service_4": "ePacket Dipercepatkan"
-        }
+        "services_covered": [
+          {
+            "service_name": "Talian Khas",
+            "price": "24.79 USD",
+            "weight": "0.5 kg",
+            "origin": "Vietnam"
+          }
+        ]
       },
       "postal_e_commerce": {
         "title": "Pos (E-Dagang)",
-        "description": "Penghantaran paket rentas sempadan yang kos efektif, direka khas untuk meningkatkan jangkauan e-dagang anda.",
+        "description": "Penghantaran paket rentas sempadan yang kos efektif, direka khusus untuk mengembangkan jangkauan e-dagang anda.",
         "partners_label": "Rakan Penghantaran",
         "country_label": "Negara Asal",
         "service_name": "Penghantaran Paket Rentas Sempadan",
         "services_covered_label": "Perkhidmatan yang Diliputi",
-        "services_covered": {
-          "service_1": "Economy epacket",
-          "service_2": "Plus economy epacket",
-          "service_3": "Standard epacket",
-          "service_4": "Economy Pak",
-          "service_5": "Expedited epacket",
-          "service_6": "Saver Direct epacket",
-          "service_7": "Direct epacket"
-        }
+        "services_covered": [
+          {
+            "service_name": "ePacket Ekonomi",
+            "price": "9.05 USD",
+            "weight": "0.05 kg",
+            "origin": "Singapura"
+          },
+          {
+            "service_name": "ePacket Ekonomi Plus",
+            "price": "36.64 USD",
+            "weight": "0.5 kg",
+            "origin": "Singapura"
+          },
+          {
+            "service_name": "ePacket Standard",
+            "price": "7.58 USD",
+            "weight": "0.1 kg",
+            "origin": "Singapura"
+          },
+          {
+            "service_name": "Pak Ekonomi",
+            "price": "7.84 USD",
+            "weight": "0.05 kg",
+            "origin": "Singapura"
+          },
+          {
+            "service_name": "ePacket Dipercepatkan",
+            "price": "7.62 USD",
+            "weight": "0.05 kg",
+            "origin": "Malaysia"
+          },
+          {
+            "service_name": "ePacket Terus Penjimat",
+            "price": "5.24 USD",
+            "weight": "0.05 kg",
+            "origin": "AS"
+          },
+          {
+            "service_name": "ePacket Terus",
+            "price": "5.39 USD",
+            "weight": "0.05 kg",
+            "origin": "AS"
+          }
+        ]
       },
       "sea_freight": {
-        "title": "Kargo Laut",
-        "description": "Penyelesaian kargo laut yang boleh dipercayai dan berskala, termasuk FBA dan LCL, untuk logistik bervolume tinggi.",
+        "title": "Pengangkutan Laut",
+        "description": "Penyelesaian pengangkutan laut yang boleh dipercayai dan berskala, termasuk FBA dan LCL, untuk logistik bervolume tinggi.",
         "partners_label": "Rakan Penghantaran",
         "country_label": "Negara Asal",
-        "service_name": "Pertanyaan Kargo Laut",
+        "service_name": "Pengangkutan Laut",
         "services_covered_label": "Perkhidmatan yang Diliputi",
-        "services_covered": {
-          "service_1": "FBA",
-          "service_2": "Penghantaran LCL",
-          "service_3": "Penghantaran FCL"
-        }
+        "services_covered": [
+          {
+            "service_name": "FBA",
+            "price": "230.87 USD",
+            "weight": "1.0 CBM",
+            "origin": "Vietnam"
+          },
+          {
+            "service_name": "LCL",
+            "price": "3.25 USD",
+            "weight": "1.0 kg",
+            "origin": "Vietnam"
+          }
+        ]
       },
       "us_domestic": {
         "title": "Domestik AS",
-        "description": "Liputan seluruh negara yang lengkap di AS, daripada pilihan darat ekonomi hingga keutamaan yang dipercepatkan.",
+        "description": "Liputan seluruh negara yang lengkap merentasi AS, dari darat ekonomi hingga pilihan ekspres prioriti.",
         "partners_label": "Rakan Penghantaran",
         "country_label": "Negara Asal",
-        "service_name": "Penghantaran Destinasi AS",
+        "service_name": "Destinasi AS",
         "services_covered_label": "Perkhidmatan yang Diliputi",
-        "services_covered": {
-          "service_1": "Standard Mail",
-          "service_2": "Express Mail",
-          "service_3": "Economy Mail",
-          "service_4": "Priority Mail"
-        }
+        "services_covered": [
+          {
+            "service_name": "Mel Standard",
+            "price": "5.08 USD",
+            "weight": "0.05 kg",
+            "origin": "AS"
+          },
+          {
+            "service_name": "Mel Ekspres",
+            "price": "10.47 USD",
+            "weight": "0.5 kg",
+            "origin": "AS"
+          },
+          {
+            "service_name": "Mel Ekonomi",
+            "price": "3.91 USD",
+            "weight": "1.0 kg",
+            "origin": "AS"
+          }
+        ]
       }
     }
   },

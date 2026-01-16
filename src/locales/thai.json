@@ -1335,87 +1335,198 @@
   },
   "services_section": {
     "badge": "บริการของเรา",
-    "headline": "แพลตฟอร์มครบวงจรสำหรับ\nโลจิสติกส์ข้ามพรมแดน",
-    "headline_highlighted": "แพลตฟอร์มครบวงจร",
-    "description": "ShipX รวบรวมโซลูชันจาก Amilo และ SG Link เพื่อนำเสนอบริการที่ครอบคลุม ไม่ว่าคุณจะต้องการบริการขนส่งด่วนทั่วโลก (Express Worldwide), คลังสินค้าและการจัดส่งในสหรัฐอเมริกา (USA Fulfillment) หรือการจัดการ FBA โดยเฉพาะ เราจัดการความซับซ้อนด้านการปฏิบัติตามกฎระเบียบและเอกสารระดับโลกให้คุณ",
-    "button": "จองการสาธิต (Demo)",
+    "headline": "แพลตฟอร์มแบบครบวงจรสำหรับ\nโลจิสติกส์ข้ามพรมแดน",
+    "headline_highlighted": "แพลตฟอร์มแบบครบวงจร",
+    "description": "ShipX รวบรวมโซลูชันจาก Amilo และ SG Link เพื่อนำเสนอบริการที่ครอบคลุม ไม่ว่าคุณจะต้องการการจัดส่งด่วนทั่วโลก การจัดการคลังสินค้าปลายทางในสหรัฐฯ หรือการจัดการ FBA เฉพาะทาง เราบริหารจัดการความซับซ้อนด้านการปฏิบัติตามกฎระเบียบและเอกสารระดับโลกแทนคุณ",
+    "button": "จองการสาธิต",
     "cards": {
       "express": {
-        "title": "บริการด่วน (Express)",
-        "description": "เร่งธุรกิจของคุณด้วยโซลูชันการขนส่งระดับโลกที่รวดเร็วและพรีเมียม ขับเคลื่อนโดยผู้ให้บริการขนส่งระดับโลก",
+        "title": "ด่วน",
+        "description": "เร่งการเติบโตของธุรกิจคุณด้วยโซลูชันการจัดส่งระดับโลกแบบพรีเมียมที่เน้นความรวดเร็ว ขับเคลื่อนโดยผู้ให้บริการขนส่งระดับโลก",
         "partners_label": "พาร์ทเนอร์การจัดส่ง",
         "country_label": "ประเทศต้นทาง",
         "service_name": "การจัดส่งด่วนระหว่างประเทศ",
         "services_covered_label": "บริการที่ครอบคลุม",
-        "services_covered": {
-          "service_1": "Premium Express",
-          "service_2": "Priority Express",
-          "service_3": "Economy Express",
-          "service_4": "Preferred Express",
-          "service_5": "Prime Express",
-          "service_6": "Regular Express",
-          "service_7": "Plus Express",
-          "service_8": "Standard Express",
-          "service_9": "Saver Express"
-        }
+        "services_covered": [
+          {
+            "service_name": "[VN] ด่วนพรีเมียม",
+            "price": "61.28 USD",
+            "weight": "0.5 kg",
+            "origin": "เวียดนาม"
+          },
+          {
+            "service_name": "ด่วนบุริมสิทธิ์",
+            "price": "49.58 USD",
+            "weight": "0.5 kg",
+            "origin": "สิงคโปร์"
+          },
+          {
+            "service_name": "[MY] ด่วนพรีเมียม",
+            "price": "41.02 USD",
+            "weight": "0.5 kg",
+            "origin": "มาเลเซีย"
+          },
+          {
+            "service_name": "ด่วนประหยัด",
+            "price": "50.23 USD",
+            "weight": "0.5 kg",
+            "origin": "เวียดนาม"
+          },
+          {
+            "service_name": "ด่วนพิเศษ",
+            "price": "51.05 USD",
+            "weight": "0.5 kg",
+            "origin": "เวียดนาม"
+          },
+          {
+            "service_name": "ด่วนไพรม์",
+            "price": "45.32 USD",
+            "weight": "0.5 kg",
+            "origin": "สิงคโปร์"
+          },
+          {
+            "service_name": "ด่วนปกติ",
+            "price": "36.96 USD",
+            "weight": "0.5 kg",
+            "origin": "สิงคโปร์"
+          },
+          {
+            "service_name": "ด่วนพลัส",
+            "price": "34.90 USD",
+            "weight": "0.5 kg",
+            "origin": "สิงคโปร์"
+          },
+          {
+            "service_name": "ด่วนมาตรฐาน",
+            "price": "39.88 USD",
+            "weight": "1.0 kg",
+            "origin": "เวียดนาม"
+          },
+          {
+            "service_name": "ด่วนสุดคุ้ม",
+            "price": "38.15 USD",
+            "weight": "0.5 kg",
+            "origin": "เวียดนาม"
+          }
+        ]
       },
       "commercial": {
         "title": "เชิงพาณิชย์",
         "description": "เส้นทางโลจิสติกส์เฉพาะทางและการจัดการพิเศษที่ปรับให้เหมาะกับความต้องการในการจัดส่งเชิงพาณิชย์โดยเฉพาะ",
         "partners_label": "พาร์ทเนอร์การจัดส่ง",
         "country_label": "ประเทศต้นทาง",
-        "service_name": "การจัดส่งพัสดุข้ามพรมแดน",
+        "service_name": "เชิงพาณิชย์",
         "services_covered_label": "บริการที่ครอบคลุม",
-        "services_covered": {
-          "service_1": "ePacket มาตรฐาน",
-          "service_2": "พัสดุแบบประหยัด",
-          "service_3": "ePacket แบบประหยัด",
-          "service_4": "ePacket แบบเร่งด่วน"
-        }
+        "services_covered": [
+          {
+            "service_name": "เส้นทางพิเศษ",
+            "price": "24.79 USD",
+            "weight": "0.5 kg",
+            "origin": "เวียดนาม"
+          }
+        ]
       },
       "postal_e_commerce": {
-        "title": "ไปรษณีย์ (E-Commerce)",
-        "description": "การจัดส่งพัสดุข้ามพรมแดนที่คุ้มค่า ออกแบบมาโดยเฉพาะเพื่อขยายการเข้าถึงอีคอมเมิร์ซของคุณ",
+        "title": "ไปรษณีย์ (อีคอมเมิร์ซ)",
+        "description": "การจัดส่งพัสดุข้ามพรมแดนที่คุ้มค่า ออกแบบมาโดยเฉพาะเพื่อขยายการเข้าถึงธุรกิจอีคอมเมิร์ซของคุณ",
         "partners_label": "พาร์ทเนอร์การจัดส่ง",
         "country_label": "ประเทศต้นทาง",
         "service_name": "การจัดส่งพัสดุข้ามพรมแดน",
         "services_covered_label": "บริการที่ครอบคลุม",
-        "services_covered": {
-          "service_1": "Economy epacket",
-          "service_2": "Plus economy epacket",
-          "service_3": "Standard epacket",
-          "service_4": "Economy Pak",
-          "service_5": "Expedited epacket",
-          "service_6": "Saver Direct epacket",
-          "service_7": "Direct epacket"
-        }
+        "services_covered": [
+          {
+            "service_name": "ePacket แบบประหยัด",
+            "price": "9.05 USD",
+            "weight": "0.05 kg",
+            "origin": "สิงคโปร์"
+          },
+          {
+            "service_name": "ePacket แบบประหยัดพลัส",
+            "price": "36.64 USD",
+            "weight": "0.5 kg",
+            "origin": "สิงคโปร์"
+          },
+          {
+            "service_name": "ePacket มาตรฐาน",
+            "price": "7.58 USD",
+            "weight": "0.1 kg",
+            "origin": "สิงคโปร์"
+          },
+          {
+            "service_name": "พัสดุแบบประหยัด",
+            "price": "7.84 USD",
+            "weight": "0.05 kg",
+            "origin": "สิงคโปร์"
+          },
+          {
+            "service_name": "ePacket แบบเร่งด่วน",
+            "price": "7.62 USD",
+            "weight": "0.05 kg",
+            "origin": "มาเลเซีย"
+          },
+          {
+            "service_name": "ePacket ตรงแบบสุดคุ้ม",
+            "price": "5.24 USD",
+            "weight": "0.05 kg",
+            "origin": "สหรัฐอเมริกา"
+          },
+          {
+            "service_name": "ePacket จัดส่งตรง",
+            "price": "5.39 USD",
+            "weight": "0.05 kg",
+            "origin": "สหรัฐอเมริกา"
+          }
+        ]
       },
       "sea_freight": {
         "title": "การขนส่งทางทะเล",
         "description": "โซลูชันการขนส่งทางทะเลที่เชื่อถือได้และปรับขนาดได้ รวมถึง FBA และ LCL สำหรับโลจิสติกส์ปริมาณมาก",
         "partners_label": "พาร์ทเนอร์การจัดส่ง",
         "country_label": "ประเทศต้นทาง",
-        "service_name": "สอบถามข้อมูลการขนส่งทางทะเล",
+        "service_name": "การขนส่งทางทะเล",
         "services_covered_label": "บริการที่ครอบคลุม",
-        "services_covered": {
-          "service_1": "FBA",
-          "service_2": "การขนส่ง LCL",
-          "service_3": "การขนส่ง FCL"
-        }
+        "services_covered": [
+          {
+            "service_name": "FBA",
+            "price": "230.87 USD",
+            "weight": "1.0 CBM",
+            "origin": "เวียดนาม"
+          },
+          {
+            "service_name": "LCL",
+            "price": "3.25 USD",
+            "weight": "1.0 kg",
+            "origin": "เวียดนาม"
+          }
+        ]
       },
       "us_domestic": {
         "title": "ภายในประเทศสหรัฐฯ",
-        "description": "ครอบคลุมทั่วประเทศสหรัฐอเมริกา ตั้งแต่การขนส่งทางบกแบบประหยัดไปจนถึงตัวเลือกเร่งด่วน",
+        "description": "ครอบคลุมทั่วประเทศสหรัฐอเมริกา ตั้งแต่การขนส่งทางบกแบบประหยัดไปจนถึงตัวเลือกเร่งด่วนแบบบุริมสิทธิ์",
         "partners_label": "พาร์ทเนอร์การจัดส่ง",
         "country_label": "ประเทศต้นทาง",
-        "service_name": "การจัดส่งปลายทางสหรัฐฯ",
+        "service_name": "ปลายทางสหรัฐฯ",
         "services_covered_label": "บริการที่ครอบคลุม",
-        "services_covered": {
-          "service_1": "Standard Mail",
-          "service_2": "Express Mail",
-          "service_3": "Economy Mail",
-          "service_4": "Priority Mail"
-        }
+        "services_covered": [
+          {
+            "service_name": "ไปรษณีย์มาตรฐาน",
+            "price": "5.08 USD",
+            "weight": "0.05 kg",
+            "origin": "สหรัฐอเมริกา"
+          },
+          {
+            "service_name": "ไปรษณีย์ด่วน",
+            "price": "10.47 USD",
+            "weight": "0.5 kg",
+            "origin": "สหรัฐอเมริกา"
+          },
+          {
+            "service_name": "ไปรษณีย์ประหยัด",
+            "price": "3.91 USD",
+            "weight": "1.0 kg",
+            "origin": "สหรัฐอเมริกา"
+          }
+        ]
       }
     }
   },

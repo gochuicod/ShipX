@@ -106,7 +106,7 @@ export default function ServiceCard({
             onClick={onCtaClick}
             className="mt-2 w-full md:w-auto px-6 py-2 bg-[#FBE0FF] rounded-lg transition-colors cursor-pointer hover:bg-[#f0caff]"
           >
-            <span className="font-['Inter'] font-normal text-[14px] leading-4 text-[#4D525C] text-center block">
+            <span className="font-['Inter'] font-bold text-[14px] leading-4 text-[#4D525C] text-center block">
               {ctaText}
             </span>
           </span>

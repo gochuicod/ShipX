@@ -1392,7 +1392,7 @@
         "description": "Specialized logistics lines and special handling tailored for unique commercial shipping requirements.",
         "partners_label": "Delivery Partners",
         "country_label": "Country Origin",
-        "service_name": "Cross border Packet Delivery",
+        "service_name": "Commercial",
         "services_covered_label": "Services Covered",
         "services_covered": [
           {
@@ -1460,7 +1460,7 @@
         "description": "Reliable and scalable ocean freight solutions, including FBA and LCL, for high-volume logistics.",
         "partners_label": "Delivery Partners",
         "country_label": "Country Origin",
-        "service_name": "Sea Freight Inquiry",
+        "service_name": "Sea Freight",
         "services_covered_label": "Services Covered",
         "services_covered": [
           {
@@ -1482,7 +1482,7 @@
         "description": "Complete nationwide coverage across the USA, ranging from economy ground to priority expedited options.",
         "partners_label": "Delivery Partners",
         "country_label": "Country Origin",
-        "service_name": "US Destination Delivery",
+        "service_name": "US Destination",
         "services_covered_label": "Services Covered",
         "services_covered": [
           {

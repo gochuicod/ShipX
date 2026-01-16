@@ -1314,7 +1314,7 @@
     "badge": "Layanan Kami",
     "headline": "Platform Terpadu untuk\nLogistik Lintas Batas",
     "headline_highlighted": "Platform Terpadu",
-    "description": "ShipX menggabungkan solusi dari Amilo & SG Link untuk menawarkan rangkaian layanan yang komprehensif. Baik Anda membutuhkan pengiriman Express Worldwide, Fulfillment Tujuan AS, atau penanganan FBA khusus, kami mengelola kerumitan kepatuhan dan dokumentasi global untuk Anda.",
+    "description": "ShipX menggabungkan solusi dari Amilo & SG Link untuk menawarkan rangkaian layanan yang komprehensif. Baik Anda memerlukan pengiriman Ekspres Seluruh Dunia, Pemenuhan (Fulfillment) Tujuan AS, atau penanganan FBA khusus, kami mengelola kerumitan kepatuhan global dan dokumentasi untuk Anda.",
     "button": "Pesan Demo",
     "cards": {
       "express": {
@@ -1323,32 +1323,85 @@
         "partners_label": "Mitra Pengiriman",
         "country_label": "Negara Asal",
         "service_name": "Pengiriman Ekspres Internasional",
-        "services_covered_label": "Layanan yang Tercakup",
-        "services_covered": {
-          "service_1": "Premium Express",
-          "service_2": "Priority Express",
-          "service_3": "Economy Express",
-          "service_4": "Preferred Express",
-          "service_5": "Prime Express",
-          "service_6": "Regular Express",
-          "service_7": "Plus Express",
-          "service_8": "Standard Express",
-          "service_9": "Saver Express"
-        }
+        "services_covered_label": "Layanan yang Dicakup",
+        "services_covered": [
+          {
+            "service_name": "[VN] Ekspres Premium",
+            "price": "61.28 USD",
+            "weight": "0.5 kg",
+            "origin": "Vietnam"
+          },
+          {
+            "service_name": "Ekspres Prioritas",
+            "price": "49.58 USD",
+            "weight": "0.5 kg",
+            "origin": "Singapura"
+          },
+          {
+            "service_name": "[MY] Ekspres Premium",
+            "price": "41.02 USD",
+            "weight": "0.5 kg",
+            "origin": "Malaysia"
+          },
+          {
+            "service_name": "Ekspres Ekonomis",
+            "price": "50.23 USD",
+            "weight": "0.5 kg",
+            "origin": "Vietnam"
+          },
+          {
+            "service_name": "Ekspres Pilihan",
+            "price": "51.05 USD",
+            "weight": "0.5 kg",
+            "origin": "Vietnam"
+          },
+          {
+            "service_name": "Ekspres Utama (Prime)",
+            "price": "45.32 USD",
+            "weight": "0.5 kg",
+            "origin": "Singapura"
+          },
+          {
+            "service_name": "Ekspres Reguler",
+            "price": "36.96 USD",
+            "weight": "0.5 kg",
+            "origin": "Singapura"
+          },
+          {
+            "service_name": "Ekspres Plus",
+            "price": "34.90 USD",
+            "weight": "0.5 kg",
+            "origin": "Singapura"
+          },
+          {
+            "service_name": "Ekspres Standar",
+            "price": "39.88 USD",
+            "weight": "1.0 kg",
+            "origin": "Vietnam"
+          },
+          {
+            "service_name": "Ekspres Hemat (Saver)",
+            "price": "38.15 USD",
+            "weight": "0.5 kg",
+            "origin": "Vietnam"
+          }
+        ]
       },
       "commercial": {
         "title": "Komersial",
         "description": "Jalur logistik khusus dan penanganan spesial yang disesuaikan untuk kebutuhan pengiriman komersial yang unik.",
         "partners_label": "Mitra Pengiriman",
         "country_label": "Negara Asal",
-        "service_name": "Pengiriman Paket Lintas Batas",
+        "service_name": "Komersial",
         "services_covered_label": "Layanan yang Dicakup",
-        "services_covered": {
-          "service_1": "ePacket Standar",
-          "service_2": "Paket Ekonomis",
-          "service_3": "ePacket Ekonomis",
-          "service_4": "ePacket Dipercepat"
-        }
+        "services_covered": [
+          {
+            "service_name": "Jalur Khusus",
+            "price": "24.79 USD",
+            "weight": "0.5 kg",
+            "origin": "Vietnam"
+          }
+        ]
       },
       "postal_e_commerce": {
         "title": "Pos (E-Commerce)",
@@ -1356,43 +1409,101 @@
         "partners_label": "Mitra Pengiriman",
         "country_label": "Negara Asal",
         "service_name": "Pengiriman Paket Lintas Batas",
-        "services_covered_label": "Layanan yang Tercakup",
-        "services_covered": {
-          "service_1": "Economy epacket",
-          "service_2": "Plus economy epacket",
-          "service_3": "Standard epacket",
-          "service_4": "Economy Pak",
-          "service_5": "Expedited epacket",
-          "service_6": "Saver Direct epacket",
-          "service_7": "Direct epacket"
-        }
+        "services_covered_label": "Layanan yang Dicakup",
+        "services_covered": [
+          {
+            "service_name": "ePacket Ekonomis",
+            "price": "9.05 USD",
+            "weight": "0.05 kg",
+            "origin": "Singapura"
+          },
+          {
+            "service_name": "ePacket Ekonomis Plus",
+            "price": "36.64 USD",
+            "weight": "0.5 kg",
+            "origin": "Singapura"
+          },
+          {
+            "service_name": "ePacket Standar",
+            "price": "7.58 USD",
+            "weight": "0.1 kg",
+            "origin": "Singapura"
+          },
+          {
+            "service_name": "Paket Ekonomis",
+            "price": "7.84 USD",
+            "weight": "0.05 kg",
+            "origin": "Singapura"
+          },
+          {
+            "service_name": "ePacket Dipercepat",
+            "price": "7.62 USD",
+            "weight": "0.05 kg",
+            "origin": "Malaysia"
+          },
+          {
+            "service_name": "ePacket Langsung Hemat",
+            "price": "5.24 USD",
+            "weight": "0.05 kg",
+            "origin": "AS"
+          },
+          {
+            "service_name": "ePacket Langsung",
+            "price": "5.39 USD",
+            "weight": "0.05 kg",
+            "origin": "AS"
+          }
+        ]
       },
       "sea_freight": {
-        "title": "Angkutan Laut",
-        "description": "Solusi kargo laut yang andal dan berskala, termasuk FBA dan LCL, untuk logistik bervolume tinggi.",
+        "title": "Kargo Laut",
+        "description": "Solusi angkutan laut yang andal dan terukur, termasuk FBA dan LCL, untuk logistik bervolume tinggi.",
         "partners_label": "Mitra Pengiriman",
         "country_label": "Negara Asal",
-        "service_name": "Pertanyaan Angkutan Laut",
-        "services_covered_label": "Layanan yang Tercakup",
-        "services_covered": {
-          "service_1": "FBA",
-          "service_2": "Pengiriman LCL",
-          "service_3": "Pengiriman FCL"
-        }
+        "service_name": "Kargo Laut",
+        "services_covered_label": "Layanan yang Dicakup",
+        "services_covered": [
+          {
+            "service_name": "FBA",
+            "price": "230.87 USD",
+            "weight": "1.0 CBM",
+            "origin": "Vietnam"
+          },
+          {
+            "service_name": "LCL",
+            "price": "3.25 USD",
+            "weight": "1.0 kg",
+            "origin": "Vietnam"
+          }
+        ]
       },
       "us_domestic": {
         "title": "Domestik AS",
-        "description": "Cakup nasional lengkap di seluruh AS, mulai dari opsi darat ekonomi hingga prioritas yang dipercepat.",
+        "description": "Cakupkan nasional lengkap di seluruh AS, mulai dari jalur darat ekonomis hingga opsi prioritas yang dipercepat.",
         "partners_label": "Mitra Pengiriman",
         "country_label": "Negara Asal",
-        "service_name": "Pengiriman Tujuan AS",
-        "services_covered_label": "Layanan yang Tercakup",
-        "services_covered": {
-          "service_1": "Standard Mail",
-          "service_2": "Express Mail",
-          "service_3": "Economy Mail",
-          "service_4": "Priority Mail"
-        }
+        "service_name": "Tujuan AS",
+        "services_covered_label": "Layanan yang Dicakup",
+        "services_covered": [
+          {
+            "service_name": "Surat Standar",
+            "price": "5.08 USD",
+            "weight": "0.05 kg",
+            "origin": "AS"
+          },
+          {
+            "service_name": "Surat Kilat",
+            "price": "10.47 USD",
+            "weight": "0.5 kg",
+            "origin": "AS"
+          },
+          {
+            "service_name": "Surat Ekonomis",
+            "price": "3.91 USD",
+            "weight": "1.0 kg",
+            "origin": "AS"
+          }
+        ]
       }
     }
   },
