@@ -5,6 +5,10 @@ export const themeGuide = {
   sectionPaddingY: "xl:py-[128px] md:py-[64px] py-[48px]",
   sectionPaddingX: "xl:px-[122px]",
 
+  // Margins
+  marginX: "lg:px-24 md:px-8 px-8",
+  marginY: "lg:py-5 md:py-5 py-5",
+
   // Typography - Headings
   pageTitle: "text-4xl font-extrabold tracking-tight",
   pageTitleAccent: "text-secondary",

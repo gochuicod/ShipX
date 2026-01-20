@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
-import { CalendarDays } from "lucide-react";
+import { CalendarDays, Phone } from "lucide-react";
 import { useState, useEffect } from "react";
 
 import SmartNavLink from "./ui/SmartNavLink";
@@ -177,61 +177,43 @@ const Footer = memo(() => {
   ];
 
   return (
-    <div className="md:pt-[15vw] pt-[60vw] xl:mt-0 mt-[20vw] relative">
+    <div className="md:pt-[100px] pt-[150px] relative overflow-hidden">
       {/* CTA Section */}
       <div
-        className="
-          absolute
-          xl:top-[5vw] md:top-[-8vw] top-0 left-0 right-0
-          mx-auto
-          xl:w-[80vw] md:w-[92vw] w-[90vw]
-          md:h-fit h-[80vw]
-          rounded-3xl
-          flex flex-col
-          bg-linear-to-b
-          from-[#4F378A]
-          to-[#66005C]
-        "
-        style={{
-          fontFamily: "Inter, system-ui, -apple-system, sans-serif",
-        }}
+        className={cn(
+          "bg-linear-to-b from-[#4F378A] from-[0%] to-[#66005C] to-[95%]",
+          "w-[90%]",
+          "md:min-h-auto min-h-[383px]",
+          "md:w-[95%]",
+          "xl:w-full",
+          "max-w-[1440px]",
+          "absolute",
+          "top-[70px]",
+          "left-1/2",
+          "-translate-x-1/2",
+          "z-10",
+          "rounded-[24px]",
+          "flex flex-row",
+          "md:items-center items-end",
+          "justify-between",
+          "px-8 md:px-16 py-10",
+          "text-['Inter']",
+          "relative",
+        )}
       >
-        {/* Glow blobs */}
-        <div className="absolute w-[256px] h-64 bg-[#FF00E5]/20 blur-3xl rounded-full top-1 left-0" />
+        {/* Glow Blobs */}
+        <div className="absolute w-[256px] h-64 bg-[#FF00E5]/20 blur-3xl rounded-full top-1 left-0 -z-5" />
+        <div className="absolute w-[256px] h-64 bg-[#FF00E5]/20 blur-3xl rounded-full top-1 right-0 -z-5" />
 
-        {/* Content */}
-        <div
-          className={`
-            relative
-            flex flex-col
-            md:items-start items-center
-            md:h-auto h-[80vw]
-            justify-end
-            gap-y-[3vw] md:gap-y-0
-            ${i18n.language === "vn" ? "xl:w-full md:w-[45vw]" : "xl:w-full md:w-full"}
-            xl:px-16 xl:py-9 md:p-8.5 p-7
-            text-white
-          `}
-        >
-          <span
-            className={cn(
-              themeGuide.ctaHeading,
-              "md:text-start text-center md:w-auto w-[70%]",
-            )}
-          >
+        {/* Left side */}
+        <div className="flex flex-col">
+          <span className="2xl:text-[32px] text-[28px] leading-[32px] font-semibold text-white md:text-start text-center">
             {t("shipment_tracker.shipment_cta_section.title")}
           </span>
-
-          <span
-            className={cn(
-              themeGuide.ctaDescription,
-              "opacity-90 font-light xl:w-[50%] md:w-[50%] md:pt-2 pt-0 md:text-start text-center",
-            )}
-          >
+          <span className="md:w-[65%] w-full font-normal text-white md:text-start text-center">
             {t("shipment_tracker.shipment_cta_section.description")}
           </span>
-
-          <div className="flex flex-row gap-x-[3vw] md:gap-x-[1vw] mt-4">
+          <div className="flex flex-row md:justify-start justify-center gap-3 mt-6">
             <AppButton
               to="/book-a-demo"
               text={t("header.book_a_demo") || "Book a Demo"}
@@ -243,30 +225,30 @@ const Footer = memo(() => {
               text={t("header.contact_us") || "Contact Us"}
               variant="secondary"
               withLeftIcon={true}
-              leftIcon={<CalendarDays className="size-5" />}
+              leftIcon={<Phone className="size-5" />}
             />
           </div>
-          {/* Footer CTA Image */}
-          <img
-            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/footer/footer_cta_image.webp"
-            alt=""
-            className="
-              xl:w-auto md:w-[50%]
-              h-auto
-              absolute
-              xl:top-[-9.5vw] md:top-0 top-[-26vw]
-              md:right-[-4vw] right-0
-              justify-end
-            "
-          />
         </div>
+        {/* Right side */}
+        <img
+          src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/footer/footer_cta_image.webp"
+          alt="ShipX Footer CTA Image"
+          className={cn(
+            "h-auto md:w-[50%] w-full",
+            "absolute",
+            "2xl:right-0 md:right-[-50px] right-auto",
+            "md:left-auto left-1/2 md:translate-none -translate-x-1/2",
+            "2xl:bottom-[-30px] md:bottom-[5px] bottom-[220px]",
+            "-z-5",
+          )}
+        />
       </div>
       <footer
-        className="bg-[#F3F4F6] w-full pt-[30vw] pb-[4vw] px-[5vw] md:pt-[10vw] md:pb-[2vw] md:px-[5vw] xl:px-[10vw]"
+        className="bg-[#F3F4F6] w-full pt-[150px]"
         style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
       >
         {/* --- TOP SECTION --- */}
-        <div className="flex flex-col xl:items-start md:items-center md:flex-col xl:flex-row gap-[3vw] md:gap-0">
+        <div className="flex flex-col xl:items-start md:items-center md:flex-col xl:flex-row gap-[3vw] md:gap-0 max-w-[1440px] mx-auto">
           {/* LEFT COLUMN: Brand Identity */}
           <div className="flex flex-col xl:justify-start xl:items-start justify-center items-center w-full xl:w-[37%] md:w-full md:mb-[0.5vw] mb-[3.5vw]">
             {/* Logos */}
@@ -387,7 +369,7 @@ const Footer = memo(() => {
         </div>
 
         {/* --- BOTTOM SECTION --- */}
-        <div className="mt-[4vw] md:mt-4 flex flex-col md:flex-row justify-between items-center text-dark-neutral font-normal text-[14px] pt-[4vw] md:pt-0">
+        <div className="mt-[4vw] md:mt-4 flex flex-col md:flex-row justify-between items-center text-dark-neutral font-normal text-[14px] pt-[4vw] md:pt-0 max-w-[1440px] mx-auto">
           <div className="flex flex-row gap-x-[1vw]">
             <SmartNavLink to="terms-and-conditions" end>
               <span>{t("footer.terms_and_conditions")}</span>
