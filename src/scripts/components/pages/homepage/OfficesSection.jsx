@@ -93,7 +93,7 @@ function CountryButtons({ onActiveChange }) {
         />
       )}
 
-      <div className="flex flex-wrap justify-center 2xl:justify-start gap-4 2xl:mt-6">
+      <div className="flex flex-wrap justify-center 2xl:justify-start gap-4 2xl:mt-6 relative z-20">
         {officesSectionCountries.map((item) => {
           const countryName = t(item.country_key);
 
@@ -109,7 +109,7 @@ function CountryButtons({ onActiveChange }) {
           return (
             <div
               key={item.country_key}
-              className={cn("relative transition-all", isOpen ? "z-20" : "z-0")}
+              className={cn("relative transition-all")}
               onMouseEnter={() => handleMouseEnter(countryName)}
               onMouseLeave={handleMouseLeave}
             >

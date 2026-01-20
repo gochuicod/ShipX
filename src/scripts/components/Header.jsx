@@ -223,7 +223,6 @@ const Header = memo(() => {
 
         {/* --- MOBILE ACTIONS (Visible < XL) --- */}
         <div className="xl:hidden flex flex-row items-center gap-4">
-          
           {/* 1. Login Modal in Mobile Header */}
           <LoginModal />
 
