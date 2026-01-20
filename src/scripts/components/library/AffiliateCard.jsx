@@ -3,9 +3,11 @@ import {
   AffiliateCardContent,
   AffiliateCardIllustration,
   AffiliateCardFooter,
+  AffiliateCardHeaderWrapper,
 } from "../../../styles/affiliate-card";
 import { Badge } from "../../../styles/badge";
 import AppButton from "./AppButton";
+import HighlightedHeading from "./HighlightedHeading";
 import { cn } from "../../../lib/util";
 
 export default function AffiliateCard({
@@ -16,6 +18,7 @@ export default function AffiliateCard({
   logo,
   illustration,
   heading,
+  headingHighlight,
   subheading,
   badges = [],
   badgeVariant = "affiliate",
@@ -33,60 +36,76 @@ export default function AffiliateCard({
       <AffiliateCardRoot
         variant={variant}
         padding={padding}
-        className="flex flex-col h-full"
+        className="flex flex-col relative"
       >
-        {illustration && (
-          <AffiliateCardIllustration>
-            <img
-              src={illustration.src}
-              alt={illustration.alt || "Illustration"}
-              className={
-                illustration.className ||
-                "w-80 h-80 md:w-64 md:h-64 object-contain drop-shadow-xl"
-              }
-            />
-          </AffiliateCardIllustration>
-        )}
+        <AffiliateCardHeaderWrapper>
+          {illustration && (
+            <AffiliateCardIllustration>
+              <img
+                src={illustration.src}
+                alt={illustration.alt || "Illustration"}
+                className={
+                  illustration.className ||
+                  "shrink-0 w-80 h-80 md:w-auto md:h-auto md:max-w-[240px] lg:max-w-[280px] object-contain"
+                }
+              />
+            </AffiliateCardIllustration>
+          )}
 
-        {/* FIX 2: Add "flex-1" (and optionally "w-full")
-           This makes the text content area grow to fill empty space,
-           pushing the footer to the bottom.
-        */}
-        <AffiliateCardContent className="flex-1 w-full">
           {logo && (
             <div className="mb-2">
               <img
                 src={logo.src}
                 alt={logo.alt || "Logo"}
-                className={logo.className || "h-10 md:h-10"}
+                className={logo.className || "h-10"}
               />
             </div>
           )}
+        </AffiliateCardHeaderWrapper>
 
+        <AffiliateCardContent>
           {/* Heading */}
-          <h2 className="text-xl font-bold text-slate-900 leading-tight">
-            {heading}
-          </h2>
+          {headingHighlight ? (
+            <HighlightedHeading
+              text={heading}
+              highlight={headingHighlight}
+              className="text-xl font-bold leading-tight"
+            />
+          ) : (
+            <h2 className="text-xl font-bold text-slate-900 leading-tight">
+              {heading}
+            </h2>
+          )}
 
           {/* Subheading */}
-          <p className="text-slate-600 text-sm leading-relaxed">{subheading}</p>
+          <p className="text-slate-600 text-base font-normal leading-relaxed">
+            {subheading}
+          </p>
 
           {/* Badges */}
           {badges && badges.length > 0 && (
-            <div className="mt-2 space-y-2 flex flex-col items-center md:items-start">
-              <p className="lg:text-base md:text-base text-sm font-semibold text-slate-800">
+            <div className="flex flex-col gap-1">
+              <p className="text-base font-medium text-slate-900">
                 Specialties:
               </p>
-              <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+              <div className="flex flex-wrap md:justify-start justify-center gap-1">
                 {badges.map((badge, index) => (
-                  <Badge
-                    key={index}
-                    variant={badgeVariant}
-                    size="sm"
-                    className="lg:px-4 lg:py-1 lg:text-base"
-                  >
-                    {badge.label}
-                  </Badge>
+                  <div key={index} className="md:hidden">
+                    <Badge variant={badgeVariant} size="sm" className="text-xs">
+                      {badge.label}
+                    </Badge>
+                  </div>
+                ))}
+                {badges.map((badge, index) => (
+                  <div key={index} className="hidden md:block">
+                    <Badge
+                      variant={badgeVariant}
+                      size="sm"
+                      className="px-4 py-2 text-sm"
+                    >
+                      {badge.label}
+                    </Badge>
+                  </div>
                 ))}
               </div>
             </div>
@@ -95,7 +114,7 @@ export default function AffiliateCard({
 
         {/* Footer */}
         {actions && actions.length > 0 && (
-          <AffiliateCardFooter className="justify-center md:justify-end gap-2">
+          <AffiliateCardFooter>
             {actions.map((action, index) => (
               <AppButton
                 key={index}
