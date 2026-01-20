@@ -5,7 +5,7 @@ import { cn } from "../../../../lib/util";
 import AffiliateCard from "../../library/AffiliateCard";
 import MobileAffiliateCard from "../../library/MobileAffiliateCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -144,7 +144,11 @@ const AffiliateSection = () => {
       {/* Mobile Swiper Carousel */}
       <div className="md:hidden overflow-visible w-full">
         <Swiper
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]}
+          autoplay={{
+            delay: 7000,
+            disableOnInteraction: false,
+          }}
           pagination={{
             clickable: true,
             el: ".custom-pagination",
