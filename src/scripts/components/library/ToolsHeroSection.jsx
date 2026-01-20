@@ -22,11 +22,11 @@ const ToolsHeroSection = ({ activePage }) => {
       <div
         className={cn(
           themeGuide.paddingX,
-          "relative z-10 w-full flex flex-col items-center lg:items-start",
+          "relative z-10 w-full flex flex-col items-center md:items-start",
         )}
       >
         {/* Left/Top Content Frame - Removed max-w-[608px] to fit entire width */}
-        <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left gap-6 grow w-full">
+        <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left gap-6 grow w-full">
           {/* Heading Stack */}
           <div className="flex flex-col items-center md:items-start gap-2 w-full">
             <h3 className={themeGuide.toolsHeroTitle}>
@@ -35,7 +35,7 @@ const ToolsHeroSection = ({ activePage }) => {
             <p
               className={cn(
                 themeGuide.toolsHeroDescription,
-                "md:text-start text-center lg:max-w-[608px] md:max-w-[420px]",
+                "md:text-start text-center md:max-w-[608px] md:max-w-[420px]",
               )}
             >
               {t("shipment_tracker.hero_section.description")}
@@ -43,7 +43,7 @@ const ToolsHeroSection = ({ activePage }) => {
           </div>
 
           {/* Tab Switcher Integrated */}
-          <div className="flex justify-center md:justify-start w-full">
+          <div className="flex md:justify-start justify-center w-fit">
             <TabSwitcher
               tabs={translatedTabs}
               activeTab={activePage}
