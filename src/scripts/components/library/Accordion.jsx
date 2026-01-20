@@ -96,10 +96,11 @@ export const AccordionTrigger = ({ children, className }) => {
   return (
     <div
       className={cn(
-        "font-inter text-base transition-colors text-left",
+        "font-inter text-base transition-colors duration-300 text-left leading-5",
         isOpen ? "text-[#99008A] font-bold" : "text-[#1E2939] font-normal",
         className,
       )}
+      style={{ transitionProperty: "color, font-weight" }}
     >
       {children}
     </div>
@@ -124,7 +125,7 @@ export const AccordionContent = ({ children, className }) => {
         {/* Padding removed here to align with Title. Optional padding-top ensures spacing. */}
         <div
           className={cn(
-            "pt-1 text-[#4D525C] font-inter font-normal text-sm leading-[1.6] text-justify",
+            "pt-1 text-[#4D525C] font-inter font-normal text-sm leading-4 text-justify",
             className,
           )}
         >

@@ -29,7 +29,7 @@ export const itemVariants = cva(
  * Controls: text color based on open/closed state
  */
 export const triggerTextVariants = cva(
-  "font-normal text-left transition-colors",
+  "font-normal text-left transition-colors leading-5",
   {
     variants: {
       state: {
@@ -92,7 +92,7 @@ export const accordionFontStyle = {
  * Content wrapper typography and spacing
  */
 export const contentWrapperStyles =
-  "text-[#4D525C] font-inter font-normal text-sm leading-[1.6] text-justify";
+  "text-[#4D525C] font-inter font-normal text-sm leading-4 text-justify";
 
 // ===========================================
 // STYLED WRAPPER COMPONENTS
