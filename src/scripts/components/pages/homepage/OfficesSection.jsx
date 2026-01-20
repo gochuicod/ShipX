@@ -120,6 +120,7 @@ function CountryButtons({ onActiveChange }) {
                 leftIcon={item.icon}
                 iconRounded
                 onClick={() => handleClick(countryName)}
+                className={cn(isOpen && "bg-[rgba(204,0,183,0.12)]")}
               />
 
               {isOpen && <OfficePopover office={office} />}
