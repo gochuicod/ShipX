@@ -45,10 +45,9 @@ export default function TabSwitcher({
   return (
     <div
       className={cn(
-        "flex flex-row items-center p-2 gap-2 w-fit",
+        "flex flex-row items-center p-2 gap-2 w-full h-auto",
         "backdrop-blur-xl rounded-xl",
         border && `border border-${borderColor}`,
-        "max-md:max-w-[332px] max-md:h-[103px]",
         !containerBg && "bg-[rgba(245,243,255,0.12)]",
       )}
       style={{ backgroundColor: containerBg }}
@@ -69,7 +68,7 @@ export default function TabSwitcher({
               themeGuide.toolsHeroDescription,
               "flex-1 h-9 px-4 py-2 gap-2 rounded-lg transition-all duration-200 cursor-pointer",
               "flex items-center justify-center",
-              "max-md:flex-col max-md:flex-none max-md:w-[100px] max-md:h-[87px]",
+              "md:flex-row flex-col h-full",
             )}
           >
             <span className="flex items-center justify-center w-6 h-6 shrink-0">

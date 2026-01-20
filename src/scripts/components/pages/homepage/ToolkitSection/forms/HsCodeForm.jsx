@@ -16,14 +16,30 @@ export default function HsCodeForm() {
   };
 
   return (
-    <div className="relative flex flex-col gap-3 bg-white p-3 rounded-xl shadow-lg min-w-[500px]">
+    <div className="relative flex flex-col bg-transparent rounded-xl w-full max-w-[600px]">
+      <label
+        htmlFor="productDescription"
+        className="text-start gap-px text-sm font-medium text-white/90 font-['Inter']"
+      >
+        {t("hs_code_generator_page.form_section.input_1.label")}
+        <span className="text-red-500">*</span>
+      </label>
+      <p
+        htmlFor="productDescription"
+        className="text-start text-sm font-normal text-white/90 font-['Inter'] mb-2"
+      >
+        {t("hs_code_generator_page.form_section.input_1.note")}
+      </p>
+
       <Input
+        id="productDescription"
         multiline
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder={t(
           "trade_and_logistics_toolkit_section.tools.hs_code_generator.form.placeholder",
         )}
+        className="border-none"
       />
 
       <div className="flex flex-row justify-between">
@@ -39,6 +55,7 @@ export default function HsCodeForm() {
           disabled={value.length < 15}
           className="self-end"
           onClick={handleHsCodeGenerator}
+          className="mt-6"
         >
           {t(
             "trade_and_logistics_toolkit_section.tools.hs_code_generator.form.submit_button",

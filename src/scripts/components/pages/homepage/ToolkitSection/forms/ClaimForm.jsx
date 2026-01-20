@@ -17,21 +17,39 @@ export default function ClaimForm() {
   };
 
   return (
-    <div className="relative flex flex-col gap-3 bg-white p-3 rounded-xl shadow-lg min-w-[500px]">
+    <div className="relative flex flex-col rounded-xl bg-transparent w-full max-w-[600px]">
+      <label
+        htmlFor="trackingNumber"
+        className="gap-px text-start text-sm font-medium text-white/90 font-['Inter'] mb-2"
+      >
+        {t("file_a_claim.form_section.fields.tracking_number.label")}
+        <span className="text-red-500">*</span>
+      </label>
       <Input
+        id="trackingNumber"
         value={tracking}
+        className="border-0 mb-3"
         onChange={(e) => setTracking(e.target.value)}
         placeholder={t(
-          "trade_and_logistics_toolkit_section.tools.file_a_claim.form.placeholder_1",
+          "file_a_claim.form_section.fields.tracking_number.placeholder",
         )}
       />
 
+      <label
+        htmlFor="description"
+        className="gap-px text-start text-sm font-medium text-white/90 font-['Inter'] mb-2"
+      >
+        {t("file_a_claim.form_section.fields.description.label")}
+        <span className="text-red-500">*</span>
+      </label>
       <Input
+        id="description"
         multiline
         value={description}
+        className="border-0"
         onChange={(e) => setDescription(e.target.value)}
         placeholder={t(
-          "trade_and_logistics_toolkit_section.tools.file_a_claim.form.placeholder_2",
+          "file_a_claim.form_section.fields.description.placeholder",
         )}
       />
 
@@ -48,6 +66,7 @@ export default function ClaimForm() {
           className="self-end"
           disabled={description.length < 25 || tracking < 2}
           onClick={handleClaimForm}
+          className="mt-6"
         >
           {t(
             "trade_and_logistics_toolkit_section.tools.file_a_claim.form.submit_button",

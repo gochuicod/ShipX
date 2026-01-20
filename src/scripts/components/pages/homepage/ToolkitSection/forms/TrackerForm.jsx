@@ -21,7 +21,7 @@ export default function TrackerForm() {
   };
 
   return (
-    <div className="flex flex-col max-w-[600px] md:items-start items-center">
+    <div className="flex flex-col w-full max-w-[600px] md:items-start items-center">
       {/* Label */}
       <label
         htmlFor="trackingNumber"
@@ -33,7 +33,7 @@ export default function TrackerForm() {
       </label>
 
       {/* Input + Button */}
-      <div className="flex flex-row w-full items-center p-1 gap-2 bg-white rounded-xl shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1)] max-w-[590px]">
+      <div className="flex flex-row w-full items-center p-1 gap-2 bg-white rounded-xl shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1)] max-w-[600px]">
         <div className="flex items-center gap-2 pl-3 grow">
           <Search className="text-[#63666D]" size={20} />
           <input
