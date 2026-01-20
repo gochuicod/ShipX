@@ -75,7 +75,7 @@ const buttonVariants = cva(
           "h-[36px] px-4 rounded-[8px]",
 
           // Typography
-          "font-['Inter'] font-normal text-[#CC00B7]",
+          "font-['Inter'] font-normal text-[#4F378A]",
 
           // Default state (bg-white look with subtle tint)
           "bg-white",
