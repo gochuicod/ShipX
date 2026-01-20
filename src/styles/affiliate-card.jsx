@@ -3,7 +3,7 @@ import { cn } from "../lib/util";
 
 // 1. The Container Style
 const cardVariants = cva(
-  "relative lg:w-full lg:max-w-full md:max-w-[608px] md:mx-auto flex flex-col h-[600px] md:h-full overflow-visible rounded-2xl md:rounded-3xl shadow-sm transition-all",
+  "relative flex flex-col items-start gap-8 w-full min-h-[460px] justify-between overflow-visible rounded-2xl md:rounded-xl shadow-sm transition-all md:mt-20 lg:mt-0",
   {
     variants: {
       variant: {
@@ -13,7 +13,7 @@ const cardVariants = cva(
           "bg-gradient-to-br from-[oklch(0.9524_0.0425_325.9)]/30 to-[oklch(0.7284_0.1708_59.45)]/30",
       },
       padding: {
-        default: "p-3 md:p-10",
+        default: "p-10",
         compact: "p-5",
       },
     },
@@ -35,12 +35,12 @@ function AffiliateCard({ className, variant, padding, children, ...props }) {
   );
 }
 
-// 2. Illustration (Floats outside container with negative margin - top half floats out on both mobile and desktop)
+// 2. Illustration (Uses negative margin offset with overflow visible)
 function AffiliateCardIllustration({ className, children, ...props }) {
   return (
     <div
       className={cn(
-        "absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 flex justify-center pointer-events-none md:left-auto md:w-1/3 md:right-6 md:translate-x-0",
+        "-mt-32 md:absolute md:right-12 md:-top-30 md:mt-0 flex justify-center md:justify-end pointer-events-none w-auto h-auto overflow-visible",
         className,
       )}
       {...props}
@@ -51,12 +51,11 @@ function AffiliateCardIllustration({ className, children, ...props }) {
 }
 
 // 3. Content Section
-// ADDED: flex-1 (This makes this section grow to fill empty space)
 function AffiliateCardContent({ className, children, ...props }) {
   return (
     <div
       className={cn(
-        "relative z-20 flex flex-col gap-6 items-center text-center md:items-start md:text-left max-w-full flex-1 w-full pt-20 md:pt-0",
+        "relative z-20 flex flex-col gap-4 items-center md:items-start w-full text-center md:text-left",
         className,
       )}
       {...props}
@@ -67,12 +66,26 @@ function AffiliateCardContent({ className, children, ...props }) {
 }
 
 // 4. Footer Section
-// ADDED: mt-auto (This is a safety double-check to force it to the bottom)
 function AffiliateCardFooter({ className, children, ...props }) {
   return (
     <div
       className={cn(
-        "mt-auto md:pt-8 py-10 md:py-4 flex flex-wrap items-center gap-3",
+        "flex flex-row justify-center items-center md:justify-end md:items-end gap-4 w-full relative z-20",
+        className,
+      )}
+      {...props}
+    >
+      {children}
+    </div>
+  );
+}
+
+// 5. Header Wrapper (for Illustration and Logo)
+function AffiliateCardHeaderWrapper({ className, children, ...props }) {
+  return (
+    <div
+      className={cn(
+        "flex flex-col items-center md:flex-row md:justify-between md:items-start w-full gap-4",
         className,
       )}
       {...props}
@@ -87,4 +100,5 @@ export {
   AffiliateCardIllustration,
   AffiliateCardContent,
   AffiliateCardFooter,
+  AffiliateCardHeaderWrapper,
 };

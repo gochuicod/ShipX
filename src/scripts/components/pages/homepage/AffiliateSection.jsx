@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { themeGuide } from "../../../../styles/themeGuide";
 import { cn } from "../../../../lib/util";
 import AffiliateCard from "../../library/AffiliateCard";
+import MobileAffiliateCard from "../../library/MobileAffiliateCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
@@ -27,13 +28,9 @@ const AffiliateSection = () => {
         src: "https://cdn.jsdelivr.net/gh/hezekiahdane/ShipX-Copy@shipx-v2/src/assets/affiliate_card/sglink-affiliate-card.webp",
         alt: "Global Shipping",
       },
-      heading: (
-        <>
-          <span className="text-(--secondary)">
-            {t("sg_link_and_amilo_section.sg_link_card.title_highlighted")}
-          </span>{" "}
-          {t("sg_link_and_amilo_section.sg_link_card.title")}
-        </>
+      heading: t("sg_link_and_amilo_section.sg_link_card.title"),
+      headingHighlight: t(
+        "sg_link_and_amilo_section.sg_link_card.title_highlighted",
       ),
       subheading: t("sg_link_and_amilo_section.sg_link_card.description"),
       badges: [
@@ -78,13 +75,9 @@ const AffiliateSection = () => {
         src: "https://cdn.jsdelivr.net/gh/hezekiahdane/ShipX-Copy@shipx-v2/src/assets/affiliate_card/amilo-affiliate-card.webp",
         alt: "Amilo Illustration",
       },
-      heading: (
-        <>
-          <span className="text-(--secondary)">
-            {t("sg_link_and_amilo_section.amilo_card.title_highlighted")}
-          </span>{" "}
-          {t("sg_link_and_amilo_section.amilo_card.title")}
-        </>
+      heading: t("sg_link_and_amilo_section.amilo_card.title"),
+      headingHighlight: t(
+        "sg_link_and_amilo_section.amilo_card.title_highlighted",
       ),
       subheading: t("sg_link_and_amilo_section.amilo_card.description"),
       badges: [
@@ -122,24 +115,25 @@ const AffiliateSection = () => {
   return (
     <Container
       className={cn(
-        "relative w-full overflow-y-visible",
+        "relative w-full overflow-visible",
         themeGuide.sectionPaddingY,
       )}
     >
       {/* Desktop and Tablet Layout */}
       <div
-        className={`hidden md:flex lg:flex-row md:flex-col justify-center items-center lg:items-stretch gap-32 lg:gap-8 md:gap-22 overflow-y-visible`}
+        className={`hidden md:flex md:flex-col lg:flex-row justify-center px-0 md:px-20 lg:px-0 items-center gap-12 overflow-visible w-full`}
       >
         {cards.map((card) => (
           <AffiliateCard
             key={card.id}
-            containerClassName="h-full w-full"
-            className="flex-1 w-full"
+            containerClassName="w-full"
+            className="w-full"
             variant={card.variant}
             badgeVariant={card.badgeVariant}
             logo={card.logo}
             illustration={card.illustration}
             heading={card.heading}
+            headingHighlight={card.headingHighlight}
             subheading={card.subheading}
             badges={card.badges}
             actions={card.actions}
@@ -148,10 +142,9 @@ const AffiliateSection = () => {
       </div>
 
       {/* Mobile Swiper Carousel */}
-      <div className="md:hidden overflow-y-visible">
+      <div className="md:hidden overflow-visible w-full">
         <Swiper
           modules={[Pagination]}
-          spaceBetween={24}
           pagination={{
             clickable: true,
             el: ".custom-pagination",
@@ -159,18 +152,17 @@ const AffiliateSection = () => {
             bulletActiveClass: "swiper-bullet-active",
           }}
           onSlideChange={(swiper) => setCurrentSlide(swiper.activeIndex)}
-          className="w-full pt-20! pb-2! overflow-visible"
+          className="w-full overflow-visible"
         >
           {cards.map((card) => (
             <SwiperSlide key={card.id} className="w-full overflow-visible">
-              <AffiliateCard
-                containerClassName="h-full w-full"
-                className="w-full"
+              <MobileAffiliateCard
                 variant={card.variant}
                 badgeVariant={card.badgeVariant}
                 logo={card.logo}
                 illustration={card.illustration}
                 heading={card.heading}
+                headingHighlight={card.headingHighlight}
                 subheading={card.subheading}
                 badges={card.badges}
                 actions={card.actions}
@@ -179,15 +171,19 @@ const AffiliateSection = () => {
           ))}
         </Swiper>
 
-        <div className="custom-pagination swiper-pagination mt-4 flex justify-center gap-2"></div>
+        <div className="custom-pagination swiper-pagination flex justify-center gap-2 mt-8"></div>
         <style>{`
+          .md\:hidden { overflow: visible !important; }
+          .md\:hidden .swiper { overflow: visible !important; }
+          .md\:hidden .swiper-viewport { overflow: visible !important; }
+          .md\:hidden .swiper-wrapper { overflow: visible !important; }
           .custom-pagination { display: flex; justify-content: center; gap: 8px; }
           .swiper-bullet {
             width: 10px; height: 10px; border-radius: 50%; background: transparent;
             border: 2px solid #4F378A; cursor: pointer; transition: all 0.3s ease;
           }
           .swiper-bullet-active { background: #4F378A; border: 2px solid #4F378A; }
-          .swiper-slide { padding: 0 12px; }
+          .swiper-slide { padding: 0 12px; display: flex !important; overflow: visible !important; align-items: center; justify-content: center; }
         `}</style>
       </div>
     </Container>
