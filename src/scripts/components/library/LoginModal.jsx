@@ -71,7 +71,7 @@ const LoginModal = ({ footer = false, placement = "auto" }) => {
   return (
     <div
       ref={dropdownRef}
-      className="relative flex items-center h-full"
+      className={cn("relative flex items-center h-full", footer && "w-full")}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -81,7 +81,7 @@ const LoginModal = ({ footer = false, placement = "auto" }) => {
         className={cn(
           "cursor-pointer transition-colors duration-300 flex items-center",
           footer
-            ? "bg-white hover:bg-secondary-hover active:bg-secondary-active border border-violet-300 active:border-secondary-active text-primary active:text-white font-normal shadow-[1px_1px_2px_rgba(0,0,0,0.3),inset_-2px_-2px_6px_rgba(167,139,250,0.3)] px-4 py-[5px] rounded-lg gap-2"
+            ? "w-full bg-white hover:bg-secondary-hover active:bg-secondary-active border border-violet-300 active:border-secondary-active text-primary active:text-white font-normal shadow-[1px_1px_2px_rgba(0,0,0,0.3),inset_-2px_-2px_6px_rgba(167,139,250,0.3)] px-4 py-[5px] rounded-lg gap-2 justify-center"
             : `gap-x-1 text-nav font-normal text-base hover:text-[#FF00E5] ${
                 open && "text-[#FF00E5]"
               }`,

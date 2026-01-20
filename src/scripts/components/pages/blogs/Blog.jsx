@@ -146,9 +146,9 @@ const Blog = () => {
       </style>
 
       <div className="w-full bg-white font-['Inter']">
-        <article className={`mx-auto ${themeGuide.paddingX} py-16`}>
+        <article className="mx-auto px-4 sm:px-8 lg:px-24 py-16 max-w-[1248px]">
           {/* --- HEADER SECTION --- */}
-          <div className="flex flex-col gap-4 items-center md:items-start max-w-[1034px] mx-auto mb-12">
+          <div className="flex flex-col gap-2 items-center sm:items-start max-w-[1034px] mx-auto mb-16">
             {post.tags && post.tags.length > 0 && (
               <div className="flex flex-row items-center gap-1.5">
                 {post.tags.slice(0, 2).map((tag, index) => (
@@ -158,17 +158,20 @@ const Blog = () => {
                 ))}
               </div>
             )}
-            <h1 className="text-3xl md:text-5xl font-semibold text-[#121212] leading-tight tracking-tight text-center md:text-left">
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-semibold text-[#121212] leading-10 sm:leading-10 lg:leading-[3rem] tracking-tight text-center sm:text-left">
               {post.title}
             </h1>
-            <div className="flex flex-row items-center gap-6">
-              <span className="text-[#4D525C]">{post.author}</span>
-              <span className="text-[#4D525C]">{post.date}</span>
+            <div className="flex flex-row items-center gap-6 pt-2">
+              <span className="text-sm sm:text-base text-[#4D525C]">
+                {post.author}
+              </span>
+              <span className="text-sm sm:text-base text-[#4D525C]">
+                {post.date}
+              </span>
             </div>
           </div>
-
           {/* --- HERO IMAGE --- */}
-          <div className="w-full max-w-[1248px] mx-auto h-52 md:h-[500px] rounded-3xl overflow-hidden relative mb-16">
+          <div className="w-full max-w-[1248px] mx-auto h-48 sm:h-80 lg:h-[500px] rounded-2xl lg:rounded-3xl overflow-hidden relative mb-16">
             <img
               src={
                 i18n.language === "vn" && post.cover_vn
@@ -180,50 +183,50 @@ const Blog = () => {
               loading="eager"
             />
           </div>
-
           {/* --- DYNAMIC CONTENT RENDERING BASED ON FIGMA --- */}
-          <div className="flex flex-col gap-16 w-full items-center">
+          <div className="flex flex-col gap-8 sm:gap-12 lg:gap-16 w-full items-center">
             {contentBlocks.map((block, index) => {
               // 1. FULL WIDTH TEXT BLOCK
-              // Figma: 1034px width, Source Serif Pro, 16px/24px
+              // Desktop: 1034px, 16px/24px | Tablet: 704px, 14px/21px | Mobile: 376px, 14px/21px
               if (block.type === "text_full") {
                 return (
                   <div
                     key={index}
-                    className="w-full max-w-[1034px] text-[#1E2939] opacity-90 text-base leading-[24px] font-['Source_Serif_Pro'] font-normal 
-                    [&>p]:mb-4 [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:mb-4 [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:mb-4"
+                    className="w-full max-w-[1034px] sm:max-w-[704px] lg:max-w-[1034px] px-4 sm:px-4 lg:px-0 text-[#1E2939] opacity-90 text-sm sm:text-sm lg:text-base leading-6 sm:leading-[21px] lg:leading-6 font-['Source_Serif_Pro'] font-normal 
+                    [&>p]:mb-4 [&>p]:text-sm [&>p]:sm:text-sm [&>p]:lg:text-base [&>p]:leading-6 [&>p]:sm:leading-[21px] [&>p]:lg:leading-6
+                    [&>h2]:text-lg [&>h2]:sm:text-base [&>h2]:lg:text-2xl [&>h2]:font-bold [&>h2]:mb-4 
+                    [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:mb-4 [&>li]:text-sm [&>li]:sm:text-sm [&>li]:lg:text-base [&>li]:leading-6 [&>li]:sm:leading-[21px] [&>li]:lg:leading-6"
                     dangerouslySetInnerHTML={{ __html: block.content }}
                   />
                 );
               }
 
-              // 2. SPLIT VIEW (IMAGE + TEXT)
-              // Figma: 1248px width, Gap 32px
+              // 2. SINGLE COLUMN VIEW (IMAGE + TEXT STACKED)
+              // Desktop: 1034px | Tablet: 704px | Mobile: 376px
               if (block.type === "split") {
-                const isEven = splitViewCount % 2 === 0; // Toggle alignment
                 splitViewCount++;
 
                 return (
                   <div
                     key={index}
-                    className={`w-full max-w-[1248px] flex flex-col lg:flex-row gap-8 items-start ${
-                      isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                    }`}
+                    className="w-full max-w-[1034px] sm:max-w-[704px] lg:max-w-[1034px] flex flex-col gap-6 sm:gap-6 lg:gap-8 items-center"
                   >
-                    {/* Image Container: 501px fixed width on desktop only */}
-                    <div className="w-full lg:w-[501px] h-[280px] lg:h-auto shrink-0 rounded-2xl overflow-hidden relative">
+                    {/* Image Container */}
+                    <div className="w-full h-48 sm:h-64 lg:h-[408px] rounded-lg sm:rounded-2xl lg:rounded-2xl overflow-hidden relative">
                       <img
                         src={block.imageSrc}
                         alt={block.imageAlt || "Blog image"}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                         loading="lazy"
                       />
                     </div>
 
-                    {/* Text Container: 608px max width on desktop, full width on mobile/tablet */}
+                    {/* Text Container: Bold variant (700 weight) */}
                     <div
-                      className="w-full lg:w-[608px] flex-1 text-[#1A1A1A] opacity-90 text-base leading-[24px] font-['Source_Serif_Pro'] font-normal lg:font-bold
-                      [&>p]:mb-4 [&>h3]:text-xl [&>h3]:font-bold [&>h3]:mb-2 [&>ul]:list-disc [&>ul]:pl-5"
+                      className="w-full px-4 sm:px-4 lg:px-0 text-[#1A1A1A] opacity-90 text-sm sm:text-sm lg:text-base leading-6 sm:leading-[21px] lg:leading-6 font-['Source_Serif_Pro'] font-bold
+                      [&>p]:mb-4 [&>p]:text-sm [&>p]:sm:text-sm [&>p]:lg:text-base [&>p]:leading-6 [&>p]:sm:leading-[21px] [&>p]:lg:leading-6
+                      [&>h3]:text-base [&>h3]:sm:text-sm [&>h3]:lg:text-xl [&>h3]:font-bold [&>h3]:mb-2 
+                      [&>ul]:list-disc [&>ul]:pl-5 [&>li]:text-sm [&>li]:sm:text-sm [&>li]:lg:text-base [&>li]:leading-6 [&>li]:sm:leading-[21px] [&>li]:lg:leading-6"
                       dangerouslySetInnerHTML={{ __html: block.content }}
                     />
                   </div>
@@ -233,9 +236,8 @@ const Blog = () => {
               return null;
             })}
           </div>
-
           {/* --- FOOTER SECTION --- */}
-          <div className="max-w-[1034px] mx-auto mt-16">
+          <div className="max-w-[1034px] mx-auto mt-12 sm:mt-12 lg:mt-16">
             <ShareSection />
           </div>
         </article>

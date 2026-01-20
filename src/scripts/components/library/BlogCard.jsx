@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   CardRoot,
   CardImageWrapper,
@@ -29,6 +30,7 @@ import { ArrowRight, Share2, CheckCircle } from "lucide-react";
 
 const BlogCard = ({ post: postProp, variant = "default" }) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [showShareMenu, setShowShareMenu] = useState(false);
   const [toast, setToast] = useState({ show: false, message: "", icon: "" });
   const shareMenuRef = useRef(null);
@@ -164,10 +166,10 @@ const BlogCard = ({ post: postProp, variant = "default" }) => {
 
   const blogUrl = slug.startsWith("http")
     ? slug
-    : `${window.location.origin}${slug.startsWith("/") ? slug : "/" + slug}`;
+    : `${window.location.origin}/blog/${slug}`;
 
   const handleNavigate = () => {
-    window.location.href = slug;
+    navigate(`/blog/${slug}`);
   };
 
   // Share Menu Content
