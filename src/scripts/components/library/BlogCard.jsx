@@ -12,19 +12,41 @@ import {
   CardFooter,
   CardReadMore,
   CardShareButton,
+  CardImageContainer,
+  CardMobileActionsRow,
+  CardMobileReadMore,
+  ShareMenuDropdown,
+  ShareMenuButton,
+  ShareMenuDivider,
+  Toast,
+  CardMobileDate,
+  ShareMenuWrapper,
+  ShareIconButton,
 } from "../../../styles/blog-card";
 import { Badge } from "../../../styles/badge";
 import { useTranslation } from "react-i18next";
+import { ArrowRight, Share2, CheckCircle } from "lucide-react";
 
 const BlogCard = ({ post: postProp, variant = "default" }) => {
   const { t } = useTranslation();
   const [showShareMenu, setShowShareMenu] = useState(false);
   const [toast, setToast] = useState({ show: false, message: "", icon: "" });
   const shareMenuRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   // Fetch blogs from JSON via i18n
   const blogs =
     t("service_headline_section.blogs", { returnObjects: true }) || [];
+
+  // Detect screen size
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Close share menu when clicking outside
   useEffect(() => {
@@ -40,7 +62,7 @@ const BlogCard = ({ post: postProp, variant = "default" }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // 1. Helper Logic
+  // Helper Logic
   const isRecent = (dateString) => {
     try {
       const postDate = new Date(dateString);
@@ -80,10 +102,7 @@ const BlogCard = ({ post: postProp, variant = "default" }) => {
       document.execCommand("copy");
       showToast("Link copied to clipboard!", "success");
     } catch (err) {
-      showToast(
-        "Unable to copy link. Please copy manually from the address bar.",
-        "error",
-      );
+      showToast("Unable to copy link. Please copy manually.", "error");
     }
     document.body.removeChild(textArea);
   };
@@ -113,7 +132,7 @@ const BlogCard = ({ post: postProp, variant = "default" }) => {
             .writeText(blogUrl)
             .then(() => {
               setShowShareMenu(false);
-              showToast("Link copied to clipboard!", "success");
+              showToast("Link copied!", "success");
             })
             .catch(() => {
               copyToClipboardFallback(blogUrl);
@@ -130,7 +149,7 @@ const BlogCard = ({ post: postProp, variant = "default" }) => {
     setShowShareMenu(false);
   };
 
-  // 2. Data Destructuring
+  // Data Destructuring
   const {
     title = "The ASEAN Seller's Complete Guide for Going Global",
     date = "",
@@ -143,156 +162,134 @@ const BlogCard = ({ post: postProp, variant = "default" }) => {
   const isNew = isRecent(date);
   const category = tags.length > 0 ? tags[0] : "General";
 
-  // Build the full blog URL
   const blogUrl = slug.startsWith("http")
     ? slug
     : `${window.location.origin}${slug.startsWith("/") ? slug : "/" + slug}`;
 
-  // Handle navigation to blog page
   const handleNavigate = () => {
     window.location.href = slug;
   };
 
-  // 3. Render
+  // Share Menu Content
+  const ShareMenuContent = () => (
+    <ShareMenuDropdown>
+      <ShareMenuButton
+        platform="facebook"
+        onClick={(e) => {
+          e.stopPropagation();
+          handleSocialShare("facebook");
+        }}
+      >
+        <span className="text-blue-600 font-bold">f</span> Facebook
+      </ShareMenuButton>
+
+      <ShareMenuButton
+        platform="twitter"
+        onClick={(e) => {
+          e.stopPropagation();
+          handleSocialShare("twitter");
+        }}
+      >
+        <span className="text-black font-bold">X</span> Twitter
+      </ShareMenuButton>
+
+      <ShareMenuButton
+        platform="linkedin"
+        onClick={(e) => {
+          e.stopPropagation();
+          handleSocialShare("linkedin");
+        }}
+      >
+        <span className="text-blue-700 font-bold">in</span> LinkedIn
+      </ShareMenuButton>
+
+      <ShareMenuButton
+        platform="whatsapp"
+        onClick={(e) => {
+          e.stopPropagation();
+          handleSocialShare("whatsapp");
+        }}
+      >
+        <span className="text-green-500 font-bold">WA</span> WhatsApp
+      </ShareMenuButton>
+
+      <ShareMenuDivider />
+
+      <ShareMenuButton
+        platform="copy"
+        onClick={(e) => {
+          e.stopPropagation();
+          handleSocialShare("copy");
+        }}
+      >
+        <span>🔗</span> Copy Link
+      </ShareMenuButton>
+    </ShareMenuDropdown>
+  );
+
   return (
-    <CardRoot variant={variant}>
-      {/* Top Half - Clickable */}
-      <div onClick={handleNavigate} className="cursor-pointer">
-        {/* Image Section */}
-        <CardImageWrapper variant={variant}>
-          <CardImage src={cover} alt={title} variant={variant} />
+    <CardRoot variant={variant} isMobile={isMobile}>
+      {/* IMAGE SECTION */}
+      <CardImageContainer onClick={handleNavigate}>
+        <CardImageWrapper>
+          <CardImage src={cover} alt={title} />
           {isNew && <CardBadge variant="new">NEW</CardBadge>}
         </CardImageWrapper>
+      </CardImageContainer>
 
-        {/* Content Section */}
-        <CardBody variant={variant}>
-          <CardMetaRow>
-            <Badge variant="secondary" size="sm">
-              {category}
-            </Badge>
-            <CardDate>{date}</CardDate>
-          </CardMetaRow>
+      {/* CONTENT SECTION */}
+      <CardBody>
+        {/* Meta Row - Category & Date */}
+        <CardMetaRow>
+          <Badge variant="secondary" size="sm">
+            {category}
+          </Badge>
+          <CardDate>{date}</CardDate>
+        </CardMetaRow>
 
-          <CardTitle>{title}</CardTitle>
+        {/* Title */}
+        <CardTitle onClick={handleNavigate} className="cursor-pointer">
+          {title}
+        </CardTitle>
 
-          <CardDate className="md:hidden">{date}</CardDate>
+        {/* Excerpt - Desktop Only */}
+        {!isMobile && (
+          <CardExcerpt>{getTruncatedContent(content, 150)}</CardExcerpt>
+        )}
 
-          <CardExcerpt className="md:flex hidden md:line-clamp-4">
-            {getTruncatedContent(content, 150)}
-          </CardExcerpt>
-        </CardBody>
-      </div>
+        {/* Mobile Date */}
+        {isMobile && <CardMobileDate>{date}</CardMobileDate>}
 
-      {/* Footer Actions - Not Clickable (stops propagation) */}
-      <CardFooter className="px-5 md:px-5">
-        <CardReadMore
-          onClick={handleNavigate}
-          className="text-xs text-nowrap md:text-base cursor-pointer"
-        >
-          {t("blogs_section.read_more_button", "Read More")}
-          <img
-            src="https://cdn.jsdelivr.net/gh/hezekiahdane/ShipX-Copy@main/src/assets/blogs-arrow-right-icon.svg"
-            alt="Arrow Right"
-            className="w-4 h-4 md:w-5 md:h-5 ml-2 transition-transform group-hover:translate-x-1"
-          />
-        </CardReadMore>
+        {/* Footer Actions */}
+        <CardFooter>
+          <CardReadMore onClick={handleNavigate} className="cursor-pointer">
+            {t("blogs_section.read_more_button", "Read More")}
+            <ArrowRight className="w-4 h-4" />
+          </CardReadMore>
 
-        <div className="relative" ref={shareMenuRef}>
-          <CardShareButton
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              setShowShareMenu(!showShareMenu);
-            }}
-          >
-            <img
-              src="https://cdn.jsdelivr.net/gh/hezekiahdane/ShipX-Copy@main/src/assets/blogs-share-icon.svg"
-              alt="Share"
-              className="w-4 h-4 md:w-5 md:h-5"
-            />
-          </CardShareButton>
-
-          {/* Share Dropdown Menu */}
-          {showShareMenu && (
-            <div className="absolute bottom-12 right-0 bg-white shadow-xl border border-gray-100 rounded-xl p-2 flex flex-col gap-1 min-w-40 z-50 text-left">
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleSocialShare("facebook");
-                }}
-                className="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg text-sm text-gray-700 w-full text-left"
-              >
-                <span className="text-blue-600 font-bold">f</span> Facebook
-              </button>
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleSocialShare("twitter");
-                }}
-                className="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg text-sm text-gray-700 w-full text-left"
-              >
-                <span className="text-black font-bold">X</span> Twitter
-              </button>
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleSocialShare("linkedin");
-                }}
-                className="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg text-sm text-gray-700 w-full text-left"
-              >
-                <span className="text-blue-700 font-bold">in</span> LinkedIn
-              </button>
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleSocialShare("whatsapp");
-                }}
-                className="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg text-sm text-gray-700 w-full text-left"
-              >
-                <span className="text-green-500 font-bold">WA</span> WhatsApp
-              </button>
-              <div className="h-px bg-gray-100 my-1"></div>
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleSocialShare("copy");
-                }}
-                className="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg text-sm text-gray-700 w-full text-left"
-              >
-                <span>🔗</span> Copy Link
-              </button>
-            </div>
-          )}
-        </div>
-      </CardFooter>
+          <ShareMenuWrapper ref={shareMenuRef}>
+            <CardShareButton
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setShowShareMenu(!showShareMenu);
+              }}
+            >
+              <Share2 className="w-4 h-4" />
+            </CardShareButton>
+            {showShareMenu && <ShareMenuContent />}
+          </ShareMenuWrapper>
+        </CardFooter>
+      </CardBody>
 
       {/* Toast Notification */}
-      <div
-        className={`fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] flex items-center gap-3 px-6 py-3 rounded-xl shadow-2xl transition-all duration-300 ease-in-out ${
-          toast.show
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-4 pointer-events-none"
-        } ${toast.icon === "success" ? "bg-green-600" : "bg-gray-900"}`}
-      >
+      <Toast visible={toast.show} icon={toast.icon}>
         {toast.icon === "success" && (
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polyline points="20 6 9 17 4 12"></polyline>
-          </svg>
+          <CheckCircle width="20" height="20" className="text-white" />
         )}
         {toast.icon === "info" && <span className="text-xl">⭐️</span>}
-        <p className="text-white font-medium text-sm md:text-base">
-          {toast.message}
-        </p>
-      </div>
+        <p className="text-white font-medium text-sm">{toast.message}</p>
+      </Toast>
     </CardRoot>
   );
 };
