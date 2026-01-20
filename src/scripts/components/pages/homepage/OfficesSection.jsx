@@ -93,7 +93,7 @@ function CountryButtons({ onActiveChange }) {
         />
       )}
 
-      <div className="flex flex-wrap justify-center 2xl:justify-start gap-4 mt-6">
+      <div className="flex flex-wrap justify-center 2xl:justify-start gap-4 2xl:mt-6">
         {officesSectionCountries.map((item) => {
           const countryName = t(item.country_key);
 
@@ -150,7 +150,7 @@ export default function OfficesSection() {
       >
         {/* LEFT: Map + mobile buttons */}
         <div className="2xl:w-[50%] w-full flex flex-col items-center">
-          <div className="relative w-full h-auto">
+          <div className="relative w-full h-auto my-6">
             <Map activeCountry={activeCountry} />
           </div>
 
