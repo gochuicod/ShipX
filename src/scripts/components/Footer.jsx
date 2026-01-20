@@ -225,7 +225,8 @@ const Footer = memo(() => {
               text={t("header.contact_us") || "Contact Us"}
               variant="secondary"
               withLeftIcon={true}
-              leftIcon={<Phone className="size-5" />}
+              leftIcon={<Phone className="size-5 fill-white" />}
+              className="backdrop-blur-xl hover:bg-[#CC00B7]/20 bg-[#CC00B7]/10 text-white border-[#CC00B7]/30"
             />
           </div>
         </div>
