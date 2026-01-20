@@ -20,6 +20,9 @@ export default function AppButton({
   withRightIcon = false,
   leftIcon,
   rightIcon,
+  // New props for custom icon styling
+  leftIconClassName,
+  rightIconClassName,
   iconRounded = false,
   to,
   className,
@@ -28,14 +31,21 @@ export default function AppButton({
   scrollAlign,
   ...rest
 }) {
-  const renderIcon = (Icon) => {
+  // Updated to accept a specific className for the icon being rendered
+  const renderIcon = (Icon, extraClassName) => {
     if (!Icon) return null;
 
     const isUrl = typeof Icon === "string";
     const roundingClass = iconRounded ? "rounded-full" : "rounded-lg";
 
     return (
-      <div className={cn(appButtonStyles.iconWrapper, roundingClass)}>
+      <div
+        className={cn(
+          appButtonStyles.iconWrapper,
+          roundingClass,
+          extraClassName, // Merge the custom class here (e.g., shadow-md)
+        )}
+      >
         {isUrl ? (
           <img src={Icon} alt="" className={appButtonStyles.icon} />
         ) : (
@@ -53,9 +63,10 @@ export default function AppButton({
 
   const ButtonContent = () => (
     <>
-      {withLeftIcon && renderIcon(leftIcon)}
+      {/* Pass the specific class names to the helper function */}
+      {withLeftIcon && renderIcon(leftIcon, leftIconClassName)}
       <span className="leading-tight">{text}</span>
-      {withRightIcon && renderIcon(rightIcon)}
+      {withRightIcon && renderIcon(rightIcon, rightIconClassName)}
     </>
   );
 

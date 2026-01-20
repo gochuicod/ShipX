@@ -118,6 +118,9 @@ function CountryButtons({ onActiveChange }) {
                 text={countryName}
                 withLeftIcon
                 leftIcon={item.icon}
+                leftIconClassName={
+                  "relative after:absolute after:inset-0 after:rounded-[inherit] after:shadow-[inset_-2px_-2px_4px_rgba(0,0,0,0.4)]"
+                }
                 iconRounded
                 onClick={() => handleClick(countryName)}
                 className={cn(isOpen && "bg-[rgba(204,0,183,0.12)]")}
