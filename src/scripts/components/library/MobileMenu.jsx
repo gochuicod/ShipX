@@ -110,18 +110,18 @@ const MobileMenu = ({
       {/* 3. ACTION BUTTONS */}
       <div className="flex flex-col w-full gap-3 mt-auto pb-2 z-10">
         {/* Login Modal Wrapper - [&>div]:w-full forces the inner LoginModal trigger to fill width */}
-        <div className="w-full [&>div]:w-full [&>div]:justify-start">
+        <div className="w-full">
           <LoginModal footer={true} />
         </div>
 
-        {/* <AppButton
+        <AppButton
           to="/book-a-demo"
-          onClick={onLinkClick} // Close menu when clicked
+          onClick={onLinkClick}
           text={t("header.book_a_demo")}
           withLeftIcon={true}
           leftIcon={<CalendarDays className="size-5" />}
           className="w-full h-[40px] text-[16px] flex justify-center items-center"
-        />*/}
+        />
       </div>
     </MotionDiv>
   );
