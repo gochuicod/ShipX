@@ -19,7 +19,7 @@ const hsCodeGeneratorImg =
   "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/hs_code_generator.png";
 // ⚠️ Verify this file name exists in your assets
 const fileAClaimImg =
-  "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/file_a_claim.png";
+  "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/file_a_claim_v2.png";
 
 export const TOOLKIT_TABS = [
   {

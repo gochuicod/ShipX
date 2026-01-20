@@ -97,13 +97,16 @@ export default function ToolkitSection() {
         </div>
 
         {/* 4. RIGHT COLUMN: Desktop Illustration */}
-        <div className="hidden 2xl:flex flex-col justify-end w-full max-w-[350px]">
+        <div className="hidden 2xl:flex flex-col justify-end w-full max-w-[350px] my-auto">
           {activeTabData?.illustration && (
             <img
               key={`desktop-${activeTab}`}
               src={activeTabData.illustration}
               alt={activeTabData.title}
-              className="w-full h-auto object-contain animate-in fade-in zoom-in-95 duration-500"
+              className={cn(
+                "w-full h-auto object-contain animate-in fade-in zoom-in-95 duration-500",
+                `${activeTabData.id === "file-a-claim" ? "scale-170" : "scale-110"}`,
+              )}
             />
           )}
         </div>
