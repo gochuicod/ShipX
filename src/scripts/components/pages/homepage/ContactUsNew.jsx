@@ -152,7 +152,7 @@ const ContactUsNew = () => {
           <HighlightedHeading
             text={t("contact_us_section.title")}
             highlight={t("contact_us_section.title_highlighted")}
-            className="text-2xl 2xl:text-4xl font-semibold mt-2 2xl:text-start text-center"
+            className="2xl:text-[32px] 2xl:leading-10 text-[28px] leading-8 font-semibold mt-2 2xl:text-start text-center"
           />
         </div>
         {/* Left Column: Contact Details */}

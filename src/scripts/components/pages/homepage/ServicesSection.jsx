@@ -64,7 +64,7 @@ export default function ServicesSection() {
           <HighlightedHeading
             text={t("services_section.headline")}
             highlight={t("services_section.headline_highlighted")}
-            className="text-2xl font-semibold mt-2"
+            className="2xl:text-[32px] 2xl:leading-10 text-[28px] leading-8 font-semibold mt-2"
             disableNewlines
           />
         </div>

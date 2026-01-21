@@ -34,7 +34,7 @@ export default function ShowcaseCard({
         <HighlightedHeading
           text={headingText}
           highlight={highlights}
-          className="font-bold text-[#4D525C] md:text-[16px] text-[14px] text-center"
+          className="font-bold text-[#4D525C] md:text-[16px] text-[14px] text-center leading-5"
           disableNewlines
         />
       </div>

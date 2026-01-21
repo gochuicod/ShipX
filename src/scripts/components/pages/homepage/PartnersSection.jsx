@@ -44,7 +44,7 @@ export default function PartnersSection() {
           text={t("partners_section.headline")}
           highlight={t("partners_section.headline_highlighted")}
           className={cn(
-            "text-2xl font-semibold mt-2",
+            "2xl:text-[32px] 2xl:leading-10 text-[28px] leading-8 font-semibold mt-2",
             "2xl:text-end text-center",
           )}
           disableNewlines

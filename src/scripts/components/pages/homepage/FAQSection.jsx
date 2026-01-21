@@ -72,7 +72,7 @@ const FAQSection = () => {
           </Badge>
           <HighlightedHeading
             text={t("faq_section.title", "Everything You Need to Know")}
-            className="text-2xl 2xl:text-4xl font-semibold mt-2 text-center"
+            className="2xl:text-[32px] 2xl:leading-10 text-[28px] leading-8 font-semibold mt-2 text-center"
           />
           <h3 className="font-normal text-sm md:text-base text-[#4D525C]">
             {t("Have questions? Our team is ready to help you 24/7")}

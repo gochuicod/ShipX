@@ -46,7 +46,7 @@ const BlogSection = () => {
       <div className="mb-8 md:mb-10 flex justify-center items-center">
         <HighlightedHeading
           text={t("blogs_section.title", "Latest Insights & Ideas")}
-          className="text-2xl 2xl:text-4xl font-semibold mt-2 text-center"
+          className="2xl:text-[32px] 2xl:leading-10 text-[28px] leading-8 font-semibold mt-2 text-center"
         />
       </div>
 

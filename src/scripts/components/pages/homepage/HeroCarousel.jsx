@@ -6,6 +6,7 @@ import HighlightedHeading from "../../library/HighlightedHeading";
 import AppButton from "../../library/AppButton";
 import Description from "../../library/Description";
 import Container from "../../library/Container";
+import Pagination from "../../library/Pagination";
 
 export default function HeroCarousel({
   slides = [],
@@ -164,28 +165,20 @@ export default function HeroCarousel({
                 />
               )}
             </div>
+
+            {/* Pagination Dots */}
+            {slides.length > 1 && (
+              <div className="flex 2xl:justify-start 2xl:items-start items-center justify-center mt-6">
+                <Pagination
+                  totalSlides={slides.length}
+                  currentSlide={current}
+                  onSlideChange={setCurrent}
+                />
+              </div>
+            )}
           </div>
         </div>
       </Container>
-
-      {/* Pagination Dots */}
-      {slides.length > 1 && (
-        <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-20">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrent(index)}
-              className={cn(
-                "w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer",
-                current === index
-                  ? "bg-[#FF00E5] w-6"
-                  : "bg-gray-300 hover:bg-gray-400",
-              )}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
-      )}
     </section>
   );
 }

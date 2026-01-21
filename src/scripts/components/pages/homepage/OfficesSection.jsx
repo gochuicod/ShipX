@@ -180,7 +180,7 @@ export default function OfficesSection() {
             text={t("our_offices_section.title")}
             highlight={t("our_offices_section.title_highlighted")}
             className="
-              text-2xl
+              2xl:text-[32px] 2xl:leading-10 text-[28px] leading-8
               2xl:text-start text-center
               font-semibold
               mt-2

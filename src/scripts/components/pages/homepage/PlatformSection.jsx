@@ -47,7 +47,7 @@ export default function PlatformSection() {
           <HighlightedHeading
             text={t("our_platform_section.title")}
             highlight={t("our_platform_section.title_highlighted")}
-            className="text-2xl 2xl:text-end text-center font-semibold mt-2"
+            className="2xl:text-[32px] text-[28px] 2xl:text-end text-center font-semibold mt-2"
             disableNewlines={{ base: true, "2xl": false }}
           />
           <Description className="md:text-base text-sm 2xl:text-end text-center mb-4 2xl:w-[70%] md:w-[55%] w-full">

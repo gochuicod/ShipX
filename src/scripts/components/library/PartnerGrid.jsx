@@ -3,6 +3,7 @@ import { Grid, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/pagination";
+import { cn } from "../../../lib/util";
 
 import PartnerCard from "./PartnerCard";
 
@@ -46,18 +47,36 @@ export default function PartnerGrid({ partners }) {
         .swiper-pagination {
           position: relative !important;
           margin-top: 16px;
+          display: flex !important;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          gap: 2px;
+          width: auto !important;
+          height: 15px;
         }
 
         .swiper-pagination-bullet {
-          width: 12px;
-          height: 12px;
+          width: 15px;
+          height: 15px;
           background: transparent;
-          border: 2px solid #4c3794;
+          border: 2px solid #4f378a;
+          border-radius: 9999px;
           opacity: 1;
+          flex: none;
+          flex-grow: 0;
+          cursor: pointer;
+          transition: all 500ms ease-in-out;
+          margin: 0;
+          padding: 0;
         }
 
         .swiper-pagination-bullet-active {
-          background: #4c3794 !important;
+          width: 30px;
+          height: 15px;
+          background: #4f378a !important;
+          border: none;
+          border-radius: 9999px;
         }
       `}</style>
     </div>
