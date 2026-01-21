@@ -91,11 +91,11 @@ const ContactFormNew = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col items-start gap-4 w-full mx-auto"
+      className="flex flex-col gap-4 w-full mx-auto"
       style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
     >
-      {/* --- Row 1: Name, Email, Phone --- */}
-      <div className="flex flex-col md:flex-row items-start gap-4 w-full h-auto md:h-[70px]">
+      {/* --- Row 1: Name, Email, Phone Wrapper --- */}
+      <div className="flex flex-col md:flex-row gap-4 w-full">
         {/* Name */}
         <InputGroup>
           <FormLabel htmlFor="name" required>
@@ -192,7 +192,7 @@ const ContactFormNew = () => {
       </InputGroup>
 
       {/* --- Row 3: Buttons --- */}
-      <div className="grid grid-cols-2 gap-2 md:flex md:flex-row md:justify-end md:gap-4 w-full mt-4">
+      <div className="flex flex-row gap-2 justify-center md:justify-end w-full">
         {/* Button 1: Submit */}
         <AppButton
           as="button"
@@ -208,7 +208,7 @@ const ContactFormNew = () => {
           leftIcon={<Send className="size-4 md:size-5" />}
           onClick={handleSubmit(onSubmit)}
           disabled={isSubmitting}
-          className="w-full md:w-auto text-xs md:text-base px-2 md:px-6 justify-center whitespace-nowrap"
+          className="flex-1 md:flex-none text-xs md:text-base px-2 md:px-6 justify-center whitespace-nowrap"
         />
 
         {/* Button 2: Book Demo */}
@@ -217,7 +217,7 @@ const ContactFormNew = () => {
           text={t("contact_us_section.form.buttons.book_a_demo")}
           withLeftIcon={true}
           leftIcon={<CalendarDays className="size-4 md:size-5" />}
-          className="w-full md:w-auto text-xs md:text-base px-2 md:px-6 justify-center whitespace-nowrap"
+          className="flex-1 md:flex-none text-xs md:text-base px-2 md:px-6 justify-center whitespace-nowrap"
         />
       </div>
     </form>

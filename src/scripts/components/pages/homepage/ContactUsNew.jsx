@@ -207,7 +207,7 @@ const ContactUsNew = () => {
         </div>
 
         {/* Right Column: Form */}
-        <div className="flex flex-col w-full bg-linear-to-br from-[oklch(1_0_0_0)] to-[oklch(0.616_0.2539_333.97)]/24 rounded-2xl p-4 md:p-8">
+        <div className="flex flex-col md:justify-end md:items-end w-full rounded-2xl p-4 bg-linear-to-br from-[#FF00E6]/0 to-[#FF00E5]/10">
           <ContactFormNew />
         </div>
       </div>
