@@ -68,7 +68,7 @@ export default function PlatformSection() {
 
         <div className="2xl:w-[65%] w-full 2xl:mt-0 mt-8 flex 2xl:justify-start justify-center 2xl:items-center">
           <img
-            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/platform_section/shipx_dashboard_mockup_v3.webp"
+            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/platform_section/shipx_dashboard_mockup_v4.webp"
             alt="ShipX Dashboard Mockup"
             className="p-1"
           />

@@ -421,7 +421,7 @@ export const getPlatformShowcaseData = (t) => {
       id: 1,
       gradient: "from-[#FFE6FF]/30 to-[#AA00FF]/10",
       image:
-        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/platform_section/card/platform_section_card_1_image_v2.webp",
+        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/platform_section/card/platform_section_card_1.webp",
       imageAlt: card1.title,
       headingText: card1.title,
       highlights: card1.title_highlighted || [], // dynamically from locale
@@ -431,7 +431,7 @@ export const getPlatformShowcaseData = (t) => {
       id: 2,
       gradient: "from-[#FFE6FF]/30 to-[#AA00FF]/10",
       image:
-        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/platform_section/card/platform_section_card_2_image_v2.webp",
+        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/platform_section/card/platform_section_card_2.webp",
       imageAlt: card2.title,
       headingText: card2.title,
       highlights: card2.title_highlighted || [], // dynamically from locale
