@@ -16,7 +16,7 @@ export default function ShowcaseCard({
       className={cn(
         "bg-linear-to-br",
         gradient,
-        "max-w-[878px] min-w-0 min-h-[225px]",
+        "w-full max-w-[878px] min-w-0 min-h-[225px]",
         "flex xl:flex",
         "md:flex-row flex-col",
         "gap-4",

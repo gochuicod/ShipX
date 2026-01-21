@@ -26,7 +26,8 @@ export default function PartnerGrid({ partners }) {
           },
         }}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
-        pagination={{ clickable: true, dynamicBullets: true }}
+        // CHANGED: dynamicBullets set to false to respect fixed sizing
+        pagination={{ clickable: true, dynamicBullets: false }}
         modules={[Grid, Pagination, Autoplay]}
       >
         {partners.map((partner) => (
@@ -42,8 +43,10 @@ export default function PartnerGrid({ partners }) {
       <style jsx global>{`
         .swiper {
           width: 100%;
+          padding-bottom: 24px;
         }
 
+        /* Container: Frame 1618873380 */
         .swiper-pagination {
           position: relative !important;
           margin-top: 16px;
@@ -51,30 +54,43 @@ export default function PartnerGrid({ partners }) {
           flex-direction: row;
           justify-content: center;
           align-items: center;
-          gap: 2px;
+
+          /* Figma Spec: Gap 8px */
+          gap: 8px;
+
           width: auto !important;
           height: 15px;
         }
 
+        /* Inactive Bullets: Rectangle 4550 & 4551 */
         .swiper-pagination-bullet {
+          /* Figma Spec: Box-sizing ensures border is inside the 15px width */
+          box-sizing: border-box;
+
           width: 15px;
           height: 15px;
           background: transparent;
+
+          /* Border styling */
           border: 2px solid #4f378a;
           border-radius: 9999px;
+
           opacity: 1;
           flex: none;
-          flex-grow: 0;
           cursor: pointer;
-          transition: all 500ms ease-in-out;
-          margin: 0;
-          padding: 0;
+          transition: all 300ms ease-in-out;
+
+          /* Reset swiper default margins so 'gap' works correctly */
+          margin: 0 !important;
         }
 
+        /* Active Bullet: Rectangle 4548 */
         .swiper-pagination-bullet-active {
           width: 30px;
           height: 15px;
           background: #4f378a !important;
+
+          /* Remove border for the filled active state */
           border: none;
           border-radius: 9999px;
         }

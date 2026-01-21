@@ -181,12 +181,37 @@ const AffiliateSection = () => {
           .md\:hidden .swiper { overflow: visible !important; }
           .md\:hidden .swiper-viewport { overflow: visible !important; }
           .md\:hidden .swiper-wrapper { overflow: visible !important; }
-          .custom-pagination { display: flex; justify-content: center; gap: 8px; }
-          .swiper-bullet {
-            width: 10px; height: 10px; border-radius: 50%; background: transparent;
-            border: 2px solid #4F378A; cursor: pointer; transition: all 0.3s ease;
+          .custom-pagination {
+            position: relative !important;
+            display: flex !important;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            width: auto !important;
+            height: 15px;
+            margin-top: 16px;
           }
-          .swiper-bullet-active { background: #4F378A; border: 2px solid #4F378A; }
+          .swiper-bullet {
+            box-sizing: border-box;
+            width: 15px;
+            height: 15px;
+            background: transparent;
+            border: 2px solid #4F378A;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: all 300ms ease-in-out;
+            opacity: 1;
+            flex: none;
+            margin: 0 !important;
+          }
+          .swiper-bullet-active {
+            width: 30px;
+            height: 15px;
+            background: #4F378A !important;
+            border: none;
+            border-radius: 9999px;
+          }
           .swiper-slide { padding: 0 12px; display: flex !important; overflow: visible !important; align-items: center; justify-content: center; }
         `}</style>
       </div>

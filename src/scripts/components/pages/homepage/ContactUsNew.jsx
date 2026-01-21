@@ -119,13 +119,19 @@ const ContactUsNew = () => {
         <picture>
           {/* Mobile image */}
           <source
-            media="(max-width: 1536px)"
-            srcSet="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/contact_us/contact_us_image_mobile.webp"
+            media="(max-width: 767px)"
+            srcSet="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/contact_us/contact-mobile.webp"
+          />
+
+          {/* Tablet image */}
+          <source
+            media="(min-width: 768px) and (max-width: 1535px)"
+            srcSet="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/contact_us/contact-tablet.webp"
           />
 
           {/* Desktop image (fallback) */}
           <img
-            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/contact_us/contact_us_image_desktop.webp"
+            src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/contact_us/contact-desktop.webp"
             alt="Contact us"
             className="w-full h-full object-cover"
           />
