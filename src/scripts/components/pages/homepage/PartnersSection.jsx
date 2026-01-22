@@ -33,6 +33,7 @@ export default function PartnersSection() {
           w-full
           items-center justify-center
           2xl:items-end 2xl:justify-end
+          scroll-mt-[120px]
         "
         id="partners"
       >
