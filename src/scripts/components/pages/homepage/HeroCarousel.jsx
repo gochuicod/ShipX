@@ -37,8 +37,9 @@ export default function HeroCarousel({
 
   // 1. Define Defaults (Used for background positioning/sizing)
   const defaultBgClasses = `
-    lg:bg-size-[1400px_auto]
-    md:bg-size-[1093px_auto]
+    lg:bg-cover
+    md:bg-cover
+    bg-cover
     lg:bg-position-[right_center]
     md:bg-position-[right_center]
     bg-position-[center_bottom]

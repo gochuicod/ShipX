@@ -28,10 +28,11 @@ const Main = () => {
     {
       id: 1,
       image:
-        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_1.webp",
+        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_carousel_image_1.webp",
       bgClassName: cn(
-        "lg:bg-size-[1400px_auto] md:bg-size-[1093px_auto] bg-size-[724px_auto]",
+        "lg:bg-cover md:bg-cover bg-cover",
         "lg:bg-position-[right_center] md:bg-position-[right_center] bg-position-[center_bottom]",
+        "bg-no-repeat",
       ),
       title: t("hero_section.slides.slide_1.title"),
       titleHighlight: t("hero_section.slides.slide_1.title_highlighted"),
@@ -51,10 +52,11 @@ const Main = () => {
     {
       id: 2,
       image:
-        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_2.webp",
+        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_carousel_image_2.webp",
       bgClassName: cn(
-        "lg:bg-size-[1400px_auto] md:bg-size-[1093px_auto] bg-size-[724px_auto]",
+        "lg:bg-cover md:bg-cover bg-cover",
         "lg:bg-position-[right_center] md:bg-position-[right_center] bg-position-[center_bottom]",
+        "bg-no-repeat",
       ),
       title: t("hero_section.slides.slide_2.title"),
       titleHighlight: t("hero_section.slides.slide_2.title_highlighted"),
@@ -74,10 +76,11 @@ const Main = () => {
     {
       id: 3,
       image:
-        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_image_3.webp",
+        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_carousel_image_3.webp",
       bgClassName: cn(
-        "lg:bg-size-[1400px_auto] md:bg-size-[1093px_auto] bg-size-[724px_auto]",
+        "lg:bg-cover md:bg-cover bg-cover",
         "lg:bg-position-[right_center] md:bg-position-[right_center] bg-position-[center_bottom]",
+        "bg-no-repeat",
       ),
       title: t("hero_section.slides.slide_3.title"),
       titleHighlight: t("hero_section.slides.slide_3.title_highlighted"),
