@@ -70,7 +70,7 @@ export default function PlatformSection() {
           <img
             src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/platform_section/shipx_dashboard_mockup_v4.webp"
             alt="ShipX Dashboard Mockup"
-            className="p-1"
+            className="p-1 md:max-w-[704px]"
           />
         </div>
       </Container>

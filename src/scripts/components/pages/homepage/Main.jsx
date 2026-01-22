@@ -30,8 +30,8 @@ const Main = () => {
       image:
         "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_carousel_image_1.webp",
       bgClassName: cn(
-        "lg:bg-cover md:bg-cover bg-cover",
-        "lg:bg-position-[right_center] md:bg-position-[right_center] bg-position-[center_bottom]",
+        "lg:bg-size-[60%_auto] md:bg-size-[80%_auto] bg-size-[700px_350px]",
+        "lg:bg-position-[right_center] md:bg-position-[center_bottom] bg-position-[center_120%]",
         "bg-no-repeat",
       ),
       title: t("hero_section.slides.slide_1.title"),
@@ -54,8 +54,8 @@ const Main = () => {
       image:
         "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_carousel_image_2.webp",
       bgClassName: cn(
-        "lg:bg-cover md:bg-cover bg-cover",
-        "lg:bg-position-[right_center] md:bg-position-[right_center] bg-position-[center_bottom]",
+        "lg:bg-size-[60%_auto] md:bg-size-[80%_auto] bg-size-[700px_350px]",
+        "lg:bg-position-[right_center] md:bg-position-[center_bottom] bg-position-[center_110%]",
         "bg-no-repeat",
       ),
       title: t("hero_section.slides.slide_2.title"),
@@ -78,8 +78,8 @@ const Main = () => {
       image:
         "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/hero_section/hero_carousel_image_3.webp",
       bgClassName: cn(
-        "lg:bg-cover md:bg-cover bg-cover",
-        "lg:bg-position-[right_center] md:bg-position-[right_center] bg-position-[center_bottom]",
+        "lg:bg-size-[60%_auto] md:bg-size-[80%_auto] bg-size-[700px_350px]",
+        "lg:bg-position-[right_center] md:bg-position-[center_bottom] bg-position-[center_120%]",
         "bg-no-repeat",
       ),
       title: t("hero_section.slides.slide_3.title"),
