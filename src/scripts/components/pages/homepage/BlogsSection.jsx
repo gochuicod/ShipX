@@ -52,7 +52,7 @@ const BlogSection = () => {
 
       {/* Grid Layout */}
       {blogs.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-8 justify-center items-stretch">
           {blogs
             .slice()
             .reverse()
@@ -61,7 +61,7 @@ const BlogSection = () => {
               <SmartNavLink
                 key={post.slug}
                 to={`/blog/${post.slug}`}
-                className={`hover:cursor-pointer ${idx === 2 ? "md:hidden lg:block" : ""}`}
+                className={`hover:cursor-pointer ${idx === 2 ? "md:hidden lg:block" : ""} flex-1`}
               >
                 <BlogCard post={post} variant="section" />
               </SmartNavLink>

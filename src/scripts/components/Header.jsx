@@ -168,8 +168,8 @@ const Header = memo(() => {
       >
         <Logo />
 
-        {/* --- DESKTOP NAVIGATION (Hidden on XL) --- */}
-        <nav className="hidden xl:flex flex-row gap-x-[2.5vw] font-normal xl:text-base text-nav items-center">
+        {/* --- DESKTOP NAVIGATION (Hidden on MD and below) --- */}
+        <nav className="hidden lg:flex flex-row gap-x-[2.5vw] font-normal xl:text-base text-nav items-center">
           {navLinks.map((link) =>
             link.items ? (
               <Dropdown
@@ -186,10 +186,10 @@ const Header = memo(() => {
           )}
         </nav>
 
-        {/* --- DESKTOP ACTIONS (Hidden on XL) --- */}
+        {/* --- DESKTOP ACTIONS (Hidden on MD and below) --- */}
         <div
           className="
-            hidden xl:flex
+            hidden lg:flex
             flex-row
             justify-center items-center
             gap-x-[1vw]
@@ -221,8 +221,8 @@ const Header = memo(() => {
           />
         </div>
 
-        {/* --- MOBILE ACTIONS (Visible < XL) --- */}
-        <div className="xl:hidden flex flex-row items-center gap-4">
+        {/* --- MOBILE ACTIONS (Visible on MD and below) --- */}
+        <div className="lg:hidden flex flex-row items-center gap-4">
           {/* Hamburger Menu */}
           <button
             type="button"

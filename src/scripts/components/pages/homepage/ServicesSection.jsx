@@ -48,28 +48,28 @@ export default function ServicesSection() {
   return (
     <Container
       className={cn(
-        "flex flex-col items-center overflow-hidden",
+        "flex flex-col items-center overflow-hidden md:gap-8 gap-4",
         themeGuide.sectionPaddingY,
       )}
     >
       {/* --- HEADER --- */}
       <div
         id="services"
-        className="flex flex-col 2xl:flex-row justify-center items-center 2xl:items-start gap-8 max-md:gap-4 w-full max-w-[1200px]"
+        className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-8 max-md:gap-4 w-full md:max-w-[704px] lg:max-w-[1072px]"
       >
-        <div className="flex flex-col w-full 2xl:w-[35%] items-center 2xl:items-end text-center 2xl:text-right">
+        <div className="flex flex-col w-full lg:w-[35%] md:w-full items-center lg:items-end md:items-center text-center lg:text-right md:text-center">
           <Badge variant="toolkit" size="default">
             {t("services_section.badge")}
           </Badge>
           <HighlightedHeading
             text={t("services_section.headline")}
             highlight={t("services_section.headline_highlighted")}
-            className="2xl:text-[32px] 2xl:leading-10 text-[28px] leading-8 font-semibold mt-2"
+            className="lg:text-[32px] lg:leading-10 md:text-[28px] md:leading-8 text-[28px] leading-8 font-semibold mt-2"
             disableNewlines
           />
         </div>
-        <div className="flex flex-col flex-1 items-center 2xl:items-start text-center 2xl:text-left">
-          <Description className="mb-4 md:text-base text-sm 2xl:w-[85%]">
+        <div className="flex flex-col flex-1 items-center lg:items-start md:items-center text-center lg:text-left md:text-center">
+          <Description className="mb-4 md:text-base text-sm lg:w-[85%] md:w-full w-full">
             {t("services_section.description")}
           </Description>
           <AppButton
@@ -83,13 +83,13 @@ export default function ServicesSection() {
       </div>
 
       {/* --- INTERACTIVE CONTENT --- */}
-      <div className="flex flex-col 2xl:flex-row justify-center items-center 2xl:items-start w-full mt-12 gap-8 md:gap-12">
+      <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start w-full gap-4 md:gap-8">
         {/* NAV */}
         <div
           className={cn(
-            "flex 2xl:flex-col flex-wrap",
+            "flex lg:flex-col md:flex-wrap flex-wrap",
             "justify-center gap-4",
-            "2xl:w-fit w-full",
+            "w-fit md:max-w-[704px] max-w-[376px]",
             "shrink-0",
           )}
         >
@@ -98,7 +98,7 @@ export default function ServicesSection() {
             <div
               key={item.id}
               onClick={() => setActiveServiceId(item.id)}
-              className="cursor-pointer transition-transform duration-200 active:scale-95"
+              className="cursor-pointer transition-transform duration-200 active:scale-95 "
             >
               <ServicesItems
                 variant="list"

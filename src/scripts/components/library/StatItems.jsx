@@ -11,7 +11,7 @@ export default function StatItems({
   return (
     <div
       className={cn(
-        "flex flex-col items-center gap-4 w-[110px] md:w-[145px] shrink-0",
+        "flex flex-col items-center gap-4 w-full max-w-[110px] md:max-w-[145px] shrink-0",
         className,
       )}
     >

@@ -106,7 +106,7 @@ const ContactUsNew = () => {
   return (
     <Container
       className={cn(
-        "flex 2xl:flex-row flex-col",
+        "flex lg:flex-row flex-col md:flex-col",
         "justify-center items-stretch",
         "relative",
         "gap-8",
@@ -115,7 +115,7 @@ const ContactUsNew = () => {
       style={{ fontFamily: "Inter, sans-serif" }}
     >
       {/* Left image */}
-      <div className="w-1/3 max-2xl:w-full relative rounded-2xl overflow-hidden flex-shrink-0">
+      <div className="lg:w-1/4 md:w-full w-full relative rounded-2xl overflow-hidden shrink-0">
         <picture>
           {/* Mobile image */}
           <source
@@ -123,14 +123,16 @@ const ContactUsNew = () => {
             srcSet="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/contact_us/contact-mobile.webp"
           />
 
-          {/* Tablet image */}
+          {/* Tablet/MD image */}
           <source
-            media="(min-width: 768px) and (max-width: 1535px)"
+            media="(min-width: 768px) and (max-width: 1439px)"
             srcSet="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/contact_us/contact-tablet.webp"
+            className="w-full h-full object-cover"
           />
 
-          {/* Desktop image (fallback) */}
+          {/* Desktop/LG image (fallback) */}
           <img
+            media="(min-width: 1440px)"
             src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/contact_us/contact-desktop.webp"
             alt="Contact us"
             className="w-full h-full object-cover"
@@ -146,10 +148,10 @@ const ContactUsNew = () => {
         />
       </div>
       {/* Main Content Grid */}
-      <div className="flex 2xl:flex-col flex-wrap gap-8 w-full">
+      <div className="flex lg:flex-col flex-wrap gap-8 w-full">
         {/* Headings */}
         <div
-          className="flex flex-col justify-start 2xl:items-start items-center w-full"
+          className="flex flex-col justify-start lg:items-start items-center w-full"
           id="contact-us"
         >
           <Badge variant="toolkit" size="default">
@@ -158,11 +160,11 @@ const ContactUsNew = () => {
           <HighlightedHeading
             text={t("contact_us_section.title")}
             highlight={t("contact_us_section.title_highlighted")}
-            className="2xl:text-[32px] 2xl:leading-10 text-[28px] leading-8 font-semibold mt-2 2xl:text-start text-center"
+            className="lg:text-[32px] lg:leading-10 text-[28px] leading-8 font-semibold mt-2 lg:text-start text-center"
           />
         </div>
         {/* Left Column: Contact Details */}
-        <div className="flex flex-row flex-wrap 2xl:flex-nowrap gap-2 2xl:gap-4 w-full">
+        <div className="flex flex-row flex-wrap lg:flex-nowrap gap-2 lg:gap-4 w-full">
           <IconBox
             layout="vertical"
             size="default"
@@ -174,7 +176,7 @@ const ContactUsNew = () => {
             }
             title={t("contact_us_section.cards.card_1.heading")}
             value={t("contact_us_section.cards.card_1.contact")}
-            className="flex md:flex-col flex-row gap-2 md:items-start items-center p-4 2xl:w-1/4 md:w-[calc(50%-0.25rem)] w-full"
+            className="flex md:flex-col flex-row gap-2 md:items-start items-center p-4 lg:w-1/4 md:w-[calc(50%-0.25rem)] w-full"
           >
             {t("contact_us_section.cards.card_1.note")}
           </IconBox>
@@ -190,7 +192,7 @@ const ContactUsNew = () => {
             }
             title={t("contact_us_section.cards.card_2.heading")}
             value={t("contact_us_section.cards.card_2.contact")}
-            className="flex md:flex-col flex-row gap-2 md:items-start items-center p-4 2xl:w-1/4 md:w-[calc(50%-0.25rem)] w-full"
+            className="flex md:flex-col flex-row gap-2 md:items-start items-center p-4 lg:w-1/4 md:w-[calc(50%-0.25rem)] w-full"
           >
             {t("contact_us_section.cards.card_2.note")}
           </IconBox>
@@ -206,7 +208,7 @@ const ContactUsNew = () => {
             }
             title={t("contact_us_section.cards.card_3.heading")}
             value={t("contact_us_section.cards.card_3.contact")}
-            className="flex md:flex-col flex-row gap-2 md:items-start items-center p-4 2xl:w-2/4 w-full"
+            className="flex md:flex-col flex-row gap-2 md:items-start items-center p-4 lg:w-2/4 w-full"
           >
             {t("contact_us_section.cards.card_3.note")}
           </IconBox>

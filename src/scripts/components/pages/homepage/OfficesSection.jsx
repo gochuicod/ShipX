@@ -93,7 +93,8 @@ function CountryButtons({ onActiveChange }) {
         />
       )}
 
-      <div className="flex flex-wrap justify-center 2xl:justify-start gap-4 2xl:mt-6 relative z-20">
+      {/* Country Button Styling */}
+      <div className="flex flex-wrap justify-center md:justify-center lg:justify-start gap-4 md:gap-4 lg:mt-6 relative z-20">
         {officesSectionCountries.map((item) => {
           const countryName = t(item.country_key);
 
@@ -147,19 +148,19 @@ export default function OfficesSection() {
     <div className="bg-linear-to-b from-[#FAF5FF] to-[#FFFFFF]">
       <Container
         className={cn(
-          "flex 2xl:flex-row flex-col-reverse",
+          "flex lg:flex-row flex-col-reverse",
           themeGuide.sectionPaddingY,
           "justify-center items-center gap-x-8",
         )}
       >
         {/* LEFT: Map + mobile buttons */}
-        <div className="2xl:w-[50%] w-full flex flex-col items-center">
+        <div className="lg:w-[50%] md:w-full w-full flex flex-col md:gap-8 lg:gap-8 gap-4 items-center">
           <div className="relative w-full h-auto my-6">
             <Map activeCountry={activeCountry} />
           </div>
 
           {/* Buttons below map on mobile */}
-          <div className="block 2xl:hidden w-full">
+          <div className="block lg:hidden w-full">
             <CountryButtons onActiveChange={setActiveCountry} />
           </div>
         </div>
@@ -168,8 +169,8 @@ export default function OfficesSection() {
         <div
           className="
             flex flex-col
-            2xl:w-[50%] w-full
-            2xl:items-start items-center
+            lg:w-[50%] md:w-full w-full
+            lg:items-start md:items-center items-center md:gap-4 lg:gap-2 gap-2
           "
         >
           <Badge variant="toolkit" size="default">
@@ -180,8 +181,8 @@ export default function OfficesSection() {
             text={t("our_offices_section.title")}
             highlight={t("our_offices_section.title_highlighted")}
             className="
-              2xl:text-[32px] 2xl:leading-10 text-[28px] leading-8
-              2xl:text-start text-center
+              lg:text-[32px] lg:leading-10 md:text-[28px] md:leading-8 text-[28px] leading-8
+              lg:text-start md:text-center text-center
               font-semibold
               mt-2
             "
@@ -190,7 +191,7 @@ export default function OfficesSection() {
           <Description
             className="
               md:text-base text-sm
-              2xl:text-start text-center
+              lg:text-start md:text-center text-center
               mb-2
               w-full
             "
@@ -205,8 +206,8 @@ export default function OfficesSection() {
             leftIcon={<CalendarDays className="size-5" />}
           />
 
-          {/* Buttons on the right for xl+ */}
-          <div className="hidden 2xl:block w-full">
+          {/* Buttons on the right for lg+ */}
+          <div className="hidden lg:block w-full">
             <CountryButtons onActiveChange={setActiveCountry} />
           </div>
         </div>

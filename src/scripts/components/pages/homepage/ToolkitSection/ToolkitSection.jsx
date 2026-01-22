@@ -50,8 +50,8 @@ export default function ToolkitSection() {
 
       <Container
         className={cn(
-          "flex flex-col 2xl:flex-row",
-          "items-center 2xl:items-stretch justify-center",
+          "flex flex-col lg:flex-row",
+          "items-center lg:items-stretch justify-center",
           "gap-8 mx-auto",
         )}
       >
@@ -61,19 +61,19 @@ export default function ToolkitSection() {
             key={`mobile-${activeTab}`}
             src={activeTabData.illustration}
             alt={activeTabData.title}
-            className="block 2xl:hidden w-full max-w-[262px] mx-auto h-auto animate-in fade-in zoom-in-95 duration-500 mb-4"
+            className="block lg:hidden w-full max-w-[262px] mx-auto h-auto animate-in fade-in zoom-in-95 duration-500 mb-4"
           />
         )}
 
         {/* 2. LEFT COLUMN: Heading & Description */}
         {/* Changed: Removed 'md:flex-row'. Now strictly 'flex-col' on all sizes. */}
-        <div className="relative z-10 flex flex-col items-center 2xl:items-end text-center 2xl:text-right w-full 2xl:max-w-[350px] gap-6 2xl:gap-2 shrink-0">
+        <div className="relative z-10 flex flex-col items-center lg:items-end text-center lg:text-right w-full lg:max-w-[350px] gap-6 lg:gap-2 shrink-0">
           <div className="flex flex-col items-center 2xl:items-end gap-2">
             <Badge variant="toolkit" size="default" className="md:text-sm">
               {activeTabData?.badge}
             </Badge>
 
-            <h2 className="font-['Inter'] font-semibold text-[32px] md:text-md 2xl:text-[40px] text-white opacity-90 leading-10 tracking-[-1px]">
+            <h2 className="font-['Inter'] font-semibold text-[32px] md:text-[36px] lg:text-[40px] text-white opacity-90 leading-10 tracking-[-1px]">
               {activeTabData?.title}
             </h2>
           </div>
@@ -84,8 +84,8 @@ export default function ToolkitSection() {
         </div>
 
         {/* 3. MIDDLE COLUMN: Switcher & Form */}
-        <div className="relative z-10 flex flex-col gap-4 w-full md:max-w-[600px] shrink-0">
-          <div className="w-full flex 2xl:justify-start justify-center">
+        <div className="relative z-10 flex flex-col gap-4 w-full md:max-w-[600px] lg:max-w-[600px] shrink-0">
+          <div className="w-full flex lg:justify-start justify-center">
             <TabSwitcher
               tabs={translatedTabs}
               activeTab={activeTab}
@@ -97,7 +97,7 @@ export default function ToolkitSection() {
         </div>
 
         {/* 4. RIGHT COLUMN: Desktop Illustration */}
-        <div className="hidden 2xl:flex flex-col justify-end w-full max-w-[350px] my-auto">
+        <div className="hidden lg:flex flex-col justify-end w-full max-w-[350px] my-auto">
           {activeTabData?.illustration && (
             <img
               key={`desktop-${activeTab}`}

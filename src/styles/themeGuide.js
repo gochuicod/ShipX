@@ -2,8 +2,8 @@ export const themeGuide = {
   // Padding
   paddingX: "lg:px-24 md:px-8 px-8",
   paddingY: "lg:py-5 md:py-5 py-5",
-  sectionPaddingY: "xl:py-[128px] md:py-[64px] py-[48px]",
-  sectionPaddingX: "xl:px-[122px]",
+  sectionPaddingY: "lg:py-[128px] md:py-[64px] py-[48px]",
+  sectionPaddingX: "lg:px-[122px]",
 
   // Margins
   marginX: "lg:px-24 md:px-8 px-8",
@@ -59,7 +59,7 @@ export const themeGuide = {
   toolsHeroTitle:
     "font-['Inter'] font-semibold text-white tracking-[-1px] lg:text-[40px] text-[32px]",
   toolsHeroDescription:
-    "font-['Inter'] font-normal text-white md:text-[16px] text-[14px] opacity-90",
+    "font['Inter'] font-normal text-white md:text-[16px] text-[14px] opacity-90",
 
   // Section Introduction
   sectionHeading: "lg:text-[32px] text-[28px] font-bold text-[#1E2939]",
@@ -68,9 +68,9 @@ export const themeGuide = {
 
   // Input labels
   inputLabel:
-    "font-['Inter'] md:text-[16px] text-[14px] font-semibold text-[#1E2939]",
+    "font['Inter'] md:text-[16px] text-[14px] font-semibold text-[#1E2939]",
   inputLabelNote:
-    "font-['Inter'] md:text-[16px] text-[14px] font-normal text-[#4D525C]/90",
+    "font['Inter'] md:text-[16px] text-[14px] font-normal text-[#4D525C]/90",
   inputPlaceholder:
-    "font-['Inter'] md:text-[16px] text-[14px] font-normal text-[#99A1AF]",
+    "font['Inter'] md:text-[16px] text-[14px] font-normal text-[#99A1AF]",
 };

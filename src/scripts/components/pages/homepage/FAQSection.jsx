@@ -61,6 +61,7 @@ const FAQSection = () => {
         "flex flex-col",
         "relative gap-8 items-center",
         themeGuide.sectionPaddingY,
+        themeGuide.sectionPaddingX,
       )}
       style={{ fontFamily: "Inter, sans-serif" }}
     >
@@ -80,7 +81,7 @@ const FAQSection = () => {
         </div>
 
         {/* --- Accordion Grid --- */}
-        <Accordion className="flex flex-col lg:flex-row gap-5 lg:gap-5 items-start">
+        <Accordion className="flex flex-col justify-center items-center lg:flex-row gap-5 lg:gap-5 w-full md:max-w-[600px] lg:max-w-[1241px] mx-auto">
           {/* Left Column */}
           <div className="flex flex-col gap-4 md:gap-5 flex-1">
             {leftColItems.map((item) => (
