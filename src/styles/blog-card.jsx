@@ -3,7 +3,7 @@ import { cn } from "../lib/util";
 
 // Desktop Card (Column layout)
 const cardDesktopVariants = cva(
-  "group flex flex-col items-center p-4 gap-4 w-full max-w-[395px] h-full rounded-2xl transition-transform duration-300 hover:scale-105 active:scale-90",
+  "group flex flex-col items-center p-4 gap-4 w-full h-full rounded-2xl transition-transform duration-300 hover:scale-105 active:scale-90",
   {
     variants: {
       variant: {

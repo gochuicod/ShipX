@@ -37,11 +37,11 @@ export default function HeroCarousel({
 
   // 1. Define Defaults (Used for background positioning/sizing)
   const defaultBgClasses = `
-    2xl:bg-size-[1524px_785px]
-    md:bg-size-[1198px_617px]
-    bg-size-[776px_400px]
-    2xl:bg-position-[calc(50vw-320px)_100%]
-    bg-position-[bottom_center]
+    lg:bg-size-[1400px_auto]
+    md:bg-size-[1093px_auto]
+    lg:bg-position-[right_center]
+    md:bg-position-[right_center]
+    bg-position-[center_bottom]
   `;
 
   return (
@@ -105,24 +105,24 @@ export default function HeroCarousel({
           key={activeSlide.id}
           className={cn(
             "grid gap-12",
-            "xl:min-h-[664px] md:min-h-[662px] min-h-[652px]",
-            "2xl:items-center items-start pt-8",
+            "lg:min-h-[664px] md:min-h-[662px] min-h-[652px]",
+            "lg:items-center items-start pt-8",
             "animate-fade-in", // Keeps text animation
-            "2xl:w-[608px] w-full",
-            "2xl:mx-0 mx-auto",
+            "lg:w-[608px] w-full",
+            "lg:mx-0 mx-auto",
             activeSlide.contentClassName,
           )}
         >
-          <div className="flex flex-col 2xl:text-left text-center">
+          <div className="flex flex-col lg:text-left text-center">
             <HighlightedHeading
               text={activeSlide.title}
               highlight={activeSlide.titleHighlight}
               className={cn(
                 themeGuide.pageTitle,
-                "2xl:text-[60px] text-[48px] 2xl:leading-18 leading-12 font-bold",
+                "lg:text-[60px] text-[48px] lg:leading-18 leading-12 font-bold",
                 activeSlide.titleClassName
                   ? activeSlide.titleClassName
-                  : "2xl:w-full xl:w-[55%] lg:w-[65%] md:w-[80%] w-full 2xl:mx-0 mx-auto",
+                  : "lg:w-full md:w-[80%] w-full lg:mx-0 mx-auto",
               )}
               highlightClass="text-[#FF00E5]"
               disableNewlines
@@ -133,7 +133,7 @@ export default function HeroCarousel({
                 "mt-4",
                 activeSlide.descriptionClassName
                   ? activeSlide.descriptionClassName
-                  : "2xl:w-[80%] xl:w-[55%] lg:w-[65%] md:w-[80%] w-full 2xl:mx-0 mx-auto",
+                  : "lg:w-[80%] md:w-[80%] w-full lg:mx-0 mx-auto",
               )}
             >
               {activeSlide.description}
@@ -145,7 +145,7 @@ export default function HeroCarousel({
               </p>
             )}
 
-            <div className="mt-8 flex flex-row gap-4 2xl:justify-start justify-center z-10">
+            <div className="mt-8 flex flex-row gap-4 lg:justify-start justify-center z-10">
               {activeSlide.primaryButton && (
                 <AppButton
                   to={activeSlide.primaryButton.to}
@@ -168,7 +168,7 @@ export default function HeroCarousel({
 
             {/* Pagination Dots */}
             {slides.length > 1 && (
-              <div className="flex 2xl:justify-start 2xl:items-start items-center justify-center mt-6">
+              <div className="flex lg:justify-start lg:items-start items-center justify-center mt-6">
                 <Pagination
                   totalSlides={slides.length}
                   currentSlide={current}

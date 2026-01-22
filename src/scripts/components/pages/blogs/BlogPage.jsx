@@ -93,7 +93,7 @@ const BlogPage = () => {
         <ParallaxSection>
           {/* --- Main Content --- */}
           <main
-            className={`mx-auto relative ${themeGuide.paddingX} flex flex-col items-center md:px-8 w-full md:gap-y-8 gap-y-4 lg:-mt-6 -mt-10`}
+            className={`mx-auto relative ${themeGuide.paddingX} flex flex-col items-center md:px-8 w-full md:gap-y-8 gap-y-4 md:-mt-6 -mt-10`}
           >
             {/* Header Block & Search */}
             <div className="w-full flex flex-col md:gap-y-4 gap-y-2 items-center text-center">
@@ -105,7 +105,7 @@ const BlogPage = () => {
                 <HighlightedHeading
                   text={`${pageData.title_section.title_prefix} ${pageData.title_section.title_suffix}`}
                   highlight={pageData.title_section.title_suffix}
-                  className="text-2xl 2xl:text-4xl font-semibold mt-2 text-center"
+                  className="text-2xl lg:text-4xl font-semibold mt-2 text-center"
                   highlightClass="text-[#FF00E5]"
                 />
 
@@ -131,14 +131,14 @@ const BlogPage = () => {
                 }
                 submitLabel="Search"
                 translationKey="blog_page.searchButton"
-                className="w-full lg:w-[822px] lg:mx-auto md:w-xl md:mx-auto"
+                className="w-full lg:w-[822px] lg:mx-auto md:w-[522px] md:mx-auto"
               />
             </div>
 
             {/* Filter Bar (Using New Component) */}
-            <div className="w-full flex flex-col items-center gap-4 lg:py-5 md:py-4 py-0">
+            <div className="w-full flex flex-col items-center gap-4 md:py-5 lg:py-5 py-0">
               {/* Filter by Category Label */}
-              <h3 className="hidden md:inline lg:inline font-['Inter'] font-bold text-base leading-5 items-center text-center text-black gap-y-2 md:gap-y-4">
+              <h3 className="hidden md:inline font-['Inter'] font-bold text-base leading-5 items-center text-center text-black gap-y-2 md:gap-y-4">
                 <span className="md:hidden">
                   {pageData.filter_section?.title || "Filter by:"}
                 </span>
@@ -172,15 +172,14 @@ const BlogPage = () => {
                   ))}
                 </div>
               )}
-
               {/* Load More */}
               {hasMoreItems && (
-                <div className="text-center mt-8 md:mt-4">
+                <div className="text-center mt-8 md:mt-8">
                   <button
                     onClick={handleLoadMore}
                     className="group relative inline-flex items-center justify-center p-px rounded-full bg-linear-to-b from-[#FF00E5] to-[#4F378A] transition-transform active:scale-95"
                   >
-                    <span className="block w-full h-full rounded-full bg-white text-[#1A1A1A] px-6 py-3 md:px-2 md:py-1 text-lg md:text-sm font-medium transition-all duration-300 group-hover:bg-transparent group-hover:text-white">
+                    <span className="block w-full h-full rounded-full bg-white text-[#1A1A1A] px-6 py-3 md:px-6 md:py-3 text-lg md:text-base font-medium transition-all duration-300 group-hover:bg-transparent group-hover:text-white">
                       Load More Articles
                     </span>
                   </button>
