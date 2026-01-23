@@ -14,7 +14,7 @@ i18n
     interpolation: { escapeValue: false },
     backend: {
       loadPath:
-        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@5211cd810ee489b59d38a680f65959c54df45174/src/locales/{{lng}}.json",
+        "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@1d1914cd2c2ec263851ea48b83982572e37a1a13/src/locales/{{lng}}.json",
     },
     react: {
       useSuspense: true,

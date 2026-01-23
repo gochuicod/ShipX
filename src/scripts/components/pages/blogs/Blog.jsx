@@ -36,11 +36,48 @@ const parseContent = (htmlString) => {
         src: node.getAttribute("src"),
         alt: node.getAttribute("alt"),
       });
-    } else if (node.tagName === "SECTION" && node.querySelector("img")) {
-      // Handle cases where img is nested deeply in a section (recursive strategy simplified)
-      // For your specific JSON, images seem to be top level or inside simple wrappers
-      // This block handles the standard text content
-      currentBuffer.push(node);
+    } else if (node.tagName === "SECTION") {
+      // Handle sections - extract images and text separately
+      const sectionChildren = Array.from(node.childNodes);
+      const sectionImages = [];
+      const sectionText = [];
+
+      sectionChildren.forEach((child) => {
+        if (child.tagName === "IMG") {
+          // Flush any accumulated text before adding image
+          if (sectionText.length > 0) {
+            if (currentBuffer.length > 0) {
+              blocks.push({
+                type: "text_full",
+                content: currentBuffer
+                  .map((n) => n.outerHTML || n.textContent)
+                  .join(""),
+              });
+              currentBuffer = [];
+            }
+            blocks.push({
+              type: "text_full",
+              content: sectionText
+                .map((n) => n.outerHTML || n.textContent)
+                .join(""),
+            });
+            sectionText.length = 0;
+          }
+          // Add the image
+          blocks.push({
+            type: "image",
+            src: child.getAttribute("src"),
+            alt: child.getAttribute("alt"),
+          });
+        } else {
+          sectionText.push(child);
+        }
+      });
+
+      // Flush remaining section text to current buffer
+      if (sectionText.length > 0) {
+        currentBuffer.push(...sectionText);
+      }
     } else {
       // It's text, paragraphs, uls, etc.
       currentBuffer.push(node);
@@ -55,35 +92,9 @@ const parseContent = (htmlString) => {
     });
   }
 
-  // Post-processing: Pair Images with the Text block immediately following them
-  // This creates the "Split" view from Figma
-  const finalLayout = [];
-  for (let i = 0; i < blocks.length; i++) {
-    const block = blocks[i];
-
-    if (block.type === "image") {
-      // Look ahead for the next text block to pair with this image
-      const nextBlock = blocks[i + 1];
-      if (nextBlock && nextBlock.type === "text_full") {
-        finalLayout.push({
-          type: "split",
-          imageSrc: block.src,
-          imageAlt: block.alt,
-          content: nextBlock.content,
-        });
-        i++; // Skip the next block since we just used it
-      } else {
-        // Orphan image (no text after it), render as full width or hidden
-        finalLayout.push({
-          type: "image_full",
-          src: block.src,
-          alt: block.alt,
-        });
-      }
-    } else {
-      finalLayout.push(block);
-    }
-  }
+  // Post-processing: Keep images and text as separate blocks
+  // Don't pair images with following text - let them render independently
+  const finalLayout = blocks;
 
   return finalLayout;
 };
@@ -127,9 +138,6 @@ const Blog = () => {
       </div>
     );
   if (!post) return <NotFound />;
-
-  // Counter to toggle Left/Right alignment for split views
-  let splitViewCount = 0;
 
   return (
     <>
@@ -179,7 +187,7 @@ const Blog = () => {
                   : post.cover
               }
               alt={post.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full lg:object-cover md:object-contain object-cover"
               loading="eager"
             />
           </div>
@@ -201,35 +209,23 @@ const Blog = () => {
                 );
               }
 
-              // 2. SPLIT VIEW (IMAGE + TEXT STACKED)
-              // Figma: 1034px width content, 648px image width, 408px image height, 16px border-radius, 16px gap
-              if (block.type === "split") {
-                splitViewCount++;
-
+              // 2. IMAGE BLOCK
+              // Figma: 1034px width (same as text), 408px height, 16px border-radius, centered
+              if (block.type === "image") {
                 return (
                   <div
                     key={index}
                     className="w-full max-w-[1034px] flex flex-col justify-center items-center gap-4 px-4 lg:px-0"
                   >
-                    {/* Image Container - 648px x 408px with 16px border-radius */}
-                    <div className="w-full max-w-[648px] h-[408px] rounded-[16px] overflow-hidden relative">
+                    {/* Image Container - Full width 1034px x 408px with 16px border-radius */}
+                    <div className="w-full h-[408px] rounded-[16px] overflow-hidden relative">
                       <img
-                        src={block.imageSrc}
-                        alt={block.imageAlt || "Blog image"}
+                        src={block.src}
+                        alt={block.alt || "Blog image"}
                         className="w-full h-full object-contain"
                         loading="lazy"
                       />
                     </div>
-
-                    {/* Text Container: Bold variant (weight 700) */}
-                    {/* Figma: 1034px width, 16px font size, 24px line height, #1A1A1A color */}
-                    <div
-                      className="w-full font-['Source_Serif_Pro'] font-bold text-base leading-6 text-[#1A1A1A] opacity-90 flex flex-col justify-center items-start gap-4
-                      [&>p]:text-base [&>p]:leading-6 [&>p]:mb-0
-                      [&>h3]:text-base [&>h3]:leading-6 [&>h3]:font-bold [&>h3]:mb-0 
-                      [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:mb-0 [&>li]:text-base [&>li]:leading-6"
-                      dangerouslySetInnerHTML={{ __html: block.content }}
-                    />
                   </div>
                 );
               }
