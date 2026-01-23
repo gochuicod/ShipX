@@ -232,7 +232,7 @@ const Footer = memo(() => {
         </div>
         {/* Right side */}
         <img
-          src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/footer/footer_cta_image.webp"
+          src="https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/footer/footer_cta_image_new.webp"
           alt="ShipX Footer CTA Image"
           className={cn(
             "h-auto md:w-[50%] w-full",
