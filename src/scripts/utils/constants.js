@@ -289,7 +289,7 @@ export const servicesSectionCardKeys = {
 export const servicesSectionCardStaticData = {
   express: {
     illustration:
-      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/services_express.webp",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/cards/express-card.webp",
     partners: [
       "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/dhl.webp",
       "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/fedex.webp",
@@ -299,12 +299,12 @@ export const servicesSectionCardStaticData = {
   },
   commercial: {
     illustration:
-      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/services_postal.webp",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/cards/commercial-card.webp",
     countryCodes: ["vn"],
   },
   postal_e_commerce: {
     illustration:
-      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/services_postal_e_commerce.webp",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/cards/postal_e_commerce-card.webp",
     partners: [
       "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/singapore_post.webp",
       "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/bpost.webp",
@@ -317,7 +317,7 @@ export const servicesSectionCardStaticData = {
   },
   sea_freight: {
     illustration:
-      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/services_sea_freight.webp",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/cards/sea_freight-card.webp",
     partners: [
       "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/vina_link_group.webp",
       "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/vina_dowell.webp",
@@ -326,7 +326,7 @@ export const servicesSectionCardStaticData = {
   },
   us_domestic: {
     illustration:
-      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/services_domestic.webp",
+      "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/cards/us_domestic-card.webp",
     partners: [
       "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/dhl.webp",
       "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/partners/fedex.webp",
