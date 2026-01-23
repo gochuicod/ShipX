@@ -39,8 +39,25 @@ export default function ServiceCard({
         )}
       >
         {/* LEFT: Dynamic Illustration */}
-        <div className="relative w-full lg:w-[319px] h-[258px] shrink-0 flex items-center justify-center">
-          <div className="absolute inset-0 bg-linear-to-br from-white/0 via-white/75 to-white/75 rounded-2xl opacity-50 pointer-events-none" />
+        <div
+          className={cn(
+            "relative",
+            "w-full md:h-[272.58px] h-[200px]",
+            "flex items-center justify-center",
+          )}
+        >
+          {/* Rectangle 4540 - Gradient Background */}
+          <div
+            className={cn(
+              "absolute",
+              "inset-0",
+              "bg-gradient-to-br from-transparent via-[rgba(255,255,255,0.75)] to-[rgba(255,255,255,0.75)]",
+              "border border-white rounded-lg",
+              "box-border",
+            )}
+          />
+
+          {/* Image */}
           <img
             src={illustration}
             alt={`${title} Illustration`}
