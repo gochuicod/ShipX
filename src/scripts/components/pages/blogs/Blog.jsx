@@ -184,35 +184,35 @@ const Blog = () => {
             />
           </div>
           {/* --- DYNAMIC CONTENT RENDERING BASED ON FIGMA --- */}
-          <div className="flex flex-col gap-8 sm:gap-12 lg:gap-16 w-full items-center">
+          <div className="flex flex-col gap-8 w-full items-center">
             {contentBlocks.map((block, index) => {
-              // 1. FULL WIDTH TEXT BLOCK
-              // Desktop: 1034px, 16px/24px | Tablet: 704px, 14px/21px | Mobile: 376px, 14px/21px
+              // 1. FULL WIDTH TEXT BLOCK (Regular font weight 400)
+              // Figma: 1034px width, 16px font size, 24px line height, #1E2939 color
               if (block.type === "text_full") {
                 return (
                   <div
                     key={index}
-                    className="w-full max-w-[1034px] sm:max-w-[704px] lg:max-w-[1034px] px-4 sm:px-4 lg:px-0 text-[#1E2939] opacity-90 text-sm sm:text-sm lg:text-base leading-6 sm:leading-[21px] lg:leading-6 font-['Source_Serif_Pro'] font-normal 
-                    [&>p]:mb-4 [&>p]:text-sm [&>p]:sm:text-sm [&>p]:lg:text-base [&>p]:leading-6 [&>p]:sm:leading-[21px] [&>p]:lg:leading-6
-                    [&>h2]:text-lg [&>h2]:sm:text-base [&>h2]:lg:text-2xl [&>h2]:font-bold [&>h2]:mb-4 
-                    [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:mb-4 [&>li]:text-sm [&>li]:sm:text-sm [&>li]:lg:text-base [&>li]:leading-6 [&>li]:sm:leading-[21px] [&>li]:lg:leading-6"
+                    className="w-full max-w-[1034px] flex flex-col justify-center items-start gap-4 px-4 lg:px-0 font-['Source_Serif_Pro'] font-normal text-base leading-6 text-[#1E2939] opacity-90
+                    [&>p]:text-base [&>p]:leading-6 [&>p]:mb-0
+                    [&>h2]:text-base [&>h2]:leading-6 [&>h2]:font-bold [&>h2]:mb-0 
+                    [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:mb-0 [&>li]:text-base [&>li]:leading-6"
                     dangerouslySetInnerHTML={{ __html: block.content }}
                   />
                 );
               }
 
-              // 2. SINGLE COLUMN VIEW (IMAGE + TEXT STACKED)
-              // Desktop: 1034px | Tablet: 704px | Mobile: 376px
+              // 2. SPLIT VIEW (IMAGE + TEXT STACKED)
+              // Figma: 1034px width content, 648px image width, 408px image height, 16px border-radius, 16px gap
               if (block.type === "split") {
                 splitViewCount++;
 
                 return (
                   <div
                     key={index}
-                    className="w-full max-w-[1034px] sm:max-w-[704px] lg:max-w-[1034px] flex flex-col gap-6 sm:gap-6 lg:gap-8 items-center"
+                    className="w-full max-w-[1034px] flex flex-col justify-center items-center gap-4 px-4 lg:px-0"
                   >
-                    {/* Image Container */}
-                    <div className="w-full h-48 sm:h-64 lg:h-[408px] rounded-lg sm:rounded-2xl lg:rounded-2xl overflow-hidden relative">
+                    {/* Image Container - 648px x 408px with 16px border-radius */}
+                    <div className="w-full max-w-[648px] h-[408px] rounded-[16px] overflow-hidden relative">
                       <img
                         src={block.imageSrc}
                         alt={block.imageAlt || "Blog image"}
@@ -221,12 +221,13 @@ const Blog = () => {
                       />
                     </div>
 
-                    {/* Text Container: Bold variant (700 weight) */}
+                    {/* Text Container: Bold variant (weight 700) */}
+                    {/* Figma: 1034px width, 16px font size, 24px line height, #1A1A1A color */}
                     <div
-                      className="w-full px-4 sm:px-4 lg:px-0 text-[#1A1A1A] opacity-90 text-sm sm:text-sm lg:text-base leading-6 sm:leading-[21px] lg:leading-6 font-['Source_Serif_Pro'] font-bold
-                      [&>p]:mb-4 [&>p]:text-sm [&>p]:sm:text-sm [&>p]:lg:text-base [&>p]:leading-6 [&>p]:sm:leading-[21px] [&>p]:lg:leading-6
-                      [&>h3]:text-base [&>h3]:sm:text-sm [&>h3]:lg:text-xl [&>h3]:font-bold [&>h3]:mb-2 
-                      [&>ul]:list-disc [&>ul]:pl-5 [&>li]:text-sm [&>li]:sm:text-sm [&>li]:lg:text-base [&>li]:leading-6 [&>li]:sm:leading-[21px] [&>li]:lg:leading-6"
+                      className="w-full font-['Source_Serif_Pro'] font-bold text-base leading-6 text-[#1A1A1A] opacity-90 flex flex-col justify-center items-start gap-4
+                      [&>p]:text-base [&>p]:leading-6 [&>p]:mb-0
+                      [&>h3]:text-base [&>h3]:leading-6 [&>h3]:font-bold [&>h3]:mb-0 
+                      [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:mb-0 [&>li]:text-base [&>li]:leading-6"
                       dangerouslySetInnerHTML={{ __html: block.content }}
                     />
                   </div>
