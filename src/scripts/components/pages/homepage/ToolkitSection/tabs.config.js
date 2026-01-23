@@ -13,13 +13,13 @@ const fileAClaimIcon =
 
 // --- CDN URLs for Illustrations (NEW) ---
 const shipmentTrackerImg =
-  "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/shipment_tracker.png";
+  "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/shipment_tracker_new.webp";
 // ⚠️ Verify this file name exists in your assets
 const hsCodeGeneratorImg =
-  "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/hs_code_generator.png";
+  "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/hs_code_generator_new.webp";
 // ⚠️ Verify this file name exists in your assets
 const fileAClaimImg =
-  "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/file_a_claim_v2.png";
+  "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/assets/toolkit/file_a_claim_v3.webp";
 
 export const TOOLKIT_TABS = [
   {
