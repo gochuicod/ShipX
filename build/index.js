@@ -32632,7 +32632,7 @@ i18next__WEBPACK_IMPORTED_MODULE_0__["default"].use(i18next_http_backend__WEBPAC
     escapeValue: false
   },
   backend: {
-    loadPath: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@shipx-v2/src/locales/{{lng}}.json"
+    loadPath: "https://cdn.jsdelivr.net/gh/gochuicod/ShipX@3abe8665bfc15e90324f52aabcf989d8d3d9b621/src/locales/{{lng}}.json"
   },
   react: {
     useSuspense: true
